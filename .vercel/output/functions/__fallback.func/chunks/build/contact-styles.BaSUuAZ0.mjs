@@ -1,8 +1,0 @@
-const contact_vue_vue_type_style_index_0_scoped_5d2e946b_lang = ".trust-badges[data-v-5d2e946b]{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.badge[data-v-5d2e946b]{background:#ffffff0f;border:1px solid var(--border);border-radius:20px;color:var(--white);font-size:13px;font-weight:500;padding:7px 14px}.contact-options[data-v-5d2e946b]{display:grid;gap:24px;grid-template-columns:repeat(3,1fr);margin-bottom:48px;text-align:center}.option-icon[data-v-5d2e946b]{font-size:40px;margin-bottom:16px}.option-title[data-v-5d2e946b]{font-family:var(--font-heading);font-size:20px;font-weight:800;margin-bottom:12px}.option-desc[data-v-5d2e946b]{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:20px}.address-bar[data-v-5d2e946b]{align-items:center;background:var(--card-bg);border:1px solid var(--border);border-radius:12px;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;padding:28px 32px}.address-item[data-v-5d2e946b]{color:var(--muted);font-size:15px}.address-item strong[data-v-5d2e946b]{color:var(--white)}.address-item a[data-v-5d2e946b]{color:var(--gold);font-weight:600}@media(max-width:900px){.contact-options[data-v-5d2e946b]{grid-template-columns:1fr}.address-bar[data-v-5d2e946b]{align-items:flex-start;flex-direction:column}}";
-
-const contactStyles_BaSUuAZ0 = [
-  contact_vue_vue_type_style_index_0_scoped_5d2e946b_lang
-];
-
-export { contactStyles_BaSUuAZ0 as default };
-//# sourceMappingURL=contact-styles.BaSUuAZ0.mjs.map

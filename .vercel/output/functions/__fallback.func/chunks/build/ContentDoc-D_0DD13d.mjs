@@ -1,7 +1,7 @@
 import _sfc_main$1 from './ContentQuery-feHbxo9R.mjs';
 import _sfc_main$2 from './ContentRenderer-D-BpAKIS.mjs';
 import { defineComponent, useSlots, h, unref, watch, useSSRContext } from 'vue';
-import { I as withTrailingSlash, j as joinURL, q as withoutTrailingSlash, A as hasProtocol } from '../nitro/nitro.mjs';
+import { J as withTrailingSlash, j as joinURL, q as withoutTrailingSlash, A as hasProtocol } from '../nitro/nitro.mjs';
 import { b as useRuntimeConfig, d as useRoute } from './server.mjs';
 import { a as useHead } from './v3-BlJdoZgg.mjs';
 import '../_/index.mjs';

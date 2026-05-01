@@ -1,6 +1,6 @@
 import { defineComponent, computed, createVNode, resolveDynamicComponent, unref, mergeProps, useSSRContext } from 'vue';
 import { ssrRenderVNode } from 'vue/server-renderer';
-import { w as withLeadingSlash, I as withTrailingSlash, j as joinURL } from '../nitro/nitro.mjs';
+import { w as withLeadingSlash, J as withTrailingSlash, j as joinURL } from '../nitro/nitro.mjs';
 import { b as useRuntimeConfig } from './server.mjs';
 import 'unified';
 import 'remark-parse';
