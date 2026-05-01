@@ -1,0 +1,8 @@
+const externalHddRecovery_vue_vue_type_style_index_0_scoped_78b4281d_lang = ".trust-badges[data-v-78b4281d]{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}.badge[data-v-78b4281d]{background:#ffffff0f;border:1px solid var(--border);border-radius:20px;color:var(--white);font-size:13px;font-weight:500;padding:7px 14px}";
+
+const externalHddRecoveryStyles_Bgo9ekiG = [
+  externalHddRecovery_vue_vue_type_style_index_0_scoped_78b4281d_lang
+];
+
+export { externalHddRecoveryStyles_Bgo9ekiG as default };
+//# sourceMappingURL=external-hdd-recovery-styles.Bgo9ekiG.mjs.map
