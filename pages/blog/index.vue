@@ -3,6 +3,21 @@ useSeoMeta({
   title: 'Blog — Data Recovery Tips & Guides',
   description: 'Expert data recovery tips, guides, and industry news from Five Star Data Recovery. Learn how to protect and recover your data.'
 })
+
+const posts = [
+  {
+    title: 'How to Repair External Hard Drive after it was Dropped',
+    date: 'June 19, 2025',
+    desc: 'Before getting more in depth about how to fix an external hard drive after it was dropped, the first thing to do is STOP trying to power on the drive as this will only cause more damage.',
+    href: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped'
+  },
+  {
+    title: 'USB Data Recovery (Chip Off)',
+    date: 'June 19, 2025',
+    desc: 'USB chip-off data recovery is a process of removing the memory chip from the USB drive and reading it directly. Learn how we recovered data from a 64GB USB thumb drive that was not detected.',
+    href: '/blog/usb-data-recovery-chip-off'
+  },
+]
 </script>
 
 <template>
@@ -13,17 +28,13 @@ useSeoMeta({
       subtitle="Expert Tips & Guides."
       description="Stay informed with the latest data recovery advice, hardware guides, and industry insights from our team of certified engineers."
     />
-    <section>
+    <section class="section-pad section-bg-1">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Latest Articles</h2>
         </div>
         <div class="grid-3">
-          <div v-for="post in [
-            {title:'What To Do When Your Hard Drive Starts Clicking',date:'May 1, 2025',desc:'A clicking hard drive is a medical emergency for your data. Here\'s exactly what to do — and what NOT to do — in the next 60 minutes.',href:'/blog/clicking-hard-drive'},
-            {title:'SSD vs HDD: Which Is Harder to Recover?',date:'April 28, 2025',desc:'SSDs and HDDs fail in very different ways. We break down the recovery complexity and what it means for your chances of getting data back.',href:'/blog/ssd-vs-hdd-recovery'},
-            {title:'RAID Recovery: The Complete Business Guide',date:'April 25, 2025',desc:'RAID arrays provide redundancy, but they\'re not immune to catastrophic failure. Here\'s what every IT manager needs to know.',href:'/blog/raid-recovery-guide'},
-          ]" :key="post.title" class="card blog-card">
+          <div v-for="post in posts" :key="post.title" class="card blog-card">
             <div class="blog-date">{{ post.date }}</div>
             <h3 class="blog-title">{{ post.title }}</h3>
             <p class="blog-excerpt">{{ post.desc }}</p>
