@@ -2,6 +2,8 @@
 
 :root {
   --bg: #0A0C14;
+  --bg-alt: #0f1422;
+  --bg-alt2: #13161F;
   --gold: #F5C842;
   --gold-dark: #E8A020;
   --white: #FFFFFF;
@@ -12,7 +14,63 @@
   --font-heading: 'Montserrat', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+/* Alternating section backgrounds — clearly distinct */
+.section-bg-1 { background: #ffffff; color: #1a2030; }
+.section-bg-2 { background: #f4f6fa; color: #1a2030; }
+.section-bg-3 { background: #e9ecf2; color: #1a2030; }
+
+/* Named section backgrounds */
+.section-dark-gray { background: #2a2d38; }
+.section-dark-gray .section-title,
+.section-dark-gray .section-subtitle,
+.section-dark-gray h3,
+.section-dark-gray p { color: #e8ecf4; }
+.section-dark-gray .section-subtitle { color: #9ba3b8; }
+.section-dark-gray .card { background: #1e2130; border: 1px solid #363a4a; color: #e8ecf4; }
+.section-dark-gray .card h3 { color: #ffffff; }
+.section-dark-gray .card p { color: #9ba3b8; }
+
+.section-white { background: #ffffff; color: #1a2030; }
+.section-white .section-title { color: #0d1520; }
+.section-white .section-subtitle { color: #4a5568; }
+.section-white .card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  color: #1a2030;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.section-white .card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+.section-white .card h3 { color: #0d1520; font-weight: 700; }
+.section-white .card p { color: #4a5568; }
+.section-white .why-icon { color: var(--gold); font-size: 28px; margin-bottom: 12px; display: block; }
+
+/* Light section readable text */
+.section-bg-1 .section-title,
+.section-bg-2 .section-title,
+.section-bg-3 .section-title { color: #0d1520; }
+.section-bg-1 .section-subtitle,
+.section-bg-2 .section-subtitle,
+.section-bg-3 .section-subtitle { color: #4a5568; }
+.section-bg-1 .card,
+.section-bg-2 .card { background: #ffffff; border: 1px solid #e2e8f0; color: #1a2030; }
+.section-bg-3 .card { background: #f4f6fa; border: 1px solid #d8dde8; color: #1a2030; }
+.section-bg-1 p, .section-bg-2 p, .section-bg-3 p { color: #4a5568; }
+.section-bg-1 h3, .section-bg-2 h3, .section-bg-3 h3 { color: #0d1520; }
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}  
 
 body {
   background: var(--bg);

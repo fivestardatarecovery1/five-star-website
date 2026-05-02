@@ -1,117 +1,180 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery in Hollywood, CA | Five Star Data Recovery',
-  description: 'Professional data recovery in Hollywood, CA. Serving entertainment professionals and businesses in Hollywood. Hard drives, SSDs, RAID, video recovery. Call 323-672-3000.'
+  title: 'Data Recovery Hollywood, CA — Five Star Data Recovery',
+  description: 'If you’ve lost data from a hard drive, flash drive, memory card, or RAID system—Five Star Data Recovery is here to help. We provide expert-level service to clie'
 })
-const services = [
-  'Hard Drive Recovery','SSD Recovery','RAID & NAS Recovery','Laptop Recovery',
-  'Mac Recovery','iPhone Recovery','External HDD Recovery','USB Flash Drive Recovery',
-  'SD Card Recovery','Desktop Recovery','Deleted File Recovery','Clean Room Recovery'
-]
 const faqs = [
-  { q: 'Do I need to come to your lab or can I mail my device?', a: 'Both options work. You can visit our Glendale lab (just outside Hollywood, CA) in person, or use our free prepaid mail-in service. We offer free same-day pickup in most Hollywood, CA areas too.' },
-  { q: 'How quickly can you start on my case?', a: 'We begin diagnosis the same day we receive your device. For urgent cases, call us first and we will prioritize your intake.' },
-  { q: 'Is there a charge for the evaluation?', a: 'No. The initial diagnostic evaluation is completely free, with no obligation to proceed with recovery.' },
-  { q: 'What is your success rate?', a: 'We have successfully recovered data from thousands of drives. Our success rate for standard recoveries is very high. We will give you an honest assessment during the free evaluation.' },
+  { q: '1. Do you offer same-day pickup in Hollywood?', a: 'Yes! We provide free same-day pickup in Hollywood for customers who can’t visit our Glendale lab. Just give us a call and we’ll schedule a pickup right away.' },
+  { q: '2. What types of storage devices can you recover data from?', a: 'We recover data from hard drives, SSDs, USB flash drives, SD cards, RAID systems, MacBooks, iPhones, Samsung Phones, external drives , and more. If it stores data, there’s a good chance we can recover it.' },
+  { q: '3. If I schedule same day pickup from Hollywood, how do I get my recovered data back?', a: 'Once your data recovery is complete, you have two convenient options: you can pick up your recovered data from our Glendale office, or we can ship it back to you at no additional cost. Just let us know which option works best for you.' },
+  { q: '4. How long does the data recovery process take?', a: 'Standard recoveries take about 3–5 business days, but we also offer Expedited and Expedited Plus services for urgent cases. These services prioritize your recovery based on the level of urgency.' },
+  { q: '5. Do you work on drives that have been dropped or physically damaged?', a: 'Absolutely. We specialize in physical data recovery, including dropped drives, water-damaged devices, and drives with internal mechanical failure. All work is done in a certified clean room environment.' }
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
+
 <template>
   <div>
     <NavBar />
     <HeroSection
-      title="Data Recovery in Hollywood, CA"
-      subtitle="Expert Recovery Service for Hollywood, CA Residents and Businesses."
-      description="Five Star Data Recovery serves customers throughout Hollywood, CA and the surrounding area. Free same-day pickup available. Professional lab in Glendale, CA — just minutes away. No data = no charge."
+      title="Data Recovery Hollywood, CA"
+      subtitle="Get Your Data Back In No Time."
+      description="If you’ve lost data from a hard drive, flash drive, memory card, or RAID system—Five Star Data Recovery is here to help. We provide expert-level service to clients in Hollywood, CA with fast turnaround and fair pricing. Although our lab is based in Glendale, CA, we offer free same-day pickup for cus"
     >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ Serving Hollywood, CA</span>
-          <span class="badge">✅ Free Pickup Available</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ 24/7 Available</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
-    <section class="intro-section">
+    <StatsBar />
+
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Data Recovery <span class="gold-underline gold">in Hollywood, CA</span></h2></div>
-        <div class="intro-content">
-          <p>If you've lost important data in Hollywood, CA, you're not out of options. Five Star Data Recovery serves the entire Hollywood, CA area with professional data recovery services for hard drives, SSDs, RAID systems, Macs, iPhones, USB drives, SD cards, and more.</p>
-          <p>Hollywood's creative professionals trust Five Star Data Recovery for their critical data needs. Whether you're a filmmaker with corrupted footage, a music producer with a failed hard drive, or a studio with a crashed server — we are the data recovery company Hollywood trusts. Free same-day pickup throughout Hollywood.</p>
-          <p>We offer free same-day pickup from most Hollywood, CA locations (Monday through Friday). Can't wait? Call us and we may be able to accommodate you even faster. Our Glendale lab is also open for walk-in drop-offs during business hours.</p>
+        <div class="section-header">
+          <h2 class="section-title">Trusted Data Recovery Services in Hollywood</h2>
+        </div>
+        <div class="section-body">
+          <p>We’ve helped thousands of customers recover lost data from:</p>
+          <ul class="content-list">
+            <li>Mac Data Recovery – Specializing in component-level recovery for no-power MacBooks, including M1 and M2 models.</li>
+            <li>Hard Drive Data Recovery – Expert recovery from drives with mechanical failure or logical corruption.</li>
+            <li>RAID Data Recovery – Safe and precise recovery from RAID 0, 1, 5, 10, and custom RAID configurations.</li>
+            <li>SSD Data Recovery – Advanced tools to recover data from physically or electronically failed SSDs.</li>
+            <li>External Hard Drive Data Recovery – Recovering data from non-detected, clicking, or accidentally dropped external drives.</li>
+          </ul>
+          <p>Every recovery is handled by experienced engineers using safe and proven methods.</p>
         </div>
       </div>
     </section>
-    <section class="services-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Services We Offer <span class="gold-underline gold">in Hollywood, CA</span></h2></div>
-        <div class="services-grid">
-          <div v-for="s in services" :key="s" class="service-tag"><span class="tag-check">✓</span>{{ s }}</div>
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Us for Data Recovery in Hollywood?</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Over a Decade of Experience - Trusted by thousands, we’ve been recovering data for over 10 years with industry-leading expertise.</li>
+            <li>Hundreds of 5-Star ReviewsOur reputation speaks for itself — hundreds of satisfied customers have left glowing reviews online.</li>
+            <li>Free Evaluation &amp; No Data, No ChargeYou only pay if we recover your data; we offer free diagnostics and transparent, flat-rate pricing.</li>
+            <li>Same-Day Pickup in PasadenaLocated minutes from Pasadena, we offer fast, free same-day pickup to get your recovery started immediately.</li>
+            <li>Expedited and 24/7 Services AvailableFor urgent cases, we offer rush recovery options — including after-hours and weekend availability.</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="trust-section">
+    <section class="section-bg-2 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Why Hollywood, CA Customers <span class="gold-underline gold">Choose Five Star</span></h2></div>
-        <div class="grid-3">
-          <div class="card trust-card"><div class="trust-icon">🏆</div><h3 class="trust-title">No Data = No Charge</h3><p class="trust-desc">You only pay when we successfully recover your data. Complete peace of mind.</p></div>
-          <div class="card trust-card"><div class="trust-icon">📍</div><h3 class="trust-title">Local & Accessible</h3><p class="trust-desc">Our Glendale lab is minutes from Hollywood, CA. Free same-day pickup available.</p></div>
-          <div class="card trust-card"><div class="trust-icon">⭐</div><h3 class="trust-title">5.0 Star Rating</h3><p class="trust-desc">Hundreds of 5-star reviews from customers across the Los Angeles area.</p></div>
+        <div class="section-header">
+          <h2 class="section-title">Our Recovery Process</h2>
+        </div>
+        <div class="section-body">
+          <p>1. Free EvaluationWe begin by diagnosing your device to identify the problem and determine the best recovery strategy—completely free of charge.</p>
+          <p>2. Secure ImagingA sector-by-sector clone of your storage device is created to protect the original data from further damage during the recovery process.</p>
+          <p>3. Advanced ScanningOur engineers scan the cloned image using professional tools to locate lost files, partitions, and file structures.</p>
+          <p>4. Data Extraction &amp; RepairWe extract all recoverable data and, if needed, repair damaged files to ensure they’re usable and complete.</p>
+          <p>5. File Review &amp; DeliveryYou preview the recovered files, and once approved, we deliver your data on a new drive or via a secure transfer method.</p>
         </div>
       </div>
     </section>
-    <section class="location-info-section">
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Visit Our <span class="gold-underline gold">Lab</span></h2></div>
-        <div class="location-card card">
-          <div class="location-detail"><span class="loc-icon">📍</span><div><strong>Five Star Data Recovery</strong><br>1731 S Brand Blvd Suite 100<br>Glendale, CA 91204</div></div>
-          <div class="location-detail"><span class="loc-icon">📞</span><div><a href="tel:3236723000">323-672-3000</a><br>Available 24/7/365</div></div>
-          <div class="location-detail"><span class="loc-icon">✈️</span><div>Free Nationwide Shipping<br>Prepaid label provided</div></div>
+        <div class="section-header">
+          <h2 class="section-title">⭐ Client Success Story – Hollywood Film Editor Recovers 2TB of Critical Project Files</h2>
+        </div>
+        <div class="section-body">
+          <p>A Hollywood film editor reached out after their external hard drive stopped showing up. It contained over 2TB of raw footage, edited timelines, and sound libraries for an indie film nearing its premiere. Our diagnostics revealed a mechanical failure caused by a drop, and our engineers performed a clean room head swap followed by a full clone of the drive.</p>
+          <p>Using deep scan tools, we successfully recovered all critical files in their original structure. The client received their data just in time to meet their deadline — and later thanked us during their post-screening Q&amp;A. They admitted they had lost all hope before finding our lab. Now, we’re the first call they make for any data-related emergency on set. The successful recovery saved not only the project, but also the client’s reputation with investors and the production team.</p>
         </div>
       </div>
     </section>
-    <section class="faq-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2></div>
+        <div class="section-header">
+          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
+        </div>
+        <div class="section-body">
+          <p>“My hard drive failed right before a big deadline, and I was in full panic mode. I called Five Star Data Recovery, and to my surprise, they offered same-day pickup from my apartment in Hollywood. Within days, I had all my files back — including my client’s entire photo shoot. Incredible service from start to finish.”</p>
+          <p>“As a music producer, losing sessions is my worst nightmare. My RAID failed without warning, and I had no backup. The team at Five Star diagnosed it quickly and explained everything clearly. They got 100% of my files back, and the turnaround was quicker than expected. Highly recommend them!”</p>
+          <p>“I was skeptical at first, but after reading reviews, I gave them a shot. My external SSD stopped working after a drop, and no software could read it. These guys recovered every single file — including my tax documents, family videos, and work archives. Their service was worth every penny.”</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Quick and Secure Data Recovery</li>
+            <li>Expert Engineers for All Devices</li>
+            <li>No Data, No Fee Guarantee</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let’s Get Your Files Back</h2>
+        </div>
+        <div class="section-body">
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)"><span>{{ faq.q }}</span><span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span></button>
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
             <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cta-band">
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Lost Data in Hollywood, CA?</h2><p class="cta-sub">Call now or request a free quote online. Same-day pickup available.</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With Data Recovery Hollywood, CA?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
   </div>
 </template>
+
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.service-tag { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; }
-.tag-check { color: var(--gold); font-weight: 700; }
-.trust-card { text-align: center; }
-.trust-icon { font-size: 36px; margin-bottom: 12px; }
-.trust-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.trust-desc { font-size: 14px; color: var(--muted); }
-.location-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.location-detail { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.loc-icon { font-size: 22px; flex-shrink: 0; }
-.location-detail a { color: var(--gold); font-weight: 700; }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
@@ -120,5 +183,5 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .services-grid, .location-card { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
 </style>

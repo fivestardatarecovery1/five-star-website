@@ -3,6 +3,7 @@ const route = useRoute()
 const menuOpen = ref(false)
 const servicesOpen = ref(false)
 const mobileServicesOpen = ref(false)
+let closeTimer: ReturnType<typeof setTimeout> | null = null
 
 const byDevice = [
   { label: 'Hard Drive Recovery', href: '/data-recovery/hard-drive-recovery' },
@@ -45,9 +46,24 @@ const special = [
   { label: 'Expedited Service Plus', href: '/expedited-service-plus' },
 ]
 
+function openDropdown() {
+  if (closeTimer) clearTimeout(closeTimer)
+  servicesOpen.value = true
+}
+
+function scheduleClose() {
+  closeTimer = setTimeout(() => {
+    servicesOpen.value = false
+  }, 150)
+}
+
+function cancelClose() {
+  if (closeTimer) clearTimeout(closeTimer)
+}
+
 function closeAll() {
-  menuOpen.value = false
   servicesOpen.value = false
+  menuOpen.value = false
   mobileServicesOpen.value = false
 }
 
@@ -56,199 +72,341 @@ watch(() => route.path, closeAll)
 
 <template>
   <nav class="navbar">
-    <div class="container nav-inner">
-      <!-- Logo -->
-      <NuxtLink to="/" class="nav-logo" @click="closeAll">
-        <img src="/logo.png" alt="Five Star Data Recovery" height="44" />
-        <span class="nav-logo-text">Five Star Data Recovery</span>
-      </NuxtLink>
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="container topbar-inner">
 
-      <!-- Desktop nav -->
-      <ul class="nav-links">
-        <li><NuxtLink to="/">Home</NuxtLink></li>
-        <li
-          class="has-dropdown"
-          @mouseenter="servicesOpen = true"
-          @mouseleave="servicesOpen = false"
-        >
-          <span class="dropdown-trigger">
-            Services
-            <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-              <path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <div v-if="servicesOpen" class="mega-dropdown">
-            <div class="mega-col">
-              <div class="mega-col-title">By Device</div>
-              <NuxtLink v-for="s in byDevice" :key="s.href" :to="s.href" class="mega-link">{{ s.label }}</NuxtLink>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">By Brand</div>
-              <NuxtLink v-for="s in byBrand" :key="s.href" :to="s.href" class="mega-link">{{ s.label }}</NuxtLink>
-              <div class="mega-col-title" style="margin-top:16px">Special Services</div>
-              <NuxtLink v-for="s in special" :key="s.href" :to="s.href" class="mega-link">{{ s.label }}</NuxtLink>
-            </div>
-            <div class="mega-col">
-              <div class="mega-col-title">By Problem</div>
-              <NuxtLink v-for="s in byProblem" :key="s.href" :to="s.href" class="mega-link">{{ s.label }}</NuxtLink>
-            </div>
-          </div>
-        </li>
-        <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
-        <li><NuxtLink to="/about">About</NuxtLink></li>
-        <li><NuxtLink to="/reviews">Reviews</NuxtLink></li>
-        <li><NuxtLink to="/contact">Contact</NuxtLink></li>
-      </ul>
 
-      <!-- Right CTAs -->
-      <div class="nav-cta">
-        <a href="tel:3236723000" class="nav-phone">323-672-3000</a>
-        <NuxtLink to="/data-recovery/free-quote" class="btn btn-gold nav-quote-btn">Free Quote</NuxtLink>
       </div>
+    </div>
 
-      <!-- Mobile hamburger -->
-      <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
-        <span /><span /><span />
-      </button>
+    <!-- Main nav -->
+    <div class="navbar-main">
+      <div class="container nav-inner">
+        <!-- Logo -->
+        <NuxtLink to="/" class="nav-logo" @click="closeAll">
+          <img src="/logo.png" alt="Five Star Data Recovery" />
+        </NuxtLink>
+
+        <!-- Desktop nav links -->
+        <ul class="nav-links">
+          <li><NuxtLink to="/" exact-active-class="active">Home</NuxtLink></li>
+
+          <li
+            class="has-dropdown"
+            @mouseenter="openDropdown"
+            @mouseleave="scheduleClose"
+          >
+            <span class="dropdown-trigger" :class="{ active: servicesOpen }">
+              Services
+              <svg class="chevron" :class="{ rotated: servicesOpen }" width="11" height="7" viewBox="0 0 11 7" fill="none">
+                <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+
+            <!-- Mega dropdown -->
+            <Transition name="dropdown">
+              <div
+                v-show="servicesOpen"
+                class="mega-dropdown"
+                @mouseenter="cancelClose"
+                @mouseleave="scheduleClose"
+              >
+                <div class="mega-grid">
+                  <div class="mega-col">
+                    <div class="mega-col-header">By Device</div>
+                    <NuxtLink v-for="s in byDevice" :key="s.href" :to="s.href" class="mega-link" @click="closeAll">
+                      <span class="mega-link-dot">›</span>{{ s.label }}
+                    </NuxtLink>
+                  </div>
+                  <div class="mega-col">
+                    <div class="mega-col-header">By Brand</div>
+                    <NuxtLink v-for="s in byBrand" :key="s.href" :to="s.href" class="mega-link" @click="closeAll">
+                      <span class="mega-link-dot">›</span>{{ s.label }}
+                    </NuxtLink>
+                    <div class="mega-col-header" style="margin-top:20px">Special Services</div>
+                    <NuxtLink v-for="s in special" :key="s.href" :to="s.href" class="mega-link" @click="closeAll">
+                      <span class="mega-link-dot">›</span>{{ s.label }}
+                    </NuxtLink>
+                  </div>
+                  <div class="mega-col">
+                    <div class="mega-col-header">By Problem</div>
+                    <NuxtLink v-for="s in byProblem" :key="s.href" :to="s.href" class="mega-link" @click="closeAll">
+                      <span class="mega-link-dot">›</span>{{ s.label }}
+                    </NuxtLink>
+                  </div>
+                </div>
+                
+              </div>
+            </Transition>
+          </li>
+
+          <li><NuxtLink to="/pricing" active-class="active">Pricing</NuxtLink></li>
+          <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
+          <li><NuxtLink to="/reviews" active-class="active">Reviews</NuxtLink></li>
+          <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
+        </ul>
+
+
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
+      </div>
     </div>
 
     <!-- Mobile menu -->
-    <div v-if="menuOpen" class="mobile-menu">
-      <NuxtLink to="/" @click="closeAll">Home</NuxtLink>
-      <button class="mobile-section-toggle" @click="mobileServicesOpen = !mobileServicesOpen">
-        Services {{ mobileServicesOpen ? '▲' : '▼' }}
-      </button>
-      <template v-if="mobileServicesOpen">
-        <div class="mobile-section-label">By Device</div>
-        <NuxtLink v-for="s in byDevice" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
-        <div class="mobile-section-label">By Brand</div>
-        <NuxtLink v-for="s in byBrand" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
-        <div class="mobile-section-label">By Problem</div>
-        <NuxtLink v-for="s in byProblem" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
-        <div class="mobile-section-label">Special Services</div>
-        <NuxtLink v-for="s in special" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
-      </template>
-      <NuxtLink to="/pricing" @click="closeAll">Pricing</NuxtLink>
-      <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
-      <NuxtLink to="/reviews" @click="closeAll">Reviews</NuxtLink>
-      <NuxtLink to="/contact" @click="closeAll">Contact</NuxtLink>
-      <a href="tel:3236723000" class="mobile-phone">📞 323-672-3000</a>
-    </div>
+    <Transition name="slide-down">
+      <div v-if="menuOpen" class="mobile-menu">
+        <NuxtLink to="/" @click="closeAll">Home</NuxtLink>
+        <button class="mobile-section-toggle" @click="mobileServicesOpen = !mobileServicesOpen">
+          Services <span class="toggle-icon">{{ mobileServicesOpen ? '▲' : '▼' }}</span>
+        </button>
+        <div v-if="mobileServicesOpen" class="mobile-services">
+          <div class="mobile-section-label">By Device</div>
+          <NuxtLink v-for="s in byDevice" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
+          <div class="mobile-section-label">By Brand</div>
+          <NuxtLink v-for="s in byBrand" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
+          <div class="mobile-section-label">By Problem</div>
+          <NuxtLink v-for="s in byProblem" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
+          <div class="mobile-section-label">Special Services</div>
+          <NuxtLink v-for="s in special" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
+        </div>
+        <NuxtLink to="/pricing" @click="closeAll">Pricing</NuxtLink>
+        <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
+        <NuxtLink to="/reviews" @click="closeAll">Reviews</NuxtLink>
+        <NuxtLink to="/contact" @click="closeAll">Contact</NuxtLink>
+        <a href="tel:8182728866" class="mobile-phone">📞 818-272-8866</a>
+      </div>
+    </Transition>
   </nav>
 </template>
 
 <style scoped>
-.navbar {
+/* ── Top bar ── */
+.topbar {
+  background: #f0f2f5;
+  border-bottom: 1px solid #dde1ea;
+  padding: 7px 0;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.topbar-item {
+  font-size: 12px;
+  color: #555e72;
+}
+.topbar-divider {
+  color: var(--border);
+  font-size: 12px;
+}
+.topbar-phone {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.topbar-phone:hover { opacity: 0.8; }
+
+/* ── Sticky wrapper ── */
+nav {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(10, 12, 20, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  width: 100%;
 }
 
+/* ── Main navbar ── */
+.navbar-main {
+  background: #ffffff;
+  border-bottom: 2px solid #e8ebf0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
 .nav-inner {
   display: flex;
   align-items: center;
-  height: 70px;
-  gap: 32px;
+  height: 86px;
+  gap: 36px;
 }
 
+/* ── Logo ── */
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   flex-shrink: 0;
 }
-.nav-logo img { height: 44px; width: auto; }
-.nav-logo-text {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--white);
-  line-height: 1.2;
-  max-width: 120px;
+.nav-logo img {
+  height: 62px;
+  width: auto;
+  display: block;
 }
 
+/* ── Nav links ── */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 28px;
-  margin: 0;
+  gap: 0;
+  margin: 0 0 0 auto;
   padding: 0;
-  flex: 1;
+  align-items: center;
 }
+.nav-links > li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Separator between nav items */
+.nav-links > li + li {
+  border-left: 1px solid #e8ebf0;
+}
+.nav-links li { position: relative; }
 .nav-links a,
 .dropdown-trigger {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--muted);
-  transition: color 0.2s;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3a4a;
+  transition: color 0.2s, background 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
+  padding: 10px 18px;
+  white-space: nowrap;
+  text-decoration: none;
+  letter-spacing: 0.01em;
 }
 .nav-links a:hover,
 .dropdown-trigger:hover,
-.nav-links a.router-link-active {
-  color: var(--white);
+.nav-links a.active,
+.dropdown-trigger.active {
+  color: #c0392b;
+  background: rgba(192,57,43,0.06);
 }
 
-.has-dropdown { position: relative; }
+.chevron {
+  transition: transform 0.2s;
+}
+.chevron.rotated { transform: rotate(180deg); }
 
+/* ── Mega Dropdown ── */
 .mega-dropdown {
   position: absolute;
-  top: calc(100% + 8px);
-  left: -40px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 24px;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a2d38;
+  border: 1px solid rgba(245,200,66,0.2);
+  border-radius: 16px;
+  padding: 28px;
+  min-width: 700px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  z-index: 500;
+}
+
+.mega-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  min-width: 640px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-  z-index: 200;
+  gap: 32px;
+  margin-bottom: 20px;
 }
 
-.mega-col-title {
-  font-size: 11px;
-  font-weight: 700;
+.mega-col-header {
+  font-size: 10px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--gold);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(245,200,66,0.2);
 }
 
-.mega-link {
-  display: block;
-  padding: 6px 0;
-  font-size: 13px;
-  color: var(--muted);
-  transition: color 0.15s;
-  text-decoration: none;
-}
-.mega-link:hover { color: var(--white); }
-
-.nav-cta {
+.mega-dropdown .mega-link {
   display: flex;
   align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
-}
-.nav-phone {
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 15px;
-  transition: opacity 0.2s;
+  gap: 6px;
+  padding: 5px 0;
+  font-size: 13px;
+  color: #ffffff !important;
   text-decoration: none;
+  transition: color 0.15s, gap 0.15s;
+  line-height: 1.4;
 }
-.nav-phone:hover { opacity: 0.8; }
-.nav-quote-btn { padding: 10px 20px; font-size: 13px; }
+.mega-dropdown .mega-link:hover {
+  color: var(--gold) !important;
+  gap: 10px;
+}
+.mega-link-dot {
+  color: var(--gold);
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity 0.15s;
+}
+.mega-link:hover .mega-link-dot { opacity: 1; }
 
+.mega-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.mega-footer-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.mega-footer-link:hover { opacity: 0.8; }
+.mega-footer-phone {
+  font-size: 13px;
+  color: #9ba3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.mega-footer-phone:hover { color: #fff; }
+
+/* Dropdown animation */
+.dropdown-enter-active,
+.dropdown-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+.dropdown-enter-from,
+.dropdown-leave-to {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-6px);
+}
+
+/* ── Right CTAs ── */
+.topbar-quote-btn {
+  background: #c0392b;
+  color: #fff;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  margin-left: 4px;
+}
+.topbar-quote-btn:hover {
+  background: #a93226;
+  transform: translateY(-1px);
+}
+
+/* ── Hamburger ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -256,67 +414,101 @@ watch(() => route.path, closeAll)
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   margin-left: auto;
 }
 .hamburger span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
-  background: var(--white);
+  background: #2d3a4a;
   border-radius: 2px;
   transition: all 0.25s;
 }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
+/* ── Mobile menu ── */
 .mobile-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
-  padding: 16px 24px 24px;
+  background: #0d1020;
   border-top: 1px solid var(--border);
-  gap: 2px;
   max-height: 80vh;
   overflow-y: auto;
 }
-.mobile-menu a {
-  display: block;
-  padding: 10px 0;
+.mobile-menu > a,
+.mobile-menu > button {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
   font-size: 15px;
-  color: var(--muted);
-  border-bottom: 1px solid var(--border);
-  text-decoration: none;
-}
-.mobile-menu a:hover { color: var(--gold); }
-.mobile-section-toggle {
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  color: var(--white);
-  font-size: 15px;
-  font-weight: 600;
-  padding: 10px 0;
-  cursor: pointer;
-  text-align: left;
-  width: 100%;
   font-family: var(--font-body);
+  color: #c0c8d8;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-decoration: none;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
 }
+.mobile-menu > a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+.mobile-section-toggle {
+  font-weight: 600 !important;
+  color: #fff !important;
+  justify-content: space-between;
+}
+.toggle-icon { color: var(--gold); font-size: 11px; }
+.mobile-services {
+  background: rgba(0,0,0,0.3);
+  padding: 0 0 8px;
+}
+.mobile-services a {
+  display: block;
+  padding: 10px 36px;
+  font-size: 14px;
+  color: #9ba3b8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: color 0.2s;
+}
+.mobile-services a:hover { color: var(--gold); }
 .mobile-section-label {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   color: var(--gold);
-  padding: 12px 0 4px;
-  font-weight: 600;
+  padding: 14px 36px 4px;
+  font-weight: 700;
 }
 .mobile-phone {
   color: var(--gold) !important;
-  font-weight: 700;
-  margin-top: 12px;
-  text-decoration: none;
+  font-weight: 700 !important;
+  background: rgba(245,200,66,0.08) !important;
 }
+
+/* Mobile slide animation */
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: max-height 0.25s ease, opacity 0.2s ease;
+  overflow: hidden;
+}
+.slide-down-enter-from,
+.slide-down-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+.slide-down-enter-to { max-height: 90vh; }
 
 @media (max-width: 1100px) {
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .mobile-menu { display: flex; }
+}
+@media (max-width: 600px) {
+  .topbar-item, .topbar-divider { display: none; }
+  .topbar-phone { margin-left: auto; }
 }
 </style>

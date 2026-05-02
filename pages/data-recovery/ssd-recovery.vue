@@ -1,43 +1,19 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'SSD Data Recovery — NVMe, SATA, mSATA | Five Star Data Recovery',
-  description: 'Professional SSD data recovery for NVMe, SATA, and mSATA drives. Controller failures, NAND chip issues, firmware corruption. No data = no charge. Call 323-672-3000.'
+  title: 'Solid State Drive Recovery — Five Star Data Recovery',
+  description: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagno'
 })
-
-const signs = [
-  'SSD not recognized by your computer or BIOS',
-  'System boots to a black screen or fails to load OS',
-  'Files and folders suddenly missing or inaccessible',
-  'SSD shows as RAW or asks to be formatted',
-  'Extremely slow read/write speeds or system freezes',
-  'Drive disappeared after a power outage or surge',
-  'Error messages like "Disk Not Initialized"',
-  'SSD formatted accidentally or after a failed OS install',
-]
-
-const process = [
-  { step: '01', title: 'Free Diagnosis', desc: 'We evaluate your SSD\'s controller, NAND chips, and firmware using specialized SSD diagnostic tools — at no cost to you.' },
-  { step: '02', title: 'Flat-Rate Quote', desc: 'You receive an upfront price before any work begins. No hourly rates, no surprises.' },
-  { step: '03', title: 'Controller Repair', desc: 'If the controller has failed, we use specialized tools to bypass or repair it, allowing data extraction from the NAND chips.' },
-  { step: '04', title: 'Chip-Off Recovery', desc: 'For severe physical damage, we can perform chip-off recovery — removing NAND chips and reading them directly with specialized equipment.' },
-  { step: '05', title: 'Data Verification', desc: 'Recovered files are verified, organized, and presented for your review before delivery.' },
-  { step: '06', title: 'Secure Delivery', desc: 'Data transferred to a new drive or via secure download. You only pay when satisfied.' },
-]
-
-const whyUs = [
-  { icon: '⚡', title: 'Specialized SSD Tools', desc: 'We use industry-leading SSD recovery hardware that can read raw NAND data regardless of controller state.' },
-  { icon: '🔒', title: 'No Data = No Charge', desc: 'If we cannot recover your data or you decline results, you pay absolutely nothing.' },
-  { icon: '🎯', title: 'High Success Rate', desc: 'We recover data from SSDs that most shops cannot — including encrypted drives and physically damaged chips.' },
-]
-
 const faqs = [
-  { q: 'Is SSD data recovery harder than hard drive recovery?', a: 'SSD recovery requires entirely different tools and techniques than HDD recovery. Most standard recovery software cannot handle SSD failures. Our team has specialized SSD recovery hardware for all architectures.' },
-  { q: 'My SSD has a failed controller — can data still be recovered?', a: 'Often yes. When the SSD controller fails, the NAND chips themselves typically still contain your data. We can bypass the failed controller and read data directly from the chips.' },
-  { q: 'Can you recover data from an encrypted SSD (BitLocker, FileVault)?', a: 'Encryption adds complexity but recovery is still possible in many cases. Contact us with details about your encryption type and we\'ll assess your case.' },
-  { q: 'How much does SSD recovery cost?', a: 'Logical/firmware SSD recovery starts at $300. Controller-level and chip-off recovery is typically $650-$950 depending on complexity. You receive an exact quote before we begin.' },
-  { q: 'What SSD types do you recover from?', a: 'All types: NVMe M.2, SATA M.2, 2.5" SATA SSD, mSATA, PCIe, and proprietary Apple SSD formats. All brands including Samsung, WD, Crucial, Kingston, SK Hynix, Micron, and more.' },
+  { q: '2. What are common signs of SSD failure?', a: 'Common signs include the drive not being recognized by your computer, sudden loss of files, very slow read/write speeds, or the drive appearing with 0GB capacity. In some cases, the SSD may not power on at all.' },
+  { q: '3. Can you recover data from an SSD that shows 0GB capacity or incorrect drive size?', a: 'Yes, we specialize in SSD data recovery , including cases where the drive reports a 0GB capacity or an incorrect size. This issue is often caused by firmware corruption, controller failure, or internal chip damage. Our engineers use advanced tools to access the NAND memory chips directly or repair the SSD’s firmware, allowing us to rebuild the file structure and recover your data. If you notice this issue, it’s important to stop using the SSD immediately to avoid further complications. Contact us for a free consultation to evaluate your specific case.' },
+  { q: '4. What brands of SSDs do you recover data from?', a: 'We recover data from all major SSD brands, including Samsung (EVO, PRO, QVO, and NVMe models), SanDisk, Crucial, Western Digital (WD), Kingston, Seagate, Intel, ADATA, SK Hynix, Toshiba, Corsair, PNY, and Transcend. Whether you’re using a SATA SSD, an NVMe M.2 drive, or an older-generation solid-state drive, our engineers are fully equipped to handle both logical failures (like file system corruption or accidental formatting) and physical issues (such as controller failure, firmware corruption, or NAND chip damage). Even if your brand isn’t listed here, there’s a very good chance we can help—feel free to contact us for a free consultation.' },
+  { q: '5. Can you recover data from an SSD that was inside a MacBook or other non-removable storage device?', a: 'Yes. We specialize in recovering data from MacBooks and other laptops with non-removable SSDs. Many modern MacBooks and ultra-thin laptops have SSD chips that are soldered directly to the motherboard, making traditional data recovery impossible for most shops. At Five Star Data Recovery, our engineers perform component-level repairs and use advanced micro-soldering and chip-off techniques (when necessary) to access the storage directly and extract your data safely. Whether it’s a MacBook Pro, MacBook Air, or any other device with integrated storage, we have the tools and expertise to help.' },
+  { q: '6. How is SSD data recovery different from hard drive recovery?', a: 'Unlike traditional hard drives, SSDs use NAND flash memory with no moving parts. Recovery often involves advanced techniques like chip-off recovery or firmware-level repairs, which require specialized tools and expertise.' },
+  { q: '7. Is TRIM command a problem for SSD data recovery?', a: 'Yes, the TRIM command can complicate recovery. When TRIM is enabled, deleted data is often overwritten and becomes unrecoverable. However, if your data loss wasn’t due to file deletion (e.g., hardware failure), recovery is still very possible.' },
+  { q: '8. How long does SSD data recovery take?', a: 'Typical turnaround time is 3 to 5 business days, but more complex cases involving chip-level work may take longer. If you’re in a hurry, expedited service options are available.' },
+  { q: '9. Will opening my SSD or trying DIY recovery hurt my chances?', a: 'Yes. Attempting to open the drive or use third-party software can make recovery more difficult or even impossible. It’s always best to power off the device and let a professional data recovery lab handle the process.' },
+  { q: '10. How much does SSD data recovery cost?', a: 'At Five Star Data Recovery, SSD data recovery is priced using the same flat-rate model as our other services, ensuring transparency and predictability for every case. Our rates are based on the drive’s storage capacity and the nature of the failure, not on the value of your data or the time it takes to recover it. Here’s a breakdown of our standard SSD recovery pricing: SSDs up to 2TB: $300 SSDs between 2TB and 6TB: $500 SSDs between 8TB and 12TB: $600 SSDs with physical or component-level issues requiring cleanroom repairs: $950 (any size) For example, if you have a 1TB Samsung EVO SSD that stopped showing up due to a firmware failure, the total cost of recovery would be $300 under our standard service. We never charge any upfront fees, and if we are unable to recover your data, you pay nothing. Optional expedited service is also available for time-sensitive projects and will be quoted based on urgency. Every SSD case is handled with care by our experienced recovery engineers using proprietary tools and safe imaging procedures. If you’re unsure about your SSD issue, feel free to contact us for a free diagnostic and exact quote before moving forward.' }
 ]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -45,83 +21,156 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 <template>
   <div>
     <NavBar />
-
     <HeroSection
-      title="SSD Data Recovery"
-      subtitle="Flash Memory Experts. High Success Rates."
-      description="Solid state drives fail differently than hard drives — and recovery requires entirely different expertise and tools. Our engineers specialize in SSD controller repairs, NAND extraction, and chip-off recovery for all SSD types and brands."
+      title="Solid State Drive Recovery"
+      subtitle=""
+      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
     >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ NVMe / SATA / mSATA</span>
-          <span class="badge">✅ Controller Recovery</span>
-          <span class="badge">✅ Chip-Off Capable</span>
-          <span class="badge">✅ No Data = No Charge</span>
+          <span class="badge">✅ Free Evaluation</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
 
-    <section class="intro-section">
+    <section class="section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Expert <span class="gold-underline gold">SSD Recovery</span></h2>
+          <h2 class="section-title">What We Can Recover</h2>
         </div>
-        <div class="intro-content">
-          <p>Solid State Drives are fast, reliable, and compact — but when they fail, recovery requires specialized knowledge that most repair shops simply don't have. Unlike hard drives, SSDs have no moving parts. Instead, they store data on NAND flash memory chips controlled by a sophisticated controller chip.</p>
-          <p>When an SSD fails, the cause could be controller failure, firmware corruption, NAND wear-out, power surge damage, or physical trauma. Each failure type requires a different recovery approach. At Five Star Data Recovery, we use professional-grade SSD recovery hardware — the same tools used by forensic labs and government agencies.</p>
-          <p>Whether your SSD disappeared from the system, shows as RAW, or was accidentally formatted, contact us for a free evaluation. We recover data from NVMe, SATA, mSATA, PCIe, and all other SSD form factors.</p>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Documents, photos, and video files</li>
+            <li>Files from damaged file systems and corrupted partitions</li>
+            <li>Deleted files from formatted SSDs</li>
+            <li>Lost partitions and boot sectors</li>
+            <li>Data from an SSD affected by a failed OS update</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Common SSD Data Loss Scenarios</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Accidental deletion or formatted SSD</li>
+            <li>Power surge or sudden shutdown during data transfer</li>
+            <li>File system corruption and boot issues</li>
+            <li>Firmware bugs or controller failure</li>
+            <li>Trimmed files that bypass the recycle bin</li>
+            <li>Liquid or impact-related physical damage</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our SSD Data Recovery Process</h2>
+        </div>
+        <div class="section-body">
+          <ol class="content-list">
+            <li>Initial Assessment and Diagnostics We begin by evaluating the SSD to determine whether the failure is logical, physical, or firmware-related.</li>
+            <li>Non-Invasive Imaging If possible, we create a complete sector-by-sector clone of the SSD to ensure data safety and integrity.</li>
+            <li>Firmware or Component-Level Repair We perform advanced firmware fixes or physical repairs when the SSD has controller, NAND, or PCB-related issues.</li>
+            <li>File System and Data Recovery We analyze the image to reconstruct file systems, recover lost partitions, and extract user data.</li>
+            <li>Data Approval and Delivery We provide a recovery report, and once approved, transfer the data securely to a new storage device or through encrypted delivery.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How SSDs Work &amp; Why it's Different</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">TRIM Command and Its Impact on Recovery</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">SSD Brands and Devices We Support</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Samsung, SanDisk, Crucial, Kingston, Intel</li>
+            <li>Western Digital, Seagate, Toshiba, SK Hynix</li>
+            <li>Apple SSDs, NVMe drives, PCIe M.2, and SATA III SSDs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Honest diagnostics and flat-rate pricing</li>
+            <li>No-recovery, no-charge guarantee</li>
+            <li>Advanced options for encrypted or damaged SSDs</li>
+            <li>High success rates in difficult data recovery from SSD cases</li>
+            <li>Free Nationwide Priority Shipping - (Round Trip)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Start Your SSD Data Recovery Today</h2>
+        </div>
+        <div class="section-body">
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
       </div>
     </section>
 
-    <section class="signs-section">
+    <section class="faq-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Signs You Need <span class="gold-underline gold">SSD Recovery</span></h2>
-        </div>
-        <div class="signs-grid">
-          <div v-for="sign in signs" :key="sign" class="sign-item">
-            <span class="sign-check">✓</span>
-            <span>{{ sign }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="process-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our SSD <span class="gold-underline gold">Recovery Process</span></h2>
-        </div>
-        <div class="process-grid">
-          <div v-for="p in process" :key="p.step" class="process-card card">
-            <div class="process-num">{{ p.step }}</div>
-            <h3 class="process-title">{{ p.title }}</h3>
-            <p class="process-desc">{{ p.desc }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose <span class="gold-underline gold">Five Star?</span></h2>
-        </div>
-        <div class="grid-3">
-          <div v-for="w in whyUs" :key="w.title" class="why-card card">
-            <div class="why-icon">{{ w.icon }}</div>
-            <h3 class="why-title">{{ w.title }}</h3>
-            <p class="why-desc">{{ w.desc }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2>
+          <h2 class="section-title">Frequently Asked Questions</h2>
         </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
@@ -135,19 +184,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <section class="cta-band">
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
         <div>
-          <h2 class="cta-title">Ready to Recover Your SSD Data?</h2>
-          <p class="cta-sub">Free evaluation. Flat-rate pricing. No charge if we can't recover.</p>
+          <h2 class="cta-title">Need Help With Solid State Drive Recovery?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
         </div>
         <div class="cta-actions">
-          <a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a>
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
           <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
-
     <FooterBar />
   </div>
 </template>
@@ -155,30 +203,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.signs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.sign-item { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--muted); }
-.sign-check { color: var(--gold); font-weight: 700; flex-shrink: 0; }
-.process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.process-num { font-family: var(--font-heading); font-size: 32px; font-weight: 900; color: var(--gold); margin-bottom: 12px; }
-.process-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.process-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
-.why-card { text-align: center; }
-.why-icon { font-size: 36px; margin-bottom: 12px; }
-.why-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.why-desc { font-size: 14px; color: var(--muted); }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: border-color 0.2s; }
+.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
 .faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 56px 0; }
+.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
 .cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
 .cta-sub { font-size: 16px; color: var(--muted); }
 .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background 0.2s; }
+.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .signs-grid, .process-grid { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
 </style>

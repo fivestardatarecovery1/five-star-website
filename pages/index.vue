@@ -1,74 +1,91 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Expert Data Recovery Services — Glendale, CA',
-  description: 'Five Star Data Recovery — professional hard drive, SSD, RAID, and mobile data recovery in Glendale, CA. No data, no charge. Free evaluation. Call 323-672-3000.'
+  description: 'Five Star Data Recovery — professional hard drive, SSD, RAID, and mobile data recovery in Glendale, CA. No data, no charge. Free evaluation. Call 818-272-8866.'
 })
 
 const services = [
-  { icon: '💾', title: 'Hard Drive Recovery', desc: 'Mechanical failures, clicking drives, read errors, and firmware corruption. We recover from all major HDD brands.', href: '/services/hard-drive-recovery' },
-  { icon: '⚡', title: 'SSD Recovery', desc: 'Flash memory failures, controller issues, and NAND chip recovery. Modern SSD forensics and data extraction.', href: '/services/ssd-recovery' },
-  { icon: '🖥️', title: 'RAID / Server Recovery', desc: 'RAID 0, 1, 5, 6, 10, and NAS array reconstruction. Enterprise-grade recovery with minimal downtime.', href: '/services/raid-recovery' },
-  { icon: '💻', title: 'Laptop Recovery', desc: 'Dropped laptops, liquid spills, and dead drives from all brands — Dell, HP, Lenovo, Asus, and more.', href: '/services/laptop-recovery' },
-  { icon: '🗄️', title: 'External HDD Recovery', desc: 'WD My Passport, Seagate Backup Plus, LaCie, and other portable drives recovered quickly.', href: '/services/external-hdd-recovery' },
-  { icon: '🍎', title: 'Mac / iMac Recovery', desc: 'Apple Fusion Drive, T2/M1/M2 chip Macs, and Time Machine failures handled by certified Apple technicians.', href: '/services/mac-recovery' },
-  { icon: '📱', title: 'iPhone & Mobile', desc: 'iOS and Android data recovery from broken screens, water damage, and failed updates.', href: '/services/mobile-recovery' },
-  { icon: '🔌', title: 'USB Flash Drive', desc: 'Broken connectors, failed controllers, and corrupted partitions on USB and thumb drives.', href: '/services/usb-recovery' },
-  { icon: '📷', title: 'SD Card Recovery', desc: 'Camera cards, drone footage, and dashcam recovery from all SD card formats.', href: '/services/hard-drive-recovery' },
-  { icon: '🌐', title: 'NAS Device Recovery', desc: 'Synology, QNAP, Buffalo, and custom NAS enclosures with failed drives or corrupted volumes.', href: '/services/raid-recovery' },
-  { icon: '💧', title: 'Water Damage Recovery', desc: 'Submerged and flood-damaged drives recovered in our cleanroom before corrosion sets in.', href: '/services/hard-drive-recovery' },
-  { icon: '🔥', title: 'Fire & Disaster Recovery', desc: 'Smoke, heat, and physical trauma recovery. We specialize in extreme-condition data extraction.', href: '/services/hard-drive-recovery' },
+  { img: '/service-hdd-new-nobg.png', title: 'Hard Drive Recovery', desc: 'Mechanical failures, clicking drives, read errors, and firmware corruption. We recover from all major HDD brands.', href: '/data-recovery/hard-drive-recovery' },
+  { img: '/service-ssd-new-nobg.png', title: 'SSD Recovery', desc: 'Flash memory failures, controller issues, and NAND chip recovery. NVMe, SATA and mSATA SSDs.', href: '/data-recovery/ssd-recovery' },
+  { img: '/raid-server-data-recovery-glendale-ca-nobg.png', title: 'RAID / Server Recovery', desc: 'RAID 0, 1, 5, 6, 10, and NAS array reconstruction. Enterprise-grade recovery with minimal downtime.', href: '/data-recovery/raid-recovery' },
+  { img: '/laptop-computer-data-recovery-glendale-ca-nobg.png', title: 'Laptop Recovery', desc: 'Dropped laptops, liquid spills, and dead drives from all brands — Dell, HP, Lenovo, Asus, and more.', href: '/data-recovery/laptop-recovery' },
+  { img: '/external-hard-drive-data-recovery-glendale-ca-nobg.png', title: 'External HDD Recovery', desc: 'WD My Passport, Seagate Backup Plus, LaCie, and other portable drives recovered quickly.', href: '/data-recovery/external-hard-drive' },
+  { img: '/mac-imac-macbook-data-recovery-glendale-ca-nobg.png', title: 'Mac / iMac Recovery', desc: 'Apple Fusion Drive, T2/M1/M2 chip Macs, and Time Machine failures handled by certified technicians.', href: '/data-recovery/mac-recovery' },
+  { img: '/service-iphone-nobg.png', title: 'iPhone & Mobile', desc: 'iOS and Android data recovery from broken screens, water damage, and failed updates.', href: '/data-recovery/iphone-recovery', small: true },
+  { img: '/service-sd-new-nobg.png', title: 'SD Card Recovery', desc: 'Camera cards, drone footage, and dashcam recovery from all SD card formats.', href: '/data-recovery/sd-card-recovery' },
+  { img: '/nas-network-attached-storage-data-recovery-glendale-ca-nobg.png', title: 'NAS Device Recovery', desc: 'Synology, QNAP, Buffalo, and custom NAS enclosures with failed drives or corrupted volumes.', href: '/data-recovery/nas-recovery' },
+  { img: '/deleted-file-recovery-service-glendale-ca-nobg.png', title: 'Deleted File Recovery', desc: 'Accidentally deleted files, formatted drives, and corrupted partitions recovered safely.', href: '/data-recovery/deleted-files' },
+  { img: '/clean-room-data-recovery-equipment-glendale-ca-nobg.png', title: 'Clean Room Recovery', desc: 'ISO Class 5 cleanroom for physically damaged drives with platter, head, and motor failures.', href: '/data-recovery/clean-room' },
+  { img: '/cfast-card-data-recovery-service-glendale-ca-nobg.png', title: 'Video File Repair', desc: 'Corrupted, unplayable, or damaged video footage recovered from cameras, drones, and all formats.', href: '/data-recovery/video-file-repair' },
 ]
 
 const whyUs = [
-  { icon: '🏆', title: 'No Data = No Charge', desc: 'You only pay if we successfully recover your data. Zero risk to you.' },
-  { icon: '🔒', title: 'Cleanroom Facility', desc: 'ISO Class 5 cleanroom for all hard drive and physical media repairs.' },
-  { icon: '⚡', title: '24-48 Hour Turnaround', desc: 'Emergency same-day service available. We work around the clock.' },
-  { icon: '✈️', title: 'Free Nationwide Shipping', desc: 'Ship your device to us for free. We pay both ways.' },
-  { icon: '⭐', title: '5.0 Star Rating', desc: 'Hundreds of 5-star reviews from businesses and individuals across the US.' },
-  { icon: '🔐', title: '100% Confidential', desc: 'Your data is never shared. Strict privacy policy and NDA available.' },
-  { icon: '📞', title: 'Available 24/7/365', desc: 'Our team never sleeps. Call us anytime, even on holidays.' },
-  { icon: '🛡️', title: '10+ Years Experience', desc: 'Over a decade recovering critical data for businesses and families.' },
+  { icon: '🚫💰', title: 'No Data = No Charge', desc: 'If we aren\'t able to recover your data — or you\'re not 100% satisfied with the results — you can decline the recovery and pay nothing.' },
+  { icon: '📋', title: 'Flat Rate Pricing', desc: 'All of our prices are upfront and transparent. Flat rate pricing based on the exact issue with your drive. Never any bait and switch gimmicks.' },
+  { icon: '👨‍💻', title: 'Top Notch Engineers', desc: 'All of our engineers have received the highest level of training — equipped to handle all types of logical and Clean Room recoveries.' },
+  { icon: '⭐', title: 'Five Star Service', desc: 'We take pride in providing only the best customer service possible. Five Star is more than just a name for us — it\'s a way of doing business.' },
+  { icon: '⚡', title: 'Expedited Service', desc: 'We offer both Expedited and Expedited Plus Data Recovery Services. Contact us today for more information on both options.' },
+  { icon: '📞', title: 'Available 24/7', desc: 'Have a question at 1:00 am? Not a problem. Give us a call and one of our staff members will be happy to answer your questions.' },
+  { icon: '🔒', title: 'Data Security', desc: 'Our state-of-the-art laboratory was built in 2014 with data security as the main priority. We take all steps necessary to ensure your data privacy.' },
+  { icon: '🔔', title: 'Case Updates', desc: 'Our engineers will keep you posted with updates throughout the entire recovery process. Stay connected with your engineers every step of the way.' },
 ]
 
 const steps = [
-  { num: '01', title: 'Contact Us', desc: 'Call 323-672-3000 or fill out our form. We respond within 1 hour.' },
-  { num: '02', title: 'Free Evaluation', desc: 'Ship your device to us for free. We assess the damage at no charge.' },
-  { num: '03', title: 'Get a Quote', desc: 'We provide a flat-rate quote before any work begins. No surprises.' },
-  { num: '04', title: 'Recovery Work', desc: 'Our engineers work in our cleanroom to recover every recoverable file.' },
-  { num: '05', title: 'Data Delivered', desc: 'Receive your data on a new drive or via secure download. Done.' },
+  { num: '1', title: 'Drop off or Mail in Your Drive', desc: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
+  { num: '2', title: 'Receive a Free Diagnosis', desc: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
+  { num: '3', title: 'Our Engineers Work on Recovering Your Data', desc: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
+  { num: '4', title: 'Review & Approve the Recovered Data', desc: 'After recovery is complete, you\'ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.' },
+  { num: '5', title: 'Receive Your Recovered Data', desc: 'Once approved, we\'ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.' },
 ]
 
 const reviews = [
   {
-    name: 'Michael T.',
-    role: 'Small Business Owner',
+    name: 'Daniel K.',
+    role: 'Santa Monica, CA',
     stars: 5,
-    text: 'My RAID server failed and I thought 8 years of business data was gone forever. Five Star recovered 100% of it within 48 hours. Worth every penny.',
+    text: 'We had a failed RAID 5 array with two bad drives, and our business data was at risk. Five Star Data Recovery worked through the night with their Expedited Plus Service and got us back up and running in 48 hours. True professionals.',
   },
   {
-    name: 'Sarah K.',
-    role: 'Photographer',
+    name: 'Linda M.',
+    role: 'Austin, TX',
     stars: 5,
-    text: 'Dropped my external hard drive with 3 years of wedding photography. They recovered every single file. I cried when I got the call. Incredible team.',
+    text: 'My laptop\'s SSD just disappeared from the system. No backups, nothing. I contacted several companies, and Five Star stood out. They explained the process clearly and recovered my most important work files. SSD recovery experts for sure.',
   },
   {
-    name: 'James R.',
-    role: 'IT Manager',
+    name: 'Jason T.',
+    role: 'New York, NY',
     stars: 5,
-    text: 'We use Five Star for all our enterprise data emergencies. Professional, fast, and the cleanroom facility is state-of-the-art. Highly recommend.',
+    text: 'I broke my USB flash drive during a presentation — completely bent the connector. I thought I had lost all my client data. The team at Five Star carefully extracted the chip and recovered all of it. I\'m beyond impressed.',
+  },
+  {
+    name: 'Alex R.',
+    role: 'Pasadena, CA',
+    stars: 5,
+    text: 'I thought my external hard drive was completely dead — it wasn\'t even spinning. Five Star Data Recovery not only diagnosed the problem fast but recovered all my photos and documents within a few days. Highly recommend them for hard drive recovery!',
+  },
+  {
+    name: 'Megan S.',
+    role: 'Los Angeles, CA',
+    stars: 5,
+    text: 'My iPhone had severe water damage and wouldn\'t turn on at all. I had years of family photos that I thought were gone forever. These guys are miracle workers — they recovered everything from my iPhone. Absolutely worth it!',
   },
 ]
 
 const faqs = [
-  { q: 'How much does data recovery cost?', a: 'Our pricing depends on the type of device and severity of damage. We offer free evaluations and flat-rate quotes before any work begins. Standard recovery starts from $299.' },
-  { q: 'How long does the recovery process take?', a: 'Standard turnaround is 3-5 business days. Rush service (24-48 hours) is available for emergencies. We\'ll give you a timeline after evaluation.' },
-  { q: 'What if you can\'t recover my data?', a: 'Simple — you pay nothing. Our "No Data = No Charge" policy means you only pay if we successfully recover your files.' },
-  { q: 'Do I need to bring my device in person?', a: 'No. We provide free nationwide shipping both ways. Just contact us and we\'ll send a prepaid shipping label.' },
-  { q: 'Is my data kept confidential?', a: 'Absolutely. We have strict confidentiality policies and can sign an NDA upon request. Your data is never shared or copied.' },
-  { q: 'What types of drives can you recover from?', a: 'We recover from all storage media: hard drives, SSDs, RAID arrays, NAS devices, external drives, USB flash drives, SD cards, and mobile devices.' },
-  { q: 'My hard drive is making a clicking noise — is recovery still possible?', a: 'Yes, but time is critical. A clicking drive means head failure. Stop using it immediately and contact us. The sooner we receive it, the better the recovery chances.' },
-  { q: 'Do you have a physical location I can visit?', a: 'Yes! Our lab is located at 1731 S Brand Blvd Suite 100, Glendale, CA 91204. Walk-ins are welcome during business hours.' },
+  { q: 'What types of devices do you recover data from?', a: 'We recover data from <strong>hard drives, SSDs, RAID arrays, iPhones, CFast Cards, USB flash drives, SD cards</strong> and more.' },
+  { q: 'Do you offer free diagnostics?', a: 'Yes — we offer a <strong>free diagnosis</strong> as long as the customer agrees to the initial minimum quoted price.<br><br>We always start with a free consultation, during which we ask for details about the issue. Based on the information provided, we give an initial price quote. If the customer is comfortable with that price, we proceed with a full diagnostic at no charge.<br><br>If the issue turns out to be different and the price changes, the customer will have the option to accept the updated quote or walk away without paying anything.<br><br><strong>We\'re 100% transparent — no surprises and no obligations.</strong>' },
+  { q: 'How much does data recovery cost?', a: 'All of our data recovery fees are <strong>flat-rate</strong>, based on the specific issue and type of device.<br><br>We\'ve made pricing simple and transparent — you can view our current rates on our <strong>pricing page</strong>.<br><br>If you\'re unsure what the issue is, just give us a call for a free phone consultation. Our team will guide you through the symptoms and help you understand what category your device might fall into.<br><br><strong>No hidden fees. No gimmicks. Just honest, upfront pricing from start to finish.</strong>' },
+  { q: 'What if you can\'t recover my data?', a: 'We operate under a <strong>No Data — No Charge</strong> policy for most cases.<br><br>However, there are two exceptions where a non-refundable fee will apply, due to the higher complexity and labor involved:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;📁 <strong>Deleted File Recoveries</strong> — These require advanced scanning and are not covered under the standard policy.<br>&nbsp;&nbsp;&nbsp;&nbsp;🔧 <strong>Drives with Opened Covers</strong> — If the top metal cover (where the platters are housed) has been removed before arrival, a cleanroom inspection fee will be charged regardless of outcome.<br><br>For all other cases, if we can\'t recover your data, <strong>you don\'t pay anything</strong>.' },
+  { q: 'How long does the data recovery process take?', a: 'For most standard cases — such as drives up to 4TB with logical issues — the typical turnaround time is <strong>3 to 5 business days</strong>.<br><br>More complex recoveries (e.g., drives with mechanical damage or larger than 4TB) may take longer depending on the severity of the issue and parts availability.<br><br>If you need your data back quickly, we offer two fast-track options:<br><br>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Expedited Service:</strong> Priority recovery during business hours.<br>&nbsp;&nbsp;&nbsp;&nbsp;• <strong>Expedited Plus Service:</strong> 24/7 emergency recovery, including weekends and holidays.<br><br>You choose the timeline — we make it happen.' },
+  { q: 'Are you able to recover data from physically damaged drives?', a: 'Yes, we specialize in recovering data from drives with <strong>physical damage</strong>, including those that are clicking, not spinning, or water-damaged.' },
+  { q: 'Where is your data recovery lab located?', a: 'Our main data recovery lab is located in <strong>Glendale, California</strong>, and we proudly serve the entire Los Angeles area.<br><br>Not located nearby? No problem — we offer <strong>free and fast nationwide shipping</strong> within the U.S.<br><br>Whether you\'re in California or across the country, we make it easy to send in your device securely and get the recovery process started.' },
+  { q: 'Do you offer emergency or after-hours data recovery?', a: 'Yes, our <strong>Expedited Plus Service</strong> offers 24/7 emergency data recovery, even on weekends and holidays.' },
 ]
+
+const reviewIndex = ref(0)
+const maxReviewIndex = reviews.length - 3
+const nextReview = () => { reviewIndex.value = reviewIndex.value >= maxReviewIndex ? 0 : reviewIndex.value + 1 }
+const prevReview = () => { reviewIndex.value = reviewIndex.value <= 0 ? maxReviewIndex : reviewIndex.value - 1 }
 
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => {
@@ -85,8 +102,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
     <!-- Hero -->
     <HeroSection
       title="Recovering What Can't Be Replaced"
-      subtitle="Get Your Data Back. Guaranteed."
-      description="Professional data recovery for hard drives, SSDs, RAID systems, and mobile devices. No data recovered = no charge. Free evaluation on every case."
+      subtitle="Get Your Data Back In No Time."
+      description="At Five Star Data Recovery, we offer clear, flat-rate pricing for all of our professional data recovery services. You'll never have to guess how much it will cost to recover your important files. Whether you're dealing with a failed hard drive, damaged SSD, or a non-responsive flash drive, our team is here to help with transparent pricing and no hidden fees. Simply visit our pricing page or contact us for a free consultation to get started."
     >
       <template #badges>
         <div class="trust-badges">
@@ -98,39 +115,32 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
       </template>
     </HeroSection>
 
-    <!-- Trust Logos Strip -->
-    <section class="trust-strip">
-      <div class="container">
-        <p class="strip-label">We Recover From All Major Brands</p>
-        <div class="logo-badges">
-          <span v-for="p in partners" :key="p" class="logo-badge">{{ p }}</span>
-        </div>
-      </div>
-    </section>
+    <StatsBar />
 
     <!-- Services Grid -->
-    <section class="services-section">
+    <section class="services-section section-dark-gray">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Our <span class="gold-underline gold">Recovery Services</span></h2>
-          <p class="section-subtitle">Whatever the device, whatever the damage — we've seen it before and we've recovered it before.</p>
+          <h2 class="section-title">Data Recovery Services</h2>
+          <p class="section-subtitle">From physically damaged drives to complex RAID failures — our engineers deliver results when it matters most.</p>
         </div>
         <div class="services-grid">
-          <div v-for="s in services" :key="s.title" class="service-card card">
-            <div class="service-icon">{{ s.icon }}</div>
+          <NuxtLink v-for="s in services" :key="s.title" :to="s.href" class="service-card card">
+            <div class="service-img-wrap">
+              <img :src="s.img" :alt="s.title" class="service-img" :class="{ 'service-img-small': s.small }" />
+            </div>
             <h3 class="service-title">{{ s.title }}</h3>
             <p class="service-desc">{{ s.desc }}</p>
-            <NuxtLink :to="s.href" class="service-link">Learn More →</NuxtLink>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-section">
+    <section class="why-section section-white">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Why Choose <span class="gold-underline gold">Five Star</span>?</h2>
+          <h2 class="section-title">Why Choose Five Star Data Recovery</h2>
           <p class="section-subtitle">We've built our reputation on results, transparency, and treating every client's data like it's irreplaceable — because it is.</p>
         </div>
         <div class="grid-4">
@@ -144,92 +154,167 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
     </section>
 
     <!-- Process -->
-    <section class="process-section">
+    <section class="process-section section-dark-gray">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">How It <span class="gold-underline gold">Works</span></h2>
-          <p class="section-subtitle">Simple, transparent, and stress-free from start to finish.</p>
+          <h2 class="section-title">Our Data Recovery Process</h2>
+          <p class="section-subtitle">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.</p>
         </div>
         <div class="process-steps">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-step">
+          <div v-for="step in steps" :key="step.num" class="process-step">
+            <div class="step-label">STEP</div>
             <div class="step-num">{{ step.num }}</div>
-            <div class="step-content">
-              <h3 class="step-title">{{ step.title }}</h3>
-              <p class="step-desc">{{ step.desc }}</p>
-            </div>
-            <div v-if="i < steps.length - 1" class="step-arrow">→</div>
+            <div class="step-divider" />
+            <h3 class="step-title">{{ step.title }}</h3>
+            <p class="step-desc">{{ step.desc }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats Bar -->
-    <section class="stats-bar">
-      <div class="container stats-inner">
-        <div class="stat">
-          <span class="stat-num">10+</span>
-          <span class="stat-label">Years in Business</span>
-        </div>
-        <div class="stat-divider" />
-        <div class="stat">
-          <span class="stat-num">5.0</span>
-          <span class="stat-label">Star Rating</span>
-        </div>
-        <div class="stat-divider" />
-        <div class="stat">
-          <span class="stat-num">21,000+</span>
-          <span class="stat-label">Drives Recovered</span>
-        </div>
-        <div class="stat-divider" />
-        <div class="stat">
-          <span class="stat-num">100%</span>
-          <span class="stat-label">Confidential</span>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Reviews -->
-    <section class="reviews-section">
+    <section class="reviews-section section-bg-2">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">What Our <span class="gold-underline gold">Clients Say</span></h2>
-          <p class="section-subtitle">Real stories from real people who trusted us with their most important data.</p>
+          <h2 class="section-title">Reviews from Satisfied Clients</h2>
+          <p class="section-subtitle">Don't take our word for it. Here's what our clients have to say about their experience with Five Star Data Recovery.</p>
         </div>
-        <div class="grid-3">
-          <div v-for="r in reviews" :key="r.name" class="review-card card">
-            <div class="review-stars">{{ '★'.repeat(r.stars) }}</div>
-            <p class="review-text">"{{ r.text }}"</p>
-            <div class="review-author">
-              <span class="author-name">{{ r.name }}</span>
-              <span class="author-role">{{ r.role }}</span>
+        <div class="reviews-carousel">
+          <button class="carousel-btn carousel-prev" @click="prevReview" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="carousel-window">
+            <div class="carousel-track" :style="{ transform: `translateX(calc(-${reviewIndex} * (33.333% + 20px)))` }">
+              <div v-for="r in reviews" :key="r.name" class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">&ldquo;{{ r.text }}&rdquo;</p>
+                <div class="review-author">
+                  <div class="author-avatar">{{ r.name.charAt(0) }}</div>
+                  <div>
+                    <div class="author-name">{{ r.name }}</div>
+                    <div class="author-role">{{ r.role }}</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+          <button class="carousel-btn carousel-next" @click="nextReview" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div v-if="reviews.length > 3" class="carousel-dots">
+          <button v-for="(_, i) in reviews" :key="i" class="carousel-dot" :class="{ active: i === reviewIndex }" @click="reviewIndex = i" />
         </div>
       </div>
     </section>
 
     <!-- Second CTA -->
-    <section class="cta-section">
-      <div class="container cta-inner">
-        <div class="cta-copy">
-          <h2 class="section-title">Don't Wait — <span class="gold">Every Hour Matters</span></h2>
-          <p class="section-subtitle" style="max-width:480px">The longer a failing drive operates, the lower your chances of full recovery. Contact us now for a free, no-obligation evaluation.</p>
-          <a href="tel:3236723000" class="btn btn-gold" style="font-size:18px;padding:16px 36px">📞 Call 323-672-3000</a>
+    <!-- Video Section -->
+    <section class="video-section section-dark-gray">
+      <div class="container video-inner">
+        <div class="video-copy">
+          <h2 class="section-title">See Why Thousands Trust Us With Their Important Data</h2>
+          <p class="video-desc">Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
-        <div class="cta-form-wrap">
-          <HeroSection
-            title=""
-            subtitle=""
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60"
+            title="Five Star Data Recovery"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
           />
         </div>
       </div>
     </section>
 
+    <section class="cta-section">
+      <div class="container">
+      <div class="cta-two-col">
+        <!-- Left: dark image side -->
+        <div class="cta-left">
+          <h2 class="cta-heading">Get a Free Quote within Minutes!</h2>
+          <p class="cta-desc">Our expert engineers use advanced technology to recover your data quickly and securely. We specialize in complex cases with high success rates, offering tailored solutions for both businesses and individuals. Fill out the form to start a seamless recovery process.</p>
+          <ul class="cta-bullets">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Quick and Secure Data Recovery</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Expert Engineers for All Devices</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No Data, No Fee Guarantee</li>
+          </ul>
+          <p class="cta-desc">Contact our specialists today for a quick, hassle-free recovery. We’re here to guide you every step of the way and ensure your data is securely restored. Your peace of mind is our priority.</p>
+        </div>
+        <!-- Right: form -->
+        <div class="cta-right">
+          <form @submit.prevent class="cta-form">
+            <div class="cta-form-row">
+              <div class="cta-field">
+                <label>NAME <span class="req">*</span></label>
+                <input type="text" placeholder="Name / Required" />
+              </div>
+              <div class="cta-field">
+                <label>EMAIL <span class="req">*</span></label>
+                <input type="email" placeholder="Email Address / Required" />
+              </div>
+            </div>
+            <div class="cta-form-row">
+              <div class="cta-field">
+                <label>SELECT YOUR DEVICE TYPE</label>
+                <div class="cta-select-wrap">
+                  <select><option value="">Device Type</option><option>Hard Drive</option><option>SSD</option><option>RAID/Server</option><option>Laptop</option><option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option><option>USB Flash Drive</option><option>SD Card</option><option>Other</option></select>
+                  <svg class="sel-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+                </div>
+              </div>
+              <div class="cta-field">
+                <label>PHONE</label>
+                <input type="tel" placeholder="Phone Number / Required" />
+              </div>
+            </div>
+            <div class="cta-form-row">
+              <div class="cta-field">
+                <label>SELECT ISSUE WITH DEVICE</label>
+                <div class="cta-select-wrap">
+                  <select><option value="">Select Issue with Device</option><option>Not Detected</option><option>Clicking/Grinding Noise</option><option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option><option>Physical Damage</option><option>Other</option></select>
+                  <svg class="sel-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+                </div>
+              </div>
+              <div class="cta-field">
+                <label>Preferred Contact Method</label>
+                <div class="cta-radio-group">
+                  <label><input type="radio" name="ctaContact" value="call" checked /> CALL</label>
+                  <label><input type="radio" name="ctaContact" value="email" /> EMAIL</label>
+                  <label><input type="radio" name="ctaContact" value="text" /> TEXT</label>
+                </div>
+              </div>
+            </div>
+            <div class="cta-form-row">
+              <div class="cta-field" style="grid-column: 1 / -1">
+                <label>PREFERRED RESPONSE TIME</label>
+                <div class="cta-select-wrap">
+                  <select>
+                    <option value="">Select Preferred Time</option>
+                    <option>Immediately (24/7)</option>
+                    <option>During Business Hours</option>
+                    <option>Morning (8am – 12pm)</option>
+                    <option>Afternoon (12pm – 5pm)</option>
+                    <option>Evening (5pm – 8pm)</option>
+                  </select>
+                  <svg class="sel-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="cta-submit">Get a Quote!</button>
+          </form>
+        </div>
+      </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="faq-section">
+    <section class="faq-section section-dark-gray">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2>
+          <h2 class="section-title">Frequently Asked Questions</h2>
         </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
@@ -237,7 +322,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
               <span>{{ faq.q }}</span>
               <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
             </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
       </div>
@@ -272,29 +357,45 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   border-bottom: 1px solid var(--border);
   padding: 28px 0;
 }
-.strip-label {
-  text-align: center;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--muted);
-  margin-bottom: 18px;
+.hero-stats-strip {
+  background: #111111;
+  background-image: radial-gradient(circle, rgba(245,200,66,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  border-top: 3px solid var(--gold);
+  border-bottom: 3px solid var(--gold);
+  padding: 44px 0;
 }
-.logo-badges {
+.hero-stats-inner {
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 16px;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
 }
-.logo-badge {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid var(--border);
-  color: var(--muted);
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-size: 13px;
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.hero-stat-num {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  color: #aab0be;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.hero-stat-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.12);
 }
 
 /* Services */
@@ -303,7 +404,24 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-.service-icon { font-size: 32px; margin-bottom: 12px; }
+.service-img-wrap {
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  background: transparent;
+}
+.service-img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.service-card:hover .service-img { transform: scale(1.05); }
+.service-img-small { height: 75% !important; }
 .service-title {
   font-family: var(--font-heading);
   font-size: 16px;
@@ -312,8 +430,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   color: var(--white);
 }
 .service-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; }
-.service-link { color: var(--gold); font-size: 14px; font-weight: 600; transition: opacity 0.2s; }
-.service-link:hover { opacity: 0.8; }
+.service-card { display: block; text-decoration: none; cursor: pointer; }
+.service-card:hover { border-color: var(--gold); transform: translateY(-3px); }
 
 @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .services-grid { grid-template-columns: 1fr; } }
@@ -331,53 +449,72 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
 .why-desc { font-size: 14px; color: var(--muted); }
 
 /* Process */
-.process-section { background: var(--card-bg); }
 .process-steps {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
 }
 .process-step {
+  flex: 1;
+  background: #1e2130;
+  border: 1px solid rgba(245,200,66,0.15);
+  border-radius: 12px;
+  padding: 28px 20px 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  flex: 1;
-  min-width: 160px;
   position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.process-step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+}
+.step-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 2px;
+  text-transform: uppercase;
 }
 .step-num {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: #0A0C14;
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 52px;
   font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-  flex-shrink: 0;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.step-divider {
+  width: 36px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-bottom: 14px;
 }
 .step-title {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--white);
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
-.step-desc { font-size: 13px; color: var(--muted); }
-.step-arrow {
-  font-size: 24px;
-  color: var(--gold);
-  align-self: flex-start;
-  margin-top: 14px;
-  flex-shrink: 0;
+.step-desc {
+  font-size: 13px;
+  color: #9ba3b8;
+  line-height: 1.6;
+  flex: 1;
 }
-@media (max-width: 768px) { .step-arrow { display: none; } }
+@media (max-width: 900px) {
+  .process-steps { flex-wrap: wrap; }
+  .process-step { min-width: calc(50% - 8px); flex: none; }
+}
+@media (max-width: 540px) {
+  .process-step { min-width: 100%; }
+}
 
 /* Stats bar */
 .stats-bar {
@@ -412,44 +549,291 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
 @media (max-width: 640px) { .stat-divider { display: none; } }
 
 /* Reviews */
-.review-stars { color: var(--gold); font-size: 20px; letter-spacing: 2px; margin-bottom: 14px; }
-.review-text { font-size: 15px; color: var(--muted); font-style: italic; line-height: 1.7; margin-bottom: 20px; }
-.review-author { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 3px; }
-.author-name { font-weight: 700; font-size: 15px; color: var(--white); }
-.author-role { font-size: 13px; color: var(--muted); }
+/* Reviews carousel */
+.reviews-carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.carousel-window {
+  flex: 1;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease;
+  /* each card = (100% - 2 gaps) / 3 = calc(33.333% - 14px) */
+}
+.review-card {
+  flex: 0 0 calc(33.333% - 14px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+}
+.review-stars { color: #F5C842; font-size: 22px; letter-spacing: 3px; margin-bottom: 16px; }
+.review-text {
+  font-size: 16px;
+  color: #2d3a4a;
+  font-style: italic;
+  line-height: 1.75;
+  flex: 1;
+  margin-bottom: 24px;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid #e8ecf4;
+  padding-top: 16px;
+}
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e8ecf4;
+  color: #4a5568;
+  font-weight: 800;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.author-name { font-weight: 700; font-size: 15px; color: #0d1520; }
+.author-role { font-size: 13px; color: #F5C842; font-weight: 600; }
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #e2e8f0;
+  background: #ffffff;
+  color: #2d3a4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.carousel-btn:hover { border-color: #F5C842; color: #F5C842; }
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d0d7e4;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s;
+}
+.carousel-dot.active {
+  background: #F5C842;
+  width: 24px;
+  border-radius: 4px;
+}
 
-/* CTA section */
-.cta-section { background: var(--card-bg); }
-.cta-inner {
+/* Video section */
+.video-section { padding: 70px 0; }
+.video-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
 }
-.cta-form-wrap :deep(.hero) {
-  background: transparent;
-  padding: 0;
+.video-copy { display: flex; flex-direction: column; gap: 20px; }
+.video-copy .section-title { font-size: 32px; line-height: 1.25; }
+.video-desc { font-size: 15px; color: #9ba3b8; line-height: 1.8; }
+.video-embed {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.15);
 }
-.cta-form-wrap :deep(.hero-inner) {
-  grid-template-columns: 1fr;
-}
-.cta-form-wrap :deep(.hero-copy) {
-  display: none;
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 900px) {
-  .cta-inner { grid-template-columns: 1fr; }
+  .video-inner { grid-template-columns: 1fr; }
+}
+
+/* CTA section */
+.cta-section { padding: 60px 0; background: #f4f6fa; }
+.cta-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.13);
+}
+.cta-left {
+  background: linear-gradient(rgba(10,12,20,0.82), rgba(10,12,20,0.82)),
+    url('/data-recovery-clean-room-technician-glendale-ca.jpg') center/cover no-repeat;
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.cta-heading {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1.2;
+}
+.cta-desc {
+  font-size: 15px;
+  color: #c8d0e0;
+  line-height: 1.75;
+}
+.cta-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cta-bullets li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.cta-right {
+  background: #ffffff;
+  padding: 48px 44px;
+  display: flex;
+  align-items: center;
+}
+.cta-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.cta-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.cta-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.cta-field label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #555;
+}
+.req { color: #e53935; }
+.cta-field input {
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+}
+.cta-field input:focus { outline: none; border-color: var(--gold); }
+.cta-select-wrap { position: relative; }
+.cta-select-wrap select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 36px 0 16px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.cta-select-wrap select:focus { outline: none; border-color: var(--gold); }
+.sel-arrow { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); pointer-events: none; }
+.cta-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 50px;
+}
+.cta-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  color: #444 !important;
+  cursor: pointer;
+}
+.cta-radio-group input[type="radio"] { accent-color: var(--gold); width: 16px; height: 16px; }
+.cta-submit {
+  width: 100%;
+  height: 58px;
+  background: var(--gold);
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+.cta-submit:hover { background: var(--gold-dark); transform: translateY(-1px); }
+@media (max-width: 900px) {
+  .cta-two-col { grid-template-columns: 1fr; }
+  .cta-left { padding: 40px 28px; }
+  .cta-right { padding: 36px 28px; }
 }
 
 /* FAQ */
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.faq-list { width: 100%; display: flex; flex-direction: column; gap: 10px; }
 .faq-item {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: #1e2130;
+  border: 1px solid #363a4a;
   border-radius: 10px;
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.faq-item.open { border-color: var(--gold); }
+.faq-item.open {
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(245,200,66,0.1);
+}
 .faq-question {
   width: 100%;
   display: flex;
@@ -458,7 +842,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   padding: 20px 24px;
   background: none;
   border: none;
-  color: var(--white);
+  color: #e8ecf4;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -473,9 +857,11 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   flex-shrink: 0;
 }
 .faq-answer {
-  padding: 0 24px 20px;
   font-size: 15px;
-  color: var(--muted);
-  line-height: 1.7;
+  color: #9ba3b8;
+  line-height: 1.75;
+  border-top: 1px solid #2d3144;
+  padding: 16px 24px 22px;
 }
+.faq-answer strong { color: #ffffff; }
 </style>

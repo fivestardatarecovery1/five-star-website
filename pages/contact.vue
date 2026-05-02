@@ -1,146 +1,94 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Contact Five Star Data Recovery — 24/7 Support',
-  description: 'Contact Five Star Data Recovery. Call 323-672-3000. Located at 1731 S Brand Blvd Suite 100, Glendale, CA 91204. Available 24/7/365. Free evaluation.'
+  title: 'We\'re Here to Help — Five Star Data Recovery',
+  description: '“Five Star saved my wedding footage after my external drive failed. I’m so grateful — professional, fast, and no pressure.”'
 })
-
-const submitted = ref(false)
-const form = reactive({
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  deviceType: '',
-  issue: '',
-  message: ''
-})
-
-function handleSubmit() {
-  submitted.value = true
-}
 </script>
 
 <template>
   <div>
     <NavBar />
     <HeroSection
-      title="Contact Five Star Data Recovery"
-      subtitle="Available 24/7/365. Free Evaluation on Every Case."
-      description="Call us, fill out the form, or visit our Glendale lab. We respond within 1 hour and begin evaluation the same day we receive your device."
+      title="We're Here to Help"
+      subtitle="Need help or have a question? You’re in the right place. Whether you're looking for an update on your ongoing case, want to start a new data recovery, or have billing or account-related questions, our team is here to assist you. We also welcome media, marketing, and partnership inquiries through this form. Customer feedback is extremely important to us—feel free to share your experience or suggestions. Our specialists are available 7 days a week to ensure you get the support you need. Simply fill out the contact form below or give us a call. We’ll get back to you promptly."
+      description="“Five Star saved my wedding footage after my external drive failed. I’m so grateful — professional, fast, and no pressure.”"
     >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">📞 323-672-3000</span>
-          <span class="badge">⏰ Available 24/7</span>
           <span class="badge">✅ Free Evaluation</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
 
-    <section class="contact-section">
-      <div class="container contact-grid">
-        <!-- Left: Info -->
-        <div class="contact-info">
-          <h2 class="section-title">Get in <span class="gold-underline gold">Touch</span></h2>
-          <p class="contact-intro">We respond to every inquiry within 1 hour. Our team is available 24 hours a day, 7 days a week, 365 days a year — including holidays.</p>
-
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="method-icon">📞</div>
-              <div class="method-info">
-                <div class="method-label">Call Us (Fastest)</div>
-                <a href="tel:3236723000" class="method-value gold">323-672-3000</a>
-                <div class="method-note">Available 24/7/365</div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="method-icon">📍</div>
-              <div class="method-info">
-                <div class="method-label">Visit Our Lab</div>
-                <div class="method-value">1731 S Brand Blvd Suite 100</div>
-                <div class="method-note">Glendale, CA 91204 — Walk-ins welcome</div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="method-icon">✉️</div>
-              <div class="method-info">
-                <div class="method-label">Email</div>
-                <a href="mailto:info@fivestardatarecovery.com" class="method-value gold">info@fivestardatarecovery.com</a>
-                <div class="method-note">Response within 1 hour</div>
-              </div>
-            </div>
-            <div class="contact-method">
-              <div class="method-icon">✈️</div>
-              <div class="method-info">
-                <div class="method-label">Free Nationwide Shipping</div>
-                <div class="method-value">We send the prepaid label to you</div>
-                <div class="method-note">Both ways, fully insured</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hours-card card">
-            <h3 class="hours-title">Lab Hours</h3>
-            <div class="hours-grid">
-              <span class="day">Monday – Friday</span><span class="time">9:00 AM – 6:00 PM</span>
-              <span class="day">Saturday</span><span class="time">10:00 AM – 4:00 PM</span>
-              <span class="day">Sunday</span><span class="time">By Appointment</span>
-              <span class="day">Phone / Emergency</span><span class="time gold">24/7/365</span>
-            </div>
-          </div>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">We're Here to Help</h2>
         </div>
+        <div class="section-body">
 
-        <!-- Right: Form -->
-        <div class="contact-form-wrap">
-          <div v-if="!submitted" class="contact-form-card card">
-            <h3 class="form-title">Send Us a Message</h3>
-            <p class="form-intro">Fill out the form below and we'll respond within 1 hour.</p>
-            <form @submit.prevent="handleSubmit" class="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input v-model="form.firstName" type="text" placeholder="John" required />
-                </div>
-                <div class="form-group">
-                  <label>Last Name</label>
-                  <input v-model="form.lastName" type="text" placeholder="Smith" required />
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Email</label>
-                <input v-model="form.email" type="email" placeholder="john@email.com" required />
-              </div>
-              <div class="form-group">
-                <label>Phone</label>
-                <input v-model="form.phone" type="tel" placeholder="(555) 000-0000" required />
-              </div>
-              <div class="form-group">
-                <label>Device Type</label>
-                <select v-model="form.deviceType" required>
-                  <option value="" disabled>— Select device —</option>
-                  <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                  <option>Laptop</option><option>External HDD</option><option>Mac/iMac</option>
-                  <option>iPhone/Mobile</option><option>USB Flash Drive</option>
-                  <option>SD Card</option><option>NAS Device</option><option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Message</label>
-                <textarea v-model="form.message" rows="4" placeholder="Describe your data loss situation and what data you need recovered..." required />
-              </div>
-              <button type="submit" class="form-submit">Send Message →</button>
-            </form>
-          </div>
-          <div v-else class="success-card card">
-            <div class="success-icon">✅</div>
-            <h3>Message Received!</h3>
-            <p>We'll be in touch within 1 hour.</p>
-            <p class="success-phone">Or call us now: <a href="tel:3236723000">323-672-3000</a></p>
-          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Need help or have a question? You’re in the right place. Whether you're looking for an update on your ongoing case, want to start a new data recovery, or have billing or account-related questions, our team is here to assist you. We also welcome media, marketing, and partnership inquiries through this form. Customer feedback is extremely important to us—feel free to share your experience or suggestions. Our specialists are available 7 days a week to ensure you get the support you need. Simply fill out the contact form below or give us a call. We’ll get back to you promptly.</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact Us</h2>
+        </div>
+        <div class="section-body">
+          <p>[forminator_form id=&quot;3912&quot;]</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What Our Clients Are Saying</h2>
+        </div>
+        <div class="section-body">
+          <p>“Five Star saved my wedding footage after my external drive failed. I’m so grateful — professional, fast, and no pressure.”</p>
+          <p>Rachel K.</p>
+          <p>Pasadena, CA</p>
+          <p>“Fast turnaround, professional lab, and no hidden fees. They recovered all my client footage off a corrupted SD card.”</p>
+          <p>David P.</p>
+          <p>Austin, TX</p>
+          <p>“I had an old Seagate drive with all my kids’ baby videos. These guys recovered everything. Worth every penny.”</p>
+          <p>Martha E.</p>
+          <p>New York, NY</p>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p>https://youtu.be/14ACFHJ24hg?si=V88jCA7h-3SbSvyU</p>
         </div>
       </div>
     </section>
 
+
+
+    <section class="cta-band section-bg-2">
+      <div class="container cta-band-inner">
+        <div>
+          <h2 class="cta-title">Need Help With We're Here to Help?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/contact" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
+      </div>
+    </section>
     <FooterBar />
   </div>
 </template>
@@ -148,38 +96,23 @@ function handleSubmit() {
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; padding: 80px 0; }
-.contact-intro { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
-.contact-methods { display: flex; flex-direction: column; gap: 20px; margin-bottom: 32px; }
-.contact-method { display: flex; gap: 16px; align-items: flex-start; }
-.method-icon { font-size: 24px; flex-shrink: 0; }
-.method-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
-.method-value { font-size: 16px; font-weight: 600; color: var(--white); display: block; text-decoration: none; }
-a.method-value:hover { text-decoration: underline; }
-.method-note { font-size: 13px; color: var(--muted); margin-top: 2px; }
-.hours-card { padding: 24px; }
-.hours-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
-.hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; font-size: 14px; }
-.day { color: var(--muted); }
-.time { color: var(--white); font-weight: 500; }
-.contact-form-card { padding: 36px; }
-.form-title { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
-.form-intro { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
-.contact-form { display: flex; flex-direction: column; gap: 16px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-.form-group input, .form-group select, .form-group textarea { padding: 12px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 14px; color: var(--white); background: rgba(255,255,255,0.04); font-family: var(--font-body); transition: border-color 0.2s; outline: none; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
-.form-group textarea { resize: vertical; }
-.form-group select option { background: #13161F; }
-.form-submit { background: var(--gold); color: #0A0C14; border: none; border-radius: 8px; padding: 14px; font-size: 16px; font-weight: 800; cursor: pointer; width: 100%; font-family: var(--font-heading); transition: background 0.2s; }
-.form-submit:hover { background: var(--gold-dark); }
-.success-card { text-align: center; padding: 56px 36px; }
-.success-icon { font-size: 56px; margin-bottom: 16px; }
-.success-card h3 { font-family: var(--font-heading); font-size: 26px; font-weight: 800; color: var(--white); margin-bottom: 10px; }
-.success-card p { color: var(--muted); margin-bottom: 8px; }
-.success-phone a { color: var(--gold); font-weight: 700; }
-@media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
-@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.faq-item.open { border-color: var(--gold); }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
+.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
+.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
+.cta-sub { font-size: 16px; color: var(--muted); }
+.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
+.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
+@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
 </style>

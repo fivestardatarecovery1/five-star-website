@@ -1,83 +1,264 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Seagate Data Recovery — All Seagate Drives | Five Star Data Recovery',
-  description: 'Expert Seagate data recovery for all Seagate hard drives. Barracuda, IronWolf, Exos, Backup Plus, and more. No data = no charge. Call 323-672-3000.'
+  title: 'Seagate Data Recovery — Five Star Data Recovery',
+  description: 'When your Seagate hard drive stops working, it can feel like everything is lost. At Five Star Data Recovery, we focus on Seagate Data Recovery. We help people a'
 })
 const faqs = [
-  { q: 'How long does recovery take?', a: 'Standard recovery is 3-5 business days. Rush Expedited service is available for 24-48 hour turnaround. We provide a timeline during your free evaluation.' },
-  { q: 'How much does this recovery cost?', a: 'Recovery starts at $300 for logical issues. Physical/cleanroom recovery ranges from $650-$950. You receive a flat-rate quote before any work begins — no surprises.' },
-  { q: 'What if you cannot recover my data?', a: 'Simple — you pay nothing. Our No Data = No Charge guarantee means you only pay when we successfully recover your files.' },
-  { q: 'Do I have to come in person?', a: 'No. We offer free nationwide shipping both ways. You can also visit our Glendale, CA lab in person. Either way, recovery starts with a free diagnosis.' },
+  { q: '1. How much does Seagate Data Recovery cost?', a: 'At Five Star Data Recovery, our Seagate data recovery pricing is based on the drive’s capacity, connection type, and condition. All pricing is flat-rate — no hourly billing or surprise charges. Here’s the general breakdown: $300.00 for standard Seagate SATA drives (desktop or laptop) up to 2TB in capacity$500.00 for Seagate External Hard Drives and internal drives up to 6TB$600.00 for Seagate external drives between 8TB and 12TB, including USB 3.0 and USB-C models$800.00 for very high-capacity Seagate drives (over 12TB) due to the extended imaging time and hardware strain$950.00 for Seagate drives with mechanical issues requiring clean room repair, such as clicking drives or internal head crashes We offer a free evaluation before starting any recovery to determine the correct pricing tier. For a full breakdown, visit our data recovery cost page.' },
+  { q: '2. Do you recover data from all types of Seagate drives?', a: 'Yes, we recover data from all Seagate storage devices, including Seagate Barracuda, IronWolf, Expansion, Backup Plus, and portable external drives. Whether it’s internal or external, HDD or SSD — we’ve got you covered.' },
+  { q: '3. Can you recover data from Seagate drives that are no longer detected by the computer?', a: 'Absolutely. If your Seagate hard drive is not showing up, the issue could be with the firmware, file system, USB controller, or internal damage. We perform thorough diagnostics to find the cause and recover your files.' },
+  { q: '4. What causes the "Seagate drive light is on but not working" issue?', a: 'This is a common issue in Seagate external drives. The drive may receive power but fail to initialize due to PCB failure, firmware corruption, or a bad USB-to-SATA bridge. We have the tools and expertise to recover your data in these cases.' },
+  { q: '5. How do you handle clicking Seagate hard drives?', a: 'A clicking Seagate drive typically means a mechanical failure, such as damaged read/write heads or motor issues. We recover these in a cleanroom using donor parts to safely extract your data without causing more harm.' },
+  { q: '6. Can you recover data from a Seagate drive that was dropped?', a: 'Yes, drops and shocks can lead to mechanical failure or head misalignment. We frequently perform physical data recovery from dropped Seagate drives and have high success rates in such scenarios.' },
+  { q: '7. Do you provide Seagate data recovery for RAID arrays?', a: 'We specialize in Seagate RAID recovery for all configurations — including RAID 0, RAID 1, RAID 5, and hybrid setups. Whether it’s a NAS using Seagate IronWolf drives or a server array, we clone the drives and recover the data without using the originals.' },
+  { q: '8. Is it possible to recover data from a Seagate SSD?', a: 'Yes. We handle Seagate SSD data recovery as well, including cases of NAND failure, firmware issues, or damaged controllers. SSDs are complex, but our engineers are trained in both chip-level and software-level recovery techniques.' },
+  { q: '9. How long does Seagate Data Recovery take?', a: 'Most Seagate data recovery cases are completed within 3 to 5 business days. This applies to standard recoveries, including logical issues, non-encrypted USB drives, and drives with minor firmware problems. For cleanroom cases with mechanical failures, like clicking or unresponsive drives, recovery may take a few extra days. This is because it takes time to find compatible donor parts. If you need faster service, we also offer Expedited and Expedited Plus options for priority turnaround. Every case begins with a free evaluation, where we’ll confirm the expected timeframe based on your drive’s condition.' }
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
+
 <template>
   <div>
     <NavBar />
-    <HeroSection title="Seagate Data Recovery" subtitle="Seagate Recovery Specialists. No Drive Left Behind." description="Seagate drives are among the most widely used storage devices globally. Our engineers specialize in Seagate-specific firmware issues, head swap procedures, and logical recovery for all Seagate product lines.">
+    <HeroSection
+      title="Seagate Data Recovery"
+      subtitle="Get Your Data Back In No Time."
+      description="When your Seagate hard drive stops working, it can feel like everything is lost. At Five Star Data Recovery, we focus on Seagate Data Recovery. We help people and businesses recover their important files quickly, safely, and affordably. Whether you’re dealing with a corrupted partition or a physical"
+    >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ All Seagate Lines</span>
-          <span class="badge">✅ Firmware Specialists</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data = No Charge</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
-    <section class="intro-section">
+    <StatsBar />
+
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Seagate <span class="gold-underline gold">Recovery Service</span></h2></div>
-        <div class="intro-content">
-          <p>Seagate produces an extensive range of storage products — from consumer Barracuda drives to enterprise Exos systems. Seagate drives have well-documented firmware vulnerabilities that require specialized tools to address, and our engineers are trained on all of them.</p>
-          <p>We recover from: Seagate Barracuda (all generations), IronWolf and IronWolf Pro NAS drives, Seagate Exos enterprise drives, Backup Plus and Expansion portable drives, FireCuda hybrid drives, Seagate SkyHawk surveillance drives, and Seagate SSD products.</p>
-          <p>All recoveries begin with a free, no-obligation evaluation. We provide a flat-rate quote before any work begins. If we cannot recover your data, you pay nothing.</p>
+        <div class="section-header">
+          <h2 class="section-title">Common Seagate Drive Issues</h2>
+        </div>
+        <div class="section-body">
+          <p>We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:</p>
+          <ul class="content-list">
+            <li>Seagate external hard drive not working or not powering on</li>
+            <li>Clicking or grinding noises from the drive</li>
+            <li>Seagate Hard drive not working after an unexpected shutdown</li>
+            <li>Devices that appear in Disk Management but not in File Explorer.</li>
+            <li>Corrupted or unreadable file system errors</li>
+          </ul>
+          <p>No matter the issue, our team is skilled at diagnosing and recovering data from any damaged device.</p>
         </div>
       </div>
     </section>
-    <section class="why-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Why Choose <span class="gold-underline gold">Five Star?</span></h2></div>
-        <div class="grid-3">
-          <div class="card why-card"><div class="why-icon">🏆</div><h3 class="why-title">No Data = No Charge</h3><p class="why-desc">You only pay when we successfully recover your data. Zero financial risk.</p></div>
-          <div class="card why-card"><div class="why-icon">⚡</div><h3 class="why-title">Fast Turnaround</h3><p class="why-desc">Standard 3-5 day turnaround. Emergency Expedited service available 24/7.</p></div>
-          <div class="card why-card"><div class="why-icon">🔒</div><h3 class="why-title">100% Confidential</h3><p class="why-desc">Your data is handled with strict confidentiality. NDA available on request.</p></div>
+        <div class="section-header">
+          <h2 class="section-title">How We Recover Seagate Data</h2>
+        </div>
+        <div class="section-body">
+          <p>Our lab is equipped with the tools and expertise to work on hdds, ssds or flash devices from Seagate. If you dropped your external drive, exposed it to liquid, or it suddenly stopped working, don’t worry. We’ll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware.</p>
+          <p>Depending on the issue, your drive may need internal repairs in our cleanroom. Once stable, we create a secure image of the device and extract as much recoverable data as possible. We then copy all files stored onto a new drive that you provide or purchase from us.</p>
+          <p>Our pricing is based on the type of failure and drive model, and we’ll always provide a clear data recovery cost quote before starting.</p>
         </div>
       </div>
     </section>
-    <section class="faq-section">
+    <section class="section-bg-2 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2></div>
+        <div class="section-header">
+          <h2 class="section-title">What Causes Data Loss on Seagate Drives?</h2>
+        </div>
+        <div class="section-body">
+          <p>Data loss can happen for many reasons. Some problems are software-related, like file system corruption or a failed operating system update. Other failures stem from physical damage, such as head crashes, bad sectors, or worn-out components.</p>
+          <p>We also recover from accidental formatting, power surges, and damaged storage media devices that users improperly removed or mishandled.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Us for Seagate Hard Disk Data Recovery?</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Years of experience handling all types of Seagate models</li>
+            <li>High recovery success rates for even severely damaged devices</li>
+            <li>In-house cleanroom for safe internal repairs</li>
+            <li>Encrypted or password-protected storage</li>
+            <li>No data, no charge—if we can’t recover anything, you pay nothing</li>
+            <li>Transparent pricing and clear communication every step of the way</li>
+          </ul>
+          <p>We’ve helped thousands of customers recover their data with care and confidence. From standard desktop models to encrypted SSDs or flash drives, our team handles each recovery with expert attention.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Data Recovery Process</h2>
+        </div>
+        <div class="section-body">
+          <p>Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Drop off or Mail in Your Drive</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Receive a Free Diagnosis</h2>
+        </div>
+        <div class="section-body">
+          <p>Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Engineers work on Recovering your Data</h2>
+        </div>
+        <div class="section-body">
+          <p>We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Review &amp; Approve the Recovered</h2>
+        </div>
+        <div class="section-body">
+          <p>After recovery is complete, you’ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Receive your recovered data</h2>
+        </div>
+        <div class="section-body">
+          <p>Once approved, we’ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
+        </div>
+        <div class="section-body">
+          <p>“I had a Seagate external hard drive that suddenly stopped working. It wasn’t showing up on my computer at all. I called Five Star Data Recovery and Elen answered all my questions and made me feel at ease. Within a few days, they recovered 100% of my important files. The communication and service were outstanding!”</p>
+          <p>Jessica L.</p>
+          <p>Los Angeles</p>
+          <p>“My Seagate drive started making clicking noises, and I panicked. After some research, I found Five Star Data Recovery. Alex worked on my case and explained that the issue was mechanical. They performed a clean room recovery and were able to retrieve almost 99% of my data. I couldn’t be happier with the results.”</p>
+          <p>Robert M.</p>
+          <p>Phoenix, AZ</p>
+          <p>“My Seagate drive showed up as RAW format and none of my files were accessible. Five Star Data Recovery diagnosed it quickly and got back almost all of my documents and photos. Their honesty, speed, and professionalism stood out. I highly recommend them for Seagate data recovery.”</p>
+          <p>Daniel T.</p>
+          <p>Denver, CA</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Fast Service and Secure Handling</h2>
+        </div>
+        <div class="section-body">
+          <p>We know how important your data is, and we work fast to get it back to you. After your free diagnostic, you will get an estimated turn around time. This will depend on your drive's condition and the recovery's complexity. In many cases, we complete recoveries in just a few business days.</p>
+          <p>We handle all data in-house under strict security standards to protect your privacy. We never outsource, and we return all drives safely, whether you choose to pick up your files or have us ship them back.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Request a Free Quote</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Start Your SeagateRecovery Today</h2>
+        </div>
+        <div class="section-body">
+          <p>If your Seagate hard disk data recovery situation feels urgent, don’t wait. Powering the drive on repeatedly can make things worse. Let our professionals handle the recovery process the right way.</p>
+          <ul class="content-list">
+            <li>Drop off your drive at our lab</li>
+            <li>Ship it to us from anywhere in the U.S.</li>
+            <li>Call now for a free evaluation and quote</li>
+          </ul>
+          <p>Trust Five Star for reliable, professional Seagate Data Recovery—and get your files back fast.</p>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)"><span>{{ faq.q }}</span><span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span></button>
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
             <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cta-band">
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Ready to Recover Your Data?</h2><p class="cta-sub">Free evaluation · Flat-rate pricing · No charge if we can't recover</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With Seagate Data Recovery?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
   </div>
 </template>
+
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.why-card { text-align: center; }
-.why-icon { font-size: 36px; margin-bottom: 12px; }
-.why-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.why-desc { font-size: 14px; color: var(--muted); }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }

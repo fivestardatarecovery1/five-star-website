@@ -21,9 +21,10 @@ useSeoMeta({
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
     <section>
       <div class="container section-header">
-        <h2 class="section-title">Supported <span class="gold-underline gold">External Drives</span></h2>
+        <h2 class="section-title">Supported External Drives</h2>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:32px">
           <span v-for="b in ['WD My Passport','WD My Book','Seagate Backup Plus','Seagate Expansion','LaCie Rugged','G-Drive','Samsung T7','SanDisk Extreme','Toshiba Canvio','Buffalo MiniStation','Iomega','Verbatim']" :key="b"
             style="background:rgba(245,200,66,0.08);border:1px solid rgba(245,200,66,0.2);color:var(--gold);padding:8px 20px;border-radius:20px;font-size:14px;font-weight:600">

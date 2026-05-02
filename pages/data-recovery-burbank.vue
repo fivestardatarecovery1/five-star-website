@@ -1,117 +1,241 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery in Burbank, CA | Five Star Data Recovery',
-  description: 'Professional data recovery services in Burbank, CA. Located minutes from Burbank. Hard drives, SSDs, RAID, iPhones. Free pickup available. Call 323-672-3000.'
+  title: 'Professional Data Recovery Services in Burbank, CA — Five Star Data Recovery',
+  description: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagno'
 })
-const services = [
-  'Hard Drive Recovery','SSD Recovery','RAID & NAS Recovery','Laptop Recovery',
-  'Mac Recovery','iPhone Recovery','External HDD Recovery','USB Flash Drive Recovery',
-  'SD Card Recovery','Desktop Recovery','Deleted File Recovery','Clean Room Recovery'
-]
 const faqs = [
-  { q: 'Do I need to come to your lab or can I mail my device?', a: 'Both options work. You can visit our Glendale lab (just outside Burbank, CA) in person, or use our free prepaid mail-in service. We offer free same-day pickup in most Burbank, CA areas too.' },
-  { q: 'How quickly can you start on my case?', a: 'We begin diagnosis the same day we receive your device. For urgent cases, call us first and we will prioritize your intake.' },
-  { q: 'Is there a charge for the evaluation?', a: 'No. The initial diagnostic evaluation is completely free, with no obligation to proceed with recovery.' },
-  { q: 'What is your success rate?', a: 'We have successfully recovered data from thousands of drives. Our success rate for standard recoveries is very high. We will give you an honest assessment during the free evaluation.' },
+  { q: '1. Is your data recovery lab located in Burbank, CA?', a: 'While our main lab is not physically located in Burbank, we proudly serve the Burbank area and offer free same-day pickup for local residents and businesses. Our close proximity allows us to provide fast, convenient, and professional service throughout the region.' },
+  { q: '2. How long does the data recovery process take in Burbank?', a: 'Most data recovery cases are completed in 3–5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data.' },
+  { q: '3. What types of devices do you recover data from?', a: 'We recover data from hard drives, SSDs, USB flash drives, iPhones, RAID setups, SD cards, and more. If you’ve experienced data loss in Burbank, we can help.' },
+  { q: '4. Do you offer free pickup in the Burbank area?', a: 'Yes! We offer free local pickup for most addresses in Burbank. Simply contact us to schedule a same-day pickup and we’ll handle the logistics.' },
+  { q: '5. What happens if my data can’t be recovered?', a: 'We follow a No Data, No Charge policy. If your data is unrecoverable, you won’t owe us anything for most standard recovery cases.' }
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
+
 <template>
   <div>
     <NavBar />
     <HeroSection
-      title="Data Recovery in Burbank, CA"
-      subtitle="Expert Recovery Service for Burbank, CA Residents and Businesses."
-      description="Five Star Data Recovery serves customers throughout Burbank, CA and the surrounding area. Free same-day pickup available. Professional lab in Glendale, CA — just minutes away. No data = no charge."
+      title="Professional Data Recovery Services in Burbank, CA"
+      subtitle="Five Star Data Recovery proudly serves businesses, content creators, and residents throughout Burbank, CA. Whether you’ve lost precious photos from an external drive or need urgent RAID recovery for your production team, our certified cleanroom lab is just minutes away — and offers free local pickup for Burbank clients. Simply give us a call or create a request on our website, and we’ll handle the rest."
+      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
     >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ Serving Burbank, CA</span>
-          <span class="badge">✅ Free Pickup Available</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ 24/7 Available</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
-    <section class="intro-section">
+    <StatsBar />
+
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Data Recovery <span class="gold-underline gold">in Burbank, CA</span></h2></div>
-        <div class="intro-content">
-          <p>If you've lost important data in Burbank, CA, you're not out of options. Five Star Data Recovery serves the entire Burbank, CA area with professional data recovery services for hard drives, SSDs, RAID systems, Macs, iPhones, USB drives, SD cards, and more.</p>
-          <p>Burbank residents and businesses trust Five Star Data Recovery for all their data loss emergencies. Our Glendale lab is just a short drive from Burbank, and we offer free same-day pickup throughout Burbank. We serve media professionals, production companies, and businesses in the Burbank entertainment district.</p>
-          <p>We offer free same-day pickup from most Burbank, CA locations (Monday through Friday). Can't wait? Call us and we may be able to accommodate you even faster. Our Glendale lab is also open for walk-in drop-offs during business hours.</p>
+        <div class="section-header">
+          <h2 class="section-title">What Is Data Recovery?</h2>
+        </div>
+        <div class="section-body">
+
         </div>
       </div>
     </section>
-    <section class="services-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Services We Offer <span class="gold-underline gold">in Burbank, CA</span></h2></div>
-        <div class="services-grid">
-          <div v-for="s in services" :key="s" class="service-tag"><span class="tag-check">✓</span>{{ s }}</div>
+        <div class="section-header">
+          <h2 class="section-title">Common Scenarios We Handle in Burbank</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.</li>
+            <li>A post‑production company’s RAID 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.</li>
+            <li>A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="trust-section">
+    <section class="section-bg-2 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Why Burbank, CA Customers <span class="gold-underline gold">Choose Five Star</span></h2></div>
-        <div class="grid-3">
-          <div class="card trust-card"><div class="trust-icon">🏆</div><h3 class="trust-title">No Data = No Charge</h3><p class="trust-desc">You only pay when we successfully recover your data. Complete peace of mind.</p></div>
-          <div class="card trust-card"><div class="trust-icon">📍</div><h3 class="trust-title">Local & Accessible</h3><p class="trust-desc">Our Glendale lab is minutes from Burbank, CA. Free same-day pickup available.</p></div>
-          <div class="card trust-card"><div class="trust-icon">⭐</div><h3 class="trust-title">5.0 Star Rating</h3><p class="trust-desc">Hundreds of 5-star reviews from customers across the Los Angeles area.</p></div>
+        <div class="section-header">
+          <h2 class="section-title">We Specialize in Recovering Data From:</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Clicking or non-powering hard drives (HDDs)</li>
+            <li>Solid State Drives (SSDs) with no response</li>
+            <li>Water-damaged or dead iPhones</li>
+            <li>Failed RAID 0, 1, 5, 6, or 10 arrays</li>
+            <li>USB flash drives &amp; SD cards from DSLRs or video equipment</li>
+            <li>Encrypted drives and BitLocker devices</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="location-info-section">
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Visit Our <span class="gold-underline gold">Lab</span></h2></div>
-        <div class="location-card card">
-          <div class="location-detail"><span class="loc-icon">📍</span><div><strong>Five Star Data Recovery</strong><br>1731 S Brand Blvd Suite 100<br>Glendale, CA 91204</div></div>
-          <div class="location-detail"><span class="loc-icon">📞</span><div><a href="tel:3236723000">323-672-3000</a><br>Available 24/7/365</div></div>
-          <div class="location-detail"><span class="loc-icon">✈️</span><div>Free Nationwide Shipping<br>Prepaid label provided</div></div>
+        <div class="section-header">
+          <h2 class="section-title">Physical Damage? We Can Help.</h2>
+        </div>
+        <div class="section-body">
+
         </div>
       </div>
     </section>
-    <section class="faq-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2></div>
+        <div class="section-header">
+          <h2 class="section-title">Our 3‑Step Recovery Process</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">1. Free Diagnostic &amp; Quote</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">2. Data Recovery in Our Lab</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">3. Your Data, Delivered</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Who We Work With</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Areas We Serve in Burbank</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Magnolia Park</li>
+            <li>Downtown Burbank</li>
+            <li>Media District</li>
+            <li>Rancho Equestrian &amp; Toluca Woods</li>
+            <li>McNeil &amp; Chandler Park</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Your Data Is Safe With Us</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Encrypted data storage and transfers</li>
+            <li>Non-disclosure agreements for business clients</li>
+            <li>Secure deletion of temporary recovery files upon completion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Request a Free Quote in Minutes!</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let’s Recover Your Files</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>We’re located in Glendale—just minutes from Burbank</li>
+            <li>Same-day pickup in Burbank is available Monday through Friday</li>
+            <li>Call us or visit our website to get started today</li>
+          </ul>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)"><span>{{ faq.q }}</span><span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span></button>
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
             <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cta-band">
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Lost Data in Burbank, CA?</h2><p class="cta-sub">Call now or request a free quote online. Same-day pickup available.</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With Professional Data Recovery Services in Burbank, CA?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
   </div>
 </template>
+
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-.service-tag { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--muted); background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; }
-.tag-check { color: var(--gold); font-weight: 700; }
-.trust-card { text-align: center; }
-.trust-icon { font-size: 36px; margin-bottom: 12px; }
-.trust-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.trust-desc { font-size: 14px; color: var(--muted); }
-.location-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.location-detail { display: flex; gap: 14px; align-items: flex-start; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.loc-icon { font-size: 22px; flex-shrink: 0; }
-.location-detail a { color: var(--gold); font-weight: 700; }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
@@ -120,5 +244,5 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .services-grid, .location-card { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
 </style>

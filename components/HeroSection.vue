@@ -1,20 +1,29 @@
 <script setup lang="ts">
 interface Props {
   title: string
-  subtitle: string
+  subtitle?: string
   description?: string
+  showTrustBadges?: boolean
+  bgImage?: string
 }
-defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  showTrustBadges: true,
+  bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
+})
+
+const heroStyle = computed(() => ({
+  background: `linear-gradient(to right, rgba(50,52,58,0.88) 0%, rgba(50,52,58,0.65) 40%, rgba(30,32,38,0.15) 100%), url('${props.bgImage}') right center / cover no-repeat`
+}))
 
 const submitted = ref(false)
 const form = reactive({
-  deviceType: '',
-  firstName: '',
-  lastName: '',
+  name: '',
   email: '',
+  deviceType: '',
   phone: '',
   issue: '',
-  description: ''
+  contact: 'call',
+  responseTime: ''
 })
 
 function handleSubmit() {
@@ -23,199 +32,290 @@ function handleSubmit() {
 </script>
 
 <template>
-  <section class="hero">
+  <section class="hero" :style="heroStyle">
     <div class="container hero-inner">
-      <!-- Left: Copy -->
-      <div class="hero-copy">
-        <div class="hero-badge">⭐ Trusted Data Recovery Experts</div>
-        <h1 class="hero-title">{{ title }}</h1>
-        <p class="hero-subtitle">{{ subtitle }}</p>
-        <p v-if="description" class="hero-description">{{ description }}</p>
 
-        <slot name="badges">
-          <!-- Default trust badges slot — can be overridden -->
-        </slot>
+      <!-- LEFT: Copy -->
+      <div class="hero-copy">
+        <h1 class="hero-title">{{ title }}</h1>
+        <p v-if="subtitle" class="hero-subtitle">{{ subtitle }}</p>
+        <p v-if="description" class="hero-desc">{{ description }}</p>
+
+        <div class="hero-buttons">
+          <NuxtLink to="/start-recovery" class="btn-start">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Start Recovery
+          </NuxtLink>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-quote">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
+            Request a Quote
+          </NuxtLink>
+        </div>
+
+        <div v-if="showTrustBadges" class="trust-box">
+          <div class="trust-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Available 24/7/365</span>
+          </div>
+          <div class="trust-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Clean Room On-Site</span>
+          </div>
+          <div class="trust-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Flat Rate Pricing</span>
+          </div>
+          <div class="trust-item">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>Free Nationwide Shipping</span>
+          </div>
+        </div>
+
+        <slot />
       </div>
 
-      <!-- Right: Conversion Form -->
+      <!-- RIGHT: Consultation Form -->
       <div class="hero-form-wrap">
         <div v-if="!submitted" class="hero-form-card">
-          <h3 class="form-title">Request a Free <span class="form-title-underline">Consultation</span></h3>
-          <p class="form-intro">Get a free quote within 1 hour. No commitment required.</p>
+          <h3 class="form-title">Request a Free Consultation</h3>
 
           <form @submit.prevent="handleSubmit" class="consult-form">
-            <div class="form-group">
-              <label>Select Your Device Type</label>
-              <select v-model="form.deviceType" required>
-                <option value="" disabled>— Choose device —</option>
-                <option>Hard Drive</option>
-                <option>SSD</option>
-                <option>RAID/Server</option>
-                <option>Laptop</option>
-                <option>External HDD</option>
-                <option>Mac/iMac</option>
-                <option>iPhone/Mobile</option>
-                <option>USB Flash Drive</option>
-                <option>SD Card</option>
-                <option>NAS Device</option>
-                <option>Other</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label>NAME <span class="req">*</span></label>
+                <input v-model="form.name" type="text" placeholder="Name / Required" required />
+              </div>
+              <div class="form-group">
+                <label>EMAIL <span class="req">*</span></label>
+                <input v-model="form.email" type="email" placeholder="Email Address / Required" required />
+              </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label>First Name</label>
-                <input v-model="form.firstName" type="text" placeholder="John" required />
+                <label>SELECT YOUR DEVICE TYPE</label>
+                <div class="select-wrap">
+                  <select v-model="form.deviceType">
+                    <option value="">— Select (Optional) —</option>
+                    <option>Hard Drive</option>
+                    <option>SSD</option>
+                    <option>RAID/Server</option>
+                    <option>Laptop</option>
+                    <option>External HDD</option>
+                    <option>Mac/iMac</option>
+                    <option>iPhone/Mobile</option>
+                    <option>USB Flash Drive</option>
+                    <option>SD Card</option>
+                    <option>NAS Device</option>
+                    <option>Other</option>
+                  </select>
+                  <svg class="select-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+                </div>
               </div>
               <div class="form-group">
-                <label>Last Name</label>
-                <input v-model="form.lastName" type="text" placeholder="Smith" required />
+                <label>PHONE</label>
+                <input v-model="form.phone" type="tel" placeholder="Phone Number / Required" />
               </div>
             </div>
 
-            <div class="form-group">
-              <label>Email Address</label>
-              <input v-model="form.email" type="email" placeholder="john@email.com" required />
+            <div class="form-row">
+              <div class="form-group">
+                <label>SELECT ISSUE WITH DEVICE</label>
+                <div class="select-wrap">
+                  <select v-model="form.issue">
+                    <option value="">Select Issue</option>
+                    <option>Not Detected / Not Showing Up</option>
+                    <option>Clicking / Grinding Noise</option>
+                    <option>Water Damage</option>
+                    <option>Corrupted Files</option>
+                    <option>Accidental Deletion</option>
+                    <option>Physical Damage</option>
+                    <option>Not Spinning</option>
+                    <option>Other</option>
+                  </select>
+                  <svg class="select-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Preferred Contact Method</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input v-model="form.contact" type="radio" value="call" /> CALL
+                  </label>
+                  <label class="radio-label">
+                    <input v-model="form.contact" type="radio" value="email" /> EMAIL
+                  </label>
+                  <label class="radio-label">
+                    <input v-model="form.contact" type="radio" value="text" /> TEXT
+                  </label>
+                </div>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input v-model="form.phone" type="tel" placeholder="(555) 000-0000" required />
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label>PREFERRED RESPONSE TIME</label>
+                <div class="select-wrap">
+                  <select v-model="form.responseTime">
+                    <option value="">Select Preferred Time</option>
+                    <option value="immediately">Immediately (24/7)</option>
+                    <option value="business">During Business Hours</option>
+                    <option value="morning">Morning (8am – 12pm)</option>
+                    <option value="afternoon">Afternoon (12pm – 5pm)</option>
+                    <option value="evening">Evening (5pm – 8pm)</option>
+                  </select>
+                  <svg class="select-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+                </div>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label>Select Your Issue</label>
-              <select v-model="form.issue" required>
-                <option value="" disabled>— Choose issue —</option>
-                <option>Not Detected</option>
-                <option>Clicking/Grinding Noise</option>
-                <option>Water Damage</option>
-                <option>Corrupted Files</option>
-                <option>Accidental Deletion</option>
-                <option>Physical Damage</option>
-                <option>Not Spinning</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Describe Your Issue</label>
-              <textarea v-model="form.description" rows="3" placeholder="Briefly describe what happened and what data you need recovered..." />
-            </div>
-
-            <button type="submit" class="form-submit">
-              Get My Free Quote →
-            </button>
+            <button type="submit" class="btn-submit">Request a Consultation</button>
           </form>
         </div>
 
+        <!-- Success state -->
         <div v-else class="form-success">
-          <div class="success-icon">✅</div>
-          <h3>Thank you!</h3>
-          <p>We'll be in touch within 1 hour.</p>
-          <p class="success-phone">Or call us now: <a href="tel:3236723000">323-672-3000</a></p>
+          <div class="success-icon">✓</div>
+          <h3>We'll be in touch within 1 hour!</h3>
+          <p>Our team is standing by. You can also call us directly:</p>
+          <a href="tel:8182728866" class="success-phone">818-272-8866</a>
         </div>
       </div>
+
     </div>
   </section>
 </template>
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, #0A0C14 0%, #0f1220 50%, #0A0C14 100%);
-  padding: 80px 0 72px;
+  /* background set via :style binding */
+  padding: 60px 0 60px;
   position: relative;
   overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(245,200,66,0.06) 0%, transparent 70%);
-  pointer-events: none;
+  border-bottom: 2px solid rgba(245,200,66,0.2);
 }
 
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr 480px;
   gap: 60px;
-  align-items: start;
+  align-items: center;
 }
 
-/* Copy */
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(245, 200, 66, 0.1);
-  border: 1px solid rgba(245, 200, 66, 0.3);
-  color: var(--gold);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 24px;
-}
+/* ── Left copy ── */
+.hero-copy { padding-right: 10px; }
+
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(32px, 4.5vw, 52px);
-  font-weight: 900;
-  line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 20px;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
 }
+
 .hero-subtitle {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
   color: var(--gold);
   margin-bottom: 16px;
+  letter-spacing: 0.01em;
 }
-.hero-description {
-  font-size: 17px;
-  color: var(--muted);
-  line-height: 1.7;
+
+.hero-desc {
+  font-size: 15px;
+  color: #c0c8d8;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+/* ── CTA Buttons ── */
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
   margin-bottom: 32px;
 }
 
-/* Form card */
-.hero-form-wrap { position: relative; }
+.btn-start {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e53935;
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.01em;
+}
+.btn-start:hover {
+  background: #c62828;
+  transform: translateY(-1px);
+}
+
+.btn-quote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 13px 26px;
+  border-radius: 6px;
+  border: 2px solid rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.btn-quote:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-1px);
+}
+
+/* ── Trust box ── */
+.trust-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 32px;
+  background: rgba(40,42,52,0.85);
+  border-radius: 12px;
+  padding: 20px 24px;
+  backdrop-filter: blur(6px);
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.trust-item svg { flex-shrink: 0; }
+
+/* ── Form card ── */
+.hero-form-wrap { position: relative; z-index: 2; }
 
 .hero-form-card {
   background: #ffffff;
-  border-radius: 16px;
-  padding: 36px 32px;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-  color: #111;
+  border-radius: 8px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
 
 .form-title {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
-  color: #111;
-  margin-bottom: 6px;
-}
-.form-title-underline {
-  display: inline-block;
-  position: relative;
-}
-.form-title-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--gold);
-  border-radius: 2px;
-}
-.form-intro {
-  font-size: 13px;
-  color: #666;
+  color: #1a1a2e;
   margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .consult-form { display: flex; flex-direction: column; gap: 14px; }
@@ -223,7 +323,7 @@ function handleSubmit() {
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 14px;
 }
 
 .form-group {
@@ -231,81 +331,163 @@ function handleSubmit() {
   flex-direction: column;
   gap: 5px;
 }
-.form-group label {
-  font-size: 12px;
-  font-weight: 600;
-  color: #444;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 10px 12px;
-  border: 1.5px solid #dde0e8;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #111;
-  background: #fafafa;
-  font-family: var(--font-body);
-  transition: border-color 0.2s;
-  outline: none;
-  width: 100%;
-}
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #F5C842;
-  background: #fff;
-}
-.form-group textarea { resize: vertical; }
 
-.form-submit {
-  background: var(--gold);
-  color: #0A0C14;
-  border: none;
-  border-radius: 8px;
-  padding: 14px;
-  font-size: 16px;
+.form-group label {
+  font-size: 10px;
   font-weight: 800;
-  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #555;
+}
+
+.req { color: #e53935; }
+
+.full-width { grid-column: 1 / -1; }
+.form-group input {
+  height: 52px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 16px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.2s;
   width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+.form-group input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.form-group input::placeholder { color: #aaa; }
+
+.select-wrap {
+  position: relative;
+}
+.select-wrap select {
+  width: 100%;
+  height: 52px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 40px 0 16px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+.select-wrap select:focus { outline: none; border-color: var(--gold); }
+.select-arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  height: 40px;
+}
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: #444 !important;
+  cursor: pointer;
+}
+.radio-label input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+/* Submit */
+.full-width { grid-column: 1 / -1; }
+.btn-submit {
+  width: 100%;
+  height: 62px;
+  background: var(--gold);
+  color: #1a1a1a;
+  font-weight: 800;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
   transition: background 0.2s, transform 0.15s;
-  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  font-family: var(--font-body);
   margin-top: 4px;
 }
-.form-submit:hover {
+.btn-submit:hover {
   background: var(--gold-dark);
   transform: translateY(-1px);
 }
 
 /* Success */
 .form-success {
-  background: #ffffff;
-  border-radius: 16px;
+  background: #fff;
+  border-radius: 8px;
   padding: 48px 32px;
   text-align: center;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
-  color: #111;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
 }
-.success-icon { font-size: 48px; margin-bottom: 16px; }
+.success-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--gold);
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
 .form-success h3 {
   font-family: var(--font-heading);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 800;
-  color: #111;
+  color: #1a1a2e;
   margin-bottom: 10px;
 }
-.form-success p { color: #555; margin-bottom: 8px; }
-.success-phone { font-weight: 600; }
-.success-phone a { color: var(--gold-dark); }
-
-@media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hero-form-wrap { max-width: 560px; }
+.form-success p { color: #666; font-size: 15px; margin-bottom: 16px; }
+.success-phone {
+  display: inline-block;
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 22px;
+  text-decoration: none;
 }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero { padding: 50px 0; }
+}
+
 @media (max-width: 640px) {
-  .hero-form-card { padding: 28px 20px; }
   .form-row { grid-template-columns: 1fr; }
+  .trust-bar { flex-direction: column; gap: 12px; } .trust-divider { display: none; }
+  .hero-buttons { flex-direction: column; }
+  .btn-start, .btn-quote { justify-content: center; }
+  .hero-form-card { padding: 20px 16px; }
 }
 </style>

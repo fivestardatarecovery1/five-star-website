@@ -416,277 +416,287 @@ const _routes = [
   {
     name: "faq",
     path: "/faq",
-    component: () => import('./faq-BswoRzc4.mjs')
+    component: () => import('./faq-Dpbq-FJ_.mjs')
   },
   {
     name: "about",
     path: "/about",
-    component: () => import('./about-DWFT8gOd.mjs')
+    component: () => import('./about-BuhA74G7.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DayU0wIG.mjs')
+    component: () => import('./index-M8hDzfH_.mjs')
+  },
+  {
+    name: "terms",
+    path: "/terms",
+    component: () => import('./terms-CnXmpKZL.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-DRhiB-r9.mjs')
+    component: () => import('./contact-Br4bCmzj.mjs')
   },
   {
     name: "pricing",
     path: "/pricing",
-    component: () => import('./pricing-D2TtVnK1.mjs')
+    component: () => import('./pricing-DwTpP4tX.mjs')
   },
   {
     name: "reviews",
     path: "/reviews",
-    component: () => import('./reviews-pW2E1Xp1.mjs')
+    component: () => import('./reviews--9OU6-DD.mjs')
   },
   {
     name: "blog",
     path: "/blog",
-    component: () => import('./index-q-0vnNv-.mjs')
+    component: () => import('./index-DUMpKtls.mjs')
   },
   {
     name: "payment-plan",
     path: "/payment-plan",
-    component: () => import('./payment-plan-CkdIyxcs.mjs')
+    component: () => import('./payment-plan-BjMcPRv2.mjs')
   },
   {
     name: "privacy-policy",
     path: "/privacy-policy",
-    component: () => import('./privacy-policy-BDOBEqf5.mjs')
+    component: () => import('./privacy-policy-BXoQazk5.mjs')
   },
   {
     name: "start-recovery",
     path: "/start-recovery",
-    component: () => import('./start-recovery-FsAHoiiR.mjs')
+    component: () => import('./start-recovery-CD2Fd5Cs.mjs')
   },
   {
     name: "expedited-service",
     path: "/expedited-service",
-    component: () => import('./expedited-service-DB3SKNij.mjs')
+    component: () => import('./expedited-service-DRZpZcmo.mjs')
   },
   {
     name: "data-recovery",
     path: "/data-recovery",
-    component: () => import('./index-DiwLEw56.mjs')
+    component: () => import('./index-BYivA7e7.mjs')
   },
   {
     name: "hard-drive-clicking",
     path: "/hard-drive-clicking",
-    component: () => import('./hard-drive-clicking-DSO5GCQE.mjs')
+    component: () => import('./hard-drive-clicking-6haOqeYz.mjs')
   },
   {
     name: "data-recovery-burbank",
     path: "/data-recovery-burbank",
-    component: () => import('./data-recovery-burbank-4xNnqdMD.mjs')
+    component: () => import('./data-recovery-burbank-BLolHNBc.mjs')
   },
   {
     name: "drive-doesnt-power-on",
     path: "/drive-doesnt-power-on",
-    component: () => import('./drive-doesnt-power-on-D7jG40Dz.mjs')
+    component: () => import('./drive-doesnt-power-on-DtR-ohGU.mjs')
   },
   {
     name: "services-mac-recovery",
     path: "/services/mac-recovery",
-    component: () => import('./mac-recovery-QFrok4ga.mjs')
+    component: () => import('./mac-recovery-DMIO4dUL.mjs')
   },
   {
     name: "services-ssd-recovery",
     path: "/services/ssd-recovery",
-    component: () => import('./ssd-recovery-Cp4EuoCd.mjs')
+    component: () => import('./ssd-recovery-DdQuUE7M.mjs')
   },
   {
     name: "services-usb-recovery",
     path: "/services/usb-recovery",
-    component: () => import('./usb-recovery-C0NX4qf3.mjs')
+    component: () => import('./usb-recovery-aJcraOVc.mjs')
   },
   {
     name: "data-recovery-glendale",
     path: "/data-recovery-glendale",
-    component: () => import('./data-recovery-glendale-B7f0lGyi.mjs')
+    component: () => import('./data-recovery-glendale-BAc7FvJY.mjs')
   },
   {
     name: "data-recovery-pasadena",
     path: "/data-recovery-pasadena",
-    component: () => import('./data-recovery-pasadena-DL0lDuC4.mjs')
+    component: () => import('./data-recovery-pasadena-B_zeqn7t.mjs')
   },
   {
     name: "expedited-service-plus",
     path: "/expedited-service-plus",
-    component: () => import('./expedited-service-plus-DVX1QS9L.mjs')
+    component: () => import('./expedited-service-plus-BPrA3mLs.mjs')
   },
   {
     name: "services-raid-recovery",
     path: "/services/raid-recovery",
-    component: () => import('./raid-recovery-BsHCsiMv.mjs')
+    component: () => import('./raid-recovery-DFzEYk7D.mjs')
   },
   {
     name: "data-recovery-hollywood",
     path: "/data-recovery-hollywood",
-    component: () => import('./data-recovery-hollywood-BXMrXiyO.mjs')
+    component: () => import('./data-recovery-hollywood-BofUcCc6.mjs')
   },
   {
     name: "data-recovery-clean-room",
     path: "/data-recovery/clean-room",
-    component: () => import('./clean-room-CIw6hoiw.mjs')
+    component: () => import('./clean-room-B1dW2TVE.mjs')
   },
   {
     name: "data-recovery-free-quote",
     path: "/data-recovery/free-quote",
-    component: () => import('./free-quote-pxqMtBDd.mjs')
+    component: () => import('./free-quote-Bwbc_9Mn.mjs')
   },
   {
     name: "services-laptop-recovery",
     path: "/services/laptop-recovery",
-    component: () => import('./laptop-recovery-CpXdhu_w.mjs')
+    component: () => import('./laptop-recovery-DsFE02el.mjs')
   },
   {
     name: "services-mobile-recovery",
     path: "/services/mobile-recovery",
-    component: () => import('./mobile-recovery--j1Xv6TN.mjs')
+    component: () => import('./mobile-recovery-BweuwoBZ.mjs')
   },
   {
     name: "data-recovery-los-angeles",
     path: "/data-recovery-los-angeles",
-    component: () => import('./data-recovery-los-angeles-Z_6jAkC0.mjs')
+    component: () => import('./data-recovery-los-angeles-CfCaVakQ.mjs')
   },
   {
     name: "data-recovery-bad-sectors",
     path: "/data-recovery/bad-sectors",
-    component: () => import('./bad-sectors-lDlRQkjJ.mjs')
+    component: () => import('./bad-sectors-B4K1k_c9.mjs')
   },
   {
     name: "data-recovery-mac-recovery",
     path: "/data-recovery/mac-recovery",
-    component: () => import('./mac-recovery-D_ZgY8Fl.mjs')
+    component: () => import('./mac-recovery-D5lb9aYr.mjs')
   },
   {
     name: "data-recovery-nas-recovery",
     path: "/data-recovery/nas-recovery",
-    component: () => import('./nas-recovery-DZOrAepv.mjs')
+    component: () => import('./nas-recovery-Bzdjr5IJ.mjs')
   },
   {
     name: "data-recovery-ssd-recovery",
     path: "/data-recovery/ssd-recovery",
-    component: () => import('./ssd-recovery-Com4keIn.mjs')
+    component: () => import('./ssd-recovery-BkZUn3hf.mjs')
   },
   {
     name: "data-recovery-usb-recovery",
     path: "/data-recovery/usb-recovery",
-    component: () => import('./usb-recovery-BKmv2DCT.mjs')
+    component: () => import('./usb-recovery-C7N_Ivxu.mjs')
   },
   {
     name: "data-recovery-beverly-hills",
     path: "/data-recovery-beverly-hills",
-    component: () => import('./data-recovery-beverly-hills-CAfTuZiJ.mjs')
+    component: () => import('./data-recovery-beverly-hills-DNE93IuL.mjs')
   },
   {
     name: "data-recovery-deleted-files",
     path: "/data-recovery/deleted-files",
-    component: () => import('./deleted-files-C0NvsZRr.mjs')
+    component: () => import('./deleted-files-BEbzsgic.mjs')
   },
   {
     name: "data-recovery-raid-recovery",
     path: "/data-recovery/raid-recovery",
-    component: () => import('./raid-recovery-D_V8QWQG.mjs')
+    component: () => import('./raid-recovery-DhFPQot1.mjs')
   },
   {
     name: "data-recovery-cfast-recovery",
     path: "/data-recovery/cfast-recovery",
-    component: () => import('./cfast-recovery-_3YEqnFg.mjs')
+    component: () => import('./cfast-recovery-Bu0HwCw0.mjs')
   },
   {
     name: "data-recovery-lacie-recovery",
     path: "/data-recovery/lacie-recovery",
-    component: () => import('./lacie-recovery-CQaKY89R.mjs')
+    component: () => import('./lacie-recovery-L6gGNugv.mjs')
   },
   {
     name: "services-hard-drive-recovery",
     path: "/services/hard-drive-recovery",
-    component: () => import('./hard-drive-recovery-DH8Wfcoi.mjs')
+    component: () => import('./hard-drive-recovery-2nTBB5kh.mjs')
   },
   {
     name: "data-recovery-iphone-recovery",
     path: "/data-recovery/iphone-recovery",
-    component: () => import('./iphone-recovery-BHNlDn_-.mjs')
+    component: () => import('./iphone-recovery-DtuE-9Jo.mjs')
   },
   {
     name: "data-recovery-laptop-recovery",
     path: "/data-recovery/laptop-recovery",
-    component: () => import('./laptop-recovery-CDXt5IvP.mjs')
+    component: () => import('./laptop-recovery-CqPERzlw.mjs')
   },
   {
     name: "data-recovery-mail-in-service",
     path: "/data-recovery/mail-in-service",
-    component: () => import('./mail-in-service-DwpQX4Kj.mjs')
+    component: () => import('./mail-in-service-CPqqlGD8.mjs')
   },
   {
     name: "data-recovery-desktop-recovery",
     path: "/data-recovery/desktop-recovery",
-    component: () => import('./desktop-recovery-BYFJW5PT.mjs')
+    component: () => import('./desktop-recovery-Csb63OVJ.mjs')
+  },
+  {
+    name: "data-recovery-express-drop-off",
+    path: "/data-recovery/express-drop-off",
+    component: () => import('./express-drop-off-CgvWGfCy.mjs')
   },
   {
     name: "data-recovery-hitachi-recovery",
     path: "/data-recovery/hitachi-recovery",
-    component: () => import('./hitachi-recovery-BLz1TUAp.mjs')
+    component: () => import('./hitachi-recovery-BfMiWsiK.mjs')
   },
   {
     name: "data-recovery-samsung-recovery",
     path: "/data-recovery/samsung-recovery",
-    component: () => import('./samsung-recovery-B1VNo_3j.mjs')
+    component: () => import('./samsung-recovery-dzcQXI5j.mjs')
   },
   {
     name: "data-recovery-sd-card-recovery",
     path: "/data-recovery/sd-card-recovery",
-    component: () => import('./sd-card-recovery-DOhIfYQy.mjs')
+    component: () => import('./sd-card-recovery-DAOkgP4k.mjs')
   },
   {
     name: "data-recovery-seagate-recovery",
     path: "/data-recovery/seagate-recovery",
-    component: () => import('./seagate-recovery-oTi7Q_HL.mjs')
+    component: () => import('./seagate-recovery-DQV_5DmY.mjs')
   },
   {
     name: "data-recovery-toshiba-recovery",
     path: "/data-recovery/toshiba-recovery",
-    component: () => import('./toshiba-recovery-Cj7OCQNP.mjs')
+    component: () => import('./toshiba-recovery-CaJ-bn-h.mjs')
   },
   {
     name: "services-external-hdd-recovery",
     path: "/services/external-hdd-recovery",
-    component: () => import('./external-hdd-recovery-BDC-W8FQ.mjs')
+    component: () => import('./external-hdd-recovery-Gx4SmVkb.mjs')
   },
   {
     name: "data-recovery-video-file-repair",
     path: "/data-recovery/video-file-repair",
-    component: () => import('./video-file-repair-COAt460H.mjs')
+    component: () => import('./video-file-repair-D1ADdCYs.mjs')
   },
   {
     name: "data-recovery-dropped-hard-drive",
     path: "/data-recovery/dropped-hard-drive",
-    component: () => import('./dropped-hard-drive-CijZ4Pz0.mjs')
+    component: () => import('./dropped-hard-drive-DBqs3SsU.mjs')
   },
   {
     name: "data-recovery-external-hard-drive",
     path: "/data-recovery/external-hard-drive",
-    component: () => import('./external-hard-drive-k7GYm0uY.mjs')
+    component: () => import('./external-hard-drive-B0AJcxU4.mjs')
   },
   {
     name: "data-recovery-hard-drive-recovery",
     path: "/data-recovery/hard-drive-recovery",
-    component: () => import('./hard-drive-recovery-BJfxoFvk.mjs')
+    component: () => import('./hard-drive-recovery-BMjX_p_T.mjs')
   },
   {
     name: "data-recovery-western-digital-recovery",
     path: "/data-recovery/western-digital-recovery",
-    component: () => import('./western-digital-recovery-Bv3JURMz.mjs')
+    component: () => import('./western-digital-recovery-fOAJkB6H.mjs')
   },
   {
     name: "data-recovery-hard-drive-not-showing-up",
     path: "/data-recovery/hard-drive-not-showing-up",
-    component: () => import('./hard-drive-not-showing-up-BrUGBl2J.mjs')
+    component: () => import('./hard-drive-not-showing-up-DbSZcNfY.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {

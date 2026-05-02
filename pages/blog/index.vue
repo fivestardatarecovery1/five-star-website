@@ -16,7 +16,7 @@ useSeoMeta({
     <section>
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Latest <span class="gold-underline gold">Articles</span></h2>
+          <h2 class="section-title">Latest Articles</h2>
         </div>
         <div class="grid-3">
           <div v-for="post in [

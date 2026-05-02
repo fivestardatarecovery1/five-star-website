@@ -1,105 +1,240 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery FAQ — Frequently Asked Questions',
-  description: 'Answers to the most common data recovery questions. Pricing, turnaround times, shipping, confidentiality, success rates, and more. Five Star Data Recovery. Call 323-672-3000.'
+  title: 'General Data Recovery FAQ\'s — Five Star Data Recovery',
+  description: 'Answers to Common Questions About Our Services, Pricing, Process & Terms.'
 })
-
-const categories = [
-  {
-    title: 'General Questions',
-    faqs: [
-      { q: 'What is data recovery?', a: 'Data recovery is the process of retrieving lost, deleted, inaccessible, or corrupted data from storage devices such as hard drives, SSDs, USB drives, SD cards, and RAID arrays. Professional data recovery uses specialized tools and techniques to access data that standard methods cannot reach.' },
-      { q: 'Can all data be recovered?', a: 'Not always — but we succeed in the vast majority of cases. Recovery success depends on the type of failure, how long the drive was used after failure, and whether the data has been overwritten. We always provide an honest assessment during the free evaluation.' },
-      { q: 'What types of devices do you recover from?', a: 'We recover from all storage media: hard drives (HDD), solid state drives (SSD), RAID arrays, NAS devices, USB flash drives, SD cards, CFast cards, iPhones, external hard drives, and more.' },
-      { q: 'Do I need to come to your lab in person?', a: 'No. We offer free nationwide shipping both ways with a prepaid label. You can also visit our Glendale, CA lab in person, or request free same-day pickup in the Los Angeles area.' },
-    ]
-  },
-  {
-    title: 'Pricing & Payment',
-    faqs: [
-      { q: 'How much does data recovery cost?', a: 'Our flat-rate pricing starts at $300 for standard logical/firmware recovery, $400 for larger drives or more complex issues, and $650-$950 for cleanroom mechanical recovery. You receive an exact quote before any work begins.' },
-      { q: 'What does "No Data = No Charge" mean?', a: 'It means exactly what it says. If we cannot recover your data, or if you review the recovered file list and decide not to proceed, you pay absolutely nothing. There is no evaluation fee and no charge for unsuccessful recoveries.' },
-      { q: 'Is the evaluation really free?', a: 'Yes. The diagnostic evaluation is always completely free with no obligation to proceed. We will tell you exactly what\'s wrong and what we can do about it — at no charge.' },
-      { q: 'Do you offer payment plans?', a: 'Yes. We offer flexible payment arrangements for qualifying recoveries. Contact us to discuss your situation and we will work with you.' },
-      { q: 'Are there any hidden fees?', a: 'Never. Our pricing is fully transparent. The flat-rate quote we provide before beginning is your final price — no hourly charges, no evaluation fees, and no surprise costs.' },
-    ]
-  },
-  {
-    title: 'Process & Timeline',
-    faqs: [
-      { q: 'How long does data recovery take?', a: 'Standard recovery takes 3-5 business days. Our Expedited service takes 24-48 hours. Expedited Plus service can be same-day. Timeline depends on the type and severity of the failure — we provide a specific estimate during evaluation.' },
-      { q: 'What happens during the free evaluation?', a: 'Our engineers examine your device using specialized diagnostic hardware. We identify the failure type, assess the recovery potential, and provide a flat-rate quote. The whole process is free and takes 1-24 hours depending on the failure type.' },
-      { q: 'Will I know what files were recovered before paying?', a: 'Yes. We always provide a detailed file list for your review before you pay or receive the data. You approve the results, then we transfer your data to a new drive.' },
-      { q: 'What happens to my device after recovery?', a: 'Your original device is returned to you along with the recovered data on a new drive. We retain no copies of your data after delivery (unless you request otherwise).' },
-    ]
-  },
-  {
-    title: 'Shipping & Logistics',
-    faqs: [
-      { q: 'How do I ship my device to you?', a: 'Contact us first. We\'ll provide a free prepaid shipping label and packing instructions. Pack the drive securely in an anti-static bag and padded box. Insured shipping is covered both ways.' },
-      { q: 'Is shipping safe for a damaged drive?', a: 'Yes, if packed properly. We provide detailed packing instructions. For very severely damaged drives (clicking, not spinning), we recommend hand-delivery to our Glendale lab if possible.' },
-      { q: 'Do you offer pickup service?', a: 'Yes — free same-day pickup is available in most Los Angeles area locations (Monday-Friday). Contact us before noon for same-day service.' },
-      { q: 'How is my recovered data returned to me?', a: 'Your data is delivered on a new external hard drive (included in the recovery fee). We can also arrange secure download for smaller recoveries. Local clients can pick up in person.' },
-    ]
-  },
-  {
-    title: 'Security & Confidentiality',
-    faqs: [
-      { q: 'Is my data kept confidential?', a: 'Absolutely. We have strict data privacy and confidentiality policies. Your data is never shared, copied, or accessed beyond what is required for recovery. All staff sign confidentiality agreements.' },
-      { q: 'Do you offer NDA agreements?', a: 'Yes. We can provide a Non-Disclosure Agreement upon request for sensitive personal or business data. This is available at no additional charge.' },
-      { q: 'What happens to my data after recovery is complete?', a: 'Once you receive and confirm your data, we permanently delete all copies from our systems upon your request. By default, we retain a temporary backup for 30 days in case of delivery issues, then securely delete it.' },
-      { q: 'Are your engineers background-checked?', a: 'Yes. All Five Star Data Recovery engineers undergo background screening as part of our security and confidentiality standards.' },
-    ]
-  },
+const faqs = [
+  { q: '1. Do you offer free shipping for mail-in data recovery cases?', a: 'Yes, we offer free round-trip shipping anywhere in the United States. Once you fill out our Mail-In Form, we’ll send you a prepaid shipping label.' },
+  { q: '2. How long will it take for my device to arrive at your lab?', a: 'Most devices arrive within 1–2 business days when using our preferred carriers (FedEx or USPS).' },
+  { q: '3. Can I choose my own shipping carrier?', a: 'Yes, you’re welcome to use any carrier you prefer, including your own FedEx or UPS account if that’s more convenient for you. If you choose to use your own shipping label, just make sure to include the intake form (which we’ll provide via email after you complete the Mail-In Form) inside your package. This ensures your device is checked in properly and without delay once it arrives at our lab.' },
+  { q: '4. Is my device insured during shipping?', a: 'Our free shipping service includes basic tracking, but you can purchase additional insurance if needed. For valuable devices, we strongly recommend doing so.' },
+  { q: '5. How do I pack my hard drive or device for mailing?', a: 'Use anti-static bags for internal drives, and wrap external devices securely with bubble wrap. Place the wrapped drive in a sturdy box with additional padding.' },
+  { q: '6. Do you offer international shipping?', a: 'Currently, our free shipping offer applies only to U.S. addresses. International customers are responsible for sending and receiving their devices.' },
+  { q: '7. Can I drop off my device in person instead of mailing it?', a: 'Yes! You’re welcome to drop off your device at our Glendale, CA lab during business hours.' },
+  { q: '8. Do you notify me when my device arrives?', a: 'Yes. As soon as your device arrives at our lab and is checked in, you’ll receive a confirmation email or phone call.' },
+  { q: '1. When is payment due for data recovery?', a: 'Payment is only due after we successfully recover your data and you’ve had a chance to review and approve the file list. However, there are a few exceptions that require an upfront, non-refundable fee. These include cases where the customer selects Expedited or Expedited Plus Service, Deleted File Recoveries, or situations where the hard drive’s cover has been previously opened before arriving at our lab. To clarify, by “cover,” we’re referring to the actual metal top of the hard drive where the internal platters are located—not the external plastic casing or enclosure. If the drive has been opened at the platter level by another repair shop or during a DIY attempt, it significantly increases the complexity and risk involved in the recovery process. In these situations, we charge a non-refundable evaluation fee to cover the additional time and labor needed for a proper cleanroom inspection and assessment.' },
+  { q: '2. What payment methods do you accept?', a: 'We accept cash, all major credit cards, debit cards, Zelle, and bank transfers.' },
+  { q: '3. Do you offer data recovery payment plans?', a: 'Yes! We offer flexible Payment Plans to help make data recovery more affordable. Typically, we require a 25% down payment upfront, with the remaining balance paid over an agreed-upon period. Once your data recovery is complete and you’ve approved the recovered file list, we’ll securely store your recovered data at our facility until the balance is paid in full. Your data will remain safely held and unavailable for release or transfer until the payment plan is fully satisfied. This ensures both the security of your data and fairness in the payment process.' },
+  { q: '4. Are there any upfront fees?', a: 'Most standard cases require no upfront payment. However, Expedited Services, Deleted File Recoveries, and drives that were previously opened at the component level do require upfront fees.' },
+  { q: '5. Do you charge sales tax?', a: 'No. Data recovery services are not subject to sales tax in California.' },
+  { q: '6. Is there a fee if I decide not to proceed?', a: 'For most standard data recovery cases, there is no fee if you choose not to move forward after the initial diagnostic—as long as we haven’t started the recovery process. However, once you’ve agreed to the initial quote we provided during your consultation and we begin the recovery, the full balance will be due upon successful recovery, even if the results are 99% or more complete. This is because recovery efforts and engineering time begin immediately after your approval. That said, if during diagnostics we discover that your case is more complex than originally quoted and the price needs to change, you’ll always have the option to decline the updated quote and owe nothing. We want to make sure the entire process remains transparent and fair.' },
+  { q: '7. Are donor parts included in your flat-rate pricing?', a: 'Yes. Our flat-rate pricing is fully inclusive and covers everything needed for your recovery, including any required donor parts such as compatible read/write heads, PCBs, or other internal drive components. There are no hidden part fees, no additional lab charges, and no surprise costs added later. The flat rate we quote you covers the entire recovery process from start to finish—including diagnostics, cleanroom work (if needed), parts, labor, and recovery engineering time. The only additional cost not included in the recovery fee is the new transfer drive where we will place your recovered data. You’re welcome to provide your own external drive, or you can purchase one from us if it’s more convenient.' },
+  { q: '8. Can I get a written quote or invoice for approval?', a: 'Yes. Before you even drop off or ship your device to us, we start with a free phone or email consultation where we ask detailed questions about your device, symptoms, and failure type. Based on the information you provide, we’ll give you an accurate, upfront flat-rate quote for your specific case. If you prefer, we’re happy to provide a written quote for your records and approval. Once your device arrives at our lab, we begin the recovery process right away based on the quote we initially provided—without waiting for further approval—unless the actual condition of the device turns out to be different than what was described during the consultation. If that happens, we’ll pause the recovery and contact you with an updated quote for approval before proceeding. Our goal is full transparency with no hidden fees or surprises.' },
+  { q: '1. How long does the data recovery process take?', a: 'Standard turnaround is 3–5 business days. Expedited options are available for faster service.' },
+  { q: '2. Will I get updates during the recovery?', a: 'Yes, you’ll receive a same-day update on the day your device arrives and additional updates as your case progresses.' },
+  { q: '3. How will I know what data was recovered?', a: 'Once the recovery process is complete, we’ll provide you with a detailed, interactive HTML file that lists all of the recovered folders and file names, as well as any files that could not be recovered. This easy-to-navigate report allows you to review the recovery results in full before making any payment decision. You’ll have the chance to go through the file list and determine if the recovery meets your needs and expectations. You are never obligated to proceed until you’ve had the opportunity to review and approve the recovered file list.' },
+  { q: '4. Do you use original drives for recovery?', a: 'No, we never perform recovery work directly on your original drive, except for one critical step: creating a full sector-by-sector image (clone). The very first step in our recovery process (unless clean room repairs are required) is to use specialized imaging equipment to create a complete clone of your original drive onto a stable, working drive. Once the imaging process is complete, all recovery work—including file system rebuilding, file verification, and data extraction—is done from the cloned image, not your original drive. This ensures that your original media remains untouched and fully protected throughout the entire recovery process. Our priority is to minimize risk and preserve your original data source in its current state.' },
+  { q: '5. Is clean room service included if needed?', a: 'Yes. We offer flat-rate pricing for both Logical and Clean Room data recovery cases, with no hidden fees. If your device requires Clean Room service—meaning the hard drive needs to be physically opened for internal repairs like head replacements or platter inspections—all Clean Room labor and necessary donor parts are included in the flat-rate price we provide during your consultation. We’ll always let you know upfront if your case falls into the Clean Room category before starting. If your recovery was quoted as a Logical case, there will never be surprise Clean Room fees added later. Our pricing model is fully transparent, so there are no unexpected costs once you approve the initial quote.' },
+  { q: '6. What happens if my data isn’t recoverable?', a: 'You won’t pay a recovery fee. Exceptions apply only to special cases like deleted file recovery or prior tampering.' },
+  { q: '7. Can I cancel the recovery mid-process?', a: 'In most cases, once you’ve agreed to the initial data recovery quote and we’ve started working on your case, cancellation is not possible. This is because we immediately allocate time, engineering resources, and often invest in donor parts specific to your drive as soon as recovery begins. However, if the condition of your device turns out to be different than originally described and the recovery price needs to change, we will pause the process and notify you with the updated quote. At that point, you will have the option to decline and cancel the recovery without owing anything further. We believe in full transparency and only proceed with your approval when circumstances change from the original agreement.' },
+  { q: '8. Do you offer emergency, after-hours recovery?', a: 'Yes! Our Expedited Plus Service gives you 24/7 engineer attention—even on weekends and holidays.' },
+  { q: '9. Is the transfer drive (the drive you put the recovered data onto) included in your price?', a: 'No, the cost of the transfer drive is not included in our data recovery pricing. The customer is responsible for providing a suitable transfer drive where we can save the recovered data. You’re welcome to bring your own new or used external drive, or if it’s more convenient, you can purchase a brand-new transfer drive from us at the time of your recovery. If you’re unsure what size or type of drive you’ll need, we’ll happily recommend the best option based on the size and type of your recovered data.' },
+  { q: '1. Is my data kept private and confidential?', a: 'Absolutely. Your files are never accessed, shared, or viewed beyond what’s necessary for recovery.' },
+  { q: '2. Do you make backup copies of my data?', a: 'No, we never keep a copy of your actual recovered files. As part of the recovery process, we create a forensic sector-by-sector image (clone) of your original drive, but this image is a raw, unreadable copy used strictly for recovery purposes—it’s not usable data. We retain this image only until you receive your recovered data and confirm successful delivery. Once you’ve confirmed that your data has been received and is accessible on your transfer drive, we permanently delete the recovery image from our systems to protect your privacy and ensure data security. We follow this policy for every customer—whether the case is for a single hard drive, SSD, RAID array, or mobile device.' },
+  { q: '3. Can I get a Non-Disclosure Agreement (NDA)?', a: 'Yes. We’re happy to sign an NDA upon request for added peace of mind.' },
+  { q: '4. Is your lab physically secure?', a: 'Yes. Our Glendale, CA facility has restricted access, surveillance, and strict security protocols.' },
+  { q: '5. Will my data be viewed by your engineers?', a: 'We take your privacy and confidentiality very seriously. Our engineers do not browse through your personal files or access your data beyond what’s absolutely necessary for the recovery process. That said, to verify the integrity of the recovered data and ensure our system has accurately separated good files from corrupt or unreadable ones, our engineers may need to open and test one or two files during the final verification step. We always do this with the utmost respect for your privacy, and we make every effort to select files that do not appear sensitive in nature (such as generic file types like sample photos or non-confidential documents). Our goal is simply to ensure that the data we’re delivering to you is usable and complete.' },
+  { q: '6. How long do you store my recovered data after delivery?', a: 'We typically retain a temporary backup for 7 days post-delivery in case of any transfer issues. After that, your data is permanently erased from our systems.' },
+  { q: '7. Can I request immediate deletion after data delivery?', a: 'Yes, just let us know in writing and we’ll delete your data immediately after final delivery.' }
 ]
-
-const openFaq = ref<string | null>(null)
-const toggleFaq = (key: string) => { openFaq.value = openFaq.value === key ? null : key }
+const openFaq = ref<number | null>(null)
+const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
   <div>
     <NavBar />
     <HeroSection
-      title="Frequently Asked Questions"
-      subtitle="Everything You Need to Know About Data Recovery."
-      description="Clear answers to the most common questions about the data recovery process, pricing, shipping, security, and what to expect when working with Five Star Data Recovery."
+      title="General Data Recovery FAQ's"
+      subtitle="Answers to Common Questions About Our Services, Pricing, Process &amp; Terms."
+      description="Answers to Common Questions About Our Services, Pricing, Process &amp; Terms."
     >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ No Hidden Fees</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ 24/7 Support</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
 
-    <section class="faq-page-section">
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div v-for="cat in categories" :key="cat.title" class="faq-category">
-          <h2 class="cat-title">{{ cat.title }}</h2>
-          <div class="faq-list">
-            <div
-              v-for="(faq, i) in cat.faqs"
-              :key="i"
-              class="faq-item"
-              :class="{ open: openFaq === `${cat.title}-${i}` }"
-            >
-              <button class="faq-question" @click="toggleFaq(`${cat.title}-${i}`)">
-                <span>{{ faq.q }}</span>
-                <span class="faq-icon">{{ openFaq === `${cat.title}-${i}` ? '−' : '+' }}</span>
-              </button>
-              <div v-if="openFaq === `${cat.title}-${i}`" class="faq-answer">{{ faq.a }}</div>
-            </div>
+        <div class="section-header">
+          <h2 class="section-title">📦 Shipping &amp; Mail-In Service FAQs</h2>
+        </div>
+        <div class="section-body">
+          <p>Yes, we offer free round-trip shipping anywhere in the United States. Once you fill out our Mail-In Form, we’ll send you a prepaid shipping label.</p>
+          <p>Most devices arrive within 1–2 business days when using our preferred carriers (FedEx or USPS).</p>
+          <p>Yes, you’re welcome to use any carrier you prefer, including your own FedEx or UPS account if that’s more convenient for you. If you choose to use your own shipping label, just make sure to include the intake form (which we’ll provide via email after you complete the Mail-In Form) inside your package. This ensures your device is checked in properly and without delay once it arrives at our lab.</p>
+          <p>Our free shipping service includes basic tracking, but you can purchase additional insurance if needed. For valuable devices, we strongly recommend doing so.</p>
+          <p>Use anti-static bags for internal drives, and wrap external devices securely with bubble wrap. Place the wrapped drive in a sturdy box with additional padding.</p>
+          <p>Currently, our free shipping offer applies only to U.S. addresses. International customers are responsible for sending and receiving their devices.</p>
+          <p>Yes! You’re welcome to drop off your device at our Glendale, CA lab during business hours.</p>
+          <p>Yes. As soon as your device arrives at our lab and is checked in, you’ll receive a confirmation email or phone call.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">💳 Payment, Billing &amp; Policies FAQs</h2>
+        </div>
+        <div class="section-body">
+          <p>Payment is only due after we successfully recover your data and you’ve had a chance to review and approve the file list. However, there are a few exceptions that require an upfront, non-refundable fee. These include cases where the customer selects Expedited or Expedited Plus Service, Deleted File Recoveries, or situations where the hard drive’s cover has been previously opened before arriving at our lab.</p>
+          <p>To clarify, by “cover,” we’re referring to the actual metal top of the hard drive where the internal platters are located—not the external plastic casing or enclosure. If the drive has been opened at the platter level by another repair shop or during a DIY attempt, it significantly increases the complexity and risk involved in the recovery process. In these situations, we charge a non-refundable evaluation fee to cover the additional time and labor needed for a proper cleanroom inspection and assessment.</p>
+          <p>We accept cash, all major credit cards, debit cards, Zelle, and bank transfers.</p>
+          <p>Yes! We offer flexible Payment Plans to help make data recovery more affordable. Typically, we require a 25% down payment upfront, with the remaining balance paid over an agreed-upon period. Once your data recovery is complete and you’ve approved the recovered file list, we’ll securely store your recovered data at our facility until the balance is paid in full. Your data will remain safely held and unavailable for release or transfer until the payment plan is fully satisfied. This ensures both the security of your data and fairness in the payment process.</p>
+          <p>Most standard cases require no upfront payment. However, Expedited Services, Deleted File Recoveries, and drives that were previously opened at the component level do require upfront fees.</p>
+          <p>No. Data recovery services are not subject to sales tax in California.</p>
+          <p>For most standard data recovery cases, there is no fee if you choose not to move forward after the initial diagnostic—as long as we haven’t started the recovery process.</p>
+          <p>However, once you’ve agreed to the initial quote we provided during your consultation and we begin the recovery, the full balance will be due upon successful recovery, even if the results are 99% or more complete. This is because recovery efforts and engineering time begin immediately after your approval.</p>
+          <p>That said, if during diagnostics we discover that your case is more complex than originally quoted and the price needs to change, you’ll always have the option to decline the updated quote and owe nothing. We want to make sure the entire process remains transparent and fair.</p>
+          <p>Yes. Our flat-rate pricing is fully inclusive and covers everything needed for your recovery, including any required donor parts such as compatible read/write heads, PCBs, or other internal drive components. There are no hidden part fees, no additional lab charges, and no surprise costs added later. The flat rate we quote you covers the entire recovery process from start to finish—including diagnostics, cleanroom work (if needed), parts, labor, and recovery engineering time.</p>
+          <p>The only additional cost not included in the recovery fee is the new transfer drive where we will place your recovered data. You’re welcome to provide your own external drive, or you can purchase one from us if it’s more convenient.</p>
+          <p>Yes. Before you even drop off or ship your device to us, we start with a free phone or email consultation where we ask detailed questions about your device, symptoms, and failure type. Based on the information you provide, we’ll give you an accurate, upfront flat-rate quote for your specific case. If you prefer, we’re happy to provide a written quote for your records and approval.</p>
+          <p>Once your device arrives at our lab, we begin the recovery process right away based on the quote we initially provided—without waiting for further approval—unless the actual condition of the device turns out to be different than what was described during the consultation. If that happens, we’ll pause the recovery and contact you with an updated quote for approval before proceeding. Our goal is full transparency with no hidden fees or surprises.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">⚙️ Recovery Process &amp; Timeline FAQs</h2>
+        </div>
+        <div class="section-body">
+          <p>Standard turnaround is 3–5 business days. Expedited options are available for faster service.</p>
+          <p>Yes, you’ll receive a same-day update on the day your device arrives and additional updates as your case progresses.</p>
+          <p>Once the recovery process is complete, we’ll provide you with a detailed, interactive HTML file that lists all of the recovered folders and file names, as well as any files that could not be recovered. This easy-to-navigate report allows you to review the recovery results in full before making any payment decision.</p>
+          <p>You’ll have the chance to go through the file list and determine if the recovery meets your needs and expectations. You are never obligated to proceed until you’ve had the opportunity to review and approve the recovered file list.</p>
+          <p>No, we never perform recovery work directly on your original drive, except for one critical step: creating a full sector-by-sector image (clone). The very first step in our recovery process (unless clean room repairs are required) is to use specialized imaging equipment to create a complete clone of your original drive onto a stable, working drive.</p>
+          <p>Once the imaging process is complete, all recovery work—including file system rebuilding, file verification, and data extraction—is done from the cloned image, not your original drive. This ensures that your original media remains untouched and fully protected throughout the entire recovery process. Our priority is to minimize risk and preserve your original data source in its current state.</p>
+          <p>Yes. We offer flat-rate pricing for both Logical and Clean Room data recovery cases, with no hidden fees. If your device requires Clean Room service—meaning the hard drive needs to be physically opened for internal repairs like head replacements or platter inspections—all Clean Room labor and necessary donor parts are included in the flat-rate price we provide during your consultation.</p>
+          <p>We’ll always let you know upfront if your case falls into the Clean Room category before starting. If your recovery was quoted as a Logical case, there will never be surprise Clean Room fees added later. Our pricing model is fully transparent, so there are no unexpected costs once you approve the initial quote.</p>
+          <p>You won’t pay a recovery fee. Exceptions apply only to special cases like deleted file recovery or prior tampering.</p>
+          <p>In most cases, once you’ve agreed to the initial data recovery quote and we’ve started working on your case, cancellation is not possible. This is because we immediately allocate time, engineering resources, and often invest in donor parts specific to your drive as soon as recovery begins.</p>
+          <p>However, if the condition of your device turns out to be different than originally described and the recovery price needs to change, we will pause the process and notify you with the updated quote. At that point, you will have the option to decline and cancel the recovery without owing anything further. We believe in full transparency and only proceed with your approval when circumstances change from the original agreement.</p>
+          <p>Yes! Our Expedited Plus Service gives you 24/7 engineer attention—even on weekends and holidays.</p>
+          <p>No, the cost of the transfer drive is not included in our data recovery pricing. The customer is responsible for providing a suitable transfer drive where we can save the recovered data. You’re welcome to bring your own new or used external drive, or if it’s more convenient, you can purchase a brand-new transfer drive from us at the time of your recovery.</p>
+          <p>If you’re unsure what size or type of drive you’ll need, we’ll happily recommend the best option based on the size and type of your recovered data.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">🔐 Security &amp; Privacy FAQs</h2>
+        </div>
+        <div class="section-body">
+          <p>Absolutely. Your files are never accessed, shared, or viewed beyond what’s necessary for recovery.</p>
+          <p>No, we never keep a copy of your actual recovered files. As part of the recovery process, we create a forensic sector-by-sector image (clone) of your original drive, but this image is a raw, unreadable copy used strictly for recovery purposes—it’s not usable data.</p>
+          <p>We retain this image only until you receive your recovered data and confirm successful delivery. Once you’ve confirmed that your data has been received and is accessible on your transfer drive, we permanently delete the recovery image from our systems to protect your privacy and ensure data security.</p>
+          <p>We follow this policy for every customer—whether the case is for a single hard drive, SSD, RAID array, or mobile device.</p>
+          <p>Yes. We’re happy to sign an NDA upon request for added peace of mind.</p>
+          <p>Yes. Our Glendale, CA facility has restricted access, surveillance, and strict security protocols.</p>
+          <p>We take your privacy and confidentiality very seriously. Our engineers do not browse through your personal files or access your data beyond what’s absolutely necessary for the recovery process.</p>
+          <p>That said, to verify the integrity of the recovered data and ensure our system has accurately separated good files from corrupt or unreadable ones, our engineers may need to open and test one or two files during the final verification step. We always do this with the utmost respect for your privacy, and we make every effort to select files that do not appear sensitive in nature (such as generic file types like sample photos or non-confidential documents).</p>
+          <p>Our goal is simply to ensure that the data we’re delivering to you is usable and complete.</p>
+          <p>We typically retain a temporary backup for 7 days post-delivery in case of any transfer issues. After that, your data is permanently erased from our systems.</p>
+          <p>Yes, just let us know in writing and we’ll delete your data immediately after final delivery.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
+        </div>
+        <div class="section-body">
+          <p>“What really impressed me was how transparent the entire process was. Everything I read on their website—the pricing, the turnaround time, the no data no charge policy—was exactly how things turned out. No hidden fees, no surprises. It’s rare to find a company that sticks to its word like this. Highly recommend!”</p>
+          <p>Cesar R</p>
+          <p>San Francisco, CA</p>
+          <p>“The recovery took about two days longer than I originally expected, but honestly, I’m just grateful they were able to get my data back. I had already taken my drive to two other companies who said recovery wasn’t possible. Vahan pulled it off and saved all my important files. Definitely worth the wait.”</p>
+          <p>Catherine</p>
+          <p>Los Angeles, CA</p>
+          <p>“I had a question about my case and decided to send an email late at night, not expecting a response until the next day. To my surprise, I got a reply back at 11 PM! They were able to answer my question and give me peace of mind right when I needed it. That level of customer care is hard to find.”</p>
+          <p>Anton N.</p>
+          <p>Austin, TX</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
+        </div>
+        <div class="section-body">
+          <p>Not all data recovery companies are equal. Here’s why we stand out:</p>
+          <ul class="content-list">
+            <li>Advanced equipment for both physical and logical recovery</li>
+            <li>Certified technicians with deep experience</li>
+            <li>On-site clean room lab for handling physically damaged devices</li>
+            <li>Fast turnaround times and emergency service options</li>
+            <li>Transparent communication and no surprises</li>
+            <li>Trusted specialists in complex drive recovery cases</li>
+            <li>“No Data, No Charge” policy</li>
+          </ul>
+          <p>We’re not just another tech repair shop. We’re a specialized data recover service provider trusted by thousands of clients across the U.S.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Request a Free Quote!</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Let’s RecoverYour Files</h2>
+        </div>
+        <div class="section-body">
+          <p>Whether you’re facing corrupted files, a dead drive, or critical data loss, we’re here to help. Let Five Star Data Recovery be your go-to data recovery service—local, secure, and trusted.</p>
+          <ul class="content-list">
+            <li>Walk into our Glendale lab</li>
+            <li>Mail in your device from anywhere</li>
+            <li>Call now or request a free quote</li>
+          </ul>
+          <p>Lost files? We’ll help you bring them back—safely and professionally.</p>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
+            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band">
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Still Have Questions?</h2><p class="cta-sub">Call us anytime — we're available 24/7/365. No question is too small.</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/contact" class="btn btn-outline-sm">Contact Us</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With General Data Recovery FAQ's?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
@@ -109,10 +244,12 @@ const toggleFaq = (key: string) => { openFaq.value = openFaq.value === key ? nul
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.faq-page-section { padding: 80px 0; }
-.faq-category { margin-bottom: 56px; }
-.cat-title { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: var(--gold); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
-.faq-list { display: flex; flex-direction: column; gap: 8px; }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }

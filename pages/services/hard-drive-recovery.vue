@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Hard Drive Recovery',
-  description: 'Professional hard drive data recovery in Glendale, CA. Clicking drives, failed heads, firmware issues, water damage. No data = no charge. Call 323-672-3000.'
+  description: 'Professional hard drive data recovery in Glendale, CA. Clicking drives, failed heads, firmware issues, water damage. No data = no charge. Call 818-272-8866.'
 })
 
 const features = [
@@ -31,11 +31,12 @@ const features = [
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
 
     <section>
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">What We <span class="gold-underline gold">Recover</span></h2>
+          <h2 class="section-title">What We Recover</h2>
           <p class="section-subtitle">We handle all types of hard drive failures — mechanical, electrical, logical, and physical.</p>
         </div>
         <div class="grid-3">
@@ -48,9 +49,9 @@ const features = [
       </div>
     </section>
 
-    <section class="brands-section">
+    <section class="brands-section section-bg-2">
       <div class="container">
-        <h2 class="section-title" style="text-align:center;margin-bottom:32px">Supported <span class="gold">Brands & Models</span></h2>
+        <h2 class="section-title" style="text-align:center;margin-bottom:32px">Supported Brands & Models</h2>
         <div class="brand-list">
           <span v-for="b in ['Western Digital','Seagate','Toshiba','HGST','Samsung','Maxtor','Hitachi','Fujitsu','IBM','LaCie']" :key="b" class="brand-pill">{{ b }}</span>
         </div>

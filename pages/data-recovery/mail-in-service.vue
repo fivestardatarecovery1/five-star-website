@@ -1,83 +1,172 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Mail-In Service — Free Shipping | Five Star Data Recovery',
-  description: 'Free nationwide mail-in data recovery service. We provide prepaid shipping label both ways. Start your recovery from anywhere in the US. Call 323-672-3000.'
+  title: 'Data Recovery Mail In Form — Five Star Data Recovery',
+  description: 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stag'
 })
 const faqs = [
-  { q: 'How long does recovery take?', a: 'Standard recovery is 3-5 business days. Rush Expedited service is available for 24-48 hour turnaround. We provide a timeline during your free evaluation.' },
-  { q: 'How much does this recovery cost?', a: 'Recovery starts at $300 for logical issues. Physical/cleanroom recovery ranges from $650-$950. You receive a flat-rate quote before any work begins — no surprises.' },
-  { q: 'What if you cannot recover my data?', a: 'Simple — you pay nothing. Our No Data = No Charge guarantee means you only pay when we successfully recover your files.' },
-  { q: 'Do I have to come in person?', a: 'No. We offer free nationwide shipping both ways. You can also visit our Glendale, CA lab in person. Either way, recovery starts with a free diagnosis.' },
+  { q: '1. What is the Mail-In Data Recovery Form?', a: 'The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival.' },
+  { q: '2. How do I send in my device for mail-in data recovery?', a: 'Simply complete the Mail-In Recovery Form, and we’ll send you a prepaid shipping label for your convenience. Once you receive it, securely package your device, include the completed form inside the box, and drop it off at your nearest shipping location. Our preferred carriers are FedEx and USPS.' },
+  { q: '3. What devices can I send in for data recovery?', a: 'We accept hard drives, SSDs, iPhones, USB flash drives, RAID arrays, SD cards, and other common storage media. If you’re unsure whether we can recover your specific device, feel free to contact us first for a free consultation.' },
+  { q: '4. Do I need to pay anything upfront when mailing in a device?', a: 'Most standard data recovery cases require no upfront payment. However, certain services like iPhone component-level recovery or deleted file recovery may require a refundable deposit. Details will be provided during your initial phone consultation.' },
+  { q: '5. How long does the mail-in recovery process take?', a: 'Once we receive your device, you’ll get a same-day diagnostic report (by midnight). Standard recoveries take 3–5 business days, depending on the issue. For urgent cases, we offer Expedited and Expedited Plus Services with top priority handling.' },
+  { q: '6. Is shipping covered by your company?', a: 'Yes! We cover all shipping costs for our mail-in data recovery service. Once you complete the Mail-In Recovery Form, we’ll provide a prepaid shipping label so you can securely send your device to us at no charge. We also cover the return shipping of your recovered data.' },
+  { q: '7. Is my data safe during the mail-in process?', a: 'Yes. We use strict protocols to secure and track every device we receive. Once the recovery is complete, your data is transferred to a secure return drive and shipped back safely. We never access, share, or store your data beyond the recovery process.' },
+  { q: '8. How do I know when you\'ve received my package?', a: 'We’ll notify you by phone or email as soon as your device arrives and is logged into our system. Diagnostics begin right away, and you’ll receive your evaluation report the same day before midnight.' },
+  { q: '9. Can I track the progress of my recovery case?', a: 'Absolutely. Once your device is in our system, our team provides regular updates through our ticketing system. You can also reach out to us for a status update.' },
+  { q: '10. Where can I find the Mail-In Recovery Form?', a: 'You can access and complete the form directly on our Mail-In Form page. Make sure to print a copy and include it in your package for fast intake and identification.' }
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
+
 <template>
   <div>
     <NavBar />
-    <HeroSection title="Mail-In Data Recovery Service" subtitle="Nationwide Recovery. Free Shipping Both Ways." description="No matter where you are in the United States, we can recover your data. Our mail-in service includes a free prepaid shipping label to send your device to our Glendale, CA lab — and free return shipping when your data is recovered.">
+    <HeroSection
+      title="Data Recovery Mail In Form"
+      subtitle="Can’t visit us in person? No problem. Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S. Ship your device to us, and it will arrive at our lab in less than 2 days. Once received, we’ll begin diagnostics and keep you updated every step of the way — all backed by our No Data, No Charge policy."
+      description="Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience"
+    >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ Free Prepaid Shipping</span>
-          <span class="badge">✅ Nationwide Service</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data = No Charge</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
-    <section class="intro-section">
+    <StatsBar />
+
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Mail-In <span class="gold-underline gold">Recovery Service</span></h2></div>
-        <div class="intro-content">
-          <p>You shouldn't have to drive to a lab to get your data back. Our mail-in data recovery service makes it easy for customers anywhere in the US to access our professional recovery services. Simply contact us, receive your free prepaid shipping label, and pack your device securely.</p>
-          <p>Once we receive your drive, we perform a free diagnosis and provide an exact quote. You approve the work, we perform the recovery, and your data is returned to you on a new drive — all with the same No Data = No Charge guarantee.</p>
-          <p>All recoveries begin with a free, no-obligation evaluation. We provide a flat-rate quote before any work begins. If we cannot recover your data, you pay nothing.</p>
+        <div class="section-header">
+          <h2 class="section-title">Data Recovery Mail In Form</h2>
+        </div>
+        <div class="section-body">
+
         </div>
       </div>
     </section>
-    <section class="why-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Why Choose <span class="gold-underline gold">Five Star?</span></h2></div>
-        <div class="grid-3">
-          <div class="card why-card"><div class="why-icon">🏆</div><h3 class="why-title">No Data = No Charge</h3><p class="why-desc">You only pay when we successfully recover your data. Zero financial risk.</p></div>
-          <div class="card why-card"><div class="why-icon">⚡</div><h3 class="why-title">Fast Turnaround</h3><p class="why-desc">Standard 3-5 day turnaround. Emergency Expedited service available 24/7.</p></div>
-          <div class="card why-card"><div class="why-icon">🔒</div><h3 class="why-title">100% Confidential</h3><p class="why-desc">Your data is handled with strict confidentiality. NDA available on request.</p></div>
+        <div class="section-header">
+          <h2 class="section-title">Can’t visit us in person? No problem. Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S. Ship your device to us, and it will arrive at our lab in less than 2 days. Once received, we’ll begin diagnostics and keep you updated every step of the way — all backed by our No Data, No Charge policy.</h2>
+        </div>
+        <div class="section-body">
+          <p>[forminator_form id=&quot;3056&quot;]</p>
         </div>
       </div>
     </section>
-    <section class="faq-section">
+    <section class="section-bg-2 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2></div>
+        <div class="section-header">
+          <h2 class="section-title">Data Recovery Process</h2>
+        </div>
+        <div class="section-body">
+          <p>Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Drop off or Mail in Your Drive</h2>
+        </div>
+        <div class="section-body">
+          <p>You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Receive a Free Diagnosis</h2>
+        </div>
+        <div class="section-body">
+          <p>Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Engineers work on Recovering your Data</h2>
+        </div>
+        <div class="section-body">
+          <p>We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Review &amp; Approve the Recovered</h2>
+        </div>
+        <div class="section-body">
+          <p>After recovery is complete, you’ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Receive your recovered data</h2>
+        </div>
+        <div class="section-body">
+          <p>Once approved, we’ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p>https://youtu.be/14ACFHJ24hg?si=V88jCA7h-3SbSvyU</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)"><span>{{ faq.q }}</span><span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span></button>
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
             <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cta-band">
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Ready to Recover Your Data?</h2><p class="cta-sub">Free evaluation · Flat-rate pricing · No charge if we can't recover</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With Data Recovery Mail In Form?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
   </div>
 </template>
+
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.why-card { text-align: center; }
-.why-icon { font-size: 36px; margin-bottom: 12px; }
-.why-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.why-desc { font-size: 14px; color: var(--muted); }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }

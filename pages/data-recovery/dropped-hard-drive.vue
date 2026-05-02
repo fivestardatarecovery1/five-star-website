@@ -1,83 +1,319 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Dropped Hard Drive Data Recovery | Five Star Data Recovery',
-  description: 'Recover data from a dropped hard drive. Head crashes, platter damage, clicking after drop. Cleanroom recovery available. Call 323-672-3000.'
+  title: 'Dropped Hard Drive Recovery Services — Five Star Data Recovery',
+  description: 'At Five Star Data Recovery, we use advanced cleanroom equipment and tools designed specifically for recovering data from physically damaged hard drives.'
 })
 const faqs = [
-  { q: 'How long does recovery take?', a: 'Standard recovery is 3-5 business days. Rush Expedited service is available for 24-48 hour turnaround. We provide a timeline during your free evaluation.' },
-  { q: 'How much does this recovery cost?', a: 'Recovery starts at $300 for logical issues. Physical/cleanroom recovery ranges from $650-$950. You receive a flat-rate quote before any work begins — no surprises.' },
-  { q: 'What if you cannot recover my data?', a: 'Simple — you pay nothing. Our No Data = No Charge guarantee means you only pay when we successfully recover your files.' },
-  { q: 'Do I have to come in person?', a: 'No. We offer free nationwide shipping both ways. You can also visit our Glendale, CA lab in person. Either way, recovery starts with a free diagnosis.' },
+  { q: '1. What should I do immediately after dropping my hard drive?', a: 'If your hard drive has been dropped, power it off immediately and avoid trying to turn it back on. Running a damaged drive can worsen internal damage, especially if the read/write heads are misaligned. Call us right away at Five Star Data Recovery so we can guide you through the safest next steps and help prevent permanent data loss.' },
+  { q: '2. Can you recover data from a drive that is clicking after being dropped?', a: 'Yes. A clicking sound usually indicates internal damage to the read/write heads or actuator arm, which often occurs when a drive is dropped. Most of the time, we can recover the data using clean room tools and donor parts. The main deciding factor in whether the data is recoverable is the condition of the platters —which depends on how many times the drive was powered on after the drop. The fewer attempts made to power it on, the higher the chances of a successful recovery.' },
+  { q: '3. Is it safe to use data recovery software on a dropped hard drive?', a: 'No. Using DIY data recovery software on a physically damaged drive can lead to further data loss or permanent damage. If your drive has been dropped and is showing signs of failure (clicking, not spinning, or not recognized), it’s best to consult a professional recovery service.' },
+  { q: '4. How much does dropped hard drive recovery cost?', a: 'We offer flat-rate pricing for dropped hard drive recovery, with rates depending on the type and extent of physical damage. There are no hidden fees, and diagnostics are always free. You only pay if we successfully recover your data.' },
+  { q: '5. Can data still be recovered if the drive was dropped while in use?', a: 'Yes. Drives that were dropped while powered on are more likely to suffer internal damage, such as head crashes or platter contact—but recovery is often still possible. At Five Star Data Recovery, the process does not begin with imaging for mechanically damaged drives. Instead, we start with a clean room inspection to assess internal damage. If the read/write heads are physically damaged, they must be replaced using compatible donor parts before we can safely proceed. Once the new heads are installed, we begin carefully imaging or cloning the drive sector by sector to recover your data safely and effectively.' },
+  { q: '6. How long does dropped hard drive data recovery take?', a: 'Most recoveries take 3–5 business days, depending on the severity of the damage. We also offer Expedited and Expedited Plus services for urgent situations, giving your case immediate priority—even after hours or on weekends.' },
+  { q: '7. Will I get a list of the recovered files before I pay?', a: 'Yes. Once we complete the recovery process, we’ll provide you with a detailed file list showing exactly what was recovered. At that point, you can choose whether or not to move forward with the recovery . If you decide not to proceed, you pay nothing . However, once you approve the recovery and we deliver the data, payment is required in full.' }
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
+
 <template>
   <div>
     <NavBar />
-    <HeroSection title="Dropped Hard Drive Recovery" subtitle="Dropped It and It's Clicking? We Can Still Recover Your Data." description="A dropped hard drive is a medical emergency for your data. When a drive is dropped while running, the read/write heads can crash into the spinning platters — causing catastrophic mechanical damage. But even then, recovery is often possible.">
+    <HeroSection
+      title="Dropped Hard Drive Recovery Services"
+      subtitle="Accidentally dropped your hard drive? At Five Star Data Recovery, we specialize in recovering data from physically damaged drives using advanced tools and Class 100 clean room technology. Whether your drive is clicking, not spinning, or not being recognized, our engineers can diagnose and recover your data safely. We offer flat-rate pricing, free diagnostics, and a strict no data, no charge policy."
+      description="At Five Star Data Recovery, we use advanced cleanroom equipment and tools designed specifically for recovering data from physically damaged hard drives."
+    >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ Cleanroom Recovery</span>
-          <span class="badge">✅ Head Crash Specialists</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data = No Charge</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
-    <section class="intro-section">
+    <StatsBar />
+
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Dropped Hard Drive <span class="gold-underline gold">Recovery Service</span></h2></div>
-        <div class="intro-content">
-          <p>Hard drives contain spinning platters and a read/write head that hovers mere nanometers above the surface. When dropped — especially while running — the head can make contact with the platter surface, scratching or scoring it. This is called a head crash, and it's one of the most serious forms of drive damage.</p>
-          <p>Even after a severe drop, data recovery is often possible — especially if you stop using the drive immediately. Our cleanroom engineers perform head replacements, platter inspections, and precision recovery work to extract data from dropped drives. The key is speed: the longer a crashed drive runs, the more damage it accumulates.</p>
-          <p>All recoveries begin with a free, no-obligation evaluation. We provide a flat-rate quote before any work begins. If we cannot recover your data, you pay nothing.</p>
+        <div class="section-header">
+          <h2 class="section-title">Why Hard Drives Fail After Being Dropped</h2>
+        </div>
+        <div class="section-body">
+
         </div>
       </div>
     </section>
-    <section class="why-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Why Choose <span class="gold-underline gold">Five Star?</span></h2></div>
-        <div class="grid-3">
-          <div class="card why-card"><div class="why-icon">🏆</div><h3 class="why-title">No Data = No Charge</h3><p class="why-desc">You only pay when we successfully recover your data. Zero financial risk.</p></div>
-          <div class="card why-card"><div class="why-icon">⚡</div><h3 class="why-title">Fast Turnaround</h3><p class="why-desc">Standard 3-5 day turnaround. Emergency Expedited service available 24/7.</p></div>
-          <div class="card why-card"><div class="why-icon">🔒</div><h3 class="why-title">100% Confidential</h3><p class="why-desc">Your data is handled with strict confidentiality. NDA available on request.</p></div>
+        <div class="section-header">
+          <h2 class="section-title">Common Symptoms of a Dropped Hard Drive</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Clicking hard drive noises when powered on</li>
+            <li>Drive spins up, but doesn't appear on your desktop or file manager</li>
+            <li>Slower performance or freezing when trying to access files</li>
+            <li>Complete failure to mount or detect</li>
+            <li>Grinding, buzzing, or beeping sounds</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="faq-section">
+    <section class="section-bg-2 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2></div>
+        <div class="section-header">
+          <h2 class="section-title">What to Do When You Drop Your Hard Drive</h2>
+        </div>
+        <div class="section-body">
+          <ol class="content-list">
+            <li>Unplug the drive and do not try to open it.</li>
+            <li>Avoid running disk repair or scan tools.</li>
+            <li>Contact a professional data recovery lab as soon as possible.</li>
+            <li>Describe the symptoms and how the accident happened.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How We Recover Data from a Dropped External HDD</h2>
+        </div>
+        <div class="section-body">
+          <p>At Five Star Data Recovery, we use advanced cleanroom equipment and tools designed specifically for recovering data from physically damaged hard drives.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Free Diagnostic Evaluation</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Cleanroom Repair</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Imaging the Drive</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Data Extraction</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">File Verification and Delivery</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Certified cleanroom for mechanical repairs</li>
+            <li>Flat-rate pricing and free diagnostic</li>
+            <li>No data, no charge guarantee</li>
+            <li>Fast turnaround options, including expedited service</li>
+            <li>Transparent communication every step of the way</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Real-World Examples</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>A client dropped their 2TB WD external hard drive down a flight of stairs. It began making a clicking hard drive noise and wasn’t recognized by their Mac. We replaced the damaged head stack in our cleanroom and successfully recovered 98% of the data.</li>
+            <li>A wedding photographer brought in a dropped external hard drive containing all footage from a recent event. Despite internal damage, we were able to recover all photo and video files within 48 hours using expedited recovery service.</li>
+            <li>A university researcher lost 4 years of data after the drive fell off their desk. We imaged the failing disk and recovered data even from areas affected by bad sectors.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How to Avoid Future Data Loss</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Always use a padded case when carrying your external drive</li>
+            <li>Avoid placing it on edges or unstable surfaces</li>
+            <li>Use drives with drop-resistant housing</li>
+            <li>Back up important files regularly to a cloud or second device</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Ready to Recover Your Dropped Hard Drive?</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Types of Dropped Drives We Recover</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Western Digital (WD) My Passport and Elements drives</li>
+            <li>Seagate Backup Plus and Expansion drives</li>
+            <li>Toshiba Canvio drives</li>
+            <li>LaCie rugged external drives</li>
+            <li>G-Technology portable drives</li>
+            <li>Internal laptop and desktop HDDs (2.5" and 3.5")</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">What Gets Damaged Inside When a Drive Is Dropped?</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Read/Write Head Crash: The head may land on the platter, scratching the surface and making data unreadable.</li>
+            <li>Actuator Arm Misalignment: The moving arm that holds the head may get stuck or misaligned, causing clicking or buzzing sounds.</li>
+            <li>Spindle Motor Failure: If the impact is hard enough, the spindle that spins the platters may get damaged or stop functioning.</li>
+            <li>Firmware Corruption: Sudden power loss or mechanical impact can corrupt firmware stored on the disk’s ROM chip.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Expedited Recovery Options for Urgent Cases</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Serving Clients Nationwide</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Quick and Secure Data Recovery</li>
+            <li>Expert Engineers for All Devices</li>
+            <li>No Data, No Fee Guarantee</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
+        </div>
+        <div class="section-body">
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)"><span>{{ faq.q }}</span><span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span></button>
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
             <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cta-band">
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Ready to Recover Your Data?</h2><p class="cta-sub">Free evaluation · Flat-rate pricing · No charge if we can't recover</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With Dropped Hard Drive Recovery Services?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
   </div>
 </template>
+
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.why-card { text-align: center; }
-.why-icon { font-size: 36px; margin-bottom: 12px; }
-.why-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.why-desc { font-size: 14px; color: var(--muted); }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }

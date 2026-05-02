@@ -1,83 +1,219 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'iPhone Data Recovery — All Models | Five Star Data Recovery',
-  description: 'Professional iPhone data recovery. Water damage, broken screen, failed update, accidental deletion. All iOS versions. No data = no charge. Call 323-672-3000.'
+  title: 'iPhone Data Recovery Services — Five Star Data Recovery',
+  description: 'Our Component Level iPhone Data Recovery is offered at a flat rate of $950.00, with no hidden fees. When your case is brought in, we collect a $200 refundable d'
 })
 const faqs = [
-  { q: 'How long does recovery take?', a: 'Standard recovery is 3-5 business days. Rush Expedited service is available for 24-48 hour turnaround. We provide a timeline during your free evaluation.' },
-  { q: 'How much does this recovery cost?', a: 'Recovery starts at $300 for logical issues. Physical/cleanroom recovery ranges from $650-$950. You receive a flat-rate quote before any work begins — no surprises.' },
-  { q: 'What if you cannot recover my data?', a: 'Simple — you pay nothing. Our No Data = No Charge guarantee means you only pay when we successfully recover your files.' },
-  { q: 'Do I have to come in person?', a: 'No. We offer free nationwide shipping both ways. You can also visit our Glendale, CA lab in person. Either way, recovery starts with a free diagnosis.' },
+  { q: '1. Can you recover data from a physically damaged iPhone?', a: 'Yes. Our iPhone data recovery service specializes in retrieving data from physically damaged devices, including those with water damage, broken logic boards, or failed components. We perform component-level repairs in-house to safely extract data when standard software tools won’t work.' },
+  { q: '2. What types of data can you recover from an iPhone?', a: 'We can recover photos, videos, contacts, messages, call logs, notes , and other important data stored directly on your iPhone. If the data is still on the device and hasn’t been overwritten, we have a strong chance of recovering it — even if the phone is no longer powering on.' },
+  { q: '3. Can you recover deleted files from an iPhone?', a: 'No, we do not offer deleted file recovery for iPhones. Our focus is on recovering data from physically damaged or non-functional iPhones , not files that were accidentally deleted from working devices.' },
+  { q: '4. How much does iPhone data recovery cost?', a: 'Our Component Level iPhone Data Recovery is offered at a flat rate of $950.00, with no hidden fees. When your case is brought in, we collect a $200 refundable deposit to begin the process. If we’re unable to recover your data, the deposit is fully refunded—as long as the device hasn’t been previously tampered with at the component level. If the recovery is successful, the $200 deposit is applied toward the total cost, and the customer simply pays the remaining $750.00 balance. You only pay if we recover your data. For more information, please visit our Pricing Page or contact us for a free consultation.' },
+  { q: '5. Can I ship my iPhone in for recovery?', a: 'Yes. We offer free nationwide shipping within the U.S. If you’re located outside of our service area, we’ll provide a prepaid shipping label so you can send your iPhone to our secure recovery lab with ease.' },
+  { q: '6. Is my data safe during the recovery process?', a: 'Absolutely. We follow strict security protocols and never access or share your personal data. Your privacy is a top priority, and all recovered data is returned to you securely.' },
+  { q: '7. Is there a no data, no charge policy?', a: 'Yes. Our No Data, No Charge policy applies to all iPhone recoveries — you only pay if we successfully recover your data. The only exceptions are cases where the phone’s internal components have been tampered with or the cover has been opened, which may require a non-refundable evaluation fee.' },
+  { q: '8. What if my iPhone was repaired by another shop before I brought it in?', a: 'We can still attempt iPhone data recovery, even if another repair shop has worked on the device. However, if the iPhone has had component-level repair attempts (such as board work, micro-soldering, or chip replacements), a non-refundable $200.00 evaluation fee will apply due to the increased complexity and risk. This fee does not apply to basic repairs like screen or battery replacements. If your device has been previously opened for board-level service, please let us know during your consultation.' },
+  { q: '9. Can you recover data from an iPhone stuck in a boot loop or showing the Apple logo?', a: 'Yes, we specialize in iPhone data recovery from devices stuck in a boot loop or frozen on the Apple logo. These issues are often caused by system corruption or hardware failure. Our engineers perform board-level diagnostics to restore temporary functionality and extract your important files safely.' },
+  { q: '10. Do you recover data from iPhones that have been in saltwater or extreme conditions?', a: 'We do recover data from water-damaged iPhones, including those exposed to saltwater, rain, or extreme heat. Saltwater damage is particularly aggressive, so immediate evaluation is critical. Bring the phone to us as soon as possible and avoid powering it on — this increases the chances of a successful iPhone data recovery.' }
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
+
 <template>
   <div>
     <NavBar />
-    <HeroSection title="iPhone Data Recovery" subtitle="We Recover from Broken, Wet, and Dead iPhones." description="Water damage, physical damage, failed iOS updates — we recover photos, contacts, messages, and all other data from iPhones of all generations.">
+    <HeroSection
+      title="iPhone Data Recovery Services"
+      subtitle="Has your iPhone suddenly gone dead? Water damaged? Stuck on the Apple logo or showing no signs of life? At Five Star Data Recovery, we specialize in advanced, component-level iPhone data recovery. We do not offer deleted file recovery—our focus is on physically or electrically damaged iPhones. We may still be able to recover your data, even if someone says it’s gone."
+      description="Our Component Level iPhone Data Recovery is offered at a flat rate of $950.00, with no hidden fees. When your case is brought in, we collect a $200 refundable deposit to begin the process. If we’re unable to recover your data, the deposit is fully refunded—as long as the device hasn’t been previousl"
+    >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">✅ All iPhone Models</span>
-          <span class="badge">✅ iOS Recovery Specialists</span>
           <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data = No Charge</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
-    <section class="intro-section">
+    <StatsBar />
+
+    <section class="section-bg-3 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">iPhone <span class="gold-underline gold">Recovery Service</span></h2></div>
-        <div class="intro-content">
-          <p>iPhones are the most used devices in America — and losing years of photos, messages, and contacts from one is devastating. At Five Star Data Recovery, we specialize in recovering data from iPhones that have been physically damaged, water-logged, stuck in a boot loop, or affected by failed iOS updates.</p>
-          <p>We work with all iPhone models from iPhone 6 through the latest iPhone 15 series. Our team handles everything from logic board-level chip-off recovery for severe damage to straightforward logical recoveries for deleted or corrupted data.</p>
-          <p>All recoveries begin with a free, no-obligation evaluation. We provide a flat-rate quote before any work begins. If we cannot recover your data, you pay nothing.</p>
+        <div class="section-header">
+          <h2 class="section-title">What We Can Recover</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Photos and videos</li>
+            <li>Text messages and iMessages</li>
+            <li>Contacts and calendars</li>
+            <li>Call history</li>
+            <li>WhatsApp and app data</li>
+            <li>Full iTunes Backup of iPhone</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="why-section">
+    <section class="section-bg-1 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Why Choose <span class="gold-underline gold">Five Star?</span></h2></div>
-        <div class="grid-3">
-          <div class="card why-card"><div class="why-icon">🏆</div><h3 class="why-title">No Data = No Charge</h3><p class="why-desc">You only pay when we successfully recover your data. Zero financial risk.</p></div>
-          <div class="card why-card"><div class="why-icon">⚡</div><h3 class="why-title">Fast Turnaround</h3><p class="why-desc">Standard 3-5 day turnaround. Emergency Expedited service available 24/7.</p></div>
-          <div class="card why-card"><div class="why-icon">🔒</div><h3 class="why-title">100% Confidential</h3><p class="why-desc">Your data is handled with strict confidentiality. NDA available on request.</p></div>
+        <div class="section-header">
+          <h2 class="section-title">Common Reasons iPhones Need Data Recovery</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Water or liquid damage</li>
+            <li>Complete power failure</li>
+            <li>iPhones stuck in boot loop or Apple logo</li>
+            <li>Burned logic boards</li>
+            <li>Broken NAND or baseband components</li>
+            <li>Short circuits after third-party repair attempts</li>
+          </ul>
         </div>
       </div>
     </section>
-    <section class="faq-section">
+    <section class="section-bg-2 section-pad">
       <div class="container">
-        <div class="section-header"><h2 class="section-title">Frequently Asked <span class="gold-underline gold">Questions</span></h2></div>
+        <div class="section-header">
+          <h2 class="section-title">What Is Component-Level iPhone Data Recovery?</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>We repair individual chips and traces on the board.</li>
+            <li>We revive critical circuits like NAND, CPU, and power management ICs.</li>
+            <li>Once stable, we extract the full data from the device’s internal memory.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our iPhone Data Recovery Process</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Free Diagnostic: We assess the board for damage.</li>
+            <li>Flat-Rate Quote: We provide upfront pricing before any recovery work begins.</li>
+            <li>Board-Level Repair: We restore basic functions only to access your data.</li>
+            <li>Secure Extraction: We perform a complete data recovery from iPhone memory.</li>
+            <li>Delivery: We return your files on a USB drive or through secure digital transfer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Trusted iPhone Data Recovery in Glendale, CA</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>All iPhone models (6 through 15, including Pro/Pro Max)</li>
+            <li>iOS devices like iPads (select cases)</li>
+            <li>Devices damaged by fire, liquid, or failed repairs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Clients Choose Five Star Data Recovery</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Real component-level logic board repair</li>
+            <li>Specialized equipment for iPhone-level diagnostics</li>
+            <li>Private, secure, and confidential service</li>
+            <li>Transparent communication throughout the process</li>
+            <li>No data, no charge – guaranteed</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Request a Free Quote</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Start Your Data Recovery Today</h2>
+        </div>
+        <div class="section-body">
+          <ul class="content-list">
+            <li>Walk in to our lab in Glendale, CA</li>
+            <li>Mail in your device from anywhere in the U.S.</li>
+            <li>Call now for a free diagnostic</li>
+          </ul>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
         <div class="faq-list">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)"><span>{{ faq.q }}</span><span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span></button>
+            <button class="faq-question" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
             <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
-    <section class="cta-band">
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Ready to Recover Your Data?</h2><p class="cta-sub">Free evaluation · Flat-rate pricing · No charge if we can't recover</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With iPhone Data Recovery Services?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
   </div>
 </template>
+
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.intro-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 800px; }
-.why-card { text-align: center; }
-.why-icon { font-size: 36px; margin-bottom: 12px; }
-.why-title { font-family: var(--font-heading); font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
-.why-desc { font-size: 14px; color: var(--muted); }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; flex-shrink: 0; }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }

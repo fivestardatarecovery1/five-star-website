@@ -1,96 +1,86 @@
 <template>
   <footer class="footer">
     <div class="container footer-grid">
+
       <!-- Col 1: Brand -->
       <div class="footer-brand">
-        <img src="/logo.png" alt="Five Star Data Recovery" class="footer-logo" />
-        <p class="footer-tagline">Recovering what can't be replaced — professional data recovery services you can trust.</p>
-        <div class="footer-stars">★★★★★</div>
-        <p class="footer-rating-text">5.0 Rating · 21,000+ Drives Recovered</p>
+        <h4 class="footer-heading">Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="contact-emoji">📍</span>
+          <span>1731 S Brand Blvd Suite 100<br>Glendale, CA 91204</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="contact-emoji">📞</span>
+          <a href="tel:8182728866">818-272-8866</a>
+        </div>
+        <div class="footer-hours">
+          <p class="hours-label">Lab Hours</p>
+          <p>Mon – Friday: 10am to 6pm</p>
+          <p>Saturday: 10am to 2pm</p>
+        </div>
       </div>
 
-      <!-- Col 2: Services -->
+      <!-- Col 2: Common Issues -->
       <div class="footer-col">
-        <h4 class="footer-heading">Services</h4>
+        <h4 class="footer-heading">Common Issues:</h4>
         <ul>
-          <li><NuxtLink to="/data-recovery/hard-drive-recovery">Hard Drive Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/ssd-recovery">SSD Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/raid-recovery">RAID Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/laptop-recovery">Laptop Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/mac-recovery">Mac Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/iphone-recovery">iPhone Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/external-hard-drive">External HDD</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/nas-recovery">NAS Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/usb-recovery">USB Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/sd-card-recovery">SD Card Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/clean-room">Clean Room Recovery</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/mail-in-service">Mail-In Service</NuxtLink></li>
+          <li><NuxtLink to="/hard-drive-clicking">Hard Drive Clicking</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/hard-drive-not-showing-up">Hard Drive Not Showing Up</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/dropped-hard-drive">Dropped Hard Drive</NuxtLink></li>
+          <li><NuxtLink to="/drive-doesnt-power-on">Hard Drive Has No Power</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/deleted-files">Deleted File Recovery</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/bad-sectors">Bad Sectors</NuxtLink></li>
         </ul>
       </div>
 
-      <!-- Col 3: Quick Links -->
+      <!-- Col 3: Helpful Links -->
       <div class="footer-col">
-        <h4 class="footer-heading">Quick Links</h4>
+        <h4 class="footer-heading">Helpful Links</h4>
         <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery">All Services</NuxtLink></li>
-          <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
-          <li><NuxtLink to="/about">About Us</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/express-drop-off">Express Drop Off</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/mail-in-service">Mail in Service</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/free-quote">Request a Quote</NuxtLink></li>
+          <li><NuxtLink to="/payment-plan">Payment Plan</NuxtLink></li>
+          <li><NuxtLink to="/faq">FAQ's</NuxtLink></li>
           <li><NuxtLink to="/reviews">Reviews</NuxtLink></li>
-          <li><NuxtLink to="/faq">FAQ</NuxtLink></li>
-          <li><NuxtLink to="/contact">Contact</NuxtLink></li>
-          <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-          <li><NuxtLink to="/start-recovery">Start a Recovery</NuxtLink></li>
-          <li><NuxtLink to="/expedited-service">Expedited Service</NuxtLink></li>
-          <li><NuxtLink to="/payment-plan">Payment Plans</NuxtLink></li>
         </ul>
-        <h4 class="footer-heading" style="margin-top:20px">Locations</h4>
+      </div>
+
+      <!-- Col 4: Service Areas -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Service Areas</h4>
         <ul>
-          <li><NuxtLink to="/data-recovery-los-angeles">Los Angeles</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery-glendale">Glendale</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-burbank">Burbank</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-los-angeles">Los Angeles</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-pasadena">Pasadena</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-hollywood">Hollywood</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-glendale">Glendale</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-beverly-hills">Beverly Hills</NuxtLink></li>
         </ul>
       </div>
 
-      <!-- Col 4: Contact -->
+      <!-- Col 5: Common Drives -->
       <div class="footer-col">
-        <h4 class="footer-heading">Contact Us</h4>
-        <ul class="contact-list">
-          <li>
-            <span class="contact-icon">📍</span>
-            <span>1731 S Brand Blvd Suite 100<br>Glendale, CA 91204</span>
-          </li>
-          <li>
-            <span class="contact-icon">📞</span>
-            <a href="tel:3236723000">323-672-3000</a>
-          </li>
-          <li>
-            <span class="contact-icon">✉️</span>
-            <a href="mailto:info@fivestardatarecovery.com">info@fivestardatarecovery.com</a>
-          </li>
-          <li>
-            <span class="contact-icon">⏰</span>
-            <span>Available 24/7/365</span>
-          </li>
-          <li>
-            <span class="contact-icon">✈️</span>
-            <span>Free Nationwide Shipping</span>
-          </li>
+        <h4 class="footer-heading">Common Drives:</h4>
+        <ul>
+          <li><NuxtLink to="/data-recovery/lacie-recovery">LaCie</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/hitachi-recovery">Hitachi</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/seagate-recovery">Seagate</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/western-digital-recovery">Western Digital</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/toshiba-recovery">Toshiba</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/samsung-recovery">Samsung</NuxtLink></li>
         </ul>
-        <div class="footer-legal-links">
-          <NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink>
-          <NuxtLink to="/terms">Terms &amp; Conditions</NuxtLink>
-        </div>
       </div>
+
     </div>
 
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p>© {{ new Date().getFullYear() }} Five Star Data Recovery. All rights reserved.</p>
-        <p class="footer-disclaimer">No data recovered = No charge. Results may vary by case complexity.</p>
+        <p>© {{ new Date().getFullYear() }} Five Star Data Recovery Services. All rights reserved.</p>
+        <div class="footer-legal-links">
+          <NuxtLink to="/privacy-policy">Privacy and Policy</NuxtLink>
+          <NuxtLink to="/terms">Terms of Service</NuxtLink>
+        </div>
       </div>
     </div>
   </footer>
@@ -98,87 +88,86 @@
 
 <style scoped>
 .footer {
-  background: #070910;
-  border-top: 1px solid var(--border);
-  padding-top: 64px;
+  background: #000000;
+  border-top: 3px solid rgba(245,200,66,0.2);
+  padding-top: 56px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 56px;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+/* Brand col */
 .footer-logo {
-  height: 44px;
+  height: 52px;
   width: auto;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  display: block;
 }
-.footer-tagline {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-.footer-stars {
-  color: var(--gold);
-  font-size: 20px;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-}
-.footer-rating-text {
+.contact-emoji { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
   font-size: 13px;
-  color: var(--muted);
+  color: #9ba3b8;
+  line-height: 1.6;
+}
+.footer-contact-item a {
+  color: #9ba3b8;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+.footer-contact-item a:hover { color: var(--gold); }
+.footer-hours {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #9ba3b8;
+  line-height: 1.8;
+}
+.hours-label {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
 }
 
+/* Column headings */
 .footer-heading {
-  font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--white);
-  margin-bottom: 16px;
+  color: #ffffff;
+  margin-bottom: 6px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
 }
 
 .footer-col ul {
   list-style: none;
+  padding: 0;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
-.footer-col ul li a,
-.footer-col ul li {
+.footer-col ul li a {
   font-size: 13px;
-  color: var(--muted);
-  transition: color 0.2s;
+  color: #c8d0e0;
   text-decoration: none;
+  transition: color 0.2s;
 }
 .footer-col ul li a:hover { color: var(--gold); }
 
-.contact-list { display: flex; flex-direction: column; gap: 12px !important; }
-.contact-list li { display: flex; gap: 10px; align-items: flex-start; }
-.contact-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
-.contact-list a { color: var(--gold); font-weight: 600; text-decoration: none; }
-.contact-list a:hover { text-decoration: underline; }
-
-.footer-legal-links {
-  display: flex;
-  gap: 16px;
-  margin-top: 20px;
-}
-.footer-legal-links a {
-  font-size: 12px;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-legal-links a:hover { color: var(--gold); }
-
+/* Bottom bar */
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding: 20px 0;
+  padding: 18px 0;
 }
 .footer-bottom-inner {
   display: flex;
@@ -187,14 +176,24 @@
   flex-wrap: wrap;
   gap: 8px;
 }
-.footer-bottom p { font-size: 13px; color: var(--muted); }
-.footer-disclaimer { font-style: italic; }
+.footer-bottom p { font-size: 13px; color: #9ba3b8; }
+.footer-legal-links {
+  display: flex;
+  gap: 24px;
+}
+.footer-legal-links a {
+  font-size: 13px;
+  color: #9ba3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-legal-links a:hover { color: var(--gold); }
 
-@media (max-width: 1024px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+@media (max-width: 1100px) {
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
 @media (max-width: 640px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
 }
 </style>

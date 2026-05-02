@@ -21,10 +21,11 @@ useSeoMeta({
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
     <section>
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Flash Media <span class="gold-underline gold">We Recover</span></h2>
+          <h2 class="section-title">Flash Media We Recover</h2>
         </div>
         <div class="grid-4">
           <div v-for="m in [

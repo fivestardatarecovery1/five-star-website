@@ -1,84 +1,177 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Customer Reviews — Five Star Data Recovery',
-  description: 'Read real customer reviews for Five Star Data Recovery. 1,000+ 5-star reviews. Trusted data recovery experts in Glendale, CA. Call 323-672-3000.'
+  title: 'Reviews — Five Star Data Recovery',
+  description: 'At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard d'
 })
-
-const reviews = [
-  { name: 'Alex R.', location: 'Pasadena, CA', stars: 5, text: 'I thought my external hard drive was completely dead — it wasn\'t even spinning. Five Star Data Recovery not only diagnosed the problem fast but recovered all my photos and documents within a few days. Highly recommend them for hard drive recovery!' },
-  { name: 'Megan S.', location: 'Los Angeles, CA', stars: 5, text: 'My iPhone had severe water damage and wouldn\'t turn on at all. I had years of family photos that I thought were gone forever. These guys are miracle workers — they recovered everything from my iPhone. Absolutely worth it!' },
-  { name: 'Daniel K.', location: 'Santa Monica, CA', stars: 5, text: 'We had a failed RAID 5 array with two bad drives, and our business data was at risk. Five Star Data Recovery worked through the night with their Expedited Plus Service and got us back up and running in 48 hours. True professionals.' },
-  { name: 'Linda M.', location: 'Austin, TX', stars: 5, text: 'My laptop\'s SSD just disappeared from the system. No backups, nothing. I contacted several companies, and Five Star stood out. They explained the process clearly and recovered my most important work files. SSD recovery experts for sure.' },
-  { name: 'Jason T.', location: 'New York, NY', stars: 5, text: 'I broke my USB flash drive during a presentation — completely bent the connector. I thought I had lost all my client data. The team at Five Star carefully extracted the chip and recovered all of it. I\'m beyond impressed.' },
-  { name: 'Ana T.', location: 'Pasadena, CA', stars: 5, text: 'My drive was clicking like crazy and wouldn\'t mount. Five Star recovered 12 years of family photos. I\'m beyond grateful. They kept me updated every step of the way and the pricing was exactly as quoted.' },
-  { name: 'Jason B.', location: 'Los Angeles, CA', stars: 5, text: 'I heard a hard drive clicking noise and panicked. These guys explained everything clearly, fixed it fast, and saved my client data. Professional, honest, and competent — everything you want in a recovery service.' },
-  { name: 'Michael T.', location: 'Glendale, CA', stars: 5, text: 'My RAID server failed and I thought 8 years of business data was gone forever. Five Star recovered 100% of it within 48 hours. Worth every penny. These are the real deal.' },
-  { name: 'Sarah K.', location: 'Los Angeles, CA', stars: 5, text: 'Dropped my external hard drive with 3 years of wedding photography. They recovered every single file. I cried when I got the call. Incredible team — they understand how precious this data is.' },
-  { name: 'James R.', location: 'Burbank, CA', stars: 5, text: 'We use Five Star for all our enterprise data emergencies. Professional, fast, and the cleanroom facility is state-of-the-art. Highly recommend for businesses that can\'t afford downtime.' },
-  { name: 'Christine L.', location: 'Hollywood, CA', stars: 5, text: 'Lost all my freelance work when my SSD failed after a power surge. Five Star recovered everything in 4 days. Their communication throughout was excellent — they called me with updates daily.' },
-  { name: 'Robert M.', location: 'Beverly Hills, CA', stars: 5, text: 'Highly professional and discreet service. They recovered sensitive business documents from a failed encrypted drive. Signed an NDA without any issue. Exceptional service from start to finish.' },
-]
-
-const stats = [
-  { num: '1,000+', label: 'Total Reviews' },
-  { num: '5.0', label: 'Average Rating' },
-  { num: '21,000+', label: 'Drives Recovered' },
-  { num: '10+', label: 'Years in Business' },
-]
 </script>
 
 <template>
   <div>
     <NavBar />
     <HeroSection
-      title="What Our Customers Say"
-      subtitle="Real Stories. Real Results. Real Five Star Service."
-      description="Don't just take our word for it. Read what thousands of customers across the US have said about their data recovery experience with Five Star Data Recovery."
+      title="Reviews"
+      subtitle="Hear What Our Customers Are Saying"
+      description="At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard drives to complex RAID arrays, our clients nationwide trust us to recover their valuable data. Don’t just take our word for it—read real revi"
     >
       <template #badges>
         <div class="trust-badges">
-          <span class="badge">⭐ 5.0 Average Rating</span>
-          <span class="badge">✅ 1,000+ Reviews</span>
-          <span class="badge">✅ 21,000+ Drives Recovered</span>
+          <span class="badge">✅ Free Evaluation</span>
+          <span class="badge">✅ No Data, No Charge</span>
+          <span class="badge">✅ Flat-Rate Pricing</span>
+          <span class="badge">✅ 21,000+ Recoveries</span>
         </div>
       </template>
     </HeroSection>
+    <StatsBar />
 
-    <!-- Stats Bar -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div v-for="s in stats" :key="s.label" class="stat-item">
-            <div class="stat-num">{{ s.num }}</div>
-            <div class="stat-label">{{ s.label }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Grid -->
-    <section class="reviews-section">
+    <section class="section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Customer <span class="gold-underline gold">Reviews</span></h2>
+          <h2 class="section-title">Reviews</h2>
         </div>
-        <div class="reviews-grid">
-          <div v-for="r in reviews" :key="r.name" class="review-card card">
-            <div class="review-stars">{{ '★'.repeat(r.stars) }}</div>
-            <p class="review-text">"{{ r.text }}"</p>
-            <div class="review-author">
-              <span class="author-name">{{ r.name }}</span>
-              <span class="author-location">{{ r.location }}</span>
-            </div>
-          </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Hear What Our Customers Are Saying</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard drives to complex RAID arrays, our clients nationwide trust us to recover their valuable data. Don’t just take our word for it—read real reviews from satisfied customers who got their data back safely and securely.</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Customer Reviews</h2>
+        </div>
+        <div class="section-body">
+          <p>We take pride in delivering exceptional service and results. Don’t just take our word for it—see what our customers have to say about their experience with Five Star Data Recovery.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Total Reviews</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">500+</h2>
+        </div>
+        <div class="section-body">
+          <p>Over 500 Five Star Reviews</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Average Rating</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">5.0</h2>
+        </div>
+        <div class="section-body">
+          <p>Consistenly Rated 5-Stars</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Drives Recovered</h2>
+        </div>
+        <div class="section-body">
+
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">21,000+</h2>
+        </div>
+        <div class="section-body">
+          <p>Industry-leading success rate</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-1 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">“Awesome Work!”</h2>
+        </div>
+        <div class="section-body">
+          <p>When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!</p>
+          <p>Mikey W.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-2 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">“Truely 5 Stars”</h2>
+        </div>
+        <div class="section-body">
+          <p>Don’t trust your important data anywhere else. These guys are the best. It’s all in the name: 5 star performance and service all the way. You’ll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it’s at. Honestly: don’t go anywhere else. Don’t even think about it. Thank you guys!</p>
+          <p>Arin K.</p>
+        </div>
+      </div>
+    </section>
+    <section class="section-bg-3 section-pad">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">“Thank You!”</h2>
+        </div>
+        <div class="section-body">
+          <p>My son’s laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly.</p>
+          <p>Vance K.</p>
+          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p>https://youtu.be/14ACFHJ24hg?si=V88jCA7h-3SbSvyU</p>
         </div>
       </div>
     </section>
 
-    <section class="cta-band">
+
+
+    <section class="cta-band section-bg-2">
       <div class="container cta-band-inner">
-        <div><h2 class="cta-title">Join Our Satisfied Customers</h2><p class="cta-sub">Free evaluation. Flat-rate pricing. No charge if we can't recover.</p></div>
-        <div class="cta-actions"><a href="tel:3236723000" class="btn btn-gold">📞 323-672-3000</a><NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink></div>
+        <div>
+          <h2 class="cta-title">Need Help With Reviews?</h2>
+          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
     <FooterBar />
@@ -88,17 +181,17 @@ const stats = [
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.stats-section { background: var(--card-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 0; }
-.stats-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 32px; }
-.stat-item { text-align: center; }
-.stat-num { font-family: var(--font-heading); font-size: clamp(36px, 5vw, 52px); font-weight: 900; color: var(--gold); margin-bottom: 6px; }
-.stat-label { font-size: 14px; color: var(--muted); font-weight: 500; }
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.review-stars { color: var(--gold); font-size: 20px; letter-spacing: 2px; margin-bottom: 14px; }
-.review-text { font-size: 15px; color: var(--muted); font-style: italic; line-height: 1.7; margin-bottom: 20px; }
-.review-author { border-top: 1px solid var(--border); padding-top: 14px; display: flex; flex-direction: column; gap: 3px; }
-.author-name { font-weight: 700; font-size: 15px; color: var(--white); }
-.author-location { font-size: 13px; color: var(--muted); }
+.section-pad { padding: 72px 0; }
+.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
+.section-body strong { color: var(--white); font-weight: 600; }
+.content-list { padding-left: 20px; margin: 12px 0 16px; }
+.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.faq-item.open { border-color: var(--gold); }
+.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
+.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
 .cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
 .cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
 .cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
@@ -106,6 +199,5 @@ const stats = [
 .cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 1024px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 640px) { .reviews-grid { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
 </style>
