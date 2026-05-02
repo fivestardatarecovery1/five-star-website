@@ -38,80 +38,32 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Devices We Offer Deleted File Recovery From</h2>
-        </div>
-        <div class="section-body">
-          <p>We offer professional deleted file recovery from nearly all types of local storage devices, including:</p>
-          <ul class="content-list">
-            <li>External and internal hard drives (HDD/SSD)</li>
-            <li>USB flash drives</li>
-            <li>SD cards (including microSD)</li>
-            <li>CompactFlash cards</li>
-            <li>RAID arrays</li>
-            <li>NAS devices</li>
-            <li>Desktop and laptop computers</li>
-          </ul>
-          <p>Please Note: We do not offer deleted file recovery services for smartphones (iPhones or Androids). Smartphones use encrypted NAND flash storage with TRIM enabled. This means that deleted data is usually unrecoverable right away.</p>
-          <p>Each type of device stores data differently. For example:</p>
-          <ul class="content-list">
-            <li>Traditional hard drives (HDDs) may retain deleted file data in unallocated space until it is overwritten.</li>
-            <li>Solid state drives (SSDs) typically have TRIM enabled, which tells the device to erase deleted blocks instantly, reducing recovery chances.</li>
-            <li>SD cards and USB flash drives store data linearly, but when formatted or overwritten, metadata that maps the file system is often erased, complicating recovery.</li>
-          </ul>
-          <p>Understanding these technical differences is crucial to developing the right recovery process.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Deleted File Recovery Process</h2>
         </div>
-        <div class="section-body">
-          <p>We approach deleted file recovery with forensic-level precision to ensure we don’t further damage the data or lose potential recovery chances. Our process includes:</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Forensic Clone of the Device</h2>
-        </div>
-        <div class="section-body">
-          <p>We begin by creating a 1-to-1 sector-level image of your device using specialized hardware. This ensures we never work directly on the original device, preserving its current state</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Deep Scan of the Clone</h2>
-        </div>
-        <div class="section-body">
-          <p>Once the clone is created, we scan it thoroughly using commercial-grade recovery tools. We search for unallocated space, file tables, and fragments. This helps us locate traces of deleted files, even if someone partially overwrote them.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Attempt to Recover Lost Files</h2>
-        </div>
-        <div class="section-body">
-          <p>We extract as many deleted files as possible. This can include documents, photos, videos, email databases, and other file types.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File Repair (If Needed)</h2>
-        </div>
-        <div class="section-body">
-          <p>If files—especially videos—are corrupted or partially damaged, we attempt to rebuild them. This includes header repair, data stitching, and restoring file structures when possible.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Forensic Clone of the Device</h3>
+            <p class="process-desc">We begin by creating a 1-to-1 sector-level image of your device using specialized hardware. This ensures we never work directly on the original device, preserving its current state</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Deep Scan of the Clone</h3>
+            <p class="process-desc">Once the clone is created, we scan it thoroughly using commercial-grade recovery tools. We search for unallocated space, file tables, and fragments. This helps us locate traces of deleted files, even </p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Attempt to Recover Lost Files</h3>
+            <p class="process-desc">We extract as many deleted files as possible. This can include documents, photos, videos, email databases, and other file types.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">File Repair (If Needed)</h3>
+            <p class="process-desc">If files—especially videos—are corrupted or partially damaged, we attempt to rebuild them. This includes header repair, data stitching, and restoring file structures when possible.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -208,15 +160,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="section-title">Testimonials from Satisfied Clients</h2>
         </div>
         <div class="section-body">
-          <p>“I accidentally deleted an entire folder of client projects from my external hard drive. I contacted Five Star Data Recovery, and Elen was incredibly helpful in walking me through the process. They were able to recover all the files I needed within just a couple of days. The flat-rate pricing made it simple, and there were no surprises.”</p>
-          <p>Michelle D.</p>
-          <p>Pasadena, CA</p>
-          <p>“I thought I had permanently lost over a year’s worth of photos after formatting my USB drive by mistake. Five Star Data Recovery recovered over 95% of my deleted files, including every single photo I cared about. Alex handled my case and kept me updated every step of the way. I’m extremely grateful for their expertise.”</p>
-          <p>Tom R.</p>
-          <p>Denver, CO</p>
-          <p>“I deleted some important Excel spreadsheets from my laptop and emptied the recycle bin before realizing the mistake. Five Star Data Recovery was able to get everything back. Their service was fast, and they explained the entire deleted file recovery process in detail. Highly recommended!”</p>
-          <p>Sofia L.</p>
-          <p>Glendale, CA</p>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I accidentally deleted an entire folder of client projects from my external hard drive. I contacted Five Star Data Recovery, and Elen was incredibly helpful in walking me through the process. They were able to recover all the files I needed within just a couple of days. The flat-rate pricing made it simple, and there were no surprises."</p>
+              <div class="review-author">Michelle D. — Pasadena, CA</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I thought I had permanently lost over a year’s worth of photos after formatting my USB drive by mistake. Five Star Data Recovery recovered over 95% of my deleted files, including every single photo I cared about. Alex handled my case and kept me updated every step of the way. I’m extremely grateful for their expertise."</p>
+              <div class="review-author">Tom R. — Denver, CO</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I deleted some important Excel spreadsheets from my laptop and emptied the recycle bin before realizing the mistake. Five Star Data Recovery was able to get everything back. Their service was fast, and they explained the entire deleted file recovery process in detail. Highly recommended!"</p>
+              <div class="review-author">Sofia L. — Glendale, CA</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -302,4 +262,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

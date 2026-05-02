@@ -39,13 +39,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <!-- Mac Devices We Recover -->
+    <section class="issues-section section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Mac Devices We Recover Data From</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>We recover data from every Mac model — from older Intel-based MacBooks to the latest Apple Silicon machines. If it's made by Apple, we can help.</p>
+          </div>
+          <ul class="issues-list">
             <li>MacBook Air (Intel and M-series)</li>
             <li>MacBook Pro (all models and screen sizes)</li>
             <li>MacBook</li>
@@ -58,13 +62,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
+
+    <!-- Common Causes -->
+    <section class="issues-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Common Causes of Data Loss on Macs</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>Mac data loss can happen for many reasons — from software failures to physical damage. Recognizing the cause early helps maximize recovery success.</p>
+          </div>
+          <ul class="issues-list">
             <li>Accidental file deletion or disk formatting</li>
             <li>File system corruption (HFS+, APFS)</li>
             <li>macOS upgrade failure</li>
@@ -78,39 +87,54 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Specialized Component-Level Recovery for MacBooks</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
+    <!-- Process Steps -->
+    <section class="process-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Mac Data Recovery Process</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Free Diagnostic – We start with a full evaluation of your Mac or external drive. We determine the cause of failure and provide a quote before starting.</li>
-            <li>Drive Imaging or Board Repair – Depending on the situation, we either image the drive or perform component-level repair on logic boards to access data.</li>
-            <li>Deep Scan for Recoverable Data – We use professional recovery tools to do a deep scan. This helps us find lost partitions, deleted files, and corrupted volumes.</li>
-            <li>File Verification and Testing – We test recovered files for integrity and preview the results for your review.</li>
-            <li>Secure Return of Your Data – We return your data on a new drive or USB—never on the original failing drive.</li>
-          </ul>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free Diagnostic</h3>
+            <p class="process-desc">We start with a full evaluation of your Mac or external drive. We determine the cause of failure and provide a quote before starting.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Drive Imaging or Board Repair</h3>
+            <p class="process-desc">Depending on the situation, we either image the drive or perform component-level repair on logic boards to access data.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Deep Scan for Recoverable Data</h3>
+            <p class="process-desc">We use professional recovery tools to do a deep scan. This helps us find lost partitions, deleted files, and corrupted volumes.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">File Verification and Testing</h3>
+            <p class="process-desc">We test recovered files for integrity and preview the results for your review.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Secure Return of Your Data</h3>
+            <p class="process-desc">We return your data on a new drive or USB — never on the original failing drive.</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
+
+    <!-- What File Types -->
+    <section class="issues-section section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What File Types Can Be Recovered?</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>From personal memories to creative projects, we help recover lost data for students, professionals, and enterprise users. Whether you're editing in Final Cut Pro, producing music in Logic, or managing documents in Pages or Word, our recovery process ensures your most important files have the best chance of being restored.</p>
+          </div>
+          <ul class="issues-list">
             <li>Photos (JPG, HEIC, RAW, TIFF)</li>
             <li>Videos (MOV, MP4, ProRes, Final Cut Pro files)</li>
             <li>Documents (Pages, Keynote, Numbers, DOCX, PDF)</li>
@@ -119,97 +143,54 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <li>Time Machine sparse bundles and disk images</li>
             <li>Application and library files</li>
           </ul>
-          <p>From personal memories to creative projects, we help recover lost data for students, professionals, and enterprise users. Whether you're editing in Final Cut Pro, producing music in Logic, or managing documents in Pages or Word, our recovery process ensures your most important files—no matter the type—have the best chance of being restored.</p>
         </div>
       </div>
     </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Recovering Data from Mac External Hard Drives</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Drives not mounting or recognized on Mac</li>
-            <li>“Disk not ejected properly” errors leading to corruption</li>
-            <li>Partitions appearing as unallocated or RAW</li>
-            <li>Clicking or non-spinning external drives</li>
-            <li>Time Machine volumes that no longer open or show backups</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
+
+    <!-- Why Choose Us -->
+    <section class="why-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Expert knowledge of Apple file systems (APFS, HFS+, encrypted drives)</li>
-            <li>Component-level micro-soldering and SSD chip-off capabilities</li>
-            <li>Transparent pricing and no data, no charge policy</li>
-            <li>Secure in-house recovery lab—no outsourcing</li>
-            <li>Free round-trip nationwide shipping</li>
-            <li>High success rates—even with complex Mac failures</li>
-            <li>Lightning-Fast Response Time</li>
-            <li>Hundreds of 5-Star Reviews</li>
-            <li>Advanced Tools &amp; Cleanroom Lab</li>
+        <div class="grid-3">
+          <div class="feature-card" v-for="f in whyUs" :key="f.title">
+            <div class="feature-icon">✓</div>
+            <h3 class="feature-title">{{ f.title }}</h3>
+            <p class="feature-desc">{{ f.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nationwide Service -->
+    <section class="content-section section-bg-2 section-pad">
+      <div class="container content-narrow">
+        <h2 class="content-title">Free Round Trip Shipping</h2>
+        <p>Our nationwide service is designed for convenience. Whether you're in New York, Miami, Chicago, or a remote area — you'll get the same expert-level recovery without needing to find a local provider.</p>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <h2 class="cta-title">Start Your Mac Recovery Today</h2>
+          <p class="cta-sub">Data loss is stressful — but working with us doesn't have to be. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <ul class="cta-list">
+            <li>Drop off your Mac at our Glendale lab</li>
+            <li>Ship it to us free from anywhere in the U.S.</li>
+            <li>Call now for a free evaluation and quote</li>
           </ul>
         </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nationwide Mac Data Recovery</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Free Round Trip Shipping</h2>
-        </div>
-        <div class="section-body">
-          <p>Our nationwide service is designed for convenience. Whether you’re in New York, Miami, Chicago, or a remote area — you’ll get the same expert-level recovery without needing to find a local provider.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Start Your Mac Recovery Today</h2>
-        </div>
-        <div class="section-body">
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
@@ -235,7 +216,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="cta-actions">
           <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
@@ -246,23 +227,40 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.section-pad { padding: 80px 0; }
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid rgba(255,255,255,0.08); padding: 72px 0; }
+.cta-band-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
+.cta-title { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+.cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn-outline { display: inline-block; padding: 14px 28px; border: 2px solid #C9A84C; color: #C9A84C; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+.btn-outline:hover { background: rgba(201,168,76,0.1); }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
 .faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .issues-layout { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
 </style>

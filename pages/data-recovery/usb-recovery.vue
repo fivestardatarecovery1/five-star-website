@@ -37,143 +37,42 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common Causes of USB Data Loss</h2>
-        </div>
-        <div class="section-body">
-          <p>USB drives are small, portable, and easy to use, but they’re also vulnerable to a variety of failures that can result in lost data, including:</p>
-          <ul class="content-list">
-            <li>Accidental file deletion</li>
-            <li>File system corruption</li>
-            <li>Physical damage (broken connectors, bent or cracked drives)</li>
-            <li>Water damage or exposure to extreme temperatures</li>
-            <li>Electrical surges or static discharge</li>
-            <li>Firmware corruption</li>
-            <li>Failed controller chips</li>
-            <li>Improper removal from a computer</li>
-          </ul>
-          <p>If any of these issues sound familiar, don’t worry—you’re not alone. We help customers every day recover deleted files and lost data from corrupted USB drives of all brands and capacities.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Types of USB Drives We Recover From</h2>
-        </div>
-        <div class="section-body">
-          <p>We provide USB data recovery services for all types of USB storage devices, including:</p>
-          <ul class="content-list">
-            <li>Standard USB 2.0, USB 3.0, and USB-C flash drives</li>
-            <li>USB external solid-state drives (SSDs)</li>
-            <li>USB pen drives and thumb drives</li>
-            <li>USB external hard drives</li>
-            <li>Encrypted USB flash drives (BitLocker, hardware encrypted, etc.)</li>
-          </ul>
-          <p>We’ve successfully recovered data from thousands of USB devices—no matter the brand, form factor, or failure type. Whether your drive is physically damaged, not recognized by your computer, or showing as empty, our team can help restore what matters most.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Popular Brands we Recover From:</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>SanDisk</li>
-            <li>Kingston</li>
-            <li>Samsung</li>
-            <li>PNY</li>
-            <li>Corsair</li>
-            <li>Lexar</li>
-            <li>Toshiba</li>
-            <li>Transcend</li>
-            <li>Verbatim</li>
-            <li>And many more</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our USB Data Recovery Process</h2>
         </div>
-        <div class="section-body">
-          <p>When you trust us with your USB data recovery, here’s how the process works:</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Free Consultation and Quote</h2>
-        </div>
-        <div class="section-body">
-          <p>Before you drop off or ship your USB drive, we’ll ask a few questions about the issue you’re experiencing. Based on your description, we’ll provide an initial quote and explain the likely recovery process.</p>
-          <p>We’ll determine whether your case involves logical corruption, firmware issues, or physical damage to the USB connector or internal components. If your USB contains important personal files or business-critical data, we’ll explain how we handle and protect your information throughout the process.</p>
-          <p>Our goal is full transparency — no pressure, no hidden fees. The consultation is always free, and you’re under no obligation to proceed.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Drive Imaging and Safe Handling</h2>
-        </div>
-        <div class="section-body">
-          <p>Once we receive your USB device, our first step is to create a full sector-by-sector image (clone) of the drive. This ensures your original data remains untouched during the recovery process.</p>
-          <p>By working exclusively from the cloned copy, we eliminate the risk of further damage to your original USB drive. Whether your issue is caused by physical wear, connector damage, or internal chip failure, imaging preserves every recoverable bit exactly as it exists.</p>
-          <p>This step is especially critical if your device is unstable or intermittently disconnecting. Safe handling and proper isolation of the original hardware allow us to perform advanced recovery techniques with full confidence.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Failure Type Diagnosis</h2>
-        </div>
-        <div class="section-body">
-          <p>We categorize USB failures into two main types to determine the best recovery method:</p>
-          <ul class="content-list">
-            <li>Logical Recovery – These cases include file system corruption, accidental deletion, or drives that don’t mount but are still recognized by a computer. We use specialized tools to safely extract the data without altering the drive’s structure.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Chip-Off Recovery – For physically damaged drives or those that are completely unrecognized, we remove the NAND memory chip and access the raw data directly. This advanced process is used when the controller chip has failed or the USB is beyond standard repair.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File Recovery and Reconstruction</h2>
-        </div>
-        <div class="section-body">
-          <p>Using advanced tools and proprietary software, we perform a deep scan on the cloned drive to recover data from the USB stick. This includes rebuilding file systems, locating file types, and piecing together fragmented files.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File Review and Approval</h2>
-        </div>
-        <div class="section-body">
-          <p>Once recovery is complete, we’ll provide you with a file list showing the names of the files we were able to recover. If you're happy with the results, we proceed to final data delivery.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Secure Data Delivery</h2>
-        </div>
-        <div class="section-body">
-          <p>Your recovered files from the USB drive will be transferred onto a new external drive you provide (or you may purchase one from us).</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free Consultation and Quote</h3>
+            <p class="process-desc">Before you drop off or ship your USB drive, we’ll ask a few questions about the issue you’re experiencing. Based on your description, we’ll provide an initial quote and explain the likely recovery pro</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Drive Imaging and Safe Handling</h3>
+            <p class="process-desc">Once we receive your USB device, our first step is to create a full sector-by-sector image (clone) of the drive. This ensures your original data remains untouched during the recovery process. By worki</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Failure Type Diagnosis</h3>
+            <p class="process-desc">We categorize USB failures into two main types to determine the best recovery method: Logical Recovery – These cases include file system corruption, accidental deletion, or drives that don’t mount but</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">File Recovery and Reconstruction</h3>
+            <p class="process-desc">Using advanced tools and proprietary software, we perform a deep scan on the cloned drive to recover data from the USB stick. This includes rebuilding file systems, locating file types, and piecing to</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">File Review and Approval</h3>
+            <p class="process-desc">Once recovery is complete, we’ll provide you with a file list showing the names of the files we were able to recover. If you're happy with the results, we proceed to final data delivery.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">06</div>
+            <h3 class="process-title">Secure Data Delivery</h3>
+            <p class="process-desc">Your recovered files from the USB drive will be transferred onto a new external drive you provide (or you may purchase one from us).</p>
+          </div>
         </div>
       </div>
     </section>
@@ -381,4 +280,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

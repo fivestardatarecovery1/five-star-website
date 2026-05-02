@@ -90,64 +90,38 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Hitachi Data Recovery Process</h2>
+          <p class="section-subtitle">When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue. Here's what you can expect:</p>
         </div>
-        <div class="section-body">
-          <p>When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue. Here’s what you can expect:</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Free Diagnostic</h2>
-        </div>
-        <div class="section-body">
-          <p>We assess the health of the drive and confirm whether it’s a logical or physical failure.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Cloning</h2>
-        </div>
-        <div class="section-body">
-          <p>If the drive is unstable, we create a complete clone to avoid further wear on the original.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File System Repair</h2>
-        </div>
-        <div class="section-body">
-          <p>For logical problems like file system corruption, we use advanced tools to reconstruct the partition.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File Recovery</h2>
-        </div>
-        <div class="section-body">
-          <p>We extract recoverable files and check for lost files, folder structures, and data consistency.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Verification</h2>
-        </div>
-        <div class="section-body">
-          <p>You’ll receive a preview of the recovered content before final delivery.</p>
-          <p>We work to recover as much data as possible while maintaining the integrity of your original hitachi hard drive data.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free Diagnostic</h3>
+            <p class="process-desc">We assess the health of the drive and confirm whether it's a logical or physical failure.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Cloning</h3>
+            <p class="process-desc">If the drive is unstable, we create a complete clone to avoid further wear on the original.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">File System Repair</h3>
+            <p class="process-desc">For logical problems like file system corruption, we use advanced tools to reconstruct the partition.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">File Recovery</h3>
+            <p class="process-desc">We extract recoverable files and check for lost files, folder structures, and data consistency.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Verification</h3>
+            <p class="process-desc">You'll receive a preview of the recovered content before final delivery. We work to recover as much data as possible while maintaining the integrity of your original hitachi hard drive data.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -244,15 +218,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="section-title">Testimonials from Satisfied Clients</h2>
         </div>
         <div class="section-body">
-          <p>“My Hitachi external hard drive suddenly stopped showing up, and I was devastated thinking years of photos were gone. Five Star Data Recovery not only diagnosed the issue quickly but also recovered 100% of my data. The process was smooth, and they kept me informed every step of the way. Highly recommended for anyone dealing with Hitachi drive issues!”</p>
-          <p>Michael R.</p>
-          <p>Seattle, WA</p>
-          <p>“I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn’t recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish.”</p>
-          <p>Sarah T.</p>
-          <p>Chicago, IL</p>
-          <p>“My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star’s clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery.”</p>
-          <p>David N.</p>
-          <p>Glendale, CA</p>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My Hitachi external hard drive suddenly stopped showing up, and I was devastated thinking years of photos were gone. Five Star Data Recovery not only diagnosed the issue quickly but also recovered 100% of my data. The process was smooth, and they kept me informed every step of the way. Highly recommended for anyone dealing with Hitachi drive issues!"</p>
+              <div class="review-author">Michael R. — Seattle, WA</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn’t recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish."</p>
+              <div class="review-author">Sarah T. — Chicago, IL</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star’s clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery."</p>
+              <div class="review-author">David N. — Glendale, CA</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -312,4 +294,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

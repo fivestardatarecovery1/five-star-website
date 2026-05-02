@@ -43,150 +43,42 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Do Video Files Get Corrupted?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Power failures during recording or file transfer</li>
-            <li>Camera or device crashes</li>
-            <li>Improper ejection of external drives or SD cards</li>
-            <li>File system corruption on the storage device</li>
-            <li>Bad sectors or read errors on hard drives, SSDs, and external RAID systems</li>
-            <li>Incomplete file saving due to interrupted recording sessions</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common Video Formats We Repair:</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>.MP4</li>
-            <li>.MOV</li>
-            <li>.MXF</li>
-            <li>.AVI</li>
-            <li>.MTS / .M2TS</li>
-            <li>.R3D (RED RAW)</li>
-            <li>.BRAW (Blackmagic RAW)</li>
-            <li>.ProRes</li>
-            <li>.DNxHD / DNxHR</li>
-            <li>.XAVC-S / XAVC-I</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Professional Camera Files We Work With:</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>ARRI ALEXA Series</li>
-            <li>RED DSMC2 / KOMODO / V-RAPTOR</li>
-            <li>Blackmagic URSA Mini Pro / Pocket Cinema 6K/12K</li>
-            <li>Canon EOS C-Series (C200, C300, C500)</li>
-            <li>Sony FS5, FS7, FX3, FX6, FX9, Venice</li>
-            <li>Panasonic GH5 / EVA1 / Varicam</li>
-            <li>DJI Drones</li>
-            <li>GoPro Hero Series</li>
-            <li>and more...</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Video Codecs we Specialize in Repairing:</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>ARRIRAW, ProRes 4444 XQ</li>
-            <li>REDCODE RAW (R3D)</li>
-            <li>Blackmagic RAW (BRAW), ProRes</li>
-            <li>Canon XF-AVC, Cinema RAW Light</li>
-            <li>XAVC-I, XAVC-L, RAW via SDI</li>
-            <li>AVC-Intra, ProRes RAW</li>
-            <li>XDCAM</li>
-            <li>DNxHD / DNxHR</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Proven Video File Repair Process</h2>
         </div>
-        <div class="section-body">
-          <p>When you need video file repair, it’s not just about fixing a single file—you’re trusting us with your entire storage device to ensure the highest chance of success.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Full Drive Imaging and Cloning</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Deep Scan for Damaged and Fragmented Files</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File Structure Analysis</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Video File Integrity Repair</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Quality Validation</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Secure Data Delivery</h2>
-        </div>
-        <div class="section-body">
-
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Full Drive Imaging and Cloning</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Deep Scan for Damaged and Fragmented Files</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">File Structure Analysis</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Video File Integrity Repair</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Quality Validation</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">06</div>
+            <h3 class="process-title">Secure Data Delivery</h3>
+            <p class="process-desc"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -365,4 +257,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

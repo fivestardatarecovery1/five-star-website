@@ -25,7 +25,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Laptop Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="Losing files on your laptop can happen without warning. Whether it’s an accidental deletion, system crash, or physical damage, the results can be stressful. At Five Star Data Recovery, we specialize in fast, secure, and professional laptop data recovery. If you have a broken drive or a software erro"
+      description="Losing files on your laptop can happen without warning. Whether it's an accidental deletion, system crash, or physical damage, the results can be stressful. At Five Star Data Recovery, we specialize in fast, secure, and professional laptop data recovery. If you have a broken drive or a software erro"
     >
       <template #badges>
         <div class="trust-badges">
@@ -38,161 +38,79 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <!-- Process Steps -->
+    <section class="process-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Common Causes of Laptop Data Loss</h2>
+          <h2 class="section-title">Data Recovery Process</h2>
+          <p class="section-subtitle">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.</p>
         </div>
-        <div class="section-body">
-
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Drop off or Mail in Your Drive</h3>
+            <p class="process-desc">Bring your laptop or drive to our Glendale lab or ship it to us free from anywhere in the U.S.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Receive a Free Diagnosis</h3>
+            <p class="process-desc">We evaluate your device and provide a detailed diagnosis and quote — completely free, no obligation to proceed.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Our Engineers Recover Your Data</h3>
+            <p class="process-desc">We carefully begin the recovery process using advanced tools and cleanroom procedures for your laptop.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Review &amp; Approve the Recovered</h3>
+            <p class="process-desc">After recovery is complete, you'll receive a detailed file list to review before approving and paying.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Receive Your Recovered Data</h3>
+            <p class="process-desc">Once approved, we'll securely transfer your data to a new drive and return it via pickup or insured shipping.</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Types of Laptop Drives We Recover</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Laptop Data Recovery Process</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">When Should You Remove the Hard Drive?</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">We Recover All File Types and Scenarios</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
+    <!-- Why Choose Us -->
+    <section class="why-section section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Why Choose Our Data Recovery Service</h2>
         </div>
-        <div class="section-body">
-
+        <div class="grid-3">
+          <div class="feature-card" v-for="f in whyUs" :key="f.title">
+            <div class="feature-icon">✓</div>
+            <h3 class="feature-title">{{ f.title }}</h3>
+            <p class="feature-desc">{{ f.desc }}</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Quote in Minutes!</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Start Your Laptop Computer Recovery Today</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Call us for a diagnostic.</li>
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <h2 class="cta-title">Start Your Laptop Computer Recovery Today</h2>
+          <p class="cta-sub">Don't wait — every power cycle on a failing drive risks more data loss. Let our professionals handle the recovery process the right way.</p>
+          <ul class="cta-list">
+            <li>Call us for a diagnostic</li>
             <li>You can also send your laptop from anywhere in the U.S.</li>
-            <li>We will take care of your data like it is our own.</li>
+            <li>We will take care of your data like it is our own</li>
           </ul>
         </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Data Recovery Process</h2>
-        </div>
-        <div class="section-body">
-          <p>Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Drop off or Mail in Your Drive</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Receive a Free Diagnosis</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Engineers work on Recovering your Data</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Review &amp; Approve the Recovered</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Receive your recovered data</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
@@ -218,7 +136,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="cta-actions">
           <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
@@ -229,23 +147,32 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.section-pad { padding: 80px 0; }
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid rgba(255,255,255,0.08); padding: 72px 0; }
+.cta-band-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
+.cta-title { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+.cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn-outline { display: inline-block; padding: 14px 28px; border: 2px solid #C9A84C; color: #C9A84C; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+.btn-outline:hover { background: rgba(201,168,76,0.1); }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
 .faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
 </style>

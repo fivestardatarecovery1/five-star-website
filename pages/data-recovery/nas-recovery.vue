@@ -41,128 +41,42 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common Issues That Cause NAS Failures</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Multiple drive failures in RAID-based NAS systems</li>
-            <li>Power surges or electrical damage</li>
-            <li>Overheating and cooling fan failure</li>
-            <li>NAS volumes not mounting or becoming inaccessible</li>
-            <li>Software or firmware corruption</li>
-            <li>File system corruption after firmware updates</li>
-            <li>Human error, such as accidental reformatting or file deletion</li>
-            <li>Failed RAID rebuilds or incorrect RAID configuration</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Supported NAS Manufacturers</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Synology</li>
-            <li>QNAP</li>
-            <li>Western Digital (WD My Cloud)</li>
-            <li>Buffalo</li>
-            <li>Drobo</li>
-            <li>Seagate BlackArmor</li>
-            <li>Netgear ReadyNAS</li>
-            <li>Asustor</li>
-            <li>TerraMaster</li>
-            <li>LaCie and more</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Not to Do If Your NAS Fails</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Do not attempt to rebuild the RAID.</li>
-            <li>Do not attempt file recovery using consumer-level software—it may corrupt your NAS volumes.</li>
-            <li>Do not remove or reinsert drives into a different order.</li>
-            <li>Do not continue using the NAS if you suspect one or more drives are failing.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our NAS Data Recovery Process</h2>
         </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Remove Drives from Enclosure</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Clone Each Drive Individually</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Scan Each Drive for Metadata</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Use Metadata to Rebuild RAID</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">File System Verification</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Save and Deliver Files</h2>
-        </div>
-        <div class="section-body">
-
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Remove Drives from Enclosure</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Clone Each Drive Individually</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Scan Each Drive for Metadata</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Use Metadata to Rebuild RAID</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">File System Verification</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">06</div>
+            <h3 class="process-title">Save and Deliver Files</h3>
+            <p class="process-desc"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -252,4 +166,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

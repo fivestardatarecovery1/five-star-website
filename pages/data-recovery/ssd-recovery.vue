@@ -23,8 +23,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
     <HeroSection
       title="Solid State Drive Recovery"
-      subtitle=""
-      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
+      subtitle="Get Your Data Back In No Time."
+      description="Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
     >
       <template #badges>
         <div class="trust-badges">
@@ -37,13 +37,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <!-- What We Can Recover -->
+    <section class="issues-section section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What We Can Recover</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>Our engineers handle all types of SSD failures — from firmware corruption to physical chip damage. No matter the cause, we have the tools to get your data back safely.</p>
+          </div>
+          <ul class="issues-list">
             <li>Documents, photos, and video files</li>
             <li>Files from damaged file systems and corrupted partitions</li>
             <li>Deleted files from formatted SSDs</li>
@@ -53,13 +57,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
+
+    <!-- Common Scenarios -->
+    <section class="issues-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Common SSD Data Loss Scenarios</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>SSDs fail in different ways than traditional hard drives. Understanding the cause helps us choose the right recovery method for your situation.</p>
+          </div>
+          <ul class="issues-list">
             <li>Accidental deletion or formatted SSD</li>
             <li>Power surge or sudden shutdown during data transfer</li>
             <li>File system corruption and boot issues</li>
@@ -70,103 +79,92 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-    <section class="section-bg-2 section-pad">
+
+    <!-- Process Steps -->
+    <section class="process-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our SSD Data Recovery Process</h2>
         </div>
-        <div class="section-body">
-          <ol class="content-list">
-            <li>Initial Assessment and Diagnostics We begin by evaluating the SSD to determine whether the failure is logical, physical, or firmware-related.</li>
-            <li>Non-Invasive Imaging If possible, we create a complete sector-by-sector clone of the SSD to ensure data safety and integrity.</li>
-            <li>Firmware or Component-Level Repair We perform advanced firmware fixes or physical repairs when the SSD has controller, NAND, or PCB-related issues.</li>
-            <li>File System and Data Recovery We analyze the image to reconstruct file systems, recover lost partitions, and extract user data.</li>
-            <li>Data Approval and Delivery We provide a recovery report, and once approved, transfer the data securely to a new storage device or through encrypted delivery.</li>
-          </ol>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Initial Assessment and Diagnostics</h3>
+            <p class="process-desc">We begin by evaluating the SSD to determine whether the failure is logical, physical, or firmware-related.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Non-Invasive Imaging</h3>
+            <p class="process-desc">If possible, we create a complete sector-by-sector clone of the SSD to ensure data safety and integrity.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Firmware or Component-Level Repair</h3>
+            <p class="process-desc">We perform advanced firmware fixes or physical repairs when the SSD has controller, NAND, or PCB-related issues.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">File System and Data Recovery</h3>
+            <p class="process-desc">We analyze the image to reconstruct file systems, recover lost partitions, and extract user data.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Data Approval and Delivery</h3>
+            <p class="process-desc">We provide a recovery report, and once approved, transfer the data securely to a new storage device or through encrypted delivery.</p>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How SSDs Work &amp; Why it's Different</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
+    <!-- Brands We Support -->
+    <section class="content-section section-bg-3 section-pad">
+      <div class="container content-narrow">
+        <h2 class="content-title">SSD Brands and Devices We Support</h2>
+        <p>We recover data from all major SSD brands and form factors:</p>
+        <ul class="secure-list">
+          <li>Samsung, SanDisk, Crucial, Kingston, Intel</li>
+          <li>Western Digital, Seagate, Toshiba, SK Hynix</li>
+          <li>Apple SSDs, NVMe drives, PCIe M.2, and SATA III SSDs</li>
+        </ul>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">TRIM Command and Its Impact on Recovery</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">SSD Brands and Devices We Support</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Samsung, SanDisk, Crucial, Kingston, Intel</li>
-            <li>Western Digital, Seagate, Toshiba, SK Hynix</li>
-            <li>Apple SSDs, NVMe drives, PCIe M.2, and SATA III SSDs</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
+    <!-- Why Choose Us -->
+    <section class="why-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Honest diagnostics and flat-rate pricing</li>
-            <li>No-recovery, no-charge guarantee</li>
-            <li>Advanced options for encrypted or damaged SSDs</li>
-            <li>High success rates in difficult data recovery from SSD cases</li>
-            <li>Free Nationwide Priority Shipping - (Round Trip)</li>
+        <div class="grid-3">
+          <div class="feature-card" v-for="f in whyUs" :key="f.title">
+            <div class="feature-icon">✓</div>
+            <h3 class="feature-title">{{ f.title }}</h3>
+            <p class="feature-desc">{{ f.desc }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <h2 class="cta-title">Start Your SSD Data Recovery Today</h2>
+          <p class="cta-sub">Data loss is stressful — but working with us doesn't have to be. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <ul class="cta-list">
+            <li>Drop off your SSD at our Glendale lab</li>
+            <li>Ship it to us free from anywhere in the U.S.</li>
+            <li>Call now for a free evaluation and quote</li>
           </ul>
         </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Start Your SSD Data Recovery Today</h2>
-        </div>
-        <div class="section-body">
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
@@ -192,7 +190,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="cta-actions">
           <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
@@ -203,23 +201,43 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.section-pad { padding: 80px 0; }
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid rgba(255,255,255,0.08); padding: 72px 0; }
+.cta-band-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
+.cta-title { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+.cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn-outline { display: inline-block; padding: 14px 28px; border: 2px solid #C9A84C; color: #C9A84C; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+.btn-outline:hover { background: rgba(201,168,76,0.1); }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
 .faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .issues-layout { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
 </style>

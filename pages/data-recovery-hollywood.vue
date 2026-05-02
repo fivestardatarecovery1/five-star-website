@@ -33,51 +33,37 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Trusted Data Recovery Services in Hollywood</h2>
         </div>
-        <div class="section-body">
-          <p>We’ve helped thousands of customers recover lost data from:</p>
-          <ul class="content-list">
-            <li>Mac Data Recovery – Specializing in component-level recovery for no-power MacBooks, including M1 and M2 models.</li>
-            <li>Hard Drive Data Recovery – Expert recovery from drives with mechanical failure or logical corruption.</li>
-            <li>RAID Data Recovery – Safe and precise recovery from RAID 0, 1, 5, 10, and custom RAID configurations.</li>
-            <li>SSD Data Recovery – Advanced tools to recover data from physically or electronically failed SSDs.</li>
-            <li>External Hard Drive Data Recovery – Recovering data from non-detected, clicking, or accidentally dropped external drives.</li>
-          </ul>
-          <p>Every recovery is handled by experienced engineers using safe and proven methods.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Us for Data Recovery in Hollywood?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Over a Decade of Experience - Trusted by thousands, we’ve been recovering data for over 10 years with industry-leading expertise.</li>
-            <li>Hundreds of 5-Star ReviewsOur reputation speaks for itself — hundreds of satisfied customers have left glowing reviews online.</li>
-            <li>Free Evaluation &amp; No Data, No ChargeYou only pay if we recover your data; we offer free diagnostics and transparent, flat-rate pricing.</li>
-            <li>Same-Day Pickup in PasadenaLocated minutes from Pasadena, we offer fast, free same-day pickup to get your recovery started immediately.</li>
-            <li>Expedited and 24/7 Services AvailableFor urgent cases, we offer rush recovery options — including after-hours and weekend availability.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Recovery Process</h2>
-        </div>
-        <div class="section-body">
-          <p>1. Free EvaluationWe begin by diagnosing your device to identify the problem and determine the best recovery strategy—completely free of charge.</p>
-          <p>2. Secure ImagingA sector-by-sector clone of your storage device is created to protect the original data from further damage during the recovery process.</p>
-          <p>3. Advanced ScanningOur engineers scan the cloned image using professional tools to locate lost files, partitions, and file structures.</p>
-          <p>4. Data Extraction &amp; RepairWe extract all recoverable data and, if needed, repair damaged files to ensure they’re usable and complete.</p>
-          <p>5. File Review &amp; DeliveryYou preview the recovered files, and once approved, we deliver your data on a new drive or via a secure transfer method.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free EvaluationWe begin</h3>
+            <p class="process-desc">by diagnosing your device to identify the problem and determine the best recovery strategy—completely free of charge.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Secure ImagingA sector-by</h3>
+            <p class="process-desc">sector clone of your storage device is created to protect the original data from further damage during the recovery process.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Advanced ScanningOur engineers</h3>
+            <p class="process-desc">scan the cloned image using professional tools to locate lost files, partitions, and file structures.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Data Extraction &amp;</h3>
+            <p class="process-desc">RepairWe extract all recoverable data and, if needed, repair damaged files to ensure they’re usable and complete.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">File Review &amp;</h3>
+            <p class="process-desc">DeliveryYou preview the recovered files, and once approved, we deliver your data on a new drive or via a secure transfer method.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -98,9 +84,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="section-title">Testimonials from Satisfied Clients</h2>
         </div>
         <div class="section-body">
-          <p>“My hard drive failed right before a big deadline, and I was in full panic mode. I called Five Star Data Recovery, and to my surprise, they offered same-day pickup from my apartment in Hollywood. Within days, I had all my files back — including my client’s entire photo shoot. Incredible service from start to finish.”</p>
-          <p>“As a music producer, losing sessions is my worst nightmare. My RAID failed without warning, and I had no backup. The team at Five Star diagnosed it quickly and explained everything clearly. They got 100% of my files back, and the turnaround was quicker than expected. Highly recommend them!”</p>
-          <p>“I was skeptical at first, but after reading reviews, I gave them a shot. My external SSD stopped working after a drop, and no software could read it. These guys recovered every single file — including my tax documents, family videos, and work archives. Their service was worth every penny.”</p>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My hard drive failed right before a big deadline, and I was in full panic mode. I called Five Star Data Recovery, and to my surprise, they offered same-day pickup from my apartment in Hollywood. Within days, I had all my files back — including my client’s entire photo shoot. Incredible service from start to finish."</p>
+              <div class="review-author">“As a music producer, losing sessions is my worst nightmare. My RAID failed without warning, and I had no backup. The team at Five Star diagnosed it quickly and explained everything clearly. They got 100% of my files back, and the turnaround was quicker than expected. Highly recommend them!”</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I was skeptical at first, but after reading reviews, I gave them a shot. My external SSD stopped working after a drop, and no software could read it. These guys recovered every single file — including my tax documents, family videos, and work archives. Their service was worth every penny."</p>
+              <div class="review-author"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -184,4 +179,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

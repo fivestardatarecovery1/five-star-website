@@ -38,78 +38,37 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Is the Clicking Sound in a Hard Drive?</h2>
-        </div>
-        <div class="section-body">
-          <p>When you hear a clicking hard disk drive, you’re likely hearing the read/write head trying to find data, but failing. Instead of reading the correct track, it keeps resetting and trying again, causing a rhythmic “click-click-click” sound.People commonly refer to this issue as the click of death, and it represents one of the most serious symptoms a drive can show. In most cases, it’s a mechanical failure—something inside the drive is either broken or misaligned.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common causes of a clicking hard drive</h2>
-        </div>
-        <div class="section-body">
-          <p>A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:</p>
-          <ul class="content-list">
-            <li>Head Crash: The read/write head physically touches the platter, damaging the surface and data.</li>
-            <li>Power Surge: Electrical spikes can damage the circuit board or firmware.</li>
-            <li>Power Surge: Electrical spikes can damage the circuit board or firmware.</li>
-            <li>Stuck Heads: The heads fail to return to the parked position and keep trying to reset.</li>
-            <li>Factory Defects: Sometimes, drives leave the factory with underlying issues that worsen over time.</li>
-            <li>Impact Damage: Drops or shocks, especially while running, can cause severe internal damage.</li>
-          </ul>
-          <p>Regardless of the cause, if your HDD is clicking, it’s best to stop using it immediately to prevent further damage.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why you shouldn’t try to fix a clicking hard drive yourself</h2>
-        </div>
-        <div class="section-body">
-          <p>We understand—you want your data back fast, and DIY videos make it look simple. But opening a drive or running software on a damaged disk often causes more harm than good.Here’s why you should avoid DIY recovery on a clicking hard disk drive:</p>
-          <ul class="content-list">
-            <li>Opening a drive outside a cleanroom introduces dust and contamination.</li>
-            <li>Trying to restart or format the drive can overwrite recoverable data.</li>
-            <li>Recovery software doesn’t fix mechanical issues—it can actually make them worse.</li>
-            <li>Failed DIY attempts often increase the cost of professional recovery.If your hard drive is clicking, unplug it and bring it to a professional. Every second it runs can reduce the chance of recovery.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">How We Recover Data from a Clicking Hard Drive</h2>
         </div>
-        <div class="section-body">
-          <p>At Five Star Data Recovery, we use advanced tools and a certified cleanroom to safely recover data from physically damaged drives—including those with head crashes and hard drive clicking symptoms.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Free Diagnostic</h2>
-        </div>
-        <div class="section-body">
-          <p>We start by evaluating your drive in our lab. If it’s clicking, we’ll perform non-invasive tests to confirm the type of failure and estimate the chance of recovery.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Cleanroom Evaluation</h2>
-        </div>
-        <div class="section-body">
-          <p>If internal repair is needed, we open the drive in our certified cleanroom. Our engineers inspect the heads, platters, PCB, and other components.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free Diagnostic</h3>
+            <p class="process-desc">We start by evaluating your drive in our lab. If it’s clicking, we’ll perform non-invasive tests to confirm the type of failure and estimate the chance of recovery.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Cleanroom Evaluation</h3>
+            <p class="process-desc">If internal repair is needed, we open the drive in our certified cleanroom. Our engineers inspect the heads, platters, PCB, and other components.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Head Replacement or Repair</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Safe Imaging</h3>
+            <p class="process-desc"></p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">File Extraction and Return</h3>
+            <p class="process-desc"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -252,15 +211,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="section-title">Testimonials from Satisfied Clients</h2>
         </div>
         <div class="section-body">
-          <p>“My external hard drive started making loud clicking sounds, and I knew something was seriously wrong. I called Five Star Data Recovery, and Elen explained the process and got my case checked in right away. Within a week, they recovered all of my photos and work documents. Their communication was excellent from start to finish.”</p>
-          <p>Eric S.</p>
-          <p>Burbank, CA</p>
-          <p>“I had a Western Digital drive that started clicking and wouldn’t mount at all. After reading reviews, I shipped it to Five Star Data Recovery. Vahan and his team did an amazing job. They explained that the heads had failed and performed a clean room recovery. I got back 97% of my files!”</p>
-          <p>Jasmine T.</p>
-          <p>Dallas, TX</p>
-          <p>“My desktop hard drive was making a clicking noise after a power outage. Alex handled the recovery and explained that the internal heads were damaged. They replaced the parts and recovered almost all of my data. The flat-rate pricing with no surprises made the experience stress-free.”</p>
-          <p>Luis M.</p>
-          <p>Glendale, CA</p>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My external hard drive started making loud clicking sounds, and I knew something was seriously wrong. I called Five Star Data Recovery, and Elen explained the process and got my case checked in right away. Within a week, they recovered all of my photos and work documents. Their communication was excellent from start to finish."</p>
+              <div class="review-author">Eric S. — Burbank, CA</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I had a Western Digital drive that started clicking and wouldn’t mount at all. After reading reviews, I shipped it to Five Star Data Recovery. Vahan and his team did an amazing job. They explained that the heads had failed and performed a clean room recovery. I got back 97% of my files!"</p>
+              <div class="review-author">Jasmine T. — Dallas, TX</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"My desktop hard drive was making a clicking noise after a power outage. Alex handled the recovery and explained that the internal heads were damaged. They replaced the parts and recovered almost all of my data. The flat-rate pricing with no surprises made the experience stress-free."</p>
+              <div class="review-author">Luis M. — Glendale, CA</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -347,4 +314,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

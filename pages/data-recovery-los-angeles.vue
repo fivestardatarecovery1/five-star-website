@@ -38,74 +38,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Free Same-Day Pickup in Los Angeles</h2>
         </div>
-        <div class="section-body">
-          <p>Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles.</p>
-          <p>Whether you're at your home, office, or school, just contact us before noon, and we’ll come to you. The easiest way to get your recovery started without leaving your space is available.</p>
-          <p>This service is available from Monday to Friday. One more reason data recovery clients trust us to make the process easy.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Trusted by Locals Across LA</h2>
-        </div>
-        <div class="section-body">
-          <p>We’re proud to be a top-rated data recovery company serving customers all over Los Angeles.</p>
-          <p>Our data recovery clients include students, photographers, businesses, and IT teams. They come to us when it matters most. With high success rates, secure handling, and real technical expertise, we’ve helped thousands of satisfied customers.</p>
-          <p>If you're searching for Los Angeles data recovery that’s reliable and local—we’re the team to call.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What We Recover</h2>
-        </div>
-        <div class="section-body">
-          <p>Our engineers recover files from nearly any storage device, including:</p>
-          <ul class="content-list">
-            <li>External and internal hard drives</li>
-            <li>SSDs and hybrid drives</li>
-            <li>Flash drives and SD cards</li>
-            <li>Encrypted or password-protected storage</li>
-            <li>RAID arrays, NAS, and servers</li>
-            <li>Windows, macOS, and Linux systems</li>
-          </ul>
-          <p>We handle cases involving physically damaged devices, accidental deletion, formatting, failed updates, and more. Whether you’re facing data loss after a crash or corruption, we’ll work to recover the data that matters to you.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Hardware and Software Expertise</h2>
-        </div>
-        <div class="section-body">
-          <p>Hardware issues cause some data loss, while software failure causes others. Our recovery experts receive training in both hardware and software data recovery. Whether it’s a head crash or a virus, we’ll know how to handle it.</p>
-          <p>We perform all recoveries that involve fixing internal drives in our Class 100 cleanroom. This cleanroom keeps delicate parts safe from dust and damage. Every cleanroom procedure is handled by certified engineers using anti-static protocols to ensure data integrity. Our team also uses specialized tools to address firmware corruption, file system damage, and partition-level failures—ensuring we can recover data even from complex or hybrid failure scenarios.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our 5-Step Data Recovery Process</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Step 1: Free Evaluation - We assess your device and provide a diagnostic report with a flat-rate quote—no obligation.</li>
-            <li>Step 2: Drive Imaging We create a sector-by-sector clone of your storage device to preserve the original data.</li>
-            <li>Step 3: Recovery Process Using advanced tools, we extract and rebuild the data from the cloned image.</li>
-            <li>Step 4: File Review You review a list or preview of the recovered files before finalizing the case.</li>
-            <li>Step 5: Data Delivery We transfer your recovered data to a new drive and return it securely.</li>
-          </ul>
-          <p>Our data recovery process is simple, effective, and secure.</p>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Our data recovery</h3>
+            <p class="process-desc">process is simple, effective, and secure.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -166,15 +109,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="section-title">Testimonials from Satisfied Clients</h2>
         </div>
         <div class="section-body">
-          <p>“After my external hard drive suddenly stopped showing up, I reached out to Five Star Data Recovery. They explained the process clearly and gave me a flat-rate price with no hidden fees. Within a few days, I had all my files back—including hundreds of family photos I thought were gone forever. Highly recommended!”</p>
-          <p>Melissa C.</p>
-          <p>Los Angeles, CA</p>
-          <p>“The team at Five Star was incredible! My RAID system failed, and I was on the verge of losing years of business data. They walked me through the recovery process, kept me updated daily, and delivered a full recovery within the estimated timeframe. Their professionalism and expertise gave me real peace of mind.”</p>
-          <p>David R.</p>
-          <p>Los Angeles, CA</p>
-          <p>“I had a clicking hard drive that I thought was beyond saving. Five Star Data Recovery handled everything quickly and professionally. The fact that they don’t charge unless they recover your data made the decision stress-free. Thankfully, they were able to recover everything I needed.”</p>
-          <p>Jennifer M.</p>
-          <p>Los Angeles, CA</p>
+          <div class="reviews-grid">
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"After my external hard drive suddenly stopped showing up, I reached out to Five Star Data Recovery. They explained the process clearly and gave me a flat-rate price with no hidden fees. Within a few days, I had all my files back—including hundreds of family photos I thought were gone forever. Highly recommended!"</p>
+              <div class="review-author">Melissa C. — Los Angeles, CA</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"The team at Five Star was incredible! My RAID system failed, and I was on the verge of losing years of business data. They walked me through the recovery process, kept me updated daily, and delivered a full recovery within the estimated timeframe. Their professionalism and expertise gave me real peace of mind."</p>
+              <div class="review-author">David R. — Los Angeles, CA</div>
+            </div>
+            <div class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">"I had a clicking hard drive that I thought was beyond saving. Five Star Data Recovery handled everything quickly and professionally. The fact that they don’t charge unless they recover your data made the decision stress-free. Thankfully, they were able to recover everything I needed."</p>
+              <div class="review-author">Jennifer M. — Los Angeles, CA</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -234,4 +185,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

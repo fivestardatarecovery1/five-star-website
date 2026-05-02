@@ -44,53 +44,37 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What Are Data Recovery Services?</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Your external drive isn’t recognized</li>
-            <li>You accidentally deleted files or formatted your device</li>
-            <li>You see file system errors like “corrupt partition” or “drive not accessible”</li>
-            <li>The device is physically damaged or makes clicking sounds</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Devices Do We Recover Data From?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Desktop &amp; Laptop Hard Drives</li>
-            <li>Solid State Drives (SSD)</li>
-            <li>External Drives</li>
-            <li>iPhone Data Recovery</li>
-            <li>Samsung Smartphones</li>
-            <li>SD Cards &amp; Camera Media</li>
-            <li>USB Flash Drives</li>
-            <li>RAID Arrays &amp; Servers</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Proven Data Recovery Process</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Free Diagnostic: We examine your device and determine if we can recover data safely.</li>
-            <li>Quote: You’ll get a flat-rate quote—no hidden fees. We believe in full transparency. That means no unexpected recovery costs—just honest pricing based on the complexity of your case.</li>
-            <li>In-Lab Recovery: Our engineers use specialized tools in our clean room environment to extract your data.</li>
-            <li>Verification: You’ll receive a list of recoverable files to approve.</li>
-            <li>Delivery: We return your recovered files via a transfer drive you provide or purchase from us.</li>
-          </ul>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free Diagnostic</h3>
+            <p class="process-desc">We examine your device and determine if we can recover data safely.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Quote</h3>
+            <p class="process-desc">You’ll get a flat-rate quote—no hidden fees. We believe in full transparency. That means no unexpected recovery costs—just honest pricing based on the complexity of your case.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">In-Lab Recovery</h3>
+            <p class="process-desc">Our engineers use specialized tools in our clean room environment to extract your data.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Verification</h3>
+            <p class="process-desc">You’ll receive a list of recoverable files to approve.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Delivery</h3>
+            <p class="process-desc">We return your recovered files via a transfer drive you provide or purchase from us.</p>
+          </div>
         </div>
       </div>
     </section>

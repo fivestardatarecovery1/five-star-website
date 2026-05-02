@@ -35,54 +35,37 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Trusted Data Recovery Services in Glendale</h2>
-        </div>
-        <div class="section-body">
-          <p>Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:</p>
-          <ul class="content-list">
-            <li>Crashed hard drives that no longer boot</li>
-            <li>Drives that click or refuse to spin</li>
-            <li>Failed SSDs and corrupted USB flash drives</li>
-            <li>Water-soaked or dropped devices</li>
-            <li>Accidentally deleted files and reformatted media</li>
-            <li>Damaged RAID arrays and server volumes</li>
-          </ul>
-          <p>Every case receives meticulous care, precision engineering, and strict confidentiality. From straightforward recoveries to the most complex data loss scenarios, our team works tirelessly to restore your information safely.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Us for Data Recovery in Glendale?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Experienced Engineers - Our team consists of certified data recovery professionals who specialize in recovering data from all types of storage devices — from simple issues to the most complex failures.</li>
-            <li>State-of-the-Art Clean Room Lab - All physical recoveries are performed in a certified clean room environment to ensure the safety of your device during disassembly and repair.</li>
-            <li>Fast Turnaround Options -Need your data urgently? We offer both Expedited and Expedited Plus services to prioritize your recovery based on your timeline and level of urgency.</li>
-            <li>No Outsourcing – All Work Done In-House- Your device stays in our Glendale lab from start to finish. We don’t ship your drive elsewhere or use third-party labs.</li>
-            <li>Excellent Reputation &amp; Results - With hundreds of 5-star reviews and an industry-leading success rate, our track record speaks for itself.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
+        <section class="process-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our Recovery Process</h2>
         </div>
-        <div class="section-body">
-          <ol class="content-list">
-            <li>Free Evaluation – We assess your device and provide a detailed quote.</li>
-            <li>Cloning and Analysis – If needed, we create a sector-by-sector clone to protect your data.</li>
-            <li>Data Extraction – We extract and reconstruct your files with advanced tools.</li>
-            <li>Verification – You preview your recovered files before final delivery.</li>
-            <li>Delivery – Get your data on a new storage device or securely delivered via other methods.</li>
-          </ol>
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-num">01</div>
+            <h3 class="process-title">Free Evaluation</h3>
+            <p class="process-desc">We assess your device and provide a detailed quote.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">02</div>
+            <h3 class="process-title">Cloning and Analysis</h3>
+            <p class="process-desc">If needed, we create a sector-by-sector clone to protect your data.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">03</div>
+            <h3 class="process-title">Data Extraction</h3>
+            <p class="process-desc">We extract and reconstruct your files with advanced tools.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">04</div>
+            <h3 class="process-title">Verification</h3>
+            <p class="process-desc">You preview your recovered files before final delivery.</p>
+          </div>
+          <div class="process-card">
+            <div class="process-num">05</div>
+            <h3 class="process-title">Delivery</h3>
+            <p class="process-desc">Get your data on a new storage device or securely delivered via other methods.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -231,4 +214,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
 .btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
 @media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Review cards */
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Issues list */
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+/* Content text sections */
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* CTA extensions */
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
 </style>

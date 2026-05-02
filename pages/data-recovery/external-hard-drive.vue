@@ -27,7 +27,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="External Hard Drive Data Recovery Services"
       subtitle=""
-      description="No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we’ll provide you"
+      description="No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we'll provide you"
     >
       <template #badges>
         <div class="trust-badges">
@@ -40,13 +40,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </HeroSection>
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <!-- Types of Drives We Recover -->
+    <section class="issues-section section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What Types of Drives Do We Recover?</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we'll provide you with a clear explanation of the issue before proceeding.</p>
+          </div>
+          <ul class="issues-list">
             <li>Seagate Backup Plus / Expansion</li>
             <li>Western Digital My Passport / Elements</li>
             <li>LaCie Rugged / d2 Professional</li>
@@ -54,87 +58,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <li>Samsung Portable SSDs</li>
             <li>G-Technology G-Drive</li>
           </ul>
-          <p>No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we’ll provide you with a clear explanation of the issue before proceeding. To learn more about what data recovery might cost for your specific drive type, visit our Data Recovery Pricing page.</p>
         </div>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What To Do (And Not Do) If Your External Hard Drive Fails</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Do NOT attempt to open the drive</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Avoid running recovery software</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Avoid First AID</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Safely Disconnect the drive immediately</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Label the drive with any known issues</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Bring it to us for a free diagnosis</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
+    <!-- What Types of Files -->
+    <section class="issues-section section-bg-1 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">What Types of Files Can Be Recovered?</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>We recover virtually every common file type stored on external hard drives. If it was on the drive before the failure, we work to get it back.</p>
+          </div>
+          <ul class="issues-list">
             <li>Photos: .jpg, .png, .cr2, .nef, .psd, and more</li>
             <li>Documents: .docx, .xlsx, .pptx, .pdf, .txt</li>
             <li>Videos: .mp4, .mov, .avi, .mkv</li>
@@ -146,189 +84,77 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Real-World Scenarios We Handle</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>A photographer drops a 2TB LaCie drive containing a wedding shoot. The drive clicks and won't mount. We recovered 98% of files within 48 hours with our Expedite Plus service.</li>
-          </ul>
-          <ul class="content-list">
-            <li>A business loses access to an encrypted Western Digital My Passport with payroll files. We bypassed the failed USB controller and decrypted data successfully (WD Self-Encrypting Drive).</li>
-          </ul>
-          <ul class="content-list">
-            <li>A student spills water on a Toshiba drive with thesis and class materials. Despite circuit corrosion, we restored the files completely.</li>
-          </ul>
-          <ul class="content-list">
-            <li>A YouTuber loses raw video footage from an SSD drive that suddenly showed as "unallocated." Our team completed the recovery the same day using expedited service.</li>
-          </ul>
-          <ul class="content-list">
-            <li>A graphic designer’s G-Technology drive was accidentally reformatted during a macOS update. We recovered all critical project files and delivered them within 3 days.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Advanced Tools and Techniques We Use</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>PC-3000 by ACE Lab is a top tool in the industry. It lets us connect directly with failing drives at the firmware level.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Cleanroom Environment: Class 100 ISO 5 certified clean benches for handling internal repairs without contamination.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Head &amp; Platter Swapping Tools: Custom jigs for precise mechanical part replacement.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Encrypted Drive Handling: Safe processing and decryption of self-encrypting drives (SEDs).</li>
-          </ul>
-          <ul class="content-list">
-            <li>RAID &amp; Multi-Disk Tools: For recovery from RAID-configured external drives or drive arrays.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
+
+    <!-- Understanding Failure Symptoms -->
+    <section class="issues-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Understanding Drive Failure Symptoms</h2>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Clicking Noises: Usually means the read/write heads are failing or have crashed.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Beeping or Whining: This could indicate spindle motor failure or stuck platters (often caused by drops).</li>
-          </ul>
-          <ul class="content-list">
-            <li>Drive Detected but Not Accessible: Often the result of corrupted partition tables or failing firmware.</li>
-          </ul>
-          <ul class="content-list">
-            <li>External Hard Drive Does Not Show Up: This is another very common problem. This can happen because of USB port issues, faulty cables, or damaged firmware.</li>
-          </ul>
-          <ul class="content-list">
-            <li>No Power: May be a bad USB bridge board, shorted PCB, or internal electronic failure.</li>
+        <div class="issues-layout">
+          <div class="issues-intro">
+            <p>Every symptom tells us something different about the nature of the failure. Recognizing the issue early helps us maximize your recovery success.</p>
+          </div>
+          <ul class="issues-list">
+            <li>Clicking Noises: Usually means the read/write heads are failing or have crashed</li>
+            <li>Beeping or Whining: Could indicate spindle motor failure or stuck platters (often from drops)</li>
+            <li>Drive Detected but Not Accessible: Often corrupted partition tables or failing firmware</li>
+            <li>External Hard Drive Does Not Show Up: USB port issues, faulty cables, or damaged firmware</li>
+            <li>No Power: May be a bad USB bridge board, shorted PCB, or internal electronic failure</li>
           </ul>
         </div>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How to Prevent Data Loss in the Future</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Avoid magnetic exposure and physical impact at all costs.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Use an uninterruptible power supply (UPS) during data transfers.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Regularly back up your data to a secondary drive or secure cloud service.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Always safely eject your drive before unplugging.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Stop using a drive at the first sign of failure (strange noises, disconnecting, slow access).</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nationwide Mail-In Service – We Serve All 50 States</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Fill out our recovery form online and package your drive securely.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Using our pre-paid shipping label, ship it to our Glendale location using the courier of your choice.</li>
-          </ul>
-          <ul class="content-list">
-            <li>We evaluate your device and provide a quote (usually same day by midnight).</li>
-          </ul>
-          <ul class="content-list">
-            <li>We recover and verify your files—then send them back via a new drive you provide or purchase from us.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Understanding how data storage works and why drives fail.</h2>
-        </div>
-        <div class="section-body">
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How We Keep Your Data Secure and Confidential</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Non-disclosure agreements available upon request</li>
-          </ul>
-          <ul class="content-list">
-            <li>Data stored on encrypted internal servers</li>
-          </ul>
-          <ul class="content-list">
-            <li>Recovered files deleted after 7 days (unless otherwise arranged)</li>
-          </ul>
-          <ul class="content-list">
-            <li>Full internal access control in our lab</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
+    <!-- Testimonials -->
+    <section class="reviews-section section-bg-3 section-pad">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Testimonials from Satisfied Clients</h2>
         </div>
-        <div class="section-body">
-          <p>“I thought all my family vacation photos were gone forever after my external hard drive stopped showing up on my computer. I called the team, and within a few days, they had recovered everything for me! The process was stress-free, and they kept me updated the whole time. Highly recommend if you’re facing a similar situation.”</p>
-          <p>“My 2TB Seagate external drive suddenly started making clicking noises and became completely unreadable. I dropped it off for recovery, and they explained everything clearly from the start. In less than a week, I had all my business files back. The flat-rate pricing gave me peace of mind—no hidden fees or surprises.”</p>
-          <p>“I accidentally dropped my Western Digital external hard drive off my desk, and it wouldn’t power on anymore. I was really worried about losing years of photos and documents. Luckily, the engineers here worked their magic. They recovered almost every single file. I’m beyond grateful!”</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Ready to Recover Your Data?</h2>
-        </div>
-        <div class="section-body">
-          <p>Experiencing data loss on your external hard drive? Don’t panic—help is just a click away. Whether it’s important work files, family photos, or school projects, we understand how valuable your data is.</p>
-          <p>At Five Star Data Recovery, we offer fast, professional, and affordable data recovery services for all types of external hard drives. With our flat-rate pricing and “No Data, No Charge” policy, you’ll always know what to expect.</p>
-          <p>Fill out the quick form on this page to get started. Our expert team will review your case and reach out with a free consultation—ensuring your data is handled with care every step of the way.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Request a Free Quote!</h2>
-        </div>
-        <div class="section-body">
-
+        <div class="reviews-grid">
+          <div class="review-card" v-for="r in reviews" :key="r.name">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"{{ r.text }}"</p>
+            <div class="review-author">{{ r.name }} — {{ r.location }}</div>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- How We Keep Data Secure -->
+    <section class="content-section section-bg-1 section-pad">
+      <div class="container content-narrow">
+        <h2 class="content-title">How We Keep Your Data Secure and Confidential</h2>
+        <ul class="secure-list">
+          <li>Non-disclosure agreements available upon request</li>
+          <li>Data stored on encrypted internal servers</li>
+          <li>Recovered files deleted after 7 days (unless otherwise arranged)</li>
+          <li>Full internal access control in our lab</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Ready to Recover -->
+    <section class="cta-band">
+      <div class="container cta-band-inner">
+        <div>
+          <h2 class="cta-title">Ready to Recover Your Data?</h2>
+          <p class="cta-sub">Experiencing data loss on your external hard drive? Don't panic—help is just a click away. Whether it's important work files, family photos, or school projects, we understand how valuable your data is.</p>
+          <ul class="cta-list">
+            <li>Fill out the quick form on this page to get started</li>
+            <li>Mail your drive to us free from anywhere in the U.S.</li>
+            <li>Call now for a free evaluation and quote</li>
+          </ul>
+        </div>
+        <div class="cta-actions">
+          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
     <section class="faq-section section-bg-2 section-pad">
       <div class="container">
         <div class="section-header">
@@ -354,7 +180,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="cta-actions">
           <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
@@ -365,23 +191,52 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 <style scoped>
 .trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 .badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+.section-pad { padding: 80px 0; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
+.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
+.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
+.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
+.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 12px; }
+.issues-list { list-style: none; padding: 0; margin: 0; }
+.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-narrow { max-width: 860px; margin: 0 auto; }
+.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
+.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
+.secure-list { list-style: none; padding: 0; margin: 0; }
+.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid rgba(255,255,255,0.08); padding: 72px 0; }
+.cta-band-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
+.cta-title { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+.cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
+.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.btn-outline { display: inline-block; padding: 14px 28px; border: 2px solid #C9A84C; color: #C9A84C; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
+.btn-outline:hover { background: rgba(201,168,76,0.1); }
 .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
 .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .faq-item.open { border-color: var(--gold); }
 .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
 .faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+@media (max-width: 768px) { .issues-layout { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
+
+/* Process cards */
+.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
+.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
+.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+/* Feature cards */
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
+.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
+.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
+.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
 </style>
