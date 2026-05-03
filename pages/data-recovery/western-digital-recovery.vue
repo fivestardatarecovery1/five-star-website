@@ -441,10 +441,29 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- VIDEO SECTION — same as homepage -->
+    <section class="page-video-section">
+      <div class="container page-video-inner">
+        <div class="page-video-copy">
+          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
+          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+        <div class="page-video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60"
+            title="Five Star Data Recovery"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT BAND — before footer -->
     <section class="s-contact-band">
-      <div class="container contact-layout">
-        <div class="contact-text">
+      <div class="container contact-final">
+        <div class="contact-final-text">
           <h2 class="contact-heading">Contact Us for Western Digital Data Recovery</h2>
           <p class="contact-sub">{{ contactText }}</p>
           <ul class="contact-bullets">
@@ -452,9 +471,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </ul>
           <p class="contact-outro">{{ contactOutro }}</p>
         </div>
-        <div class="contact-actions">
-          <a href="tel:8182728866" class="btn-gold-lg">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn-ghost-lg">Get Free Quote</NuxtLink>
+        <div class="contact-final-cta">
+          <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Recovery</NuxtLink>
         </div>
       </div>
     </section>
@@ -579,20 +597,28 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .df-check { color: #C9A84C; font-weight: 700; }
 .df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
+/* VIDEO SECTION */
+.page-video-section { background: #2a2d38; padding: 70px 0; }
+.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
+.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
+.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
+.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
+.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
 /* CONTACT BAND */
-.s-contact-band { background: #1a1a2e; padding: 64px 0; }
-.contact-layout { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.s-contact-band { background: #1a1a2e; padding: 72px 0; }
+.contact-final { display: grid; grid-template-columns: 1fr auto; gap: 64px; align-items: center; }
 .contact-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
-.contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 520px; }
+.contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 600px; }
 .contact-bullets { list-style: none; padding: 0; margin: 0 0 12px; }
 .contact-bullets li { padding: 5px 0 5px 22px; position: relative; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
 .contact-bullets li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
 .contact-outro { font-size: 0.88rem; color: rgba(255,255,255,0.55); font-style: italic; }
-.contact-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
-.btn-gold-lg { display: inline-block; background: #C9A84C; color: #fff; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 1rem; text-decoration: none; text-align: center; white-space: nowrap; }
-.btn-gold-lg:hover { background: #b8923e; }
-.btn-ghost-lg { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; text-align: center; }
-.btn-ghost-lg:hover { border-color: #fff; }
+.contact-final-cta { flex-shrink: 0; }
+.btn-start-recovery { display: inline-flex; align-items: center; gap: 10px; background: #e53e3e; color: #fff; padding: 20px 40px; border-radius: 8px; font-weight: 800; font-size: 1.1rem; text-decoration: none; letter-spacing: 0.02em; box-shadow: 0 8px 32px rgba(229,62,62,0.35); transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+.btn-start-recovery::before { content: '★'; font-size: 1rem; }
+.btn-start-recovery:hover { background: #c53030; transform: translateY(-2px); }
 
 /* FAQ */
 .faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
@@ -626,7 +652,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 @media (max-width: 768px) {
   .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .contact-layout { flex-direction: column; align-items: flex-start; }
+  .contact-final { grid-template-columns: 1fr; }
+  .page-video-inner { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .issues-grid { grid-template-columns: 1fr; }
   .bstat-div { display: none; }
