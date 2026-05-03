@@ -114,35 +114,39 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-wd">
     <NavBar />
 
-    <!-- HERO -->
-    <section class="hero-section">
-      <div class="container hero-inner">
-        <div class="hero-text">
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+      <div class="hero-bg-overlay" />
+      <div class="container hero-layout">
+        <div class="hero-left">
+          <div class="hero-eyebrow">Western Digital Recovery Specialists</div>
           <h1 class="hero-title">Western Digital Data Recovery Services</h1>
-          <p class="hero-sub">Get Your Data Back In No Time.</p>
-          <p class="hero-desc">Are you experiencing issues with your Western Digital (WD) hard drive? If you have a blinking light, a drive that won't mount, or files you can't access, our expert team can help. We offer professional Western Digital Data Recovery services to safely get your data back. If your files are valuable, don't risk it. Trust our specialists to get your information back.</p>
-          <div class="hero-actions">
-            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
-            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          <p class="hero-lead">Are you experiencing issues with your Western Digital (WD) hard drive? If you have a blinking light, a drive that won't mount, or files you can't access, our expert team can help. We offer professional Western Digital Data Recovery services to safely get your data back. If your files are valuable, don't risk it. Trust our specialists to get your information back.</p>
+          <div class="hero-ctas">
+            <NuxtLink to="/start-recovery" class="cta-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="cta-ghost">Request a Quote</NuxtLink>
           </div>
-          <div class="hero-trust">
-            <span>✔ Available 24/7/365</span>
-            <span>✔ Clean Room On-Site</span>
-            <span>✔ Flat Rate Pricing</span>
-            <span>✔ Free Nationwide Shipping</span>
+          <div class="hero-badges">
+            <div class="badge-pill">✔ Available 24/7/365</div>
+            <div class="badge-pill">✔ Clean Room On-Site</div>
+            <div class="badge-pill">✔ Flat Rate Pricing</div>
+            <div class="badge-pill">✔ Free Nationwide Shipping</div>
           </div>
         </div>
-        <div class="hero-form-wrap">
-          <div class="hero-form-card">
-            <h3 class="form-title">Request a Free Consultation</h3>
-            <form class="consult-form" @submit.prevent>
-              <div class="form-row">
-                <input type="text" placeholder="First Name" class="form-input" />
-                <input type="text" placeholder="Last Name" class="form-input" />
+        <div class="hero-right">
+          <div class="form-card">
+            <div class="form-card-header">
+              <h3>Request a Free Consultation</h3>
+              <p>Same-day response · No obligation</p>
+            </div>
+            <form @submit.prevent class="form-body">
+              <div class="form-grid-2">
+                <input type="text" placeholder="First Name" class="fi" />
+                <input type="text" placeholder="Last Name" class="fi" />
               </div>
-              <input type="email" placeholder="Email Address" class="form-input full" />
-              <input type="tel" placeholder="Phone Number" class="form-input full" />
-              <select class="form-input full">
+              <input type="email" placeholder="Email Address" class="fi" />
+              <input type="tel" placeholder="Phone Number" class="fi" />
+              <select class="fi">
                 <option>Select Device Type</option>
                 <option>Hard Drive (HDD)</option>
                 <option>SSD</option>
@@ -151,13 +155,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <option>USB / Flash Drive</option>
                 <option>Other</option>
               </select>
-              <select class="form-input full">
+              <select class="fi">
                 <option>Select Service Type</option>
-                <option>Standard Service (3-5 days)</option>
-                <option>Expedited Service (24-48 hrs)</option>
+                <option>Standard Service (3–5 days)</option>
+                <option>Expedited Service (24–48 hrs)</option>
                 <option>Expedited Plus (Same Day)</option>
               </select>
-              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+              <button type="submit" class="form-submit">Request a Consultation</button>
             </form>
           </div>
         </div>
@@ -166,204 +170,252 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <StatsBar />
 
-    <!-- COMMON ISSUES -->
-    <section class="light-section">
+    <!-- ═══════════════ ISSUES — white, full width intro + 2×2 cards ═══════════════ -->
+    <section class="s-white">
       <div class="container">
-        <h2 class="section-heading">Common WD Hard Drive Issues</h2>
-        <p class="section-intro">Western Digital drives are reliable, but they're not immune to failure. Whether it's a blinking light, a drive that won't mount, or files you can't access, our team is equipped to help.</p>
+        <div class="section-label">Common Problems</div>
+        <h2 class="s-heading">Common WD Hard Drive Issues</h2>
+        <p class="s-intro">Western Digital drives are reliable, but they're not immune to failure. Whether it's a blinking light, a drive that won't mount, or files you can't access, our team is equipped to help.</p>
         <div class="issues-grid">
           <div v-for="issue in issues" :key="issue.title" class="issue-card">
+            <div class="issue-num">●</div>
             <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-text">{{ issue.text }}</p>
+            <p class="issue-body">{{ issue.text }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CAUSES -->
-    <section class="light-alt-section">
-      <div class="container two-col">
-        <div class="col-text">
-          <h2 class="section-heading">What Causes WD Drives to Fail?</h2>
-          <p class="body-text">Western Digital drives can experience several common failure types. Some problems are software-related, like file system corruption or a failed operating system update. Other failures stem from physical damage, such as head crashes, bad sectors, or worn-out components. We also recover from accidental formatting, power surges, and damaged storage media devices that users improperly removed or mishandled.</p>
-          <ul class="cause-list">
+    <!-- ═══════════════ CAUSES — grey, asymmetric 3/5 col ═══════════════ -->
+    <section class="s-grey">
+      <div class="container asym-layout">
+        <div class="asym-minor">
+          <div class="section-label">Root Causes</div>
+          <h2 class="s-heading">What Causes WD Drives to Fail?</h2>
+          <p class="s-body">Western Digital drives can experience several common failure types. Some problems are software-related, like file system corruption or a failed operating system update. Other failures stem from physical damage, such as head crashes, bad sectors, or worn-out components. We also recover from accidental formatting, power surges, and damaged storage media devices that users improperly removed or mishandled.</p>
+          <ul class="check-list">
             <li v-for="c in causes" :key="c">{{ c }}</li>
           </ul>
         </div>
-        <div class="col-img">
-          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Hard drive recovery" class="section-img" />
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="light-section">
-      <div class="container">
-        <h2 class="section-heading center">How Our WD Data Recovery Process Works</h2>
-        <p class="section-intro center">We use a consistent, proven approach for every Western Digital Data Recovery case. Here's a look at how Five Star Data Recovery gets your data back.</p>
-        <div class="process-row">
-          <div v-for="step in steps" :key="step.num" class="process-card">
-            <div class="step-label">{{ step.title }}</div>
-            <p class="step-text">{{ step.text }}</p>
+        <div class="asym-major">
+          <img src="/western-digital-data-recovery-service-los-angeles.jpg" alt="Western Digital hard drive data recovery" class="rounded-img" />
+          <div class="img-stat-badge">
+            <span class="stat-num">21,000+</span>
+            <span class="stat-label">Successful Recoveries</span>
           </div>
         </div>
-        <div class="no-charge-note">
-          <strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing.
+      </div>
+    </section>
+
+    <!-- ═══════════════ PROCESS — white, numbered steps with connector line ═══════════════ -->
+    <section class="s-white">
+      <div class="container">
+        <div class="section-label center">Our Process</div>
+        <h2 class="s-heading center">How Our WD Data Recovery Process Works</h2>
+        <p class="s-intro center">We use a consistent, proven approach for every Western Digital Data Recovery case. Here's a look at how Five Star Data Recovery gets your data back.</p>
+        <div class="process-track">
+          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
+            <div class="process-circle">{{ step.num }}</div>
+            <div v-if="i < steps.length - 1" class="process-connector" />
+            <h3 class="process-title">{{ step.title }}</h3>
+            <p class="process-body">{{ step.text }}</p>
+          </div>
+        </div>
+        <div class="guarantee-strip">
+          <span class="guarantee-icon">🛡</span>
+          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. No hidden fees, ever.</p>
         </div>
       </div>
     </section>
 
-    <!-- TYPES -->
-    <section class="light-alt-section">
-      <div class="container two-col reverse">
-        <div class="col-img">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery" class="section-img" />
+    <!-- ═══════════════ DRIVE TYPES — grey, image left (40%) + content right (60%) ═══════════════ -->
+    <section class="s-grey">
+      <div class="container split-60-40 reverse">
+        <div class="split-main">
+          <div class="section-label">Supported Devices</div>
+          <h2 class="s-heading">Types of WD Drives We Recover</h2>
+          <p class="s-body">We recover data from all Western Digital models, including internal SATA drives, external USB drives, and high-capacity enterprise units. Every WD drive type is supported.</p>
+          <div class="drive-chips">
+            <span v-for="d in driveTypes" :key="d" class="drive-chip">{{ d }}</span>
+          </div>
         </div>
-        <div class="col-text">
-          <h2 class="section-heading">Types of WD Drives We Recover</h2>
-          <p class="body-text">We recover data from all Western Digital models, including internal SATA drives, external USB drives, and high-capacity enterprise units. Every WD drive type is supported.</p>
-          <ul class="drive-list">
-            <li v-for="d in driveTypes" :key="d">{{ d }}</li>
-          </ul>
+        <div class="split-side">
+          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
         </div>
       </div>
     </section>
 
-    <!-- TROUBLESHOOTING + WARRANTY -->
-    <section class="light-section">
-      <div class="container two-col-equal">
-        <div>
-          <h2 class="section-heading-sm">Troubleshooting Tips for WD External Drives</h2>
-          <p class="body-text">Before bringing your drive in, there are a few safe steps you can try. These won't risk your data and may save you a trip:</p>
-          <ul class="tip-list">
+    <!-- ═══════════════ FULL-WIDTH BANNER — dark image overlay ═══════════════ -->
+    <section class="fullwidth-banner">
+      <div class="banner-overlay" />
+      <div class="container banner-inner">
+        <h2 class="banner-heading">Trusted by Thousands of Customers Nationwide</h2>
+        <p class="banner-sub">From dropped drives to catastrophic RAID failures — we've seen it all and recovered it all. Free evaluation, flat-rate pricing, and a team that actually picks up the phone.</p>
+        <div class="banner-stats">
+          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
+          <div class="bstat-div" />
+          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
+          <div class="bstat-div" />
+          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span></div>
+          <div class="bstat-div" />
+          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ TROUBLESHOOTING + WARRANTY — white, 2 equal cols ═══════════════ -->
+    <section class="s-white">
+      <div class="container dual-col">
+        <div class="dual-box">
+          <div class="dual-icon">🔧</div>
+          <h3 class="dual-heading">Troubleshooting Tips for WD External Drives</h3>
+          <p class="s-body">Before bringing your drive in, there are a few safe steps you can try. These won't risk your data and may save you a trip:</p>
+          <ul class="arrow-list">
             <li v-for="tip in troubleshootingTips" :key="tip">{{ tip }}</li>
           </ul>
         </div>
-        <div>
-          <h2 class="section-heading-sm">Warranty & Manufacturer Limitations</h2>
-          <p class="body-text">In many cases, a WD drive failure occurs outside the standard warranty period, or the failure type isn't covered. Physical damage, logical failures, and accidental deletion are not covered under most manufacturer warranties. That's where Five Star Data Recovery steps in — we recover data regardless of warranty status, drive age, or failure cause.</p>
-          <p class="body-text">In some cases, if your drive is still under warranty, WD may replace the hardware — but they will not recover your data. We do both: recover your data and help you understand your options.</p>
+        <div class="dual-box">
+          <div class="dual-icon">📋</div>
+          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
+          <p class="s-body">In many cases, a WD drive failure occurs outside the standard warranty period, or the failure type isn't covered. Physical damage, logical failures, and accidental deletion are not covered under most manufacturer warranties. That's where Five Star Data Recovery steps in — we recover data regardless of warranty status, drive age, or failure cause.</p>
+          <p class="s-body">In some cases, if your drive is still under warranty, WD may replace the hardware — but they will not recover your data. We do both: recover your data and help you understand your options.</p>
         </div>
       </div>
     </section>
 
-    <!-- WHY PRONE + AFTER RECOVERY -->
-    <section class="light-alt-section">
-      <div class="container two-col-equal">
-        <div>
-          <h2 class="section-heading-sm">Why WD Drives Are Prone to Issues</h2>
-          <p class="body-text">Western Digital drives, especially the WD My Passport and WD Elements series, use a USB-to-SATA bridge built directly into the drive enclosure. This means if the USB connector is damaged or the bridge chip fails, the data becomes inaccessible. Unlike standard internal drives, you can't simply remove the drive from the enclosure and connect it directly to a SATA port.</p>
-          <p class="body-text">Additionally, WD uses SED (Self-Encrypting Drives) on many models, which adds complexity to the recovery process. Our lab is fully equipped to handle SED-locked and encrypted WD drives.</p>
+    <!-- ═══════════════ WHY PRONE + AFTER — grey, 2 equal cols ═══════════════ -->
+    <section class="s-grey">
+      <div class="container dual-col">
+        <div class="dual-box">
+          <div class="dual-icon">⚠️</div>
+          <h3 class="dual-heading">Why WD Drives Are Prone to Issues</h3>
+          <p class="s-body">Western Digital drives, especially the WD My Passport and WD Elements series, use a USB-to-SATA bridge built directly into the drive enclosure. This means if the USB connector is damaged or the bridge chip fails, the data becomes inaccessible. Unlike standard internal drives, you can't simply remove the drive from the enclosure and connect it directly to a SATA port.</p>
+          <p class="s-body">Additionally, WD uses SED (Self-Encrypting Drives) on many models, which adds complexity to the recovery process. Our lab is fully equipped to handle SED-locked and encrypted WD drives.</p>
         </div>
-        <div>
-          <h2 class="section-heading-sm">What Happens After Recovery?</h2>
-          <p class="body-text">Once our engineers complete the recovery, you'll receive a full list of recovered files for your review. Only after you confirm that your important files are present do we transfer the data to a new storage device.</p>
-          <p class="body-text">We then ship the drive back to you via insured shipping — or you can pick it up at our Glendale, CA location. Payment is only collected after you've confirmed successful recovery.</p>
+        <div class="dual-box">
+          <div class="dual-icon">✅</div>
+          <h3 class="dual-heading">What Happens After Recovery?</h3>
+          <p class="s-body">Once our engineers complete the recovery, you'll receive a full list of recovered files for your review. Only after you confirm that your important files are present do we transfer the data to a new storage device.</p>
+          <p class="s-body">We then ship the drive back to you via insured shipping — or you can pick it up at our Glendale, CA location. Payment is only collected after you've confirmed successful recovery.</p>
         </div>
       </div>
     </section>
 
-    <!-- DARK CTA FORM -->
-    <section class="dark-cta-section">
-      <div class="container two-col">
-        <div class="col-text">
+    <!-- ═══════════════ DARK CTA + FORM ═══════════════ -->
+    <section class="s-dark-cta">
+      <div class="container cta-form-layout">
+        <div class="cta-form-text">
+          <div class="section-label light">Get Started</div>
           <h2 class="dark-heading">Need Help Understanding Your WD Drive?</h2>
-          <p class="dark-text">If you're not sure what's wrong with your drive, our engineers are happy to help. Our free diagnostic will tell you exactly what failed and what it will take to recover your data. There's no obligation and no charge for the evaluation.</p>
-          <p class="dark-text">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="hero-form-wrap">
-          <div class="hero-form-card">
-            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
-            <form class="consult-form" @submit.prevent>
-              <div class="form-row">
-                <input type="text" placeholder="First Name" class="form-input" />
-                <input type="text" placeholder="Last Name" class="form-input" />
-              </div>
-              <input type="email" placeholder="Email Address" class="form-input full" />
-              <input type="tel" placeholder="Phone Number" class="form-input full" />
-              <select class="form-input full">
-                <option>Select Device Type</option>
-                <option>Hard Drive (HDD)</option>
-                <option>SSD</option>
-                <option>External Drive</option>
-              </select>
-              <button type="submit" class="btn-form-submit">Request a Consultation</button>
-            </form>
+          <p class="dark-body">If you're not sure what's wrong with your drive, our engineers are happy to help. Our free diagnostic will tell you exactly what failed and what it will take to recover your data. There's no obligation and no charge for the evaluation.</p>
+          <p class="dark-body">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <div class="dark-features">
+            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
+            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
+            <div class="df"><span class="df-check">✓</span> No data recovered = no charge</div>
           </div>
         </div>
+        <div class="cta-form-card">
+          <div class="form-card-header">
+            <h3>Get a Free Quote in Minutes!</h3>
+            <p>No obligation · Same-day response</p>
+          </div>
+          <form @submit.prevent class="form-body">
+            <div class="form-grid-2">
+              <input type="text" placeholder="First Name" class="fi" />
+              <input type="text" placeholder="Last Name" class="fi" />
+            </div>
+            <input type="email" placeholder="Email Address" class="fi" />
+            <input type="tel" placeholder="Phone Number" class="fi" />
+            <select class="fi">
+              <option>Select Device Type</option>
+              <option>Hard Drive (HDD)</option>
+              <option>SSD</option>
+              <option>External Drive</option>
+            </select>
+            <button type="submit" class="form-submit">Request a Consultation</button>
+          </form>
+        </div>
       </div>
     </section>
 
-    <!-- CONTACT CTA BAND -->
-    <section class="contact-band">
-      <div class="container contact-band-inner">
-        <div class="contact-band-text">
-          <h2 class="contact-band-title">Contact Us for Western Digital Data Recovery</h2>
-          <p class="contact-band-sub">Data loss is stressful — but working with us doesn't have to be. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-          <ul class="contact-list">
+    <!-- ═══════════════ CONTACT BAND ═══════════════ -->
+    <section class="s-contact-band">
+      <div class="container contact-layout">
+        <div class="contact-text">
+          <h2 class="contact-heading">Contact Us for Western Digital Data Recovery</h2>
+          <p class="contact-sub">Data loss is stressful — but working with us doesn't have to be. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <ul class="contact-bullets">
             <li>Visit our lab in Glendale, CA</li>
             <li>Mail your drive to us from anywhere in the U.S.</li>
             <li>Call us today for a free evaluation</li>
           </ul>
         </div>
-        <div class="contact-band-actions">
-          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
+        <div class="contact-actions">
+          <a href="tel:8182728866" class="btn-gold-lg">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-ghost-lg">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- TRUST + VIDEO -->
-    <section class="dark-trust-section">
-      <div class="container two-col">
-        <div class="col-text">
-          <h2 class="dark-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="dark-text">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+    <!-- ═══════════════ TRUST / IMAGE BAND — image placeholder ═══════════════ -->
+    <section class="s-white">
+      <div class="container split-60-40">
+        <div class="split-main">
+          <div class="section-label">Why Choose Us</div>
+          <h2 class="s-heading">See Why Thousands Trust Us With Their Important Data</h2>
+          <p class="s-body">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <NuxtLink to="/reviews" class="inline-link">Read All Reviews →</NuxtLink>
         </div>
-        <div class="col-img">
-          <div class="video-placeholder">
-            <p class="video-phone">(888) 505-9999</p>
-          </div>
+        <div class="split-side">
+          <img src="/five-star-data-recovery-lab-technician-glendale-ca.png" alt="Five Star Data Recovery lab technician" class="rounded-img" />
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="light-section">
+    <!-- ═══════════════ FAQ — grey ═══════════════ -->
+    <section class="s-grey">
       <div class="container">
-        <h2 class="section-heading center">Frequently Asked Questions</h2>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-q" @click="toggleFaq(i)">
+        <div class="section-label center">Got Questions?</div>
+        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+            <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
             </button>
-            <div v-if="openFaq === i" class="faq-a">{{ faq.a }}</div>
+            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="light-alt-section">
+    <!-- ═══════════════ REVIEWS — white, 3 cards ═══════════════ -->
+    <section class="s-white">
       <div class="container">
-        <h2 class="section-heading center">Testimonials from Satisfied Clients</h2>
-        <div class="reviews-row">
+        <div class="section-label center">Client Stories</div>
+        <h2 class="s-heading center">Testimonials from Satisfied Clients</h2>
+        <div class="reviews-grid">
           <div v-for="r in reviews" :key="r.name" class="review-card">
-            <div class="review-avatar">👤</div>
-            <p class="review-text">"{{ r.text }}"</p>
-            <div class="review-stars">★★★★★</div>
-            <div class="review-name">{{ r.name }}</div>
-            <div class="review-loc">{{ r.location }}</div>
+            <div class="review-quote">"</div>
+            <p class="review-body">{{ r.text }}</p>
+            <div class="review-footer">
+              <div class="review-stars">★★★★★</div>
+              <div class="review-meta">
+                <strong class="review-name">{{ r.name }}</strong>
+                <span class="review-loc">{{ r.location }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BOTTOM YELLOW BAND -->
-    <section class="yellow-band">
+    <!-- ═══════════════ BOTTOM BAND ═══════════════ -->
+    <section class="bottom-band">
       <div class="container">
-        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+        <p class="bottom-band-text">Recovering what can't be replaced!</p>
+        <NuxtLink to="/start-recovery" class="bottom-band-btn">Start Your Recovery Today</NuxtLink>
       </div>
     </section>
 
@@ -372,142 +424,194 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 </template>
 
 <style scoped>
-/* ---- BASE ---- */
-.page-wd { font-family: 'Inter', sans-serif; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; }
+.page-wd { font-family: 'Inter', sans-serif; color: #1a1a2e; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
 
-/* ---- HERO ---- */
-.hero-section { background: #1a1a2e; padding: 60px 0; }
-.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
-.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
-.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
-.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
-.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
-.btn-primary-red:hover { background: #c53030; }
-.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
-.btn-secondary:hover { border-color: #fff; }
-.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
-.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
-
-/* ---- FORM ---- */
-.hero-form-wrap { position: relative; }
-.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
-.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
-.consult-form { display: flex; flex-direction: column; gap: 10px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
-.form-input:focus { outline: none; border-color: #C9A84C; }
-.form-input.full { width: 100%; }
-.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
-.btn-form-submit:hover { background: #b8923e; }
-
-/* ---- LIGHT SECTIONS ---- */
-.light-section { background: #fff; padding: 72px 0; }
-.light-alt-section { background: #f7f9fc; padding: 72px 0; }
-
-/* ---- SECTION HEADINGS ---- */
-.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
-.section-heading.center { text-align: center; }
-.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
-.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
-.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
-
-/* ---- ISSUES GRID ---- */
-.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
-.issue-card { }
-.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
-.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
-
-/* ---- TWO COLUMN ---- */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-.two-col.reverse { direction: rtl; }
-.two-col.reverse > * { direction: ltr; }
-.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
-.col-img { }
-.col-text { }
-
-/* ---- CAUSE LIST ---- */
-.cause-list { list-style: none; padding: 0; margin: 0; }
-.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
-.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-
-/* ---- PROCESS ---- */
-.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
-.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
-.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
-.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
-.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
-.no-charge-note strong { color: #C9A84C; }
-
-/* ---- DRIVE LIST ---- */
-.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
-.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
-/* ---- TIP LIST ---- */
-.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
-.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-
-/* ---- DARK CTA SECTION ---- */
-.dark-cta-section { background: #2d3748; padding: 72px 0; }
-.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
-.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-
-/* ---- CONTACT BAND ---- */
-.contact-band { background: #1a1a2e; padding: 48px 0; }
-.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
-.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
-.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
-.contact-list { list-style: none; padding: 0; margin: 0; }
-.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
-.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
-.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
-.btn-yellow:hover { background: #b8923e; }
-.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
-.btn-outline-white:hover { border-color: #fff; }
-
-/* ---- DARK TRUST ---- */
-.dark-trust-section { background: #1a1a2e; padding: 72px 0; }
-.video-placeholder { background: #2d3748; border-radius: 12px; height: 280px; display: flex; align-items: center; justify-content: center; }
-.video-phone { font-size: 1.5rem; font-weight: 800; color: #C9A84C; }
-
-/* ---- FAQ ---- */
-.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
-.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
-.faq-item.open { border-color: #C9A84C; }
-.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
-.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
-.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
-
-/* ---- REVIEWS ---- */
-.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-.review-avatar { font-size: 2rem; margin-bottom: 12px; }
-.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
-.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
-.review-loc { font-size: 0.82rem; color: #718096; }
-
-/* ---- YELLOW BAND ---- */
-.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
-.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
-
-/* ---- RESPONSIVE ---- */
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .two-col { grid-template-columns: 1fr; }
-  .two-col.reverse { direction: ltr; }
-  .two-col-equal { grid-template-columns: 1fr; }
-  .contact-band-inner { flex-direction: column; align-items: flex-start; }
-  .process-row { grid-template-columns: 1fr 1fr; }
+/* ─── HERO ─── */
+.hero { position: relative; background: #0d111f; padding: 80px 0 72px; overflow: hidden; }
+.hero-bg-overlay {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
+              linear-gradient(135deg, #0d111f 0%, #151c35 100%);
 }
-@media (max-width: 600px) {
-  .process-row { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
+.hero-layout { position: relative; display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; margin-bottom: 14px; }
+.hero-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 18px; }
+.hero-lead { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+.cta-red { display: inline-block; background: #e53e3e; color: #fff; padding: 14px 30px; border-radius: 7px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+.cta-red:hover { background: #c53030; }
+.cta-ghost { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 26px; border-radius: 7px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s; }
+.cta-ghost:hover { border-color: #fff; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge-pill { font-size: 0.78rem; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 5px 14px; border-radius: 20px; }
+
+/* ─── FORM CARD ─── */
+.form-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
+.form-card-header { background: #1a1a2e; padding: 20px 24px; }
+.form-card-header h3 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
+.form-card-header p { color: rgba(255,255,255,0.5); font-size: 0.78rem; margin: 0; }
+.form-body { display: flex; flex-direction: column; gap: 10px; padding: 20px 24px 24px; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.fi { border: 1.5px solid #e2e8f0; border-radius: 7px; padding: 11px 14px; font-size: 0.88rem; color: #1a1a2e; background: #fff; width: 100%; font-family: inherit; transition: border-color 0.2s; }
+.fi:focus { outline: none; border-color: #C9A84C; }
+.form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 7px; padding: 14px; font-size: 0.95rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+.form-submit:hover { background: #b8923e; }
+
+/* ─── SECTION SCAFFOLDING ─── */
+.s-white { background: #fff; padding: 88px 0; }
+.s-grey  { background: #f4f7fc; padding: 88px 0; }
+
+/* ─── SECTION LABELS & HEADINGS ─── */
+.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px; }
+.section-label.center, .s-heading.center, .s-intro.center { text-align: center; }
+.section-label.light { color: #C9A84C; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
+.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 48px; }
+.s-intro.center { max-width: 680px; margin-left: auto; margin-right: auto; }
+.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+
+/* ─── ISSUES GRID ─── */
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 8px; }
+.issue-card { border-left: 3px solid #C9A84C; padding: 20px 24px; background: #f9fafb; border-radius: 0 10px 10px 0; }
+.issue-num { font-size: 0.7rem; color: #C9A84C; font-weight: 900; letter-spacing: 0.1em; margin-bottom: 8px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.35; }
+.issue-body { font-size: 0.88rem; color: #4a5568; line-height: 1.7; }
+
+/* ─── ASYMMETRIC LAYOUT (3 col text / 5 col image) ─── */
+.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
+.asym-minor {}
+.asym-major { position: relative; }
+.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
+.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
+.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
+
+/* ─── CHECK LIST ─── */
+.check-list { list-style: none; padding: 0; margin: 20px 0 0; }
+.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
+.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+
+/* ─── PROCESS STEPS ─── */
+.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
+.process-node { position: relative; padding: 0 16px; text-align: center; }
+.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
+.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
+.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
+.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
+.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
+.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
+.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
+.guarantee-strip strong { color: #C9A84C; }
+
+/* ─── 60/40 SPLIT ─── */
+.split-60-40 { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; }
+.split-60-40.reverse { grid-template-columns: 2fr 3fr; }
+.split-60-40.reverse .split-main { order: 2; }
+.split-60-40.reverse .split-side { order: 1; }
+
+/* ─── DRIVE CHIPS ─── */
+.drive-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.drive-chip { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 7px 16px; font-size: 0.84rem; color: #2d3748; font-weight: 500; }
+
+/* ─── FULL-WIDTH BANNER ─── */
+.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
+.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
+.banner-inner { position: relative; text-align: center; }
+.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
+.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 620px; margin: 0 auto 48px; line-height: 1.7; }
+.banner-stats { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+.bstat { text-align: center; padding: 0 40px; }
+.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
+.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
+.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
+
+/* ─── DUAL COLUMNS ─── */
+.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
+.s-grey .dual-box { background: #fff; }
+.dual-icon { font-size: 2rem; margin-bottom: 14px; }
+.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+
+/* ─── ARROW LIST ─── */
+.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
+.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+
+/* ─── DARK CTA SECTION ─── */
+.s-dark-cta { background: linear-gradient(135deg, #0d111f, #1a2540); padding: 88px 0; }
+.cta-form-layout { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
+.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.66); line-height: 1.8; margin-bottom: 14px; }
+.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+.df { font-size: 0.9rem; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 10px; }
+.df-check { color: #C9A84C; font-weight: 700; font-size: 1rem; }
+.cta-form-card { }
+
+/* ─── CONTACT BAND ─── */
+.s-contact-band { background: #1a1a2e; padding: 64px 0; }
+.contact-layout { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
+.contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 16px; max-width: 520px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0; }
+.contact-bullets li { padding: 5px 0 5px 22px; position: relative; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
+.contact-bullets li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
+.btn-gold-lg { display: inline-block; background: #C9A84C; color: #fff; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 1rem; text-decoration: none; text-align: center; transition: background 0.2s; white-space: nowrap; }
+.btn-gold-lg:hover { background: #b8923e; }
+.btn-ghost-lg { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; text-align: center; transition: border-color 0.2s; }
+.btn-ghost-lg:hover { border-color: #fff; }
+
+/* ─── INLINE LINK ─── */
+.inline-link { font-size: 0.9rem; font-weight: 700; color: #C9A84C; text-decoration: none; border-bottom: 1px solid #C9A84C; padding-bottom: 2px; display: inline-block; margin-top: 12px; }
+
+/* ─── FAQ ─── */
+.faq-wrap { max-width: 820px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 8px; }
+.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
+.faq-row.active { border-color: #C9A84C; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; background: none; border: none; color: #1a1a2e; font-size: 0.93rem; font-weight: 600; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
+.faq-answer { padding: 0 22px 18px; font-size: 0.88rem; color: #4a5568; line-height: 1.75; border-top: 1px solid #f0f2f7; }
+
+/* ─── REVIEWS ─── */
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+.review-card { background: #fff; border: 1.5px solid #e8ecf2; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+.review-quote { font-size: 3.5rem; color: #C9A84C; line-height: 0.8; margin-bottom: 14px; font-family: Georgia, serif; }
+.review-body { font-size: 0.9rem; color: #4a5568; line-height: 1.75; flex: 1; font-style: italic; margin-bottom: 20px; }
+.review-footer { border-top: 1px solid #f0f2f7; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
+.review-stars { color: #C9A84C; font-size: 0.95rem; letter-spacing: 2px; }
+.review-meta { text-align: right; }
+.review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
+.review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
+
+/* ─── BOTTOM BAND ─── */
+.bottom-band { background: #C9A84C; padding: 40px 0; text-align: center; }
+.bottom-band-text { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 900; color: #fff; margin: 0 0 16px; }
+.bottom-band-btn { display: inline-block; background: #fff; color: #C9A84C; padding: 13px 32px; border-radius: 7px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s; }
+.bottom-band-btn:hover { opacity: 0.9; }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero-layout { grid-template-columns: 1fr 360px; gap: 40px; }
+  .asym-layout { grid-template-columns: 1fr 1fr; }
+  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .process-connector { display: none; }
+}
+@media (max-width: 768px) {
+  .hero-layout, .asym-layout, .split-60-40, .split-60-40.reverse,
+  .cta-form-layout, .dual-col { grid-template-columns: 1fr; gap: 36px; }
+  .split-60-40.reverse .split-main,
+  .split-60-40.reverse .split-side { order: unset; }
+  .contact-layout { flex-direction: column; align-items: flex-start; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .banner-stats { gap: 24px; }
+  .bstat-div { display: none; }
+  .img-stat-badge { bottom: 12px; }
+}
+@media (max-width: 480px) {
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .process-track { grid-template-columns: 1fr; }
 }
 </style>
