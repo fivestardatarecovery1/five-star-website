@@ -696,7 +696,7 @@ const _routes = [
   {
     name: "data-recovery-western-digital-recovery",
     path: "/data-recovery/western-digital-recovery",
-    component: () => import('./western-digital-recovery-BRHAWrxb.mjs')
+    component: () => import('./western-digital-recovery-Cxk5Km-y.mjs')
   },
   {
     name: "data-recovery-hard-drive-not-showing-up",

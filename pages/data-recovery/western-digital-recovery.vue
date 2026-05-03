@@ -1,27 +1,30 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Western Digital Data Recovery Services — Five Star Data Recovery',
-  description: 'Are you experiencing issues with your Western Digital (WD) hard drive? Five Star Data Recovery offers professional WD data recovery for all drives. Free evaluation, no data no charge.'
+  description: 'Are you experiencing issues with your Western Digital (WD) hard drive? If you have a blinking light, a drive that won\'t mount, or files you can\'t access, our expert team can help.'
 })
 
 const issues = [
   {
     title: 'My Passport Hard Drive Light Blinking But Not Working',
-    text: 'If your WD My Passport is blinking but not showing up, this is typically caused by a firmware issue, PCB failure, or damaged read/write heads. The drive may still spin but cannot complete initialization. Our engineers have recovered thousands of WD My Passport drives — even in cases where other labs said recovery wasn\'t possible.'
+    text: 'If your WD My Passport drive is blinking but not recognized by your computer, it may have a power issue. It could also have a damaged USB interface or corrupted firmware. In many cases, the drive may still spin up, but it fails to establish a proper connection with the system. This problem often happens with portable WD drives. These drives use small electronics and one USB cable for power and data. If you\'ve tried switching cables and ports without success, the failure is likely internal. Avoid repeated attempts to connect and seek help from a professional.'
   },
   {
     title: 'WD Hard Drive Not Showing Up',
-    text: 'Yes. If your WD external hard drive is not showing up, it could be due to physical damage, logical errors, file system corruption, or PCB failure. We specialize in identifying the root cause and performing safe and effective WD data recovery to retrieve your files.'
+    text: 'When your Western Digital hard drive is not appearing, it can be frustrating—and concerning. Often, this points to logical errors like corrupted partitions, missing drive letters, or a faulty file system. In other cases, hardware damage may be to blame. If the drive does not appear in Disk Management or Device Manager, it may have PCB damage, bad heads, or other physical problems. This type of failure usually requires specialized tools and cleanroom access to properly diagnose and recover the data.'
   },
   {
     title: 'WD External Hard Drive Show Errors',
-    text: 'If your WD external hard drive is showing errors or requesting you to format the drive, do not format it. This usually means the file system has become unreadable due to logical corruption or bad sectors. Formatting will make recovery more difficult. Contact us immediately for a free evaluation.'
+    text: 'Sometimes your WD external hard drive shows errors; it might appear in your system but request formatting or arrive as RAW. These signs typically indicate file system corruption, often caused by improper removal, bad sectors, or interrupted file transfers. Although it might seem like a quick fix, formatting the drive can permanently overwrite your files. In most cases, the data is still there but just not accessible through standard means. Our engineers can extract the data using non-destructive recovery techniques tailored to Western Digital File Recovery.'
   },
   {
     title: 'Clicking or Beeping Sounds',
-    text: 'A clicking WD hard drive often indicates internal mechanical failure, such as a damaged read/write head or spindle issue. These cases require cleanroom recovery and advanced tools — all of which we offer in-house at our recovery lab.'
+    text: 'If your drive makes clicking or beeping sounds, you should never ignore this red flag. These noises often come from a problem inside the hard drive. This can happen if the read/write head is stuck or failing. It keeps trying to find data but cannot succeed. Engineers make WD hard drives with care. However, if something goes wrong inside, using it can quickly damage the platter. This kind of failure usually requires head replacement or advanced cleanroom repair. Shut off the device immediately and contact a Western Digital Data Recovery professional before the situation worsens.'
   }
 ]
+
+const causesIntro = 'Western Digital drives fail for many reasons—some sudden, some progressive. Here are common causes:'
+const causesOutro = 'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately.'
 
 const causes = [
   'Physical damage from accidental drops or impact',
@@ -29,31 +32,36 @@ const causes = [
   'Corrupted firmware or partition tables',
   'Exposure to heat or water',
   'Virus or malware affecting the drive\'s boot or partition info',
-  'Bad sectors develop over time because of wear and tear'
+  'Bad sectors develop over time because of wear and tear.'
 ]
+
+const processIntro = 'We use a systematic, proven approach for every Western Digital Data Recovery case.'
 
 const steps = [
   {
     num: '01',
     title: 'Step 1: Free Diagnostic',
-    text: 'We evaluate your WD drive to identify the root cause — logical, physical, or firmware-related — at no charge. We will start working on your drive immediately and send you updates by midnight on the same day.'
+    text: 'We examine the drive to determine the failure type—physical, logical, or both. If the drive is clicking, beeping, or not powering on, we proceed with care.'
   },
   {
     num: '02',
     title: 'Step 2: Cleanroom Imaging',
-    text: 'We create a full sector-by-sector image of your WD drive in our certified cleanroom to protect your original data. All physical repairs are performed here before any data extraction begins.'
+    text: 'If needed, the drive is opened in our certified cleanroom. Using a matching donor part, we attempt to stabilize the drive and create a sector-by-sector image.'
   },
   {
     num: '03',
     title: 'Step 3: File Extraction',
-    text: 'Using specialized tools, we extract your files from the cloned image — even from encrypted or damaged WD drives. You will receive a full file list to review before we finalize delivery.'
+    text: 'Once stable, we extract and verify the data using advanced recovery hardware and software. We click "recover" only after imaging to avoid damage to the original device.'
   },
   {
     num: '04',
     title: 'Step 4: File Verification & Delivery',
-    text: 'Once you review and approve the recovered files, we transfer everything to a new drive and return it to you. No Data, No Charge Guarantee – If we can\'t recover your data, you owe nothing.'
+    text: 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report will show you which files we successfully recovered and which ones we did not recover (if any data loss occurred). Once you approve, we save your files onto a new device that you provide or purchase from us.'
   }
 ]
+
+const driveTypesIntro = 'We can recover data from all major Western Digital products, including:'
+const driveTypesOutro = 'Whether it\'s an older backup drive or a new portable storage device, we\'ve got you covered.'
 
 const driveTypes = [
   'WD My Passport (Ultra, for Mac, SSD)',
@@ -65,6 +73,9 @@ const driveTypes = [
   'External and encrypted drives'
 ]
 
+const troubleshootingIntro = 'Before bringing your WD drive to us, here are a few basic checks:'
+const troubleshootingOutro = 'If your drive still doesn\'t work or makes unusual noises, stop using it to prevent permanent data loss.'
+
 const troubleshootingTips = [
   'Try using a different USB cable or USB port',
   'Plug the WD External Hard Drive directly into the motherboard port, not a hub',
@@ -72,6 +83,35 @@ const troubleshootingTips = [
   'Use Device Manager to check for driver issues',
   'Plug the drive to your computer on a different system, if available'
 ]
+
+const warrantyText = [
+  'Many people assume that if their WD drive fails, they can simply return it under warranty to recover their data. Unfortunately, this isn\'t true. Western Digital\'s warranty usually covers hardware replacement—not data recovery services.',
+  'In most cases, if you return the drive to the manufacturer, they will wipe or destroy your data. It\'s important to talk to a professional data recovery lab before doing anything about your warranty.'
+]
+
+const whyProneText = [
+  'Western Digital is one of the biggest drive makers in the world. However, like all mass-produced electronics, their drives can have flaws over time. Heat buildup, vibration, long-term use, and even minor manufacturing defects can all contribute to premature failure.',
+  'Portable models, like the WD My Passport, can have USB connection issues. This is often because of their small design. Desktop models might be more vulnerable to bad sectors caused by power surges or improper shutdowns.'
+]
+
+const afterRecoveryText = [
+  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
+  'We will help you recover data from WD hard drives after a failure. We will guide you through safe steps, from diagnosis to file delivery. We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another drive recovery process again.'
+]
+
+const needHelpText = [
+  'It can be confusing to figure out what is wrong with your drive. This is especially true when it acts differently on different computers.',
+  'If your WD drive works on one computer but not on another, it may have a problem. Unusual clicking or buzzing sounds are also early signs of a hardware issue. Stopping the use of the drive and getting it checked before the damage worsens is best.',
+  'We\'re happy to answer your questions, explain the recovery process, and even show you examples of common failures. From firmware corruption to head crashes, we break it down in simple terms.'
+]
+
+const contactText = 'If your WD hard drive is not showing up, making strange noises, or failing to open files, don\'t ignore the warning signs. Acting early gives you the best chance of recovering your data safely and completely.'
+const contactList = [
+  'Visit our lab in Glendale, CA',
+  'Mail your drive to us from anywhere in the U.S.',
+  'Call us today for a free evaluation'
+]
+const contactOutro = 'Trust our experts for fast, secure, and professional western digital data recovery—and get back what matters most.'
 
 const reviews = [
   {
@@ -90,20 +130,21 @@ const reviews = [
     name: 'Angela S.',
     location: 'New York, NY',
     stars: 5,
-    text: 'Another lab gave up on my WD drive, but Five Star was able to recover most of my data. They know Western Digital drives inside and out. Transparent pricing, no pressure, and professional from start to finish.'
+    text: 'Another lab gave up on my WD drive, but Five Star was able to recover most of my data. They know Western Digital drives inside and out. Transparent pricing, no pressure, and professional from start to finish. (They did charge me a "drive cover opened fee" since another company had attempted a head swap).'
   }
 ]
 
 const faqs = [
-  { q: 'What types of Western Digital drives do you recover data from?', a: 'We recover data from all Western Digital devices, including WD My Passport, WD Elements, WD My Book, WD Blue, WD Black, WD Red, and enterprise-level WD drives. Whether it\'s an internal drive or WD external hard drive, we have the tools and expertise to recover your data.' },
-  { q: 'My WD external hard drive is not showing up — can you recover the data?', a: 'Yes. If your WD external hard drive is not showing up, it could be due to physical damage, logical errors, file system corruption, or PCB failure. We specialize in identifying the root cause and performing safe and effective WD data recovery to retrieve your files.' },
-  { q: 'Can you recover data from a Western Digital drive with a clicking or buzzing noise?', a: 'Absolutely. A clicking WD hard drive often indicates internal mechanical failure, such as a damaged read/write head or spindle issue. These cases require cleanroom recovery and advanced tools — all of which we offer in-house at our recovery lab.' },
-  { q: 'How long does Western Digital data recovery take?', a: 'Standard WD data recovery services are typically completed within 3–5 business days. If you\'re in a rush, we also offer Expedited and Expedited Plus options for faster turnaround. Initial diagnostics are always completed same day, by midnight.' },
-  { q: 'Do you offer a No Data, No Charge policy for WD data recovery?', a: 'Yes. Most Western Digital recovery cases qualify for our No Data, No Charge guarantee. If we\'re unable to recover your files, you pay nothing. Exceptions may apply in special cases like deleted file recovery or devices with prior tampering.' },
-  { q: 'I dropped my WD My Passport — can you still recover the data?', a: 'Yes. Dropped drives often suffer from physical damage, such as damaged heads or platter alignment issues. Our team can safely perform recovery using drive-specific tools and firmware repair procedures to extract your files.' },
-  { q: 'Is my data secure during the WD recovery process?', a: 'Absolutely. Your data is treated with strict confidentiality. We never share or access your files beyond what\'s required to complete recovery. Once recovery is done, your files are returned to you on a secure drive.' },
-  { q: 'How much does Western Digital data recovery cost?', a: 'At Five Star Data Recovery, Western Digital data recovery is offered at flat-rate pricing: $300.00 for standard WD SATA drives under 2TB, $500.00 for WD SATA drives over 2TB, $600.00 for WD external USB 3.0 drives, and $800.00 for ultra high-capacity drives over 12TB. We provide a free evaluation before starting with no hidden fees.' },
-  { q: 'Can I drop off or mail in my WD drive?', a: 'Yes! You can visit us in person at our Glendale, CA office, or start a case remotely using our Mail-In Recovery Form. We provide free shipping both ways for mail-in clients across the U.S.' }
+  { q: '1. What types of Western Digital drives do you recover data from?', a: 'We recover data from all Western Digital devices, including WD My Passport, WD Elements, WD My Book, WD Blue, WD Black, WD Red, and enterprise-level WD drives. Whether it\'s an internal drive or WD external hard drive, we have the tools and expertise to recover your data.' },
+  { q: '2. My WD external hard drive is not showing up — can you recover the data?', a: 'Yes. If your WD external hard drive is not showing up, it could be due to physical damage, logical errors, file system corruption, or PCB failure. We specialize in identifying the root cause and performing safe and effective WD data recovery to retrieve your files.' },
+  { q: '3. Can you recover data from a Western Digital drive with a clicking or buzzing noise?', a: 'Absolutely. A clicking WD hard drive often indicates internal mechanical failure, such as a damaged read/write head or spindle issue. These cases require cleanroom recovery and advanced tools — all of which we offer in-house at our recovery lab.' },
+  { q: '4. How long does Western Digital data recovery take?', a: 'Standard WD data recovery services are typically completed within 3–5 business days. If you\'re in a rush, we also offer Expedited and Expedited Plus options for faster turnaround. Initial diagnostics are always completed same day, by midnight.' },
+  { q: '5. Do you offer a No Data, No Charge policy for WD data recovery?', a: 'Yes. Most Western Digital recovery cases qualify for our No Data, No Charge guarantee. If we\'re unable to recover your files, you pay nothing. Exceptions may apply in special cases like deleted file recovery or devices with prior tampering.' },
+  { q: '6. I dropped my WD My Passport — can you still recover the data?', a: 'Yes. Dropped drives often suffer from physical damage, such as damaged heads or platter alignment issues. Our team can safely perform recovery using drive-specific tools and firmware repair procedures to extract your files.' },
+  { q: '7. Is my data secure during the WD recovery process?', a: 'Absolutely. Your data is treated with strict confidentiality. We never share or access your files beyond what\'s required to complete recovery. Once recovery is done, your files are returned to you on a secure drive.' },
+  { q: '8. What will the recovered data be returned on?', a: 'We typically transfer your recovered files to a brand new external drive you provide. If you prefer to purchase a transfer drive from us, please let us know at the time of checking in your case.' },
+  { q: '9. How much does Western Digital data recovery cost?', a: 'At Five Star Data Recovery, Western Digital data recovery is offered at flat-rate pricing based on the drive type and storage capacity: $300.00 – For standard Western Digital SATA drives (laptop or desktop models) under 2TB. $500.00 – For WD SATA drives larger than 2TB, where the higher capacity requires longer imaging time and additional resources. $600.00 – For Western Digital external hard drives with USB 3.0 connectors. These drives are more complex to work with because they do not have a standard SATA connection and are often SED-locked, requiring specialized tools and techniques to access the data. $800.00 – For ultra high-capacity Western Digital drives (over 12TB). These cases require significantly more time and storage resources due to their size and complexity. We provide a free evaluation before starting, and there are no hidden fees. You\'ll only be charged if the data is successfully recovered — we follow a strict no data, no charge policy. To see a full breakdown of recovery options, visit our data recovery cost page.' },
+  { q: '10. Can I drop off or mail in my WD drive?', a: 'Yes! You can visit us in person at our Glendale, CA office, or start a case remotely using our Mail-In Recovery Form. We provide free shipping both ways for mail-in clients across the U.S.' }
 ]
 
 const openFaq = ref<number | null>(null)
@@ -114,7 +155,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-wd">
     <NavBar />
 
-    <!-- ═══════════════ HERO ═══════════════ -->
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-bg-overlay" />
       <div class="container hero-layout">
@@ -128,7 +169,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="hero-badges">
             <div class="badge-pill">✔ Available 24/7/365</div>
-            <div class="badge-pill">✔ Clean Room On-Site</div>
+            <div class="badge-pill">✔ No Data = No Charge</div>
             <div class="badge-pill">✔ Flat Rate Pricing</div>
             <div class="badge-pill">✔ Free Nationwide Shipping</div>
           </div>
@@ -170,32 +211,34 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <StatsBar />
 
-    <!-- ═══════════════ ISSUES — white, full width intro + 2×2 cards ═══════════════ -->
+    <!-- ISSUES — white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label">Common Problems</div>
         <h2 class="s-heading">Common WD Hard Drive Issues</h2>
-        <p class="s-intro">Western Digital drives are reliable, but they're not immune to failure. Whether it's a blinking light, a drive that won't mount, or files you can't access, our team is equipped to help.</p>
+        <p class="s-intro">Western Digital drives are popular and generally reliable. However, like any electronic device, they can fail unexpectedly. Recognizing early warning signs can help prevent permanent data loss. Some of the most common symptoms we see include:</p>
         <div class="issues-grid">
           <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-num">●</div>
+            <div class="issue-dot">●</div>
             <h3 class="issue-title">{{ issue.title }}</h3>
             <p class="issue-body">{{ issue.text }}</p>
           </div>
         </div>
+        <p class="s-outro">No matter the issue, our engineers have the tools and experience to perform a complete drive recovery. If your WD drive has logical damage or physical failure, we will help recover your data safely and securely.</p>
       </div>
     </section>
 
-    <!-- ═══════════════ CAUSES — grey, asymmetric 3/5 col ═══════════════ -->
+    <!-- CAUSES — grey, asymmetric 2/3 -->
     <section class="s-grey">
       <div class="container asym-layout">
         <div class="asym-minor">
           <div class="section-label">Root Causes</div>
           <h2 class="s-heading">What Causes WD Drives to Fail?</h2>
-          <p class="s-body">Western Digital drives can experience several common failure types. Some problems are software-related, like file system corruption or a failed operating system update. Other failures stem from physical damage, such as head crashes, bad sectors, or worn-out components. We also recover from accidental formatting, power surges, and damaged storage media devices that users improperly removed or mishandled.</p>
+          <p class="s-body">{{ causesIntro }}</p>
           <ul class="check-list">
             <li v-for="c in causes" :key="c">{{ c }}</li>
           </ul>
+          <p class="s-body s-mt">{{ causesOutro }}</p>
         </div>
         <div class="asym-major">
           <img src="/western-digital-data-recovery-service-los-angeles.jpg" alt="Western Digital hard drive data recovery" class="rounded-img" />
@@ -207,12 +250,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- ═══════════════ PROCESS — white, numbered steps with connector line ═══════════════ -->
+    <!-- PROCESS — white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label center">Our Process</div>
         <h2 class="s-heading center">How Our WD Data Recovery Process Works</h2>
-        <p class="s-intro center">We use a consistent, proven approach for every Western Digital Data Recovery case. Here's a look at how Five Star Data Recovery gets your data back.</p>
+        <p class="s-intro center">{{ processIntro }}</p>
         <div class="process-track">
           <div v-for="(step, i) in steps" :key="step.num" class="process-node">
             <div class="process-circle">{{ step.num }}</div>
@@ -223,29 +266,30 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="guarantee-strip">
           <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. No hidden fees, ever.</p>
+          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing.</p>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ DRIVE TYPES — grey, image left (40%) + content right (60%) ═══════════════ -->
+    <!-- DRIVE TYPES — grey, image left 40% / content right 60% -->
     <section class="s-grey">
-      <div class="container split-60-40 reverse">
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Types of WD Drives We Recover</h2>
-          <p class="s-body">We recover data from all Western Digital models, including internal SATA drives, external USB drives, and high-capacity enterprise units. Every WD drive type is supported.</p>
-          <div class="drive-chips">
-            <span v-for="d in driveTypes" :key="d" class="drive-chip">{{ d }}</span>
-          </div>
-        </div>
+      <div class="container split-40-60">
         <div class="split-side">
           <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
         </div>
+        <div class="split-main">
+          <div class="section-label">Supported Devices</div>
+          <h2 class="s-heading">Types of WD Drives We Recover</h2>
+          <p class="s-body">{{ driveTypesIntro }}</p>
+          <div class="drive-chips">
+            <span v-for="d in driveTypes" :key="d" class="drive-chip">{{ d }}</span>
+          </div>
+          <p class="s-body s-mt">{{ driveTypesOutro }}</p>
+        </div>
       </div>
     </section>
 
-    <!-- ═══════════════ FULL-WIDTH BANNER — dark image overlay ═══════════════ -->
+    <!-- FULL-WIDTH BANNER — dark image overlay -->
     <section class="fullwidth-banner">
       <div class="banner-overlay" />
       <div class="container banner-inner">
@@ -263,52 +307,49 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- ═══════════════ TROUBLESHOOTING + WARRANTY — white, 2 equal cols ═══════════════ -->
+    <!-- TROUBLESHOOTING + WARRANTY — white, 2 equal cols -->
     <section class="s-white">
       <div class="container dual-col">
         <div class="dual-box">
           <div class="dual-icon">🔧</div>
           <h3 class="dual-heading">Troubleshooting Tips for WD External Drives</h3>
-          <p class="s-body">Before bringing your drive in, there are a few safe steps you can try. These won't risk your data and may save you a trip:</p>
+          <p class="s-body">{{ troubleshootingIntro }}</p>
           <ul class="arrow-list">
             <li v-for="tip in troubleshootingTips" :key="tip">{{ tip }}</li>
           </ul>
+          <p class="s-body s-mt">{{ troubleshootingOutro }}</p>
         </div>
         <div class="dual-box">
           <div class="dual-icon">📋</div>
           <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p class="s-body">In many cases, a WD drive failure occurs outside the standard warranty period, or the failure type isn't covered. Physical damage, logical failures, and accidental deletion are not covered under most manufacturer warranties. That's where Five Star Data Recovery steps in — we recover data regardless of warranty status, drive age, or failure cause.</p>
-          <p class="s-body">In some cases, if your drive is still under warranty, WD may replace the hardware — but they will not recover your data. We do both: recover your data and help you understand your options.</p>
+          <p v-for="t in warrantyText" :key="t" class="s-body">{{ t }}</p>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ WHY PRONE + AFTER — grey, 2 equal cols ═══════════════ -->
+    <!-- WHY PRONE + AFTER RECOVERY — grey, 2 equal cols -->
     <section class="s-grey">
       <div class="container dual-col">
         <div class="dual-box">
           <div class="dual-icon">⚠️</div>
           <h3 class="dual-heading">Why WD Drives Are Prone to Issues</h3>
-          <p class="s-body">Western Digital drives, especially the WD My Passport and WD Elements series, use a USB-to-SATA bridge built directly into the drive enclosure. This means if the USB connector is damaged or the bridge chip fails, the data becomes inaccessible. Unlike standard internal drives, you can't simply remove the drive from the enclosure and connect it directly to a SATA port.</p>
-          <p class="s-body">Additionally, WD uses SED (Self-Encrypting Drives) on many models, which adds complexity to the recovery process. Our lab is fully equipped to handle SED-locked and encrypted WD drives.</p>
+          <p v-for="t in whyProneText" :key="t" class="s-body">{{ t }}</p>
         </div>
         <div class="dual-box">
           <div class="dual-icon">✅</div>
           <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p class="s-body">Once our engineers complete the recovery, you'll receive a full list of recovered files for your review. Only after you confirm that your important files are present do we transfer the data to a new storage device.</p>
-          <p class="s-body">We then ship the drive back to you via insured shipping — or you can pick it up at our Glendale, CA location. Payment is only collected after you've confirmed successful recovery.</p>
+          <p v-for="t in afterRecoveryText" :key="t" class="s-body">{{ t }}</p>
         </div>
       </div>
     </section>
 
-    <!-- ═══════════════ DARK CTA + FORM ═══════════════ -->
+    <!-- DARK CTA + FORM -->
     <section class="s-dark-cta">
       <div class="container cta-form-layout">
         <div class="cta-form-text">
           <div class="section-label light">Get Started</div>
           <h2 class="dark-heading">Need Help Understanding Your WD Drive?</h2>
-          <p class="dark-body">If you're not sure what's wrong with your drive, our engineers are happy to help. Our free diagnostic will tell you exactly what failed and what it will take to recover your data. There's no obligation and no charge for the evaluation.</p>
-          <p class="dark-body">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p v-for="t in needHelpText" :key="t" class="dark-body">{{ t }}</p>
           <div class="dark-features">
             <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
             <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
@@ -339,17 +380,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- ═══════════════ CONTACT BAND ═══════════════ -->
+    <!-- CONTACT BAND -->
     <section class="s-contact-band">
       <div class="container contact-layout">
         <div class="contact-text">
           <h2 class="contact-heading">Contact Us for Western Digital Data Recovery</h2>
-          <p class="contact-sub">Data loss is stressful — but working with us doesn't have to be. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p class="contact-sub">{{ contactText }}</p>
           <ul class="contact-bullets">
-            <li>Visit our lab in Glendale, CA</li>
-            <li>Mail your drive to us from anywhere in the U.S.</li>
-            <li>Call us today for a free evaluation</li>
+            <li v-for="item in contactList" :key="item">{{ item }}</li>
           </ul>
+          <p class="contact-outro">{{ contactOutro }}</p>
         </div>
         <div class="contact-actions">
           <a href="tel:8182728866" class="btn-gold-lg">📞 818-272-8866</a>
@@ -358,22 +398,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- ═══════════════ TRUST / IMAGE BAND — image placeholder ═══════════════ -->
-    <section class="s-white">
-      <div class="container split-60-40">
-        <div class="split-main">
-          <div class="section-label">Why Choose Us</div>
-          <h2 class="s-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="s-body">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-          <NuxtLink to="/reviews" class="inline-link">Read All Reviews →</NuxtLink>
-        </div>
-        <div class="split-side">
-          <img src="/five-star-data-recovery-lab-technician-glendale-ca.png" alt="Five Star Data Recovery lab technician" class="rounded-img" />
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════════════ FAQ — grey ═══════════════ -->
+    <!-- FAQ — grey -->
     <section class="s-grey">
       <div class="container">
         <div class="section-label center">Got Questions?</div>
@@ -390,7 +415,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- ═══════════════ REVIEWS — white, 3 cards ═══════════════ -->
+    <!-- REVIEWS — white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label center">Client Stories</div>
@@ -411,7 +436,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- ═══════════════ BOTTOM BAND ═══════════════ -->
+    <!-- BOTTOM BAND -->
     <section class="bottom-band">
       <div class="container">
         <p class="bottom-band-text">Recovering what can't be replaced!</p>
@@ -424,77 +449,72 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 </template>
 
 <style scoped>
-/* ─── RESET & BASE ─── */
 *, *::before, *::after { box-sizing: border-box; }
 .page-wd { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
 
-/* ─── HERO ─── */
+/* HERO */
 .hero { position: relative; background: #0d111f; padding: 80px 0 72px; overflow: hidden; }
-.hero-bg-overlay {
-  position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%),
-              linear-gradient(135deg, #0d111f 0%, #151c35 100%);
-}
+.hero-bg-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%), linear-gradient(135deg, #0d111f 0%, #151c35 100%); }
 .hero-layout { position: relative; display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
 .hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; margin-bottom: 14px; }
 .hero-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 18px; }
 .hero-lead { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-.cta-red { display: inline-block; background: #e53e3e; color: #fff; padding: 14px 30px; border-radius: 7px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: background 0.2s; }
+.cta-red { display: inline-block; background: #e53e3e; color: #fff; padding: 14px 30px; border-radius: 7px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
 .cta-red:hover { background: #c53030; }
-.cta-ghost { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 26px; border-radius: 7px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: border-color 0.2s; }
+.cta-ghost { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 26px; border-radius: 7px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
 .cta-ghost:hover { border-color: #fff; }
 .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; }
 .badge-pill { font-size: 0.78rem; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 5px 14px; border-radius: 20px; }
 
-/* ─── FORM CARD ─── */
+/* FORM */
 .form-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
 .form-card-header { background: #1a1a2e; padding: 20px 24px; }
 .form-card-header h3 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
 .form-card-header p { color: rgba(255,255,255,0.5); font-size: 0.78rem; margin: 0; }
 .form-body { display: flex; flex-direction: column; gap: 10px; padding: 20px 24px 24px; }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.fi { border: 1.5px solid #e2e8f0; border-radius: 7px; padding: 11px 14px; font-size: 0.88rem; color: #1a1a2e; background: #fff; width: 100%; font-family: inherit; transition: border-color 0.2s; }
+.fi { border: 1.5px solid #e2e8f0; border-radius: 7px; padding: 11px 14px; font-size: 0.88rem; color: #1a1a2e; background: #fff; width: 100%; font-family: inherit; }
 .fi:focus { outline: none; border-color: #C9A84C; }
-.form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 7px; padding: 14px; font-size: 0.95rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+.form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 7px; padding: 14px; font-size: 0.95rem; font-weight: 700; cursor: pointer; font-family: inherit; }
 .form-submit:hover { background: #b8923e; }
 
-/* ─── SECTION SCAFFOLDING ─── */
+/* SECTION SCAFFOLDING */
 .s-white { background: #fff; padding: 88px 0; }
 .s-grey  { background: #f4f7fc; padding: 88px 0; }
-
-/* ─── SECTION LABELS & HEADINGS ─── */
 .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px; }
-.section-label.center, .s-heading.center, .s-intro.center { text-align: center; }
+.section-label.center { text-align: center; }
 .section-label.light { color: #C9A84C; }
 .s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 48px; }
-.s-intro.center { max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+.s-heading.center { text-align: center; }
+.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
+.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
+.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
+.s-mt { margin-top: 16px; }
 
-/* ─── ISSUES GRID ─── */
-.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin-top: 8px; }
+/* ISSUES */
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
 .issue-card { border-left: 3px solid #C9A84C; padding: 20px 24px; background: #f9fafb; border-radius: 0 10px 10px 0; }
-.issue-num { font-size: 0.7rem; color: #C9A84C; font-weight: 900; letter-spacing: 0.1em; margin-bottom: 8px; }
+.issue-dot { font-size: 0.6rem; color: #C9A84C; margin-bottom: 8px; }
 .issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.35; }
 .issue-body { font-size: 0.88rem; color: #4a5568; line-height: 1.7; }
 
-/* ─── ASYMMETRIC LAYOUT (3 col text / 5 col image) ─── */
+/* ASYMMETRIC */
 .asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-minor {}
 .asym-major { position: relative; }
 .rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
 .img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
 .stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
 
-/* ─── CHECK LIST ─── */
-.check-list { list-style: none; padding: 0; margin: 20px 0 0; }
+/* CHECK LIST */
+.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
 .check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
 .check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
 
-/* ─── PROCESS STEPS ─── */
+/* PROCESS */
 .process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
 .process-node { position: relative; padding: 0 16px; text-align: center; }
 .process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
@@ -506,68 +526,64 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
 .guarantee-strip strong { color: #C9A84C; }
 
-/* ─── 60/40 SPLIT ─── */
-.split-60-40 { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; }
-.split-60-40.reverse { grid-template-columns: 2fr 3fr; }
-.split-60-40.reverse .split-main { order: 2; }
-.split-60-40.reverse .split-side { order: 1; }
+/* 40/60 SPLIT */
+.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
+.split-side {}
+.split-main {}
 
-/* ─── DRIVE CHIPS ─── */
-.drive-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+/* DRIVE CHIPS */
+.drive-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .drive-chip { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 7px 16px; font-size: 0.84rem; color: #2d3748; font-weight: 500; }
 
-/* ─── FULL-WIDTH BANNER ─── */
+/* FULL-WIDTH BANNER */
 .fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
 .banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
 .banner-inner { position: relative; text-align: center; }
 .banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 620px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
+.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
+.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
 .bstat { text-align: center; padding: 0 40px; }
 .bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
 .bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
 .bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
 
-/* ─── DUAL COLUMNS ─── */
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+/* DUAL COLS */
+.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
 .s-grey .dual-box { background: #fff; }
 .dual-icon { font-size: 2rem; margin-bottom: 14px; }
 .dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
 
-/* ─── ARROW LIST ─── */
+/* ARROW LIST */
 .arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
 .arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
 .arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
 
-/* ─── DARK CTA SECTION ─── */
+/* DARK CTA */
 .s-dark-cta { background: linear-gradient(135deg, #0d111f, #1a2540); padding: 88px 0; }
 .cta-form-layout { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
 .dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
 .dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.66); line-height: 1.8; margin-bottom: 14px; }
 .dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
 .df { font-size: 0.9rem; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; font-size: 1rem; }
-.cta-form-card { }
+.df-check { color: #C9A84C; font-weight: 700; }
 
-/* ─── CONTACT BAND ─── */
+/* CONTACT BAND */
 .s-contact-band { background: #1a1a2e; padding: 64px 0; }
 .contact-layout { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
 .contact-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; margin-bottom: 12px; }
-.contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 16px; max-width: 520px; }
-.contact-bullets { list-style: none; padding: 0; margin: 0; }
+.contact-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 520px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 12px; }
 .contact-bullets li { padding: 5px 0 5px 22px; position: relative; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
 .contact-bullets li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-outro { font-size: 0.88rem; color: rgba(255,255,255,0.55); font-style: italic; }
 .contact-actions { display: flex; flex-direction: column; gap: 12px; flex-shrink: 0; }
-.btn-gold-lg { display: inline-block; background: #C9A84C; color: #fff; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 1rem; text-decoration: none; text-align: center; transition: background 0.2s; white-space: nowrap; }
+.btn-gold-lg { display: inline-block; background: #C9A84C; color: #fff; padding: 16px 32px; border-radius: 8px; font-weight: 800; font-size: 1rem; text-decoration: none; text-align: center; white-space: nowrap; }
 .btn-gold-lg:hover { background: #b8923e; }
-.btn-ghost-lg { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; text-align: center; transition: border-color 0.2s; }
+.btn-ghost-lg { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; text-align: center; }
 .btn-ghost-lg:hover { border-color: #fff; }
 
-/* ─── INLINE LINK ─── */
-.inline-link { font-size: 0.9rem; font-weight: 700; color: #C9A84C; text-decoration: none; border-bottom: 1px solid #C9A84C; padding-bottom: 2px; display: inline-block; margin-top: 12px; }
-
-/* ─── FAQ ─── */
+/* FAQ */
 .faq-wrap { max-width: 820px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 8px; }
 .faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
 .faq-row.active { border-color: #C9A84C; }
@@ -575,7 +591,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer { padding: 0 22px 18px; font-size: 0.88rem; color: #4a5568; line-height: 1.75; border-top: 1px solid #f0f2f7; }
 
-/* ─── REVIEWS ─── */
+/* REVIEWS */
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
 .review-card { background: #fff; border: 1.5px solid #e8ecf2; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
 .review-quote { font-size: 3.5rem; color: #C9A84C; line-height: 0.8; margin-bottom: 14px; font-family: Georgia, serif; }
@@ -586,13 +602,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
 .review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
 
-/* ─── BOTTOM BAND ─── */
+/* BOTTOM BAND */
 .bottom-band { background: #C9A84C; padding: 40px 0; text-align: center; }
 .bottom-band-text { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 900; color: #fff; margin: 0 0 16px; }
-.bottom-band-btn { display: inline-block; background: #fff; color: #C9A84C; padding: 13px 32px; border-radius: 7px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: opacity 0.2s; }
+.bottom-band-btn { display: inline-block; background: #fff; color: #C9A84C; padding: 13px 32px; border-radius: 7px; font-weight: 800; font-size: 0.95rem; text-decoration: none; }
 .bottom-band-btn:hover { opacity: 0.9; }
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .hero-layout { grid-template-columns: 1fr 360px; gap: 40px; }
   .asym-layout { grid-template-columns: 1fr 1fr; }
@@ -600,13 +616,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .process-connector { display: none; }
 }
 @media (max-width: 768px) {
-  .hero-layout, .asym-layout, .split-60-40, .split-60-40.reverse,
-  .cta-form-layout, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .split-60-40.reverse .split-main,
-  .split-60-40.reverse .split-side { order: unset; }
+  .hero-layout, .asym-layout, .split-40-60, .cta-form-layout, .dual-col { grid-template-columns: 1fr; gap: 36px; }
   .contact-layout { flex-direction: column; align-items: flex-start; }
   .reviews-grid { grid-template-columns: 1fr; }
-  .banner-stats { gap: 24px; }
   .bstat-div { display: none; }
   .img-stat-badge { bottom: 12px; }
 }
