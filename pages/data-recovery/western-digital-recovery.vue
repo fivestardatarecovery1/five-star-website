@@ -249,8 +249,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="fullwidth-banner">
       <div class="banner-overlay" />
       <div class="container banner-inner">
-        <h2 class="banner-heading">Trusted by Thousands of Customers Nationwide</h2>
-        <p class="banner-sub">From dropped drives to catastrophic RAID failures — we've seen it all and recovered it all. Free evaluation, flat-rate pricing, and a team that actually picks up the phone.</p>
+        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
+        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         <div class="banner-stats">
           <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
           <div class="bstat-div" />
