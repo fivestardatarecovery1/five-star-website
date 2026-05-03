@@ -218,8 +218,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Common WD Hard Drive Issues</h2>
         <p class="s-intro">Western Digital drives are popular and generally reliable. However, like any electronic device, they can fail unexpectedly. Recognizing early warning signs can help prevent permanent data loss. Some of the most common symptoms we see include:</p>
         <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-dot">●</div>
+          <div v-for="(issue, i) in issues" :key="issue.title" class="issue-card">
+            <div class="issue-num">{{ String(i + 1).padStart(2, '0') }}</div>
             <h3 class="issue-title">{{ issue.title }}</h3>
             <p class="issue-body">{{ issue.text }}</p>
           </div>
@@ -495,11 +495,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-mt { margin-top: 16px; }
 
 /* ISSUES */
-.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
-.issue-card { border-left: 3px solid #C9A84C; padding: 20px 24px; background: #f9fafb; border-radius: 0 10px 10px 0; }
-.issue-dot { font-size: 0.6rem; color: #C9A84C; margin-bottom: 8px; }
-.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.35; }
-.issue-body { font-size: 0.88rem; color: #4a5568; line-height: 1.7; }
+.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
+.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
+.issue-num { font-size: 3.5rem; font-weight: 900; color: rgba(201,168,76,0.15); line-height: 1; margin-bottom: 12px; font-family: Georgia, serif; }
+.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
+.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
 
 /* ASYMMETRIC */
 .asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
