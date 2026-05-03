@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
-  { 'icon': '💾', 'title': 'Receive a Free Diagnosis', 'text': 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { 'icon': '💾', 'title': 'Our Engineers work on Recovering your Data', 'text': 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { 'icon': '💾', 'title': 'Review & Approve the Recovered', 'text': 'After recovery is complete, you’ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.' },
+  { icon: '📦', title: 'Nationwide Mail-In Service', text: 'Ship your drive from anywhere in the US using our prepaid shipping label. Our secure packaging ensures your device arrives safely at our Glendale, CA lab for professional recovery.' },
+  { icon: '🔍', title: 'Free Diagnostic on Arrival', text: 'Once received, our engineers perform a thorough diagnosis at no charge. You\'ll receive a full report and quote before any recovery work begins — no obligation to proceed.' },
+  { icon: '🔒', title: 'Secure Chain of Custody', text: 'Every mail-in recovery follows strict handling protocols. Your device and data are kept confidential and secure throughout the entire recovery process.' },
+  { icon: '🚀', title: 'Fast Turnaround Times', text: 'Standard recovery typically completes within 3–5 business days after diagnosis. Expedited options are available for urgent cases that need faster turnaround.' },
 ]
 
 const causesIntro = ''

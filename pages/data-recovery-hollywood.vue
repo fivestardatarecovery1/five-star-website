@@ -5,9 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Why Choose Us for Data Recovery in Hollywood?', 'text': 'Over a Decade of Experience - Trusted by thousands, we’ve been recovering data for over 10 years with industry-leading expertise.. Hundreds of 5-Star ReviewsOur reputation speaks for itself — hundreds of satisfied customers have left glowing reviews online.. Free Evaluation & No Data, No ChargeYou only pay if we recover your data; we offer free diagnostics and transparent, flat-rate pricing.' },
-  { 'icon': '💾', 'title': 'Our Recovery Process', 'text': '1. Free EvaluationWe begin by diagnosing your device to identify the problem and determine the best recovery strategy—completely free of charge.' },
-  { 'icon': '💾', 'title': '⭐ Client Success Story – Hollywood Film Editor Recovers 2TB of Critical Project Files', 'text': 'A Hollywood film editor reached out after their external hard drive stopped showing up. It contained over 2TB of raw footage, edited timelines, and sound libraries for an indie film nearing its premiere. Our diagnostics revealed a mechanical failure caused by a drop, and our engineers performed a clean room head swap followed by a full clone of the drive.' },
+  { icon: '🎬', title: 'Video Production Drive Failures', text: 'Hollywood filmmakers and editors trust us when their drives fail mid-project. We recover footage from RAID arrays, SSDs, CFast cards, and external drives used in professional production.' },
+  { icon: '💥', title: 'Physically Damaged or Dropped Drives', text: 'On-set accidents happen. Whether a drive was dropped, stepped on, or damaged by power fluctuations, we recover data from physically damaged storage used by Hollywood\'s creative community.' },
+  { icon: '⚠️', title: 'Corrupted Project Files and Drives', text: 'Sudden drive failures, file system corruption, and accidental formatting can wipe out hours of work. Our recovery specialists restore project files, footage, and creative assets quickly.' },
+  { icon: '🖥️', title: 'RAID and Server Data Loss', text: 'Post-production houses and studios rely on RAID systems for shared storage. We recover data from all RAID configurations with emergency same-day options for urgent Hollywood deadlines.' },
 ]
 
 const causesIntro = ''

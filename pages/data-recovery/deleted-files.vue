@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '🗑️', 'title': 'Devices We Offer Deleted File Recovery From', 'text': 'We offer professional deleted file recovery from nearly all types of local storage devices, including:' },
-  { 'icon': '🗑️', 'title': 'Our Deleted File Recovery Process', 'text': 'We approach deleted file recovery with forensic-level precision to ensure we don’t further damage the data or lose potential recovery chances. Our process includes:' },
-  { 'icon': '💾', 'title': 'Forensic Clone of the Device', 'text': 'We begin by creating a 1-to-1 sector-level image of your device using specialized hardware. This ensures we never work directly on the original device, preserving its current state' },
-  { 'icon': '💾', 'title': 'Deep Scan of the Clone', 'text': 'Once the clone is created, we scan it thoroughly using commercial-grade recovery tools. We search for unallocated space, file tables, and fragments. This helps us locate traces of deleted files, even if someone partially overwrote them.' },
+  { icon: '🗑️', title: 'Accidentally Deleted Files or Folders', text: 'Whether you emptied the Recycle Bin or shift-deleted important files, we can recover them. Our forensic recovery tools scan every sector of your drive to find and restore deleted data.' },
+  { icon: '💾', title: 'Formatted Drive or Partition', text: 'Accidentally formatting a drive, SD card, or USB flash drive doesn\'t permanently erase your data. Our experts recover files from formatted storage even when the OS reports it as empty.' },
+  { icon: '⚙️', title: 'OS Crash or Failed Update', text: 'A failed Windows or macOS update, or a corrupted system drive, can make your files inaccessible. We recover personal files and documents even when the operating system won\'t boot.' },
+  { icon: '⚠️', title: 'Virus or Ransomware Attack', text: 'Malware and ransomware can delete, encrypt, or corrupt your files. Our recovery team has experience bypassing encryption and recovering data from drives affected by malicious software.' },
 ]
 
 const causesIntro = 'With so many options online, here’s why customers consistently choose Five Star Data Recovery:'

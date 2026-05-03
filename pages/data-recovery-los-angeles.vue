@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Free Same-Day Pickup in Los Angeles', 'text': 'Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles.' },
-  { 'icon': '💾', 'title': 'Trusted by Locals Across LA', 'text': 'We’re proud to be a top-rated data recovery company serving customers all over Los Angeles.' },
-  { 'icon': '💾', 'title': 'What We Recover', 'text': 'Our engineers recover files from nearly any storage device, including:' },
-  { 'icon': '⚙️', 'title': 'Hardware and Software Expertise', 'text': 'Hardware issues cause some data loss, while software failure causes others. Our recovery experts receive training in both hardware and software data recovery. Whether it’s a head crash or a virus, we’ll know how to handle it.' },
+  { icon: '🔊', title: 'Failed Hard Drives and Clicking Sounds', text: 'From Hollywood studios to downtown offices, we recover data from clicking, seized, or completely failed hard drives throughout the Los Angeles area. Same-day drop-off at our Glendale lab.' },
+  { icon: '⚠️', title: 'Corrupted SSDs and Flash Storage', text: 'SSD failures, corrupted USB drives, and unreadable SD cards are common throughout LA. Our engineers use specialized tools to recover data from all flash-based storage devices.' },
+  { icon: '🖥️', title: 'RAID and NAS Server Failures', text: 'Los Angeles businesses depend on RAID systems and NAS devices for critical data. We recover from all RAID levels with emergency turnaround options for time-sensitive cases.' },
+  { icon: '📱', title: 'Mac and iPhone Data Recovery', text: 'We provide component-level Mac and iPhone data recovery for LA-area clients. From Ventura Blvd to Beverly Hills, we handle T2 chip Macs, M-series MacBooks, and liquid-damaged iPhones.' },
 ]
 
 const causesIntro = 'Our engineers recover files from nearly any storage device, including:'

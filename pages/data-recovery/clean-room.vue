@@ -5,9 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Who We Help', 'text': 'Personal external hard drives with family photos. Business servers with client data. Law firms and healthcare organizations with sensitive documents' },
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
-  { 'icon': '💾', 'title': 'Receive your recovered data', 'text': 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.' },
+  { icon: '💥', title: 'Physical Head Crash or Platter Damage', text: 'When the read/write head crashes into the platter, even a tiny dust particle can cause irreversible damage. Clean room recovery prevents further scratching and maximizes data retrieval.' },
+  { icon: '🔊', title: 'Clicking, Grinding, or Seized Drive', text: 'Mechanical sounds indicate internal damage requiring clean room intervention. Our ISO Class 5 clean room allows us to safely open the drive and address head, spindle, or platter issues.' },
+  { icon: '🔌', title: 'Power Failure or Burnt Components', text: 'Electrical damage can burn the PCB and damage internal components. Our clean room engineers replace burnt components and perform board repairs to restore drive operation and extract data.' },
+  { icon: '💧', title: 'Water or Liquid Damage', text: 'Liquid-damaged drives must be cleaned and dried in a controlled environment before any recovery attempt. Our clean room procedures safely remove contaminants without causing additional harm.' },
 ]
 
 const causesIntro = ''

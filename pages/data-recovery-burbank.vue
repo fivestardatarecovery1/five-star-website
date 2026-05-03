@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Common Scenarios We Handle in Burbank', 'text': 'A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.. A post‑production company’s RAID 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.. A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.' },
-  { 'icon': '💾', 'title': 'We Specialize in Recovering Data From:', 'text': 'Clicking or non-powering hard drives (HDDs). Solid State Drives (SSDs) with no response. Water-damaged or dead iPhones' },
-  { 'icon': '💾', 'title': '3. Your Data, Delivered', 'text': 'Magnolia Park. Downtown Burbank. Media District' },
-  { 'icon': '💾', 'title': 'Your Data Is Safe With Us', 'text': 'Encrypted data storage and transfers. Non-disclosure agreements for business clients. Secure deletion of temporary recovery files upon completion' },
+  { icon: '🔊', title: 'Clicking or Unresponsive Hard Drives', text: 'Burbank residents and businesses regularly bring us clicking, grinding, or completely unresponsive drives. Our Glendale lab is just minutes away — same-day drop-off available.' },
+  { icon: '💥', title: 'Physically Damaged Storage Devices', text: 'Dropped laptops, water-damaged drives, and cracked SSDs are among the most common cases we handle from the Burbank area. We recover data even from severely damaged devices.' },
+  { icon: '⚠️', title: 'Corrupted Files or Unreadable Drives', text: 'File system corruption, accidental formatting, and drives that show up empty are all recoverable. Our Burbank-area clients trust us for fast, reliable logical recovery services.' },
+  { icon: '🖥️', title: 'RAID and Server Failures', text: 'Burbank\'s film and TV production industry relies on us for RAID and server data recovery. We handle all RAID levels and NAS devices with emergency turnaround options available.' },
 ]
 
 const causesIntro = ''

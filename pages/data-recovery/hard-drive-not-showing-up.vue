@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Why Your Hard Drive Isn’t Showing Up', 'text': 'Several reasons exist why a hard drive might not appear on your computer. Sometimes it\'s a minor connection issue. Other times, it could point to physical damage or corruption inside the drive. Understanding what might be happening helps you know what to try—and what to leave alone.Common causes include:' },
-  { 'icon': '🍎', 'title': 'Windows and macOS: Same Problem, Different Fixes', 'text': 'If your hard drive is not showing up on Mac, start by opening Disk Utility. The drive may appear there but not mount properly. Sometimes the mac not recognizing the drive in Finder doesn’t mean it’s completely gone.' },
-  { 'icon': '💾', 'title': 'Safe Troubleshooting You Can Try', 'text': 'You can rule out simple problems with a few safe checks:' },
-  { 'icon': '🍎', 'title': 'Windows and macOS: Same Problem, Different Fixes', 'text': 'If your hard drive is not showing up on Mac, start by opening Disk Utility. The drive may appear there but not mount properly. Sometimes the mac not recognizing the drive in Finder doesn’t mean it’s completely gone.' },
+  { icon: '💾', title: 'Loose or faulty USB port', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
+  { icon: '💥', title: 'A damaged file system', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
+  { icon: '🔌', title: 'Power issues or bad cables', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
+  { icon: '⚠️', title: 'Errors with the operating system', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
 ]
 
 const causesIntro = 'Several reasons exist why a hard drive might not appear on your computer. Sometimes it\'s a minor connection issue. Other times, it could point to physical damage or corruption inside the drive. Understanding what might be happening helps you know what to try—and what to leave alone.Common causes include:'

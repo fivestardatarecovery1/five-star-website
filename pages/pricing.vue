@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Logical Data Recovery', 'text': 'Desktop Drives. USB Flash Drives. Solid State Drives (SSD) (Per Drive)' },
-  { 'icon': '💾', 'title': 'Logical Data Recovery (+)', 'text': 'Drives Larger than 2TB (Up to 6TB). Drives with USB 2.0/3.0 Connector. LaCie/Seagate Portable Drives' },
-  { 'icon': '💾', 'title': 'Logical Data Recovery (++)', 'text': 'Drives 8TB and Larger (Up to 12TB). G-Drive Portable Drives. SanDisk Portable Drives' },
-  { 'icon': '💾', 'title': 'Clean Room Data Recovery', 'text': 'Stiction (Beeping). Monolith/Chip Off Recovery. Component Level – All Devices' },
+  { icon: '⚙️', title: 'Logical Recovery — Starting at $300', text: 'For software-level failures including file system corruption, deleted files, accidental formatting, and partition loss. No clean room required. Most cases completed in 3–5 business days.' },
+  { icon: '💾', title: 'Logical Recovery (+) — Advanced Cases', text: 'For more complex logical failures including encrypted drives, RAID reconstruction, NAS recovery, and database recovery. Pricing based on complexity and drive configuration.' },
+  { icon: '💥', title: 'Clean Room Recovery — Physical Damage', text: 'For mechanically damaged drives requiring head replacement, platter work, or PCB repair in our ISO Class 5 clean room. Pricing based on damage severity and drive model.' },
+  { icon: '🚫', title: 'No Data = No Charge Guarantee', text: 'If we can\'t recover your data, you pay nothing. Our no-data-no-fee policy means you only pay when we successfully retrieve your files. Free diagnostic evaluation on every case.' },
 ]
 
 const causesIntro = ''

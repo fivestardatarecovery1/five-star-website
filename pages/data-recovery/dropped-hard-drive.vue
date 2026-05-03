@@ -4,7 +4,12 @@ useSeoMeta({
   description: 'Expert Dropped Hard Drive Data Recovery services at Five Star Data Recovery. Free diagnostic, no data no charge guarantee. Located in Glendale, CA.'
 })
 
-const issues = []
+const issues = [
+  { icon: '🔌', title: 'Clicking hard drive noises when powered on', text: 'If your hard drive is showing this symptom after being dropped, stop using it immediately. Our engineers can diagnose and recover data even from severely damaged drives. Contact us for a free evaluation.' },
+  { icon: '💾', title: 'Drive spins up, but doesn\'t appear on your desktop or file manager', text: 'If your hard drive is showing this symptom after being dropped, stop using it immediately. Our engineers can diagnose and recover data even from severely damaged drives. Contact us for a free evaluation.' },
+  { icon: '🐢', title: 'Slower performance or freezing when trying to access files', text: 'If your hard drive is showing this symptom after being dropped, stop using it immediately. Our engineers can diagnose and recover data even from severely damaged drives. Contact us for a free evaluation.' },
+  { icon: '⚠️', title: 'Complete failure to mount or detect', text: 'If your hard drive is showing this symptom after being dropped, stop using it immediately. Our engineers can diagnose and recover data even from severely damaged drives. Contact us for a free evaluation.' },
+]
 
 const causesIntro = ''
 const causesOutro = ''

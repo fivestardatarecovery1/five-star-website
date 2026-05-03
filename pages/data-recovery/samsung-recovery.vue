@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Samsung Data Recovery', 'text': 'If your Samsung phone has suffered liquid damage, a serious drop, or severe physical failure, we’re here to help. At Five Star Data Recovery, we specialize in component-level Samsung mobile data recovery from devices that no longer power on, are stuck in a boot loop, or have suffered board-level damage.' },
-  { 'icon': '💾', 'title': 'Common Causes of Data Loss on Samsung Devices', 'text': 'The most common reason customers come to us is physical damage to their Samsung phone. This includes:' },
-  { 'icon': '💾', 'title': 'Devices We Recover From​', 'text': 'We work with nearly every model of Samsung Galaxy phone and tablet, including:' },
-  { 'icon': '💾', 'title': 'Our Samsung Data Recovery Process', 'text': 'At Five Star Data Recovery, we specialize in component-level Samsung mobile data recovery. We recover data from physically damaged Samsung phones. This includes phones with liquid spills, motherboard failures, or severe impacts.' },
+  { icon: '⚠️', title: 'Samsung SSD Failure', text: 'Samsung SSDs can fail due to controller issues, firmware bugs, or NAND wear. Our engineers recover data from all Samsung SSD models including the 870 EVO, 860, and T7 portable series.' },
+  { icon: '🔌', title: 'Power Failure or Sudden Shutdown', text: 'Unexpected power cuts during read/write operations can cause corruption or render a Samsung drive unresponsive. We recover data from drives damaged by power-related failures.' },
+  { icon: '⚙️', title: 'Firmware Corruption', text: 'Corrupted firmware can prevent a Samsung drive from being recognized by your computer. Our team uses specialized tools to bypass firmware issues and recover your files.' },
+  { icon: '🗑️', title: 'Accidental Deletion or Formatting', text: 'Whether you accidentally formatted your Samsung drive or deleted important files, our recovery specialists can restore your data quickly and safely.' },
 ]
 
 const causesIntro = 'The most common reason customers come to us is physical damage to their Samsung phone. This includes:'

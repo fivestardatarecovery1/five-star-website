@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Why Choose Us for Data Recovery in Glendale?', 'text': 'Experienced Engineers - Our team consists of certified data recovery professionals who specialize in recovering data from all types of storage devices — from simple issues to the most complex failures.' },
-  { 'icon': '💾', 'title': 'Our Recovery Process', 'text': 'Free Evaluation – We assess your device and provide a detailed quote.. Cloning and Analysis – If needed, we create a sector-by-sector clone to protect your data.. Data Extraction – We extract and reconstruct your files with advanced tools.' },
-  { 'icon': '💾', 'title': 'Devices We Recover Data From', 'text': 'Memory Cards: SD, CF, & microSD' },
-  { 'icon': '🖥️', 'title': 'RAID Data Recovery in Glendale', 'text': 'In addition to standard hard drive recovery, we offer expert RAID data recovery services for both business and personal clients. Whether your RAID array has failed due to multiple disk errors, corrupted volumes, or a faulty controller, our engineers are equipped to safely rebuild your system and recover your data.' },
+  { icon: '💾', title: 'Crashed hard drives that no longer boot', text: 'Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:' },
+  { icon: '🔊', title: 'Drives that click or refuse to spin', text: 'Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:' },
+  { icon: '⚠️', title: 'Failed SSDs and corrupted USB flash drives', text: 'Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:' },
+  { icon: '💥', title: 'Water-soaked or dropped devices', text: 'Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:' },
 ]
 
 const causesIntro = 'Experienced Engineers - Our team consists of certified data recovery professionals who specialize in recovering data from all types of storage devices — from simple issues to the most complex failures.'

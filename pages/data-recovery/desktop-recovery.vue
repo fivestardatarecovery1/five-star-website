@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Common Reasons for Desktop Data Loss', 'text': 'Many issues can lead to lost files on a desktop computer, including:' },
-  { 'icon': '💾', 'title': 'Types of Desktop Systems and Drives We Recover', 'text': 'We work with almost all desktop computer models, including:' },
-  { 'icon': '💾', 'title': 'Signs Your Desktop Needs Data Recovery', 'text': 'You may need desktop data recovery services if:' },
-  { 'icon': '💾', 'title': 'How File Systems Affect Recovery', 'text': 'Your desktop’s data is stored using a file system. File systems determine how files are organized, stored, and accessed. When a drive becomes corrupted or formatted, the file system often breaks down. We recover data from all major file systems:' },
+  { icon: '🗑️', title: 'Accidental file deletion or emptying the recycle bin', text: 'Our expert team specializes in recovering data from cases involving accidental file deletion or emptying the recycle bin. Contact us for a free diagnosis.' },
+  { icon: '⚠️', title: 'Corruption of the operating system after a failed update', text: 'Our expert team specializes in recovering data from cases involving corruption of the operating system after a failed update. Contact us for a free diagnosis.' },
+  { icon: '🔌', title: 'Crashes caused by power outages or hardware failure', text: 'Our expert team specializes in recovering data from cases involving crashes caused by power outages or hardware failure. Contact us for a free diagnosis.' },
+  { icon: '🐢', title: 'Lost partition due to formatting or bad sectors', text: 'Our expert team specializes in recovering data from cases involving lost partition due to formatting or bad sectors. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = 'Many issues can lead to lost files on a desktop computer, including:'

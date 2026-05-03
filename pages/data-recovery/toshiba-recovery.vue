@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Why Toshiba Hard Drives Stop Working', 'text': 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
-  { 'icon': '💾', 'title': 'Signs Your Toshiba Drive Needs Recovery', 'text': 'If you notice any of the following issues, it\'s time to consider professional help:' },
-  { 'icon': '⚠️', 'title': 'What Not to Do If Your Toshiba External Drive Fails', 'text': 'Many users try DIY methods to fix Toshiba external drives using free recovery software or YouTube tutorials. But if your drive is physically damaged or not detected at all, using these tools could permanently overwrite or destroy recoverable data.' },
-  { 'icon': '💾', 'title': 'Our Toshiba Data Recovery Process', 'text': 'We take every case seriously and follow a step-by-step recovery plan:' },
+  { icon: '🔌', title: 'Power issues related to a faulty USB port or cable', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
+  { icon: '⚙️', title: 'File system errors or corrupt partitions', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
+  { icon: '💾', title: 'Disk drive not assigned a proper letter in disk management', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
+  { icon: '💥', title: 'Physically damaged components from drops or overheating', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
 ]
 
 const causesIntro = 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:'

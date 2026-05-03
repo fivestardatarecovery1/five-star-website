@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'What We Can Recover', 'text': 'Photos and videos. Text messages and iMessages. Contacts and calendars' },
-  { 'icon': '📱', 'title': 'Common Reasons iPhones Need Data Recovery', 'text': 'Water or liquid damage. Complete power failure. iPhones stuck in boot loop or Apple logo' },
-  { 'icon': '📱', 'title': 'What Is Component-Level iPhone Data Recovery?', 'text': 'We repair individual chips and traces on the board.. We revive critical circuits like NAND, CPU, and power management ICs.. Once stable, we extract the full data from the device’s internal memory.' },
-  { 'icon': '📱', 'title': 'Our iPhone Data Recovery Process', 'text': 'Free Diagnostic: We assess the board for damage.. Flat-Rate Quote: We provide upfront pricing before any recovery work begins.. Board-Level Repair: We restore basic functions only to access your data.' },
+  { icon: '🔌', title: 'Complete power failure', text: 'Five Star Data Recovery provides expert iPhone data recovery for complete power failure. We perform component-level repairs and NAND chip extraction to recover your data.' },
+  { icon: '📱', title: 'iPhones stuck in boot loop or Apple logo', text: 'Five Star Data Recovery provides expert iPhone data recovery for iphones stuck in boot loop or apple logo. We perform component-level repairs and NAND chip extraction to recover your data.' },
+  { icon: '💧', title: 'Burned logic boards', text: 'Five Star Data Recovery provides expert iPhone data recovery for burned logic boards. We perform component-level repairs and NAND chip extraction to recover your data.' },
+  { icon: '💥', title: 'Broken NAND or baseband components', text: 'Five Star Data Recovery provides expert iPhone data recovery for broken nand or baseband components. We perform component-level repairs and NAND chip extraction to recover your data.' },
 ]
 
 const causesIntro = ''

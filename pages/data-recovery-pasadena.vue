@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Why Choose Us for Data Recovery in Pasadena?', 'text': 'Free DiagnosticsNo-cost, no-obligation evaluation to assess your data recovery case.. Fast Turnaround OptionsRush and Expedited services available for time-sensitive cases.Flat-rate pricing with no hidden fees. Class 100 Clean RoomSafe environment for physically damaged drives and internal repairs.' },
-  { 'icon': '💾', 'title': 'Our Recovery Process', 'text': 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
-  { 'icon': '💾', 'title': 'Devices We Recover Data From', 'text': 'iPhones and Mobile DevicesWe perform component-level recovery from iPhones that won’t power on or are stuck in boot loops.' },
-  { 'icon': '💾', 'title': 'What Clients Say', 'text': 'I needed urgent help after my external hard drive suddenly stopped working. I called Five Star and was shocked at how fast they acted — they picked up my drive from my Pasadena office within an hour of creating the ticket. Two days later, I had all my data back. Truly professional and reliable.' },
+  { icon: '💾', title: 'Crashed hard drives', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
+  { icon: '🔊', title: 'Clicking or non-spinning drives', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
+  { icon: '⚠️', title: 'Failed SSDs and flash drives', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
+  { icon: '💥', title: 'Water-damaged or dropped devices', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
 ]
 
 const causesIntro = ''

@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Professional Camera Files We Work With:', 'text': 'ARRI ALEXA Series. RED DSMC2 / KOMODO / V-RAPTOR. Blackmagic URSA Mini Pro / Pocket Cinema 6K/12K' },
-  { 'icon': '💾', 'title': 'The Problem:', 'text': 'When the production team attempted to access their footage, every video file displayed as 0 bytes, and none of the critical shoot footage could be played or opened.' },
-  { 'icon': '💾', 'title': 'The Result:', 'text': 'We successfully repaired all critical video files, maintaining their original quality, resolution, and file structure. Every clip was restored, allowing the production team to move forward without any delays or loss of footage.' },
-  { 'icon': '💾', 'title': 'What Our Clients Say', 'text': '“I thought I had lost all the footage from my sister’s wedding after the memory card got corrupted. Five Star Data Recovery not only recovered the files, but they repaired the video so it actually played without glitches. Total lifesavers!”' },
+  { icon: '🔌', title: 'Power failures during recording or file transfer', text: 'Our expert team specializes in recovering data from cases involving power failures during recording or file transfer. Contact us for a free diagnosis.' },
+  { icon: '💾', title: 'Camera or device crashes', text: 'Our expert team specializes in recovering data from cases involving camera or device crashes. Contact us for a free diagnosis.' },
+  { icon: '💾', title: 'Improper ejection of external drives or SD cards', text: 'Our expert team specializes in recovering data from cases involving improper ejection of external drives or sd cards. Contact us for a free diagnosis.' },
+  { icon: '⚙️', title: 'File system corruption on the storage device', text: 'Our expert team specializes in recovering data from cases involving file system corruption on the storage device. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = ''

@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Types of Lacie Drives We Recover From', 'text': 'We provide recovery for a wide range of Lacie external hard drives and RAID systems, including:' },
-  { 'icon': '💾', 'title': 'Common Issues with Lacie Drives', 'text': 'Despite their reputation for quality, Lacie drives can still fail or lose data because of a variety of issues. Below are some common causes of data loss that we see in our lab:' },
-  { 'icon': '💥', 'title': 'Physical Damage', 'text': 'Although Lacie drives withstand impact like the Rugged series, they’re not indestructible. Drops, water exposure, and electrical surges can cause mechanical failure or damage internal components.' },
-  { 'icon': '🖥️', 'title': 'Advanced Lacie RAID Drive Recovery', 'text': 'Many professionals use Lacie RAID drives like the 2big, 4big, and 6big models for speed and redundancy. These systems often use RAID 0, RAID 1, RAID 5, or RAID 10 configurations.When one or more drives in a RAID array fail, recovery gets more complicated. This can also happen if the RAID is misconfigured or corrupted. Here\'s how we handle Lacie RAID data recovery:' },
+  { icon: '🗑️', title: 'Accidental Deletion or Formatting', text: 'One of the most common scenarios involves users accidentally deleting files or formatting a drive. In many cases, the data still exists on the drive but has been marked as “free space.” Acting quickly increases the chances of successful recovery.' },
+  { icon: '⚙️', title: 'File System Corruption', text: 'Corruption in the file system can occur after improper disconnection, system crashes, or software bugs. A corrupted drive might appear blank, unmounted, or prompt you to format it when you connect your Lacie external hard drive.' },
+  { icon: '💥', title: 'Physical Damage', text: 'Although Lacie drives withstand impact like the Rugged series, they’re not indestructible. Drops, water exposure, and electrical surges can cause mechanical failure or damage internal components.' },
+  { icon: '⚠️', title: 'Disk Utility Errors', text: 'Mac users often encounter issues when using Disk Utility. Clicking "Erase" or running First Aid incorrectly can result in losing data or triggering a drive reformat.' },
 ]
 
 const causesIntro = ''

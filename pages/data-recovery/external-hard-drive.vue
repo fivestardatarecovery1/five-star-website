@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'What Types of Drives Do We Recover?', 'text': 'No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we’ll provide you with a clear explanation of the issue before proceeding. To learn more about what data recovery might cost for your specific drive type, visit our Data Recovery Pricing page.' },
-  { 'icon': '💾', 'title': 'What Types of Files Can Be Recovered?', 'text': 'Photos: .jpg, .png, .cr2, .nef, .psd, and more. Documents: .docx, .xlsx, .pptx, .pdf, .txt. Videos: .mp4, .mov, .avi, .mkv' },
-  { 'icon': '💾', 'title': 'Real-World Scenarios We Handle', 'text': 'A photographer drops a 2TB LaCie drive containing a wedding shoot. The drive clicks and won\'t mount. We recovered 98% of files within 48 hours with our Expedite Plus service.. A business loses access to an encrypted Western Digital My Passport with payroll files. We bypassed the failed USB controller and decrypted data successfully (WD Self-Encrypting Drive).. A student spills water on a Toshiba drive with thesis and class materials. Despite circuit corrosion, we restored the files completely.' },
-  { 'icon': '💾', 'title': 'Advanced Tools and Techniques We Use', 'text': 'PC-3000 by ACE Lab is a top tool in the industry. It lets us connect directly with failing drives at the firmware level.. Cleanroom Environment: Class 100 ISO 5 certified clean benches for handling internal repairs without contamination.. Head & Platter Swapping Tools: Custom jigs for precise mechanical part replacement.' },
+  { icon: '💾', title: 'Do NOT attempt to open the drive', text: 'this can permanently destroy the platters inside.' },
+  { icon: '⚙️', title: 'Avoid running recovery software', text: 'especially if the drive is clicking or unrecognized.' },
+  { icon: '💾', title: 'Avoid First AID', text: 'Some users try to fix the issue using Disk Utility (on Mac) or other' },
+  { icon: '🎬', title: 'Safely Disconnect the drive immediately', text: 'this prevents further damage. Safely eject the drive if you can. If you can\'t, shut down the computer; wait for the drive to stop spinning, then disconnect the cable.' },
 ]
 
 const causesIntro = ''

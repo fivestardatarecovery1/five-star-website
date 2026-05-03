@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '🍎', 'title': 'Mac Devices We Recover Data From', 'text': 'MacBook Air (Intel and M-series). MacBook Pro (all models and screen sizes). iMac (standard and Retina models)' },
-  { 'icon': '🍎', 'title': 'Common Causes of Data Loss on Macs', 'text': 'Accidental file deletion or disk formatting. File system corruption (HFS+, APFS). macOS upgrade failure' },
-  { 'icon': '🍎', 'title': 'Our Mac Data Recovery Process', 'text': 'Free Diagnostic – We start with a full evaluation of your Mac or external drive. We determine the cause of failure and provide a quote before starting.. Drive Imaging or Board Repair – Depending on the situation, we either image the drive or perform component-level repair on logic boards to access data.. Deep Scan for Recoverable Data – We use professional recovery tools to do a deep scan. This helps us find lost partitions, deleted files, and corrupted volumes.' },
-  { 'icon': '💾', 'title': 'What File Types Can Be Recovered?', 'text': 'From personal memories to creative projects, we help recover lost data for students, professionals, and enterprise users. Whether you\'re editing in Final Cut Pro, producing music in Logic, or managing documents in Pages or Word, our recovery process ensures your most important files—no matter the type—have the best chance of being restored.' },
+  { icon: '⚙️', title: 'File system corruption (HFS+, APFS)', text: 'Five Star Data Recovery specializes in recovering Mac data lost due to file system corruption (hfs+, apfs). Our expert team handles all Mac models including MacBook, iMac, and Mac Mini.' },
+  { icon: '⚠️', title: 'macOS upgrade failure', text: 'Five Star Data Recovery specializes in recovering Mac data lost due to macos upgrade failure. Our expert team handles all Mac models including MacBook, iMac, and Mac Mini.' },
+  { icon: '⚠️', title: 'Time Machine backup drive corruption', text: 'Five Star Data Recovery specializes in recovering Mac data lost due to time machine backup drive corruption. Our expert team handles all Mac models including MacBook, iMac, and Mac Mini.' },
+  { icon: '🔌', title: 'No power or startup failure', text: 'Five Star Data Recovery specializes in recovering Mac data lost due to no power or startup failure. Our expert team handles all Mac models including MacBook, iMac, and Mac Mini.' },
 ]
 
 const causesIntro = ''

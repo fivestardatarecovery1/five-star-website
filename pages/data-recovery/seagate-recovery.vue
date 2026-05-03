@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Common Seagate Drive Issues', 'text': 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
-  { 'icon': '💾', 'title': 'How We Recover Seagate Data', 'text': 'Our lab is equipped with the tools and expertise to work on hdds, ssds or flash devices from Seagate. If you dropped your external drive, exposed it to liquid, or it suddenly stopped working, don’t worry. We’ll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware.' },
-  { 'icon': '💾', 'title': 'What Causes Data Loss on Seagate Drives?', 'text': 'Data loss can happen for many reasons. Some problems are software-related, like file system corruption or a failed operating system update. Other failures stem from physical damage, such as head crashes, bad sectors, or worn-out components.' },
-  { 'icon': '💾', 'title': 'Why Choose Us for Seagate Hard Disk Data Recovery?', 'text': 'We’ve helped thousands of customers recover their data with care and confidence. From standard desktop models to encrypted SSDs or flash drives, our team handles each recovery with expert attention.' },
+  { icon: '🔌', title: 'Seagate external hard drive not working or not powering on', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
+  { icon: '🔊', title: 'Clicking or grinding noises from the drive', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
+  { icon: '💾', title: 'Seagate Hard drive not working after an unexpected shutdown', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
+  { icon: '💾', title: 'Devices that appear in Disk Management but not in File Explorer.', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
 ]
 
 const causesIntro = 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:'

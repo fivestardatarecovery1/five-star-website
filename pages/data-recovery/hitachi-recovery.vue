@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '⚠️', 'title': 'Common Causes of Hitachi Drive Failure', 'text': 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
-  { 'icon': '⚠️', 'title': 'Signs of Hitachi Hard Drive Failure', 'text': 'If you notice any of the following symptoms, it’s best to stop using the drive immediately and contact a recovery expert:' },
-  { 'icon': '💾', 'title': 'Types of Hitachi Drives We Support', 'text': 'Our team provides data recovery services for all types of Hitachi drives, including:' },
-  { 'icon': '💾', 'title': 'Our Hitachi Data Recovery Process', 'text': 'When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue. Here’s what you can expect:' },
+  { icon: '💥', title: 'Physical damage from drops, impacts, or overheating', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
+  { icon: '🐢', title: 'Bad sectors that prevent the drive from reading or writing data', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
+  { icon: '⚙️', title: 'Firmware corruption or manufacturing defects', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
+  { icon: '🗑️', title: 'Accidental deletion or formatting of partitions', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
 ]
 
 const causesIntro = 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:'

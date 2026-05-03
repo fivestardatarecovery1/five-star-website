@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'What Is Hard Drive Data Recovery?', 'text': 'The process of hard drive data recovery involves retrieving files that someone has lost, deleted, or damaged. This applies to hard drives that have failed or are not working properly. This may include fixing hardware, extracting data from software, or making a full disk image. This helps examine and recover files from the drive without causing more damage.' },
-  { 'icon': '⚠️', 'title': 'Common Reasons Hard Drives Fail', 'text': 'Many ways exist for a hard drive to fail, including physical damage, electrical failure, and file system corruption. Some of the most common situations we see include:' },
-  { 'icon': '💾', 'title': 'Our Hard Drive Recovery Process', 'text': 'At Five Star Data Recovery, our approach is precise and secure:' },
-  { 'icon': '💾', 'title': 'Step 3: Recovery', 'text': 'Our engineers fix problems or replace parts in our cleanroom. They work to recover lost data from your device.' },
+  { icon: '🔌', title: 'Power surges or electrical damage', text: 'Our expert team specializes in recovering data from cases involving power surges or electrical damage. Contact us for a free diagnosis.' },
+  { icon: '💥', title: 'Drops, impacts, or vibration damage', text: 'Our expert team specializes in recovering data from cases involving drops, impacts, or vibration damage. Contact us for a free diagnosis.' },
+  { icon: '💧', title: 'Water, moisture, or liquid exposure', text: 'Our expert team specializes in recovering data from cases involving water, moisture, or liquid exposure. Contact us for a free diagnosis.' },
+  { icon: '💧', title: 'Overheating or poor ventilation', text: 'Our expert team specializes in recovering data from cases involving overheating or poor ventilation. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = 'Many ways exist for a hard drive to fail, including physical damage, electrical failure, and file system corruption. Some of the most common situations we see include:'

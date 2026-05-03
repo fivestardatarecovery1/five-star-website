@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '🐢', 'title': 'What Are Bad Sectors?', 'text': 'Logical bad sectors – Caused by software errors or power interruptions and may be fixed with tools or professional help.. Physical bad sectors – Occur when the actual disk surface is damaged. These are more serious and often require cleanroom recovery.' },
-  { 'icon': '🐢', 'title': 'Signs Your Drive Has Bad Sectors', 'text': 'Slow file access or freezing during transfers. Crashing while copying or saving files. Files disappearing or becoming corrupt' },
-  { 'icon': '💾', 'title': 'What Types of Drives Do We Recover?', 'text': 'Internal desktop and laptop hard drives (HDDs). Portable and external hard drives. SSDs with logical bad sectors' },
-  { 'icon': '🐢', 'title': 'What Causes Bad Sectors?', 'text': 'Physical shock from drops or impacts. Power outages or sudden shutdowns. Aging HDD with bad sectors' },
+  { icon: '🐢', title: 'Slow file access or freezing during transfers', text: 'Our expert team specializes in recovering data from cases involving slow file access or freezing during transfers. Contact us for a free diagnosis.' },
+  { icon: '💾', title: 'Crashing while copying or saving files', text: 'Our expert team specializes in recovering data from cases involving crashing while copying or saving files. Contact us for a free diagnosis.' },
+  { icon: '⚠️', title: 'Files disappearing or becoming corrupt', text: 'Our expert team specializes in recovering data from cases involving files disappearing or becoming corrupt. Contact us for a free diagnosis.' },
+  { icon: '🔍', title: 'The drive not showing up in File Explorer but appearing in Disk Management', text: 'Our expert team specializes in recovering data from cases involving the drive not showing up in file explorer but appearing in disk management. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = ''

@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'What We Can Recover', 'text': 'Documents, photos, and video files. Files from damaged file systems and corrupted partitions. Deleted files from formatted SSDs' },
-  { 'icon': '💾', 'title': 'Common SSD Data Loss Scenarios', 'text': 'Accidental deletion or formatted SSD. Power surge or sudden shutdown during data transfer. File system corruption and boot issues' },
-  { 'icon': '💾', 'title': 'Our SSD Data Recovery Process', 'text': 'Initial Assessment and Diagnostics We begin by evaluating the SSD to determine whether the failure is logical, physical, or firmware-related.. Non-Invasive Imaging If possible, we create a complete sector-by-sector clone of the SSD to ensure data safety and integrity.. Firmware or Component-Level Repair We perform advanced firmware fixes or physical repairs when the SSD has controller, NAND, or PCB-related issues.' },
-  { 'icon': '💾', 'title': 'SSD Brands and Devices We Support', 'text': 'Samsung, SanDisk, Crucial, Kingston, Intel. Western Digital, Seagate, Toshiba, SK Hynix. Apple SSDs, NVMe drives, PCIe M.2, and SATA III SSDs' },
+  { icon: '🗑️', title: 'Accidental deletion or formatted SSD', text: 'Our expert team specializes in recovering data from cases involving accidental deletion or formatted ssd. Contact us for a free diagnosis.' },
+  { icon: '🔌', title: 'Power surge or sudden shutdown during data transfer', text: 'Our expert team specializes in recovering data from cases involving power surge or sudden shutdown during data transfer. Contact us for a free diagnosis.' },
+  { icon: '⚙️', title: 'File system corruption and boot issues', text: 'Our expert team specializes in recovering data from cases involving file system corruption and boot issues. Contact us for a free diagnosis.' },
+  { icon: '⚙️', title: 'Firmware bugs or controller failure', text: 'Our expert team specializes in recovering data from cases involving firmware bugs or controller failure. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = ''

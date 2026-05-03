@@ -5,9 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '⚠️', 'title': 'Common Issues That Cause NAS Failures', 'text': 'Multiple drive failures in RAID-based NAS systems. Power surges or electrical damage. Overheating and cooling fan failure' },
-  { 'icon': '🖥️', 'title': 'Supported NAS Manufacturers', 'text': 'Western Digital (WD My Cloud). Seagate BlackArmor. Netgear ReadyNAS' },
-  { 'icon': '⚠️', 'title': 'What Not to Do If Your NAS Fails', 'text': 'Do not attempt to rebuild the RAID.. Do not attempt file recovery using consumer-level software—it may corrupt your NAS volumes.. Do not remove or reinsert drives into a different order.' },
+  { icon: '🖥️', title: 'Multiple drive failures in RAID-based NAS systems', text: 'Our expert team specializes in recovering data from cases involving multiple drive failures in raid-based nas systems. Contact us for a free diagnosis.' },
+  { icon: '🔌', title: 'Power surges or electrical damage', text: 'Our expert team specializes in recovering data from cases involving power surges or electrical damage. Contact us for a free diagnosis.' },
+  { icon: '💧', title: 'Overheating and cooling fan failure', text: 'Our expert team specializes in recovering data from cases involving overheating and cooling fan failure. Contact us for a free diagnosis.' },
+  { icon: '🖥️', title: 'NAS volumes not mounting or becoming inaccessible', text: 'Our expert team specializes in recovering data from cases involving nas volumes not mounting or becoming inaccessible. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = ''

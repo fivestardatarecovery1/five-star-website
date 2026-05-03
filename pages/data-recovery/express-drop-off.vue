@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
-  { 'icon': '💾', 'title': 'Receive a Free Diagnosis', 'text': 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { 'icon': '💾', 'title': 'Our Engineers work on Recovering your Data', 'text': 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { 'icon': '💾', 'title': 'Review & Approve the Recovered', 'text': 'After recovery is complete, you’ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.' },
+  { icon: '🔊', title: 'Clicking or Grinding Hard Drive', text: 'Bring in your clicking or grinding hard drive for same-day diagnosis. Our engineers will assess the mechanical damage in our clean room and provide an immediate recovery quote.' },
+  { icon: '🔌', title: 'Drive Not Powering On', text: 'If your external or internal drive won\'t spin up or power on, drop it off for a free diagnostic. We identify PCB failures, blown fuses, and power circuitry damage on the spot.' },
+  { icon: '⚠️', title: 'Corrupted or Inaccessible Drive', text: 'Logical failures, corrupted file systems, and drives showing up as unformatted can often be resolved quickly. Drop off your drive and we\'ll have a diagnosis ready within hours.' },
+  { icon: '💥', title: 'Physically Damaged Device', text: 'Dropped drives, water-damaged devices, or cracked enclosures — drop them off in person for a hands-on assessment. Our lab is equipped to handle all levels of physical damage.' },
 ]
 
 const causesIntro = ''

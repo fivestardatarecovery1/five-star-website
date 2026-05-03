@@ -5,7 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
+  { icon: '💥', title: 'Physical Damage from Drops or Impacts', text: 'Laptops dropped on hard surfaces can suffer damaged read/write heads, broken PCBs, or dislodged connectors. Our engineers recover data from physically damaged laptop drives using clean room procedures.' },
+  { icon: '💧', title: 'Liquid Spills and Overheating', text: 'Coffee, water, and other liquids can short-circuit internal components or corrode the drive. Overheating from blocked vents causes similar damage. We recover data from liquid-damaged laptop drives.' },
+  { icon: '⚙️', title: 'Failed OS Updates or Corruption', text: 'A Windows or macOS update gone wrong can corrupt the file system or boot sector, leaving your data inaccessible. Our software recovery tools can extract your files even when the OS won\'t load.' },
+  { icon: '🗑️', title: 'Accidental Formatting or Deletion', text: 'Accidentally formatting your laptop\'s drive or deleting important files doesn\'t mean they\'re gone forever. Our recovery specialists can restore deleted partitions and files quickly and safely.' },
 ]
 
 const causesIntro = ''

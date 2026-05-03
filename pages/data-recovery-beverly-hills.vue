@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Your Local Recovery Experts', 'text': 'From luxury retailers to entertainment professionals, we’ve assisted Beverly Hills clients in recovering critical data from:' },
-  { 'icon': '💾', 'title': 'Why Beverly Hills Clients Choose Us', 'text': 'No Recovery, No Charge PolicyClients pay only if the recovery is successful. We charge no upfront fees (except in specific cases like deleted file recovery) — giving you peace of mind and risk-free service.' },
-  { 'icon': '💾', 'title': 'The Recovery Process', 'text': 'Initial Device Check-Up and DiagnosticsWe begin by inspecting the device in a safe environment to determine the cause of failure' },
-  { 'icon': '💾', 'title': 'Devices We Support', 'text': 'USB Drives, SSDs, and HDD Storage - From portable USB flash drives to internal and external hard drives (both solid-state and spinning disks).' },
+  { icon: '🔊', title: 'Hard drives that are clicking, unresponsive, or damaged', text: 'From luxury retailers to entertainment professionals, we’ve assisted Beverly Hills clients in recovering critical data from:' },
+  { icon: '💥', title: 'Devices exposed to water or showing signs of physical damage', text: 'From luxury retailers to entertainment professionals, we’ve assisted Beverly Hills clients in recovering critical data from:' },
+  { icon: '🗑️', title: 'Drives with deleted files or formatted partitions', text: 'From luxury retailers to entertainment professionals, we’ve assisted Beverly Hills clients in recovering critical data from:' },
+  { icon: '⚠️', title: 'SSDs and flash drives experiencing failures', text: 'From luxury retailers to entertainment professionals, we’ve assisted Beverly Hills clients in recovering critical data from:' },
 ]
 
 const causesIntro = 'No Recovery, No Charge PolicyClients pay only if the recovery is successful. We charge no upfront fees (except in specific cases like deleted file recovery) — giving you peace of mind and risk-free service.'

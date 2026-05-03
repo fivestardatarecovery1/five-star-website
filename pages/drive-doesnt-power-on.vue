@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '🔌', 'title': 'What Are the Signs of a No Power Issue?', 'text': 'A hard drive with no power will usually show some or all of these signs:' },
-  { 'icon': '🔌', 'title': 'Common Reasons Why a Hard Drive Doesn’t Power On', 'text': 'Several problems can cause your Hard Drive to not power on:' },
-  { 'icon': '💾', 'title': 'What You Should (and Shouldn’t) Do', 'text': 'If your hard drive doesn’t power on, the most important thing is to avoid doing anything that could make the situation worse.' },
-  { 'icon': '💾', 'title': 'Our Hard Drive Recovery Process', 'text': 'At Five Star Data Recovery, we follow a step-by-step method to recover data from drives with no power:' },
+  { icon: '🔌', title: 'Faulty power adapter or USB cable – Sometimes the problem is not the drive itself, but the cable or power source', text: 'Several problems can cause your Hard Drive to not power on:' },
+  { icon: '🔌', title: 'Damaged PCB (Printed Circuit Board) – The board on the bottom of the drive can get fried due to power surges or age', text: 'Several problems can cause your Hard Drive to not power on:' },
+  { icon: '💥', title: 'Burnt components – Overheating or electrical damage can cause parts inside the drive to fail', text: 'Several problems can cause your Hard Drive to not power on:' },
+  { icon: '🔌', title: 'Incorrect power connection – Plugging a 12V adapter into a 5V port can instantly damage the drive', text: 'Several problems can cause your Hard Drive to not power on:' },
 ]
 
 const causesIntro = 'Several problems can cause your Hard Drive to not power on:'

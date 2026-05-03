@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
-  { 'icon': '💾', 'title': 'Receive a Free Diagnosis', 'text': 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { 'icon': '💾', 'title': 'Our Engineers work on Recovering your Data', 'text': 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { 'icon': '💾', 'title': 'Review & Approve the Recovered', 'text': 'After recovery is complete, you’ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.' },
+  { icon: '🔊', title: 'Is the drive clicking?', text: 'Our expert team specializes in recovering data from cases involving is the drive clicking?. Contact us for a free diagnosis.' },
+  { icon: '🔊', title: 'Is the drive beeping?', text: 'Our expert team specializes in recovering data from cases involving is the drive beeping?. Contact us for a free diagnosis.' },
+  { icon: '💾', title: 'While connected, does Disk Utility or Disk Management recognize the drive?', text: 'Our expert team specializes in recovering data from cases involving while connected, does disk utility or disk management recognize the drive?. Contact us for a free diagnosis.' },
+  { icon: '💥', title: 'Has the drive been dropped?', text: 'Our expert team specializes in recovering data from cases involving has the drive been dropped?. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = 'Once approved, we’ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.'

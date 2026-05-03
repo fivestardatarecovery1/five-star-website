@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '⚠️', 'title': 'Common Reasons SD Cards Fail', 'text': 'Corrupted SD card that suddenly won’t mount or read. Files were accidentally deleted or formatted. SD card says “empty” even though you know files were saved' },
-  { 'icon': '💾', 'title': 'Trusted by Locals Across LA', 'text': 'DSLR and mirrorless digital cameras (Canon, Nikon, Sony, etc.). Android smartphones and tablets. Drone cameras (DJI and others)' },
-  { 'icon': '💾', 'title': 'Step 4: File Verification and Return', 'text': 'If we can’t recover your data, you pay nothing.' },
-  { 'icon': '💥', 'title': 'What If My SD Card Is Physically Damaged?', 'text': 'Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip.' },
+  { icon: '⚠️', title: 'Corrupted SD card that suddenly won’t mount or read', text: 'Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip.' },
+  { icon: '🗑️', title: 'Files were accidentally deleted or formatted', text: 'Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip.' },
+  { icon: '💾', title: 'SD card says “empty” even though you know files were saved', text: 'Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip.' },
+  { icon: '💥', title: 'Bent, cracked, or physically damaged cards', text: 'Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip.' },
 ]
 
 const causesIntro = ''

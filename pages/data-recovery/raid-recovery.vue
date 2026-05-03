@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Why We Always Clone Drives First', 'text': 'At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved.' },
-  { 'icon': '🖥️', 'title': 'Types of RAID Levels We Recover', 'text': 'RAID 0 (Striping) – No redundancy, high-speed, high-risk. RAID 1 (Mirroring) – Redundant, but vulnerable to simultaneous failures. RAID 5 (Parity) – Can survive one disk failure; risky during rebuild' },
-  { 'icon': '🖥️', 'title': 'Common RAID Data Loss Scenarios', 'text': 'Multiple disk failures or degraded arrays. Power loss or electrical surges. Failed rebuilds or incorrect RAID level reconstructions' },
-  { 'icon': '🖥️', 'title': 'What We Can Recover from a RAID System', 'text': 'Virtual machines, database files, and backups. Email servers and Exchange/Outlook files. Raw image and video libraries' },
+  { icon: '🖥️', title: 'RAID 0 (Striping):', text: 'This configuration splits data evenly across two or more drives to maximize speed and performance. However, RAID 0 offers no redundancy—if one drive fails, the system loses all data. Recovery can be challenging if more than one disk has corruption or physical...' },
+  { icon: '🖥️', title: 'RAID 1 (Mirroring)', text: 'duplicates data across two drives, offering strong protection against single-drive failure. However, if someone attempts a rebuild incorrectly or both drives experience issues, they may still need to recover data. People often use it in workstations and small business...' },
+  { icon: '🖥️', title: 'RAID 5 (Striping with Parity):', text: 'This level offers a balance of speed, redundancy, and storage efficiency. It uses parity information distributed across all drives. If a single drive fails, the system can rebuild the data, but if a second drive fails during that rebuild, data loss can occur. RAID 5 is one of the most common...' },
+  { icon: '🖥️', title: 'RAID 6:', text: 'Similar to RAID 5, but with dual parity, allowing it to survive the failure of two drives. However, the rebuild time is longer and more sensitive to further degradation. Recovery from RAID 6 often involves detailed parity examination and controller-level...' },
 ]
 
 const causesIntro = ''

@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
-  { 'icon': '💾', 'title': 'Receive a Free Diagnosis', 'text': 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { 'icon': '💾', 'title': 'Our Engineers work on Recovering your Data', 'text': 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { 'icon': '💾', 'title': 'Review & Approve the Recovered', 'text': 'After recovery is complete, you’ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.' },
+  { icon: '⚡', title: 'Priority Lab Processing', text: 'Your device jumps to the front of our queue. Expedited cases receive immediate attention from our senior engineers, with recovery typically completed in 1–3 business days.' },
+  { icon: '🔍', title: 'Same-Day Diagnosis Available', text: 'Need answers fast? Our expedited service includes same-day diagnostic evaluation. You\'ll know the scope of damage and our recovery plan within hours of drop-off or receipt.' },
+  { icon: '📞', title: 'Dedicated Case Manager', text: 'Every expedited recovery is assigned a dedicated case manager who keeps you updated at every stage. Direct communication, no guesswork, and no surprises.' },
+  { icon: '🔒', title: 'Secure and Confidential Handling', text: 'Speed doesn\'t compromise security. All expedited recoveries follow our strict data handling and confidentiality protocols inside our certified clean room lab.' },
 ]
 
 const causesIntro = 'We understand your files are private. Whether you\'re recovering sensitive business files or personal memories, we keep your data protected from start to finish.'

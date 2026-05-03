@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Common Causes of USB Data Loss', 'text': 'USB drives are small, portable, and easy to use, but they’re also vulnerable to a variety of failures that can result in lost data, including:' },
-  { 'icon': '💾', 'title': 'Types of USB Drives We Recover From', 'text': 'We provide USB data recovery services for all types of USB storage devices, including:' },
-  { 'icon': '💾', 'title': 'Our USB Data Recovery Process', 'text': 'When you trust us with your USB data recovery, here’s how the process works:' },
-  { 'icon': '💾', 'title': 'Free Consultation and Quote', 'text': 'Before you drop off or ship your USB drive, we’ll ask a few questions about the issue you’re experiencing. Based on your description, we’ll provide an initial quote and explain the likely recovery process.' },
+  { icon: '🗑️', title: 'USB drive asks to be formatted when inserted', text: 'Here are some of the most common scenarios we help with:' },
+  { icon: '🔍', title: 'USB not showing up at all', text: 'Here are some of the most common scenarios we help with:' },
+  { icon: '💾', title: 'USB detected, but no files visible', text: 'Here are some of the most common scenarios we help with:' },
+  { icon: '💾', title: 'USB drive showing wrong capacity', text: 'Here are some of the most common scenarios we help with:' },
 ]
 
 const causesIntro = 'USB drives are small, portable, and easy to use, but they’re also vulnerable to a variety of failures that can result in lost data, including:'

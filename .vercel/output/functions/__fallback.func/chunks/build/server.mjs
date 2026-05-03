@@ -441,7 +441,7 @@ const _routes = [
   {
     name: "pricing",
     path: "/pricing",
-    component: () => import('./pricing-ZnvyG9MT.mjs')
+    component: () => import('./pricing-CUUcWTkI.mjs')
   },
   {
     name: "reviews",
@@ -456,7 +456,7 @@ const _routes = [
   {
     name: "payment-plan",
     path: "/payment-plan",
-    component: () => import('./payment-plan-CSb54TFT.mjs')
+    component: () => import('./payment-plan-CXR9vHBT.mjs')
   },
   {
     name: "privacy-policy",
@@ -471,7 +471,7 @@ const _routes = [
   {
     name: "expedited-service",
     path: "/expedited-service",
-    component: () => import('./expedited-service-BzKEX8yd.mjs')
+    component: () => import('./expedited-service-DYOeilvR.mjs')
   },
   {
     name: "data-recovery",
@@ -481,17 +481,17 @@ const _routes = [
   {
     name: "hard-drive-clicking",
     path: "/hard-drive-clicking",
-    component: () => import('./hard-drive-clicking-CqlmqXu_.mjs')
+    component: () => import('./hard-drive-clicking-D6icTKwh.mjs')
   },
   {
     name: "data-recovery-burbank",
     path: "/data-recovery-burbank",
-    component: () => import('./data-recovery-burbank-DQY577sI.mjs')
+    component: () => import('./data-recovery-burbank-BOljHWgE.mjs')
   },
   {
     name: "drive-doesnt-power-on",
     path: "/drive-doesnt-power-on",
-    component: () => import('./drive-doesnt-power-on-BVncva42.mjs')
+    component: () => import('./drive-doesnt-power-on-DbhG4ojq.mjs')
   },
   {
     name: "services-mac-recovery",
@@ -511,17 +511,17 @@ const _routes = [
   {
     name: "data-recovery-glendale",
     path: "/data-recovery-glendale",
-    component: () => import('./data-recovery-glendale-C4OHiDDl.mjs')
+    component: () => import('./data-recovery-glendale-C9YdB8PG.mjs')
   },
   {
     name: "data-recovery-pasadena",
     path: "/data-recovery-pasadena",
-    component: () => import('./data-recovery-pasadena-DMkgnvX_.mjs')
+    component: () => import('./data-recovery-pasadena-DSB_RlWp.mjs')
   },
   {
     name: "expedited-service-plus",
     path: "/expedited-service-plus",
-    component: () => import('./expedited-service-plus-R-0CyfAx.mjs')
+    component: () => import('./expedited-service-plus-DTCibcHE.mjs')
   },
   {
     name: "services-raid-recovery",
@@ -531,12 +531,12 @@ const _routes = [
   {
     name: "data-recovery-hollywood",
     path: "/data-recovery-hollywood",
-    component: () => import('./data-recovery-hollywood-DRep-nnT.mjs')
+    component: () => import('./data-recovery-hollywood-BNQjIU_M.mjs')
   },
   {
     name: "data-recovery-clean-room",
     path: "/data-recovery/clean-room",
-    component: () => import('./clean-room-ChwtrVsL.mjs')
+    component: () => import('./clean-room-BLVwbdGh.mjs')
   },
   {
     name: "data-recovery-free-quote",
@@ -556,57 +556,57 @@ const _routes = [
   {
     name: "data-recovery-los-angeles",
     path: "/data-recovery-los-angeles",
-    component: () => import('./data-recovery-los-angeles-_2nvjD-7.mjs')
+    component: () => import('./data-recovery-los-angeles-B_EBc2nd.mjs')
   },
   {
     name: "data-recovery-bad-sectors",
     path: "/data-recovery/bad-sectors",
-    component: () => import('./bad-sectors-BduYUHuV.mjs')
+    component: () => import('./bad-sectors-BI7tMIZ5.mjs')
   },
   {
     name: "data-recovery-mac-recovery",
     path: "/data-recovery/mac-recovery",
-    component: () => import('./mac-recovery-BvwYRRch.mjs')
+    component: () => import('./mac-recovery-CRxhkKsb.mjs')
   },
   {
     name: "data-recovery-nas-recovery",
     path: "/data-recovery/nas-recovery",
-    component: () => import('./nas-recovery-BP1FfayX.mjs')
+    component: () => import('./nas-recovery-whwytctp.mjs')
   },
   {
     name: "data-recovery-ssd-recovery",
     path: "/data-recovery/ssd-recovery",
-    component: () => import('./ssd-recovery-CNQMgRVW.mjs')
+    component: () => import('./ssd-recovery-CqTH6BYy.mjs')
   },
   {
     name: "data-recovery-usb-recovery",
     path: "/data-recovery/usb-recovery",
-    component: () => import('./usb-recovery-BPnwA_MF.mjs')
+    component: () => import('./usb-recovery-i9IxXo6y.mjs')
   },
   {
     name: "data-recovery-beverly-hills",
     path: "/data-recovery-beverly-hills",
-    component: () => import('./data-recovery-beverly-hills-C1PqX0iq.mjs')
+    component: () => import('./data-recovery-beverly-hills-BJwOT_0T.mjs')
   },
   {
     name: "data-recovery-deleted-files",
     path: "/data-recovery/deleted-files",
-    component: () => import('./deleted-files-CCCGM6ey.mjs')
+    component: () => import('./deleted-files-CFme4Xbb.mjs')
   },
   {
     name: "data-recovery-raid-recovery",
     path: "/data-recovery/raid-recovery",
-    component: () => import('./raid-recovery-CzoPtsQ3.mjs')
+    component: () => import('./raid-recovery-CF6PCaGW.mjs')
   },
   {
     name: "data-recovery-cfast-recovery",
     path: "/data-recovery/cfast-recovery",
-    component: () => import('./cfast-recovery-nXgUzN97.mjs')
+    component: () => import('./cfast-recovery-CWkMRUFd.mjs')
   },
   {
     name: "data-recovery-lacie-recovery",
     path: "/data-recovery/lacie-recovery",
-    component: () => import('./lacie-recovery-BSJFe6jb.mjs')
+    component: () => import('./lacie-recovery-HVpxZfCH.mjs')
   },
   {
     name: "services-hard-drive-recovery",
@@ -616,52 +616,52 @@ const _routes = [
   {
     name: "data-recovery-iphone-recovery",
     path: "/data-recovery/iphone-recovery",
-    component: () => import('./iphone-recovery-BY0iOXII.mjs')
+    component: () => import('./iphone-recovery-COvYSBew.mjs')
   },
   {
     name: "data-recovery-laptop-recovery",
     path: "/data-recovery/laptop-recovery",
-    component: () => import('./laptop-recovery-BuX7hAYc.mjs')
+    component: () => import('./laptop-recovery-C7t6wVqX.mjs')
   },
   {
     name: "data-recovery-mail-in-service",
     path: "/data-recovery/mail-in-service",
-    component: () => import('./mail-in-service-aezteFtx.mjs')
+    component: () => import('./mail-in-service-CtYTDyp3.mjs')
   },
   {
     name: "data-recovery-desktop-recovery",
     path: "/data-recovery/desktop-recovery",
-    component: () => import('./desktop-recovery-B6puAA0m.mjs')
+    component: () => import('./desktop-recovery-BNV-qeEi.mjs')
   },
   {
     name: "data-recovery-express-drop-off",
     path: "/data-recovery/express-drop-off",
-    component: () => import('./express-drop-off-miLeoNjC.mjs')
+    component: () => import('./express-drop-off-C8ZSdn3b.mjs')
   },
   {
     name: "data-recovery-hitachi-recovery",
     path: "/data-recovery/hitachi-recovery",
-    component: () => import('./hitachi-recovery-B6dJJC-I.mjs')
+    component: () => import('./hitachi-recovery-BzF2eEd3.mjs')
   },
   {
     name: "data-recovery-samsung-recovery",
     path: "/data-recovery/samsung-recovery",
-    component: () => import('./samsung-recovery-VsO7E4QQ.mjs')
+    component: () => import('./samsung-recovery-CZsLl1D3.mjs')
   },
   {
     name: "data-recovery-sd-card-recovery",
     path: "/data-recovery/sd-card-recovery",
-    component: () => import('./sd-card-recovery-D4qdCMu-.mjs')
+    component: () => import('./sd-card-recovery-DYorXFHu.mjs')
   },
   {
     name: "data-recovery-seagate-recovery",
     path: "/data-recovery/seagate-recovery",
-    component: () => import('./seagate-recovery-pY06ZC6k.mjs')
+    component: () => import('./seagate-recovery-BRLOTyym.mjs')
   },
   {
     name: "data-recovery-toshiba-recovery",
     path: "/data-recovery/toshiba-recovery",
-    component: () => import('./toshiba-recovery-rQVbJ1z4.mjs')
+    component: () => import('./toshiba-recovery-Be0Tf_hs.mjs')
   },
   {
     name: "services-external-hdd-recovery",
@@ -676,22 +676,22 @@ const _routes = [
   {
     name: "data-recovery-video-file-repair",
     path: "/data-recovery/video-file-repair",
-    component: () => import('./video-file-repair-Ce_dWyIm.mjs')
+    component: () => import('./video-file-repair-7pFnIeo7.mjs')
   },
   {
     name: "data-recovery-dropped-hard-drive",
     path: "/data-recovery/dropped-hard-drive",
-    component: () => import('./dropped-hard-drive-ugvp_H-j.mjs')
+    component: () => import('./dropped-hard-drive-h6O6xbUK.mjs')
   },
   {
     name: "data-recovery-external-hard-drive",
     path: "/data-recovery/external-hard-drive",
-    component: () => import('./external-hard-drive-qpwFKOwF.mjs')
+    component: () => import('./external-hard-drive-BEY7wy9n.mjs')
   },
   {
     name: "data-recovery-hard-drive-recovery",
     path: "/data-recovery/hard-drive-recovery",
-    component: () => import('./hard-drive-recovery-KkyTpiOH.mjs')
+    component: () => import('./hard-drive-recovery-VAwALXmO.mjs')
   },
   {
     name: "data-recovery-western-digital-recovery",
@@ -701,7 +701,7 @@ const _routes = [
   {
     name: "data-recovery-hard-drive-not-showing-up",
     path: "/data-recovery/hard-drive-not-showing-up",
-    component: () => import('./hard-drive-not-showing-up-DJuS-7B3.mjs')
+    component: () => import('./hard-drive-not-showing-up-By_3H6wj.mjs')
   },
   {
     name: "blog-how-to-repair-external-hard-drive-after-it-was-dropped",

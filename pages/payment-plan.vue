@@ -5,9 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Data Recovery Payment Plan', 'text': 'Need data recovery but concerned about cost? We offer interest-free, in-house payment plans to make professional data recovery more accessible. No credit checks, no hidden fees — just a simple process with only 25% down to get started. Your data is recovered safely and securely, and you pay the remaining balance over time.' },
-  { 'icon': '💾', 'title': 'Data Recovery Process', 'text': 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.' },
-  { 'icon': '💾', 'title': 'Receive your recovered data', 'text': 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.' },
+  { icon: '💳', title: 'Flexible Payment Plans Available', text: 'We understand data recovery can be an unexpected expense. We offer flexible payment options so you can get your data back without financial stress. Ask us about financing at checkout.' },
+  { icon: '🔍', title: 'Free Upfront Diagnostic', text: 'Every case starts with a free diagnosis. You\'ll know exactly what it costs before any work begins. No hidden fees, no surprises — transparent pricing from day one.' },
+  { icon: '🚫', title: 'No Data = No Fee Guarantee', text: 'If we can\'t recover your data, you owe us nothing. Our no-data-no-fee policy means zero financial risk for you. We only get paid when your files are successfully recovered.' },
+  { icon: '⚡', title: 'Multiple Pricing Tiers Available', text: 'Choose standard or expedited service based on your timeline and budget. Logical recoveries start at $300, with clean room and emergency options available for complex cases.' },
 ]
 
 const causesIntro = 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.'

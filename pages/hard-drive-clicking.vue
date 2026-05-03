@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '🔊', 'title': 'What Is the Clicking Sound in a Hard Drive?', 'text': 'When you hear a clicking hard disk drive, you’re likely hearing the read/write head trying to find data, but failing. Instead of reading the correct track, it keeps resetting and trying again, causing a rhythmic “click-click-click” sound.People commonly refer to this issue as the click of death, and it represents one of the most serious symptoms a drive can show. In most cases, it’s a mechanical failure—something inside the drive is either broken or misaligned.' },
-  { 'icon': '🔊', 'title': 'Common causes of a clicking hard drive', 'text': 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
-  { 'icon': '🔊', 'title': 'Why you shouldn’t try to fix a clicking hard drive yourself', 'text': 'We understand—you want your data back fast, and DIY videos make it look simple. But opening a drive or running software on a damaged disk often causes more harm than good.Here’s why you should avoid DIY recovery on a clicking hard disk drive:' },
-  { 'icon': '🔊', 'title': 'How We Recover Data from a Clicking Hard Drive', 'text': 'At Five Star Data Recovery, we use advanced tools and a certified cleanroom to safely recover data from physically damaged drives—including those with head crashes and hard drive clicking symptoms.' },
+  { icon: '💥', title: 'Head Crash: The read/write head physically touches the platter, damaging the surface and data.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
+  { icon: '🔌', title: 'Power Surge: Electrical spikes can damage the circuit board or firmware.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
+  { icon: '🔌', title: 'Power Surge: Electrical spikes can damage the circuit board or firmware.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
+  { icon: '💾', title: 'Stuck Heads: The heads fail to return to the parked position and keep trying to reset.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
 ]
 
 const causesIntro = 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:'

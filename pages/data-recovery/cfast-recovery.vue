@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { 'icon': '💾', 'title': 'Common Issues with CFast Cards', 'text': 'Accidental file deletion. Formatted or reformatted CFast cards. Corrupted file systems' },
-  { 'icon': '💾', 'title': 'Types of CFast Cards We Recover From', 'text': 'CFast 2.0 cards (most commonly used in modern cinema cameras). Lexar CFast cards. SanDisk Extreme Pro CFast cards' },
-  { 'icon': '⚠️', 'title': 'What Not To Do If You Accidentally Format or Delete Files', 'text': 'Do not record new data onto the card.. Do not run multiple types of recovery software.. Do not attempt to repair the file system using system utilities.' },
-  { 'icon': '💾', 'title': 'Trusted by the Creative Industry', 'text': 'We’ve recovered data for video editors, producers, directors, and digital imaging technicians across Hollywood and beyond. Our clients include production studios, ad agencies, wedding videographers, and independent filmmakers. We understand that losing raw footage or production files can delay deadlines and cost thousands. That’s why our data recovery services are designed with media professionals in mind — fast, secure, and confidential.' },
+  { icon: '🗑️', title: 'Accidental file deletion', text: 'Our expert team specializes in recovering data from cases involving accidental file deletion. Contact us for a free diagnosis.' },
+  { icon: '🗑️', title: 'Formatted or reformatted CFast cards', text: 'Our expert team specializes in recovering data from cases involving formatted or reformatted cfast cards. Contact us for a free diagnosis.' },
+  { icon: '⚙️', title: 'Corrupted file systems', text: 'Our expert team specializes in recovering data from cases involving corrupted file systems. Contact us for a free diagnosis.' },
+  { icon: '🔍', title: 'Card not recognized by camera or computer', text: 'Our expert team specializes in recovering data from cases involving card not recognized by camera or computer. Contact us for a free diagnosis.' },
 ]
 
 const causesIntro = ''
