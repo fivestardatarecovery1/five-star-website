@@ -305,7 +305,7 @@ nav {
   border: 1px solid rgba(245,200,66,0.2);
   border-radius: 16px;
   padding: 28px;
-  min-width: 700px;
+  min-width: min(700px, calc(100vw - 48px));
   box-shadow: 0 24px 80px rgba(0,0,0,0.5);
   z-index: 500;
 }
