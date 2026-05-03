@@ -403,7 +403,24 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- VIDEO SECTION — between FAQ and Reviews -->
+    <!-- FAQ — grey -->
+    <section class="s-grey">
+      <div class="container">
+        <div class="section-label center">Got Questions?</div>
+        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+            <button class="faq-trigger" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SECTION — after FAQ, before Reviews -->
     <section class="page-video-section">
       <div class="container page-video-inner">
         <div class="page-video-copy">
@@ -418,23 +435,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           />
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
-    <section class="s-grey">
-      <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
-        <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
-            <button class="faq-trigger" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
-          </div>
         </div>
       </div>
     </section>
