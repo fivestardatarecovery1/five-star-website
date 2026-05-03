@@ -3391,19 +3391,19 @@ async function dispose(driver) {
 const _assets = {
   ["nitro:bundled:cache:content:content-index.json"]: {
     import: () => import('../raw/content-index.mjs').then(r => r.default || r),
-    meta: {"type":"application/json","etag":"\"cf-XNWvZdIkOQhQg0GZDMxx1rl7La8\"","mtime":"2026-05-03T05:40:43.267Z"}
+    meta: {"type":"application/json","etag":"\"cf-XNWvZdIkOQhQg0GZDMxx1rl7La8\"","mtime":"2026-05-03T05:56:28.290Z"}
   },
   ["nitro:bundled:cache:content:content-navigation.json"]: {
     import: () => import('../raw/content-navigation.mjs').then(r => r.default || r),
-    meta: {"type":"application/json","etag":"\"106-wad2Ck9J/w9rhFq7VwbQdMVfIls\"","mtime":"2026-05-03T05:40:43.267Z"}
+    meta: {"type":"application/json","etag":"\"106-wad2Ck9J/w9rhFq7VwbQdMVfIls\"","mtime":"2026-05-03T05:56:28.290Z"}
   },
   ["nitro:bundled:cache:content:parsed:content:blog:how-to-repair-external-hard-drive-after-dropped.md"]: {
     import: () => import('../raw/how-to-repair-external-hard-drive-after-dropped.mjs').then(r => r.default || r),
-    meta: {"type":"text/markdown; charset=utf-8","etag":"\"458b-62ItYYIKbcphIMDa6skIy991AgI\"","mtime":"2026-05-03T05:40:43.267Z"}
+    meta: {"type":"text/markdown; charset=utf-8","etag":"\"458b-62ItYYIKbcphIMDa6skIy991AgI\"","mtime":"2026-05-03T05:56:28.290Z"}
   },
   ["nitro:bundled:cache:content:parsed:content:blog:usb-data-recovery-chip-off.md"]: {
     import: () => import('../raw/usb-data-recovery-chip-off.mjs').then(r => r.default || r),
-    meta: {"type":"text/markdown; charset=utf-8","etag":"\"24b0-l6EWhIky6xz5e+M2/VIJumjqHS0\"","mtime":"2026-05-03T05:40:43.268Z"}
+    meta: {"type":"text/markdown; charset=utf-8","etag":"\"24b0-l6EWhIky6xz5e+M2/VIJumjqHS0\"","mtime":"2026-05-03T05:56:28.290Z"}
   }
 };
 
@@ -4434,7 +4434,7 @@ function _expandFromEnv(value) {
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "77c178f3-09c6-4ed0-a3d6-c990f5bbd988",
+    "buildId": "fa7dad38-1d48-4572-bcf0-5b2c29cdda4c",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -4507,7 +4507,7 @@ const _inlineRuntimeConfig = {
     "content": {
       "locales": [],
       "defaultLocale": "",
-      "integrity": 1777786827293,
+      "integrity": 1777787772287,
       "experimental": {
         "stripQueryParameters": false,
         "advanceQuery": false,
@@ -6034,7 +6034,7 @@ const handlers = [
   { route: '/api/_content/query/:qid/**:params', handler: _Nw1Ego, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query/:qid', handler: _Nw1Ego, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/query', handler: _Nw1Ego, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.1777786827293.json', handler: _vClke7, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.1777787772287.json', handler: _vClke7, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid/**:params', handler: _acOTzp, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation/:qid', handler: _acOTzp, lazy: false, middleware: false, method: "get" },
   { route: '/api/_content/navigation', handler: _acOTzp, lazy: false, middleware: false, method: "get" },

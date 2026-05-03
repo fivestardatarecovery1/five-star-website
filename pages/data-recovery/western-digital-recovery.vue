@@ -403,6 +403,25 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- VIDEO SECTION — between FAQ and Reviews -->
+    <section class="page-video-section">
+      <div class="container page-video-inner">
+        <div class="page-video-copy">
+          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
+          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        </div>
+        <div class="page-video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60"
+            title="Five Star Data Recovery"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ — grey -->
     <section class="s-grey">
       <div class="container">
@@ -441,35 +460,20 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- VIDEO SECTION — same as homepage -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe
-            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60"
-            title="Five Star Data Recovery"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          />
-        </div>
-      </div>
-    </section>
-
     <!-- CONTACT BAND — before footer -->
     <section class="s-contact-band">
-      <div class="container contact-final">
-        <h2 class="contact-heading">Contact Us for Western Digital Data Recovery</h2>
-        <p class="contact-sub">{{ contactText }}</p>
-        <ul class="contact-bullets">
-          <li v-for="item in contactList" :key="item">{{ item }}</li>
-        </ul>
-        <p class="contact-outro">{{ contactOutro }}</p>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Recovery</NuxtLink>
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Contact Us for Western Digital Data Recovery</h2>
+        </div>
+        <div class="contact-body">
+          <p class="contact-body-text">{{ contactText }}</p>
+          <ul class="contact-bullets">
+            <li v-for="item in contactList" :key="item">{{ item }}</li>
+          </ul>
+          <p class="contact-outro">{{ contactOutro }}</p>
+        </div>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -604,17 +608,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
 
 /* CONTACT BAND */
-.s-contact-band { background: #1a1a2e; padding: 72px 0; text-align: center; }
-.contact-final { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0; }
-.contact-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
-.contact-sub { font-size: 0.95rem; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 20px; }
-.contact-bullets { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
-.contact-bullets li { padding: 4px 0 4px 20px; position: relative; font-size: 0.88rem; color: rgba(255,255,255,0.7); }
-.contact-bullets li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.contact-outro { font-size: 0.85rem; color: rgba(255,255,255,0.45); font-style: italic; margin-bottom: 36px; }
-.btn-start-recovery { display: inline-flex; align-items: center; gap: 10px; background: #e53e3e; color: #fff; padding: 18px 48px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.03em; box-shadow: 0 8px 32px rgba(229,62,62,0.4); transition: background 0.2s, transform 0.15s, box-shadow 0.15s; }
-.btn-start-recovery::before { content: '★'; font-size: 0.9rem; }
-.btn-start-recovery:hover { background: #c53030; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(229,62,62,0.5); }
+.s-contact-band { background: #fff; padding: 64px 0; }
+.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
+.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
+.contact-body { margin-bottom: 28px; }
+.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
+.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
+.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
+.contact-outro { font-size: 0.9rem; color: #4a5568; }
+.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.btn-start-recovery:hover { background: #b8923e; }
 
 /* FAQ */
 .faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
