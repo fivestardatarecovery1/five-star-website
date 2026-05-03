@@ -553,7 +553,9 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   .stat-num { font-size: 36px; }
 }
 
-/* Reviews */
+/* Reviews — clip overflow at section level, not at html/body */
+.reviews-section { overflow-x: clip; }
+
 /* Reviews carousel */
 .reviews-carousel {
   display: flex;

@@ -7,11 +7,9 @@
 </template>
 
 <style>
+/* No overflow on app-root — overflow:clip/hidden breaks position:sticky on the navbar.
+   Horizontal scroll is prevented by touch-action:pan-y on body + fixing overflow sources. */
 .app-root {
   width: 100%;
-  max-width: 100%;
-  overflow-x: clip;
-  overscroll-behavior-x: none;
-  position: relative;
 }
 </style>
