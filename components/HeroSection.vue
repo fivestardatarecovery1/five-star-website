@@ -484,10 +484,19 @@ function handleSubmit() {
 }
 
 @media (max-width: 640px) {
+  .hero { padding: 32px 0 40px; }
+  .hero-inner { gap: 28px; }
+  .hero-title { font-size: clamp(26px, 7vw, 36px); letter-spacing: -0.01em; }
+  .hero-subtitle { font-size: 15px; }
+  .hero-desc { font-size: 14px; margin-bottom: 20px; }
+  .hero-copy { padding-right: 0; }
   .form-row { grid-template-columns: 1fr; }
-  .trust-bar { flex-direction: column; gap: 12px; } .trust-divider { display: none; }
+  .trust-bar { flex-direction: column; gap: 12px; }
+  .trust-divider { display: none; }
   .hero-buttons { flex-direction: column; }
-  .btn-start, .btn-quote { justify-content: center; }
+  .btn-start, .btn-quote { justify-content: center; width: 100%; box-sizing: border-box; }
   .hero-form-card { padding: 20px 16px; }
+  .trust-box { gap: 10px; }
+  .trust-item { font-size: 13px; }
 }
 </style>
