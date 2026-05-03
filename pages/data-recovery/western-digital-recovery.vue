@@ -6,18 +6,22 @@ useSeoMeta({
 
 const issues = [
   {
+    icon: '🔌',
     title: 'My Passport Hard Drive Light Blinking But Not Working',
     text: 'If your WD My Passport drive is blinking but not recognized by your computer, it may have a power issue. It could also have a damaged USB interface or corrupted firmware. In many cases, the drive may still spin up, but it fails to establish a proper connection with the system. This problem often happens with portable WD drives. These drives use small electronics and one USB cable for power and data. If you\'ve tried switching cables and ports without success, the failure is likely internal. Avoid repeated attempts to connect and seek help from a professional.'
   },
   {
+    icon: '🔍',
     title: 'WD Hard Drive Not Showing Up',
     text: 'When your Western Digital hard drive is not appearing, it can be frustrating—and concerning. Often, this points to logical errors like corrupted partitions, missing drive letters, or a faulty file system. In other cases, hardware damage may be to blame. If the drive does not appear in Disk Management or Device Manager, it may have PCB damage, bad heads, or other physical problems. This type of failure usually requires specialized tools and cleanroom access to properly diagnose and recover the data.'
   },
   {
+    icon: '⚠️',
     title: 'WD External Hard Drive Show Errors',
     text: 'Sometimes your WD external hard drive shows errors; it might appear in your system but request formatting or arrive as RAW. These signs typically indicate file system corruption, often caused by improper removal, bad sectors, or interrupted file transfers. Although it might seem like a quick fix, formatting the drive can permanently overwrite your files. In most cases, the data is still there but just not accessible through standard means. Our engineers can extract the data using non-destructive recovery techniques tailored to Western Digital File Recovery.'
   },
   {
+    icon: '🔊',
     title: 'Clicking or Beeping Sounds',
     text: 'If your drive makes clicking or beeping sounds, you should never ignore this red flag. These noises often come from a problem inside the hard drive. This can happen if the read/write head is stuck or failing. It keeps trying to find data but cannot succeed. Engineers make WD hard drives with care. However, if something goes wrong inside, using it can quickly damage the platter. This kind of failure usually requires head replacement or advanced cleanroom repair. Shut off the device immediately and contact a Western Digital Data Recovery professional before the situation worsens.'
   }
@@ -218,8 +222,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Common WD Hard Drive Issues</h2>
         <p class="s-intro">Western Digital drives are popular and generally reliable. However, like any electronic device, they can fail unexpectedly. Recognizing early warning signs can help prevent permanent data loss. Some of the most common symptoms we see include:</p>
         <div class="issues-grid">
-          <div v-for="(issue, i) in issues" :key="issue.title" class="issue-card">
-            <div class="issue-num">{{ String(i + 1).padStart(2, '0') }}</div>
+          <div v-for="issue in issues" :key="issue.title" class="issue-card">
+            <div class="issue-icon">{{ issue.icon }}</div>
             <h3 class="issue-title">{{ issue.title }}</h3>
             <p class="issue-body">{{ issue.text }}</p>
           </div>
@@ -266,7 +270,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="guarantee-strip">
           <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing.</p>
+          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
         </div>
       </div>
     </section>
@@ -281,9 +285,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-label">Supported Devices</div>
           <h2 class="s-heading">Types of WD Drives We Recover</h2>
           <p class="s-body">{{ driveTypesIntro }}</p>
-          <div class="drive-chips">
-            <span v-for="d in driveTypes" :key="d" class="drive-chip">{{ d }}</span>
-          </div>
+          <table class="drives-table">
+            <tbody>
+              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
+                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
+                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
+                <td v-else />
+              </tr>
+            </tbody>
+          </table>
           <p class="s-body s-mt">{{ driveTypesOutro }}</p>
         </div>
       </div>
@@ -343,20 +353,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DARK CTA + FORM -->
-    <section class="s-dark-cta">
-      <div class="container cta-form-layout">
-        <div class="cta-form-text">
+    <!-- MID-PAGE QUOTE FORM -->
+    <section class="mid-form-section">
+      <div class="mid-form-overlay" />
+      <div class="container mid-form-inner">
+        <div class="mid-form-text">
           <div class="section-label light">Get Started</div>
           <h2 class="dark-heading">Need Help Understanding Your WD Drive?</h2>
           <p v-for="t in needHelpText" :key="t" class="dark-body">{{ t }}</p>
           <div class="dark-features">
             <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
             <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge</div>
+            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
           </div>
         </div>
-        <div class="cta-form-card">
+        <div class="mid-form-card">
           <div class="form-card-header">
             <h3>Get a Free Quote in Minutes!</h3>
             <p>No obligation · Same-day response</p>
@@ -373,27 +384,19 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <option>Hard Drive (HDD)</option>
               <option>SSD</option>
               <option>External Drive</option>
+              <option>RAID / NAS</option>
+              <option>USB / Flash Drive</option>
+              <option>Other</option>
             </select>
-            <button type="submit" class="form-submit">Request a Consultation</button>
+            <select class="fi">
+              <option>Select Service Type</option>
+              <option>Standard Service (3–5 days)</option>
+              <option>Expedited Service (24–48 hrs)</option>
+              <option>Expedited Plus (Same Day)</option>
+            </select>
+            <textarea placeholder="Briefly describe the issue with your drive" class="fi fi-textarea"></textarea>
+            <button type="submit" class="form-submit form-submit-lg">Request a Free Consultation</button>
           </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container contact-layout">
-        <div class="contact-text">
-          <h2 class="contact-heading">Contact Us for Western Digital Data Recovery</h2>
-          <p class="contact-sub">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <div class="contact-actions">
-          <a href="tel:8182728866" class="btn-gold-lg">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn-ghost-lg">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
@@ -436,11 +439,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- BOTTOM BAND -->
-    <section class="bottom-band">
-      <div class="container">
-        <p class="bottom-band-text">Recovering what can't be replaced!</p>
-        <NuxtLink to="/start-recovery" class="bottom-band-btn">Start Your Recovery Today</NuxtLink>
+    <!-- CONTACT BAND — before footer -->
+    <section class="s-contact-band">
+      <div class="container contact-layout">
+        <div class="contact-text">
+          <h2 class="contact-heading">Contact Us for Western Digital Data Recovery</h2>
+          <p class="contact-sub">{{ contactText }}</p>
+          <ul class="contact-bullets">
+            <li v-for="item in contactList" :key="item">{{ item }}</li>
+          </ul>
+          <p class="contact-outro">{{ contactOutro }}</p>
+        </div>
+        <div class="contact-actions">
+          <a href="tel:8182728866" class="btn-gold-lg">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-ghost-lg">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </section>
 
@@ -498,7 +511,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
 .issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-num { font-size: 3.5rem; font-weight: 900; color: rgba(201,168,76,0.15); line-height: 1; margin-bottom: 12px; font-family: Georgia, serif; }
+.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
 .issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
 .issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
 
@@ -532,9 +545,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .split-side {}
 .split-main {}
 
-/* DRIVE CHIPS */
-.drive-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.drive-chip { background: #fff; border: 1.5px solid #e2e8f0; border-radius: 20px; padding: 7px 16px; font-size: 0.84rem; color: #2d3748; font-weight: 500; }
+/* DRIVES TABLE */
+.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
+.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
 
 /* FULL-WIDTH BANNER */
 .fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
@@ -560,14 +574,19 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
 .arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
 
-/* DARK CTA */
-.s-dark-cta { background: linear-gradient(135deg, #0d111f, #1a2540); padding: 88px 0; }
-.cta-form-layout { display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start; }
+/* MID-PAGE FORM */
+.mid-form-section { position: relative; background: #0d111f; padding: 88px 0; overflow: hidden; }
+.mid-form-overlay { position: absolute; inset: 0; background: url('/hard-drive-recovery-service-los-angeles.webp') center/cover no-repeat; opacity: 0.12; }
+.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 460px; gap: 64px; align-items: start; }
+.mid-form-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
 .dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
 .dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.66); line-height: 1.8; margin-bottom: 14px; }
 .dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
 .df { font-size: 0.9rem; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 10px; }
 .df-check { color: #C9A84C; font-weight: 700; }
+.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+.fi-textarea { min-height: 80px; resize: vertical; }
+.form-submit-lg { font-size: 1rem; padding: 16px; letter-spacing: 0.02em; }
 
 /* CONTACT BAND */
 .s-contact-band { background: #1a1a2e; padding: 64px 0; }
@@ -603,11 +622,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
 .review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
 
-/* BOTTOM BAND */
-.bottom-band { background: #C9A84C; padding: 40px 0; text-align: center; }
-.bottom-band-text { font-size: clamp(1.2rem, 2.5vw, 1.6rem); font-weight: 900; color: #fff; margin: 0 0 16px; }
-.bottom-band-btn { display: inline-block; background: #fff; color: #C9A84C; padding: 13px 32px; border-radius: 7px; font-weight: 800; font-size: 0.95rem; text-decoration: none; }
-.bottom-band-btn:hover { opacity: 0.9; }
+
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
