@@ -142,13 +142,13 @@ const faqs = [
   { q: '1. What types of Western Digital drives do you recover data from?', a: 'We recover data from all Western Digital devices, including WD My Passport, WD Elements, WD My Book, WD Blue, WD Black, WD Red, and enterprise-level WD drives. Whether it\'s an internal drive or WD external hard drive, we have the tools and expertise to recover your data.' },
   { q: '2. My WD external hard drive is not showing up — can you recover the data?', a: 'Yes. If your WD external hard drive is not showing up, it could be due to physical damage, logical errors, file system corruption, or PCB failure. We specialize in identifying the root cause and performing safe and effective WD data recovery to retrieve your files.' },
   { q: '3. Can you recover data from a Western Digital drive with a clicking or buzzing noise?', a: 'Absolutely. A clicking WD hard drive often indicates internal mechanical failure, such as a damaged read/write head or spindle issue. These cases require cleanroom recovery and advanced tools — all of which we offer in-house at our recovery lab.' },
-  { q: '4. How long does Western Digital data recovery take?', a: 'Standard WD data recovery services are typically completed within 3–5 business days. If you\'re in a rush, we also offer Expedited and Expedited Plus options for faster turnaround. Initial diagnostics are always completed same day, by midnight.' },
+  { q: '4. How long does Western Digital data recovery take?', a: 'Standard WD data recovery services are typically completed within 3–5 business days. If you\'re in a rush, we also offer <a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus</a> options for faster turnaround. Initial diagnostics are always completed same day, by midnight.' },
   { q: '5. Do you offer a No Data, No Charge policy for WD data recovery?', a: 'Yes. Most Western Digital recovery cases qualify for our No Data, No Charge guarantee. If we\'re unable to recover your files, you pay nothing. Exceptions may apply in special cases like deleted file recovery or devices with prior tampering.' },
   { q: '6. I dropped my WD My Passport — can you still recover the data?', a: 'Yes. Dropped drives often suffer from physical damage, such as damaged heads or platter alignment issues. Our team can safely perform recovery using drive-specific tools and firmware repair procedures to extract your files.' },
   { q: '7. Is my data secure during the WD recovery process?', a: 'Absolutely. Your data is treated with strict confidentiality. We never share or access your files beyond what\'s required to complete recovery. Once recovery is done, your files are returned to you on a secure drive.' },
   { q: '8. What will the recovered data be returned on?', a: 'We typically transfer your recovered files to a brand new external drive you provide. If you prefer to purchase a transfer drive from us, please let us know at the time of checking in your case.' },
-  { q: '9. How much does Western Digital data recovery cost?', a: 'At Five Star Data Recovery, Western Digital data recovery is offered at flat-rate pricing based on the drive type and storage capacity: $300.00 – For standard Western Digital SATA drives (laptop or desktop models) under 2TB. $500.00 – For WD SATA drives larger than 2TB, where the higher capacity requires longer imaging time and additional resources. $600.00 – For Western Digital external hard drives with USB 3.0 connectors. These drives are more complex to work with because they do not have a standard SATA connection and are often SED-locked, requiring specialized tools and techniques to access the data. $800.00 – For ultra high-capacity Western Digital drives (over 12TB). These cases require significantly more time and storage resources due to their size and complexity. We provide a free evaluation before starting, and there are no hidden fees. You\'ll only be charged if the data is successfully recovered — we follow a strict no data, no charge policy. To see a full breakdown of recovery options, visit our data recovery cost page.' },
-  { q: '10. Can I drop off or mail in my WD drive?', a: 'Yes! You can visit us in person at our Glendale, CA office, or start a case remotely using our Mail-In Recovery Form. We provide free shipping both ways for mail-in clients across the U.S.' }
+  { q: '9. How much does Western Digital data recovery cost?', a: 'At Five Star Data Recovery, Western Digital data recovery is offered at flat-rate pricing based on the drive type and storage capacity: $300.00 – For standard Western Digital SATA drives (laptop or desktop models) under 2TB. $500.00 – For WD SATA drives larger than 2TB, where the higher capacity requires longer imaging time and additional resources. $600.00 – For Western Digital external hard drives with USB 3.0 connectors. These drives are more complex to work with because they do not have a standard SATA connection and are often SED-locked, requiring specialized tools and techniques to access the data. $800.00 – For ultra high-capacity Western Digital drives (over 12TB). These cases require significantly more time and storage resources due to their size and complexity. We provide a free evaluation before starting, and there are no hidden fees. You\'ll only be charged if the data is successfully recovered — we follow a strict no data, no charge policy. To see a full breakdown of recovery options, visit our <a href="/pricing" class="faq-link">data recovery cost page</a>.' },
+  { q: '10. Can I drop off or mail in my WD drive?', a: 'Yes! You can visit us in person at our Glendale, CA office, or start a case remotely using our <a href="/data-recovery/mail-in-service" class="faq-link">Mail-In Recovery Form</a>. We provide free shipping both ways for mail-in clients across the U.S.' }
 ]
 
 const openFaq = ref<number | null>(null)
@@ -159,59 +159,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-wd">
     <NavBar />
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-bg-overlay" />
-      <div class="container hero-layout">
-        <div class="hero-left">
-          <div class="hero-eyebrow">Western Digital Recovery Specialists</div>
-          <h1 class="hero-title">Western Digital Data Recovery Services</h1>
-          <p class="hero-lead">Are you experiencing issues with your Western Digital (WD) hard drive? If you have a blinking light, a drive that won't mount, or files you can't access, our expert team can help. We offer professional Western Digital Data Recovery services to safely get your data back. If your files are valuable, don't risk it. Trust our specialists to get your information back.</p>
-          <div class="hero-ctas">
-            <NuxtLink to="/start-recovery" class="cta-red">Start Recovery</NuxtLink>
-            <NuxtLink to="/data-recovery/free-quote" class="cta-ghost">Request a Quote</NuxtLink>
-          </div>
-          <div class="hero-badges">
-            <div class="badge-pill">✔ Available 24/7/365</div>
-            <div class="badge-pill">✔ No Data = No Charge</div>
-            <div class="badge-pill">✔ Flat Rate Pricing</div>
-            <div class="badge-pill">✔ Free Nationwide Shipping</div>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="form-card">
-            <div class="form-card-header">
-              <h3>Request a Free Consultation</h3>
-              <p>Same-day response · No obligation</p>
-            </div>
-            <form @submit.prevent class="form-body">
-              <div class="form-grid-2">
-                <input type="text" placeholder="First Name" class="fi" />
-                <input type="text" placeholder="Last Name" class="fi" />
-              </div>
-              <input type="email" placeholder="Email Address" class="fi" />
-              <input type="tel" placeholder="Phone Number" class="fi" />
-              <select class="fi">
-                <option>Select Device Type</option>
-                <option>Hard Drive (HDD)</option>
-                <option>SSD</option>
-                <option>External Drive</option>
-                <option>RAID / NAS</option>
-                <option>USB / Flash Drive</option>
-                <option>Other</option>
-              </select>
-              <select class="fi">
-                <option>Select Service Type</option>
-                <option>Standard Service (3–5 days)</option>
-                <option>Expedited Service (24–48 hrs)</option>
-                <option>Expedited Plus (Same Day)</option>
-              </select>
-              <button type="submit" class="form-submit">Request a Consultation</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- HERO — uses shared HeroSection component with page-specific bg image -->
+    <HeroSection
+      title="Western Digital Data Recovery Services"
+      subtitle="Get Your Data Back In No Time."
+      description="Are you experiencing issues with your Western Digital (WD) hard drive? If you have a blinking light, a drive that won't mount, or files you can't access, our expert team can help. We offer professional Western Digital Data Recovery services to safely get your data back. If your files are valuable, don't risk it. Trust our specialists to get your information back."
+      bgImage="/western-digital-data-recovery-service-los-angeles.jpg"
+    />
 
     <StatsBar />
 
@@ -353,7 +307,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- MID-PAGE QUOTE FORM -->
+    <!-- MID-PAGE QUOTE FORM — same HeroSection style, full bg image -->
     <section class="mid-form-section">
       <div class="mid-form-overlay" />
       <div class="container mid-form-inner">
@@ -368,34 +322,82 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
         </div>
         <div class="mid-form-card">
-          <div class="form-card-header">
-            <h3>Get a Free Quote in Minutes!</h3>
-            <p>No obligation · Same-day response</p>
-          </div>
-          <form @submit.prevent class="form-body">
-            <div class="form-grid-2">
-              <input type="text" placeholder="First Name" class="fi" />
-              <input type="text" placeholder="Last Name" class="fi" />
+          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
+          <form @submit.prevent class="mid-consult-form">
+            <div class="mf-row">
+              <div class="mf-group">
+                <label>NAME <span class="mf-req">*</span></label>
+                <input type="text" placeholder="Name / Required" class="mf-input" />
+              </div>
+              <div class="mf-group">
+                <label>EMAIL <span class="mf-req">*</span></label>
+                <input type="email" placeholder="Email Address / Required" class="mf-input" />
+              </div>
             </div>
-            <input type="email" placeholder="Email Address" class="fi" />
-            <input type="tel" placeholder="Phone Number" class="fi" />
-            <select class="fi">
-              <option>Select Device Type</option>
-              <option>Hard Drive (HDD)</option>
-              <option>SSD</option>
-              <option>External Drive</option>
-              <option>RAID / NAS</option>
-              <option>USB / Flash Drive</option>
-              <option>Other</option>
-            </select>
-            <select class="fi">
-              <option>Select Service Type</option>
-              <option>Standard Service (3–5 days)</option>
-              <option>Expedited Service (24–48 hrs)</option>
-              <option>Expedited Plus (Same Day)</option>
-            </select>
-            <textarea placeholder="Briefly describe the issue with your drive" class="fi fi-textarea"></textarea>
-            <button type="submit" class="form-submit form-submit-lg">Request a Free Consultation</button>
+            <div class="mf-row">
+              <div class="mf-group">
+                <label>SELECT YOUR DEVICE TYPE</label>
+                <div class="mf-select-wrap">
+                  <select class="mf-input">
+                    <option value="">— Select (Optional) —</option>
+                    <option>Hard Drive</option>
+                    <option>SSD</option>
+                    <option>RAID/Server</option>
+                    <option>External HDD</option>
+                    <option>Mac/iMac</option>
+                    <option>iPhone/Mobile</option>
+                    <option>USB Flash Drive</option>
+                    <option>SD Card</option>
+                    <option>NAS Device</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mf-group">
+                <label>PHONE</label>
+                <input type="tel" placeholder="Phone Number" class="mf-input" />
+              </div>
+            </div>
+            <div class="mf-row">
+              <div class="mf-group">
+                <label>SELECT ISSUE WITH DEVICE</label>
+                <div class="mf-select-wrap">
+                  <select class="mf-input">
+                    <option value="">Select Issue</option>
+                    <option>Not Detected / Not Showing Up</option>
+                    <option>Clicking / Grinding Noise</option>
+                    <option>Water Damage</option>
+                    <option>Corrupted Files</option>
+                    <option>Accidental Deletion</option>
+                    <option>Physical Damage</option>
+                    <option>Not Spinning</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="mf-group">
+                <label>Preferred Contact Method</label>
+                <div class="mf-radio-group">
+                  <label class="mf-radio"><input type="radio" name="contact" value="call" checked /> CALL</label>
+                  <label class="mf-radio"><input type="radio" name="contact" value="email" /> EMAIL</label>
+                  <label class="mf-radio"><input type="radio" name="contact" value="text" /> TEXT</label>
+                </div>
+              </div>
+            </div>
+            <div class="mf-group mf-full">
+              <label>PREFERRED RESPONSE TIME</label>
+              <div class="mf-select-wrap">
+                <select class="mf-input">
+                  <option value="">Select Preferred Time</option>
+                  <option>Immediately (24/7)</option>
+                  <option>During Business Hours</option>
+                  <option>Morning (8am – 12pm)</option>
+                  <option>Afternoon (12pm – 5pm)</option>
+                  <option>Evening (5pm – 8pm)</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="mf-submit">Request a Consultation</button>
           </form>
         </div>
       </div>
@@ -412,7 +414,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
             </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
       </div>
@@ -466,32 +468,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .page-wd { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
 
-/* HERO */
-.hero { position: relative; background: #0d111f; padding: 80px 0 72px; overflow: hidden; }
-.hero-bg-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.08) 0%, transparent 60%), linear-gradient(135deg, #0d111f 0%, #151c35 100%); }
-.hero-layout { position: relative; display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
-.hero-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #C9A84C; margin-bottom: 14px; }
-.hero-title { font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 18px; }
-.hero-lead { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 32px; max-width: 560px; }
-.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-.cta-red { display: inline-block; background: #e53e3e; color: #fff; padding: 14px 30px; border-radius: 7px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
-.cta-red:hover { background: #c53030; }
-.cta-ghost { display: inline-block; border: 2px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 26px; border-radius: 7px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
-.cta-ghost:hover { border-color: #fff; }
-.hero-badges { display: flex; flex-wrap: wrap; gap: 8px; }
-.badge-pill { font-size: 0.78rem; color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 5px 14px; border-radius: 20px; }
 
-/* FORM */
-.form-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.35); }
-.form-card-header { background: #1a1a2e; padding: 20px 24px; }
-.form-card-header h3 { color: #fff; font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
-.form-card-header p { color: rgba(255,255,255,0.5); font-size: 0.78rem; margin: 0; }
-.form-body { display: flex; flex-direction: column; gap: 10px; padding: 20px 24px 24px; }
-.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.fi { border: 1.5px solid #e2e8f0; border-radius: 7px; padding: 11px 14px; font-size: 0.88rem; color: #1a1a2e; background: #fff; width: 100%; font-family: inherit; }
-.fi:focus { outline: none; border-color: #C9A84C; }
-.form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 7px; padding: 14px; font-size: 0.95rem; font-weight: 700; cursor: pointer; font-family: inherit; }
-.form-submit:hover { background: #b8923e; }
 
 /* SECTION SCAFFOLDING */
 .s-white { background: #fff; padding: 88px 0; }
@@ -575,18 +552,32 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
 
 /* MID-PAGE FORM */
-.mid-form-section { position: relative; background: #0d111f; padding: 88px 0; overflow: hidden; }
-.mid-form-overlay { position: absolute; inset: 0; background: url('/hard-drive-recovery-service-los-angeles.webp') center/cover no-repeat; opacity: 0.12; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 460px; gap: 64px; align-items: start; }
-.mid-form-card { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.mid-form-section { position: relative; padding: 72px 0 72px; overflow: hidden; background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/western-digital-data-recovery-service-los-angeles.jpg') right center / cover no-repeat; }
+.mid-form-overlay { display: none; }
+.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
+.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
+.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
+.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mf-group { display: flex; flex-direction: column; gap: 5px; }
+.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
+.mf-req { color: #e53935; }
+.mf-full { grid-column: 1 / -1; }
+.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
+.mf-input:focus { outline: none; border-color: #C9A84C; }
+.mf-select-wrap { position: relative; }
+.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
+.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
+.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
+.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
+.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
+.mf-submit:hover { background: #b8923e; }
 .dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.66); line-height: 1.8; margin-bottom: 14px; }
+.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
 .dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 10px; }
+.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
 .df-check { color: #C9A84C; font-weight: 700; }
 .df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.fi-textarea { min-height: 80px; resize: vertical; }
-.form-submit-lg { font-size: 1rem; padding: 16px; letter-spacing: 0.02em; }
 
 /* CONTACT BAND */
 .s-contact-band { background: #1a1a2e; padding: 64px 0; }
@@ -604,12 +595,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-ghost-lg:hover { border-color: #fff; }
 
 /* FAQ */
-.faq-wrap { max-width: 820px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 8px; }
+.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
 .faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
 .faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; background: none; border: none; color: #1a1a2e; font-size: 0.93rem; font-weight: 600; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
 .faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 0 22px 18px; font-size: 0.88rem; color: #4a5568; line-height: 1.75; border-top: 1px solid #f0f2f7; }
+.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
+.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
 
 /* REVIEWS */
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
@@ -626,20 +619,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
-  .hero-layout { grid-template-columns: 1fr 360px; gap: 40px; }
   .asym-layout { grid-template-columns: 1fr 1fr; }
   .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
   .process-connector { display: none; }
+  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
 }
 @media (max-width: 768px) {
-  .hero-layout, .asym-layout, .split-40-60, .cta-form-layout, .dual-col { grid-template-columns: 1fr; gap: 36px; }
+  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
   .contact-layout { flex-direction: column; align-items: flex-start; }
   .reviews-grid { grid-template-columns: 1fr; }
+  .issues-grid { grid-template-columns: 1fr; }
   .bstat-div { display: none; }
   .img-stat-badge { bottom: 12px; }
+  .mf-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .form-grid-2 { grid-template-columns: 1fr; }
   .process-track { grid-template-columns: 1fr; }
 }
 </style>
