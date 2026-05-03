@@ -19,6 +19,16 @@
 .section-bg-2 { background: #f4f6fa; color: #1a2030; }
 .section-bg-3 { background: #e9ecf2; color: #1a2030; }
 
+/* Dark section backgrounds for inner pages */
+.section-dark-1 { background: #0A0C14; color: #e8ecf4; }
+.section-dark-2 { background: #0f1422; color: #e8ecf4; }
+.section-dark-3 { background: #13161F; color: #e8ecf4; }
+.section-dark-1 .section-title,
+.section-dark-2 .section-title,
+.section-dark-3 .section-title { color: #ffffff; }
+.section-dark-1 p, .section-dark-2 p, .section-dark-3 p { color: rgba(255,255,255,0.72); }
+.section-dark-1 h3, .section-dark-2 h3, .section-dark-3 h3 { color: #ffffff; }
+
 /* Named section backgrounds */
 .section-dark-gray { background: #2a2d38; }
 .section-dark-gray .section-title,
