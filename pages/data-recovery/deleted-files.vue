@@ -1,302 +1,307 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Deleted File Recovery — Five Star Data Recovery',
-  description: 'Accidentally deleted an important document, video, or entire folder? You’re not alone. Every day, users lose valuable data because of accidental deletion, forma'
+  description: 'Accidentally deleted important files? Five Star Data Recovery specializes in deleted file recovery from any device.'
 })
-const faqs = [
-  { q: '1. Can you recover files that I accidentally deleted?', a: 'Yes. Our deleted file recovery service is designed specifically to recover data that was accidentally deleted—whether from a hard drive, SSD, external drive, or USB. Acting quickly gives you the best chance of recovery before files are overwritten.' },
-  { q: '2. How long does deleted file recovery take?', a: 'Typical deleted file recovery cases take 1–3 business days. For critical situations, our Expedited Plus service provides 24/7, around-the-clock processing until your case is complete.' },
-  { q: '3. How much does deleted file recovery cost and what does it include?', a: 'Our flat rate for deleted file recovery is $200, which covers the full scan, file analysis, and recovery process for all supported device types. This fee is non-refundable and is collected upfront when your case is checked in.' },
-  { q: '4. Is there an upfront fee for deleted file recovery?', a: 'Yes, the $200 flat rate is due at the time of drop-off or mailing in your device. This covers all labor involved in the deep scanning and recovery of your deleted files.' },
-  { q: '5. Can you recover deleted files from external hard drives, USB flash drives, and SSDs?', a: 'Yes. We recover deleted files from a wide range of devices including external hard drives, USB flash drives, SSDs, and SD cards. Each storage device type requires different tools, and we’re fully equipped for all scenarios.' },
-  { q: '6. Can you recover data from a formatted drive?', a: 'Often, yes. If your drive was accidentally formatted and new data hasn’t heavily overwritten it, we can perform a forensic scan to locate and recover previously deleted files.' },
-  { q: '7. Why isn’t deleted file recovery covered by your No Data, No Charge policy?', a: 'Deleted file recovery requires a deep forensic scan with no guaranteed results. Since the chance of success depends on overwrite levels and drive condition, the $200 fee remains non-refundable even if the data is unrecoverable.' },
-  { q: '8. Can I see a file list before committing to full recovery?', a: 'Yes. After we complete the deleted file recovery process, we’ll provide you with a detailed file list showing all recoverable files. If the recovery is less than 99% successful, you’ll have the option to decline the recovery and owe nothing further—other than the $200 labor fee already paid. This way, you stay fully informed and in control before making any final decision.' },
-  { q: '9. What’s the difference between Expedited and Expedited Plus service for deleted file recovery?', a: 'Expedited Service prioritizes your job during business hours, while Expedited Plus gives you 24/7 nonstop engineer attention until the recovery is complete—even on weekends and holidays.' },
-  { q: '10. How can I increase my chances of recovering deleted files?', a: 'Stop using the affected drive immediately. Continued use can overwrite deleted sectors and make recovery impossible. Power down the device and bring it to Five Star Data Recovery as soon as possible.' }
+
+const list1 = [
+      'External and internal hard drives (HDD/SSD)',
+      'USB flash drives',
+      'SD cards (including microSD)',
+      'CompactFlash cards',
+      'RAID arrays',
+      'NAS devices',
+      'Desktop and laptop computers',
+      'Traditional hard drives (HDDs) may retain deleted file data in unallocated space until it is overwritten.',
+    ]
+
+const reviews = [
+  { name: 'Michelle D.', location: 'Pasadena, CA', stars: 5, text: 'I accidentally deleted an entire folder of client projects from my external hard drive. I contacted Five Star Data Recovery, and Elen was incredibly helpful in walking me through the process. They were able to recover all the files I needed within just a couple of days. The flat-rate pricing made it simple, and there were no surprises.' },
+  { name: 'over 95%', location: 'of my deleted files, including every single photo I cared about. Alex handled my case and kept me updated every step of the way. I’m extremely grateful for their expertise."', stars: 5, text: 'I thought I had permanently lost over a year’s worth of photos after formatting my USB drive by mistake. Five Star Data Recovery recovered' },
+  { name: 'Sofia L.', location: 'Glendale, CA', stars: 5, text: 'I deleted some important Excel spreadsheets from my laptop and emptied the recycle bin before realizing the mistake. Five Star Data Recovery was able to get everything back. Their service was fast, and they explained the entire deleted file recovery process in detail. Highly recommended!' },
 ]
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Deleted File Recovery"
-      subtitle="Get Your Data Back In No Time."
-      description="Accidentally deleted an important document, video, or entire folder? You’re not alone. Every day, users lose valuable data because of accidental deletion, formatting errors, or corrupt storage devices."
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">Deleted File Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">Accidentally deleted an important document, video, or entire folder? You\'re not alone. Every day, users lose valuable data through accidental deletion, drive formatting, or system errors. The good news: deleted doesn\'t always mean gone forever.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <StatsBar />
 
-        <section class="process-section section-bg-1 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Deleted File Recovery Process</h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Forensic Clone of the Device</h3>
-            <p class="process-desc">We begin by creating a 1-to-1 sector-level image of your device using specialized hardware. This ensures we never work directly on the original device, preserving its current state</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">02</div>
-            <h3 class="process-title">Deep Scan of the Clone</h3>
-            <p class="process-desc">Once the clone is created, we scan it thoroughly using commercial-grade recovery tools. We search for unallocated space, file tables, and fragments. This helps us locate traces of deleted files, even </p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">03</div>
-            <h3 class="process-title">Attempt to Recover Lost Files</h3>
-            <p class="process-desc">We extract as many deleted files as possible. This can include documents, photos, videos, email databases, and other file types.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">04</div>
-            <h3 class="process-title">File Repair (If Needed)</h3>
-            <p class="process-desc">If files—especially videos—are corrupted or partially damaged, we attempt to rebuild them. This includes header repair, data stitching, and restoring file structures when possible.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why DIY Tools Can Make Things Worse</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Pricing: $200 Upfront, Pay the Rest Only If Successful</h2>
-        </div>
-        <div class="section-body">
-          <p>Deleted file recovery requires advanced tools, time, and expertise. Because of the complexity, we charge a non-refundable fee of $200.00 for all deleted file recovery cases.</p>
-          <p>This model ensures transparency, fairness, and trust. Our deleted file recovery process is secure and efficient, and you’ll always know the exact cost of recovery before we begin.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nationwide Service with Free Round-Trip Shipping</h2>
-        </div>
-        <div class="section-body">
-          <p>Located in Los Angeles, we proudly serve customers across the United States. Our deleted file recovery services are available nationwide with free round-trip shipping.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Five Star for Deleted File Recovery?</h2>
-        </div>
-        <div class="section-body">
-          <p>With so many options online, here’s why customers consistently choose Five Star Data Recovery:</p>
-          <ul class="content-list">
-            <li>We never work on your original device—only forensic clones</li>
-            <li>High success rates, even on formatted SD cards and USB flash drives</li>
-            <li>Experience recovering video files, RAW photos, Final Cut projects, and more</li>
-            <li>Certified cleanroom and advanced data repair tools</li>
-            <li>Transparent pricing and satisfaction-based billing</li>
-            <li>Secure, in-house recovery—no outsourcing</li>
-            <li>Free nationwide shipping</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What types of files can you recover from formatted drives?</h2>
-        </div>
-        <div class="section-body">
-          <p>When someone formats a drive—whether accidentally or during troubleshooting—data doesn’t immediately disappear. Instead, the file system is reset, and the space is marked as available for new data. This gives us a window of opportunity to recover the files before they’re overwritten.We commonly recover file types such as:</p>
-          <ul class="content-list">
-            <li>Photos (JPG, PNG, RAW, HEIC)</li>
-            <li>Videos (MOV, MP4, AVI, MXF, ProRes)</li>
-            <li>Documents (DOCX, PDF, XLSX, TXT)</li>
-            <li>Project files (Final Cut Pro, Adobe Premiere, Photoshop, DaVinci Resolve)</li>
-            <li>Audio files (WAV, MP3, AIFF)</li>
-            <li>Databases and system logs</li>
-          </ul>
-          <p>Whether we can restore your files with full file names and folder structure depends largely on the original file system:</p>
-          <ul class="content-list">
-            <li>exFAT and FAT32 – Frequently used on SD cards and flash drives. These systems are more likely to lose directory information, which may limit structured recovery.</li>
-            <li>NTFS (Windows) – Offers better metadata retention, giving us a higher chance of recovering files with names and folders intact.</li>
-            <li>APFS/HFS+ (Mac) – Can be tricky due to frequent metadata flushing, but structured recovery is possible in some cases if the device hasn't been used post-format.</li>
-          </ul>
-          <p>When metadata is lost, we do a RAW recovery. This process extracts data by file type, without using original names or folders. While less organized, it still allows access to the actual content.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Expedited Deleted File Recovery Services</h2>
-        </div>
-        <div class="section-body">
-          <p>Expedited Service – For an additional $200 per device, your case will be prioritized during business hours. We place it at the top of our recovery queue to ensure the fastest possibleturnaround.</p>
-          <p>Expedited Plus Service – For an additional $500 per device, your case becomes our highest priority. Our engineers will work on your recovery 24/7—nights, weekends, and holidays—until the job is complete.</p>
-          <p>Please Note: Both expedited options are in addition to standard data recovery fees. These fees are non-refundable, regardless of the outcome. Expedited service is ideal for time-sensitive recoveries where every hour matters.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-          <div class="reviews-grid">
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I accidentally deleted an entire folder of client projects from my external hard drive. I contacted Five Star Data Recovery, and Elen was incredibly helpful in walking me through the process. They were able to recover all the files I needed within just a couple of days. The flat-rate pricing made it simple, and there were no surprises."</p>
-              <div class="review-author">Michelle D. — Pasadena, CA</div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I thought I had permanently lost over a year’s worth of photos after formatting my USB drive by mistake. Five Star Data Recovery recovered over 95% of my deleted files, including every single photo I cared about. Alex handled my case and kept me updated every step of the way. I’m extremely grateful for their expertise."</p>
-              <div class="review-author">Tom R. — Denver, CO</div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I deleted some important Excel spreadsheets from my laptop and emptied the recycle bin before realizing the mistake. Five Star Data Recovery was able to get everything back. Their service was fast, and they explained the entire deleted file recovery process in detail. Highly recommended!"</p>
-              <div class="review-author">Sofia L. — Glendale, CA</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How to Improve Your Chances of Successful Recovery</h2>
-        </div>
-        <div class="section-body">
-          <p>If you’ve just deleted files or formatted a drive, stop using the device immediately. Every new file you save—or action you take—can overwrite the lost data. Here are a few things you can do to help increase your chances of successful recovery:</p>
-          <ul class="content-list">
-            <li>Do not save new files to the drive</li>
-            <li>Do not run software that writes to the disk</li>
-            <li>Do not attempt to reinstall or update your operating system</li>
-          </ul>
-          <p>The less you use the device after deleting files, the better the chance we can fully recover them. This includes keeping their original folder structure. If you’re unsure what to do, just contact us—we’ll guide you through the next steps.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Request a Free Quote</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
+        <h2 class="section-heading">Devices We Offer Deleted File Recovery From</h2>
+        <p class="body-text">We offer professional deleted file recovery from nearly all types of local storage devices, including:</p>
+        <p class="body-text">Please Note: We do not offer deleted file recovery services for smartphones (iPhones or Androids). Smartphones use encrypted NAND flash storage with TRIM enabled. This means that deleted data is usually unrecoverable right away.</p>
+        <ul class="cause-list">
+          <li v-for="item in list1" :key="item">{{ item }}</li>
+        </ul>
       </div>
     </section>
 
-    <section class="faq-section section-bg-2 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="section-heading">Our Deleted File Recovery Process</h2>
+        <p class="body-text">We approach deleted file recovery with forensic-level precision to ensure we don’t further damage the data or lose potential recovery chances. Our process includes:</p>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Forensic Clone of the Device</h2>
+        <p class="body-text">We begin by creating a 1-to-1 sector-level image of your device using specialized hardware. This ensures we never work directly on the original device, preserving its current state</p>
+      </div>
+    </section>
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">Deep Scan of the Clone</h2>
+        <p class="body-text">Once the clone is created, we scan it thoroughly using commercial-grade recovery tools. We search for unallocated space, file tables, and fragments. This helps us locate traces of deleted files, even if someone partially overwrote them.</p>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Attempt to Recover Lost Files</h2>
+        <p class="body-text">We extract as many deleted files as possible. This can include documents, photos, videos, email databases, and other file types.</p>
+      </div>
+    </section>
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">File Repair (If Needed)</h2>
+        <p class="body-text">If files—especially videos—are corrupted or partially damaged, we attempt to rebuild them. This includes header repair, data stitching, and restoring file structures when possible.</p>
+      </div>
+    </section>
+
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
         </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Deleted File Recovery?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for Deleted File Recovery</h2>
+          <p class="contact-band-sub">Deleted files can often be recovered if you act fast. Contact us immediately for a free evaluation.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
+          </ul>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
+
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading center">Testimonials from Satisfied Clients</h2>
+        <div class="reviews-row">
+          <div v-for="r in reviews" :key="r.name" class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"{{ r.text }}"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">{{ r.name }}</div>
+            <div class="review-loc">{{ r.location }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+/* ---- BASE ---- */
+.page-wrapper { font-family: 'Inter', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.hero-section { background: #1a1a2e; padding: 60px 0; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
+.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-primary-red:hover { background: #c53030; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { border-color: #fff; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+.hero-form-wrap { position: relative; }
+.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+.consult-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #C9A84C; }
+.form-input.full { width: 100%; }
+.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
+.btn-form-submit:hover { background: #b8923e; }
+.light-section { background: #fff; padding: 72px 0; }
+.light-alt-section { background: #f7f9fc; padding: 72px 0; }
+.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+.section-heading.center { text-align: center; }
+.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
+.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
+.cause-list { list-style: none; padding: 0; margin: 0; }
+.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
+.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.content-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.content-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
+.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
+.no-charge-note strong { color: #C9A84C; }
+.dark-cta-section { background: #2d3748; padding: 72px 0; }
+.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
+.contact-band { background: #1a1a2e; padding: 48px 0; }
+.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
+.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
+.btn-yellow:hover { background: #b8923e; }
+.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.btn-outline-white:hover { border-color: #fff; }
+.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
+.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.faq-item.open { border-color: #C9A84C; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
+.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
+.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-avatar { font-size: 2rem; margin-bottom: 12px; }
+.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
+.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+.review-loc { font-size: 0.82rem; color: #718096; }
+.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
+.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse { direction: ltr; }
+  .two-col-equal { grid-template-columns: 1fr; }
+  .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .process-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>

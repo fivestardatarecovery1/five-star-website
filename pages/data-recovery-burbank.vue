@@ -1,285 +1,266 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Professional Data Recovery Services in Burbank, CA — Five Star Data Recovery',
-  description: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagno'
+  title: 'Data Recovery Burbank, CA — Five Star Data Recovery',
+  description: 'Professional data recovery services in Burbank, CA. Five Star Data Recovery serves all of the Burbank area with fast turnaround.'
 })
-const faqs = [
-  { q: '1. Is your data recovery lab located in Burbank, CA?', a: 'While our main lab is not physically located in Burbank, we proudly serve the Burbank area and offer free same-day pickup for local residents and businesses. Our close proximity allows us to provide fast, convenient, and professional service throughout the region.' },
-  { q: '2. How long does the data recovery process take in Burbank?', a: 'Most data recovery cases are completed in 3–5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data.' },
-  { q: '3. What types of devices do you recover data from?', a: 'We recover data from hard drives, SSDs, USB flash drives, iPhones, RAID setups, SD cards, and more. If you’ve experienced data loss in Burbank, we can help.' },
-  { q: '4. Do you offer free pickup in the Burbank area?', a: 'Yes! We offer free local pickup for most addresses in Burbank. Simply contact us to schedule a same-day pickup and we’ll handle the logistics.' },
-  { q: '5. What happens if my data can’t be recovered?', a: 'We follow a No Data, No Charge policy. If your data is unrecoverable, you won’t owe us anything for most standard recovery cases.' }
-]
+
+const list2 = [
+      'A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.',
+      'A post‑production company’s RAID 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.',
+      'A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.',
+    ]
+const list3 = [
+      'Clicking or non-powering hard drives (HDDs)',
+      'Solid State Drives (SSDs) with no response',
+      'Water-damaged or dead iPhones',
+      'Failed RAID 0, 1, 5, 6, or 10 arrays',
+      'USB flash drives & SD cards from DSLRs or video equipment',
+      'Encrypted drives and BitLocker devices',
+    ]
+
+const reviews: any[] = []
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Professional Data Recovery Services in Burbank, CA"
-      subtitle="Five Star Data Recovery proudly serves businesses, content creators, and residents throughout Burbank, CA. Whether you’ve lost precious photos from an external drive or need urgent RAID recovery for your production team, our certified cleanroom lab is just minutes away — and offers free local pickup for Burbank clients. Simply give us a call or create a request on our website, and we’ll handle the rest."
-      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
-        </div>
-      </template>
-    </HeroSection>
-    <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Is Data Recovery?</h2>
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">Data Recovery Services in Burbank, CA</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">Five Star Data Recovery proudly serves businesses, content creators, students, and residents in Burbank, CA. Whether you\'ve lost data from a hard drive, SSD, RAID, or external storage device, our team is ready to help. We offer free diagnostics and flat-rate pricing.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common Scenarios We Handle in Burbank</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.</li>
-            <li>A post‑production company’s RAID 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.</li>
-            <li>A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">We Specialize in Recovering Data From:</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Clicking or non-powering hard drives (HDDs)</li>
-            <li>Solid State Drives (SSDs) with no response</li>
-            <li>Water-damaged or dead iPhones</li>
-            <li>Failed RAID 0, 1, 5, 6, or 10 arrays</li>
-            <li>USB flash drives &amp; SD cards from DSLRs or video equipment</li>
-            <li>Encrypted drives and BitLocker devices</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Physical Damage? We Can Help.</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our 3‑Step Recovery Process</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">1. Free Diagnostic &amp; Quote</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">2. Data Recovery in Our Lab</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">3. Your Data, Delivered</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Who We Work With</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Areas We Serve in Burbank</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Magnolia Park</li>
-            <li>Downtown Burbank</li>
-            <li>Media District</li>
-            <li>Rancho Equestrian &amp; Toluca Woods</li>
-            <li>McNeil &amp; Chandler Park</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Your Data Is Safe With Us</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Encrypted data storage and transfers</li>
-            <li>Non-disclosure agreements for business clients</li>
-            <li>Secure deletion of temporary recovery files upon completion</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Request a Free Quote in Minutes!</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Let’s Recover Your Files</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>We’re located in Glendale—just minutes from Burbank</li>
-            <li>Same-day pickup in Burbank is available Monday through Friday</li>
-            <li>Call us or visit our website to get started today</li>
-          </ul>
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Professional Data Recovery Services in Burbank, CA?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+    <StatsBar />
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">Common Scenarios We Handle in Burbank</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list2" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">We Specialize in Recovering Data From:</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list3" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for Data Recovery in Burbank</h2>
+          <p class="contact-band-sub">Serving Burbank and the greater Los Angeles area with professional data recovery services.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
+          </ul>
+        </div>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+/* ---- BASE ---- */
+.page-wrapper { font-family: 'Inter', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.hero-section { background: #1a1a2e; padding: 60px 0; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
+.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-primary-red:hover { background: #c53030; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { border-color: #fff; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+.hero-form-wrap { position: relative; }
+.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+.consult-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #C9A84C; }
+.form-input.full { width: 100%; }
+.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
+.btn-form-submit:hover { background: #b8923e; }
+.light-section { background: #fff; padding: 72px 0; }
+.light-alt-section { background: #f7f9fc; padding: 72px 0; }
+.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+.section-heading.center { text-align: center; }
+.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
+.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
+.cause-list { list-style: none; padding: 0; margin: 0; }
+.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
+.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.content-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.content-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
+.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
+.no-charge-note strong { color: #C9A84C; }
+.dark-cta-section { background: #2d3748; padding: 72px 0; }
+.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
+.contact-band { background: #1a1a2e; padding: 48px 0; }
+.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
+.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
+.btn-yellow:hover { background: #b8923e; }
+.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.btn-outline-white:hover { border-color: #fff; }
+.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
+.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.faq-item.open { border-color: #C9A84C; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
+.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
+.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-avatar { font-size: 2rem; margin-bottom: 12px; }
+.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
+.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+.review-loc { font-size: 0.82rem; color: #718096; }
+.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
+.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse { direction: ltr; }
+  .two-col-equal { grid-template-columns: 1fr; }
+  .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .process-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>

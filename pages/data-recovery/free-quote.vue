@@ -1,223 +1,143 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Request A Quote — Five Star Data Recovery',
-  description: 'Need a fast and accurate data recovery quote? Fill out our simple form and get a flat-rate quote within minutes. At Five Star Data Recovery, we provide transpar'
+  title: 'Get a Free Data Recovery Quote — Five Star Data Recovery',
+  description: 'Get a free data recovery quote from Five Star Data Recovery. Fast response, transparent pricing, no hidden fees.'
 })
-const faqs = [
-  { q: '1. How long does it take to receive my free data recovery quote?', a: 'In most cases, you’ll receive your free data recovery quote within minutes after submitting your request or dropping off your device. Our team works quickly to assess the basic details and provide an initial flat-rate price based on the symptoms you describe or the information gathered during check-in.' },
-  { q: '2. Is the free quote guaranteed to stay the same once you start the recovery?', a: 'We strive to be as accurate as possible, and in most cases, the quote you receive after diagnostics is final. However, if the issue turns out to be different than originally diagnosed or if additional problems are discovered during recovery, we’ll contact you immediately to discuss the new findings. You will always have the option to approve or decline any updated quote.' },
-  { q: '3. Can I get a free quote over the phone?', a: 'Yes! We offer free phone consultations where you can describe your device issue, and we’ll provide an initial price estimate based on the symptoms you describe. For a guaranteed flat-rate quote, however, we’ll need to physically inspect the device first.' },
-  { q: '4. Do I need to ship my device to get a free quote?', a: 'If you’re not local to Glendale, CA, you can take advantage of our free nationwide shipping program . Simply fill out our Mail-In Recovery Form , and we’ll provide you with a prepaid shipping label to send your device in for a free diagnostic and quote.' },
-  { q: '5. What if I don’t want to proceed after receiving my free quote?', a: 'There’s no obligation to proceed with the recovery. For local drop-off clients, you can simply pick up your device at no charge. For mail-in clients, if you decide not to move forward, you will be responsible for paying the return shipping fee to have your device sent back. We’ll notify you of the exact return shipping cost before shipment.' },
-  { q: '6. Will my device be opened during the free diagnostic process?', a: 'We do not open the physical cover of your device (such as opening the hard drive casing or SSD housing) during the initial free diagnostic. If clean room inspection becomes necessary, we’ll notify you in advance and get your approval before proceeding.' },
-  { q: '7. Is your free quote a flat-rate price or hourly?', a: 'All of our quotes are flat-rate , based on the type of device and the specific failure. We do not charge hourly rates for data recovery, and there are no hidden fees.' },
-  { q: '8. Does the free quote include expedited service pricing?', a: 'If you’re interested in expedited recovery, we can include Expedited Service and Expedited Plus Service pricing options along with your standard quote. This allows you to choose a turnaround speed that fits your needs and budget.' }
-]
-const openFaq = ref<number | null>(null)
-const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Request A Quote"
-      subtitle="Get a Data Recovery Quote in Minutes"
-      description="Need a fast and accurate data recovery quote? Fill out our simple form and get a flat-rate quote within minutes. At Five Star Data Recovery, we provide transparent flat-rate pricing with no hidden fees. Our team is available 24/7/365, ready to assist with any data loss situation. Guaranteed satisfac"
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">Get a Free Data Recovery Quote</h1>
+          <p class="hero-sub">Get a Free Quote within Minutes!</p>
+          <p class="hero-desc">We understand your files are private. Whether you're recovering sensitive business files or personal memories, your data stays secure throughout the entire process.</p>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
+          <div style="margin-top:24px;background:rgba(255,255,255,0.1);border-radius:10px;padding:20px">
+            <h3 style="color:#C9A84C;font-weight:700;margin-bottom:12px">Your Data Stays Secure</h3>
+            <ul style="list-style:none;padding:0;margin:0">
+              <li style="padding:5px 0 5px 20px;position:relative;font-size:0.9rem;color:rgba(255,255,255,0.75)"><span style="position:absolute;left:0;color:#C9A84C">✓</span> HIPAA-compliant handling procedures</li>
+              <li style="padding:5px 0 5px 20px;position:relative;font-size:0.9rem;color:rgba(255,255,255,0.75)"><span style="position:absolute;left:0;color:#C9A84C">✓</span> Secure chain of custody for all devices</li>
+              <li style="padding:5px 0 5px 20px;position:relative;font-size:0.9rem;color:rgba(255,255,255,0.75)"><span style="position:absolute;left:0;color:#C9A84C">✓</span> Files deleted from our systems after delivery</li>
+              <li style="padding:5px 0 5px 20px;position:relative;font-size:0.9rem;color:rgba(255,255,255,0.75)"><span style="position:absolute;left:0;color:#C9A84C">✓</span> Confidentiality agreements available on request</li>
+            </ul>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <textarea class="form-input full" placeholder="Describe your issue briefly..." rows="3" style="resize:vertical"></textarea>
+              <button type="submit" class="btn-form-submit">Get My Free Quote</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Request A Quote</h2>
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Prefer to Call?</h2>
+          <p class="contact-band-sub">Our engineers are available to answer your questions and provide an immediate quote over the phone.</p>
         </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Data Recovery Quote in Minutes</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Need a fast and accurate data recovery quote? Fill out our simple form and get a flat-rate quote within minutes. At Five Star Data Recovery, we provide transparent flat-rate pricing with no hidden fees. Our team is available 24/7/365, ready to assist with any data loss situation. Guaranteed satisfaction and expert service—every step of the way. We specialize in recovering data from hard drives, SSDs, phones, RAID arrays, and more. Whether it’s a personal device or business-critical system, we’re here to help you get your data back quickly and affordably.</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-        <section class="process-section section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Data Recovery Process</h2>
-          <p class="section-subtitle">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.</p>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Drop off or Mail in Your Drive</h3>
-            <p class="process-desc">Bring your device to our Glendale lab or ship it to us free from anywhere in the U.S.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">02</div>
-            <h3 class="process-title">Receive a Free Diagnosis</h3>
-            <p class="process-desc">Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">03</div>
-            <h3 class="process-title">Our Engineers Work on Recovering Your Data</h3>
-            <p class="process-desc">We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">04</div>
-            <h3 class="process-title">Review &amp; Approve the Recovered</h3>
-            <p class="process-desc">After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">05</div>
-            <h3 class="process-title">Receive Your Recovered Data</h3>
-            <p class="process-desc">Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-          <div class="reviews-grid">
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I submitted a quote request after business hours and was shocked to get a detailed response within 15 minutes! The team was super responsive and provided clear flat-rate pricing right from the start. It made the whole process stress-free."</p>
-              <div class="review-author">Stephanie L. Los Angeles, CA</div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"The online quote process was quick and easy. Within minutes, I had a clear understanding of the cost with no hidden fees. Five Star Data Recovery stood by their flat-rate price, and the entire experience was smooth from start to finish."</p>
-              <div class="review-author">Derek M. Burbank, CA</div>
-            </div>
-            <div class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p class="review-text">"I was impressed by how fast I got my quote. I filled out the form in the afternoon, and by the time I got home, I already had a detailed breakdown of the expected costs and turnaround times. Very professional and transparent."</p>
-              <div class="review-author">Maria M. Las Vegas, NV — Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</div>
-            </div>
-          </div>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/start-recovery" class="btn-outline-white">Start Recovery</NuxtLink>
         </div>
       </div>
     </section>
 
-    <section class="faq-section section-bg-2 section-pad">
+    <section class="yellow-band">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
-          </div>
-        </div>
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Request A Quote?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
-        </div>
-      </div>
-    </section>
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+.page-wrapper{font-family:'Inter',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-section{background:#1a1a2e;padding:60px 0}.hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+.hero-sub{font-size:1.1rem;color:#C9A84C;font-weight:600;margin-bottom:16px}
+.hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:28px}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary-red{background:#e53e3e;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-primary-red:hover{background:#c53030}
+.btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px 24px}.hero-trust span{font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.hero-form-wrap{position:relative}.hero-form-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.form-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:20px}
+.consult-form{display:flex;flex-direction:column;gap:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-input{border:1px solid #d1d5db;border-radius:6px;padding:10px 14px;font-size:0.9rem;color:#1a1a2e;background:#fff;width:100%;box-sizing:border-box;font-family:inherit}
+.form-input:focus{outline:none;border-color:#C9A84C}.form-input.full{width:100%}
+.btn-form-submit{background:#C9A84C;color:#fff;border:none;border-radius:6px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:4px;font-family:inherit}
+.btn-form-submit:hover{background:#b8923e}
+.light-section{background:#fff;padding:72px 0}.light-alt-section{background:#f7f9fc;padding:72px 0}
+.section-heading{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#1a1a2e;margin-bottom:16px}
+.section-heading.center{text-align:center}
+.body-text{font-size:0.95rem;color:#4a5568;line-height:1.8;margin-bottom:16px}
+.contact-band{background:#1a1a2e;padding:48px 0}
+.contact-band-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.contact-band-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
+.contact-band-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px;max-width:540px}
+.contact-band-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap}
+.btn-yellow{display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:6px;font-weight:800;font-size:1rem;text-decoration:none}
+.btn-yellow:hover{background:#b8923e}
+.btn-outline-white{display:inline-block;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none}
+.btn-outline-white:hover{border-color:#fff}
+.yellow-band{background:#C9A84C;padding:24px 0;text-align:center}
+.yellow-band-text{font-size:1.3rem;font-weight:800;color:#fff;margin:0}
+.reviews-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.review-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.review-avatar{font-size:2rem;margin-bottom:12px}
+.review-text{font-size:0.9rem;color:#4a5568;line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-stars{color:#C9A84C;font-size:1rem;margin-bottom:8px}
+.review-name{font-weight:700;color:#1a1a2e;font-size:0.9rem}
+.review-loc{font-size:0.82rem;color:#718096}
+.contact-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:40px}
+.contact-info-card{background:#f7f9fc;border-radius:12px;padding:28px}
+.contact-info-icon{font-size:2rem;margin-bottom:12px}
+.contact-info-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+.contact-info-text{font-size:0.9rem;color:#4a5568;line-height:1.7}
+.contact-info-link{color:#C9A84C;text-decoration:none;font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.contact-band-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
 </style>

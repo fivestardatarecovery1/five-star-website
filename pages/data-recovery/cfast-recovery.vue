@@ -1,346 +1,319 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'CFast Data Recovery — Five Star Data Recovery',
-  description: 'We’ve recovered data for video editors, producers, directors, and digital imaging technicians across Hollywood and beyond. Our clients include production studio'
+  title: 'CFast Card Data Recovery — Five Star Data Recovery',
+  description: 'Professional CFast card data recovery for video professionals and photographers. Free evaluation, no data no charge.'
 })
-const faqs = [
-  { q: '1. Can you recover video files from a corrupted CFast card?', a: '“Yes. We specialize in recovering video files from corrupted CFast cards used in professional cameras like Blackmagic, Canon, and ARRI. Whether your CFast card won’t mount, shows errors, or displays as unreadable, our engineers have the tools and expertise to safely recover your footage.”' },
-  { q: '2. I tried using data recovery software and now my recovered files show 0MB or won’t play. Can you still help?', a: 'Yes. This is a common issue after DIY recovery attempts. If your recovered video files show 0MB, won’t open, or appear corrupted, we can often perform professional video file repair. Even if the file structures were damaged by software like First Aid or CHKDSK, we’ll do our best to rebuild and repair the files for playback.' },
-  { q: '3. My CFast card is showing missing or empty folders—can you recover the data?', a: 'Absolutely. If your CFast card shows missing folders, empty directories, or incomplete file lists, it could be due to logical corruption or file system errors. We can perform a full deep scan to locate and recover your missing video files and folders. Depending on the type of video files you have, if the recovered files are damaged or won’t play, we may also need to perform professional video file repair to restore them to a usable state.' },
-  { q: '4. Can you repair damaged video files from a CFast card?', a: 'Yes. We offer professional video file repair services for footage that appears corrupt, incomplete, or won’t play after recovery. This includes working with a wide range of professional and complex video formats commonly used with CFast cards, such as ProRes, CinemaDNG, Blackmagic RAW (BRAW), Canon XF-AVC, REDCODE RAW (R3D), MXF, MOV, and MP4. Our engineers use specialized tools to rebuild damaged headers, repair broken file structures, and restore playability. We strongly recommend avoiding further DIY recovery attempts, as they can make repair more difficult or even impossible.' },
-  { q: '5. What should I do immediately after noticing an issue with my CFast card?', a: 'Stop using the card right away. Remove it from your camera or card reader and avoid running any disk repair tools like First Aid or CHKDSK. Continued use or DIY repair attempts can make professional recovery much more difficult.' },
-  { q: '6. Can you recover data from physically damaged CFast cards?', a: 'Yes. If your CFast card has physical issues like broken connectors, damaged pins, or water exposure, we can often repair the hardware enough to access the internal memory and recover your data.' },
-  { q: '7. How long does CFast data recovery take?', a: 'Standard CFast data recovery usually takes 2–5 business days. For urgent projects or time-sensitive shoots, we offer Expedited and Expedited Plus service options for faster turnaround. If the card contains damaged or corrupted video files that require video file repair, the turnaround time may be significantly longer. Completion depends on the number of videos, file sizes, level of corruption, and video codec (e.g., ProRes, MXF, or RAW). In such cases, we’ll provide a time estimate after evaluating the files.' },
-  { q: '8. What file types can you recover from a CFast card?', a: 'We recover a wide range of professional video and media file formats stored on CFast cards. This includes ProRes , CinemaDNG , Blackmagic RAW (BRAW) , Canon XF-AVC , REDCODE RAW (R3D) , MXF , MOV , MP4 , AVI , DNxHD , DNxHR , and XAVC formats. In addition to video files, we also recover RAW image files , JPEGs , WAV audio , project files , and other production data commonly saved on CFast media. If your file type isn’t listed, contact us—we likely support it too.' },
-  { q: '9. What CFast card brands can you recover data from?', a: 'We recover data from all major CFast card brands, including SanDisk, Lexar, Delkin Devices, Angelbird, ProGrade Digital, Sony, Transcend, ADATA, Hoodman, and Wise Advanced. Whether you’re using CFast 2.0 cards for professional video production or earlier generation CFast models, our lab is equipped to handle recoveries from all manufacturers. Even if your CFast card brand isn’t listed here, we likely support it as well—just contact us for a free evaluation.' },
-  { q: '10. How much does CFast Data Recovery Cost?', a: 'At Five Star Data Recovery, CFast card recovery is priced using our flat-rate structure with no hidden fees: $300.00 – For logical recovery (e.g., file system corruption, card not mounting), for cards up to 2TB $500.00 – For deleted file recovery. This includes a $200.00 non-refundable upfront fee, with the balance due only if recovery is successful $950.00 – For component-level recovery involving physical damage, failed controllers, or chip-off procedures In some cases, additional charges may apply if recovered video files are damaged or unplayable and require our advanced video file repair services. We’ll evaluate your card and provide a clear estimate before starting any work. All evaluations are free, and every recovery is handled in-house by our experienced engineers.' }
+
+const list1 = [
+      'Accidental file deletion',
+      'Formatted or reformatted CFast cards',
+      'Corrupted file systems',
+      'Card not recognized by camera or computer',
+      'CFast card showing 0 bytes or RAW file system',
+      'Physical damage or bent pins',
+      'Video files that won’t open or are partially missing',
+    ]
+const list2 = [
+      'CFast 2.0 cards (most commonly used in modern cinema cameras)',
+      'Lexar CFast cards',
+      'SanDisk Extreme Pro CFast cards',
+      'Angelbird AV Pro CFast cards',
+      'ProGrade Digital CFast 2.0',
+      'Sony, Delkin, Wise Advanced, and other professional-grade cards',
+    ]
+const list3 = [
+      'Do not record new data onto the card.',
+      'Do not run multiple types of recovery software.',
+      'Do not attempt to repair the file system using system utilities.',
+    ]
+
+const reviews = [
+  { name: 'David R.', location: 'Glendale, CA', stars: 5, text: 'My CFast card suddenly became unreadable right in the middle of a film shoot. I brought it in for evaluation and was relieved when they said recovery was possible. Within days, I had all my RAW footage back. Quick, professional, and highly recommended for anyone dealing with CFast card failure.' },
+  { name: 'Angela T.', location: 'Burbank, CA', stars: 5, text: 'My CFast card was showing errors and wouldn’t mount on any device. The staff was friendly and explained how CFast recovery works, especially with large video files. They successfully recovered all my footage without any loss. I’ll definitely use them again if I ever have another issue.' },
+  { name: 'David N.', location: 'New York, NY', stars: 5, text: 'I made the mistake of running First Aid on my CFast card after it started acting up, and all my video files completely disappeared. I thought I had made things worse, but Vahan was still able to recover and repair all my missing footage. They explained why using First Aid can actually damage file structures on failing media. “' },
 ]
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="CFast Data Recovery"
-      subtitle="Get Your Data Back In No Time."
-      description="We’ve recovered data for video editors, producers, directors, and digital imaging technicians across Hollywood and beyond. Our clients include production studios, ad agencies, wedding videographers, and independent filmmakers. We understand that losing raw footage or production files can delay deadl"
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
-        </div>
-      </template>
-    </HeroSection>
-    <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common Issues with CFast Cards</h2>
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">CFast Card Data Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">We\'ve recovered data for video editors, producers, directors, and digital imaging technicians across Los Angeles. CFast cards are used in professional cinema cameras like the Canon EOS C300 and BlackMagic Cinema cameras. When they fail, you need an expert.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Accidental file deletion</li>
-            <li>Formatted or reformatted CFast cards</li>
-            <li>Corrupted file systems</li>
-            <li>Card not recognized by camera or computer</li>
-            <li>CFast card showing 0 bytes or RAW file system</li>
-            <li>Physical damage or bent pins</li>
-            <li>Video files that won’t open or are partially missing</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Types of CFast Cards We Recover From</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>CFast 2.0 cards (most commonly used in modern cinema cameras)</li>
-            <li>Lexar CFast cards</li>
-            <li>SanDisk Extreme Pro CFast cards</li>
-            <li>Angelbird AV Pro CFast cards</li>
-            <li>ProGrade Digital CFast 2.0</li>
-            <li>Sony, Delkin, Wise Advanced, and other professional-grade cards</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Not To Do If You Accidentally Format or Delete Files</h2>
-        </div>
-        <div class="section-body">
-          <ol class="content-list">
-            <li>Do not record new data onto the card.</li>
-            <li>Do not run multiple types of recovery software.</li>
-            <li>Do not attempt to repair the file system using system utilities.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Expedited Services for Rush Projects</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Trusted by the Creative Industry</h2>
-        </div>
-        <div class="section-body">
-          <p>We’ve recovered data for video editors, producers, directors, and digital imaging technicians across Hollywood and beyond. Our clients include production studios, ad agencies, wedding videographers, and independent filmmakers. We understand that losing raw footage or production files can delay deadlines and cost thousands. That’s why our data recovery services are designed with media professionals in mind — fast, secure, and confidential.</p>
-          <p>Whether it's a failed CFast card, damaged SSD, or corrupted external drive, we provide reliable recovery solutions and deep experience with pro camera formats like ARRI, RED, and Blackmagic.</p>
-          <p>When CFast card data is critical and irreplaceable, professionals trust Five Star Data Recovery. With our advanced tools we have the experience to handle sensitive video formats.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get Help with Your CFast Card Now</h2>
-        </div>
-        <div class="section-body">
-          <p>Whether you’re dealing with a corrupt CFast card, accidental deletion, or damaged media files, we’re here to help.</p>
-          <p>We offer free diagnostics, transparent pricing, and fast results. Our team has extensive experience recovering data from high-end cameras and production media, making us the trusted choice for professionals.</p>
-          <p>Don’t risk your files with generic software tools. Trust the experts in CFast card data recovery who understand the urgency and sensitivity of your work.</p>
-          <p>Contact Five Star Data Recovery today and let us bring your media back to life. We’re available 24/7 by phone or email to answer any urgent questions or concerns — day or night, we’re here when you need us most.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Real-World Success Story</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Repaired Video Files After Software Recovery Failure</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why DIY Data Recovery Tools Often Fail with CFast Cards</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>It may be tempting to use free or cheap data recovery software. However, these tools are usually made for general storage devices. This includes USB flash drives and basic SD cards.</li>
-            <li>They lack the technical sophistication needed to handle professional-grade CFast card data—especially when it involves large video files or non-standard file systems used in high-end cameras.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Many software programs do not handle fragmented file structures well.</li>
-            <li>They also often misread special video formats. These formats include CinemaDNG, REDCODE RAW, and Canon XF-AVC. As a result, even if the software “recovers” the files, the output is often incomplete, glitchy, or completely unreadable.</li>
-            <li>We've seen cases where clients used DIY tools that rewrote portions of the card's file table—making a proper recovery far more difficult. Others created cloned images incorrectly, omitting key metadata needed to rebuild the footage. Sadly, in some cases, this good-intentioned testing has permanently erased important parts of the CFast card data.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our CFast Card Data Recovery Process</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Clone the Original Drive</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Scan for Lost Data</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Extract and Test Files</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Repair Damaged Files (If Needed)</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">We Also Repair Damaged Video Files</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Request a Free Quote!</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nationwide Service with Free Round-Trip Shipping</h2>
-        </div>
-        <div class="section-body">
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With CFast Data Recovery?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+    <StatsBar />
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Common Issues with CFast Cards</h2>
+
+        <ul class="cause-list">
+          <li v-for="item in list1" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">Types of CFast Cards We Recover From</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list2" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">What Not To Do If You Accidentally Format or Delete Files</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list3" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Trusted by the Creative Industry</h2>
+        <p class="body-text">We’ve recovered data for video editors, producers, directors, and digital imaging technicians across Hollywood and beyond. Our clients include production studios, ad agencies, wedding videographers, and independent filmmakers. We understand that losing raw footage or production files can delay deadlines and cost thousands. That’s why our data recovery services are designed with media professionals in mind — fast, secure, and confidential.</p>
+        <p class="body-text">Whether it\'s a failed CFast card, damaged SSD, or corrupted external drive, we provide reliable recovery solutions and deep experience with pro camera formats like ARRI, RED, and Blackmagic.</p>
+      </div>
+    </section>
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">Get Help with Your CFast Card Now</h2>
+        <p class="body-text">Whether you’re dealing with a corrupt CFast card, accidental deletion, or damaged media files, we’re here to help.</p>
+        <p class="body-text">We offer free diagnostics, transparent pricing, and fast results. Our team has extensive experience recovering data from high-end cameras and production media, making us the trusted choice for professionals.</p>
+      </div>
+    </section>
+
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for CFast Data Recovery</h2>
+          <p class="contact-band-sub">Lost footage from a CFast card? Our engineers recover data from all CFast formats used in professional cameras.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
+          </ul>
+        </div>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading center">Testimonials from Satisfied Clients</h2>
+        <div class="reviews-row">
+          <div v-for="r in reviews" :key="r.name" class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"{{ r.text }}"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">{{ r.name }}</div>
+            <div class="review-loc">{{ r.location }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+/* ---- BASE ---- */
+.page-wrapper { font-family: 'Inter', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.hero-section { background: #1a1a2e; padding: 60px 0; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
+.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-primary-red:hover { background: #c53030; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { border-color: #fff; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+.hero-form-wrap { position: relative; }
+.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+.consult-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #C9A84C; }
+.form-input.full { width: 100%; }
+.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
+.btn-form-submit:hover { background: #b8923e; }
+.light-section { background: #fff; padding: 72px 0; }
+.light-alt-section { background: #f7f9fc; padding: 72px 0; }
+.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+.section-heading.center { text-align: center; }
+.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
+.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
+.cause-list { list-style: none; padding: 0; margin: 0; }
+.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
+.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.content-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.content-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
+.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
+.no-charge-note strong { color: #C9A84C; }
+.dark-cta-section { background: #2d3748; padding: 72px 0; }
+.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
+.contact-band { background: #1a1a2e; padding: 48px 0; }
+.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
+.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
+.btn-yellow:hover { background: #b8923e; }
+.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.btn-outline-white:hover { border-color: #fff; }
+.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
+.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.faq-item.open { border-color: #C9A84C; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
+.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
+.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-avatar { font-size: 2rem; margin-bottom: 12px; }
+.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
+.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+.review-loc { font-size: 0.82rem; color: #718096; }
+.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
+.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse { direction: ltr; }
+  .two-col-equal { grid-template-columns: 1fr; }
+  .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .process-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>

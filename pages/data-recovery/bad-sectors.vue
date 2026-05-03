@@ -1,238 +1,157 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Bad Sectors Data Recovery Services — Five Star Data Recovery',
-  description: 'When your hard drive develops bad sectors, your files can quickly become inaccessible or corrupted. These issues often happen without warning and can lead to se'
+  title: 'Bad Sectors Data Recovery — Five Star Data Recovery',
+  description: 'Bad sectors causing data loss? Five Star Data Recovery specializes in bad sector recovery. Free evaluation.'
 })
-const faqs = [
-  { q: '1. What are bad sectors on a hard drive?', a: 'Bad sectors are areas on a hard drive or SSD that have become unreadable due to physical damage or corruption. These sectors prevent the system from reading or writing data properly and are a common cause of data loss, system crashes, and drive inaccessibility.' },
-  { q: '2. Can you recover data from a hard drive with bad sectors?', a: 'Yes. At Five Star Data Recovery, we specialize in data recovery from bad sectors using advanced imaging tools and proprietary techniques. We clone the failing drive sector by sector to avoid further damage and safely extract the accessible data.' },
-  { q: '3. What causes bad sectors on a hard drive?', a: 'Bad sectors can develop due to physical wear, power failures, manufacturing defects, excessive heat, or improper handling of the device. Over time, all drives are at risk of sector degradation, especially mechanical hard drives (HDDs).' },
-  { q: '4. How do I know if my hard drive has bad sectors?', a: 'Symptoms include slow read/write performance, frequent system crashes, files that won’t open, and error messages during backups or file transfers. Tools like CrystalDiskInfo or SMART diagnostics may also show warnings about sector damage.' },
-  { q: '5. Is it safe to continue using a drive with bad sectors?', a: 'No. Using a failing drive can make the issue worse and lead to permanent data loss. If your drive is showing signs of bad sectors, stop using it immediately and contact a professional data recovery service to avoid further damage.' },
-  { q: '6. Do you work on both HDDs and SSDs with bad sectors?', a: 'Yes. Our lab is equipped to handle bad sector recovery from both mechanical hard drives and solid-state drives (SSDs). Each type of device requires different tools and techniques, and we tailor the process accordingly.' },
-  { q: '7. How long does bad sector data recovery take?', a: 'The data recovery process for bad sector drives typically takes 3–7 business days, depending on the severity of the damage. For urgent cases, we offer Expedited and Expedited Plus services with 24/7 engineer availability.' },
-  { q: '8. Is there a risk of further damage during recovery?', a: 'No. At Five Star Data Recovery, we prioritize data safety by never working directly on your original drive once bad sectors are detected. We use specialized hardware like the PC-3000 by Ace Labs to create a sector-by-sector image of your drive. This process allows us to safely clone as much data as possible while bypassing unstable or unreadable sectors. Once a full image is secured, we work from the clone , rebuilding the file system and extracting your recoverable data—completely safeguarding your original media from further harm.' },
-  { q: '9. What is the cost of bad sector data recovery?', a: 'We offer flat-rate pricing based on the issue and drive type. For a specific quote, we recommend calling us or visiting our pricing page . Diagnostics are always free , and you’re never charged unless we recover your data.' },
-  { q: '10. Do you offer bad sector recovery for external hard drives too?', a: 'Absolutely. We recover data from external hard drives with bad sectors, including popular brands like Seagate, Western Digital, Toshiba, and others. Whether internal or external, our recovery approach is the same—safe, transparent, and effective.' }
+
+const list3 = [
+  'Slow file access or freezing during transfers',
+  'Crashing while copying or saving files',
+  'Files disappearing or becoming corrupt',
+  'The drive not showing up in File Explorer but appearing in Disk Management',
+  'Error messages related to the file system',
+  'Clicking or beeping sounds from the HDD with bad sectors',
 ]
+
+const reviews = [
+  { name: 'Mark R.', location: 'West Covina, CA', stars: 5, text: 'My external hard drive suddenly started acting up and wouldn’t open any files. I found out it had bad sectors and thought everything was lost. Five Star Data Recovery recovered all of my documents, including years of business data. Their team was professional, honest, and incredibly skilled.' },
+  { name: 'Samantha L.', location: 'Burbank, CA', stars: 5, text: 'My old hard drive was full of irreplaceable family memories, but it stopped responding due to bad sectors. I brought it to Five Star Data Recovery, and within days they recovered every last photo. I can’t thank them enough for saving what I thought was gone forever.' },
+  { name: 'David N.', location: 'New York, NY', stars: 5, text: 'After being told by another company that my hard drive was unrecoverable due to bad sectors, I decided to get a second opinion. Five Star Data Recovery not only diagnosed the issue accurately but used advanced imaging tools to safely recover my data. Worth every penny.' },
+]
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Bad Sectors Data Recovery Services"
-      subtitle="Get Your Data Back In No Time."
-      description="When your hard drive develops bad sectors, your files can quickly become inaccessible or corrupted. These issues often happen without warning and can lead to serious data loss. We specialize in helping clients recover data from hard drives with bad sectors by using professional tools and cleanroom e"
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">Bad Sectors Data Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">When your hard drive develops bad sectors, your files can quickly become inaccessible. Bad sectors are areas of the drive that can no longer reliably store data. Our engineers have specialized tools to work around bad sectors and recover your files.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <StatsBar />
 
-        <section class="process-section section-bg-1 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Data Recovery Process for Drives with Bad Sectors</h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Free Evaluation</h3>
-            <p class="process-desc"></p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">02</div>
-            <h3 class="process-title">Imaging the Drive</h3>
-            <p class="process-desc"></p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">03</div>
-            <h3 class="process-title">Locating the Data</h3>
-            <p class="process-desc"></p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">04</div>
-            <h3 class="process-title">Data Extraction</h3>
-            <p class="process-desc"></p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">05</div>
-            <h3 class="process-title">Verification and Delivery</h3>
-            <p class="process-desc"></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Types of Drives Do We Recover?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Internal desktop and laptop hard drives (HDDs)</li>
-            <li>Portable and external hard drives</li>
-            <li>SSDs with logical bad sectors</li>
-            <li>RAID configurations with degraded or damaged disks</li>
-            <li>Enterprise-level drives with firmware issues</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Causes Bad Sectors?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Physical shock from drops or impacts</li>
-            <li>Power outages or sudden shutdowns</li>
-            <li>Aging HDD with bad sectors</li>
-            <li>Manufacturing flaws</li>
-            <li>Overheating or poor ventilation</li>
-            <li>Viruses that damage the file system</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How to Prevent Bad Sectors in the Future</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Back up regularly to a second external hard drive</li>
-            <li>Use a surge protector or UPS to avoid power fluctuations</li>
-            <li>Run regular health scans using disk management tools</li>
-            <li>Avoid rough handling or hot environments</li>
-            <li>Shut down your system properly instead of hard resets</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Cleanroom environment and certified engineers</li>
-            <li>Flat-rate pricing and no hidden fees</li>
-            <li>“No Data, No Charge” policy</li>
-            <li>Secure, professional imaging and extraction tools</li>
-            <li>Nationwide service with free round-trip shipping</li>
-            <li>Trusted by thousands of clients across the U.S.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Ready to Recover Your Data?</h2>
-        </div>
-        <div class="section-body">
+        <h2 class="section-heading">Signs Your Drive Has Bad Sectors</h2>
 
+        <ul class="drive-list">
+          <li v-for="item in list3" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
+        </div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Bad Sectors on External Hard Drives</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Real-World Example: A Photographer’s External Drive</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Expedited Recovery Services Available</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Expedited Service – $200 per drive. Your case is prioritized during business hours and placed at the top of our queue.</li>
-            <li>Expedited Plus Service – $500 per drive. Our highest-priority tier. We work on your case 24/7, including weekends and holidays.</li>
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for Bad Sectors Recovery</h2>
+          <p class="contact-band-sub">Bad sectors require immediate attention. Contact us for a free evaluation before your drive fails completely.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
           </ul>
         </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Quick and Secure Data Recovery</li>
-            <li>Expert Engineers for All Devices</li>
-            <li>No Data, No Fee Guarantee</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
-    <section class="faq-section section-bg-2 section-pad">
+
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <h2 class="section-heading center">Testimonials from Satisfied Clients</h2>
+        <div class="reviews-row">
+          <div v-for="r in reviews" :key="r.name" class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"{{ r.text }}"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">{{ r.name }}</div>
+            <div class="review-loc">{{ r.location }}</div>
           </div>
         </div>
       </div>
     </section>
-
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Bad Sectors Data Recovery Services?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
-        </div>
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
       </div>
     </section>
     <FooterBar />
@@ -240,62 +159,77 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+.page-wrapper{font-family:'Inter',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-section{background:#1a1a2e;padding:60px 0}.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+.hero-sub{font-size:1.1rem;color:#C9A84C;font-weight:600;margin-bottom:16px}
+.hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary-red{background:#e53e3e;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-primary-red:hover{background:#c53030}
+.btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px 24px}.hero-trust span{font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.hero-form-wrap{position:relative}.hero-form-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.form-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:20px}
+.consult-form{display:flex;flex-direction:column;gap:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-input{border:1px solid #d1d5db;border-radius:6px;padding:10px 14px;font-size:0.9rem;color:#1a1a2e;background:#fff;width:100%;box-sizing:border-box;font-family:inherit}
+.form-input:focus{outline:none;border-color:#C9A84C}.form-input.full{width:100%}
+.btn-form-submit{background:#C9A84C;color:#fff;border:none;border-radius:6px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:4px;font-family:inherit}
+.btn-form-submit:hover{background:#b8923e}
+.light-section{background:#fff;padding:72px 0}.light-alt-section{background:#f7f9fc;padding:72px 0}
+.section-heading{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#1a1a2e;margin-bottom:16px}
+.section-heading.center{text-align:center}.section-heading-sm{font-size:1.25rem;font-weight:800;color:#1a1a2e;margin-bottom:14px}
+.section-intro{font-size:1rem;color:#4a5568;line-height:1.7;margin-bottom:40px}
+.section-intro.center{text-align:center;max-width:700px;margin-left:auto;margin-right:auto}
+.body-text{font-size:0.95rem;color:#4a5568;line-height:1.8;margin-bottom:16px}
+.issues-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.issue-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.issue-text{font-size:0.9rem;color:#4a5568;line-height:1.7}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.two-col.reverse{direction:rtl}.two-col.reverse>*{direction:ltr}
+.two-col-equal{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.section-img{width:100%;border-radius:12px;display:block;object-fit:cover;max-height:380px}
+.cause-list{list-style:none;padding:0;margin:0}
+.cause-list li{padding:8px 0 8px 24px;position:relative;font-size:0.93rem;color:#4a5568;border-bottom:1px solid #e2e8f0}
+.cause-list li::before{content:'✓';position:absolute;left:0;color:#C9A84C;font-weight:700}
+.drive-list{list-style:none;padding:0;margin:16px 0 0}
+.drive-list li{padding:9px 0 9px 24px;position:relative;font-size:0.93rem;color:#4a5568;border-bottom:1px solid #e2e8f0}
+.drive-list li::before{content:'→';position:absolute;left:0;color:#C9A84C}
+.content-list{list-style:none;padding:0;margin:12px 0 0}
+.content-list li{padding:7px 0 7px 22px;position:relative;font-size:0.9rem;color:#4a5568;border-bottom:1px solid #e2e8f0}
+.content-list li::before{content:'→';position:absolute;left:0;color:#C9A84C}
+.dark-cta-section{background:#2d3748;padding:72px 0}
+.dark-heading{font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:#fff;margin-bottom:16px}
+.dark-text{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.8;margin-bottom:14px}
+.contact-band{background:#1a1a2e;padding:48px 0}
+.contact-band-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.contact-band-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
+.contact-band-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px;max-width:540px}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{padding:5px 0 5px 20px;position:relative;font-size:0.9rem;color:rgba(255,255,255,0.75)}
+.contact-list li::before{content:'✓';position:absolute;left:0;color:#C9A84C;font-weight:700}
+.contact-band-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap}
+.btn-yellow{display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:6px;font-weight:800;font-size:1rem;text-decoration:none}
+.btn-yellow:hover{background:#b8923e}
+.btn-outline-white{display:inline-block;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none}
+.btn-outline-white:hover{border-color:#fff}
+.faq-list{max-width:800px;margin:40px auto 0;display:flex;flex-direction:column;gap:6px}
+.faq-item{border:1px solid #e2e8f0;border-radius:8px;overflow:hidden}
+.faq-item.open{border-color:#C9A84C}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;color:#1a1a2e;font-size:0.95rem;font-weight:600;cursor:pointer;text-align:left;gap:12px;font-family:inherit}
+.faq-icon{color:#C9A84C;font-size:1.4rem;font-weight:400;flex-shrink:0}
+.faq-a{padding:0 20px 18px;font-size:0.9rem;color:#4a5568;line-height:1.7}
+.reviews-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.review-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.review-avatar{font-size:2rem;margin-bottom:12px}
+.review-text{font-size:0.9rem;color:#4a5568;line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-stars{color:#C9A84C;font-size:1rem;margin-bottom:8px}
+.review-name{font-weight:700;color:#1a1a2e;font-size:0.9rem}
+.review-loc{font-size:0.82rem;color:#718096}
+.yellow-band{background:#C9A84C;padding:24px 0;text-align:center}
+.yellow-band-text{font-size:1.3rem;font-weight:800;color:#fff;margin:0}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.two-col.reverse{direction:ltr}.two-col-equal{grid-template-columns:1fr}.contact-band-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
 </style>

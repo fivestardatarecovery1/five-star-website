@@ -1,295 +1,312 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'SD Card Recovery — Five Star Data Recovery',
-  description: 'Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro sol'
+  title: 'SD Card Data Recovery — Five Star Data Recovery',
+  description: 'Professional SD card data recovery for all formats and brands. Free evaluation, flat-rate pricing, no data no charge.'
 })
-const faqs = [
-  { q: '1. How much does SD card data recovery cost?', a: 'At Five Star Data Recovery, SD card recovery is priced based on the type of failure and the method required to retrieve the data. Here’s a breakdown of our standard pricing: 1. Logical Data Recovery – $300.00 This applies to SD cards that are physically intact but are no longer recognized properly by your device or computer. Common symptoms include: “Card needs to be formatted” errors File system corruption The card mounts but shows no files Read errors during access In these cases, we use specialized tools to safely extract your files without altering or damaging the card. This is the most common and straightforward recovery scenario. 2. Chip-Off or Monolith Recovery – $950.00 This applies when the SD card has physical damage or internal faults that prevent any software-based recovery. These are complex recoveries that require: Desoldering the memory chip from the card (chip-off), or Microscopic pinout mapping and direct readout (monolith recovery) These methods are used when the SD card has broken connectors, internal short circuits, water damage, or is completely unresponsive. They require advanced equipment and highly skilled engineering. 3. Deleted File Recovery – $500.00 If the SD card was formatted or you accidentally deleted files, the cost is $500.00. This includes a $200.00 non-refundable labor fee, paid upfront. The remaining $300.00 is only paid if we successfully recover the deleted files and you approve the results. Deleted file recovery is more complex because deleted data may be partially overwritten, and the card’s internal file structure must be carefully rebuilt. 4. Video File Repair (Optional Add-On) In rare cases, recovered video files may be damaged or corrupted and require repair. We offer a specialized video file repair service in these situations. This is quoted separately, after evaluation. Fees depend on file types, damage level, and number of corrupted clips. Video repair is in addition to the data recovery cost. Transparent Pricing, No Surprises All SD card recoveries start with a free evaluation, and our pricing is flat rate — no hidden fees. You’ll always be informed of the total cost before we begin, and you only pay if recovery is successful (except for deleted file cases with the $200 labor fee).' },
-  { q: '2. How long does SD card data recovery take?', a: 'Most standard SD card recoveries are completed within 3–5 business days, depending on the severity of the issue. For urgent cases, we also offer Expedited and Expedited Plus service options for faster turnaround.' },
-  { q: '3. What file types can you recover from an SD card?', a: 'We commonly recover photos (JPG, RAW, PNG), videos (MP4, MOV, AVI), documents, and other media files from SD cards. If your card was used in a camera or mobile device, there’s a high chance we can retrieve your images and video files.' },
-  { q: '4. Do you recover data from microSD cards as well?', a: 'Absolutely. We recover data from standard SD cards, microSD cards, and miniSD cards, including all major brands like SanDisk, Samsung, Lexar, and Kingston.' },
-  { q: '5. What types of devices do you recover SD cards from?', a: 'We recover SD cards used in digital cameras, smartphones, drones, GoPros, dash cams, and other portable devices . No matter where the SD card was used, we can assess and recover the data.' },
-  { q: '6. Can you recover data from physically broken SD cards?', a: 'It depends on the type of physical damage. If the SD card is cracked—even slightly—data recovery is not possible, as the internal memory chip is almost always destroyed. However, if the damage is limited to broken connector pins or minor board issues (without cracking the chip), we may be able to recover the data using advanced chip-off techniques. Each case is evaluated carefully to determine if the memory chip is still intact and readable.' },
-  { q: '7. Is it safe to run recovery software on a failing SD card?', a: 'If your SD card shows signs of physical failure (like not mounting, not being recognized, or showing corrupted file structures), it’s best not to run recovery software. DIY software attempts can worsen damage on failing cards. Professional imaging and recovery tools offer a much safer approach.' },
-  { q: '8. Do you offer a no data, no charge policy for SD card recovery?', a: 'Yes, in most cases. We follow a No Data, No Charge policy for SD card recoveries unless the card has been physically tampered with or damaged from previous recovery attempts. If that applies, we’ll explain any special evaluation fees upfront before starting.' },
-  { q: '9. Can you recover data from an SD card that shows the wrong capacity or is not recognized at all?', a: 'Yes. If your SD card shows zero capacity , an incorrect size , or is not being recognized by your computer or camera , these are common signs of internal chip failure or controller issues. We handle these types of recoveries regularly.' },
-  { q: '10. The videos on my SD Card are damaged. How much does video file repair from an SD card cost?', a: 'The cost for SD card video file repair depends on several factors, including the number of damaged video files, the length and size of each file, the complexity of the video format (codec), and the extent of corruption. In most cases, you’ll first pay our standard SD card data recovery fee, which covers the process of extracting and stabilizing the raw video files from your card. After that, video file repair services are quoted separately based on the specifics of the files needing repair. For an exact quote, please contact us or visit our pricing page for more details.' },
-  { q: '11. I can see the videos on my SD card but they are damaged. Is it possible to repair damaged video files?', a: 'Yes. At Five Star Data Recovery, we specialize in video file repair from SD cards, even when the files appear to be corrupted or unplayable. Our engineers use professional forensic-level tools that rebuild damaged video headers, correct missing or fragmented data blocks, and reconstruct the file structure to make your videos playable again. It’s very important that you avoid running tools like First Aid, CHKDSK, or any other disk repair utilities on your SD card. These tools often overwrite or further corrupt the fragmented video data, making professional repair much more difficult or even impossible. If you notice that your video files are damaged, stop using the SD card immediately and contact us for a free consultation.' }
-]
+
+const list1 = [
+      'Corrupted SD card that suddenly won’t mount or read',
+      'Files were accidentally deleted or formatted',
+      'SD card says “empty” even though you know files were saved',
+      'Bent, cracked, or physically damaged cards',
+      'Need to recover photos or photo and video files from a camera',
+      'Card was used with faulty or generic data recovery software',
+      'Power loss during transfer caused damaged video files',
+    ]
+const list2 = [
+      'DSLR and mirrorless digital cameras (Canon, Nikon, Sony, etc.)',
+      'Android smartphones and tablets',
+      'Drone cameras (DJI and others)',
+      'Action cameras and camcorders (GoPro, Insta360)',
+      'Professional camera media: CFast, CFexpress, REDMAG, and other high-end storage cards',
+      'Standard SD, microSD, miniSD, SDHC, and SDXC cards',
+      'Laptops, card readers, and all major operating systems',
+    ]
+
+const reviews: any[] = []
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="SD Card Recovery"
-      subtitle="Get Your Data Back In No Time."
-      description="Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip."
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">SD Card Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">SD card failure can happen to anyone — from photographers to videographers to everyday users. At Five Star Data Recovery, we specialize in SD card recovery for all formats, brands, and failure types.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common Reasons SD Cards Fail</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Corrupted SD card that suddenly won’t mount or read</li>
-            <li>Files were accidentally deleted or formatted</li>
-            <li>SD card says “empty” even though you know files were saved</li>
-            <li>Bent, cracked, or physically damaged cards</li>
-            <li>Need to recover photos or photo and video files from a camera</li>
-            <li>Card was used with faulty or generic data recovery software</li>
-            <li>Power loss during transfer caused damaged video files</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Trusted by Locals Across LA</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>DSLR and mirrorless digital cameras (Canon, Nikon, Sony, etc.)</li>
-            <li>Android smartphones and tablets</li>
-            <li>Drone cameras (DJI and others)</li>
-            <li>Action cameras and camcorders (GoPro, Insta360)</li>
-            <li>Professional camera media: CFast, CFexpress, REDMAG, and other high-end storage cards</li>
-            <li>Standard SD, microSD, miniSD, SDHC, and SDXC cards</li>
-            <li>Laptops, card readers, and all major operating systems</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-        <section class="process-section section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Recovery Process</h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Step 1: Free Diagnostic</h3>
-            <p class="process-desc">We evaluate your SD card to determine whether the issue is logical, physical, or firmware-related — at no charge.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">02</div>
-            <h3 class="process-title">Step 2: Safe Imaging</h3>
-            <p class="process-desc">We create a complete sector-by-sector image of your SD card to work safely without touching the original.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">03</div>
-            <h3 class="process-title">Step 3: Deep Scanning and File Extraction</h3>
-            <p class="process-desc">We perform a deep scan to locate deleted files, damaged partitions, or corrupted directories and extract your data.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">04</div>
-            <h3 class="process-title">Step 4: File Verification and Return</h3>
-            <p class="process-desc">You'll receive a file list to review. If we can't recover your data, you pay nothing.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What If My SD Card Is Physically Damaged?</h2>
-        </div>
-        <div class="section-body">
-          <p>Not all physical damage to SD cards is the same. In some cases—such as broken connectors or minor board damage—recovery may be possible using advanced micro soldering techniques to access the internal memory chip.</p>
-          <p>However, if the SD card is cracked—even slightly—recovery is impossible, as the memory chip itself is typically damaged beyond repair. Once the chip is fractured, there is no method to retrieve the data.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Not Just Use Free Software?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Write temporary data to the card, overwriting your original files</li>
-            <li>Fail to detect deeper issues, leading to partial recovery</li>
-            <li>Don't support specialized file types or raw formats</li>
-            <li>Lack the safety features of professional tools</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Five Star for SD Card Recovery?</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>In-house lab with certified engineers</li>
-            <li>Industry-grade recovery tools for deep-level access</li>
-            <li>Transparent pricing and honest diagnostics</li>
-            <li>High recovery success rates—even with severe damage</li>
-            <li>Local drop-off or nationwide mail-in data recovery options</li>
-            <li>No data, no charge (most cases)</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
+        <h2 class="section-heading">Common Reasons SD Cards Fail</h2>
 
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What We Can Recover</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>RAW and JPEG image files</li>
-            <li>MP4, MOV, and damaged video file</li>
-            <li>PDFs, Word, Excel, and other work docs</li>
-            <li>Audio files and voice memos</li>
-            <li>App data and system logs</li>
-            <li>Deleted or hidden file folders</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Start Your SD Card Recovery Today</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Drop off your card or ship it to our lab</li>
-            <li>Free diagnostic and no-recovery-no-charge guarantee</li>
-            <li>Call us now or start your recovery request online</li>
-          </ul>
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
+        <ul class="cause-list">
+          <li v-for="item in list1" :key="item">{{ item }}</li>
+        </ul>
       </div>
     </section>
 
-    <section class="faq-section section-bg-2 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="section-heading">Trusted by Locals Across LA</h2>
+
+        <ul class="cause-list">
+          <li v-for="item in list2" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DARK CTA FORM -->
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
         </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With SD Card Recovery?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+    <!-- CONTACT BAND -->
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for SD Card Recovery</h2>
+          <p class="contact-band-sub">Lost photos or videos on an SD card? Our engineers recover data from all SD card formats.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
+          </ul>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
+
+
+
+    <!-- BOTTOM YELLOW BAND -->
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+/* ---- BASE ---- */
+.page-wrapper { font-family: 'Inter', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* ---- HERO ---- */
+.hero-section { background: #1a1a2e; padding: 60px 0; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
+.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-primary-red:hover { background: #c53030; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { border-color: #fff; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
 
+/* ---- FORM ---- */
+.hero-form-wrap { position: relative; }
+.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+.consult-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #C9A84C; }
+.form-input.full { width: 100%; }
+.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
+.btn-form-submit:hover { background: #b8923e; }
+
+/* ---- SECTIONS ---- */
+.light-section { background: #fff; padding: 72px 0; }
+.light-alt-section { background: #f7f9fc; padding: 72px 0; }
+
+/* ---- HEADINGS ---- */
+.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+.section-heading.center { text-align: center; }
+.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
+.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+
+/* ---- ISSUES GRID ---- */
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+
+/* ---- TWO COLUMN ---- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
+
+/* ---- LISTS ---- */
+.cause-list { list-style: none; padding: 0; margin: 0; }
+.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
+.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.content-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.content-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
+/* ---- PROCESS ---- */
+.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
+.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
+.no-charge-note strong { color: #C9A84C; }
+
+/* ---- DARK CTA ---- */
+.dark-cta-section { background: #2d3748; padding: 72px 0; }
+.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
+
+/* ---- CONTACT BAND ---- */
+.contact-band { background: #1a1a2e; padding: 48px 0; }
+.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
+.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
+.btn-yellow:hover { background: #b8923e; }
+.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.btn-outline-white:hover { border-color: #fff; }
+
+/* ---- FAQ ---- */
+.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
+.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.faq-item.open { border-color: #C9A84C; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
+.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
+.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+
+/* ---- REVIEWS ---- */
+.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-avatar { font-size: 2rem; margin-bottom: 12px; }
+.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
+.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+.review-loc { font-size: 0.82rem; color: #718096; }
+
+/* ---- YELLOW BAND ---- */
+.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
+.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse { direction: ltr; }
+  .two-col-equal { grid-template-columns: 1fr; }
+  .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .process-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>

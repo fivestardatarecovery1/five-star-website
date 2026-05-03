@@ -1,257 +1,204 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'USB Data Recovery — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we specialize in USB data recovery for all types of USB flash drives, thumb drives, and external USB storage devices. Whether you’ve'
+  description: 'Professional USB flash drive data recovery. All brands and failure types. Free evaluation.'
 })
-const faqs = [
-  { q: '1. What are common causes of USB drive failure?', a: 'USB drives can fail due to physical damage (e.g., broken connectors), file system corruption, water exposure, electrical surges, firmware issues, or improper removal during file transfers. Even simple wear and tear can cause data loss over time.' },
-  { q: '2. Can you recover data from a physically damaged USB drive?', a: 'Yes, depending on the type of physical damage. If the USB connector or circuit board is broken, recovery is often still possible. In these cases, we can attempt a monolith or chip-off recovery, which involves accessing the memory chip directly. However, if the NAND chip itself (where the data is actually stored) is cracked or physically damaged, recovery becomes impossible—since that chip holds the only copy of your data.' },
-  { q: '3. I accidentally deleted files from my USB drive. Can you get them back?', a: 'In many cases, yes. As long as the files haven’t been overwritten and TRIM hasn’t been activated, the chances of recovery are very high. TRIM is a feature that automatically clears deleted data at the controller level—it’s not enabled manually by the user. Some USB drive controllers trigger TRIM sooner than others, which can affect recoverability. For the best chance of recovery, stop using the drive immediately and bring it in for evaluation.' },
-  { q: '4. Do you recover data from encrypted or BitLocker USB drives?', a: 'Yes. If you still have the correct BitLocker password or recovery key, we can usually retrieve data from encrypted USB flash drives—even if the device is corrupted or unmountable. Our recovery process preserves the encryption and avoids data loss during repair. Having the BitLocker credentials is mandatory. We cannot bypass or brute-force BitLocker encryption. If the password or recovery key is unavailable, the data cannot be recovered.' },
-  { q: '5. Can you recover data from USB drives that show 0 bytes or don’t mount?', a: 'Yes. Drives that appear as “0 bytes” or don’t mount can still hold recoverable data. These symptoms often point to logical or firmware issues. We use advanced tools to bypass these errors and access the underlying memory.' },
-  { q: '6. How long does USB data recovery take?', a: 'Most USB data recovery cases are completed within 3 to 5 business days. However, cases involving physical damage or complex firmware issues may take longer. Expedited and Expedited Plus Services are available for urgent cases.' },
-  { q: '7. How much does USB data recovery cost?', a: 'Pricing depends on the type of failure and the condition of the USB drive. Logical recovery typically ranges from $300 to $500, depending on storage capacity and whether the drive is encrypted.Chip-off or monolith recovery for physically damaged or unrecognized USB drives is $950 flat. We provide free evaluations before starting any recovery, and there is no charge unless we’re successful (excluding deleted file recovery or expedited service, which may require upfront payment). For a full breakdown of recovery options and pricing, please visit our cost page.' },
-  { q: '8. Do you offer free evaluations?', a: 'Yes. We provide free evaluations on all USB data recovery cases. When you drop off or mail in your device, we’ll first review the issue and provide you with an initial quote based on the symptoms and failure type. As long as you’re okay with that quote range, we’ll proceed with the full diagnostic at no cost. If we’re able to recover your data, you will be expected to pay the full recovery fee based on the quote provided. If the actual recovery ends up requiring more work than expected and the final cost exceeds the quote, we’ll pause and get your approval first before moving forward.' },
-  { q: '9. Do you offer nationwide USB data recovery services?', a: 'Yes. We provide USB data recovery services to customers across the United States. If you’re not located near our Glendale, CA office, you can safely ship your USB drive to us for evaluation and recovery. Before you send anything in, we’ll speak with you by phone or email to review the issue and provide an initial quote based on the symptoms. This way, you’ll know what to expect before you ship the device. Once your device arrives, we’ll confirm the quote and proceed with the evaluation. As always, you’ll only pay if we’re successful at recovering your data—unless deleted file recovery or expedited service applies.' }
+
+const list2 = [
+  'Accidental file deletion',
+  'File system corruption',
+  'Physical damage (broken connectors, bent or cracked drives)',
+  'Water damage or exposure to extreme temperatures',
+  'Electrical surges or static discharge',
+  'Firmware corruption',
+  'Failed controller chips',
+  'Improper removal from a computer',
 ]
+const list3 = [
+  'Standard USB 2.0, USB 3.0, and USB-C flash drives',
+  'USB external solid-state drives (SSDs)',
+  'USB pen drives and thumb drives',
+  'USB external hard drives',
+  'Encrypted USB flash drives (BitLocker, hardware encrypted, etc.)',
+]
+const list4 = [
+  'SanDisk',
+  'Kingston',
+  'Samsung',
+  'Corsair',
+  'Toshiba',
+  'Transcend',
+  'Verbatim',
+  'And many more',
+]
+
+const reviews: any[] = []
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="USB Data Recovery"
-      subtitle="Professional USB Flash Drive Data Recovery Services"
-      description="At Five Star Data Recovery, we specialize in USB data recovery for all types of USB flash drives, thumb drives, and external USB storage devices. Whether you’ve accidentally deleted files, suffered physical damage to your USB stick, or are dealing with a corrupted or unrecognized drive, our professi"
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">USB Data Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">At Five Star Data Recovery, we specialize in USB data recovery for all types of USB flash drives, thumb drives, and USB storage devices. Whether your drive is physically broken, not recognized, or has lost data — we can help.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <StatsBar />
 
-        <section class="process-section section-bg-1 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our USB Data Recovery Process</h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Free Consultation and Quote</h3>
-            <p class="process-desc">Before you drop off or ship your USB drive, we’ll ask a few questions about the issue you’re experiencing. Based on your description, we’ll provide an initial quote and explain the likely recovery pro</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">02</div>
-            <h3 class="process-title">Drive Imaging and Safe Handling</h3>
-            <p class="process-desc">Once we receive your USB device, our first step is to create a full sector-by-sector image (clone) of the drive. This ensures your original data remains untouched during the recovery process. By worki</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">03</div>
-            <h3 class="process-title">Failure Type Diagnosis</h3>
-            <p class="process-desc">We categorize USB failures into two main types to determine the best recovery method: Logical Recovery – These cases include file system corruption, accidental deletion, or drives that don’t mount but</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">04</div>
-            <h3 class="process-title">File Recovery and Reconstruction</h3>
-            <p class="process-desc">Using advanced tools and proprietary software, we perform a deep scan on the cloned drive to recover data from the USB stick. This includes rebuilding file systems, locating file types, and piecing to</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">05</div>
-            <h3 class="process-title">File Review and Approval</h3>
-            <p class="process-desc">Once recovery is complete, we’ll provide you with a file list showing the names of the files we were able to recover. If you're happy with the results, we proceed to final data delivery.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">06</div>
-            <h3 class="process-title">Secure Data Delivery</h3>
-            <p class="process-desc">Your recovered files from the USB drive will be transferred onto a new external drive you provide (or you may purchase one from us).</p>
-          </div>
-        </div>
+        <h2 class="section-heading">Professional USB Flash Drive Data Recovery Services</h2>
+        <p class="body-text">At Five Star Data Recovery, we specialize in USB data recovery for all types of USB flash drives, thumb drives, and external USB storage devices. Whether you’ve accidentally deleted files, suffered physical damage to your USB stick, or are dealing with a corrupted or unrecognized drive, our professional data recovery services can help you recover data from a USB stick quickly and safely.</p>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Can You Recover Deleted Files from a USB Flash Drive?</h2>
-        </div>
-        <div class="section-body">
-          <p>Yes, in many cases. If you’ve accidentally deleted files and haven't written new data to the USB drive, the chances of recovery are high. However, with certain brands like Western Digital, SanDisk, or G-Drive external hard drives, deleted file recovery can be more complex due to firmware translation issues.</p>
-          <p>If you accidentally deleted files from a USB drive, stop using the drive immediately to avoid overwriting data. Call us right away for the best chance of successful recovery.</p>
-          <p>Our engineers use advanced forensic tools to identify deleted file remnants that consumer software often misses.</p>
-        </div>
+        <h2 class="section-heading">Common Causes of USB Data Loss</h2>
+        <p class="body-text">USB drives are small, portable, and easy to use, but they’re also vulnerable to a variety of failures that can result in lost data, including:</p>
+        <p class="body-text">If any of these issues sound familiar, don’t worry—you’re not alone. We help customers every day recover deleted files and lost data from corrupted USB drives of all brands and capacities.</p>
+        <ul class="drive-list">
+          <li v-for="item in list2" :key="item">{{ item }}</li>
+        </ul>
       </div>
     </section>
-    <section class="section-bg-2 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common USB Data Recovery Scenarios</h2>
-        </div>
-        <div class="section-body">
-          <p>Here are some of the most common scenarios we help with:</p>
-          <ul class="content-list">
-            <li>USB drive asks to be formatted when inserted</li>
-            <li>USB not showing up at all</li>
-            <li>USB detected, but no files visible</li>
-            <li>USB drive showing wrong capacity</li>
-            <li>Physically broken USB connectors</li>
-            <li>Unreadable or inaccessible file system errors (FAT32, exFAT, NTFS, etc.)</li>
-            <li>Corrupted USB drives with partial or fragmented files</li>
-            <li>Flash drives with slow read speeds or frequent disconnections</li>
-          </ul>
-        </div>
+        <h2 class="section-heading">Types of USB Drives We Recover From</h2>
+        <p class="body-text">We provide USB data recovery services for all types of USB storage devices, including:</p>
+        <p class="body-text">We’ve successfully recovered data from thousands of USB devices—no matter the brand, form factor, or failure type. Whether your drive is physically damaged, not recognized by your computer, or showing as empty, our team can help restore what matters most.</p>
+        <ul class="drive-list">
+          <li v-for="item in list3" :key="item">{{ item }}</li>
+        </ul>
       </div>
     </section>
-    <section class="section-bg-3 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What File Types Can We Recover?</h2>
-        </div>
-        <div class="section-body">
-          <p>We can recover data from USB drives across a wide range of file types, including but not limited to:</p>
-          <ul class="content-list">
-            <li>Documents (Word, Excel, PowerPoint, PDF)</li>
-            <li>Photos (JPG, PNG, TIFF, RAW formats)</li>
-            <li>Videos (MP4, MOV, AVI, etc.)</li>
-            <li>Audio Files (MP3, WAV, etc.)</li>
-            <li>Project files (Photoshop PSDs, Premiere Projects)</li>
-            <li>Archives (ZIP, RAR)</li>
-          </ul>
-          <p>No matter what file types you’ve lost, we’ll do everything we can to recover your data from the USB stick.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Pricing for USB Data Recovery</h2>
-        </div>
-        <div class="section-body">
-          <p>Our USB Data Recovery fees are flat-rate with no hidden charges. The pricing depends on the type of failure:</p>
-          <ul class="content-list">
-            <li>Logical USB Data Recovery: $300.00-$500.00</li>
-            <li>Chip-Off USB Data Recovery: $950.00</li>
-            <li>Monolith USB Data Recovery: $950.00</li>
-          </ul>
-          <p>During your initial consultation, we’ll help identify which category your case falls under.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How Long Does USB Data Recovery Take?</h2>
-        </div>
-        <div class="section-body">
-          <p>Most USB flash drive data recovery jobs take 2–5 business days, depending on the failure type.</p>
-          <p>We also offer Expedited and Expedited Plus services for customers who need their data urgently.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nationwide Service – Free Round Trip Shipping Available</h2>
-        </div>
-        <div class="section-body">
-          <p>Not local to Glendale, CA? No problem. We offer free round-trip shipping within the United States for all USB data recovery cases.</p>
-          <p>Simply fill out our Mail-In Recovery Form, and we’ll provide a prepaid shipping label to get your device safely to our lab.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What our Clients Say</h2>
-        </div>
-        <div class="section-body">
-          <p>“I thought I had lost all my college work after accidentally deleting my USB drive, but Five Star Data Recovery got it all back! They were fast, honest, and super professional. Highly recommend if you’re panicking like I was.”</p>
-          <p>Sarah M.</p>
-          <p>Pasadena, CA</p>
-          <p>“I had a BitLocker-encrypted USB flash drive that got corrupted and wouldn’t unlock. Other places told me it was hopeless, but Five Star recovered everything without damaging the encryption. I’m incredibly impressed.”</p>
-          <p>Nina K.</p>
-          <p>Glendale, CA</p>
-          <p>“We had client files on a USB drive that suddenly stopped showing up. Five Star handled the entire recovery process smoothly and professionally. They kept us updated, and within a few days we had all our documents back. Great service for business needs.”</p>
-          <p>Daniel S.</p>
-          <p>College Station, TX</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Your Data Stays Secure</h2>
-        </div>
-        <div class="section-body">
-          <p>From physically damaged USB flash drives to complex controller failures, our engineers treat every case with precision and professionalism. We’ve recovered critical files for photographers, students, IT departments, and businesses of all sizes.</p>
-          <ul class="content-list">
-            <li>Flat-Rate Pricing with No Hidden Fees</li>
-            <li>Free Diagnostics with Same-Day Status Updates</li>
-            <li>High Success Rates for Physically Damaged USB Drives</li>
-            <li>Fast Turnaround with Expedited Service Options</li>
-            <li>No Data, No Charge Policy for Most Cases</li>
-          </ul>
-          <p>Whether your USB drive is cracked, unrecognized, or showing 0 bytes, we're here to help restore what matters most.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
-        </div>
-        <div class="section-body">
+        <h2 class="section-heading">Popular Brands we Recover From:</h2>
 
+        <ul class="drive-list">
+          <li v-for="item in list4" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Our USB Data Recovery Process</h2>
+        <p class="body-text">When you trust us with your USB data recovery, here’s how the process works:</p>
+      </div>
+    </section>
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">Free Consultation and Quote</h2>
+        <p class="body-text">Before you drop off or ship your USB drive, we’ll ask a few questions about the issue you’re experiencing. Based on your description, we’ll provide an initial quote and explain the likely recovery process.</p>
+        <p class="body-text">We’ll determine whether your case involves logical corruption, firmware issues, or physical damage to the USB connector or internal components. If your USB contains important personal files or business-critical data, we’ll explain how we handle and protect your information throughout the process.</p>
+      </div>
+    </section>
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Drive Imaging and Safe Handling</h2>
+        <p class="body-text">Once we receive your USB device, our first step is to create a full sector-by-sector image (clone) of the drive. This ensures your original data remains untouched during the recovery process.</p>
+        <p class="body-text">By working exclusively from the cloned copy, we eliminate the risk of further damage to your original USB drive. Whether your issue is caused by physical wear, connector damage, or internal chip failure, imaging preserves every recoverable bit exactly as it exists.</p>
+      </div>
+    </section>
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
+        </div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get Started with YourUSB Data Recovery Today</h2>
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for USB Data Recovery</h2>
+          <p class="contact-band-sub">USB flash drive recovery specialists. Physical damage, logical failure, and deleted files recovered.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
+          </ul>
         </div>
-        <div class="section-body">
-          <p>If you’ve experienced data loss on your USB drive, don’t risk making it worse by trying DIY tools.</p>
-          <p>Let the professionals at Five Star Data Recovery help you recover your files from your USB drive safely, quickly, and affordably.</p>
-          <p>Call us at (818) 272-8866, fill out our online quote form, or bring your drive directly to our Glendale, CA lab.</p>
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
-    <section class="faq-section section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With USB Data Recovery?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
-        </div>
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
       </div>
     </section>
     <FooterBar />
@@ -259,62 +206,77 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+.page-wrapper{font-family:'Inter',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-section{background:#1a1a2e;padding:60px 0}.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+.hero-sub{font-size:1.1rem;color:#C9A84C;font-weight:600;margin-bottom:16px}
+.hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary-red{background:#e53e3e;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-primary-red:hover{background:#c53030}
+.btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px 24px}.hero-trust span{font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.hero-form-wrap{position:relative}.hero-form-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.form-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:20px}
+.consult-form{display:flex;flex-direction:column;gap:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-input{border:1px solid #d1d5db;border-radius:6px;padding:10px 14px;font-size:0.9rem;color:#1a1a2e;background:#fff;width:100%;box-sizing:border-box;font-family:inherit}
+.form-input:focus{outline:none;border-color:#C9A84C}.form-input.full{width:100%}
+.btn-form-submit{background:#C9A84C;color:#fff;border:none;border-radius:6px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:4px;font-family:inherit}
+.btn-form-submit:hover{background:#b8923e}
+.light-section{background:#fff;padding:72px 0}.light-alt-section{background:#f7f9fc;padding:72px 0}
+.section-heading{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#1a1a2e;margin-bottom:16px}
+.section-heading.center{text-align:center}.section-heading-sm{font-size:1.25rem;font-weight:800;color:#1a1a2e;margin-bottom:14px}
+.section-intro{font-size:1rem;color:#4a5568;line-height:1.7;margin-bottom:40px}
+.section-intro.center{text-align:center;max-width:700px;margin-left:auto;margin-right:auto}
+.body-text{font-size:0.95rem;color:#4a5568;line-height:1.8;margin-bottom:16px}
+.issues-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.issue-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:10px}
+.issue-text{font-size:0.9rem;color:#4a5568;line-height:1.7}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.two-col.reverse{direction:rtl}.two-col.reverse>*{direction:ltr}
+.two-col-equal{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.section-img{width:100%;border-radius:12px;display:block;object-fit:cover;max-height:380px}
+.cause-list{list-style:none;padding:0;margin:0}
+.cause-list li{padding:8px 0 8px 24px;position:relative;font-size:0.93rem;color:#4a5568;border-bottom:1px solid #e2e8f0}
+.cause-list li::before{content:'✓';position:absolute;left:0;color:#C9A84C;font-weight:700}
+.drive-list{list-style:none;padding:0;margin:16px 0 0}
+.drive-list li{padding:9px 0 9px 24px;position:relative;font-size:0.93rem;color:#4a5568;border-bottom:1px solid #e2e8f0}
+.drive-list li::before{content:'→';position:absolute;left:0;color:#C9A84C}
+.content-list{list-style:none;padding:0;margin:12px 0 0}
+.content-list li{padding:7px 0 7px 22px;position:relative;font-size:0.9rem;color:#4a5568;border-bottom:1px solid #e2e8f0}
+.content-list li::before{content:'→';position:absolute;left:0;color:#C9A84C}
+.dark-cta-section{background:#2d3748;padding:72px 0}
+.dark-heading{font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;color:#fff;margin-bottom:16px}
+.dark-text{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.8;margin-bottom:14px}
+.contact-band{background:#1a1a2e;padding:48px 0}
+.contact-band-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.contact-band-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
+.contact-band-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px;max-width:540px}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{padding:5px 0 5px 20px;position:relative;font-size:0.9rem;color:rgba(255,255,255,0.75)}
+.contact-list li::before{content:'✓';position:absolute;left:0;color:#C9A84C;font-weight:700}
+.contact-band-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap}
+.btn-yellow{display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:6px;font-weight:800;font-size:1rem;text-decoration:none}
+.btn-yellow:hover{background:#b8923e}
+.btn-outline-white{display:inline-block;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none}
+.btn-outline-white:hover{border-color:#fff}
+.faq-list{max-width:800px;margin:40px auto 0;display:flex;flex-direction:column;gap:6px}
+.faq-item{border:1px solid #e2e8f0;border-radius:8px;overflow:hidden}
+.faq-item.open{border-color:#C9A84C}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:none;border:none;color:#1a1a2e;font-size:0.95rem;font-weight:600;cursor:pointer;text-align:left;gap:12px;font-family:inherit}
+.faq-icon{color:#C9A84C;font-size:1.4rem;font-weight:400;flex-shrink:0}
+.faq-a{padding:0 20px 18px;font-size:0.9rem;color:#4a5568;line-height:1.7}
+.reviews-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.review-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.review-avatar{font-size:2rem;margin-bottom:12px}
+.review-text{font-size:0.9rem;color:#4a5568;line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-stars{color:#C9A84C;font-size:1rem;margin-bottom:8px}
+.review-name{font-weight:700;color:#1a1a2e;font-size:0.9rem}
+.review-loc{font-size:0.82rem;color:#718096}
+.yellow-band{background:#C9A84C;padding:24px 0;text-align:center}
+.yellow-band-text{font-size:1.3rem;font-weight:800;color:#fff;margin:0}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.two-col.reverse{direction:ltr}.two-col-equal{grid-template-columns:1fr}.contact-band-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
 </style>

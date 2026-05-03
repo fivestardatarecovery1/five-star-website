@@ -1,243 +1,318 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Solid State Drive Recovery — Five Star Data Recovery',
-  description: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagno'
+  title: 'SSD Data Recovery — Five Star Data Recovery',
+  description: 'Professional SSD data recovery for all solid state drives. NAND chip-level recovery. Free evaluation.'
 })
-const faqs = [
-  { q: '2. What are common signs of SSD failure?', a: 'Common signs include the drive not being recognized by your computer, sudden loss of files, very slow read/write speeds, or the drive appearing with 0GB capacity. In some cases, the SSD may not power on at all.' },
-  { q: '3. Can you recover data from an SSD that shows 0GB capacity or incorrect drive size?', a: 'Yes, we specialize in SSD data recovery , including cases where the drive reports a 0GB capacity or an incorrect size. This issue is often caused by firmware corruption, controller failure, or internal chip damage. Our engineers use advanced tools to access the NAND memory chips directly or repair the SSD’s firmware, allowing us to rebuild the file structure and recover your data. If you notice this issue, it’s important to stop using the SSD immediately to avoid further complications. Contact us for a free consultation to evaluate your specific case.' },
-  { q: '4. What brands of SSDs do you recover data from?', a: 'We recover data from all major SSD brands, including Samsung (EVO, PRO, QVO, and NVMe models), SanDisk, Crucial, Western Digital (WD), Kingston, Seagate, Intel, ADATA, SK Hynix, Toshiba, Corsair, PNY, and Transcend. Whether you’re using a SATA SSD, an NVMe M.2 drive, or an older-generation solid-state drive, our engineers are fully equipped to handle both logical failures (like file system corruption or accidental formatting) and physical issues (such as controller failure, firmware corruption, or NAND chip damage). Even if your brand isn’t listed here, there’s a very good chance we can help—feel free to contact us for a free consultation.' },
-  { q: '5. Can you recover data from an SSD that was inside a MacBook or other non-removable storage device?', a: 'Yes. We specialize in recovering data from MacBooks and other laptops with non-removable SSDs. Many modern MacBooks and ultra-thin laptops have SSD chips that are soldered directly to the motherboard, making traditional data recovery impossible for most shops. At Five Star Data Recovery, our engineers perform component-level repairs and use advanced micro-soldering and chip-off techniques (when necessary) to access the storage directly and extract your data safely. Whether it’s a MacBook Pro, MacBook Air, or any other device with integrated storage, we have the tools and expertise to help.' },
-  { q: '6. How is SSD data recovery different from hard drive recovery?', a: 'Unlike traditional hard drives, SSDs use NAND flash memory with no moving parts. Recovery often involves advanced techniques like chip-off recovery or firmware-level repairs, which require specialized tools and expertise.' },
-  { q: '7. Is TRIM command a problem for SSD data recovery?', a: 'Yes, the TRIM command can complicate recovery. When TRIM is enabled, deleted data is often overwritten and becomes unrecoverable. However, if your data loss wasn’t due to file deletion (e.g., hardware failure), recovery is still very possible.' },
-  { q: '8. How long does SSD data recovery take?', a: 'Typical turnaround time is 3 to 5 business days, but more complex cases involving chip-level work may take longer. If you’re in a hurry, expedited service options are available.' },
-  { q: '9. Will opening my SSD or trying DIY recovery hurt my chances?', a: 'Yes. Attempting to open the drive or use third-party software can make recovery more difficult or even impossible. It’s always best to power off the device and let a professional data recovery lab handle the process.' },
-  { q: '10. How much does SSD data recovery cost?', a: 'At Five Star Data Recovery, SSD data recovery is priced using the same flat-rate model as our other services, ensuring transparency and predictability for every case. Our rates are based on the drive’s storage capacity and the nature of the failure, not on the value of your data or the time it takes to recover it. Here’s a breakdown of our standard SSD recovery pricing: SSDs up to 2TB: $300 SSDs between 2TB and 6TB: $500 SSDs between 8TB and 12TB: $600 SSDs with physical or component-level issues requiring cleanroom repairs: $950 (any size) For example, if you have a 1TB Samsung EVO SSD that stopped showing up due to a firmware failure, the total cost of recovery would be $300 under our standard service. We never charge any upfront fees, and if we are unable to recover your data, you pay nothing. Optional expedited service is also available for time-sensitive projects and will be quoted based on urgency. Every SSD case is handled with care by our experienced recovery engineers using proprietary tools and safe imaging procedures. If you’re unsure about your SSD issue, feel free to contact us for a free diagnostic and exact quote before moving forward.' }
+
+const list1 = [
+  'Documents, photos, and video files',
+  'Files from damaged file systems and corrupted partitions',
+  'Deleted files from formatted SSDs',
+  'Lost partitions and boot sectors',
+  'Data from an SSD affected by a failed OS update',
 ]
+const list2 = [
+  'Accidental deletion or formatted SSD',
+  'Power surge or sudden shutdown during data transfer',
+  'File system corruption and boot issues',
+  'Firmware bugs or controller failure',
+  'Trimmed files that bypass the recycle bin',
+  'Liquid or impact-related physical damage',
+]
+const list3 = [
+  'Initial Assessment and Diagnostics We begin by evaluating the SSD to determine whether the failure is logical, physical, or firmware-related.',
+  'Non-Invasive Imaging If possible, we create a complete sector-by-sector clone of the SSD to ensure data safety and integrity.',
+  'Firmware or Component-Level Repair We perform advanced firmware fixes or physical repairs when the SSD has controller, NAND, or PCB-related issues.',
+  'File System and Data Recovery We analyze the image to reconstruct file systems, recover lost partitions, and extract user data.',
+  'Data Approval and Delivery We provide a recovery report, and once approved, transfer the data securely to a new storage device or through encrypted delivery.',
+]
+const list6 = [
+  'Samsung, SanDisk, Crucial, Kingston, Intel',
+  'Western Digital, Seagate, Toshiba, SK Hynix',
+  'Apple SSDs, NVMe drives, PCIe M.2, and SATA III SSDs',
+]
+
+const reviews = [
+  { name: 'Five Star Data Recovery', location: 'explained the process and within a few days, they recovered everything I needed. Great service and great communication.”', stars: 5, text: 'My Samsung SSD suddenly stopped working and wasn’t showing up on any computer. I was sure my business documents were lost forever. The team at' },
+  { name: 'Five Star Data Recovery , and within days, they recovered over 95% of my files. They kept me updated every step of the way and there were no hidden fees.”', location: 'Maria L.', stars: 5, text: 'My Crucial SSD suddenly showed 0GB capacity and none of my data was accessible. I dropped it off with' },
+  { name: 'Robert D.', location: 'New York, NY', stars: 5, text: 'When my Seagate SSD stopped working after a power surge, I thought everything was gone. The engineers explained the issue in simple terms and reassured me they had handled many cases like mine. A few days later, I had my important photos and documents back. Highly recommend!' },
+]
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Solid State Drive Recovery"
-      subtitle="Get Your Data Back In No Time."
-      description="Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">SSD Data Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">SSD failures are different from traditional hard drives — and they require different recovery techniques. At Five Star Data Recovery, our engineers use chip-off techniques and specialized tools to recover data from failed solid state drives.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <StatsBar />
 
-    <!-- What We Can Recover -->
-    <section class="issues-section section-bg-3 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What We Can Recover</h2>
-        </div>
-        <div class="issues-layout">
-          <div class="issues-intro">
-            <p>Our engineers handle all types of SSD failures — from firmware corruption to physical chip damage. No matter the cause, we have the tools to get your data back safely.</p>
-          </div>
-          <ul class="issues-list">
-            <li>Documents, photos, and video files</li>
-            <li>Files from damaged file systems and corrupted partitions</li>
-            <li>Deleted files from formatted SSDs</li>
-            <li>Lost partitions and boot sectors</li>
-            <li>Data from an SSD affected by a failed OS update</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+        <h2 class="section-heading">What We Can Recover</h2>
 
-    <!-- Common Scenarios -->
-    <section class="issues-section section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common SSD Data Loss Scenarios</h2>
-        </div>
-        <div class="issues-layout">
-          <div class="issues-intro">
-            <p>SSDs fail in different ways than traditional hard drives. Understanding the cause helps us choose the right recovery method for your situation.</p>
-          </div>
-          <ul class="issues-list">
-            <li>Accidental deletion or formatted SSD</li>
-            <li>Power surge or sudden shutdown during data transfer</li>
-            <li>File system corruption and boot issues</li>
-            <li>Firmware bugs or controller failure</li>
-            <li>Trimmed files that bypass the recycle bin</li>
-            <li>Liquid or impact-related physical damage</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process Steps -->
-    <section class="process-section section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our SSD Data Recovery Process</h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Initial Assessment and Diagnostics</h3>
-            <p class="process-desc">We begin by evaluating the SSD to determine whether the failure is logical, physical, or firmware-related.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">02</div>
-            <h3 class="process-title">Non-Invasive Imaging</h3>
-            <p class="process-desc">If possible, we create a complete sector-by-sector clone of the SSD to ensure data safety and integrity.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">03</div>
-            <h3 class="process-title">Firmware or Component-Level Repair</h3>
-            <p class="process-desc">We perform advanced firmware fixes or physical repairs when the SSD has controller, NAND, or PCB-related issues.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">04</div>
-            <h3 class="process-title">File System and Data Recovery</h3>
-            <p class="process-desc">We analyze the image to reconstruct file systems, recover lost partitions, and extract user data.</p>
-          </div>
-          <div class="process-card">
-            <div class="process-num">05</div>
-            <h3 class="process-title">Data Approval and Delivery</h3>
-            <p class="process-desc">We provide a recovery report, and once approved, transfer the data securely to a new storage device or through encrypted delivery.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Brands We Support -->
-    <section class="content-section section-bg-3 section-pad">
-      <div class="container content-narrow">
-        <h2 class="content-title">SSD Brands and Devices We Support</h2>
-        <p>We recover data from all major SSD brands and form factors:</p>
-        <ul class="secure-list">
-          <li>Samsung, SanDisk, Crucial, Kingston, Intel</li>
-          <li>Western Digital, Seagate, Toshiba, SK Hynix</li>
-          <li>Apple SSDs, NVMe drives, PCIe M.2, and SATA III SSDs</li>
+        <ul class="cause-list">
+          <li v-for="item in list1" :key="item">{{ item }}</li>
         </ul>
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-section section-bg-1 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Five Star Data Recovery?</h2>
+        <h2 class="section-heading">Common SSD Data Loss Scenarios</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list2" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading">Our SSD Data Recovery Process</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list3" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">SSD Brands and Devices We Support</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list6" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
         </div>
-        <div class="grid-3">
-          <div class="feature-card" v-for="f in whyUs" :key="f.title">
-            <div class="feature-icon">✓</div>
-            <h3 class="feature-title">{{ f.title }}</h3>
-            <p class="feature-desc">{{ f.desc }}</p>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CTA Band -->
-    <section class="cta-band">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Start Your SSD Data Recovery Today</h2>
-          <p class="cta-sub">Data loss is stressful — but working with us doesn't have to be. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-          <ul class="cta-list">
-            <li>Drop off your SSD at our Glendale lab</li>
-            <li>Ship it to us free from anywhere in the U.S.</li>
-            <li>Call now for a free evaluation and quote</li>
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for SSD Data Recovery</h2>
+          <p class="contact-band-sub">SSD recovery specialists with chip-level recovery capabilities. Free evaluation, no data no charge.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
           </ul>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq-section section-bg-2 section-pad">
+
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <h2 class="section-heading center">Testimonials from Satisfied Clients</h2>
+        <div class="reviews-row">
+          <div v-for="r in reviews" :key="r.name" class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"{{ r.text }}"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">{{ r.name }}</div>
+            <div class="review-loc">{{ r.location }}</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Solid State Drive Recovery?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline">Get Free Quote</NuxtLink>
-        </div>
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
       </div>
     </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 80px 0; }
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid rgba(255,255,255,0.08); padding: 72px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 48px; flex-wrap: wrap; }
-.cta-title { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
-.cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-.btn-outline { display: inline-block; padding: 14px 28px; border: 2px solid #C9A84C; color: #C9A84C; border-radius: 8px; font-weight: 700; font-size: 0.95rem; text-decoration: none; }
-.btn-outline:hover { background: rgba(201,168,76,0.1); }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-@media (max-width: 768px) { .issues-layout { grid-template-columns: 1fr; } .cta-band-inner { flex-direction: column; } }
+/* ---- BASE ---- */
+.page-wrapper { font-family: 'Inter', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.hero-section { background: #1a1a2e; padding: 60px 0; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
+.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-primary-red:hover { background: #c53030; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { border-color: #fff; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+.hero-form-wrap { position: relative; }
+.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+.consult-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #C9A84C; }
+.form-input.full { width: 100%; }
+.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
+.btn-form-submit:hover { background: #b8923e; }
+.light-section { background: #fff; padding: 72px 0; }
+.light-alt-section { background: #f7f9fc; padding: 72px 0; }
+.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+.section-heading.center { text-align: center; }
+.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
+.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
+.cause-list { list-style: none; padding: 0; margin: 0; }
+.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
+.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.content-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.content-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
+.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
+.no-charge-note strong { color: #C9A84C; }
+.dark-cta-section { background: #2d3748; padding: 72px 0; }
+.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
+.contact-band { background: #1a1a2e; padding: 48px 0; }
+.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
+.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
+.btn-yellow:hover { background: #b8923e; }
+.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.btn-outline-white:hover { border-color: #fff; }
+.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
+.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.faq-item.open { border-color: #C9A84C; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
+.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
+.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-avatar { font-size: 2rem; margin-bottom: 12px; }
+.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
+.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+.review-loc { font-size: 0.82rem; color: #718096; }
+.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
+.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse { direction: ltr; }
+  .two-col-equal { grid-template-columns: 1fr; }
+  .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .process-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>

@@ -1,355 +1,177 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'About Us — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we understand that losing data can be stressful, overwhelming, and sometimes even heartbreaking. Whether it’s personal photos, impor'
+  description: 'Learn about Five Star Data Recovery. We are a team of engineers dedicated to recovering your most important data.'
 })
-const faqs = [
-  { q: '1. How did Five Star Data Recovery get started?', a: 'Five Star Data Recovery began as a local computer repair shop, helping customers with everything from hardware repairs to basic troubleshooting. In the early years, one case stood out — when our founder, Vahan, was asked to help a family member recover meaningful photos from a failed hard drive. That experience exposed the limitations of typical repair shops and sparked a deeper interest in data recovery. What started as a one-time challenge soon evolved into a long-term pursuit. After years of hands-on learning, investing in advanced equipment, and training in cleanroom procedures, the business gradually transitioned into a dedicated recovery lab. More than a decade later, Five Star Data Recovery now serves clients nationwide, taking on complex cases that most labs turn away.' },
-  { q: '2. Who is the founder of Five Star Data Recovery?', a: 'Five Star Data Recovery was founded by Vahan Hovsepian, a lifelong entrepreneur with a passion for solving real-world problems and helping people in meaningful ways. Vahan has been actively involved in business since his early teens, driven by a deep curiosity for technology and a natural desire to serve others. That same drive led him to build Five Star Data Recovery into what it is today — a trusted recovery lab known for technical expertise, honesty, and results. Under his leadership, the company continues to grow while staying true to the core values of hard work, integrity, and genuine customer care.' },
-  { q: '3. What makes Five Star Data Recovery different from other labs?', a: 'At Five Star Data Recovery, we focus on doing the work in-house — the right way. Unlike many labs that outsource or rely on software-only solutions, we handle every case with a hands-on, engineering-driven approach. From cleanroom repairs to firmware-level recovery, everything is done by trained specialists in our Glendale lab. We also don’t believe in gimmicks, inflated pricing, or sales pressure. Every client receives a transparent diagnosis, a flat-rate price based on the actual failure — not how valuable your data is — and honest expectations from day one. Our reputation is built on real results, straightforward communication, and a genuine commitment to helping people get their data back safely and securely.' },
-  { q: '4. What types of data recovery cases do you specialize in?', a: 'At Five Star Data Recovery, we specialize in advanced data recovery from failed hard drives, SSDs, USB drives, SD cards, RAID systems, and iPhones. Our primary focus is on cases involving physical damage, firmware corruption, electrical issues, and drives that are no longer recognized by the computer. We do not rely on automated software — our engineers perform component-level diagnostics and repairs, including cleanroom work when necessary. We’re also highly experienced with Apple-specific storage devices, including NVMe drives used in MacBook Pros, and perform board-level iPhone data recovery when chips or logic boards have failed.' },
-  { q: '5. Do you really perform all recoveries in-house?', a: 'Yes — 100% of our data recoveries are performed in-house at our Glendale, California lab. We never outsource cases or send drives to third parties. This allows us to maintain full control over the recovery process, ensure strict data confidentiality, and deliver consistent, high-quality results. Our lab is equipped with a Class 100 cleanroom, specialized tools like PC-3000, and a team of trained recovery engineers who handle each device with precision and care. When you trust us with your data, you can be confident it’s being worked on directly by the people you spoke with — never shipped off or handed to someone else.' },
-  { q: '6. What steps are you taking to stay ahead in data recovery technology?', a: 'Staying ahead in data recovery requires more than just having the right tools — it takes constant learning and global collaboration. At Five Star Data Recovery, we regularly travel to Europe and other parts of the world to receive advanced training from some of the top data recovery engineers in the industry. We also invest heavily in the latest tools and technologies, including cleanroom equipment, micro soldering stations, and advanced firmware-level recovery systems like PC-3000. This ongoing investment ensures that we can recover data from the newest devices, evolving storage technologies, and complex failures that many labs simply aren’t equipped to handle.' }
-]
-const openFaq = ref<number | null>(null)
-const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="About Us"
-      subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery, we understand that losing data can be stressful, overwhelming, and sometimes even heartbreaking. Whether it’s personal photos, important business documents, or critical client files, we know how valuable your data is—and we’ve built our business around helping you get it "
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
-        </div>
-      </template>
-    </HeroSection>
-    <StatsBar />
 
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">About Us</h2>
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">About Five Star Data Recovery</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">At Five Star Data Recovery, we're more than just engineers — we're problem solvers dedicated to helping you recover what matters most. Our Glendale, CA lab is equipped with an on-site cleanroom and professional recovery tools.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get Your Data Back In No Time.</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">At Five Star Data Recovery, we understand that losing data can be stressful, overwhelming, and sometimes even heartbreaking. Whether it’s personal photos, important business documents, or critical client files, we know how valuable your data is—and we’ve built our business around helping you get it back.</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Who We Are</h2>
-        </div>
-        <div class="section-body">
-          <p>At Five Star Data Recovery, we’re more than just engineers — we’re problem solvers dedicated to helping you recover what matters most. Based in Glendale, California, our team specializes in professional data recovery services for hard drives, SSDs, RAID systems, iPhones, USBs, and more.</p>
-          <p>With years of hands-on experience and a state-of-the-art Class 100 cleanroom lab, we’ve earned a reputation for delivering high success rates, honest diagnostics, and upfront pricing. Every case is handled by trained recovery experts who follow strict protocols to maximize the chances of success — all while maintaining full transparency with our clients.</p>
-          <p>We believe in doing things the right way — no gimmicks, no hidden fees, just skilled engineers working hard to recover your data as quickly and safely as possible.</p>
-          <p>Whether it’s a business-critical RAID system or a personal external hard drive, we treat every case with urgency and care — because behind every device is a story worth recovering.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get To Know Us - Honesty, integrity &amp; experience</h2>
-        </div>
-        <div class="section-body">
-          <p>At the core of everything we do is a commitment to honesty, integrity, and delivering real results. We believe that trust is earned — not claimed — which is why we never overpromise and always provide clear, honest assessments of your data recovery options.</p>
-          <p>Our team has successfully handled thousands of complex recovery cases, from failed RAID arrays to water-damaged SSDs. That depth of experience allows us to approach each job with confidence and care, using proven methods and industry-standard tools to give your data the best chance of recovery.</p>
-          <p>We don’t believe in scare tactics or pushing unnecessary services. Instead, we focus on transparency, straightforward pricing, and respectful communication — so you always know exactly what to expect at every step.</p>
-          <p>When you choose Five Star Data Recovery, you’re working with a team that values long-term relationships over quick sales — because to us, every successful recovery is more than just a job. It’s a promise kept.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How We Got Here</h2>
-        </div>
-        <div class="section-body">
-          <p>Five Star Data Recovery began as a small computer repair shop in 2012 (previously known as Platinum Plus Services), proudly serving our local community with everyday tech support. But everything changed when our founder, Vahan, faced a deeply personal challenge: helping a family member recover irreplaceable photos from a failed hard drive.</p>
-          <p>What started as a simple favor quickly turned into a mission. After years of hands-on training, research, and investment into advanced tools and cleanroom technology, Vahan transformed the company into a dedicated data recovery lab — now trusted by clients across the country.</p>
-          <p>That journey still guides us today. Every recovery case is handled with the same care and urgency that first inspired this path — because we know firsthand just how valuable your data truly is.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Dedication to Research &amp; Development</h2>
-        </div>
-        <div class="section-body">
-          <p>At Five Star Data Recovery, innovation isn’t optional — it’s essential. We continuously invest in research and development to stay ahead of the latest storage technologies, firmware behaviors, and failure trends across hard drives, SSDs, and RAID systems.</p>
-          <p>From building proprietary tools to analyzing chip-level damage on the newest NAND architectures, our in-house team is always testing, learning, and refining recovery techniques. This commitment to R&amp;D enables us to recover data from cases that others might consider “unrecoverable.”</p>
-          <p>Our lab isn’t just a workspace — it’s a place of constant experimentation and technical growth. Whether we’re reverse-engineering firmware modules or testing new soldering procedures, every advancement we make directly improves the outcomes for our clients.</p>
-          <p>We don’t settle for what works today — we’re always preparing for what’s next.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">At Five Star Data Recovery, your data is our priority.</h2>
-        </div>
-        <div class="section-body">
-          <p>Contact us today for a free consultation and find out why so many customers trust us when it matters most.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Customer Reviews</h2>
-        </div>
-        <div class="section-body">
-          <p>We take pride in delivering exceptional service and results. Don’t just take our word for it—see what our customers have to say about their experience with Five Star Data Recovery.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Total Reviews</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">1,000+</h2>
-        </div>
-        <div class="section-body">
-          <p>Growth in reviews this year</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Average Rating</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">4.9</h2>
-        </div>
-        <div class="section-body">
-          <p>Consistent excellence</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Drives Recovered</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">100,000+</h2>
-        </div>
-        <div class="section-body">
-          <p>Industry-leading success rate My drive was clicking like crazy and wouldn’t mount. Five Star recovered 12 years of family photos. I’m beyond grateful.</p>
-          <p>I heard a hard drive clicking noise and panicked. These guys explained everything clearly, fixed it fast, and saved my client data.</p>
-          <p>We lost an entire wedding video project after formatting our Lacie Rugged SSD. Five Star Data Recovery recovered all the footage in less than 72 hours. Total lifesavers.</p>
-          <p>I had 4TB of files on my Lacie d2 drive that suddenly stopped mounting. Other places said it was hopeless. Five Star got everything back.</p>
-          <p>My team uses a 4big RAID for media production. One drive failed, then another. We thought we lost the whole project. Five Star not only recovered the files—they kept the folder structure completely intact.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">FIVE STAR DATA RECOVERY TEAM</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Vahan Hovsepian</h2>
-        </div>
-        <div class="section-body">
-          <p>Head Engineer/Owner</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Aleksandr Ohanyan</h2>
-        </div>
-        <div class="section-body">
-          <p>Engineer</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Elen Hovsepian</h2>
-        </div>
-        <div class="section-body">
-          <p>Executive Manager</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Monika Sahakyan</h2>
-        </div>
-        <div class="section-body">
-          <p>Marketing Specialist</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Gina Gravino</h2>
-        </div>
-        <div class="section-body">
-          <p>Sales/Marketing</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With About Us?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+    <StatsBar />
+
+    <section class="light-section">
+      <div class="container">
+        <h2 class="section-heading">Who We Are</h2>
+        <p class="body-text">At Five Star Data Recovery, we’re more than just engineers — we’re problem solvers dedicated to helping you recover what matters most. Based in Glendale, California, our team specializes in professional data recovery services for hard drives, SSDs, RAID systems, iPhones, USBs, and more.</p>
+        <p class="body-text">With years of hands-on experience and a state-of-the-art Class 100 cleanroom lab, we’ve earned a reputation for delivering high success rates, honest diagnostics, and upfront pricing. Every case is handled by trained recovery experts who follow strict protocols to maximize the chances of success — all while maintaining full transparency with our clients.</p>
+        <p class="body-text">We believe in doing things the right way — no gimmicks, no hidden fees, just skilled engineers working hard to recover your data as quickly and safely as possible.</p>
+        <p class="body-text">Whether it’s a business-critical RAID system or a personal external hard drive, we treat every case with urgency and care — because behind every device is a story worth recovering.</p>
+        <p class="body-text">At the core of everything we do is a commitment to honesty, integrity, and delivering real results. We believe that trust is earned — not claimed — which is why we never overpromise and always provide clear, honest assessments of your data recovery options.</p>
+        <p class="body-text">Our team has successfully handled thousands of complex recovery cases, from failed RAID arrays to water-damaged SSDs. That depth of experience allows us to approach each job with confidence and care, using proven methods and industry-standard tools to give your data the best chance of recovery.</p>
+      </div>
+    </section>
+
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading center">Why Choose Five Star Data Recovery?</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:40px">
+          <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+            <div style="font-size:2rem;margin-bottom:12px">🏆</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:10px">10+ Years Experience</h3>
+            <p class="body-text">Over a decade of professional data recovery experience handling thousands of cases.</p>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+            <div style="font-size:2rem;margin-bottom:12px">🔬</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:10px">On-Site Cleanroom</h3>
+            <p class="body-text">Our Class 100 certified cleanroom is on-site, allowing us to handle physical drive repairs in-house.</p>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+            <div style="font-size:2rem;margin-bottom:12px">💰</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:10px">Flat-Rate Pricing</h3>
+            <p class="body-text">Transparent flat-rate pricing — no hidden fees, no surprises. No Data, No Charge guarantee.</p>
+          </div>
+          <div style="background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)">
+            <div style="font-size:2rem;margin-bottom:12px">🔒</div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:#1a1a2e;margin-bottom:10px">Secure & Confidential</h3>
+            <p class="body-text">Your data is treated with strict confidentiality. We never share your files with anyone.</p>
+          </div>
         </div>
       </div>
     </section>
+
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Get to Know Our Team</h2>
+          <p class="contact-band-sub">Data loss is stressful — but working with us doesn't have to be. Our engineers are ready to help.</p>
+        </div>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/contact" class="btn-outline-white">Contact Us</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+.page-wrapper{font-family:'Inter',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-section{background:#1a1a2e;padding:60px 0}.hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+.hero-sub{font-size:1.1rem;color:#C9A84C;font-weight:600;margin-bottom:16px}
+.hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:28px}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary-red{background:#e53e3e;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-primary-red:hover{background:#c53030}
+.btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px 24px}.hero-trust span{font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.hero-form-wrap{position:relative}.hero-form-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.form-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:20px}
+.consult-form{display:flex;flex-direction:column;gap:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-input{border:1px solid #d1d5db;border-radius:6px;padding:10px 14px;font-size:0.9rem;color:#1a1a2e;background:#fff;width:100%;box-sizing:border-box;font-family:inherit}
+.form-input:focus{outline:none;border-color:#C9A84C}.form-input.full{width:100%}
+.btn-form-submit{background:#C9A84C;color:#fff;border:none;border-radius:6px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:4px;font-family:inherit}
+.btn-form-submit:hover{background:#b8923e}
+.light-section{background:#fff;padding:72px 0}.light-alt-section{background:#f7f9fc;padding:72px 0}
+.section-heading{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#1a1a2e;margin-bottom:16px}
+.section-heading.center{text-align:center}
+.body-text{font-size:0.95rem;color:#4a5568;line-height:1.8;margin-bottom:16px}
+.contact-band{background:#1a1a2e;padding:48px 0}
+.contact-band-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.contact-band-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
+.contact-band-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px;max-width:540px}
+.contact-band-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap}
+.btn-yellow{display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:6px;font-weight:800;font-size:1rem;text-decoration:none}
+.btn-yellow:hover{background:#b8923e}
+.btn-outline-white{display:inline-block;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none}
+.btn-outline-white:hover{border-color:#fff}
+.yellow-band{background:#C9A84C;padding:24px 0;text-align:center}
+.yellow-band-text{font-size:1.3rem;font-weight:800;color:#fff;margin:0}
+.reviews-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.review-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.review-avatar{font-size:2rem;margin-bottom:12px}
+.review-text{font-size:0.9rem;color:#4a5568;line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-stars{color:#C9A84C;font-size:1rem;margin-bottom:8px}
+.review-name{font-weight:700;color:#1a1a2e;font-size:0.9rem}
+.review-loc{font-size:0.82rem;color:#718096}
+.contact-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:40px}
+.contact-info-card{background:#f7f9fc;border-radius:12px;padding:28px}
+.contact-info-icon{font-size:2rem;margin-bottom:12px}
+.contact-info-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+.contact-info-text{font-size:0.9rem;color:#4a5568;line-height:1.7}
+.contact-info-link{color:#C9A84C;text-decoration:none;font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.contact-band-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
 </style>

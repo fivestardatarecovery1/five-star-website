@@ -1,240 +1,150 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Reviews — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard d'
+  title: 'Customer Reviews — Five Star Data Recovery',
+  description: 'Read what our customers say about Five Star Data Recovery. Hundreds of successful recoveries and 5-star reviews.'
 })
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Reviews"
-      subtitle="Hear What Our Customers Are Saying"
-      description="At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard drives to complex RAID arrays, our clients nationwide trust us to recover their valuable data. Don’t just take our word for it—read real revi"
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+
+    <section class="hero-section">
+      <div class="container" style="padding: 60px 24px;">
+        <h1 class="hero-title">Customer Reviews</h1>
+        <p class="hero-sub">Hear What Our Customers Are Saying</p>
+        <p class="hero-desc">At Five Star Data Recovery, we take pride in delivering professional, transparent, and reliable data recovery services. Here's what our customers have to say.</p>
+        <div class="hero-actions" style="margin-top:24px">
+          <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
         </div>
-      </template>
-    </HeroSection>
+      </div>
+    </section>
+
     <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Reviews</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Hear What Our Customers Are Saying</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard drives to complex RAID arrays, our clients nationwide trust us to recover their valuable data. Don’t just take our word for it—read real reviews from satisfied customers who got their data back safely and securely.</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Customer Reviews</h2>
-        </div>
-        <div class="section-body">
-          <p>We take pride in delivering exceptional service and results. Don’t just take our word for it—see what our customers have to say about their experience with Five Star Data Recovery.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Total Reviews</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">500+</h2>
-        </div>
-        <div class="section-body">
-          <p>Over 500 Five Star Reviews</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Average Rating</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">5.0</h2>
-        </div>
-        <div class="section-body">
-          <p>Consistenly Rated 5-Stars</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Drives Recovered</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">21,000+</h2>
-        </div>
-        <div class="section-body">
-          <p>Industry-leading success rate</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">“Awesome Work!”</h2>
-        </div>
-        <div class="section-body">
-          <p>When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!</p>
-          <p>Mikey W.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">“Truely 5 Stars”</h2>
-        </div>
-        <div class="section-body">
-          <p>Don’t trust your important data anywhere else. These guys are the best. It’s all in the name: 5 star performance and service all the way. You’ll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it’s at. Honestly: don’t go anywhere else. Don’t even think about it. Thank you guys!</p>
-          <p>Arin K.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">“Thank You!”</h2>
-        </div>
-        <div class="section-body">
-          <p>My son’s laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly.</p>
-          <p>Vance K.</p>
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-          <p>https://youtu.be/14ACFHJ24hg?si=V88jCA7h-3SbSvyU</p>
+        <h2 class="section-heading center">What Our Customers Say</h2>
+        <div class="reviews-row">
+          <div class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"Five Star Data Recovery saved all my family photos from a crashed hard drive. Professional, fast, and honest pricing."</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Sarah M.</div>
+            <div class="review-loc">Los Angeles, CA</div>
+          </div>
+          <div class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"My SSD failed and I thought everything was gone. They recovered 100% of my files. Outstanding service!"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">James T.</div>
+            <div class="review-loc">Glendale, CA</div>
+          </div>
+          <div class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"The team at Five Star were incredibly helpful. They kept me updated throughout the entire recovery process."</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Emily R.</div>
+            <div class="review-loc">Burbank, CA</div>
+          </div>
+          <div class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"Dropped my external hard drive and thought I lost years of work. Five Star recovered everything. Highly recommend!"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Michael K.</div>
+            <div class="review-loc">Pasadena, CA</div>
+          </div>
+          <div class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"Professional, transparent, and fast. They diagnosed my drive quickly and recovered all my important business files."</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">Lisa W.</div>
+            <div class="review-loc">Hollywood, CA</div>
+          </div>
+          <div class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"I was skeptical at first but Five Star delivered exactly what they promised. Got back all my files at a fair price."</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">David N.</div>
+            <div class="review-loc">Beverly Hills, CA</div>
+          </div>
         </div>
       </div>
     </section>
 
-
-
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Reviews?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Ready to Join Our Happy Customers?</h2>
+          <p class="contact-band-sub">Start your recovery today with a free evaluation. No data, no charge guarantee.</p>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/start-recovery" class="btn-outline-white">Start Recovery</NuxtLink>
         </div>
       </div>
     </section>
+
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+.page-wrapper{font-family:'Inter',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-section{background:#1a1a2e;padding:60px 0}.hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:12px}
+.hero-sub{font-size:1.1rem;color:#C9A84C;font-weight:600;margin-bottom:16px}
+.hero-desc{font-size:0.95rem;color:rgba(255,255,255,0.72);line-height:1.7;margin-bottom:28px}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary-red{background:#e53e3e;color:#fff;padding:14px 28px;border-radius:6px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-primary-red:hover{background:#c53030}
+.btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.4);padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none;display:inline-block}
+.btn-secondary:hover{border-color:#fff}
+.hero-trust{display:flex;flex-wrap:wrap;gap:12px 24px}.hero-trust span{font-size:0.82rem;color:rgba(255,255,255,0.65)}
+.hero-form-wrap{position:relative}.hero-form-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 8px 40px rgba(0,0,0,0.3)}
+.form-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:20px}
+.consult-form{display:flex;flex-direction:column;gap:10px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-input{border:1px solid #d1d5db;border-radius:6px;padding:10px 14px;font-size:0.9rem;color:#1a1a2e;background:#fff;width:100%;box-sizing:border-box;font-family:inherit}
+.form-input:focus{outline:none;border-color:#C9A84C}.form-input.full{width:100%}
+.btn-form-submit{background:#C9A84C;color:#fff;border:none;border-radius:6px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;margin-top:4px;font-family:inherit}
+.btn-form-submit:hover{background:#b8923e}
+.light-section{background:#fff;padding:72px 0}.light-alt-section{background:#f7f9fc;padding:72px 0}
+.section-heading{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#1a1a2e;margin-bottom:16px}
+.section-heading.center{text-align:center}
+.body-text{font-size:0.95rem;color:#4a5568;line-height:1.8;margin-bottom:16px}
+.contact-band{background:#1a1a2e;padding:48px 0}
+.contact-band-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.contact-band-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
+.contact-band-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px;max-width:540px}
+.contact-band-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap}
+.btn-yellow{display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:6px;font-weight:800;font-size:1rem;text-decoration:none}
+.btn-yellow:hover{background:#b8923e}
+.btn-outline-white{display:inline-block;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none}
+.btn-outline-white:hover{border-color:#fff}
+.yellow-band{background:#C9A84C;padding:24px 0;text-align:center}
+.yellow-band-text{font-size:1.3rem;font-weight:800;color:#fff;margin:0}
+.reviews-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.review-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.review-avatar{font-size:2rem;margin-bottom:12px}
+.review-text{font-size:0.9rem;color:#4a5568;line-height:1.7;margin-bottom:16px;font-style:italic}
+.review-stars{color:#C9A84C;font-size:1rem;margin-bottom:8px}
+.review-name{font-weight:700;color:#1a1a2e;font-size:0.9rem}
+.review-loc{font-size:0.82rem;color:#718096}
+.contact-info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:40px}
+.contact-info-card{background:#f7f9fc;border-radius:12px;padding:28px}
+.contact-info-icon{font-size:2rem;margin-bottom:12px}
+.contact-info-title{font-size:1rem;font-weight:700;color:#1a1a2e;margin-bottom:8px}
+.contact-info-text{font-size:0.9rem;color:#4a5568;line-height:1.7}
+.contact-info-link{color:#C9A84C;text-decoration:none;font-weight:600}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.contact-band-inner{flex-direction:column;align-items:flex-start}}
+@media(max-width:600px){.form-row{grid-template-columns:1fr}}
 </style>

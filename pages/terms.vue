@@ -1,138 +1,67 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Terms And Conditions — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details ab'
+  title: 'Terms and Conditions — Five Star Data Recovery',
+  description: 'Read the terms and conditions for Five Star Data Recovery services. Understand our policies before starting your data recovery.'
 })
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="Terms And Conditions"
-      subtitle=""
-      description="At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details about our services, including pricing, turnaround times, liability limitations, and how recovered data is handled. We also explain our No Data"
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
-        </div>
-      </template>
-    </HeroSection>
-    <StatsBar />
 
-    <section class="section-bg-3 section-pad">
+    <section class="hero-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Terms And Conditions</h2>
+        <h1 class="hero-title" style="padding: 40px 0;">Terms and Conditions</h1>
+      </div>
+    </section>
+
+    <section class="light-section">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="section-heading">Terms And Conditions</h2>
+        <p class="body-text">At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details about our services, including pricing, turnaround times, liability limitations, and how recovered data is handled. We also explain our No Data, No Charge policy, as well as any non-refundable fees that may apply in special case types. By proceeding with our services, you agree to these terms. If you have any questions, our team is happy to help clarify before we begin your recovery.</p>
+      </div>
+    </section>
+
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Have Questions?</h2>
+          <p class="contact-band-sub">Contact us for more information about our services and policies.</p>
         </div>
-        <div class="section-body">
-          <p>At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details about our services, including pricing, turnaround times, liability limitations, and how recovered data is handled. We also explain our No Data, No Charge policy, as well as any non-refundable fees that may apply in special case types. By proceeding with our services, you agree to these terms. If you have any questions, our team is happy to help clarify before we begin your recovery.</p>
-          <p>Five Star Data Recovery Terms and Conditions (“Agreement”) is provided to you (“Client” or “you”) in connection with the Client’s engagement of Five Star Data Recovery for Data Recovery. By soliciting and/or accepting the Services provided by Five Star Data Recovery, you agree to be bound by and accept the terms of this Agreement. Please read this Agreement in its entirety. These terms set forth herein comprise the entire agreement between Five Star Data Recovery and Client with respect to the Services.</p>
-          <p>The Client authorizes Five Star Data Recovery or its employees, contractors, and agents to conduct an evaluation of the Client’s media and other hardware in order to determine the nature of the damage and provide an estimate of recovery costs and time required for service. The initial evaluation is free and no work beyond the evaluation will be performed or charged without the Client’s approval and consent. The Client authorizes Five Star Data Recovery, its employees, contractors, and agents, to receive and transport this media/equipment/data to, from and between Five Star Data Recovery facilities. The Client also authorizes Five Star Data Recovery to take any and all reasonable effort and measures necessary to determine recoverability and to recover data from this media and or equipment. The Client hereby represents, warrants, and affirms that he, she, or it is the owner or the authorized representative of the owner of the property and all of the information and data stored on the property. Client further agrees to defend, at its expense, indemnify, and hold Five Star Data Recovery harmless against any third-party claims of ownership to the media and or equipment provided by Client.</p>
-          <p>Regarding the recovery of data from Customer’s damaged hard drive(s)/device(s):</p>
-          <p>Customer authorizes Five Star Data Recovery to perform all necessary work on Customer’s hard drive(s)/device(s).</p>
-          <p>Customer agrees that Five Star Data Recovery is not responsible for any damage resulting from servicing Customer’s hard drive(s)/device(s).</p>
-          <p>Customer agrees that Five Star Data Recovery may need to open Customer’s hard drive(s)/device(s) for diagnosis or repair and that Customer’s warranty may be voided.</p>
-          <p>Customer agrees that if Five Star Data Recovery recovers 99.9% or more of Customer’s data from a hard drive/device, Customer will pay previously agreed upon rate for the recovered data from each hard drive together with all state and local taxes.</p>
-          <p>Customer agrees that if Five Star Data Recovery recovers 0% of Customer’s data from a hard drive/device, Customer owes nothing (excluding return shipping costs, if applicable).</p>
-          <p>Customer agrees that if Company recovers Customer’s data, Company will retain a backup of the data for no more than 14 days after the recovery is finished. Once Five Star Data Recovery has completed its initial evaluation and identified the scope of work necessary to complete the data recovery services; Five Star Data Recovery will contact Client for consent to proceed. Five Star Data Recovery will provide Client with a list of recoverable files (“Recovery list”) and an estimate for completion of the Services. Upon approval of the Recovery list, Client shall complete a Credit Card Authorization Form Authorizing Five Star Data Recovery to complete the Services and charge Client’s credit card for the Services.</p>
-          <p>Information contained in your data/media (“Client Information”) will be used by Five Star Data Recovery only for the purpose of fulfilling this Engagement, and will otherwise be held in confidence by Five Star Data Recovery. These confidentiality obligations shall not apply to any information which enters the public domain through no fault of Five Star Data Recovery, which was known to Five Star Data Recovery prior to receipt from you, which is disclosed to Five Star Data Recovery by a third party (other than employees or agents of either party) which Five Star Data Recovery knowledge in making such information available to Five Star Data Recovery is not in violation of any confidentiality obligation to you, which is independently developed by Five Star Data Recovery without recourse to the Client Information, or which is used by Five Star Data Recovery in any legal process. Upon Client request, a NDA form can be provided by Five Star Data Recovery, where in the client would be sent a separate form through email or in person in which the client will sign. This confidentiality agreement may be breached by Five Star Data Recovery at any time when Client Information is found to contain data such as child pornography or information that is detrimental to national security of the United States of America.</p>
-          <p>Payment is due in full upon completion of successful recovery, prior to release of data, whether shipped, picked up or downloaded. Company checks and bank transfers will be accepted however Five Star Data Recovery will not release the recovered data until funds have cleared from Client’s checking account. You will be charged a quoted Data Recovery Fee and you agree to be responsible for all media and all risk of loss during shipping. You agree to pay all charges quoted, plus applicable fees, as well as taxes and similar charges when required. No services will be performed and no charges incurred unless you consent by agreeing to this Service Agreement. In the event you decide not to have your media returned, or you fail to provide payment for return shipping, the media/data/equipment will be destroyed 90 days after any evaluations or recovery attempts have been completed.</p>
-          <p>Payment Method – For amounts greater than $2,500 a company or personal check, cashier’s check or bank wire will be required. Credit cards will not be accepted for payment on amounts over $2,500.</p>
-          <p>Payment Due – Full payment is due upon completion and must be made within ten (10) business days of receiving notification of final payment request unless prior arrangements are made in advance.</p>
-          <p>No Refunds – Five Star Data Recovery will not issue refunds for any payments made by you for data recovery services.</p>
-          <p>Five Star Data Recovery shall not be liable as a result of this Agreement or the performance of Services therein or any other data recovery services, or evaluation of the possibility of providing data recovery services, for any claims regarding the physical functioning of equipment or media or the condition or existence of data on storage media supplied before, during or after services. The Client understands and accepts that data recovery cannot be guaranteed and is not promised or guaranteed by Five Star Data Recovery. In no event will Five Star Data Recovery or any contractor, employee, or agent of Five Star Data Recovery be liable for any loss of data or loss of revenue or profit or any special incidental, or consequential damages, however caused, in connection with this Agreement or any Services provided by Five Star Data Recovery or its agents, contractors, or employees; even if Five Star Data Recovery has been advised of the possibility of damage or loss to persons or property. Five Star Data Recovery liability shall be limited to the contract price for the services. Client and Five Star Data Recovery agree that the sole and exclusive remedy for Five Star Data Recovery inability to recover the data outlined in the recovery list shall be, at Five Star Data Recovery option, either (a) additional attempts by Five Star Data Recovery to recover the data; or (b) a refund of any amount paid by the Client. Client acknowledges the inherent risks of injury and property damage involved in data recovery, including without limitation, risks due to destruction or damage to the media or data and inability to recover data, or inaccurate or incomplete data recovery, including those that may result from the negligence of Five Star Data Recovery, and assumes any and all known risks of injury and property damage that may result. In no event will Five Star Data Recovery be liable for loss of data on Client’s media or hardware.</p>
-          <p>The parties to this Agreement shall submit all disputes relating to this Agreement or to either party’s performance hereunder, or any nature whatsoever, to arbitration, including but not limited to tort, contract, statutory, or equitable in accordance with the Rules of the American Arbitration Association, except that any claim in connection with Five Star Data Recovery seeking equitable relief in connection with Five Star Data Recovery’ intellectual property rights or nonpayment for Services performed which may be brought in a court of law rather than in arbitration. Either party may enforce the award of the arbitrator in a court of competent jurisdiction. The parties understand that they are waiving their rights to a jury trial as to issues covered by this arbitration agreement. The arbitration shall take place in Los Angeles, CA, and the laws of the State of California shall apply to this Agreement.</p>
-          <p>In exchange for the valuable services and consideration provided by Five Star Data Recovery, Client agrees that at least 60 days before initiating any formal dispute with Five Star Data Recovery, including the filing of any demand for arbitration, the Client shall first submit a sworn, written, and signed declaration to Five Star Data Recovery at: 1731 S. Brand Blvd., Glendale, CA 91204, stating the Client’s name, the problems experienced with Five Star Data Recovery, in detail, an itemization of all alleged losses claimed as a result of Five Star Data Recovery conduct, and all information known to the Client concerning any claimed contract breaches or other actionable conduct of Five Star Data Recovery pursuant to this Agreement. This declaration must state, at the end of the text and above the signature, “I declare under penalty of perjury that the foregoing is true and correct.” This declaration will enable Five Star Data Recovery to review factual information about the alleged dispute so that any issues may be evaluated and resolved, potentially without the need for further proceedings. Client and Five Star Data Recovery agree that the sole and exclusive remedy for disputes relating to Services provided pursuant to this Agreement shall be, at Five Star Data Recovery</p>
-          <p>option, additional attempts by engineers of Five Star Data Recovery to recover satisfactory data or to refund the amount paid by the Client in full or part. Five Star Data Recovery will retain a copy of Client’s recovered data for a period of seven (14) days from the date of dispatch. During this period Five Star Data Recovery will answer any queries concerning the recovered data and, if required, provide further copies. Any media left with Five Star Data Recovery after sixty (60) days, will be securely disposed of in an appropriate manner and in no event will Five Star Data Recovery be liable to Client or any third party whatsoever for the data.</p>
-          <p>All diagnostic reports are provided to the Client via telephone or electronic mail, unless otherwise agreed by a representative of Five Star Data Recovery in writing. All media and hardware returned to Client as part of Five Star Data Recovery return service is shipped via UPS, USPS, or FedEx. Five Star Data Recovery will provide Client with the shipping information including tracking number. Five Star Data Recovery holds no responsibility or liability for any media or hardware lost or damaged after shipment by Five Star Data Recovery. The Client understands that Five Star Data Recovery does not offer any guarantees or warranties of any kind and that the extent of any Five Star Data Recovery</p>
-          <p>liability to the Client is strictly limited to the fees paid to Five Star Data Recovery for its data recovery services. If Client wishes to purchase shipping insurance, the Client must inform Five Star Data Recovery prior to shipment by Five Star Data Recovery and authorize Five Star Data Recovery to charge for the resulting expenses.</p>
-          <p>Due to the nature of data recovery, Five Star Data Recovery technicians may be required to carry out physical work on the media. The Client understands that the media/data/equipment made available to Five Star Data Recovery is already damaged, that data recovery efforts may result in further damage. The Client also understands that media and/or equipment warranties may become void and that Five Star Data Recovery is not responsible for this or any other type of damage. Client is aware that on occasion, Five Star Data Recovery may be required to use additional media to continue with the diagnostic phase and/or carry out its recovery efforts. Examples of this include, but are not limited to, spare parts for disk drives and specific adaptors or connectors. Five Star Data Recovery reserves the right to charge the Client for such additional media, at an agreed cost. On rare occasions, Five Star Data Recovery may require the Client to cover some of the cost in attempting the recovery. This only applies when the recovery is complex or when severe damage has occurred. However, these are always provided as part of a no obligation, fixed price quotation, but are not offered as part of Five Star Data Recovery</p>
-          <p>“no recovery, no fee” service. Five Star Data Recovery agrees that any payment for a recovery will only be processed in the event that data is successfully recovered from the Client’s media. The Client understands that due to the complex nature of data recovery, it is not always possible to recover all the information from the Client’s media. Five Star Data Recovery makes no prevision for the completeness, relevance or importance of the data recovered for the Client unless otherwise agreed in writing by Five Star Data Recovery and the Client. Client warrants to Five Star Data Recovery that the Services requested pursuant to this Agreement are not related to or in connecting with forensic data recovery for the collection, preservation, analysis, and presentation of computer-related evidence nor for any pending litigation matters including but not limited to criminal cases, civil litigation, and human resource and employment proceedings. Client shall immediately notify Five Star Data Recovery if the media or hardware provided to Five Star Data Recovery for data recovery is the subject of any pending litigation or forensic investigation. Client warrants to Five Star Data Recovery that it is the owner of, and/or has the right to be in possession of, all equipment/data/media furnished to PPS; and Client will defend, at its expense, indemnify, and hold Five Star Data Recovery harmless against any damages or expenses that may occur (including attorneys’ fees), and pay any cost, damages, or attorneys’ fees awarded against Five Star Data Recovery resulting from Client’s breach of this Agreement. This Agreement is intended by the Parties to be the final expression of their agreement, and it constitutes the full and entire understanding between the Parties with respect to the subject hereof. Only writing signed by all Parties herein may amend this Agreement. The construction, interpretation and enforcement of this Agreement shall be governed by the substantive contract law of the Commonwealth of California without regard to its conflict of law provisions. Should any part, term, or provision of this Agreement be declared invalid, void, or unenforceable, all remaining parts, terms, and provisions hereof shall remain in full force and effect and shall no way be invalidated, impaired, or affected thereby.</p>
-          <p>By signing and dating the Mail in Form, Client agrees to all the terms and conditions set forth above by Five Star Data Recovery. END OF AGREEMENT.</p>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
 
-
-
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With Terms And Conditions?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
-        </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
-        </div>
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
       </div>
     </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
-
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-
+.page-wrapper{font-family:'Inter',sans-serif}.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.hero-section{background:#1a1a2e;padding:60px 0}
+.hero-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;line-height:1.2}
+.light-section{background:#fff;padding:72px 0}
+.section-heading{font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;color:#1a1a2e;margin-bottom:24px}
+.body-text{font-size:0.95rem;color:#4a5568;line-height:1.8;margin-bottom:16px}
+.contact-band{background:#1a1a2e;padding:48px 0}
+.contact-band-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap}
+.contact-band-title{font-size:1.5rem;font-weight:800;color:#fff;margin-bottom:12px}
+.contact-band-sub{font-size:0.9rem;color:rgba(255,255,255,0.65);line-height:1.7;margin-bottom:16px;max-width:540px}
+.contact-band-actions{display:flex;gap:14px;flex-shrink:0;flex-wrap:wrap}
+.btn-yellow{display:inline-block;background:#C9A84C;color:#fff;padding:14px 28px;border-radius:6px;font-weight:800;font-size:1rem;text-decoration:none}
+.btn-yellow:hover{background:#b8923e}
+.btn-outline-white{display:inline-block;border:2px solid rgba(255,255,255,0.4);color:#fff;padding:12px 24px;border-radius:6px;font-weight:600;font-size:0.95rem;text-decoration:none}
+.btn-outline-white:hover{border-color:#fff}
+.yellow-band{background:#C9A84C;padding:24px 0;text-align:center}
+.yellow-band-text{font-size:1.3rem;font-weight:800;color:#fff;margin:0}
+@media(max-width:900px){.contact-band-inner{flex-direction:column;align-items:flex-start}}
 </style>

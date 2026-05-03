@@ -1,388 +1,320 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'RAID Data Recovery Services — Five Star Data Recovery',
-  description: 'At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This e'
+  description: 'Five Star Data Recovery offers professional RAID data recovery for all RAID levels. Free evaluation, no data no charge.'
 })
-const faqs = [
-  { q: '5. How long does RAID data recovery take?', a: 'The timeframe for RAID data recovery can vary depending on the number of drives, total storage capacity, and the type of failure. For most standard cases with 3 to 8 drives and capacities up to 20TB, our average turnaround is 5 to 7 business days under normal service. However, several factors can affect this timeline: Larger RAID arrays with more drives Greater total data volume Unusual or custom RAID configurations Physical damage such as dropped, non-spinning, or clicking drives If any drives have mechanical issues, additional time is needed for clean room repairs, locating compatible donor parts, and safely cloning the drives. At Five Star Data Recovery, we always create 1-to-1 clones of all drives in the array, regardless of their condition. This ensures your original data stays untouched throughout the entire recovery process. For time-sensitive projects, we offer Expedited and Expedited Plus services that prioritize your case immediately. These options accelerate every phase of the recovery — from diagnostics to final data delivery — and include extended engineer hours, even outside normal business days if needed. If you’re working under a deadline, we can also begin recovery on your most important files first, so you get early access to critical data while the full recovery continues in parallel.' },
-  { q: '6. Do you recover data from NAS RAID systems like Synology or QNAP?', a: 'Yes. We frequently recover data from NAS devices such as Synology, QNAP, Drobo, Buffalo, and others that use RAID storage setups.' },
-  { q: '7. Can you recover data if one or more RAID drives are physically damaged?', a: 'Yes, we specialize in recovering data even when one or more drives in your RAID array are physically damaged. In fact, many RAID failures involve at least one degraded or completely failed drive — especially in configurations like RAID 5, RAID 6, and RAID 10, where redundancy can mask early issues until multiple drives fail. When a drive is physically damaged — whether it’s not spinning, clicking, beeping, or completely undetected — our engineers perform component-level repairs in a certified Class 100 Clean Room. This environment ensures the internal components of the drive, like the platters and read/write heads, remain protected during the repair and imaging process. Here’s how we handle these cases: We never work off the original drives. All RAID recoveries begin by creating exact 1-to-1 clones of every drive in the array — including the damaged ones — to preserve your data. If clean room repairs are necessary, we source donor parts and stabilize the drive enough to make a full sector-by-sector image. Once all drive images are complete, we reconstruct the RAID virtually using specialized tools and metadata from the drives to rebuild the original array. From there, we verify file structure integrity and recover your data in its most complete form. It’s important to not keep using a degraded RAID or attempt DIY rebuilds, as this can permanently overwrite data or make recovery more difficult. If you suspect physical damage, power down the device and contact us right away — the sooner we receive the drives, the better your chances of a full recovery.' },
-  { q: '8. Is there a risk of further data loss during the recovery process?', a: 'No. We never work on your original drives. Our process starts by cloning each RAID member drive. All recovery work happens from these cloned copies to ensure your original data remains untouched.' },
-  { q: '9. Do you offer a No Data, No Charge policy for RAID data recovery?', a: 'Yes. Most RAID data recovery cases qualify for our No Data, No Charge guarantee. You only pay if we successfully recover the data you need. Some exceptions apply for deleted data or drives that were previously opened.' },
-  { q: '10. Can I drop off my RAID or ship it in for recovery?', a: 'Yes! We offer both in-person drop-off at our Glendale, CA lab and free nationwide data recovery mail-in service. Just fill out our Mail-In Recovery Form and we’ll provide a prepaid shipping label.' },
-  { q: '11. How much does RAID Data Recovery cost?', a: 'We use the same flat-rate data recovery pricing for RAID drives as we do for standard hard drive recoveries. Pricing is based on the size of each individual drive in the array—not the total number of drives or total capacity. Here’s a breakdown of our standard flat-rate pricing per drive: Drives up to 2TB: $300 per drive Drives up to 6TB: $500 per drive Drives between 8TB–12TB: $600 per drive Drives requiring clean room repair: $950 per drive All RAID recoveries follow this flat rate model. For example, if you have a 4-drive RAID array made up of 2TB drives (no physical damage), the total recovery cost would be $1,200 ($300 × 4). This includes full diagnostics, recovery, and return of your data. We also offer Expedited and Expedited Plus services if your RAID recovery is time-sensitive.' }
+
+const list4 = [
+      'RAID 0 (Striping) – No redundancy, high-speed, high-risk',
+      'RAID 1 (Mirroring) – Redundant, but vulnerable to simultaneous failures',
+      'RAID 5 (Parity) – Can survive one disk failure; risky during rebuild',
+      'RAID 10 (Striped Mirrors) – Combines performance and redundancy',
+      'Nested or hybrid setups (e.g., RAID 0 RAID, RAID 50, etc.)',
+      'RAID 2, RAID 3, RAID 6, RAID 50, and custom hybrid RAID types',
+    ]
+
+const reviews = [
+  { name: 'Jason L.', location: 'Pasadena, CA', stars: 5, text: 'After two drives failed in my RAID 5 setup, I thought years of client files were gone for good. The engineer I worked with was incredibly knowledgeable and explained every step of the recovery process. Within a week, I had nearly all my data back. The flat-rate pricing made the whole experience stress-free.' },
+  { name: 'Maria P.', location: 'Burbank, CA', stars: 5, text: 'Our office RAID suddenly failed and we couldn’t access any of our files. Five Star Data Recovery handled it quickly and professionally. They kept us informed every step of the way, and the communication was excellent. If you’re dealing with a serious data loss, this is the team you want on your side.' },
+  { name: 'Daniel L.', location: 'New York, NY', stars: 5, text: 'When one of the drives in my RAID 0 array failed, I was told by two other places that recovery wasn’t possible. I gave it one last try here, and thankfully they proved otherwise! They were able to rebuild the array and retrieve all my lost video editing projects. Highly recommend their RAID recovery service.' },
 ]
+
+const faqs: any[] = []
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
 <template>
-  <div>
+  <div class="page-wrapper">
     <NavBar />
-    <HeroSection
-      title="RAID Data Recovery Services"
-      subtitle="Get Your Data Back In No Time."
-      description="At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved."
-    >
-      <template #badges>
-        <div class="trust-badges">
-          <span class="badge">✅ Free Evaluation</span>
-          <span class="badge">✅ No Data, No Charge</span>
-          <span class="badge">✅ Flat-Rate Pricing</span>
-          <span class="badge">✅ 21,000+ Recoveries</span>
+
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 class="hero-title">RAID Data Recovery Services</h1>
+          <p class="hero-sub">Get Your Data Back In No Time.</p>
+          <p class="hero-desc">RAID systems are powerful — but when they fail, data recovery requires specialized expertise. At Five Star Data Recovery, we recover data from all RAID levels including RAID 0, RAID 1, RAID 5, RAID 6, and RAID 10. Our engineers have the tools, experience, and cleanroom facilities to safely recover your data.</p>
+          <div class="hero-actions">
+            <NuxtLink to="/start-recovery" class="btn-primary-red">Start Recovery</NuxtLink>
+            <NuxtLink to="/data-recovery/free-quote" class="btn-secondary">Request a Quote</NuxtLink>
+          </div>
+          <div class="hero-trust">
+            <span>✔ Available 24/7/365</span>
+            <span>✔ No Data = No Charge</span>
+            <span>✔ Free Nationwide Shipping</span>
+            <span>✔ Flat Rate Pricing</span>
+          </div>
         </div>
-      </template>
-    </HeroSection>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Request a Free Consultation</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <StatsBar />
 
-        <section class="process-section section-bg-1 section-pad">
+    <section class="light-alt-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Safe and Secure RAID Recovery Process</h2>
-        </div>
-        <div class="process-grid">
-          <div class="process-card">
-            <div class="process-num">01</div>
-            <h3 class="process-title">Why We Always Clone Drives First</h3>
-            <p class="process-desc">At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouc</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Types of RAID Levels We Recover</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>RAID 0 (Striping) – No redundancy, high-speed, high-risk</li>
-            <li>RAID 1 (Mirroring) – Redundant, but vulnerable to simultaneous failures</li>
-            <li>RAID 5 (Parity) – Can survive one disk failure; risky during rebuild</li>
-            <li>RAID 10 (Striped Mirrors) – Combines performance and redundancy</li>
-            <li>Nested or hybrid setups (e.g., RAID 0 RAID, RAID 50, etc.)</li>
-            <li>RAID 2, RAID 3, RAID 6, RAID 50, and custom hybrid RAID types</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">A Closer Look at Common RAID Levels</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">RAID 0 (Striping):</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">RAID 1 (Mirroring)</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">RAID 5 (Striping with Parity):</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">RAID 6:</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">RAID 10 (1+0):</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">RAID 50 and RAID 60:</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Common RAID Data Loss Scenarios</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Multiple disk failures or degraded arrays</li>
-            <li>Power loss or electrical surges</li>
-            <li>Failed rebuilds or incorrect RAID level reconstructions</li>
-            <li>Misconfigured RAID type after hardware swaps</li>
-            <li>Bad sectors or firmware issues</li>
-            <li>File corruption or accidental deletion</li>
-            <li>Outdated or failed RAID controller firmware</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">How RAID Rebuilds Can Go Wrong</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What We Can Recover from a RAID System</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Virtual machines, database files, and backups</li>
-            <li>Email servers and Exchange/Outlook files</li>
-            <li>Raw image and video libraries</li>
-            <li>Corrupted or inaccessible file systems</li>
-            <li>Accidentally deleted or formatted volumes</li>
-            <li>Critical documents and user files from failed RAID drives</li>
-            <li>Enterprise datasets, spreadsheets, ProRes video, CAD files, and more</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Supported RAID Configurations and Platforms</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>Windows, Linux, and macOS RAID</li>
-            <li>NAS/SAN devices: Synology, QNAP, Drobo, Buffalo, and more</li>
-            <li>Server-grade arrays and custom hardware</li>
-            <li>Hardware/software RAID controllers (LSI, Dell PERC, Adaptec, etc.)</li>
-            <li>Software-defined RAID, like Microsoft Storage Spaces</li>
-            <li>Nested and hybrid RAID levels</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Emergency RAID Recovery Services</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Expedited RAID Recovery Services</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">What Sets Our Engineers Apart</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Can You Recover Data After a Failed RAID Rebuild?</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Testimonials from Satisfied Clients</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-2 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Why Choose Five Star for RAID Recovery</h2>
-        </div>
-        <div class="section-body">
-          <ul class="content-list">
-            <li>We never recover from original drives — every case begins by creating exact 1-to-1 clones to preserve the integrity of your data.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Our “No-Recovery, No-Charge” policy ensures you only pay if we’re able to successfully retrieve your files.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Every quote we provide is clear, honest, and upfront — with no hidden charges or surprise fees during the recovery process.</li>
-          </ul>
-          <ul class="content-list">
-            <li>Physically damaged drives are handled in our certified Class 100 Clean Room to protect sensitive internal components during repair.</li>
-            <li>Our engineers are highly trained in advanced RAID configurations, including complex hybrid and custom setups.</li>
-            <li>We offer both standard and emergency turnaround options, so you get your critical data back exactly when you need it.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-3 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get a Free Quote within Minutes!</h2>
-        </div>
-        <div class="section-body">
-
-        </div>
-      </div>
-    </section>
-    <section class="section-bg-1 section-pad">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Get Started with Your RAID Recovery Today</h2>
-        </div>
-        <div class="section-body">
-          <p>Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
+        <h2 class="section-heading">Why We Always Clone Drives First</h2>
+        <p class="body-text">At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved.</p>
+        <p class="body-text">By working only from cloned drives, we can safely rebuild, test, and analyze your RAID array without risking further damage. This is especially important for unstable or degraded disks, where even one more read could cause permanent data loss.</p>
+        <p class="body-text">If a drive is physically damaged, we stabilize it in a Class 100 Clean Room and then attempt to image it safely. Once all clones are complete, we reconstruct the RAID using specialized tools — without ever touching the originals.</p>
       </div>
     </section>
 
-    <section class="faq-section section-bg-2 section-pad">
+    <section class="light-section">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
+        <h2 class="section-heading">Types of RAID Levels We Recover</h2>
+
+        <ul class="drive-list">
+          <li v-for="item in list4" :key="item">{{ item }}</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DARK CTA FORM -->
+    <section class="dark-cta-section">
+      <div class="container two-col">
+        <div class="col-text">
+          <h2 class="dark-heading">Get Your Data Back Today</h2>
+          <p class="dark-text">Our team is ready to help recover your data. Free diagnostic, flat-rate pricing, and No Data, No Charge guarantee.</p>
+          <p class="dark-text">Visit us in Glendale, CA or ship your device from anywhere in the U.S. We provide free return shipping on all mail-in recoveries.</p>
         </div>
-        <div class="faq-list">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-item" :class="{ open: openFaq === i }">
-            <button class="faq-question" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-icon">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+        <div class="hero-form-wrap">
+          <div class="hero-form-card">
+            <h3 class="form-title">Get a Free Quote in Minutes!</h3>
+            <form class="consult-form" @submit.prevent>
+              <div class="form-row">
+                <input type="text" placeholder="First Name" class="form-input" />
+                <input type="text" placeholder="Last Name" class="form-input" />
+              </div>
+              <input type="email" placeholder="Email Address" class="form-input full" />
+              <input type="tel" placeholder="Phone Number" class="form-input full" />
+              <select class="form-input full">
+                <option>Select Device Type</option>
+                <option>Hard Drive (HDD)</option>
+                <option>SSD</option>
+                <option>External Drive</option>
+                <option>RAID / NAS</option>
+                <option>USB / Flash Drive</option>
+                <option>Other</option>
+              </select>
+              <select class="form-input full">
+                <option>Select Service Type</option>
+                <option>Standard Service (3-5 days)</option>
+                <option>Expedited Service (24-48 hrs)</option>
+                <option>Expedited Plus (Same Day)</option>
+              </select>
+              <button type="submit" class="btn-form-submit">Request a Consultation</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-band section-bg-2">
-      <div class="container cta-band-inner">
-        <div>
-          <h2 class="cta-title">Need Help With RAID Data Recovery Services?</h2>
-          <p class="cta-sub">Free evaluation. No data, no charge. Contact us today.</p>
+    <!-- CONTACT BAND -->
+    <section class="contact-band">
+      <div class="container contact-band-inner">
+        <div class="contact-band-text">
+          <h2 class="contact-band-title">Contact Us for RAID Data Recovery</h2>
+          <p class="contact-band-sub">Data loss from a RAID system is serious. Our engineers are available to help you recover your data fast.</p>
+          <ul class="contact-list">
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
+          </ul>
         </div>
-        <div class="cta-actions">
-          <a href="tel:8182728866" class="btn btn-gold">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-quote" class="btn btn-outline-sm">Get Free Quote</NuxtLink>
+        <div class="contact-band-actions">
+          <a href="tel:8182728866" class="btn-yellow">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-quote" class="btn-outline-white">Get Free Quote</NuxtLink>
         </div>
       </div>
     </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section class="light-alt-section">
+      <div class="container">
+        <h2 class="section-heading center">Testimonials from Satisfied Clients</h2>
+        <div class="reviews-row">
+          <div v-for="r in reviews" :key="r.name" class="review-card">
+            <div class="review-avatar">👤</div>
+            <p class="review-text">"{{ r.text }}"</p>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-name">{{ r.name }}</div>
+            <div class="review-loc">{{ r.location }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM YELLOW BAND -->
+    <section class="yellow-band">
+      <div class="container">
+        <p class="yellow-band-text">Recovering what can't be replaced!</p>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
 
 <style scoped>
-.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.badge { background: rgba(255,255,255,0.06); border: 1px solid var(--border); color: var(--white); padding: 7px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.section-pad { padding: 72px 0; }
-.section-body p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: 860px; }
-.section-body strong { color: var(--white); font-weight: 600; }
-.content-list { padding-left: 20px; margin: 12px 0 16px; }
-.content-list li { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
-.faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
-.faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.faq-item.open { border-color: var(--gold); }
-.faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: var(--white); font-size: 16px; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: var(--font-body); }
-.faq-icon { color: var(--gold); font-size: 22px; font-weight: 400; flex-shrink: 0; }
-.faq-answer { padding: 0 24px 20px; font-size: 15px; color: var(--muted); line-height: 1.7; }
-.cta-band { background: linear-gradient(135deg, #0f1220, #13161F); border-top: 1px solid var(--border); padding: 56px 0; }
-.cta-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
-.cta-title { font-family: var(--font-heading); font-size: 28px; font-weight: 900; color: var(--white); margin-bottom: 8px; }
-.cta-sub { font-size: 16px; color: var(--muted); }
-.cta-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-.btn-outline-sm { display: inline-block; padding: 14px 28px; border: 2px solid var(--gold); color: var(--gold); border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; }
-.btn-outline-sm:hover { background: rgba(245,200,66,0.1); }
-@media (max-width: 768px) { .cta-band-inner { flex-direction: column; } }
+/* ---- BASE ---- */
+.page-wrapper { font-family: 'Inter', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-/* Process cards */
-.process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-top: 40px; }
-.process-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.process-num { font-size: 2.5rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 12px; }
-.process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-.process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
-.review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
-.review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
-/* Feature cards */
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 40px; }
-.feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px 24px; }
-.feature-icon { font-size: 1.5rem; color: #C9A84C; margin-bottom: 12px; }
-.feature-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
-.feature-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
-/* Issues list */
-.issues-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 32px; align-items: start; }
-.issues-intro p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; }
-.issues-list { list-style: none; padding: 0; margin: 0; }
-.issues-list li { padding: 10px 0 10px 28px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.06); }
-.issues-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-/* Content text sections */
-.content-narrow { max-width: 860px; margin: 0 auto; }
-.content-title { font-size: 1.75rem; font-weight: 800; color: #fff; margin-bottom: 24px; }
-.content-narrow p { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 18px; }
-.secure-list { list-style: none; padding: 0; margin: 0; }
-.secure-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.secure-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
-/* CTA extensions */
-.cta-list { list-style: none; padding: 0; margin: 0 0 24px; }
-.cta-list li { padding: 6px 0 6px 24px; position: relative; font-size: 0.95rem; color: rgba(255,255,255,0.75); }
-.cta-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+/* ---- HERO ---- */
+.hero-section { background: #1a1a2e; padding: 60px 0; }
+.hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: start; }
+.hero-title { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+.hero-sub { font-size: 1.1rem; color: #C9A84C; font-weight: 600; margin-bottom: 16px; }
+.hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.7; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+.btn-primary-red { background: #e53e3e; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 700; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-primary-red:hover { background: #c53030; }
+.btn-secondary { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; display: inline-block; }
+.btn-secondary:hover { border-color: #fff; }
+.hero-trust { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.hero-trust span { font-size: 0.82rem; color: rgba(255,255,255,0.65); }
 
+/* ---- FORM ---- */
+.hero-form-wrap { position: relative; }
+.hero-form-card { background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+.form-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 20px; }
+.consult-form { display: flex; flex-direction: column; gap: 10px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.form-input { border: 1px solid #d1d5db; border-radius: 6px; padding: 10px 14px; font-size: 0.9rem; color: #1a1a2e; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; }
+.form-input:focus { outline: none; border-color: #C9A84C; }
+.form-input.full { width: 100%; }
+.btn-form-submit { background: #C9A84C; color: #fff; border: none; border-radius: 6px; padding: 14px; font-size: 1rem; font-weight: 700; cursor: pointer; margin-top: 4px; font-family: inherit; }
+.btn-form-submit:hover { background: #b8923e; }
+
+/* ---- SECTIONS ---- */
+.light-section { background: #fff; padding: 72px 0; }
+.light-alt-section { background: #f7f9fc; padding: 72px 0; }
+
+/* ---- HEADINGS ---- */
+.section-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+.section-heading.center { text-align: center; }
+.section-heading-sm { font-size: 1.25rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
+.section-intro { font-size: 1rem; color: #4a5568; line-height: 1.7; margin-bottom: 40px; }
+.section-intro.center { text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+.body-text { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 16px; }
+
+/* ---- ISSUES GRID ---- */
+.issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+.issue-title { font-size: 1rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; }
+.issue-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+
+/* ---- TWO COLUMN ---- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.two-col.reverse { direction: rtl; }
+.two-col.reverse > * { direction: ltr; }
+.two-col-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+.section-img { width: 100%; border-radius: 12px; display: block; object-fit: cover; max-height: 380px; }
+
+/* ---- LISTS ---- */
+.cause-list { list-style: none; padding: 0; margin: 0; }
+.cause-list li { padding: 8px 0 8px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.cause-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.drive-list { list-style: none; padding: 0; margin: 16px 0 0; }
+.drive-list li { padding: 9px 0 9px 24px; position: relative; font-size: 0.93rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.drive-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+.tip-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.tip-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; }
+.tip-list li::before { content: '•'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.content-list { list-style: none; padding: 0; margin: 12px 0 0; }
+.content-list li { padding: 7px 0 7px 22px; position: relative; font-size: 0.9rem; color: #4a5568; border-bottom: 1px solid #e2e8f0; }
+.content-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; }
+
+/* ---- PROCESS ---- */
+.process-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-bottom: 32px; }
+.process-card { background: #f7f9fc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 24px 20px; }
+.step-label { font-size: 0.85rem; font-weight: 700; color: #C9A84C; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.step-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+.no-charge-note { background: #1a1a2e; color: #fff; text-align: center; padding: 16px 24px; border-radius: 8px; font-size: 0.95rem; }
+.no-charge-note strong { color: #C9A84C; }
+
+/* ---- DARK CTA ---- */
+.dark-cta-section { background: #2d3748; padding: 72px 0; }
+.dark-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 800; color: #fff; margin-bottom: 16px; }
+.dark-text { font-size: 0.95rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
+
+/* ---- CONTACT BAND ---- */
+.contact-band { background: #1a1a2e; padding: 48px 0; }
+.contact-band-inner { display: flex; justify-content: space-between; align-items: center; gap: 48px; flex-wrap: wrap; }
+.contact-band-title { font-size: 1.5rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-band-sub { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 16px; max-width: 540px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 5px 0 5px 20px; position: relative; font-size: 0.9rem; color: rgba(255,255,255,0.75); }
+.contact-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+.contact-band-actions { display: flex; gap: 14px; flex-shrink: 0; flex-wrap: wrap; }
+.btn-yellow { display: inline-block; background: #C9A84C; color: #fff; padding: 14px 28px; border-radius: 6px; font-weight: 800; font-size: 1rem; text-decoration: none; }
+.btn-yellow:hover { background: #b8923e; }
+.btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem; text-decoration: none; }
+.btn-outline-white:hover { border-color: #fff; }
+
+/* ---- FAQ ---- */
+.faq-list { max-width: 800px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 6px; }
+.faq-item { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; }
+.faq-item.open { border-color: #C9A84C; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: none; border: none; color: #1a1a2e; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-align: left; gap: 12px; font-family: inherit; }
+.faq-icon { color: #C9A84C; font-size: 1.4rem; font-weight: 400; flex-shrink: 0; }
+.faq-a { padding: 0 20px 18px; font-size: 0.9rem; color: #4a5568; line-height: 1.7; }
+
+/* ---- REVIEWS ---- */
+.reviews-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+.review-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.review-avatar { font-size: 2rem; margin-bottom: 12px; }
+.review-text { font-size: 0.9rem; color: #4a5568; line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+.review-stars { color: #C9A84C; font-size: 1rem; margin-bottom: 8px; }
+.review-name { font-weight: 700; color: #1a1a2e; font-size: 0.9rem; }
+.review-loc { font-size: 0.82rem; color: #718096; }
+
+/* ---- YELLOW BAND ---- */
+.yellow-band { background: #C9A84C; padding: 24px 0; text-align: center; }
+.yellow-band-text { font-size: 1.3rem; font-weight: 800; color: #fff; margin: 0; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .two-col.reverse { direction: ltr; }
+  .two-col-equal { grid-template-columns: 1fr; }
+  .contact-band-inner { flex-direction: column; align-items: flex-start; }
+  .process-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .process-row { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>
