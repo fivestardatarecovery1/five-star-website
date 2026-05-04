@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Hitachi Data Recovery Services — Five Star Data Recovery',
-  description: 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn’t being detected, don’t panic—there’s still hope. At Five Star Data Rec'
+  title: 'Hitachi Data Recovery Services - Five Star Data Recovery',
+  description: 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic-there's still hope. At Five Star Data Rec'
 })
 
 const issues = [
-  { icon: '💥', title: 'Physical damage from drops, impacts, or overheating', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
-  { icon: '🐢', title: 'Bad sectors that prevent the drive from reading or writing data', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
-  { icon: '⚙️', title: 'Firmware corruption or manufacturing defects', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
-  { icon: '🗑️', title: 'Accidental deletion or formatting of partitions', text: 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:' },
+  { icon: '💥', title: 'Physical damage from drops, impacts, or overheating', text: '' },
+  { icon: '🐢', title: 'Bad sectors that prevent the drive from reading or writing data', text: '' },
+  { icon: '⚙️', title: 'Firmware corruption or manufacturing defects', text: '' },
+  { icon: '🗑️', title: 'Accidental deletion or formatting of partitions', text: '' },
 ]
 
 const causesIntro = 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:'
@@ -22,12 +22,13 @@ const causes = [
   'File system corruption due to sudden shutdowns or software crashes',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Hitachi Data Recovery case.'
+const processIntro = 'When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue. Here\'s what you can expect:'
 const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
+  { 'num': '01', 'title': 'Free Diagnostic', 'text': 'We assess the health of the drive and confirm whether it\'s a logical or physical failure.' },
+  { 'num': '02', 'title': 'Cloning', 'text': 'If the drive is unstable, we create a complete clone to avoid further wear on the original.' },
+  { 'num': '03', 'title': 'File System Repair', 'text': 'For logical problems like file system corruption, we use advanced tools to reconstruct the partition.' },
+  { 'num': '04', 'title': 'File Recovery', 'text': 'We extract recoverable files and check for lost files, folder structures, and data consistency.' },
+  { 'num': '05', 'title': 'Verification', 'text': 'You\'ll receive a preview of the recovered content before final delivery.' },
 ]
 
 const driveTypesIntro = 'Our team provides data recovery services for all types of Hitachi drives, including:'
@@ -40,31 +41,20 @@ const driveTypes = [
   'USB-connected storage devices',
 ]
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
+const d2Texts: string[] = []
 const d3Texts = [
-  'We know that losing important data can be stressful. That’s why we’ve built a process that’s fast, secure, and customer-friendly:',
+  'We know that losing important data can be stressful. That's why we've built a process that's fast, secure, and customer-friendly:',
 ]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
+const d4Texts: string[] = []
 
 const midBody = [
-  'Yes, we recover data from Hitachi internal and external hard drives, including both consumer-grade and enterprise-level models. Whether you\'re dealing with an old Deskstar or a newer Ultrastar series, our experts are trained in Hitachi data recovery techniques.',
-  'Absolutely. Our lab specializes in RAID data recovery, including arrays that contain Hitachi drives. We support all RAID levels (RAID 0, 1, 5, 10, etc.) and always clone the drives before working on them to ensure data integrity.',
-  'Yes. A Hitachi hard drive not showing up can be due to logical issues, firmware corruption, or physical damage. In most cases, our diagnostics will determine the cause, and we’ll use the appropriate methods to recover the data from your Hitachi drive.',
+  'If your drive is failing or already dead, contact Five Star Data Recovery today. We offer industry-leading data recovery services for all Hitachi models.',
+  'Whether you\'re dealing with bad sectors, lost files, or physical damage, our engineers are ready to help. We\'ve recovered files from drives others considered a lost cause.',
+  'Let us help you safely and securely recover data from Hitachi drives. Start your recovery with a free diagnostic—your data could still be recoverable.',
 ]
 
 const contactText = 'If you\'re experiencing issues with your Hitachi Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
@@ -73,15 +63,21 @@ const contactList = [
   'Mail your drive to us from anywhere in the U.S.',
   'Call us today for a free evaluation',
 ]
-const contactOutro = 'Trust our experts for fast, secure, and professional hitachi data recovery services — and get back what matters most.'
+const contactOutro = 'Trust our experts for fast, secure, and professional hitachi data recovery services - and get back what matters most.'
 
 const reviews = [
   { 'text': 'My Hitachi external hard drive suddenly stopped showing up, and I was devastated thinking years of photos were gone. Five Star Data Recovery not only diagnosed the issue quickly but also recovered 100% of my data. The process was smooth, and they kept me informed every step of the way. Highly recommended for anyone dealing with Hitachi drive issues!', 'name': 'Michael R.', 'location': 'Seattle, WA' },
-  { 'text': 'I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn’t recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish.', 'name': 'Sarah T.', 'location': 'Chicago, IL' },
-  { 'text': 'My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star’s clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery.', 'name': 'David N.', 'location': 'Glendale, CA' },
+  { 'text': 'I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn't recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish.', 'name': 'Sarah T.', 'location': 'Chicago, IL' },
+  { 'text': 'My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star's clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery.', 'name': 'David N.', 'location': 'Glendale, CA' },
 ]
 const faqs = [
-  { q: 'Testimonials from Satisfied Clients', a: '"My Hitachi external hard drive suddenly stopped showing up, and I was devastated thinking years of photos were gone. Five Star Data Recovery not only diagnosed the issue quickly but also recovered 100% of my data. The process was smooth, and they kept me informed every step of the way. Highly recommended for anyone dealing with Hitachi drive issues!" Michael R. Seattle, WA' },
+  { q: '1. Do you recover data from all types of Hitachi hard drives?', a: 'Yes, we recover data from Hitachi internal and external hard drives, including both consumer-grade and enterprise-level models. Whether you\'re dealing with an old Deskstar or a newer Ultrastar series, our experts are trained in Hitachi data recovery techniques.' },
+  { q: '2. Can you recover data from Hitachi drives that were part of a RAID array?', a: 'Absolutely. Our lab specializes in RAID data recovery, including arrays that contain Hitachi drives. We support all RAID levels (RAID 0, 1, 5, 10, etc.) and always clone the drives before working on them to ensure data integrity.' },
+  { q: '3. My Hitachi drive is not recognized by my computer - can you still recover the data?', a: 'Yes. A Hitachi hard drive not showing up can be due to logical issues, firmware corruption, or physical damage. In most cases, our diagnostics will determine the cause, and we\'ll use the appropriate methods to recover the data from your Hitachi drive.' },
+  { q: '4. What if my Hitachi drive was making clicking noises before it failed?', a: 'A clicking sound usually points to mechanical failure, which is common with failing Hitachi drives. We perform cleanroom recoveries for these types of issues, allowing us to repair internal components and safely extract your data.' },
+  { q: '5. How long does Hitachi data recovery take?', a: 'Typical turnaround time is 3-5 business days, but it can vary based on the issue. We also offer <a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus services</a> for urgent Hitachi data recovery cases. Contact us for a quote and timeline tailored to your specific situation.' },
+  { q: '6. Can you recover data from Hitachi drives with bad sectors?', a: 'Yes. Bad sectors on Hitachi hard drives are a common failure type, and our engineers are experienced in handling them. We use sector-by-sector cloning to isolate the healthy portions of the drive and maximize data recovery results.' },
+  { q: '7. Do you recover data from encrypted Hitachi hard drives?', a: 'Yes, we can recover data from BitLocker or third-party encrypted Hitachi drives as long as the correct encryption key or password is provided. Our secure systems are designed to handle encrypted data safely and confidentially.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -95,13 +91,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Hitachi Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn’t being detected, don’t panic—there’s still hope. At Five Star Data Recovery, we specialize in professional Hitachi Data Recovery for individuals and businesses who need to get their important files back quickly and securely."
+      description="If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic-there's still hope. At Five Star Data Recovery, we specialize in professional Hitachi Data Recovery for individuals and businesses who need to get their important files back quickly and securely."
       bgImage="/hitachi-data-recovery-service-los-angeles.jpg"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- ISSUES - white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label">Common Problems</div>
@@ -118,7 +114,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- CAUSES — grey -->
+    <!-- CAUSES - grey -->
     <section class="s-grey">
       <div class="container asym-layout">
         <div class="asym-minor">
@@ -140,7 +136,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- PROCESS — white -->
+    <!-- PROCESS - white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label center">Our Process</div>
@@ -156,12 +152,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="guarantee-strip">
           <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
+          <p><strong>No Data, No Charge Guarantee</strong> - If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
         </div>
       </div>
     </section>
 
-    <!-- DRIVE TYPES — grey -->
+    <!-- DRIVE TYPES - grey -->
     <section class="s-grey">
       <div class="container split-40-60">
         <div class="split-side">
@@ -190,11 +186,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="banner-overlay" />
       <div class="container banner-inner">
         <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <p class="banner-sub">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results - all from our secure Glendale lab.</p>
         <div class="banner-stats">
           <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
           <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
+          <div class="bstat"><span class="bstat-num">3-5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
           <div class="bstat-div" />
           <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
           <div class="bstat-div" />
@@ -203,7 +199,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 1 — white -->
+    <!-- DUAL INFO 1 - white -->
     <section class="s-white">
       <div class="container dual-col">
         <div class="dual-box">
@@ -223,7 +219,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 2 — grey -->
+    <!-- DUAL INFO 2 - grey -->
     <section class="s-grey">
       <div class="container dual-col">
         <div class="dual-box">
@@ -270,7 +266,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <label>SELECT YOUR DEVICE TYPE</label>
                 <div class="mf-select-wrap">
                   <select class="mf-input">
-                    <option value="">— Select (Optional) —</option>
+                    <option value="">- Select (Optional) -</option>
                     <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
                     <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
                     <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
@@ -309,7 +305,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <select class="mf-input">
                   <option value="">Select Preferred Time</option>
                   <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
+                  <option>Morning (8am - 12pm)</option><option>Afternoon (12pm - 5pm)</option><option>Evening (5pm - 8pm)</option>
                 </select>
               </div>
             </div>
@@ -319,7 +315,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- FAQ — grey -->
+    <!-- FAQ - grey -->
     <section class="s-grey">
       <div class="container">
         <div class="section-label center">Got Questions?</div>
@@ -328,7 +324,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '-' : '+' }}</span>
             </button>
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
@@ -341,7 +337,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container page-video-inner">
         <div class="page-video-copy">
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p class="page-video-desc">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results - all from our secure Glendale lab.</p>
         </div>
         <div class="page-video-embed">
           <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
@@ -349,7 +345,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- REVIEWS — white -->
+    <!-- REVIEWS - white -->
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->

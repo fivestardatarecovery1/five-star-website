@@ -60,7 +60,7 @@ const steps = [
   {
     num: '04',
     title: 'Step 4: File Verification & Delivery',
-    text: 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report will show you which files we successfully recovered and which ones we did not recover (if any data loss occurred). Once you approve, we save your files onto a new device that you provide or purchase from us.'
+    text: 'Once the recovery is complete, we\'ll send you a Interactive HTML File Report of the recovery. This report will show you which files we successfully recovered and which ones we did not recover (if any data loss occurred). Once you approve, we save your files onto a new device that you provide or purchase from us.'
   }
 ]
 

@@ -1,66 +1,46 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Expedited Data Recovery Service Plus — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery we’re happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that'
+  title: 'Expedited Data Recovery Service Plus - Five Star Data Recovery',
+  description: 'At Five Star Data Recovery we're happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that'
 })
 
 const issues = [
-  { icon: '🔊', title: 'Is the drive clicking?', text: 'Our expert team specializes in recovering data from cases involving is the drive clicking?. Contact us for a free diagnosis.' },
-  { icon: '🔊', title: 'Is the drive beeping?', text: 'Our expert team specializes in recovering data from cases involving is the drive beeping?. Contact us for a free diagnosis.' },
-  { icon: '💾', title: 'While connected, does Disk Utility or Disk Management recognize the drive?', text: 'Our expert team specializes in recovering data from cases involving while connected, does disk utility or disk management recognize the drive?. Contact us for a free diagnosis.' },
-  { icon: '💥', title: 'Has the drive been dropped?', text: 'Our expert team specializes in recovering data from cases involving has the drive been dropped?. Contact us for a free diagnosis.' },
+  { icon: '🔊', title: 'Is the drive clicking?', text: '' },
+  { icon: '🔊', title: 'Is the drive beeping?', text: '' },
+  { icon: '💾', title: 'While connected, does Disk Utility or Disk Management recognize the drive?', text: '' },
+  { icon: '💥', title: 'Has the drive been dropped?', text: '' },
 ]
 
-const causesIntro = 'Once approved, we’ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.'
+const causesIntro = 'Simply provide the following information:'
 const causesOutro = ''
 const causes = [
-  'Quick and Secure Data Recovery',
-  'Expert Engineers for All Devices',
-  'No Data, No Fee Guarantee',
+  'Is the drive clicking?',
+  'Is the drive beeping?',
+  'While connected, does Disk Utility or Disk Management recognize the drive?',
+  'Has the drive been dropped?',
+  'What make/model is the drive?',
+  'What is the storage capacity of the drive?',
+  'How much data needs to be recovered?',
+  'What type of files are we recovering? (file extensions)',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Expedited Data Recovery Plus case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
-const driveTypesIntro = 'Once approved, we’ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.'
-const driveTypesOutro = 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.'
-const driveTypes = [
-  'Quick and Secure Data Recovery',
-  'Expert Engineers for All Devices',
-  'No Data, No Fee Guarantee',
-]
+const driveTypesIntro = ''
+const driveTypesOutro = ''
+const driveTypes: string[] = []
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Expedited Data Recovery Plus devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
+const d2Texts: string[] = []
+const d3Texts: string[] = []
+const d4Texts: string[] = []
 
 const midBody = [
-  'Expedited Plus is our highest-priority data recovery service, designed for urgent cases that require immediate attention. Your case is handled 24/7—including nights, weekends, and holidays—by our top-tier engineers. If your data recovery can’t wait, this is the fastest and most dedicated solution we offer.',
-  'While our standard Expedited Service prioritizes your case during business hours, Expedited Plus goes beyond that. This service guarantees continuous, around-the-clock recovery efforts from the moment your device arrives at our lab. It’s ideal for critical business needs, time-sensitive data, or personal emergencies.',
-  'The cost for our Expedited Plus Data Recovery service is $500.00 per drive or device, paid upfront and non-refundable regardless of the results. This fee is in addition to the standard data recovery fee and helps cover the extra resources, after-hours labor, and dedicated priority handling required to work on your case 24/7—including nights, weekends, and holidays.',
+  'We offer flat rate pricing for this service based on how long we believe the case will take. This fee is in addition to any Flat Rate Data Recovery costs. It\'s hard to know exactly how much this service will cost. However, our Engineers can give you a good estimate after the initial diagnosis. Services start at $500.00 per drive.',
 ]
 
 const contactText = 'If you\'re experiencing issues with your Expedited Data Recovery Plus, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
@@ -69,7 +49,7 @@ const contactList = [
   'Mail your drive to us from anywhere in the U.S.',
   'Call us today for a free evaluation',
 ]
-const contactOutro = 'Trust our experts for fast, secure, and professional expedited data recovery service plus — and get back what matters most.'
+const contactOutro = 'Trust our experts for fast, secure, and professional expedited data recovery service plus - and get back what matters most.'
 
 const reviews = []
 const faqs = [
@@ -86,13 +66,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Expedited Data Recovery Service Plus"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery we’re happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that your case will be worked on diligently 24/7 to ensure you can meet your deadline? Then this service is for you."
+      description="At Five Star Data Recovery we're happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that your case will be worked on diligently 24/7 to ensure you can meet your deadline? Then this service is for you."
       bgImage="/hard-drive-data-recovery-specialist-glendale-ca.jpg"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- ISSUES - white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label">Common Problems</div>
@@ -109,7 +89,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- CAUSES — grey -->
+    <!-- CAUSES - grey -->
     <section class="s-grey">
       <div class="container asym-layout">
         <div class="asym-minor">
@@ -131,7 +111,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- PROCESS — white -->
+    <!-- PROCESS - white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label center">Our Process</div>
@@ -147,12 +127,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="guarantee-strip">
           <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
+          <p><strong>No Data, No Charge Guarantee</strong> - If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
         </div>
       </div>
     </section>
 
-    <!-- DRIVE TYPES — grey -->
+    <!-- DRIVE TYPES - grey -->
     <section class="s-grey">
       <div class="container split-40-60">
         <div class="split-side">
@@ -181,11 +161,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="banner-overlay" />
       <div class="container banner-inner">
         <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <p class="banner-sub">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results - all from our secure Glendale lab.</p>
         <div class="banner-stats">
           <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
           <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
+          <div class="bstat"><span class="bstat-num">3-5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
           <div class="bstat-div" />
           <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
           <div class="bstat-div" />
@@ -194,7 +174,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 1 — white -->
+    <!-- DUAL INFO 1 - white -->
     <section class="s-white">
       <div class="container dual-col">
         <div class="dual-box">
@@ -214,7 +194,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 2 — grey -->
+    <!-- DUAL INFO 2 - grey -->
     <section class="s-grey">
       <div class="container dual-col">
         <div class="dual-box">
@@ -261,7 +241,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <label>SELECT YOUR DEVICE TYPE</label>
                 <div class="mf-select-wrap">
                   <select class="mf-input">
-                    <option value="">— Select (Optional) —</option>
+                    <option value="">- Select (Optional) -</option>
                     <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
                     <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
                     <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
@@ -300,7 +280,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <select class="mf-input">
                   <option value="">Select Preferred Time</option>
                   <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
+                  <option>Morning (8am - 12pm)</option><option>Afternoon (12pm - 5pm)</option><option>Evening (5pm - 8pm)</option>
                 </select>
               </div>
             </div>
@@ -310,7 +290,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- FAQ — grey -->
+    <!-- FAQ - grey -->
     <section class="s-grey">
       <div class="container">
         <div class="section-label center">Got Questions?</div>
@@ -319,7 +299,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '-' : '+' }}</span>
             </button>
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
@@ -332,7 +312,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container page-video-inner">
         <div class="page-video-copy">
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p class="page-video-desc">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results - all from our secure Glendale lab.</p>
         </div>
         <div class="page-video-embed">
           <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
@@ -340,7 +320,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- REVIEWS — white -->
+    <!-- REVIEWS - white -->
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->

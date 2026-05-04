@@ -4,83 +4,27 @@ useSeoMeta({
   description: 'Is your Toshiba external hard drive not working? You’re not alone. Toshiba drives are commonly used for storing important files, backup data, and media collecti'
 })
 
-const issues = [
-  { icon: '🔌', title: 'Power issues related to a faulty USB port or cable', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
-  { icon: '⚙️', title: 'File system errors or corrupt partitions', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
-  { icon: '💾', title: 'Disk drive not assigned a proper letter in disk management', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
-  { icon: '💥', title: 'Physically damaged components from drops or overheating', text: 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:' },
-]
-
-const causesIntro = 'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:'
+const issues: { icon: string; title: string; text: string }[] = []
+const causesIntro = ''
 const causesOutro = ''
-const causes = [
-  'Power issues related to a faulty USB port or cable',
-  'File system errors or corrupt partitions',
-  'Disk drive not assigned a proper letter in disk management',
-  'Physically damaged components from drops or overheating',
-  'Internal wear and tear or mechanical failure',
-  'Errors after being accidentally deleted or formatted',
-]
-
-const processIntro = 'We use a systematic, proven approach for every Toshiba Data Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
-
-const driveTypesIntro = 'If you notice any of the following issues, it\'s time to consider professional help:'
+const causes: string[] = []
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
+const driveTypesIntro = ''
 const driveTypesOutro = ''
-const driveTypes = [
-  'The device powers on, but the drive doesn\'t show up on your computer',
-  'Your system asks to format the drive when connected',
-  'The drive shows up in disk management but without a label',
-  'You’re unable to assign a drive letter and paths',
-  'Clicking or buzzing noises from inside the Toshiba HDD',
-  'Slow response, freezing, or missing folders',
-  'You accidentally deleted files you now need back',
+const driveTypes: string[] = []
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
+const d2Texts: string[] = []const d3Texts = [
+  'At Five Star Data Recovery, we offer specialized Toshiba data recovery services for customers dealing with failed drives, deleted files, and physical damage. Whether your Toshiba HDD stopped spinning, won\'t connect, or shows up blank, we have the tools and expertise to recover your data safely.',
 ]
-
-const tipIntro = 'There are a few safe steps you can try if your Toshiba drive stops working:'
-const tipOutro = 'If none of these work—or if you hear noises—stop immediately. Attempting too much on your own could overwrite or damage your data permanently.'
-const tips = [
-  'Try a different USB port or cable',
-  'Check disk management to see if the drive appears',
-  'Use "Change drive letter and paths" to assign a letter',
-  'Restart your computer and reconnect the device',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Toshiba drives are durable, but they’re not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'If you notice any of the following issues, it\'s time to consider professional help:',
-]
-
-const contactText = 'If you\'re experiencing issues with your Toshiba Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional toshiba data recovery services — and get back what matters most.'
-
-const reviews = [
-  { 'text': 'My Toshiba external hard drive stopped spinning and wasn’t being detected by my computer at all. I contacted Five Star Data Recovery and spoke with Elen, who guided me through the entire process. They were able to recover 100% of my files, including irreplaceable family photos. Their communication and professionalism were outstanding.', 'name': 'Mark S.', 'location': 'San Diego, CA' },
-  { 'text': 'I had over 2TB of business files on my Toshiba drive that suddenly failed. The drive wasn’t making any noise but simply wouldn’t show up on my PC. Five Star Data Recovery diagnosed the issue quickly and recovered nearly', 'name': '98%', 'location': 'of my data. They were honest, fast, and the flat-rate pricing made the whole process stress-free."' },
-  { 'text': 'My Toshiba laptop crashed and wouldn’t boot, leaving me locked out of all my work files. Alex handled my recovery and explained every step they were taking. Within a few days, I had all my documents and client data back. Highly recommend Five Star if you’re dealing with a Toshiba data loss situation.', 'name': 'Anthony L.', 'location': 'Glendale, CA' },
-]
-const faqs = [
+const d4Texts: string[] = []
+const midBody: string[] = []
+const contactText = ''
+const contactList: string[] = []
+const contactOutro = ''
+const reviews: { text: string; name: string; location: string }[] = []const faqs = [
 ]
 
 const openFaq = ref<number | null>(null)

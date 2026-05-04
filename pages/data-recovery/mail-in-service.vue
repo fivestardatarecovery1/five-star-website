@@ -15,44 +15,27 @@ const causesIntro = ''
 const causesOutro = ''
 const causes = []
 
-const processIntro = 'We use a systematic, proven approach for every Mail-In Data Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
 const driveTypesIntro = ''
 const driveTypesOutro = ''
 const driveTypes = []
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Mail-In Data Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
+const d2Texts: string[] = []
+const d3Texts: string[] = []
+const d4Texts: string[] = []
 
 const midBody = [
-  'The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival.',
-  'Simply complete the Mail-In Recovery Form, and we’ll send you a prepaid shipping label for your convenience. Once you receive it, securely package your device, include the completed form inside the box, and drop it off at your nearest shipping location. Our preferred carriers are FedEx and USPS.',
-  'We accept hard drives, SSDs, iPhones, USB flash drives, RAID arrays, SD cards, and other common storage media. If you’re unsure whether we can recover your specific device, feel free to contact us first for a free consultation.',
+  'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.',
+  'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.',
+  'We carefully begin the recovery process using advanced tools and cleanroom procedures.',
+  'After recovery is complete, you\'ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.',
+  'Once approved, we\'ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.',
 ]
 
 const contactText = 'If you\'re experiencing issues with your Mail-In Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'

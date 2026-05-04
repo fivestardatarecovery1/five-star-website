@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { icon: '⚠️', title: 'Samsung SSD Failure', text: 'Samsung SSDs can fail due to controller issues, firmware bugs, or NAND wear. Our engineers recover data from all Samsung SSD models including the 870 EVO, 860, and T7 portable series.' },
-  { icon: '🔌', title: 'Power Failure or Sudden Shutdown', text: 'Unexpected power cuts during read/write operations can cause corruption or render a Samsung drive unresponsive. We recover data from drives damaged by power-related failures.' },
-  { icon: '⚙️', title: 'Firmware Corruption', text: 'Corrupted firmware can prevent a Samsung drive from being recognized by your computer. Our team uses specialized tools to bypass firmware issues and recover your files.' },
-  { icon: '🗑️', title: 'Accidental Deletion or Formatting', text: 'Whether you accidentally formatted your Samsung drive or deleted important files, our recovery specialists can restore your data quickly and safely.' },
+  { icon: '💧', title: 'Water or liquid damage', text: '' },
+  { icon: '💥', title: 'Severe impact from drops', text: '' },
+  { icon: '🔥', title: 'Burnt components or short circuits', text: '' },
+  { icon: '🔌', title: 'Devices that no longer power on or enter boot loops', text: '' },
 ]
 
 const causesIntro = 'The most common reason customers come to us is physical damage to their Samsung phone. This includes:'
@@ -20,12 +20,12 @@ const causes = [
   'Devices that no longer power on or enter boot loops',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Samsung Data Recovery case.'
+const processIntro = 'At Five Star Data Recovery, we specialize in component-level Samsung mobile data recovery. We recover data from physically damaged Samsung phones. This includes phones with liquid spills, motherboard failures, or severe impacts.'
 const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
+  { 'num': '01', 'title': 'Physical Diagnostic', 'text': 'We inspect the Samsung device for board-level issues, such as short circuits, power failures, or corrosion.' },
+  { 'num': '02', 'title': 'Component-Level Repair', 'text': 'Using micro-soldering and hardware diagnostics, we repair the device just enough to bring it back to life temporarily. This allows us to access the internal storage without altering or overwriting data.' },
+  { 'num': '03', 'title': 'Full Backup with Smart Switch', 'text': 'Once the phone powers on, we create a complete backup using Smart Switch on your computer. This preserves all contacts, messages, app data, and settings.' },
+  { 'num': '04', 'title': 'Backup Delivery', 'text': 'We provide the full backup to the customer on an external drive or help restore it to a new Samsung device.' },
 ]
 
 const driveTypesIntro = 'We work with nearly every model of Samsung Galaxy phone and tablet, including:'
@@ -38,19 +38,11 @@ const driveTypes = [
   'Galaxy Tab devices',
 ]
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
+const d2Texts: string[] = []
 const d3Texts = [
   'After repairing a physically damaged Samsung phone, we use Smart Switch on your computer to make a full backup of the device. This tool is the safest and most complete way to extract user data, allowing us to save everything — including settings, apps, contacts, messages, and photos — in a structured backup file.',
   'This backup can then be restored onto a new Samsung Galaxy phone or saved to an external storage device for future use.',
@@ -79,6 +71,16 @@ const reviews = [
   { 'text': 'I had important business files saved only on my Samsung Galaxy that suddenly stopped powering on. After calling around, I found Five Star Data Recovery. Vahan took the time to explain how component-level recovery works and gave me realistic expectations. Thankfully, they recovered all my documents and photos. Highly recommended for Samsung phone data recovery!', 'name': 'Emilie K.', 'location': 'Seattle, WA' },
 ]
 const faqs = [
+  { q: '1. Can you recover data from a Samsung phone that won\'t turn on?', a: 'Yes. We specialize in recovering data from non-working Samsung phones, including devices that won\'t power on due to motherboard failure, power issues, or internal damage. Our engineers perform component-level board repairs to safely extract your data.' },
+  { q: '2. What types of data can you recover from my Samsung device?', a: 'We can recover critical data stored on the internal memory of your Samsung phone, including photos, videos, contacts, text messages, call logs, notes, and app data. Once recovered, your files can be delivered as a full phone image or as individual folders, depending on your preference.' },
+  { q: '3. Do you offer deleted file recovery for Samsung phones?', a: 'No, we do not offer deleted file recovery for Samsung devices. Our service is strictly focused on physically damaged or non-functional phones that require component-level repairs to access the data.' },
+  { q: '4. What are the most common Samsung issues you handle for data recovery?', a: 'We frequently recover data from Samsung phones with power failures, boot loops, black screens, motherboard shorts, failed firmware updates, and water, fire or liquid damage. If the phone won\'t turn on or is stuck at the Samsung logo, we can help.' },
+  { q: '5. How much does Samsung data recovery cost?', a: 'Our Tier 3 Component Level data recovery cost for Samsung phones is a flat rate of $950.00. This covers most Samsung cases that require board-level repair and advanced micro-soldering to retrieve your data.<br>Very rarely, a case may require a higher-tier recovery known as a "Chip-Off" procedure, which is only used when all other recovery methods have been exhausted and unsuccessful. If that happens, we will provide an updated quote before proceeding, and you will have the option to approve or decline the next step.<br>We believe in full transparency—no hidden fees or surprise charges.' },
+  { q: '6. Will my Samsung phone be repaired after the data recovery?', a: 'No. Our goal is to temporarily repair your phone just enough to extract the data safely. Once the recovery process is complete, the phone will not be returned in working condition for future use. The focus is strictly on recovering your files.' },
+  { q: '7. How long does Samsung phone data recovery take?', a: 'Our standard turnaround time for Samsung component-level data recovery is 1 to 2 weeks, depending on the complexity of the issue and parts availability.<br>If you need your data back faster, we offer two expedited options:<br>• <a href="/expedited-service" class="faq-link">Expedited Service</a>: Recovery completed within 3–5 business days<br>• <a href="/expedited-service-plus" class="faq-link">Expedited Plus Service</a>: Recovery completed within 1–3 days, including weekends and holidays.' },
+  { q: '8. Is my data safe and confidential during the recovery process?', a: 'Absolutely. Your data privacy is our top priority. We never access, share, or view your personal files beyond what\'s necessary to complete the recovery. All data is handled securely within our lab.' },
+  { q: '9. Can I mail in my Samsung phone for data recovery?', a: 'Yes! We offer free, fast, and insured round-trip shipping within the United States for Samsung data recovery clients. If you are not near our Glendale, CA, office, you can use our easy <a href="/data-recovery/mail-in-service" class="faq-link">mail-in data recovery service</a>.' },
+  { q: '10. Do you charge a fee if the data isn\'t recoverable?', a: 'We do not charge a recovery fee if the data is not recoverable. However, there is a fully refundable $200.00 deposit that is collected when the case is checked in. If we\'re unable to recover your data, this deposit will be refunded in full. If we do recover your data, the $200 is applied toward your final recovery cost.<br><strong>Important exception:</strong> If your Samsung phone has already been worked on at the component level by another lab or repair shop (such as prior micro-soldering, chip replacements, or board work), a non-refundable evaluation fee of $200.00 will apply due to the increased risk and complexity.<br>This exception does not apply to simple part replacements like screens or batteries—it\'s strictly for phones that have had prior board-level work done.' },
 ]
 
 const openFaq = ref<number | null>(null)

@@ -4,81 +4,28 @@ useSeoMeta({
   description: 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stag'
 })
 
-const issues = [
-  { icon: '💥', title: 'Physical Head Crash or Platter Damage', text: 'When the read/write head crashes into the platter, even a tiny dust particle can cause irreversible damage. Clean room recovery prevents further scratching and maximizes data retrieval.' },
-  { icon: '🔊', title: 'Clicking, Grinding, or Seized Drive', text: 'Mechanical sounds indicate internal damage requiring clean room intervention. Our ISO Class 5 clean room allows us to safely open the drive and address head, spindle, or platter issues.' },
-  { icon: '🔌', title: 'Power Failure or Burnt Components', text: 'Electrical damage can burn the PCB and damage internal components. Our clean room engineers replace burnt components and perform board repairs to restore drive operation and extract data.' },
-  { icon: '💧', title: 'Water or Liquid Damage', text: 'Liquid-damaged drives must be cleaned and dried in a controlled environment before any recovery attempt. Our clean room procedures safely remove contaminants without causing additional harm.' },
-]
-
+const issues: { icon: string; title: string; text: string }[] = []
 const causesIntro = ''
 const causesOutro = ''
-const causes = [
-  'Personal external hard drives with family photos',
-  'Business servers with client data',
-  'Law firms and healthcare organizations with sensitive documents',
-  'Creative professionals with video footage and design files',
-]
-
-const processIntro = 'We use a systematic, proven approach for every Clean Room Data Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
-
+const causes: string[] = []
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 const driveTypesIntro = ''
 const driveTypesOutro = ''
-const driveTypes = [
-  'Personal external hard drives with family photos',
-  'Business servers with client data',
-  'Law firms and healthcare organizations with sensitive documents',
-  'Creative professionals with video footage and design files',
+const driveTypes: string[] = []
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
+const d2Texts: string[] = []const d3Texts = [
+  'Not always. While clicking hard drives, non-spinning drives, and physically dead drives are common clean room cases, there are many other scenarios where clean room access is essential. This includes drives affected by impact, fire, water, or firmware-related read issues.',
+  'At Five Star Data Recovery, we open the drive\'s cover inside our certified clean room to visually inspect the platters and slider assemblies. This allows our engineers to determine whether the read failure is due to surface damage, head crash, or severe bad sectors. This critical step ensures we take the safest and most effective approach to recovering your data.',
 ]
-
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Clean Room Data Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'A clean room is required when working on physically damaged hard drives, especially when opening the drive’s internal components. Without a Class 100 clean room, dust or static can permanently damage the platters and make recovery impossible. Our controlled environment ensures maximum safety and data preservation during internal repairs.',
-  'Inside the clean room, our engineers carefully disassemble hard drives, inspect internal components, and replace damaged parts (like read/write heads or actuator arms). Using specialized tools and microscopes, we access the platters to begin sector-level imaging, ensuring a safe and effective recovery.',
-  'Yes. We work on 3.5″ and 2.5″ HDDs, as well as hybrid drives and enterprise-grade storage devices. Whether it’s a standard consumer hard drive or a complex RAID member, any physically damaged drive that needs to be opened will be handled exclusively inside our certified clean room lab.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Clean Room Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional clean room data recovery services — and get back what matters most.'
-
-const reviews = [
-  { 'text': 'My hard drive had suffered a head crash, and I knew it needed clean room work. From the first call, the team at Five Star explained everything in detail. They handled my drive with care, provided a flat-rate quote, and kept me updated throughout. The clean room recovery was a success, and I highly recommend them!', 'name': 'Mark D.', 'location': 'Pasadena, CA' },
-  { 'text': 'After my hard drive was dropped, it stopped spinning and made a grinding sound. I found Five Star Data Recovery online and saw they had a real clean room. They managed to recover 99% of my business documents, and I only paid once the data was fully recovered. Truly a life-saving service!', 'name': 'Nicole S.', 'location': 'Burbank, CA' },
-  { 'text': 'My hard drive was physically damaged after a power surge, and no local shop could help. Five Star Data Recovery diagnosed it quickly and performed clean room work to replace the damaged internal parts. I had my recovered files within a week, and they didn’t charge me a dime until the data was in my hands.', 'name': 'Jonathan M.', 'location': 'Las Vegas, NV' },
-]
-const faqs = [
+const d4Texts: string[] = []
+const midBody: string[] = []
+const contactText = ''
+const contactList: string[] = []
+const contactOutro = ''
+const reviews: { text: string; name: string; location: string }[] = []const faqs = [
 ]
 
 const openFaq = ref<number | null>(null)
@@ -92,7 +39,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Clean Room Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience."
+      description="Not always. While clicking hard drives, non-spinning drives, and physically dead drives are common clean room cases, there are many other scenarios where clean room access is essential. This includes drives affected by impact, fire, water, or firmware-related read issues."
       bgImage="/clean-room-data-recovery-equipment-glendale-ca.jpg"
     />
 

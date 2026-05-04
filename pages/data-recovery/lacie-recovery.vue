@@ -1,84 +1,30 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'LaCie Data Recovery Services — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we specialize in comprehensive Lacie data recovery services. If you have lost files, we can help. This can happen because of acciden'
+  description: 'Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. We recover data from LaCie devices used in film sets, music studios, animation workstations, and commercial photography sessions.'
 })
 
-const issues = [
-  { icon: '🗑️', title: 'Accidental Deletion or Formatting', text: 'One of the most common scenarios involves users accidentally deleting files or formatting a drive. In many cases, the data still exists on the drive but has been marked as “free space.” Acting quickly increases the chances of successful recovery.' },
-  { icon: '⚙️', title: 'File System Corruption', text: 'Corruption in the file system can occur after improper disconnection, system crashes, or software bugs. A corrupted drive might appear blank, unmounted, or prompt you to format it when you connect your Lacie external hard drive.' },
-  { icon: '💥', title: 'Physical Damage', text: 'Although Lacie drives withstand impact like the Rugged series, they’re not indestructible. Drops, water exposure, and electrical surges can cause mechanical failure or damage internal components.' },
-  { icon: '⚠️', title: 'Disk Utility Errors', text: 'Mac users often encounter issues when using Disk Utility. Clicking "Erase" or running First Aid incorrectly can result in losing data or triggering a drive reformat.' },
-]
-
+const issues: { icon: string; title: string; text: string }[] = []
 const causesIntro = ''
 const causesOutro = ''
-const causes = [
-  'Specializing in Lacie external hard drives and RAID systems',
-  'In-house cleanroom for physically damaged drives',
-  'Industry-leading success rates',
-  'Flat-rate pricing and free diagnostics',
-  '“No data, no charge” guarantee (except expedited services)',
-  'Forensic-grade tools and certified engineers',
-  'Friendly support team with real-time updates',
+const causes: string[] = []
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
+const driveTypesIntro = ''
+const driveTypesOutro = ''
+const driveTypes: string[] = []
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
+const d2Texts: string[] = []const d3Texts = [
+  'Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage.',
+  'We\'ve recovered data from Lacie devices used in film sets, music studios, animation workstations, and commercial photography sessions. Whether you formatted your Lacie hard disk, dropped it on location, or it became unreadable mid-edit, we\'re here to help. Our lab handles not just recovery, but also the specialized file types used in creative workflows.',
 ]
-
-const processIntro = 'We use a systematic, proven approach for every LaCie Data Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
-
-const driveTypesIntro = 'We provide recovery for a wide range of Lacie external hard drives and RAID systems, including:'
-const driveTypesOutro = 'No matter if you use a portable USB-C drive or a multi-disk Thunderbolt RAID array, our lab can help. We have the tools and knowledge to recover data from a Lacie device in any setup or condition.'
-const driveTypes = [
-  'Lacie Rugged Drives (HDD and SSD)',
-  'Lacie d2 Professional Desktop Drives',
-  'Lacie 2big, 4big, and 6big RAID arrays',
-  'Lacie Mobile SSDs',
-  'Lacie Porsche Design Drives',
-  'USB-C and Thunderbolt-connected models',
-  'Formatted or encrypted drives',
-]
-
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'LaCie Data Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Many clients unintentionally make recovery more difficult by trying to fix the problem themselves. Here’s what not to do if you’re dealing with a failed or deleted Lacie drive:',
-  'Each of these actions can reduce your chance of recovery. They may overwrite important areas or harm the file system further. If your Lacie external hard drive shows signs of failure, stop using it. Send it to a professional recovery service.',
-]
-
-const midBody = [
-  'Yes, we specialize in LaCie data recovery from drives that don’t mount, aren’t recognized by the system, or show errors. Whether it’s a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files.',
-  'Absolutely. We offer LaCie RAID recovery for models like the 2big, 5big, and Rugged RAID Pro. Whether your RAID is degraded, failed, or reformatted, we can rebuild and extract your valuable data safely.',
-  'Frequent issues with LaCie drives include clicking noises, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.',
-]
-
-const contactText = 'Lacie drives are built tough, but recovery requires expertise. If you have a single corrupted file or a whole RAID array that won’t mount, we can help. We have the tools and experience to recover your data safely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional lacie data recovery services — and get back what matters most.'
-
+const d4Texts: string[] = []
+const midBody: string[] = []
+const contactText = ''
+const contactList: string[] = []
+const contactOutro = ''
 const reviews = []
 const faqs = [
 ]
@@ -94,7 +40,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="LaCie Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery, we specialize in comprehensive Lacie data recovery services. If you have lost files, we can help. This can happen because of accidental deletion, problems with the file system, physical damage, or sudden drive failure. We will recover your lost files quickly and safely."
+      description="Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage."
       bgImage="/lacie-data-recovery-service-los-angeles.jpg"
     />
 

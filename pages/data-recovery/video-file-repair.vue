@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { icon: '🔌', title: 'Power failures during recording or file transfer', text: 'Our expert team specializes in recovering data from cases involving power failures during recording or file transfer. Contact us for a free diagnosis.' },
-  { icon: '💾', title: 'Camera or device crashes', text: 'Our expert team specializes in recovering data from cases involving camera or device crashes. Contact us for a free diagnosis.' },
-  { icon: '💾', title: 'Improper ejection of external drives or SD cards', text: 'Our expert team specializes in recovering data from cases involving improper ejection of external drives or sd cards. Contact us for a free diagnosis.' },
-  { icon: '⚙️', title: 'File system corruption on the storage device', text: 'Our expert team specializes in recovering data from cases involving file system corruption on the storage device. Contact us for a free diagnosis.' },
+  { icon: '🔌', title: 'Power failures during recording or file transfer', text: '' },
+  { icon: '💾', title: 'Camera or device crashes', text: '' },
+  { icon: '💾', title: 'Improper ejection of external drives or SD cards', text: '' },
+  { icon: '⚙️', title: 'File system corruption on the storage device', text: '' },
 ]
 
 const causesIntro = ''
@@ -22,53 +22,27 @@ const causes = [
   'Incomplete file saving due to interrupted recording sessions',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Video File Repair & Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
 const driveTypesIntro = ''
 const driveTypesOutro = ''
-const driveTypes = [
-  'Industry-Leading Tools',
-  'In-House Engineering Team',
-  'Experience Across Multiple Codecs',
-  'Over 10+ Years Experience in Video File Repair',
-  'No Data, No Charge (Most Cases)',
-  'Expedited Plus Service available for Rush Cases',
-  'Dedicated Engineer for your case!',
-  '99% Success Rate',
-]
+const driveTypes: string[] = []
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Video File Repair & Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
+const d2Texts: string[] = []
+const d3Texts: string[] = []
+const d4Texts: string[] = []
 
 const midBody = [
-  'If your video files are corrupted, the most important first step is to avoid working directly on the original device. Instead, you should perform a sector-level clone of the entire storage device (hard drive, SD card, SSD, CFast, RAID etc.) where the damaged video files were stored. This creates an exact bit-by-bit copy of the device, preserving the original data in its current state.',
-  'Once the cloning is complete, all repair or recovery attempts should be done on the cloned copy—not the original. Attempting to repair or recover corrupted video files directly from the original device is risky and strongly discouraged. If the repair process goes wrong or further damages the files, you may permanently lose the only intact copy of the data. In many cases, once a file is overwritten or altered improperly, there’s no way to reverse the damage.',
-  'Clone first, using sector-level imaging tools.',
+  'Before attempting any repair, we require the entire storage device (not just individual files). This is critical for preserving data integrity and preventing further corruption. Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive—this ensures your source data remains untouched and safe throughout the entire recovery and repair process.',
+  'Once the structural issues are identified, we carefully rebuild and repair each video file while preserving original resolution, bitrate, frame rate, and codec specifications. Whether it\'s a .MP4, .MOV, .MXF, or RAW video format, our priority is to maintain original quality during the repair.',
+  'Before delivering your repaired files, we fully test and verify that each video plays back correctly from start to finish. We check both video and audio streams for integrity.',
+  'Finally, your repaired video files are saved to a new external drive (either provided by you or available for purchase from us). If needed, we can also provide a detailed list of repaired files for your review before delivery.',
+  'Whether it\'s surveillance footage, wedding videos, or professional film files, our team specializes in repairing damaged, unplayable, or corrupted video files—quickly and discreetly.',
 ]
 
 const contactText = 'If you\'re experiencing issues with your Video File Repair & Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'

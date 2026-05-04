@@ -4,65 +4,32 @@ useSeoMeta({
   description: 'Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would pu'
 })
 
-const issues = [
-  { icon: '⚡', title: 'Priority Lab Processing', text: 'Your device jumps to the front of our queue. Expedited cases receive immediate attention from our senior engineers, with recovery typically completed in 1–3 business days.' },
-  { icon: '🔍', title: 'Same-Day Diagnosis Available', text: 'Need answers fast? Our expedited service includes same-day diagnostic evaluation. You\'ll know the scope of damage and our recovery plan within hours of drop-off or receipt.' },
-  { icon: '📞', title: 'Dedicated Case Manager', text: 'Every expedited recovery is assigned a dedicated case manager who keeps you updated at every stage. Direct communication, no guesswork, and no surprises.' },
-  { icon: '🔒', title: 'Secure and Confidential Handling', text: 'Speed doesn\'t compromise security. All expedited recoveries follow our strict data handling and confidentiality protocols inside our certified clean room lab.' },
-]
+const issues: { icon: string; title: string; text: string }[] = []
 
-const causesIntro = 'We understand your files are private. Whether you\'re recovering sensitive business files or personal memories, we keep your data protected from start to finish.'
+const causesIntro = ''
 const causesOutro = ''
-const causes = [
-  'In-house recovery only — no third-party labs',
-  'All data is securely stored and permanently deleted after final delivery',
-  'NDA available for sensitive projects',
-  'Our lab uses access control and 24/7 surveillance',
-]
+const causes: string[] = []
 
-const processIntro = 'We use a systematic, proven approach for every Expedited Data Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
-const driveTypesIntro = 'We understand your files are private. Whether you\'re recovering sensitive business files or personal memories, we keep your data protected from start to finish.'
+const driveTypesIntro = ''
 const driveTypesOutro = ''
-const driveTypes = [
-  'In-house recovery only — no third-party labs',
-  'All data is securely stored and permanently deleted after final delivery',
-  'NDA available for sensitive projects',
-  'Our lab uses access control and 24/7 surveillance',
-]
+const driveTypes: string[] = []
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Expedited Data Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
+const d2Texts: string[] = []
+const d3Texts: string[] = []
+const d4Texts: string[] = []
 
 const midBody = [
-  'Our expedited service is a rush option available during normal business hours. Your case is moved to the front of the queue, and our engineers start working on your device immediately.',
-  'Most expedited cases are completed within 1 to 3 business days, depending on the complexity of the recovery. Some simpler cases may even be finished the same day.',
-  'No. This service only applies to standard business hours, Monday through Friday. If you need after-hours or weekend service, we offer a separate Expedited Plus Service for that level of urgency.',
+  'This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it\'s impossible to give an exact turnaround time.',
+  'IF the issue with your drive is logical (bad sectors, firmware corruption, damaged file system, etc), and you have less than 2TB of data, we should be able to get the data back to you within 2-3 days.',
+  'IF the issue with your drive is mechanical (clicking, beeping, stuck motor, etc), and you have less than 2TB of data, we should be able to get your data back to you within 3-5 days (the delay is for the time needed to source the donor parts).',
+  'IF you have a lot of data on your drive, we can work with you to get you back the most important files needed first, then continue working on the rest of the recovery.',
 ]
 
 const contactText = 'If you\'re experiencing issues with your Expedited Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
@@ -88,7 +55,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Expedited Data Recovery Service"
       subtitle="Get Your Data Back In No Time."
-      description="Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would put your case at the top of the que. With our Expedited Service, our Engineers will start working on your  case within an hour of drop off, and the case will be handled as a priority within business hours."
+      description="This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it's impossible to give an exact turnaround time."
       bgImage="/hard-drive-data-recovery-specialist-glendale-ca.jpg"
     />
 

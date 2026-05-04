@@ -1,85 +1,41 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Seagate Data Recovery Services — Five Star Data Recovery',
+  title: 'Seagate Data Recovery Services - Five Star Data Recovery',
   description: 'When your Seagate hard drive stops working, it can feel like everything is lost. At Five Star Data Recovery, we focus on Seagate Data Recovery. We help people a'
 })
 
-const issues = [
-  { icon: '🔌', title: 'Seagate external hard drive not working or not powering on', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
-  { icon: '🔊', title: 'Clicking or grinding noises from the drive', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
-  { icon: '💾', title: 'Seagate Hard drive not working after an unexpected shutdown', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
-  { icon: '💾', title: 'Devices that appear in Disk Management but not in File Explorer.', text: 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:' },
-]
+const issues: { icon: string; title: string; text: string }[] = []
 
-const causesIntro = 'We see a wide range of problems with Seagate devices. Whether it’s a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:'
-const causesOutro = 'No matter the issue, our team is skilled at diagnosing and recovering data from any damaged device.'
-const causes = [
-  'Seagate external hard drive not working or not powering on',
-  'Clicking or grinding noises from the drive',
-  'Seagate Hard drive not working after an unexpected shutdown',
-  'Devices that appear in Disk Management but not in File Explorer.',
-  'Corrupted or unreadable file system errors',
-]
+const causesIntro = ''
+const causesOutro = ''
+const causes: string[] = []
 
-const processIntro = 'We use a systematic, proven approach for every Seagate Data Recovery case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
-const driveTypesIntro = 'We’ve helped thousands of customers recover their data with care and confidence. From standard desktop models to encrypted SSDs or flash drives, our team handles each recovery with expert attention.'
+const driveTypesIntro = ''
 const driveTypesOutro = ''
-const driveTypes = [
-  'Years of experience handling all types of Seagate models',
-  'High recovery success rates for even severely damaged devices',
-  'In-house cleanroom for safe internal repairs',
-  'Encrypted or password-protected storage',
-  'No data, no charge—if we can’t recover anything, you pay nothing',
-  'Transparent pricing and clear communication every step of the way',
-]
+const driveTypes: string[] = []
 
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
+const tipIntro = ''
+const tipOutro = ''
+const tips: string[] = []
 
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
+const d2Texts: string[] = []
 const d3Texts = [
-  'We’ve helped thousands of customers recover their data with care and confidence. From standard desktop models to encrypted SSDs or flash drives, our team handles each recovery with expert attention.',
+  'Our lab is equipped with the tools and expertise to work on hdds, ssds or flash devices from Seagate. If you dropped your external drive, exposed it to liquid, or it suddenly stopped working, don\'t worry. We\'ll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware.',
+  'Depending on the issue, your drive may need internal repairs in our cleanroom. Once stable, we create a secure image of the device and extract as much recoverable data as possible. We then copy all files stored onto a new drive that you provide or purchase from us.',
+  'Our pricing is based on the type of failure and drive model, and we\'ll always provide a clear data recovery cost quote before starting.',
 ]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
+const d4Texts: string[] = []
 
-const midBody = [
-  'At Five Star Data Recovery, our Seagate data recovery pricing is based on the drive’s capacity, connection type, and condition. All pricing is flat-rate — no hourly billing or surprise charges. Here\'s the general breakdown:',
-  '$300.00 for standard Seagate SATA drives (desktop or laptop) up to 2TB in capacity',
-  '$500.00 for Seagate External Hard Drives and internal drives up to 6TB',
-]
+const midBody: string[] = []
 
-const contactText = 'If you\'re experiencing issues with your Seagate Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional seagate data recovery services — and get back what matters most.'
+const contactText = ''
+const contactList: string[] = []
+const contactOutro = ''
 
-const reviews = [
-  { 'text': 'I had a Seagate external hard drive that suddenly stopped working. It wasn’t showing up on my computer at all. I called Five Star Data Recovery and Elen answered all my questions and made me feel at ease. Within a few days, they recovered 100% of my important files. The communication and service were outstanding!', 'name': 'Jessica L.', 'location': 'Los Angeles' },
-  { 'text': 'My Seagate drive started making clicking noises, and I panicked. After some research, I found Five Star Data Recovery. Alex worked on my case and explained that the issue was mechanical. They performed a clean room recovery and were able to retrieve almost 99% of my data. I couldn’t be happier with the results.', 'name': 'Robert M.', 'location': 'Phoenix, AZ' },
-  { 'text': 'My Seagate drive showed up as RAW format and none of my files were accessible. Five Star Data Recovery diagnosed it quickly and got back almost all of my documents and photos. Their honesty, speed, and professionalism stood out. I highly recommend them for Seagate data recovery.', 'name': 'Daniel T.', 'location': 'Denver, CA' },
-]
+const reviews: { text: string; name: string; location: string }[] = []
 const faqs = [
 ]
 
@@ -94,13 +50,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Seagate Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="When your Seagate hard drive stops working, it can feel like everything is lost. At Five Star Data Recovery, we focus on Seagate Data Recovery. We help people and businesses recover their important files quickly, safely, and affordably. Whether you’re dealing with a corrupted partition or a physically damaged drive, our experts are ready to help."
+      description="Our lab is equipped with the tools and expertise to work on hdds, ssds or flash devices from Seagate. If you dropped your external drive, exposed it to liquid, or it suddenly stopped working, don't worry. We'll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware."
       bgImage="/seagate-data-recovery-service-los-angeles.jpg"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- ISSUES - white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label">Common Problems</div>
@@ -117,7 +73,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- CAUSES — grey -->
+    <!-- CAUSES - grey -->
     <section class="s-grey">
       <div class="container asym-layout">
         <div class="asym-minor">
@@ -139,7 +95,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- PROCESS — white -->
+    <!-- PROCESS - white -->
     <section class="s-white">
       <div class="container">
         <div class="section-label center">Our Process</div>
@@ -155,12 +111,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="guarantee-strip">
           <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
+          <p><strong>No Data, No Charge Guarantee</strong> - If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
         </div>
       </div>
     </section>
 
-    <!-- DRIVE TYPES — grey -->
+    <!-- DRIVE TYPES - grey -->
     <section class="s-grey">
       <div class="container split-40-60">
         <div class="split-side">
@@ -189,11 +145,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="banner-overlay" />
       <div class="container banner-inner">
         <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <p class="banner-sub">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results - all from our secure Glendale lab.</p>
         <div class="banner-stats">
           <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
           <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
+          <div class="bstat"><span class="bstat-num">3-5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
           <div class="bstat-div" />
           <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
           <div class="bstat-div" />
@@ -202,7 +158,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 1 — white -->
+    <!-- DUAL INFO 1 - white -->
     <section class="s-white">
       <div class="container dual-col">
         <div class="dual-box">
@@ -222,7 +178,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 2 — grey -->
+    <!-- DUAL INFO 2 - grey -->
     <section class="s-grey">
       <div class="container dual-col">
         <div class="dual-box">
@@ -269,7 +225,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <label>SELECT YOUR DEVICE TYPE</label>
                 <div class="mf-select-wrap">
                   <select class="mf-input">
-                    <option value="">— Select (Optional) —</option>
+                    <option value="">- Select (Optional) -</option>
                     <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
                     <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
                     <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
@@ -308,7 +264,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <select class="mf-input">
                   <option value="">Select Preferred Time</option>
                   <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
+                  <option>Morning (8am - 12pm)</option><option>Afternoon (12pm - 5pm)</option><option>Evening (5pm - 8pm)</option>
                 </select>
               </div>
             </div>
@@ -318,7 +274,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- FAQ — grey -->
+    <!-- FAQ - grey -->
     <section class="s-grey">
       <div class="container">
         <div class="section-label center">Got Questions?</div>
@@ -327,7 +283,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '-' : '+' }}</span>
             </button>
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
@@ -340,7 +296,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container page-video-inner">
         <div class="page-video-copy">
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+          <p class="page-video-desc">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results - all from our secure Glendale lab.</p>
         </div>
         <div class="page-video-embed">
           <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
@@ -348,7 +304,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- REVIEWS — white -->
+    <!-- REVIEWS - white -->
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
