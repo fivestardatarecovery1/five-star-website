@@ -678,7 +678,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   .process-step { min-width: calc(50% - 8px); flex: none; }
 }
 @media (max-width: 540px) {
-  .process-step { min-width: 100%; }
+  .process-steps { gap: 12px; }
+  .process-step { min-width: 0; width: 100%; flex: 0 0 100%; box-sizing: border-box; }
 }
 
 /* Stats bar */
@@ -717,8 +718,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   .stat-num { font-size: 36px; }
 }
 
-/* Reviews — clip overflow at section level, not at html/body */
-.reviews-section { overflow-x: clip; }
+/* Reviews — contain overflow at section level */
+.reviews-section { overflow: hidden; }
 
 /* Reviews carousel */
 .reviews-carousel {
@@ -821,6 +822,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   .reviews-carousel { flex-direction: column; gap: 0; }
   .carousel-btn { display: none; }
   .carousel-window {
+    width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -833,8 +835,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
     padding: 0 4px 4px;
   }
   .review-card {
-    flex: 0 0 85vw;
-    max-width: 85vw;
+    flex: 0 0 calc(100vw - 64px);
+    max-width: calc(100vw - 64px);
     scroll-snap-align: start;
     padding: 20px 16px;
     min-height: auto;

@@ -194,6 +194,11 @@
 }
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
   .footer-bottom-inner { flex-direction: column; text-align: center; }
+}
+@media (max-width: 420px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { grid-column: auto; }
 }
 </style>
