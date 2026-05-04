@@ -68,6 +68,7 @@ useHead({
   ]
 })
 
+useHead({ titleTemplate: '%s' })
 useSeoMeta({
   title: 'Reviews - Five Star Data Recovery',
   description: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
