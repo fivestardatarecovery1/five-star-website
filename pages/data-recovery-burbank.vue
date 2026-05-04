@@ -344,25 +344,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Client Stories</div>
-        <h2 class="s-heading center">Testimonials from Satisfied Clients</h2>
-        <div class="reviews-grid">
-          <div v-for="r in reviews" :key="r.name" class="review-card">
-            <div class="review-quote">"</div>
-            <p class="review-body">{{ r.text }}</p>
-            <div class="review-footer">
-              <div class="review-stars">★★★★★</div>
-              <div class="review-meta">
-                <strong class="review-name">{{ r.name }}</strong>
-                <span class="review-loc">{{ r.location }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band">
@@ -499,15 +481,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
 .faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-.review-card { background: #fff; border: 1.5px solid #e8ecf2; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-.review-quote { font-size: 3.5rem; color: #C9A84C; line-height: 0.8; margin-bottom: 14px; font-family: Georgia, serif; }
-.review-body { font-size: 0.9rem; color: #4a5568; line-height: 1.75; flex: 1; font-style: italic; margin-bottom: 20px; }
-.review-footer { border-top: 1px solid #f0f2f7; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
-.review-stars { color: #C9A84C; font-size: 0.95rem; letter-spacing: 2px; }
-.review-meta { text-align: right; }
-.review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
-.review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
 @media (max-width: 1024px) {
   .asym-layout { grid-template-columns: 1fr 1fr; }
   .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -517,7 +490,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 @media (max-width: 768px) {
   .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
   .page-video-inner { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
   .issues-grid { grid-template-columns: 1fr; }
   .bstat-div { display: none; }
   .img-stat-badge { bottom: 12px; }

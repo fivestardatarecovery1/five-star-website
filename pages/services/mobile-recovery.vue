@@ -58,9 +58,6 @@ useSeoMeta({
 .process-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
 .process-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
 /* Review cards */
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
-.review-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 28px; }
-.review-stars { color: #C9A84C; font-size: 1.1rem; margin-bottom: 12px; }
 .review-text { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
 .review-author { font-size: 0.875rem; font-weight: 700; color: #C9A84C; }
 /* Feature cards */

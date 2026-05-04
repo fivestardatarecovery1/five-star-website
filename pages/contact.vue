@@ -120,25 +120,7 @@ const submitted = ref(false)
     </section>
 
     <!-- REVIEWS -->
-    <section class="s-grey">
-      <div class="container">
-        <div class="section-label center">Client Stories</div>
-        <h2 class="s-heading center">What Our Clients Are Saying</h2>
-        <div class="reviews-grid">
-          <div v-for="r in reviews" :key="r.name" class="review-card">
-            <div class="review-quote">"</div>
-            <p class="review-body">{{ r.text }}</p>
-            <div class="review-footer">
-              <div class="review-stars">★★★★★</div>
-              <div class="review-meta">
-                <strong class="review-name">{{ r.name }}</strong>
-                <span class="review-loc">{{ r.location }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ReviewsSection :reviews="reviews" />
 
     <!-- VIDEO -->
     <section class="page-video-section">
@@ -194,15 +176,6 @@ const submitted = ref(false)
 .faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-.review-card { background: #fff; border: 1.5px solid #e8ecf2; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-.review-quote { font-size: 3.5rem; color: #C9A84C; line-height: 0.8; margin-bottom: 14px; font-family: Georgia, serif; }
-.review-body { font-size: 0.9rem; color: #4a5568; line-height: 1.75; flex: 1; font-style: italic; margin-bottom: 20px; }
-.review-footer { border-top: 1px solid #f0f2f7; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
-.review-stars { color: #C9A84C; font-size: 0.95rem; letter-spacing: 2px; }
-.review-meta { text-align: right; }
-.review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
-.review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
 .btn-gold { display: inline-block; background: #C9A84C; color: #1a1a1a; padding: 16px 36px; border-radius: 8px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: background 0.2s; }
 .btn-gold:hover { background: #b8923e; }
 .btn-gold-full { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
@@ -272,7 +245,6 @@ const submitted = ref(false)
 @media (max-width: 768px) {
   .contact-grid, .contact-grid--wide { grid-template-columns: 1fr; }
   .contact-form-wrap { padding: 28px 20px; }
-  .reviews-grid { grid-template-columns: 1fr; }
   .page-video-inner { grid-template-columns: 1fr; }
   .map-section iframe { height: 300px; }
 }

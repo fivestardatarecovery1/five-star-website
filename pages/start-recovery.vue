@@ -128,25 +128,7 @@ const submitted = ref(false)
     </section>
 
     <!-- REVIEWS -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Client Stories</div>
-        <h2 class="s-heading center">Testimonials from Satisfied Clients</h2>
-        <div class="reviews-grid">
-          <div v-for="r in reviews" :key="r.name" class="review-card">
-            <div class="review-quote">"</div>
-            <p class="review-body">{{ r.text }}</p>
-            <div class="review-footer">
-              <div class="review-stars">★★★★★</div>
-              <div class="review-meta">
-                <strong class="review-name">{{ r.name }}</strong>
-                <span class="review-loc">{{ r.location }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ReviewsSection :reviews="reviews" />
 
     <!-- FAQ -->
     <section class="s-grey">
@@ -217,15 +199,6 @@ const submitted = ref(false)
 .mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
 .mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
 .mf-submit:hover { background: #b8923e; }
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-.review-card { background: #fff; border: 1.5px solid #e8ecf2; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-.review-quote { font-size: 3.5rem; color: #C9A84C; line-height: 0.8; margin-bottom: 14px; font-family: Georgia, serif; }
-.review-body { font-size: 0.9rem; color: #4a5568; line-height: 1.75; flex: 1; font-style: italic; margin-bottom: 20px; }
-.review-footer { border-top: 1px solid #f0f2f7; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
-.review-stars { color: #C9A84C; font-size: 0.95rem; letter-spacing: 2px; }
-.review-meta { text-align: right; }
-.review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
-.review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
 .btn-gold-full { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
 .btn-gold-full:hover { background: #b8923e; }
 .page-video-section { background: #2a2d38; padding: 70px 0; }
