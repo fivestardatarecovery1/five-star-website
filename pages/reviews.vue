@@ -9,6 +9,21 @@ useSeoMeta({
 })
 
 const reviews = []
+
+const socialPosts = [
+  { handle: 'tristapisani', img: '/review-social-tristapisani-1.jpg' },
+  { handle: 'tristapisani', img: '/review-social-tristapisani-2.jpg' },
+  { handle: 'josephdegbadjo', img: '/review-social-josephdegbadjo.jpg' },
+  { handle: 'thejamiekennedy', img: '/review-social-thejamiekennedy.jpg' },
+  { handle: 'shanemosley', img: '/review-social-shanemosley.jpg' },
+]
+
+const spIndex = ref(0)
+const spVisible = 3
+const spCardWidth = 340
+
+function spPrev() { if (spIndex.value > 0) spIndex.value-- }
+function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.value++ }
 </script>
 
 <template>
@@ -43,6 +58,42 @@ const reviews = []
 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" bg-class="section-bg-1" />
+
+    <!-- SOCIAL PROOF CAROUSEL -->
+    <section class="social-proof-section">
+      <div class="container">
+        <div class="sp-header">
+          <p class="sp-label">As Seen On Social Media</p>
+          <h2 class="sp-title">Real Clients. Real Stories. Real Results.</h2>
+          <p class="sp-sub">Don&rsquo;t just take our word for it &mdash; see what our clients are posting about their experience with Five Star Data Recovery.</p>
+        </div>
+        <div class="sp-carousel">
+          <button class="sp-btn sp-prev" @click="spPrev" :disabled="spIndex === 0" aria-label="Previous">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="sp-window">
+            <div class="sp-track" :style="{ transform: `translateX(-${spIndex * (spCardWidth + 24)}px)` }">
+              <div v-for="post in socialPosts" :key="post.handle" class="sp-card">
+                <img :src="post.img" :alt="post.handle + ' review of Five Star Data Recovery'" class="sp-img" loading="lazy" />
+                <div class="sp-card-footer">
+                  <span class="sp-handle">@{{ post.handle }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="sp-btn sp-next" @click="spNext" :disabled="spIndex >= socialPosts.length - spVisible" aria-label="Next">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="sp-dots">
+          <button
+            v-for="i in Math.ceil(socialPosts.length / spVisible)" :key="i"
+            :class="['sp-dot', { active: spIndex === (i-1) * spVisible }]"
+            @click="spIndex = (i-1) * spVisible"
+          />
+        </div>
+      </div>
+    </section>
 
     <!-- VIDEO -->
     <section class="page-video-section">
@@ -115,5 +166,128 @@ const reviews = []
 .reviews-grid-large { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
 @media (max-width: 768px) {
   .reviews-grid-large, .page-video-inner { grid-template-columns: 1fr; }
+}
+
+/* Social proof carousel */
+.social-proof-section {
+  background: #0d111f;
+  padding: 80px 0;
+}
+.sp-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.sp-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #F5C842;
+  margin-bottom: 12px;
+}
+.sp-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.sp-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.55);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+.sp-carousel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sp-window {
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+.sp-track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+.sp-card {
+  flex: 0 0 340px;
+  background: #13161f;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.sp-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245,200,66,0.3);
+}
+.sp-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.sp-card-footer {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.sp-handle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F5C842;
+}
+.sp-btn {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sp-btn:hover:not(:disabled) { border-color: #F5C842; color: #F5C842; }
+.sp-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+.sp-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.sp-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, width 0.2s;
+}
+.sp-dot.active {
+  background: #F5C842;
+  width: 24px;
+  border-radius: 4px;
+}
+@media (max-width: 900px) {
+  .sp-card { flex: 0 0 280px; }
+}
+@media (max-width: 640px) {
+  .sp-btn { display: none; }
+  .sp-window { overflow-x: auto; scroll-snap-type: x mandatory; }
+  .sp-track { transform: none !important; }
+  .sp-card { flex: 0 0 80vw; scroll-snap-align: start; }
 }
 </style>
