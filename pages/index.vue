@@ -1,7 +1,171 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Expert Data Recovery Services — Glendale, CA',
-  description: 'Five Star Data Recovery — professional hard drive, SSD, RAID, and mobile data recovery in Glendale, CA. No data, no charge. Free evaluation. Call 818-272-8866.'
+  title: 'Data Recovery Experts – Five Star Data Recovery',
+  description: 'Recover lost files from hard drives, iPhones, SSDs, and more. Based in Los Angeles, Five Star Data Recovery provides data recovery services.'
+})
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "priceRange": "$300 - $950",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "10:00",
+                "closes": "14:00"
+              }
+            ],
+            "areaServed": [
+              { "@type": "City", "name": "Glendale" },
+              { "@type": "City", "name": "Los Angeles" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Jennifer K." },
+                "datePublished": "2024-11-20",
+                "reviewBody": "Fast and reliable service. They recovered all my important files from a completely dead hard drive.",
+                "name": "Lifesaving Recovery",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5",
+                  "bestRating": "5",
+                  "worstRating": "1"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "url": "https://www.fivestardatarecovery.com/",
+            "telephone": "+1-818-272-8866",
+            "priceRange": "$300 - $950",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What types of devices do you recover data from?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We recover data from hard drives, SSDs, RAID arrays, iPhones, CFast Cards, USB flash drives, SD cards and more."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer free diagnostics?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes — we offer a free diagnosis as long as the customer agrees to the initial minimum quoted price. We always start with a free consultation, during which we ask for details about the issue. Based on the information provided, we give an initial price quote. If the customer is comfortable with that price, we proceed with a full diagnostic at no charge. If the issue turns out to be different and the price changes, the customer will have the option to accept the updated quote or walk away without paying anything. We're 100% transparent — no surprises and no obligations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does data recovery cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "All of our data recovery fees are flat-rate, based on the specific issue and type of device. We've made pricing simple and transparent — you can view our current rates on our pricing page. If you're unsure what the issue is, just give us a call for a free phone consultation. Our team will guide you through the symptoms and help you understand what category your device might fall into. No hidden fees. No gimmicks. Just honest, upfront pricing from start to finish."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if you can't recover my data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We operate under a No Data — No Charge policy for most cases. However, there are two exceptions where a non-refundable fee will apply, due to the higher complexity and labor involved: Deleted File Recoveries — These require advanced scanning and are not covered under the standard policy. Drives with Opened Covers — If the top metal cover (where the platters are housed) has been removed before arrival, a cleanroom inspection fee will be charged regardless of outcome. For all other cases, if we can't recover your data, you don't pay anything."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does the data recovery process take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For most standard cases — such as drives up to 4TB with logical issues — the typical turnaround time is 3 to 5 business days. More complex recoveries (e.g., drives with mechanical damage or larger than 4TB) may take longer depending on the severity of the issue and parts availability. If you need your data back quickly, we offer two fast-track options: Expedited Service: Priority recovery during business hours. Expedited Plus Service: 24/7 emergency recovery, including weekends and holidays. You choose the timeline — we make it happen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are you able to recover data from physically damaged drives?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, we specialize in recovering data from drives with physical damage, including those that are clicking, not spinning, or water-damaged."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is your data recovery lab located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our main data recovery lab is located in Glendale, California, and we proudly serve the entire Los Angeles area. Not located nearby? No problem — we offer free and fast nationwide shipping within the U.S. Whether you're in California or across the country, we make it easy to send in your device securely and get the recovery process started."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer emergency or after-hours data recovery?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our Expedite Plus Service offers 24/7 emergency data recovery, even on weekends and holidays."
+                }
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.fivestardatarecovery.com/"
+              }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
 const services = [
