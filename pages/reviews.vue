@@ -1,4 +1,73 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://www.fivestardatarecovery.com/reviews/",
+            "url": "https://www.fivestardatarecovery.com/reviews/"
+          },
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "url": "https://www.fivestardatarecovery.com/",
+            "priceRange": "$300-$900",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "John D." },
+                "datePublished": "2025-06-25",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Five Star Data Recovery saved my business. I had a critical RAID failure and they recovered everything fast!"
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sarah K." },
+                "datePublished": "2025-06-20",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Excellent customer service and amazing results with my external hard drive recovery."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Anonymous" },
+                "datePublished": "2025-06-18",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Quick turnaround and professional support. Highly recommend for any data loss situation."
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://www.fivestardatarecovery.com/reviews/" }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Reviews - Five Star Data Recovery',
   description: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
