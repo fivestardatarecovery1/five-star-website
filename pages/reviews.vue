@@ -8,7 +8,26 @@ useSeoMeta({
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 })
 
-const reviews = []
+const reviews = [
+  {
+    name: 'Mikey W.',
+    location: 'Los Angeles, CA',
+    title: 'Awesome Work!',
+    text: 'When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!'
+  },
+  {
+    name: 'Arin K.',
+    location: 'Glendale, CA',
+    title: 'Truely 5 Stars',
+    text: "Don't trust your important data anywhere else. These guys are the best. It's all in the name: 5 star performance and service all the way. You'll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it's at. Honestly: don't go anywhere else. Don't even think about it. Thank you guys!"
+  },
+  {
+    name: 'Vance K.',
+    location: 'Pasadena, CA',
+    title: 'Thank You!',
+    text: "My son's laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly."
+  }
+]
 
 const socialPosts = [
   { handle: 'tristapisani', img: '/review-social-tristapisani-1.jpg' },
@@ -37,24 +56,6 @@ function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.
       :showForm="false"
     />
     <StatsBar />
-
-    <!-- STATS ROW -->
-    <section style="background:#0d111f;padding:56px 0;">
-      <div class="container" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;text-align:center;">
-        <div>
-          <span style="display:block;font-size:2.8rem;font-weight:900;color:#C9A84C;line-height:1;">500+</span>
-          <span style="font-size:0.85rem;color:rgba(255,255,255,0.6);display:block;margin-top:6px;">Total Reviews</span>
-        </div>
-        <div>
-          <span style="display:block;font-size:2.8rem;font-weight:900;color:#C9A84C;line-height:1;">4.9★</span>
-          <span style="font-size:0.85rem;color:rgba(255,255,255,0.6);display:block;margin-top:6px;">Average Rating</span>
-        </div>
-        <div>
-          <span style="display:block;font-size:2.8rem;font-weight:900;color:#C9A84C;line-height:1;">21,000+</span>
-          <span style="font-size:0.85rem;color:rgba(255,255,255,0.6);display:block;margin-top:6px;">Drives Recovered</span>
-        </div>
-      </div>
-    </section>
 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" bg-class="section-bg-1" />
