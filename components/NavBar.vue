@@ -143,7 +143,7 @@ watch(() => route.path, closeAll)
 
           <li><NuxtLink to="/pricing" active-class="active">Pricing</NuxtLink></li>
           <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
-          <li><NuxtLink to="/reviews" active-class="active">Reviews</NuxtLink></li>
+
           <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
         </ul>
 
@@ -175,7 +175,6 @@ watch(() => route.path, closeAll)
         </div>
         <NuxtLink to="/pricing" @click="closeAll">Pricing</NuxtLink>
         <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
-        <NuxtLink to="/reviews" @click="closeAll">Reviews</NuxtLink>
         <NuxtLink to="/contact" @click="closeAll">Contact</NuxtLink>
         <a href="tel:8182728866" class="mobile-phone">📞 818-272-8866</a>
       </div>
