@@ -24,7 +24,7 @@ const causes: string[] = [
 ]
 const processIntro = 'When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue.'
 const steps: { num: string; title: string; text: string }[] = [
-  { num: '1', title: 'Free Diagnostic', text: 'We assess the health of the drive and confirm whether it's a logical or physical failure.' },
+  { num: '1', title: 'Free Diagnostic', text: "We assess the health of the drive and confirm whether it's a logical or physical failure." },
   { num: '2', title: 'Cloning', text: 'If the drive is unstable, we create a complete clone to avoid further wear on the original.' },
   { num: '3', title: 'File System Repair', text: 'For logical problems like file system corruption, we use advanced tools to reconstruct the partition.' },
   { num: '4', title: 'File Recovery', text: 'We extract recoverable files and check for lost files, folder structures, and data consistency.' },
@@ -44,11 +44,11 @@ const tipOutro = ''
 const tips: string[] = []
 const d2Texts: string[] = []
 const d3Texts = [
-  'We know that losing important data can be stressful. That's why we've built a process that's fast, secure, and customer-friendly: cleanroom environment for handling physically damaged drives, transparent pricing and no hidden fees, "No Data, No Charge" policy for most recoveries, and high recovery rates for lost data from external hard drives.',
+  "We know that losing important data can be stressful. That's why we've built a process that's fast, secure, and customer-friendly: cleanroom environment for handling physically damaged drives, transparent pricing and no hidden fees, \"No Data, No Charge\" policy for most recoveries, and high recovery rates for lost data from external hard drives.",
 ]
 const d4Texts: string[] = []
 const midBody: string[] = []
-const contactText = 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic — there's still hope. Contact us today.'
+const contactText = "If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic — there's still hope. Contact us today."
 const contactList: string[] = [
   'Visit our lab in Glendale, CA',
   'Mail your drive to us from anywhere in the U.S.',
