@@ -75,8 +75,14 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional data recovery pasadena ca — and get back what matters most.'
 
-const reviews = []
+const reviews: { text: string; name: string; location: string }[] = []
+
 const faqs = [
+  { q: 'Is your lab located in Pasadena, CA?', a: 'Although we are not located in Pasadena, CA, we’re only minutes away and proudly offer same-day free pickup service for all Pasadena residents and businesses. Simply give us a call, and we’ll create a ticket and schedule a pickup the same day to get your recovery started immediately.' },
+  { q: 'Do you offer emergency data recovery services in Pasadena?', a: 'Yes! We offer both Expedited Service (during business hours) and Expedited Plus (24/7/365) for Pasadena clients. If you need your data recovered urgently, just give us a call and we’ll get your case prioritized immediately.' },
+  { q: 'How quickly can you recover data for Pasadena customers?', a: 'Most standard recoveries are completed within 1–3 business days, but we also offer same-day evaluations and rush service. Thanks to our free pickup option in Pasadena, we can begin recovery within hours of your call.' },
+  { q: 'What types of devices do you recover data from in Pasadena?', a: 'We recover data from external hard drives, MacBooks, PC laptops, RAID/NAS systems, USB drives, and SD cards — no matter the failure type or operating system. If you’re in Pasadena and not sure if your device qualifies, we offer free diagnostics.' },
+  { q: 'Is the pickup service really free for Pasadena clients?', a: 'Yes — 100% free. There’s no fee for pickup or evaluation. You only pay if you approve the recovery. We believe in fair, transparent service for all of Pasadena and surrounding areas.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -90,7 +96,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Pasadena CA"
       subtitle="Get Your Data Back In No Time."
-      description="Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy."
+      description="If you\'ve experienced data loss—whether it\'s from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Pasadena, CA. While we\'re located in nearby Glendale, CA, we offer free pickup and return service for all Pasadena clients."
       bgImage="/data-recovery-los-angeles-ca.webp"
     />
 

@@ -75,13 +75,22 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional data recovery los angeles ca — and get back what matters most.'
 
-const reviews = [
-  { 'text': 'After my external hard drive suddenly stopped showing up, I reached out to Five Star Data Recovery. They explained the process clearly and gave me a flat-rate price with no hidden fees. Within a few days, I had all my files back—including hundreds of family photos I thought were gone forever. Highly recommended!', 'name': 'Melissa C.', 'location': 'Los Angeles, CA' },
-  { 'text': 'The team at Five Star was incredible! My RAID system failed, and I was on the verge of losing years of business data. They walked me through the recovery process, kept me updated daily, and delivered a full recovery within the estimated timeframe. Their professionalism and expertise gave me real peace of mind.', 'name': 'David R.', 'location': 'Los Angeles, CA' },
-  { 'text': 'I had a clicking hard drive that I thought was beyond saving. Five Star Data Recovery handled everything quickly and professionally. The fact that they don’t charge unless they recover your data made the decision stress-free. Thankfully, they were able to recover everything I needed.', 'name': 'Jennifer M.', 'location': 'Los Angeles, CA' },
+const reviews: { text: string; name: string; location: string }[] = [
+  { text: 'After my external hard drive suddenly stopped showing up, I thought my entire project was gone. Five Star Data Recovery not only retrieved everything but also explained the whole process clearly. The flat-rate pricing was a relief, and there were absolutely no surprises.', name: 'Melissa C.', location: 'Los Angeles, CA' },
+  { text: 'The team at Five Star was incredible! My RAID system failed, and I was on the verge of losing months of work. They recovered everything within a few days and kept me informed throughout the entire process. I can\'t recommend them enough for RAID data recovery.', name: 'David R.', location: 'Los Angeles, CA' },
+  { text: 'I had a clicking hard drive that I thought was beyond saving. Five Star Data Recovery diagnosed the issue, performed a clean room recovery, and got back all my data. Their professionalism and expertise are unmatched in Los Angeles.', name: 'Jennifer M.', location: 'Los Angeles, CA' },
 ]
 const faqs = [
-  { q: 'Testimonials from Satisfied Clients', a: '"After my external hard drive suddenly stopped showing up, I reached out to Five Star Data Recovery. They explained the process clearly and gave me a flat-rate price with no hidden fees. Within a few days, I had all my files back—including hundreds of family photos I thought were gone forever. Highly recommended!" Melissa C. Los Angeles, CA' },
+  { q: 'Do you offer professional data recovery services in Los Angeles, CA?', a: 'Yes, we specialize in professional data recovery in Los Angeles. Whether you’re facing a failed hard drive, a corrupted SSD, or a non-responsive USB flash drive, our local recovery experts are here to help. We have over a decade of experience handling complex data loss scenarios, right here in the heart of Los Angeles.' },
+  { q: 'How long does a typical Los Angeles data recovery take?', a: 'Most standard recoveries take 3–5 business days. If your situation is urgent, we offer both Expedited and Expedited Plus services. Every recovery begins with a thorough diagnostic and we provide same-day updates for all Los Angeles-based drop-offs or pickups.' },
+  { q: 'Where is your data recovery lab located in Los Angeles?', a: 'Our certified recovery lab is just outside Los Angeles in Glendale, CA, and we proudly serve clients across the entire Los Angeles area. We also offer free same-day pickup for local clients and nationwide mail-in service for out-of-area recoveries.' },
+  { q: 'Is there a free diagnostic included with your Los Angeles data recovery service?', a: 'Yes—your diagnostic is free as long as you’re comfortable with the initial flat-rate quote we provide upfront. There are no hidden fees or surprises. If the scope of the recovery changes, you’ll have the option to approve the new rate or walk away without paying anything.' },
+  { q: 'What types of devices do you recover data from in Los Angeles?', a: 'We recover data from hard drives, SSDs, external drives, USB flash drives, SD cards, iPhones, MacBooks, iMacs, RAID arrays, and more. Whether you lost files due to accidental deletion, physical damage, or logical failure, our team is equipped to recover your data securely and efficiently.' },
+  { q: 'Do you offer emergency or same-day data recovery in Los Angeles?', a: 'Yes, we offer emergency data recovery services for Los Angeles clients. Our Expedited Plus Service is available 24/7 for time-sensitive situations. Your case is prioritized immediately, even outside normal business hours.' },
+  { q: 'Can you recover data from water-damaged or physically broken devices in Los Angeles?', a: 'Absolutely. We specialize in recovering data from physically damaged devices—including water-damaged hard drives, phones, MacBooks and SSDs. Our Los Angeles cleanroom lab is fully equipped to handle severe cases involving hardware failure.' },
+  { q: 'Do you provide business data recovery for companies in Los Angeles?', a: 'Yes, we offer professional data recovery services for businesses throughout Los Angeles. From RAID systems and servers to encrypted drives and file systems, we handle business-critical recoveries with confidentiality and offer NDAs upon request.' },
+  { q: 'What is your success rate for data recovery in Los Angeles?', a: 'We maintain a 98% success rate across most recovery cases. Thanks to our experienced engineers and certified cleanroom lab in Los Angeles, we\'re able to recover data from a wide range of devices, even those considered unrecoverable by others.' },
+  { q: 'Is your Los Angeles data recovery lab certified?', a: 'Yes, our facility is ISO-certified and operates in a professional Class 100 cleanroom environment. This ensures all physically damaged drives are handled under optimal conditions for maximum recovery success.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -95,7 +104,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Los Angeles CA"
       subtitle="Get Your Data Back In No Time."
-      description="Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles."
+      description="If you\'ve lost important files, you\'re not alone—and you\'re not out of options. At Five Star Data Recovery, we offer fast, expert help with data recovery in Los Angeles. If your hard drive fails, your USB breaks or your SSD doesn\'t appear, we can help. We will recover your files quickly and safely."
       bgImage="/data-recovery-los-angeles-ca.webp"
     />
 

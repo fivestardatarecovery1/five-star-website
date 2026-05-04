@@ -74,8 +74,19 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional data recovery beverly hills ca — and get back what matters most.'
 
-const reviews = []
+const reviews: { text: string; name: string; location: string }[] = []
+
 const faqs = [
+  { q: 'Do you offer data recovery services specifically in Beverly Hills?', a: 'Yes! While our main lab is located nearby, we proudly offer professional data recovery services in Beverly Hills with free same-day pickup. Whether it’s a failed hard drive, SSD, iPhone, or RAID system, our team is ready to help recover your data quickly and securely.' },
+  { q: 'How fast can you recover data for Beverly Hills customers?', a: 'Most standard Beverly Hills data recovery cases are completed within 3–5 business days. For urgent needs, we also offer Expedited and Expedited Plus services with 24/7 priority support. Call us for a free phone consultation.' },
+  { q: 'What types of devices can you recover data from in Beverly Hills?', a: 'We specialize in recovering data from: - External and internal hard drives - Solid-state drives (SSDs) - iPhones and Android devices - USB flash drives - SD cards - RAID and NAS systems Whatever your storage device, our data recovery experts in Beverly Hills can help.' },
+  { q: 'Is there a fee if you can’t recover my data?', a: 'We follow a No Data, No Charge policy for most standard recoveries in Beverly Hills. You only pay if we successfully recover your files. Some exceptions apply, such as deleted file cases or previously tampered drives.' },
+  { q: 'Do you provide free pickup in Beverly Hills for data recovery?', a: 'Yes! We offer free same-day pickup in Beverly Hills for all data recovery jobs. Just give us a call or fill out our request form, and we’ll arrange secure transportation of your device to our lab.' },
+  { q: 'What makes your Beverly Hills data recovery service different from others?', a: 'We stand out with our transparent flat-rate pricing, no data, no charge policy, and in-house recovery lab. Unlike many companies, we never outsource—we perform all recoveries ourselves to maintain the highest success rate and confidentiality for our Beverly Hills data recovery clients.' },
+  { q: 'Can you recover data from physically damaged hard drives in Beverly Hills?', a: 'Yes, we specialize in physically damaged drive recovery. Whether your drive is clicking, not powering on, or has water or impact damage, our data recovery engineers near Beverly Hills are equipped with cleanroom tools to handle complex cases.' },
+  { q: 'How secure is your data recovery process for Beverly Hills clients?', a: 'We prioritize data privacy and security. All Beverly Hills data recovery cases are handled in a secure environment, and your files are never shared or stored beyond the recovery process. Confidentiality agreements are also available upon request.' },
+  { q: 'Do you recover data from iPhones and smartphones in Beverly Hills?', a: 'Yes! We offer component-level iPhone data recovery in Beverly Hills and can recover data even from non-booting or physically damaged iPhones. Whether you need a full iTunes backup or file extraction, we’re here to help.' },
+  { q: 'How do I get started with your Beverly Hills data recovery service?', a: 'Getting started is easy. Call us for a free consultation or request a free same-day pickup in Beverly Hills. You can also mail your device or visit our lab. Once we receive it, we’ll provide a diagnostic and begin recovery as soon as you approve.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -89,7 +100,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Beverly Hills CA"
       subtitle="Get Your Data Back In No Time."
-      description="From luxury retailers to entertainment professionals, we’ve assisted Beverly Hills clients in recovering critical data from:"
+      description="When critical data goes missing, trust Five Star Data Recovery to help recover what you thought was lost forever. We offer expert data recovery services for customers in Beverly Hills, CA and surrounding areas. We\'re located just a short distance from Beverly Hills and provide free same-day pickup throughout the area."
       bgImage="/data-recovery-los-angeles-ca.webp"
     />
 

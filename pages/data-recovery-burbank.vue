@@ -74,8 +74,14 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional data recovery burbank ca — and get back what matters most.'
 
-const reviews = []
+const reviews: { text: string; name: string; location: string }[] = []
+
 const faqs = [
+  { q: 'Is your data recovery lab located in Burbank, CA?', a: 'While our main lab is not physically located in Burbank, we proudly serve the Burbank area and offer free same-day pickup for local residents and businesses. Our close proximity allows us to provide fast, convenient, and professional service throughout the region.' },
+  { q: 'How long does the data recovery process take in Burbank?', a: 'Most data recovery cases are completed in 3–5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data.' },
+  { q: 'What types of devices do you recover data from?', a: 'We recover data from hard drives, SSDs, USB flash drives, iPhones, RAID setups, SD cards, and more. If you’ve experienced data loss in Burbank, we can help. #' },
+  { q: 'Do you offer free pickup in the Burbank area?', a: 'Yes! We offer free local pickup for most addresses in Burbank. Simply contact us to schedule a same-day pickup and we’ll handle the logistics. #' },
+  { q: 'What happens if my data can’t be recovered?', a: 'We follow a No Data, No Charge policy. If your data is unrecoverable, you won’t owe us anything for most standard recovery cases.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -89,7 +95,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Burbank CA"
       subtitle="Get Your Data Back In No Time."
-      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
+      description="If you\'ve experienced data loss in Burbank, CA—whether it\'s a crashed hard drive, corrupted SSD, or damaged RAID—Five Star Data Recovery is here to help. We offer professional, fast, and affordable data recovery services for clients in Burbank and the surrounding area."
       bgImage="/data-recovery-burbank-ca.jpg"
     />
 

@@ -77,12 +77,19 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional data recovery glendale ca — and get back what matters most.'
 
-const reviews = [
-  { 'text': 'Five Star Data Recovery exceeded my expectations. My external hard drive suddenly stopped working, and I was worried I had lost all my photos and videos. They diagnosed the issue the same day and recovered everything I needed. Their local service and fast turnaround really made the difference.', 'name': 'Arthur C.', 'location': 'Glendale, CA' },
-  { 'text': 'I called multiple places before choosing Five Star, and I’m glad I did. They were honest about my options, gave me a flat-rate quote, and didn’t charge me until the data was successfully recovered. Their lab is top-notch and the staff was incredibly helpful throughout the entire process.', 'name': 'Armen M.', 'location': 'Glendale, CA' },
-  { 'text': 'I had a clicking hard drive with years of business data at risk. The team handled it with professionalism and care. They kept me updated every step of the way, and the fact that they’re located close by made dropping off and picking up my drive super convenient. Couldn’t be happier with the results.', 'name': 'Armenay T', 'location': 'Glendale, CA' },
+const reviews: { text: string; name: string; location: string }[] = [
+  { text: 'Five Star Data Recovery exceeded my expectations. My external hard drive suddenly stopped working, and I was worried I had lost all my photos and videos. They diagnosed the issue the same day and recovered everything I needed. Their local service and fast turnaround really made the difference.', name: 'Arthur C.', location: 'Glendale, CA' },
+  { text: 'I called multiple places before choosing Five Star, and I\'m glad I did. They were honest about my options, gave me a flat-rate quote, and didn\'t charge me until the data was successfully recovered. Their lab is top-notch and the staff was incredibly helpful throughout the entire process.', name: 'Armen M.', location: 'Glendale, CA' },
+  { text: 'I had a clicking hard drive with years of business data at risk. The team handled it with professionalism and care. They kept me updated every step of the way, and the fact that they\'re located close by made dropping off and picking up my drive super convenient. Couldn\'t be happier with the results.', name: 'Armenay T.', location: 'Glendale, CA' },
 ]
 const faqs = [
+  { q: 'Where is your data recovery lab located in Glendale, CA?', a: 'Our data recovery lab is conveniently located in Glendale, CA, making it easy for local customers to drop off their devices for fast and reliable service. We also offer expedited options and same-day diagnostics.' },
+  { q: 'How fast is your turnaround time for Glendale data recovery?', a: 'Most recoveries for Glendale clients are completed within 3–5 business days. For urgent cases, we offer Expedited and Expedited Plus services with priority handling, including nights and weekends.' },
+  { q: 'Do you have a cleanroom at your Glendale location?', a: 'Yes, we use a certified Class 100 Clean Room environment for physically damaged hard drives at our Glendale facility, ensuring your device is handled with the highest level of care and precision.' },
+  { q: 'Can I still use your services if I\'m not located in Glendale?', a: 'Absolutely. While our lab is based in Glendale, CA, we offer free round-trip nationwide data recovery services. Once you fill out our mail-in form, we’ll send you a prepaid shipping label to get started quickly.' },
+  { q: 'Do you offer payment plans at your Glendale location?', a: 'Yes. We offer interest-free payment plans to Glendale customers with no credit check required. A 25% down payment is required, and the remaining balance must be paid before data is released.' },
+  { q: 'What is your success rate for data recovery at your Glendale lab?', a: 'We have a 98% success rate for data recovery. Whether your case involves logical damage, physical issues, or firmware problems, our Glendale engineers use advanced tools to safely retrieve your files.' },
+  { q: 'How soon will I get an update after dropping off my device in Glendale?', a: 'Whether you drop off, mail in, or use our local pickup service, you\'ll receive an initial update the same day your device arrives at our Glendale lab. We\'ll keep you informed every step of the way.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -96,7 +103,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Glendale CA"
       subtitle="Get Your Data Back In No Time."
-      description="Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:"
+      description="If you\'ve experienced data loss—whether it\'s from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Glendale, CA. Our lab is located right here in Glendale, CA, making it easy for locals to visit us directly or use our free pickup option."
       bgImage="/data-recovery-clean-room-technician-glendale-ca.jpg"
     />
 
