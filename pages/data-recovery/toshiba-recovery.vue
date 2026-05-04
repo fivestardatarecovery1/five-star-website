@@ -5,7 +5,7 @@ useSeoMeta({
 })
 
 const issues: { icon: string; title: string; text: string }[] = [
-  { icon: '💻', title: 'The device powers on, but the drive doesn't show up on your computer', text: '' },
+  { icon: '💻', title: "The device powers on, but the drive doesn't show up on your computer", text: '' },
   { icon: '⚠️', title: 'Your system asks to format the drive when connected', text: '' },
   { icon: '🔌', title: 'The drive shows up in disk management but without a label', text: '' },
   { icon: '🔊', title: 'Clicking or buzzing noises from inside the Toshiba HDD', text: '' },
@@ -27,11 +27,11 @@ const steps: { num: string; title: string; text: string }[] = [
   { num: '1', title: 'Diagnostic Assessment', text: 'We begin by inspecting your Toshiba hard disk to determine whether the issue is logical, physical, or firmware-related.' },
   { num: '2', title: 'Secure Imaging', text: 'If the drive is unstable, we clone it sector-by-sector to avoid damaging the original.' },
   { num: '3', title: 'Data Extraction', text: 'Using specialized tools, we extract files from the cloned image — even from corrupted sectors or formatted volumes.' },
-  { num: '4', title: 'File Verification', text: 'You'll receive a file list to review. We recover full folder structures, filenames, and file types whenever possible.' },
+  { num: '4', title: 'File Verification', text: "You'll receive a file list to review. We recover full folder structures, filenames, and file types whenever possible." },
   { num: '5', title: 'Data Delivery', text: 'Recovered data is returned on a new drive or USB, fully tested and verified.' },
 ]
 const driveTypesIntro = 'We service all major Toshiba HDD and SSD models, including:'
-const driveTypesOutro = 'The data recovery cost can vary depending on the type of drive and the issue involved. After a full diagnostic, we'll provide a clear, flat-rate quote based on the specific device and recovery scenario.'
+const driveTypesOutro = "The data recovery cost can vary depending on the type of drive and the issue involved. After a full diagnostic, we'll provide a clear, flat-rate quote based on the specific device and recovery scenario."
 const driveTypes: string[] = [
   'Canvio Basics and Canvio Advance drives',
   'Toshiba desktop backup drives',
@@ -58,7 +58,7 @@ const d4Texts: string[] = [
   'We support virtually every common file type stored on Toshiba drives, including photos (JPG, PNG, TIFF, RAW), videos (MP4, MOV, AVI, MXF), documents (DOCX, PDF, XLSX, PPTX), emails and archives (PST, OST, ZIP, RAR), and design files (PSD, INDD, CAD formats).',
 ]
 const midBody: string[] = []
-const contactText = 'If your Toshiba external hard drive is not working, don't wait. Acting early gives you the best chance of a full recovery.'
+const contactText = "If your Toshiba external hard drive is not working, don't wait. Acting early gives you the best chance of a full recovery."
 const contactList: string[] = [
   'Visit our lab in Glendale, CA',
   'Mail your drive to us from anywhere in the U.S.',
@@ -67,11 +67,11 @@ const contactList: string[] = [
 const contactOutro = ''
 const reviews: { text: string; name: string; location: string }[] = []
 const faqs = [
-  { q: 'Why is my Toshiba external hard drive not showing up?', a: 'A Toshiba drive not showing up can be caused by a bad USB cable, a dead USB port, corrupted file system, or internal hardware failure. Try a different cable and port first. If it still doesn't appear, stop using the drive and contact a professional to avoid data loss.' },
-  { q: 'Can you recover data from a Toshiba drive that is not spinning?', a: 'Yes. A non-spinning Toshiba drive may have a seized spindle motor, failed PCB, or a stuck read/write head. These physical failures require cleanroom intervention. We can safely disassemble the drive and use donor components to get it working long enough to recover your data.' },
-  { q: 'My Toshiba drive makes clicking noises. Can you still recover the data?', a: 'Clicking is a strong sign of read/write head failure. We strongly advise you to stop using the drive immediately. Continued use can scratch platters and cause permanent loss. Our engineers perform head swaps in our cleanroom environment to safely recover your data.' },
-  { q: 'How much does Toshiba data recovery cost?', a: 'Toshiba data recovery is flat-rate priced based on the drive type and the issue involved. Standard logical recoveries start at $300. More complex cases involving physical damage or cleanroom work may cost more. We always provide a free diagnostic and a clear quote before starting — no hidden fees.' },
-  { q: 'How long does Toshiba data recovery take?', a: 'Most standard Toshiba recoveries are completed within 3 to 5 business days. Cases requiring cleanroom repair or donor parts may take longer depending on parts availability. If you need it faster, we offer Expedited and Expedited Plus service options.' },
+  { q: 'Why is my Toshiba external hard drive not showing up?', a: "A Toshiba drive not showing up can be caused by a bad USB cable, a dead USB port, corrupted file system, or internal hardware failure. Try a different cable and port first. If it still doesn't appear, stop using the drive and contact a professional to avoid data loss." },
+  { q: 'Can you recover data from a Toshiba drive that is not spinning?', a: "Yes. A non-spinning Toshiba drive may have a seized spindle motor, failed PCB, or a stuck read/write head. These physical failures require cleanroom intervention. We can safely disassemble the drive and use donor components to get it working long enough to recover your data." },
+  { q: 'My Toshiba drive makes clicking noises. Can you still recover the data?', a: "Clicking is a strong sign of read/write head failure. We strongly advise you to stop using the drive immediately. Continued use can scratch platters and cause permanent loss. Our engineers perform head swaps in our cleanroom environment to safely recover your data." },
+  { q: 'How much does Toshiba data recovery cost?', a: "Toshiba data recovery is flat-rate priced based on the drive type and the issue involved. Standard logical recoveries start at $300. More complex cases involving physical damage or cleanroom work may cost more. We always provide a free diagnostic and a clear quote before starting — no hidden fees." },
+  { q: 'How long does Toshiba data recovery take?', a: "Most standard Toshiba recoveries are completed within 3 to 5 business days. Cases requiring cleanroom repair or donor parts may take longer depending on parts availability. If you need it faster, we offer Expedited and Expedited Plus service options." },
 ]
 
 const openFaq = ref<number | null>(null)
