@@ -284,11 +284,12 @@ function handleSubmit() {
 .trust-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px 32px;
-  background: rgba(40,42,52,0.85);
-  border-radius: 12px;
-  padding: 20px 24px;
-  backdrop-filter: blur(6px);
+  gap: 18px 40px;
+  background: rgba(30,32,40,0.92);
+  border-radius: 14px;
+  padding: 24px 28px;
+  backdrop-filter: blur(8px);
+  max-width: 520px;
 }
 .trust-item {
   display: flex;
@@ -297,6 +298,7 @@ function handleSubmit() {
   font-size: 15px;
   font-weight: 700;
   color: #ffffff;
+  white-space: nowrap;
 }
 .trust-item svg { flex-shrink: 0; }
 
