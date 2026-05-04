@@ -39,7 +39,7 @@ const causes = [
   'Bad sectors develop over time because of wear and tear.'
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Western Digital Data Recovery case.'
+const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
 
 const steps = [
   {

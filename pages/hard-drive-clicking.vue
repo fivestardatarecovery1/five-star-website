@@ -22,7 +22,7 @@ const causes = [
   'Impact Damage: Drops or shocks, especially while running, can cause severe internal damage.',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every clicking hard drive case.'
+const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
 const steps = [
   { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
   { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },

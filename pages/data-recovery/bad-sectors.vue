@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Bad Sectors Data Recovery — Five Star Data Recovery',
-  description: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagno'
+  description: 'When your hard drive develops bad sectors, your files can quickly become inaccessible or corrupted. At Five Star Data Recovery, we specialize in recovering data from hard drives with bad sectors using professional tools and cleanroom environments.'
 })
 
 const issues = [
-  { icon: '🐢', title: 'Slow file access or freezing during transfers', text: 'Our expert team specializes in recovering data from cases involving slow file access or freezing during transfers. Contact us for a free diagnosis.' },
-  { icon: '💾', title: 'Crashing while copying or saving files', text: 'Our expert team specializes in recovering data from cases involving crashing while copying or saving files. Contact us for a free diagnosis.' },
-  { icon: '⚠️', title: 'Files disappearing or becoming corrupt', text: 'Our expert team specializes in recovering data from cases involving files disappearing or becoming corrupt. Contact us for a free diagnosis.' },
-  { icon: '🔍', title: 'The drive not showing up in File Explorer but appearing in Disk Management', text: 'Our expert team specializes in recovering data from cases involving the drive not showing up in file explorer but appearing in disk management. Contact us for a free diagnosis.' },
+  { icon: '🐢', title: 'Slow file access or freezing during transfers', text: '' },
+  { icon: '💾', title: 'Crashing while copying or saving files', text: '' },
+  { icon: '⚠️', title: 'Files disappearing or becoming corrupt', text: '' },
+  { icon: '🔍', title: 'The drive not showing up in File Explorer but appearing in Disk Management', text: '' },
 ]
 
 const causesIntro = ''
@@ -22,12 +22,13 @@ const causes = [
   'Viruses that damage the file system',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Bad Sectors Data Recovery case.'
+const processIntro = 'At Five Star Data Recovery, we follow a secure and proven process for drives with bad sectors:'
 const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
+  { num: '1', title: 'Free Evaluation', text: 'We test the drive to confirm whether the issue is logical, physical, or both.' },
+  { num: '2', title: 'Imaging the Drive', text: 'We create a sector-by-sector clone of the drive using specialized hardware. This prevents further wear and preserves your data as-is.' },
+  { num: '3', title: 'Locating the Data', text: 'We use metadata and partition information to locate bad sectors and reconstruct the file system.' },
+  { num: '4', title: 'Data Extraction', text: 'Once the image is stable, our software team extracts the recoverable data and organizes it.' },
+  { num: '5', title: 'Verification & Delivery', text: "After recovery, you'll receive a file list to review. Once approved, your data is returned on a secure drive." },
 ]
 
 const driveTypesIntro = ''
