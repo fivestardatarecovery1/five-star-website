@@ -19,7 +19,7 @@ const submitted = ref(false)
     <HeroSection
       title="Start Your Data Recovery Today"
       subtitle="Fast. Secure. Professional."
-      description="Ready to get your data back? Starting your recovery with Five Star Data Recovery is simple. Fill out the form below or choose your preferred drop-off or mail-in option. Our team will contact you promptly to guide you through the next steps."
+      description="Ready to get your data back? Starting your recovery with Five Star Data Recovery is fast and hassle-free. You can drop off your device, ship it in with our free prepaid label, or schedule a free local pickup. For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround."
       bgImage="/hard-drive-recovery-service-los-angeles.webp"
     />
     <StatsBar />

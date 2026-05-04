@@ -4,38 +4,38 @@
     "index.html": {
       "path": ""
     },
-    "blog/index.html": {
-      "path": "blog"
-    },
     "privacy-policy/index.html": {
       "path": "privacy-policy"
     },
-    "start-recovery/index.html": {
-      "path": "start-recovery"
-    },
-    "about/index.html": {
-      "path": "about"
+    "blog/index.html": {
+      "path": "blog"
     },
     "faq/index.html": {
       "path": "faq"
     },
-    "reviews/index.html": {
-      "path": "reviews"
+    "about/index.html": {
+      "path": "about"
     },
     "contact/index.html": {
       "path": "contact"
     },
+    "reviews/index.html": {
+      "path": "reviews"
+    },
     "terms/index.html": {
       "path": "terms"
+    },
+    "start-recovery/index.html": {
+      "path": "start-recovery"
+    },
+    "drive-doesnt-power-on/index.html": {
+      "path": "drive-doesnt-power-on"
     },
     "pricing/index.html": {
       "path": "pricing"
     },
     "hard-drive-clicking/index.html": {
       "path": "hard-drive-clicking"
-    },
-    "drive-doesnt-power-on/index.html": {
-      "path": "drive-doesnt-power-on"
     },
     "payment-plan/index.html": {
       "path": "payment-plan"
@@ -46,9 +46,6 @@
     "data-recovery-pasadena/index.html": {
       "path": "data-recovery-pasadena"
     },
-    "data-recovery-hollywood/index.html": {
-      "path": "data-recovery-hollywood"
-    },
     "data-recovery-burbank/index.html": {
       "path": "data-recovery-burbank"
     },
@@ -58,29 +55,44 @@
     "data-recovery-glendale/index.html": {
       "path": "data-recovery-glendale"
     },
-    "expedited-service/index.html": {
-      "path": "expedited-service"
-    },
     "expedited-service-plus/index.html": {
       "path": "expedited-service-plus"
+    },
+    "data-recovery-hollywood/index.html": {
+      "path": "data-recovery-hollywood"
+    },
+    "expedited-service/index.html": {
+      "path": "expedited-service"
     },
     "data-recovery/free-quote/index.html": {
       "path": "data-recovery/free-quote"
     },
-    "data-recovery/ssd-recovery/index.html": {
-      "path": "data-recovery/ssd-recovery"
-    },
     "data-recovery/hard-drive-recovery/index.html": {
       "path": "data-recovery/hard-drive-recovery"
     },
-    "data-recovery/sd-card-recovery/index.html": {
-      "path": "data-recovery/sd-card-recovery"
+    "data-recovery/ssd-recovery/index.html": {
+      "path": "data-recovery/ssd-recovery"
     },
     "data-recovery/raid-recovery/index.html": {
       "path": "data-recovery/raid-recovery"
     },
+    "data-recovery/deleted-files/index.html": {
+      "path": "data-recovery/deleted-files"
+    },
+    "data-recovery/laptop-recovery/index.html": {
+      "path": "data-recovery/laptop-recovery"
+    },
+    "data-recovery/sd-card-recovery/index.html": {
+      "path": "data-recovery/sd-card-recovery"
+    },
     "data-recovery/external-hard-drive/index.html": {
       "path": "data-recovery/external-hard-drive"
+    },
+    "data-recovery/iphone-recovery/index.html": {
+      "path": "data-recovery/iphone-recovery"
+    },
+    "data-recovery/clean-room/index.html": {
+      "path": "data-recovery/clean-room"
     },
     "data-recovery/mac-recovery/index.html": {
       "path": "data-recovery/mac-recovery"
@@ -88,20 +100,11 @@
     "data-recovery/nas-recovery/index.html": {
       "path": "data-recovery/nas-recovery"
     },
-    "data-recovery/laptop-recovery/index.html": {
-      "path": "data-recovery/laptop-recovery"
-    },
-    "data-recovery/clean-room/index.html": {
-      "path": "data-recovery/clean-room"
-    },
-    "data-recovery/deleted-files/index.html": {
-      "path": "data-recovery/deleted-files"
-    },
     "data-recovery/video-file-repair/index.html": {
       "path": "data-recovery/video-file-repair"
     },
-    "data-recovery/iphone-recovery/index.html": {
-      "path": "data-recovery/iphone-recovery"
+    "data-recovery/dropped-hard-drive/index.html": {
+      "path": "data-recovery/dropped-hard-drive"
     },
     "data-recovery/hard-drive-not-showing-up/index.html": {
       "path": "data-recovery/hard-drive-not-showing-up"
@@ -109,38 +112,35 @@
     "data-recovery/bad-sectors/index.html": {
       "path": "data-recovery/bad-sectors"
     },
-    "data-recovery/express-drop-off/index.html": {
-      "path": "data-recovery/express-drop-off"
-    },
-    "data-recovery/dropped-hard-drive/index.html": {
-      "path": "data-recovery/dropped-hard-drive"
-    },
     "data-recovery/mail-in-service/index.html": {
       "path": "data-recovery/mail-in-service"
-    },
-    "data-recovery/hitachi-recovery/index.html": {
-      "path": "data-recovery/hitachi-recovery"
     },
     "data-recovery/seagate-recovery/index.html": {
       "path": "data-recovery/seagate-recovery"
     },
+    "data-recovery/express-drop-off/index.html": {
+      "path": "data-recovery/express-drop-off"
+    },
     "data-recovery/western-digital-recovery/index.html": {
       "path": "data-recovery/western-digital-recovery"
-    },
-    "data-recovery/toshiba-recovery/index.html": {
-      "path": "data-recovery/toshiba-recovery"
     },
     "data-recovery/lacie-recovery/index.html": {
       "path": "data-recovery/lacie-recovery"
     },
-    "data-recovery/samsung-recovery/index.html": {
-      "path": "data-recovery/samsung-recovery"
-    },
-    "data-recovery/desktop-recovery/index.html": {
-      "path": "data-recovery/desktop-recovery"
+    "data-recovery/hitachi-recovery/index.html": {
+      "path": "data-recovery/hitachi-recovery"
     },
     "data-recovery/usb-recovery/index.html": {
       "path": "data-recovery/usb-recovery"
+    },
+    "data-recovery/samsung-recovery/index.html": {
+      "path": "data-recovery/samsung-recovery"
+    },
+    "data-recovery/toshiba-recovery/index.html": {
+      "path": "data-recovery/toshiba-recovery"
+    },
+    "data-recovery/desktop-recovery/index.html": {
+      "path": "data-recovery/desktop-recovery"
     },
     "data-recovery/cfast-recovery/index.html": {
       "path": "data-recovery/cfast-recovery"
@@ -154,20 +154,14 @@
     "data-recovery/index.html": {
       "path": "data-recovery"
     },
-    "services/raid-recovery/index.html": {
-      "path": "services/raid-recovery"
+    "services/usb-recovery/index.html": {
+      "path": "services/usb-recovery"
     },
     "services/ssd-recovery/index.html": {
       "path": "services/ssd-recovery"
     },
-    "services/mobile-recovery/index.html": {
-      "path": "services/mobile-recovery"
-    },
-    "services/external-hdd-recovery/index.html": {
-      "path": "services/external-hdd-recovery"
-    },
-    "services/usb-recovery/index.html": {
-      "path": "services/usb-recovery"
+    "services/raid-recovery/index.html": {
+      "path": "services/raid-recovery"
     },
     "services/mac-recovery/index.html": {
       "path": "services/mac-recovery"
@@ -177,6 +171,12 @@
     },
     "services/laptop-recovery/index.html": {
       "path": "services/laptop-recovery"
+    },
+    "services/external-hdd-recovery/index.html": {
+      "path": "services/external-hdd-recovery"
+    },
+    "services/mobile-recovery/index.html": {
+      "path": "services/mobile-recovery"
     }
   },
   "routes": [

@@ -82,8 +82,15 @@ const reviews = [
   { 'text': 'After being told by another company that my hard drive was unrecoverable due to bad sectors, I decided to get a second opinion. Five Star Data Recovery not only diagnosed the issue accurately but used advanced imaging tools to safely recover my data. Worth every penny.', 'name': 'David N.', 'location': 'New York, NY' },
 ]
 const faqs = [
+  { q: 'What are bad sectors on a hard drive?', a: 'Bad sectors are areas on a hard drive or SSD that have become unreadable due to physical damage or corruption. These sectors prevent the system from reading or writing data properly and are a common cause of data loss, system crashes, and drive inaccessibility.' },
+  { q: 'Can you recover data from a hard drive with bad sectors?', a: 'Yes. At Five Star Data Recovery, we specialize in data recovery from bad sectors using advanced imaging tools and proprietary techniques. We clone the failing drive sector by sector to avoid further damage and safely extract the accessible data.' },
+  { q: 'What causes bad sectors on a hard drive?', a: 'Bad sectors can develop due to physical wear, power failures, manufacturing defects, excessive heat, or improper handling of the device. Over time, all drives are at risk of sector degradation, especially mechanical hard drives (HDDs).' },
+  { q: 'How do I know if my hard drive has bad sectors?', a: 'Symptoms include slow read/write performance, frequent system crashes, files that won\'t open, and error messages during backups or file transfers. Tools like CrystalDiskInfo or SMART diagnostics may also show warnings about sector damage.' },
+  { q: 'Is it safe to continue using a drive with bad sectors?', a: 'No. Using a failing drive can make the issue worse and lead to permanent data loss. If your drive is showing signs of bad sectors, stop using it immediately and contact a professional data recovery service to avoid further damage.' },
+  { q: 'Do you work on both HDDs and SSDs with bad sectors?', a: 'Yes. Our lab is equipped to handle bad sector recovery from both mechanical hard drives and solid-state drives (SSDs). Each type of device requires different tools and techniques, and we tailor the process accordingly.' },
+  { q: 'How long does bad sector data recovery take?', a: 'The data recovery process for bad sector drives typically takes 3–7 business days, depending on the severity of the damage. For urgent cases, we offer Expedited and Expedited Plus services with 24/7 engineer availability.' },
+  { q: 'Is there a risk of further damage during recovery?', a: 'No. At Five Star Data Recovery, we prioritize data safety by never working directly on your original drive once bad sectors are detected. We use specialized hardware like the PC-3000 by Ace Labs to create a sector-by-sector image of your drive. This process allows us to safely clone as much data as possible while bypassing unstable or unreadable sectors. Once a full image is secured, we work from the clone, rebuilding the file system and extracting your recoverable data—completely safeguarding your original media from further harm.' },
 ]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -95,7 +102,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Bad Sectors Data Recovery"
       subtitle="Get Your Data Back In No Time."
-      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
+      description="When your hard drive develops bad sectors, your files can quickly become inaccessible or corrupted. These issues often happen without warning and can lead to serious data loss. We specialize in helping clients recover data from hard drives with bad sectors by using professional tools and cleanroom environments that minimize further damage."
       bgImage="/hard-drive-hdd-data-recovery-glendale-ca.jpg"
     />
 

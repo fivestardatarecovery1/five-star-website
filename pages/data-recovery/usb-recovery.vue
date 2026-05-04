@@ -80,6 +80,13 @@ const contactOutro = 'Trust our experts for fast, secure, and professional usb d
 
 const reviews = []
 const faqs = [
+  { q: 'What are common causes of USB drive failure?', a: "USB drives can fail due to physical damage (e.g., broken connectors), file system corruption, water exposure, electrical surges, firmware issues, or improper removal during file transfers. Even simple wear and tear can cause data loss over time." },
+  { q: 'Can you recover data from a physically damaged USB drive?', a: "Yes, depending on the type of physical damage. If the USB connector or circuit board is broken, recovery is often still possible. In these cases, we can attempt a monolith or chip-off recovery, which involves accessing the memory chip directly." },
+  { q: 'I accidentally deleted files from my USB drive. Can you get them back?', a: "In many cases, yes. As long as the files haven't been overwritten and TRIM hasn't been activated, the chances of recovery are very high. For the best chance of recovery, stop using the drive immediately and bring it in for evaluation." },
+  { q: 'Do you recover data from encrypted or BitLocker USB drives?', a: "Yes. If you still have the correct BitLocker password or recovery key, we can usually retrieve data from encrypted USB flash drives—even if the device is corrupted or unmountable. Having the BitLocker credentials is mandatory. We cannot bypass or brute-force BitLocker encryption." },
+  { q: "Can you recover data from USB drives that show 0 bytes or don't mount?", a: "Yes. Drives that appear as '0 bytes' or don't mount can still hold recoverable data. These symptoms often point to logical or firmware issues. We use advanced tools to bypass these errors and access the underlying memory." },
+  { q: 'How long does USB data recovery take?', a: "Most USB data recovery cases are completed within 3 to 5 business days. However, cases involving physical damage or complex firmware issues may take longer. Expedited and Expedited Plus Services are available for urgent cases." },
+  { q: 'How much does USB data recovery cost?', a: "Logical recovery typically ranges from $300 to $500, depending on storage capacity and whether the drive is encrypted. Chip-off or monolith recovery for physically damaged or unrecognized USB drives is $950 flat. We provide free evaluations before starting any recovery." },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -93,7 +100,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="USB Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery, we specialize in USB data recovery for all types of USB flash drives, thumb drives, and external USB storage devices. Whether you’ve accidentally deleted files, suffered physical damage to your USB stick, or are dealing with a corrupted or unrecognized drive, our professional data recovery services can help you recover data from a USB stick quickly and safely."
+      description="At Five Star Data Recovery, we specialize in USB data recovery for all types of USB flash drives, thumb drives, and external USB storage devices. Whether you've accidentally deleted files, suffered physical damage to your USB stick, or are dealing with a corrupted or unrecognized drive, our professional data recovery services can help."
       bgImage="/hard-drive-hdd-data-recovery-glendale-ca.jpg"
     />
 

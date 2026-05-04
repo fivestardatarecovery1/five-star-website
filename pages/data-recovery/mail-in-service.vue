@@ -58,7 +58,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Mail-In Data Recovery Service"
       subtitle="Get Your Data Back In No Time."
-      description="Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience."
+      description="Can't visit us in person? No problem. Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S. Ship your device to us, and it will arrive at our lab in less than 2 days."
       bgImage="/data-recovery-mail-in-service-los-angeles.jpg"
     />
 

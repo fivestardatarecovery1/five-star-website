@@ -85,7 +85,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Payment Plan"
       subtitle="Get Your Data Back In No Time."
-      description="Need data recovery but concerned about cost? We offer interest-free, in-house payment plans to make professional data recovery more accessible. No credit checks, no hidden fees — just a simple process with only 25% down to get started. Your data is recovered safely and securely, and you pay the remaining balance over time."
+      description="Yes, of course! We understand that an expense for data recovery is something that is unexpected and not budgeted for. So we are happy to offer flexible Data Recovery Payment options. There is nothing due up front. You would ONLY pay once the data is recovered and you are satisfied with the results."
       bgImage="/data-recovery-payment-plan-financing.jpg"
     />
 

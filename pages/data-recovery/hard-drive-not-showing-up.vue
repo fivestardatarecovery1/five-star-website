@@ -88,7 +88,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Hard Drive Not Showing Up Recovery"
       subtitle="Get Your Data Back In No Time."
-      description="A hard drive that suddenly disappears from your computer is frustrating—and scary if you think you’ve lost important files. Whether it’s an internal or external hard drive, the issue can happen on both Windows and macOS. If your hard drive is not showing up, don’t panic. There are safe steps you can take—and some things you definitely should avoid."
+      description="Once you submit your quote request, our team will review the details you provide and respond with an accurate, initial price estimate based on your device type and symptoms. Once we receive your actual device, our engineers will perform a full diagnostic to confirm the issue and finalize your quote—always staying within the same pricing tier unless the issue turns out to be different than described."
       bgImage="/hard-drive-not-showing-up-data-recovery.webp"
     />
 
