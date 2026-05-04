@@ -22,10 +22,10 @@ const causes = [
 
 const processIntro = 'At Five Star Data Recovery, we specialize in component-level Samsung mobile data recovery. We recover data from physically damaged Samsung phones. This includes phones with liquid spills, motherboard failures, or severe impacts.'
 const steps = [
-  { 'num': '01', 'title': 'Physical Diagnostic', 'text': 'We inspect the Samsung device for board-level issues, such as short circuits, power failures, or corrosion.' },
-  { 'num': '02', 'title': 'Component-Level Repair', 'text': 'Using micro-soldering and hardware diagnostics, we repair the device just enough to bring it back to life temporarily. This allows us to access the internal storage without altering or overwriting data.' },
-  { 'num': '03', 'title': 'Full Backup with Smart Switch', 'text': 'Once the phone powers on, we create a complete backup using Smart Switch on your computer. This preserves all contacts, messages, app data, and settings.' },
-  { 'num': '04', 'title': 'Backup Delivery', 'text': 'We provide the full backup to the customer on an external drive or help restore it to a new Samsung device.' },
+  { num: '1', title: 'Physical Diagnostic', 'text': 'We inspect the Samsung device for board-level issues, such as short circuits, power failures, or corrosion.' },
+  { num: '2', title: 'Component-Level Repair', 'text': 'Using micro-soldering and hardware diagnostics, we repair the device just enough to bring it back to life temporarily. This allows us to access the internal storage without altering or overwriting data.' },
+  { num: '3', title: 'Full Backup with Smart Switch', 'text': 'Once the phone powers on, we create a complete backup using Smart Switch on your computer. This preserves all contacts, messages, app data, and settings.' },
+  { num: '4', title: 'Backup Delivery', 'text': 'We provide the full backup to the customer on an external drive or help restore it to a new Samsung device.' },
 ]
 
 const driveTypesIntro = 'We work with nearly every model of Samsung Galaxy phone and tablet, including:'
