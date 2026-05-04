@@ -20,16 +20,8 @@ const submitted = ref(false)
       title="We're Here to Help"
       bgImage="/contact-hero-bg.jpg"
       :showForm="false"
-      :showTrustBadges="false"
       description="<strong>Need help or have a question?</strong> You&rsquo;re in the right place. Whether you&rsquo;re looking for an <strong>update on your ongoing case</strong>, <strong>want to start a new data recovery</strong>, or have <strong>billing or account-related questions</strong>, our team is here to assist you. We also welcome media, marketing, and <strong>partnership inquiries</strong> through this form. Customer feedback is extremely important to us&mdash;feel free to share your experience or suggestions. Our specialists are available 7 days a week to ensure you get the support you need. Simply fill out the contact form below or give us a call. We&rsquo;ll get back to you promptly."
-    >
-      <div class="contact-trust-box">
-        <div class="ctb-item"><span class="ctb-icon">⏰</span> <strong>Available 24/7/365</strong></div>
-        <div class="ctb-item"><span class="ctb-icon">🛡️</span> <strong>10+ Years in Business</strong></div>
-        <div class="ctb-item"><span class="ctb-icon">✅</span> <strong>No Data = No Charge</strong></div>
-        <div class="ctb-item"><span class="ctb-icon">⭐</span> <strong>Free Nationwide Shipping</strong></div>
-      </div>
-    </HeroSection>
+    />
     <StatsBar />
 
     <!-- CONTACT SECTION -->
