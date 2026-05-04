@@ -13,8 +13,10 @@ const props = withDefaults(defineProps<Props>(), {
   bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
 })
 
+const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+
 const heroStyle = computed(() => ({
-  background: `linear-gradient(to right, rgba(50,52,58,0.88) 0%, rgba(50,52,58,0.65) 40%, rgba(30,32,38,0.15) 100%), url('${props.bgImage}') right center / cover no-repeat`
+  background: `linear-gradient(to right, rgba(20,22,30,0.95) 0%, rgba(20,22,30,0.88) 50%, rgba(20,22,30,0.75) 100%), url('${props.bgImage}') right center / cover no-repeat`
 }))
 
 const submitted = ref(false)
@@ -490,8 +492,8 @@ function handleSubmit() {
 }
 
 @media (max-width: 640px) {
-  .hero { padding: 32px 0 40px; }
-  .hero-inner { gap: 28px; }
+  .hero { padding: 36px 0 44px; }
+  .hero-inner { gap: 28px; padding: 0 20px; }
   .hero-title { font-size: clamp(26px, 7vw, 36px); letter-spacing: -0.01em; }
   .hero-subtitle { font-size: 15px; }
   .hero-desc { font-size: 14px; margin-bottom: 20px; }
