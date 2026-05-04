@@ -25,7 +25,7 @@ const tips: string[] = []
 const d2Texts: string[] = []
 const d3Texts = [
   'LaCie SSD recovery requires different techniques than traditional hard drives due to TRIM commands, chip-level storage, and wear-leveling. Our engineers are trained in both technologies to ensure optimal results.',
-  'We maintain legacy hardware and connectors to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old.',
+  "We maintain legacy hardware and connectors to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old.",
 ]
 const d4Texts: string[] = []
 const midBody: string[] = []
