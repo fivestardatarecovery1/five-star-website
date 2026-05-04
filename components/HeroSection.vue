@@ -477,17 +477,12 @@ function handleSubmit() {
 }
 
 /* ── Responsive ── */
-/* When form is hidden — single column centred layout */
+/* When form is hidden — single column left-aligned layout */
 .hero-inner:has(> :only-child) {
   grid-template-columns: 1fr;
-  justify-items: center;
-  text-align: center;
   max-width: 860px;
-  margin: 0 auto;
 }
 .hero-inner:has(> :only-child) .hero-copy { padding-right: 0; }
-.hero-inner:has(> :only-child) .hero-desc { margin: 0 auto 28px; }
-.hero-inner:has(> :only-child) .hero-buttons { justify-content: center; }
 
 @media (max-width: 1024px) {
   .hero-inner {
