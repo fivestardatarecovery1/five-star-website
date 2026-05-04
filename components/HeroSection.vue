@@ -41,7 +41,7 @@ function handleSubmit() {
       <div class="hero-copy">
         <h1 class="hero-title">{{ title }}</h1>
         <p v-if="subtitle" class="hero-subtitle">{{ subtitle }}</p>
-        <p v-if="description" class="hero-desc">{{ description }}</p>
+        <p v-if="description" class="hero-desc" v-html="description"></p>
 
         <div class="hero-buttons">
           <NuxtLink to="/start-recovery" class="btn-start">

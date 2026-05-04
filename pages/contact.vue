@@ -18,11 +18,18 @@ const submitted = ref(false)
     <NavBar />
     <HeroSection
       title="We're Here to Help"
-      subtitle="Get in Touch With Our Team."
-      description="Need help or have a question? You're in the right place. Whether you're ready to start your recovery or just want to learn more about the process, our team is available 24/7 to help you every step of the way — by phone, in person, or online."
-      bgImage="/data-recovery-hard-drive-service-glendale-ca.jpg"
+      bgImage="/contact-hero-bg.jpg"
       :showForm="false"
-    />
+      :showTrustBadges="false"
+      description="<strong>Need help or have a question?</strong> You&rsquo;re in the right place. Whether you&rsquo;re looking for an <strong>update on your ongoing case</strong>, <strong>want to start a new data recovery</strong>, or have <strong>billing or account-related questions</strong>, our team is here to assist you. We also welcome media, marketing, and <strong>partnership inquiries</strong> through this form. Customer feedback is extremely important to us&mdash;feel free to share your experience or suggestions. Our specialists are available 7 days a week to ensure you get the support you need. Simply fill out the contact form below or give us a call. We&rsquo;ll get back to you promptly."
+    >
+      <div class="contact-trust-box">
+        <div class="ctb-item"><span class="ctb-icon">⏰</span> <strong>Available 24/7/365</strong></div>
+        <div class="ctb-item"><span class="ctb-icon">🛡️</span> <strong>10+ Years in Business</strong></div>
+        <div class="ctb-item"><span class="ctb-icon">✅</span> <strong>No Data = No Charge</strong></div>
+        <div class="ctb-item"><span class="ctb-icon">⭐</span> <strong>Free Nationwide Shipping</strong></div>
+      </div>
+    </HeroSection>
     <StatsBar />
 
     <!-- CONTACT SECTION -->
@@ -234,6 +241,31 @@ const submitted = ref(false)
 .contact-form-wrap { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 48px 52px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .form-title { font-size: 1.2rem; font-weight: 800; color: #1a1a2e; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #f0f0f0; }
 .contact-form { display: flex; flex-direction: column; gap: 14px; }
+/* Contact hero trust box */
+.contact-trust-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+  margin-top: 32px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  padding: 20px 24px;
+  max-width: 560px;
+}
+.ctb-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+.ctb-icon { font-size: 18px; }
+@media (max-width: 640px) {
+  .contact-trust-box { grid-template-columns: 1fr; gap: 10px; }
+}
+
 .map-section { line-height: 0; }
 .map-section iframe { display: block; width: 100%; }
 
