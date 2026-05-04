@@ -19,14 +19,15 @@ const submitted = ref(false)
     <HeroSection
       title="We're Here to Help"
       subtitle="Get in Touch With Our Team."
-      description="Need help or have a question? You're in the right place. Whether you're ready to start your recovery or just want to learn more about the process, our team is available to help you every step of the way."
+      description="Need help or have a question? You're in the right place. Whether you're ready to start your recovery or just want to learn more about the process, our team is available 24/7 to help you every step of the way — by phone, in person, or online."
       bgImage="/data-recovery-hard-drive-service-glendale-ca.jpg"
+      :showForm="false"
     />
     <StatsBar />
 
     <!-- CONTACT SECTION -->
     <section class="s-white">
-      <div class="container contact-grid">
+      <div class="container contact-grid contact-grid--wide">
         <!-- LEFT: Info -->
         <div class="contact-info">
           <div class="section-label">Reach Us</div>
@@ -145,6 +146,20 @@ const submitted = ref(false)
       </div>
     </section>
 
+    <!-- GOOGLE MAP -->
+    <div class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.7!2d-118.2552!3d34.1425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c06fde7c1a5d%3A0x1!2s1731+S+Brand+Blvd%2C+Glendale%2C+CA+91204!5e0!3m2!1sen!2sus!4v1"
+        width="100%"
+        height="420"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Five Star Data Recovery — 1731 S Brand Blvd, Glendale CA"
+      />
+    </div>
+
     <FooterBar />
   </div>
 </template>
@@ -158,7 +173,7 @@ const submitted = ref(false)
 .s-dark { background: #1a1a2e; padding: 88px 0; }
 .section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px; }
 .section-label.center { text-align: center; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
+.s-heading { font-size: clamp(1.4rem, 2.4vw, 1.85rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
 .s-heading.center { text-align: center; }
 .s-heading.light { color: #fff; }
 .s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
@@ -210,17 +225,23 @@ const submitted = ref(false)
   .mf-full { grid-column: 1; }
 }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.contact-grid--wide { grid-template-columns: 2fr 3fr; }
 .contact-cards { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
 .contact-card { display: flex; align-items: flex-start; gap: 16px; background: #f4f7fc; border-radius: 12px; padding: 20px; }
 .cc-icon { font-size: 1.8rem; flex-shrink: 0; }
-.cc-title { display: block; font-size: 0.95rem; font-weight: 800; color: #1a1a2e; margin-bottom: 4px; }
-.cc-text { font-size: 0.88rem; color: #4a5568; line-height: 1.6; margin: 0; }
-.contact-form-wrap { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 40px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+.cc-title { display: block; font-size: 0.82rem; font-weight: 800; color: #1a1a2e; margin-bottom: 3px; }
+.cc-text { font-size: 0.82rem; color: #4a5568; line-height: 1.6; margin: 0; }
+.contact-form-wrap { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 48px 52px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
 .form-title { font-size: 1.2rem; font-weight: 800; color: #1a1a2e; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #f0f0f0; }
 .contact-form { display: flex; flex-direction: column; gap: 14px; }
+.map-section { line-height: 0; }
+.map-section iframe { display: block; width: 100%; }
+
 @media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid, .contact-grid--wide { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 28px 20px; }
   .reviews-grid { grid-template-columns: 1fr; }
   .page-video-inner { grid-template-columns: 1fr; }
+  .map-section iframe { height: 300px; }
 }
 </style>

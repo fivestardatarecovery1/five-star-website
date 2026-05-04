@@ -4,10 +4,12 @@ interface Props {
   subtitle?: string
   description?: string
   showTrustBadges?: boolean
+  showForm?: boolean
   bgImage?: string
 }
 const props = withDefaults(defineProps<Props>(), {
   showTrustBadges: true,
+  showForm: true,
   bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
 })
 
@@ -75,7 +77,7 @@ function handleSubmit() {
       </div>
 
       <!-- RIGHT: Consultation Form -->
-      <div class="hero-form-wrap">
+      <div v-if="props.showForm" class="hero-form-wrap">
         <div v-if="!submitted" class="hero-form-card">
           <h3 class="form-title">Request a Free Consultation</h3>
 
@@ -475,6 +477,18 @@ function handleSubmit() {
 }
 
 /* ── Responsive ── */
+/* When form is hidden — single column centred layout */
+.hero-inner:has(> :only-child) {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.hero-inner:has(> :only-child) .hero-copy { padding-right: 0; }
+.hero-inner:has(> :only-child) .hero-desc { margin: 0 auto 28px; }
+.hero-inner:has(> :only-child) .hero-buttons { justify-content: center; }
+
 @media (max-width: 1024px) {
   .hero-inner {
     grid-template-columns: 1fr;
