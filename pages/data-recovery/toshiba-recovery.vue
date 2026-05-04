@@ -49,7 +49,7 @@ const tips: string[] = [
 ]
 const d2Texts: string[] = [
   'Many users try DIY methods to fix Toshiba external drives using free recovery software or YouTube tutorials. But if your drive is physically damaged or not detected at all, using these tools could permanently overwrite or destroy recoverable data.',
-  'Don't open the drive casing yourself. Don't run "chkdsk" or format utilities if the drive is unreadable. Don't continue reconnecting the drive to different ports repeatedly. Don't use system tools if you hear clicking or buzzing noises.',
+  "Don't open the drive casing yourself. Don't run 'chkdsk' or format utilities if the drive is unreadable. Don't continue reconnecting the drive to different ports repeatedly. Don't use system tools if you hear clicking or buzzing noises.",
 ]
 const d3Texts = [
   'Cleanroom-certified repair environment. Transparent, flat-rate pricing. Free diagnostics and "no data, no charge" policy. Real-time updates throughout the process. Trusted by businesses, creatives, and individuals nationwide.',
