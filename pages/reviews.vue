@@ -15,9 +15,9 @@ const reviews = []
   <div class="page-content">
     <NavBar />
     <HeroSection
-      title="Customer Reviews"
-      subtitle="Hear What Our Customers Are Saying."
-      description="At Five Star Data Recovery, we take pride in delivering professional, reliable, and compassionate data recovery services. But don't just take our word for it — hear directly from the clients we've helped get their data back."
+      title="Reviews"
+      subtitle="Hear What Our Customers Are Saying"
+      description="At Five Star Data Recovery, we take pride in delivering professional, fast, and affordable data recovery services with outstanding results. From external hard drives to complex RAID arrays, our clients nationwide trust us to recover their valuable data. Don&rsquo;t just take our word for it&mdash;read real reviews from satisfied customers who got their data back safely and securely."
       bgImage="/reviews-hero-bg.jpg"
       :showForm="false"
     />
