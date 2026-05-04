@@ -4,16 +4,17 @@ useSeoMeta({
   description: 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn\'t being detected, don\'t panic — there\'s still hope. At Five Star Data Recovery, we specialize in professional Hitachi data recovery.'
 })
 
-const issues = [
-  { icon: '💥', title: 'Physical damage from drops, impacts, or overheating', text: '' },
-  { icon: '🐢', title: 'Bad sectors that prevent the drive from reading or writing data', text: '' },
-  { icon: '⚙️', title: 'Firmware corruption or manufacturing defects', text: '' },
-  { icon: '🗑️', title: 'Accidental deletion or formatting of partitions', text: '' },
+const issues: { icon: string; title: string; text: string }[] = [
+  { icon: '🔊', title: 'Clicking, beeping, or grinding noises', text: '' },
+  { icon: '🔍', title: 'The drive is not detected by your system', text: '' },
+  { icon: '🐌', title: 'Extremely slow file transfers or system freezes', text: '' },
+  { icon: '📁', title: 'Sudden appearance of missing files or folders', text: '' },
+  { icon: '⚠️', title: 'Messages asking to format the drive', text: '' },
+  { icon: '💻', title: 'Drive visible in Disk Management but inaccessible', text: '' },
 ]
-
-const causesIntro = 'There are many reasons your Hitachi hard drive might fail. Understanding what wentwrong can help us recover more data and prevent future issues. Some of the mostcommon causes include:'
+const causesIntro = 'There are many reasons your Hitachi hard drive might fail. Understanding what went wrong can help us recover more data and prevent future issues. Some of the most common causes include:'
 const causesOutro = ''
-const causes = [
+const causes: string[] = [
   'Physical damage from drops, impacts, or overheating',
   'Bad sectors that prevent the drive from reading or writing data',
   'Firmware corruption or manufacturing defects',
@@ -21,65 +22,47 @@ const causes = [
   'Power surges and electrical issues',
   'File system corruption due to sudden shutdowns or software crashes',
 ]
-
-const processIntro = 'When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue. Here\'s what you can expect:'
-const steps = [
-  { 'num': '01', 'title': 'Free Diagnostic', 'text': 'We assess the health of the drive and confirm whether it\'s a logical or physical failure.' },
-  { 'num': '02', 'title': 'Cloning', 'text': 'If the drive is unstable, we create a complete clone to avoid further wear on the original.' },
-  { 'num': '03', 'title': 'File System Repair', 'text': 'For logical problems like file system corruption, we use advanced tools to reconstruct the partition.' },
-  { 'num': '04', 'title': 'File Recovery', 'text': 'We extract recoverable files and check for lost files, folder structures, and data consistency.' },
-  { 'num': '05', 'title': 'Verification', 'text': 'You\'ll receive a preview of the recovered content before final delivery.' },
+const processIntro = 'When you bring your drive to us, we begin with a full diagnostic to determine the extent of the issue.'
+const steps: { num: string; title: string; text: string }[] = [
+  { num: '1', title: 'Free Diagnostic', text: 'We assess the health of the drive and confirm whether it's a logical or physical failure.' },
+  { num: '2', title: 'Cloning', text: 'If the drive is unstable, we create a complete clone to avoid further wear on the original.' },
+  { num: '3', title: 'File System Repair', text: 'For logical problems like file system corruption, we use advanced tools to reconstruct the partition.' },
+  { num: '4', title: 'File Recovery', text: 'We extract recoverable files and check for lost files, folder structures, and data consistency.' },
+  { num: '5', title: 'Verification', text: 'You'll receive a preview of the recovered content before final delivery.' },
 ]
-
 const driveTypesIntro = 'Our team provides data recovery services for all types of Hitachi drives, including:'
-const driveTypesOutro = 'No matter the drive type, we can help with hitachi hard disk data recovery for a wide range of systems and storage capacities.'
-const driveTypes = [
+const driveTypesOutro = 'No matter the drive type, we can help with Hitachi hard disk data recovery for a wide range of systems and storage capacities.'
+const driveTypes: string[] = [
   'Desktop and laptop internal HDDs',
   'Portable external hard drives',
   'Enterprise-level Hitachi drives used in servers and data centers',
   'RAID arrays containing Hitachi components',
   'USB-connected storage devices',
 ]
-
 const tipIntro = ''
 const tipOutro = ''
 const tips: string[] = []
-
 const d2Texts: string[] = []
 const d3Texts = [
-  'We know that losing important data can be stressful. That\'s why we\'ve built a process that\'s fast, secure, and customer-friendly:',
+  'We know that losing important data can be stressful. That's why we've built a process that's fast, secure, and customer-friendly: cleanroom environment for handling physically damaged drives, transparent pricing and no hidden fees, "No Data, No Charge" policy for most recoveries, and high recovery rates for lost data from external hard drives.',
 ]
 const d4Texts: string[] = []
-
-const midBody = [
-  'If your drive is failing or already dead, contact Five Star Data Recovery today. We offer industry-leading data recovery services for all Hitachi models.',
-  'Whether you\'re dealing with bad sectors, lost files, or physical damage, our engineers are ready to help. We\'ve recovered files from drives others considered a lost cause.',
-  'Let us help you safely and securely recover data from Hitachi drives. Start your recovery with a free diagnostic—your data could still be recoverable.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Hitachi Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
+const midBody: string[] = []
+const contactText = 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic — there's still hope. Contact us today.'
+const contactList: string[] = [
   'Visit our lab in Glendale, CA',
   'Mail your drive to us from anywhere in the U.S.',
   'Call us today for a free evaluation',
 ]
-const contactOutro = 'Trust our experts for fast, secure, and professional hitachi data recovery services - and get back what matters most.'
-
-const reviews = [
-  { 'text': 'My Hitachi external hard drive suddenly stopped showing up, and I was devastated thinking years of photos were gone. Five Star Data Recovery not only diagnosed the issue quickly but also recovered 100% of my data. The process was smooth, and they kept me informed every step of the way. Highly recommended for anyone dealing with Hitachi drive issues!', 'name': 'Michael R.', 'location': 'Seattle, WA' },
-  { 'text': 'I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn\'t recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish.', 'name': 'Sarah T.', 'location': 'Chicago, IL' },
-  { 'text': 'My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star\'s clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery.', 'name': 'David N.', 'location': 'Glendale, CA' },
-]
+const contactOutro = ''
+const reviews: { text: string; name: string; location: string }[] = []
 const faqs = [
-  { q: '1. Do you recover data from all types of Hitachi hard drives?', a: 'Yes, we recover data from Hitachi internal and external hard drives, including both consumer-grade and enterprise-level models. Whether you\'re dealing with an old Deskstar or a newer Ultrastar series, our experts are trained in Hitachi data recovery techniques.' },
-  { q: '2. Can you recover data from Hitachi drives that were part of a RAID array?', a: 'Absolutely. Our lab specializes in RAID data recovery, including arrays that contain Hitachi drives. We support all RAID levels (RAID 0, 1, 5, 10, etc.) and always clone the drives before working on them to ensure data integrity.' },
-  { q: '3. My Hitachi drive is not recognized by my computer - can you still recover the data?', a: 'Yes. A Hitachi hard drive not showing up can be due to logical issues, firmware corruption, or physical damage. In most cases, our diagnostics will determine the cause, and we\'ll use the appropriate methods to recover the data from your Hitachi drive.' },
-  { q: '4. What if my Hitachi drive was making clicking noises before it failed?', a: 'A clicking sound usually points to mechanical failure, which is common with failing Hitachi drives. We perform cleanroom recoveries for these types of issues, allowing us to repair internal components and safely extract your data.' },
-  { q: '5. How long does Hitachi data recovery take?', a: 'Typical turnaround time is 3-5 business days, but it can vary based on the issue. We also offer <a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus services</a> for urgent Hitachi data recovery cases. Contact us for a quote and timeline tailored to your specific situation.' },
-  { q: '6. Can you recover data from Hitachi drives with bad sectors?', a: 'Yes. Bad sectors on Hitachi hard drives are a common failure type, and our engineers are experienced in handling them. We use sector-by-sector cloning to isolate the healthy portions of the drive and maximize data recovery results.' },
-  { q: '7. Do you recover data from encrypted Hitachi hard drives?', a: 'Yes, we can recover data from BitLocker or third-party encrypted Hitachi drives as long as the correct encryption key or password is provided. Our secure systems are designed to handle encrypted data safely and confidentially.' },
+  { q: 'What types of Hitachi drives do you recover data from?', a: 'We recover data from all Hitachi hard drive models, including desktop internal HDDs, portable external drives, enterprise drives, and RAID arrays. Whether the drive is old or new, we have the tools and experience to help.' },
+  { q: 'My Hitachi drive is making a clicking noise. Can you recover data from it?', a: 'Yes. Clicking noises indicate a mechanical failure, typically involving the read/write heads. We strongly recommend powering off the drive immediately. Our engineers perform head replacements in a cleanroom environment to recover your data safely.' },
+  { q: 'How much does Hitachi data recovery cost?', a: 'Hitachi data recovery is flat-rate priced based on the drive type and failure type. Standard logical recoveries start at $300. Cleanroom recoveries for physical damage may cost more. We always provide a free diagnostic and clear quote before starting — no hidden fees.' },
+  { q: 'How long does Hitachi data recovery take?', a: 'Standard recoveries are completed within 3 to 5 business days. Physical damage cases requiring cleanroom work may take longer. We also offer Expedited and Expedited Plus options for faster turnaround.' },
+  { q: 'Do you offer a No Data, No Charge policy for Hitachi drives?', a: 'Yes. For most Hitachi data recovery cases, if we cannot recover your data, you owe us nothing. Exceptions apply for cases involving opened drive covers or deleted file recovery.' },
 ]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>

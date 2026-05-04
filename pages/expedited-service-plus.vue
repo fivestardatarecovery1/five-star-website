@@ -43,13 +43,13 @@ const midBody = [
   'We offer flat rate pricing for this service based on how long we believe the case will take. This fee is in addition to any Flat Rate Data Recovery costs. It\'s hard to know exactly how much this service will cost. However, our Engineers can give you a good estimate after the initial diagnosis. Services start at $500.00 per drive.',
 ]
 
-const contactText = 'If you\'re experiencing issues with your Expedited Data Recovery Plus, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
+const contactText = 'Need your data recovered as quickly as possible? Our Expedited Service Plus guarantees that your case is worked on immediately — 24/7, including nights, weekends, and holidays.'
 const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
+  'Call us today or drop off your drive at our Glendale, CA lab',
+  'Mail your device to us from anywhere in the U.S. — we offer free round-trip shipping',
+  'Services start at $500.00 per drive, in addition to standard recovery fees',
 ]
-const contactOutro = 'Trust our experts for fast, secure, and professional expedited data recovery service plus - and get back what matters most.'
+const contactOutro = ''
 
 const reviews = []
 const faqs = [

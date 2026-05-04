@@ -4,8 +4,14 @@ useSeoMeta({
   description: 'Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. We recover data from LaCie devices used in film sets, music studios, animation workstations, and commercial photography sessions.'
 })
 
-const issues: { icon: string; title: string; text: string }[] = []
-const causesIntro = ''
+const issues: { icon: string; title: string; text: string }[] = [
+  { icon: '🔊', title: 'Clicking noises from the drive', text: '' },
+  { icon: '🌡️', title: 'Overheating during use', text: '' },
+  { icon: '🐌', title: 'Slow access times or freezing', text: '' },
+  { icon: '⚠️', title: 'File system corruption or errors', text: '' },
+  { icon: '🔍', title: 'Drive fails to mount or be recognized', text: '' },
+]
+const causesIntro = 'Frequent issues with LaCie drives include clicking noises, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.'
 const causesOutro = ''
 const causes: string[] = []
 const processIntro = ''
@@ -18,18 +24,25 @@ const tipOutro = ''
 const tips: string[] = []
 const d2Texts: string[] = []
 const d3Texts = [
-  'Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage.',
-  'We\'ve recovered data from Lacie devices used in film sets, music studios, animation workstations, and commercial photography sessions. Whether you formatted your Lacie hard disk, dropped it on location, or it became unreadable mid-edit, we\'re here to help. Our lab handles not just recovery, but also the specialized file types used in creative workflows.',
+  'LaCie SSD recovery requires different techniques than traditional hard drives due to TRIM commands, chip-level storage, and wear-leveling. Our engineers are trained in both technologies to ensure optimal results.',
+  'We maintain legacy hardware and connectors to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old.',
 ]
 const d4Texts: string[] = []
 const midBody: string[] = []
 const contactText = ''
 const contactList: string[] = []
 const contactOutro = ''
-const reviews = []
+const reviews: { text: string; name: string; location: string }[] = []
 const faqs = [
+  { q: 'Can you recover data from a LaCie external drive that's not showing up?', a: 'Yes, we specialize in LaCie data recovery from drives that don't mount, aren't recognized by the system, or show errors. Whether it's a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files.' },
+  { q: 'Do you recover data from LaCie RAID and Rugged drives?', a: 'Absolutely. We offer LaCie RAID recovery for models like the 2big, 5big, and Rugged RAID Pro. Whether your RAID is degraded, failed, or reformatted, we can rebuild and extract your valuable data safely.' },
+  { q: 'What are common failure symptoms with LaCie drives?', a: 'Frequent issues with LaCie drives include clicking noises, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.' },
+  { q: 'Can you recover files from a LaCie drive that was accidentally formatted?', a: 'Yes. If your LaCie drive was accidentally formatted or partitioned, we use advanced recovery tools to perform deep scans and recover deleted files, directories, and folder structures — provided no significant data was overwritten.' },
+  { q: 'What should I do if my LaCie drive starts making unusual noises?', a: 'Immediately power it down. Clicking, buzzing, or grinding noises often indicate mechanical failure. Continued use can cause permanent damage. Bring or send it in for a safe LaCie hard drive recovery evaluation.' },
+  { q: 'Do you support recovery from encrypted LaCie drives?', a: 'Yes, we can recover data from encrypted LaCie drives — provided you supply the correct password or encryption key. Without it, data decryption is not possible due to security protocols.' },
+  { q: 'Can you recover data from older LaCie drives with FireWire or legacy ports?', a: 'Yes. We maintain legacy hardware and connectors to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old.' },
+  { q: 'Is there a difference in recovery methods for LaCie SSDs vs. HDDs?', a: 'Yes. LaCie SSD recovery requires different techniques than traditional hard drives due to TRIM commands, chip-level storage, and wear-leveling. Our engineers are trained in both technologies to ensure optimal results.' },
 ]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>

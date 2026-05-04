@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Mail-In Data Recovery Service — Five Star Data Recovery',
-  description: 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stag'
+  title: 'Data Recovery Mail-in Services - Five Star Data Recovery',
+  description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.'
 })
 
 const issues = [
@@ -31,20 +31,17 @@ const d3Texts: string[] = []
 const d4Texts: string[] = []
 
 const midBody = [
-  'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.',
-  'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.',
-  'We carefully begin the recovery process using advanced tools and cleanroom procedures.',
-  'After recovery is complete, you\'ll receive a detailed file list to review so you can confirm everything important has been successfully recovered.',
-  'Once approved, we\'ll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.',
+  "Can't visit us in person? No problem. Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S.",
+  "Ship your device to us, and it will arrive at our lab in less than 2 days. Once received, we'll begin diagnostics and keep you updated every step of the way — all backed by our No Data, No Charge policy.",
 ]
 
-const contactText = 'If you\'re experiencing issues with your Mail-In Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
+const contactText = "Not local? No problem. We offer free round-trip shipping for all mail-in data recovery cases. Ship your device to our Glendale, CA lab and we'll take it from there."
 const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
+  'Fill out the Mail-In form to get a prepaid shipping label',
+  'Ship your device to us — it arrives in less than 2 days',
+  'We diagnose, recover, and ship your data back to you',
 ]
-const contactOutro = 'Trust our experts for fast, secure, and professional mail-in data recovery service — and get back what matters most.'
+const contactOutro = ''
 
 const reviews = []
 const faqs = [

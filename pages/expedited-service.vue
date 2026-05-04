@@ -32,13 +32,13 @@ const midBody = [
   'IF you have a lot of data on your drive, we can work with you to get you back the most important files needed first, then continue working on the rest of the recovery.',
 ]
 
-const contactText = 'If you\'re experiencing issues with your Expedited Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
+const contactText = 'Need your case handled as a top priority? With our Expedited Service, our engineers will start working on your case right away and handle it as a priority throughout.'
 const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
+  'Logical issues (bad sectors, firmware, file system): estimated 2–3 days',
+  'Mechanical issues (clicking, beeping, stuck motor): estimated 3–5 days',
+  'Large data sets: we prioritize your most important files first',
 ]
-const contactOutro = 'Trust our experts for fast, secure, and professional expedited data recovery service — and get back what matters most.'
+const contactOutro = ''
 
 const reviews = []
 const faqs = [

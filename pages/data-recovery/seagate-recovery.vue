@@ -1,21 +1,40 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Seagate Data Recovery Services - Five Star Data Recovery',
-  description: 'When your Seagate hard drive stops working, it can feel like everything is lost. At Five Star Data Recovery, we focus on Seagate Data Recovery. We help people a'
+  title: 'Seagate Data Recovery - Five Star Data Recovery',
+  description: 'Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.'
 })
 
-const issues: { icon: string; title: string; text: string }[] = []
+const issues: { icon: string; title: string; text: string }[] = [
+  { icon: '💾', title: 'Seagate external hard drive not working or not powering on', text: '' },
+  { icon: '🔊', title: 'Clicking or grinding noises from the drive', text: '' },
+  { icon: '⚡', title: 'Seagate Hard drive not working after an unexpected shutdown', text: '' },
+  { icon: '🖥️', title: 'Devices that appear in Disk Management but not in File Explorer', text: '' },
+  { icon: '⚠️', title: 'Corrupted or unreadable file system errors', text: '' },
+]
 
-const causesIntro = ''
+const causesIntro = 'Data loss can happen for many reasons. Some problems are software-related, like file system corruption or a failed operating system update. Other failures stem from physical damage, such as head crashes, bad sectors, or worn-out components. We also recover from accidental formatting, power surges, and damaged storage media devices that users improperly removed or mishandled.'
 const causesOutro = ''
 const causes: string[] = []
 
-const processIntro = ''
-const steps: { num: string; title: string; text: string }[] = []
+const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.'
+const steps: { num: string; title: string; text: string }[] = [
+  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
+  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
+  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
+  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
+  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
+]
 
 const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes: string[] = []
+const driveTypesOutro = "We've helped thousands of customers recover their data with care and confidence. From standard desktop models to encrypted SSDs or flash drives, our team handles each recovery with expert attention."
+const driveTypes: string[] = [
+  'Years of experience handling all types of Seagate models',
+  'High recovery success rates for even severely damaged devices',
+  'In-house cleanroom for safe internal repairs',
+  'Encrypted or password-protected storage',
+  'No data, no charge — if we can\'t recover anything, you pay nothing',
+  'Transparent pricing and clear communication every step of the way',
+]
 
 const tipIntro = ''
 const tipOutro = ''
@@ -29,14 +48,35 @@ const d3Texts = [
 ]
 const d4Texts: string[] = []
 
-const midBody: string[] = []
+const midBody: string[] = [
+  'We know how important your data is, and we work fast to get it back to you. After your free diagnostic, you will get an estimated turn around time. This will depend on your drive\'s condition and the recovery\'s complexity. In many cases, we complete recoveries in just a few business days.',
+  'We handle all data in-house under strict security standards to protect your privacy. We never outsource, and we return all drives safely, whether you choose to pick up your files or have us ship them back.',
+]
 
-const contactText = ''
-const contactList: string[] = []
+const contactText = "If your Seagate hard disk data recovery situation feels urgent, don't wait. Powering the drive on repeatedly can make things worse. Let our professionals handle the recovery process the right way."
+const contactList: string[] = [
+  'Drop off your drive at our lab',
+  'Ship it to us from anywhere in the U.S.',
+  'Call now for a free evaluation and quote',
+  'Trust Five Star for reliable, professional Seagate Data Recovery — and get your files back fast.',
+]
 const contactOutro = ''
 
-const reviews: { text: string; name: string; location: string }[] = []
+const reviews: { text: string; name: string; location: string }[] = [
+  { text: "I had a Seagate external hard drive that suddenly stopped working. It wasn't showing up on my computer at all. I called Five Star Data Recovery and Elen answered all my questions and made me feel at ease. Within a few days, they recovered 100% of my important files. The communication and service were outstanding!", name: 'Jessica L.', location: 'Los Angeles' },
+  { text: "My Seagate drive started making clicking noises, and I panicked. After some research, I found Five Star Data Recovery. Alex worked on my case and explained that the issue was mechanical. They performed a clean room recovery and were able to retrieve almost 99% of my data. I couldn't be happier with the results.", name: 'Robert M.', location: 'Phoenix, AZ' },
+  { text: "My Seagate drive showed up as RAW format and none of my files were accessible. Five Star Data Recovery diagnosed it quickly and got back almost all of my documents and photos. Their honesty, speed, and professionalism stood out. I highly recommend them for Seagate data recovery.", name: 'Daniel T.', location: 'Denver, CA' },
+]
 const faqs = [
+  { q: 'How much does Seagate Data Recovery cost?', a: 'At Five Star Data Recovery, our Seagate data recovery pricing is based on the drive\'s capacity, connection type, and condition. All pricing is flat-rate — no hourly billing or surprise charges.<br><br>$300.00 for standard Seagate SATA drives (desktop or laptop) up to 2TB<br>$500.00 for Seagate External Hard Drives and internal drives up to 6TB<br>$600.00 for Seagate external drives between 8TB and 12TB, including USB 3.0 and USB-C models<br>$800.00 for very high-capacity Seagate drives (over 12TB)<br>$950.00 for Seagate drives with mechanical issues requiring clean room repair<br><br>We offer a free evaluation before starting any recovery to determine the correct pricing tier.' },
+  { q: 'Do you recover data from all types of Seagate drives?', a: 'Yes, we recover data from all Seagate storage devices, including Seagate Barracuda, IronWolf, Expansion, Backup Plus, and portable external drives. Whether it\'s internal or external, HDD or SSD — we\'ve got you covered.' },
+  { q: 'Can you recover data from Seagate drives that are no longer detected by the computer?', a: 'Absolutely. If your Seagate hard drive is not showing up, the issue could be with the firmware, file system, USB controller, or internal damage. We perform thorough diagnostics to find the cause and recover your files.' },
+  { q: 'What causes the "Seagate drive light is on but not working" issue?', a: 'This is a common issue in Seagate external drives. The drive may receive power but fail to initialize due to PCB failure, firmware corruption, or a bad USB-to-SATA bridge. We have the tools and expertise to recover your data in these cases.' },
+  { q: 'How do you handle clicking Seagate hard drives?', a: 'A clicking Seagate drive typically means a mechanical failure, such as damaged read/write heads or motor issues. We recover these in a cleanroom using donor parts to safely extract your data without causing more harm.' },
+  { q: 'Can you recover data from a Seagate drive that was dropped?', a: 'Yes, drops and shocks can lead to mechanical failure or head misalignment. We frequently perform physical data recovery from dropped Seagate drives and have high success rates in such scenarios.' },
+  { q: 'Do you provide Seagate data recovery for RAID arrays?', a: 'We specialize in Seagate RAID recovery for all configurations — including RAID 0, RAID 1, RAID 5, and hybrid setups. Whether it\'s a NAS using Seagate IronWolf drives or a server array, we clone the drives and recover the data without using the originals.' },
+  { q: 'Is it possible to recover data from a Seagate SSD?', a: 'Yes. We handle Seagate SSD data recovery as well, including cases of NAND failure, firmware issues, or damaged controllers. SSDs are complex, but our engineers are trained in both chip-level and software-level recovery techniques.' },
+  { q: 'How long does Seagate Data Recovery take?', a: 'Most Seagate data recovery cases are completed within 3 to 5 business days. This applies to standard recoveries, including logical issues, non-encrypted USB drives, and drives with minor firmware problems. For cleanroom cases with mechanical failures, recovery may take a few extra days. If you need faster service, we also offer Expedited and Expedited Plus options for priority turnaround.' },
 ]
 
 const openFaq = ref<number | null>(null)
