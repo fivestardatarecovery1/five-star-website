@@ -3,6 +3,7 @@ interface Review {
   name: string
   location: string
   text: string
+  photo?: string
 }
 
 interface Props {
@@ -44,7 +45,10 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
             <div class="rsc-stars">★★★★★</div>
             <p class="rsc-text">&ldquo;{{ r.text }}&rdquo;</p>
             <div class="rsc-footer">
-              <div class="rsc-avatar">{{ r.name.charAt(0) }}</div>
+              <div class="rsc-avatar">
+          <img v-if="r.photo" :src="r.photo" :alt="r.name" class="rsc-avatar-img" />
+          <span v-else>{{ r.name.charAt(0) }}</span>
+        </div>
               <div class="rsc-meta">
                 <strong class="rsc-name">{{ r.name }}</strong>
                 <span class="rsc-loc">{{ r.location }}</span>
@@ -162,8 +166,8 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
   padding-top: 16px;
 }
 .rsc-avatar {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: #e8ecf2;
   color: #4a5568;
@@ -173,6 +177,13 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.rsc-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .rsc-name {
   display: block;

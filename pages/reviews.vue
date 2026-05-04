@@ -12,19 +12,19 @@ const reviews = [
   {
     name: 'Mikey W.',
     location: 'Los Angeles, CA',
-    title: 'Awesome Work!',
+    photo: '/review-profile-1.jpg',
     text: 'When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!'
   },
   {
     name: 'Arin K.',
     location: 'Glendale, CA',
-    title: 'Truely 5 Stars',
+    photo: '/review-profile-2.jpg',
     text: "Don't trust your important data anywhere else. These guys are the best. It's all in the name: 5 star performance and service all the way. You'll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it's at. Honestly: don't go anywhere else. Don't even think about it. Thank you guys!"
   },
   {
     name: 'Vance K.',
     location: 'Pasadena, CA',
-    title: 'Thank You!',
+    photo: '/review-profile-3.jpg',
     text: "My son's laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly."
   }
 ]
@@ -37,12 +37,7 @@ const socialPosts = [
   { handle: 'shanemosley', img: '/review-social-shanemosley.jpg' },
 ]
 
-const spIndex = ref(0)
-const spVisible = 3
-const spCardWidth = 340
 
-function spPrev() { if (spIndex.value > 0) spIndex.value-- }
-function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.value++ }
 </script>
 
 <template>
@@ -62,36 +57,20 @@ function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.
 
     <!-- SOCIAL PROOF CAROUSEL -->
     <section class="social-proof-section">
-      <div class="container">
-        <div class="sp-header">
-          <p class="sp-label">As Seen On Social Media</p>
-          <h2 class="sp-title">Real Clients. Real Stories. Real Results.</h2>
-          <p class="sp-sub">Don&rsquo;t just take our word for it &mdash; see what our clients are posting about their experience with Five Star Data Recovery.</p>
-        </div>
-        <div class="sp-carousel">
-          <button class="sp-btn sp-prev" @click="spPrev" :disabled="spIndex === 0" aria-label="Previous">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-          </button>
-          <div class="sp-window">
-            <div class="sp-track" :style="{ transform: `translateX(-${spIndex * (spCardWidth + 24)}px)` }">
-              <div v-for="post in socialPosts" :key="post.handle" class="sp-card">
-                <img :src="post.img" :alt="post.handle + ' review of Five Star Data Recovery'" class="sp-img" loading="lazy" />
-                <div class="sp-card-footer">
-                  <span class="sp-handle">@{{ post.handle }}</span>
-                </div>
-              </div>
+      <div class="sp-header container">
+        <p class="sp-label">As Seen On Social Media</p>
+        <h2 class="sp-title">Real Clients. Real Stories. Real Results.</h2>
+        <p class="sp-sub">Don&rsquo;t just take our word for it &mdash; see what our clients are posting about their experience with Five Star Data Recovery.</p>
+      </div>
+      <!-- Infinite auto-scroll strip — no container so it bleeds edge to edge -->
+      <div class="sp-strip">
+        <div class="sp-track-infinite">
+          <div v-for="post in [...socialPosts, ...socialPosts, ...socialPosts]" :key="post.handle + post.img" class="sp-card">
+            <img :src="post.img" :alt="post.handle + ' review of Five Star Data Recovery'" class="sp-img" loading="lazy" />
+            <div class="sp-card-footer">
+              <span class="sp-handle">@{{ post.handle }}</span>
             </div>
           </div>
-          <button class="sp-btn sp-next" @click="spNext" :disabled="spIndex >= socialPosts.length - spVisible" aria-label="Next">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-          </button>
-        </div>
-        <div class="sp-dots">
-          <button
-            v-for="i in Math.ceil(socialPosts.length / spVisible)" :key="i"
-            :class="['sp-dot', { active: spIndex === (i-1) * spVisible }]"
-            @click="spIndex = (i-1) * spVisible"
-          />
         </div>
       </div>
     </section>
@@ -169,10 +148,11 @@ function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.
   .reviews-grid-large, .page-video-inner { grid-template-columns: 1fr; }
 }
 
-/* Social proof carousel */
+/* Social proof — infinite auto-scroll */
 .social-proof-section {
   background: #0d111f;
-  padding: 80px 0;
+  padding: 72px 0 64px;
+  overflow: hidden;
 }
 .sp-header {
   text-align: center;
@@ -201,20 +181,23 @@ function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.
   margin: 0 auto;
   line-height: 1.7;
 }
-.sp-carousel {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.sp-window {
-  flex: 1;
+/* Strip bleeds edge-to-edge */
+.sp-strip {
   overflow: hidden;
-  min-width: 0;
+  width: 100%;
 }
-.sp-track {
+@keyframes sp-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-340px * 5 - 24px * 5)); }
+}
+.sp-track-infinite {
   display: flex;
   gap: 24px;
-  transition: transform 0.4s ease;
+  width: max-content;
+  animation: sp-scroll 28s linear infinite;
+}
+.sp-track-infinite:hover {
+  animation-play-state: paused;
 }
 .sp-card {
   flex: 0 0 340px;
@@ -222,23 +205,18 @@ function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.
   border: 1px solid rgba(255,255,255,0.08);
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.2s, border-color 0.2s;
+  transition: border-color 0.2s;
 }
 .sp-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(245,200,66,0.3);
+  border-color: rgba(245,200,66,0.35);
 }
 .sp-img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
 }
 .sp-card-footer {
   padding: 14px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 .sp-handle {
@@ -246,49 +224,11 @@ function spNext() { if (spIndex.value < socialPosts.length - spVisible) spIndex.
   font-weight: 700;
   color: #F5C842;
 }
-.sp-btn {
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.05);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.sp-btn:hover:not(:disabled) { border-color: #F5C842; color: #F5C842; }
-.sp-btn:disabled { opacity: 0.25; cursor: not-allowed; }
-.sp-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 28px;
-}
-.sp-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.2);
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, width 0.2s;
-}
-.sp-dot.active {
-  background: #F5C842;
-  width: 24px;
-  border-radius: 4px;
-}
-@media (max-width: 900px) {
-  .sp-card { flex: 0 0 280px; }
-}
-@media (max-width: 640px) {
-  .sp-btn { display: none; }
-  .sp-window { overflow-x: auto; scroll-snap-type: x mandatory; }
-  .sp-track { transform: none !important; }
-  .sp-card { flex: 0 0 80vw; scroll-snap-align: start; }
+@media (max-width: 768px) {
+  .sp-card { flex: 0 0 260px; }
+  @keyframes sp-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(-260px * 5 - 24px * 5)); }
+  }
 }
 </style>
