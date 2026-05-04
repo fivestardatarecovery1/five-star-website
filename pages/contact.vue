@@ -1,10 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Contact Us — Five Star Data Recovery | Glendale, CA',
+  title: 'Contact Us - Five Star Data Recovery | Glendale, CA',
   description: 'Contact Five Star Data Recovery in Glendale, CA. Free evaluation, free shipping, no data no charge. Call, email, or visit our lab today.'
 })
 
-const reviews = [{'text': 'Five Star saved my wedding footage after my external drive failed. I’m so grateful — professional, fast, and no pressure.', 'name': 'Rachel K.', 'location': 'Pasadena, CA'}, {'text': 'Fast turnaround, professional lab, and no hidden fees. They recovered all my client footage off a corrupted SD card.', 'name': 'David P.', 'location': 'Austin, TX'}, {'text': 'I had an old Seagate drive with all my kids’ baby videos. These guys recovered', 'name': 'everything . Worth every penny.”', 'location': 'Martha E.'}]
+const reviews = [
+  { text: 'Five Star saved my wedding footage after my external drive failed. I\'m so grateful — professional, fast, and no pressure.', name: 'Rachel K.', location: 'Pasadena, CA' },
+  { text: 'Fast turnaround, professional lab, and no hidden fees. They recovered all my client footage off a corrupted SD card.', name: 'David P.', location: 'Austin, TX' },
+  { text: 'I had an old Seagate drive with all my kids\' baby videos. These guys recovered everything. Worth every penny.', name: 'Martha E.', location: 'Glendale, CA' }
+]
 
 const submitted = ref(false)
 </script>
@@ -33,30 +37,21 @@ const submitted = ref(false)
               <div class="cc-icon">📍</div>
               <div>
                 <strong class="cc-title">Visit Our Lab</strong>
-                <p class="cc-text">805 N. Brand Blvd, Suite 250<br>Glendale, CA 91203</p>
+                <p class="cc-text">1731 S Brand Blvd.<br>Glendale, CA 91204</p>
               </div>
             </div>
             <div class="contact-card">
               <div class="cc-icon">📞</div>
               <div>
                 <strong class="cc-title">Call Us</strong>
-                <p class="cc-text"><a href="tel:8185000801" style="color:#C9A84C;font-weight:700;">(818) 500-0801</a><br>Available 24/7</p>
+                <p class="cc-text">
+                  <a href="tel:8182728866" style="color:#C9A84C;font-weight:700;">818-272-8866</a><br>
+                  <a href="tel:8885059991" style="color:#C9A84C;font-weight:700;">888-505-9991</a> <span style="font-size:0.8em;color:#718096;">Toll Free</span><br>
+                  Available 24/7
+                </p>
               </div>
             </div>
-            <div class="contact-card">
-              <div class="cc-icon">✉️</div>
-              <div>
-                <strong class="cc-title">Email Us</strong>
-                <p class="cc-text"><a href="mailto:info@fivestardatarecovery.com" style="color:#C9A84C;font-weight:700;">info@fivestardatarecovery.com</a></p>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="cc-icon">📦</div>
-              <div>
-                <strong class="cc-title">Mail Your Drive</strong>
-                <p class="cc-text">Free shipping both ways. <NuxtLink to="/data-recovery/mail-in-service" style="color:#C9A84C;font-weight:700;">Start mail-in →</NuxtLink></p>
-              </div>
-            </div>
+
           </div>
         </div>
 
@@ -80,13 +75,17 @@ const submitted = ref(false)
                 <input type="tel" placeholder="Phone Number" class="mf-input" />
               </div>
               <div class="mf-group">
-                <label>SELECT YOUR DEVICE TYPE</label>
+                <label>REASON FOR CONTACT</label>
                 <div class="mf-select-wrap">
                   <select class="mf-input">
-                    <option value="">— Select —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
+                    <option value="">Select Message Reason</option>
+                    <option>Billing Inquiry</option>
+                    <option>Case Support</option>
+                    <option>Customer Feedback</option>
+                    <option>Data Recovery Case</option>
+                    <option>Marketing Inquiry</option>
+                    <option>Partnership Inquiry</option>
+                    <option>Other - Not Listed</option>
                   </select>
                 </div>
               </div>
@@ -138,7 +137,7 @@ const submitted = ref(false)
       <div class="container page-video-inner">
         <div>
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc" style="margin-top:16px;">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision.</p>
+          <p class="page-video-desc" style="margin-top:16px;">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision.</p>
         </div>
         <div class="page-video-embed">
           <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
