@@ -477,12 +477,7 @@ function handleSubmit() {
 }
 
 /* ── Responsive ── */
-/* When form is hidden — single column left-aligned layout */
-.hero-inner:has(> :only-child) {
-  grid-template-columns: 1fr;
-  max-width: 860px;
-}
-.hero-inner:has(> :only-child) .hero-copy { padding-right: 0; }
+
 
 @media (max-width: 1024px) {
   .hero-inner {
