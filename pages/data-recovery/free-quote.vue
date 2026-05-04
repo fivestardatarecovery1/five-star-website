@@ -12,7 +12,7 @@ const submitted = ref(false)
     <HeroSection
       title="Get a Free Data Recovery Quote"
       subtitle="No Obligation. No Hidden Fees."
-      description="We understand your files are private. Whether you're recovering sensitive business files or personal memories, we keep your data protected from start to finish. Get your free quote in minutes — no commitment required."
+      description="Get a free, no-obligation quote for your data recovery case. Simply fill out the form below with details about your device and the issue you're experiencing. Our team will review your information and respond with an accurate initial price estimate based on your device type and symptoms."
       bgImage="/hard-drive-recovery-service-los-angeles.webp"
     />
     <StatsBar />

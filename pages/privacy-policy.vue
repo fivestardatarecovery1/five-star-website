@@ -11,7 +11,7 @@ useSeoMeta({
     <HeroSection
       title="Privacy Policy"
       subtitle="Your Privacy Matters to Us."
-      description="At Five Star Data Recovery, we are committed to protecting your personal information. Our privacy policy explains how we collect, use, and safeguard your data when you use our services."
+      description="At Five Star Data Recovery, we are committed to protecting your personal information. Our privacy policy explains how we collect, use, and safeguard your data when you interact with our website or services. Transparency, trust, and your security are at the core of everything we do."
       bgImage="/privacy-policy-data-recovery-los-angeles.jpg"
     />
 

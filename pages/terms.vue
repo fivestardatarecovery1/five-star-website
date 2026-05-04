@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Terms and Conditions — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details ab'
+  description: 'At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details about our services and policies.'
 })
 
 const issues = []
@@ -10,13 +10,8 @@ const causesIntro = ''
 const causesOutro = ''
 const causes = []
 
-const processIntro = 'We use a systematic, proven approach for every Terms and Conditions case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
 const driveTypesIntro = ''
 const driveTypesOutro = ''
@@ -71,7 +66,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Terms and Conditions"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery, we value transparency and want every customer to fully understand our process. Our Terms and Conditions outline important details about our services, including pricing, turnaround times, liability limitations, and how recovered data is handled. We also explain our No Data, No Charge policy, as well as any non-refundable fees that may apply in special case types. By proceeding with our services, you agree to these terms. If you have any questions, our team is happy to help clarify before we begin your recovery."
+      description="Please read these Terms and Conditions carefully before using our data recovery services. By submitting your device, you agree to our terms, pricing, and No Data, No Charge policy. Five Star Data Recovery strives to be transparent about every aspect of our service."
       bgImage="/terms-and-conditions-data-recovery-service.webp"
     />
 

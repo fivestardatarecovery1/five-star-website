@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Data Recovery Service Pricing — Five Star Data Recovery',
-  description: '"My external hard drive suddenly started acting up and wouldn’t open any files. I found out it had bad sectors and thought everything was lost. Five Star Data R'
+  description: 'View our flat-rate data recovery pricing for hard drives, SSDs, USB drives, RAID systems and more. No hidden fees. No data, no charge. Free evaluation on every case.'
 })
 
 const issues = [
@@ -20,13 +20,8 @@ const causes = [
   'RAID/NAS drive-level performance and reliability',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Data Recovery Pricing case.'
-const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
-]
+const processIntro = ''
+const steps: { num: string; title: string; text: string }[] = []
 
 const driveTypesIntro = ''
 const driveTypesOutro = ''
@@ -92,7 +87,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Service Pricing"
       subtitle="Get Your Data Back In No Time."
-      description="'My external hard drive suddenly started acting up and wouldn’t open any files. I found out it had bad sectors and thought everything was lost. Five Star Data Recovery recovered all of my documents, including years of business data. Their team was professional, honest, and incredibly skilled.'"
+      description="At Five Star Data Recovery, our pricing is flat-rate and fully transparent. You'll know the exact cost before we begin — no hidden fees, no surprise charges, and no charge if we can't recover your data."
       bgImage="/data-recovery-pricing-los-angeles.jpg"
     />
 

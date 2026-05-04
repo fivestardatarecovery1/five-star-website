@@ -77,7 +77,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Dropped Hard Drive Data Recovery"
       subtitle="Get Your Data Back In No Time."
-      description=""
+      description="Dropped your hard drive? Don't panic. At Five Star Data Recovery, we specialize in recovering data from drives that have suffered physical impact. Whether your drive is clicking, not spinning, or simply not recognized after a drop, our engineers can help recover your important files."
       bgImage="/hard-drive-recovery-service-los-angeles.webp"
     />
 
