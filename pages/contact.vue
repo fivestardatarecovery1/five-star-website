@@ -1,11 +1,79 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Contact Us - Five Star Data Recovery | Glendale, CA',
+  title: 'Contact Us — Five Star Data Recovery | Glendale, CA',
   description: 'Contact Five Star Data Recovery in Glendale, CA. Free evaluation, free shipping, no data no charge. Call, email, or visit our lab today.'
 })
 
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.fivestardatarecovery.com/contact-us/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://www.fivestardatarecovery.com/contact-us/" }
+            ]
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "url": "https://www.fivestardatarecovery.com/",
+            "telephone": "+1-818-272-8866",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "10:00",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.yelp.com/biz/five-star-data-recovery-glendale",
+              "https://www.bbb.org/us/ca/glendale/profile/data-recovery/five-star-data-recovery-1216-1007446",
+              "https://www.facebook.com/FiveStarDataRecovery/"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.fivestardatarecovery.com/contact-us/#webpage",
+            "url": "https://www.fivestardatarecovery.com/contact-us/",
+            "name": "Contact Us \u2013 Five Star Data Recovery",
+            "description": "Get in touch with Five Star Data Recovery. Call us 24/7 or submit a form to speak to a data recovery expert. Free evaluations. No data = No charge.",
+            "breadcrumb": { "@id": "https://www.fivestardatarecovery.com/contact-us/#breadcrumb" },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "Review",
+            "@id": "https://www.fivestardatarecovery.com/contact-us/#review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Rachel K." },
+            "reviewBody": "Five Star saved my wedding footage after my external drive failed. I'm so grateful \u2014 professional, fast, and no pressure.",
+            "itemReviewed": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" }
+          }
+        ]
+      })
+    }
+  ]
+})
+
 const reviews = [
-  { text: 'Five Star saved my wedding footage after my external drive failed. I\'m so grateful — professional, fast, and no pressure.', name: 'Rachel K.', location: 'Pasadena, CA' },
+  { text: 'Five Star saved my wedding footage after my external drive failed. I\'m so grateful - professional, fast, and no pressure.', name: 'Rachel K.', location: 'Pasadena, CA' },
   { text: 'Fast turnaround, professional lab, and no hidden fees. They recovered all my client footage off a corrupted SD card.', name: 'David P.', location: 'Austin, TX' },
   { text: 'I had an old Seagate drive with all my kids\' baby videos. These guys recovered everything. Worth every penny.', name: 'Martha E.', location: 'Glendale, CA' }
 ]
@@ -137,7 +205,7 @@ const submitted = ref(false)
         allowfullscreen
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Five Star Data Recovery — 1731 S Brand Blvd, Glendale CA"
+        title="Five Star Data Recovery - 1731 S Brand Blvd, Glendale CA"
       />
     </div>
 
