@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Expedited Data Recovery Service Plus - Five Star Data Recovery',
-  description: 'At Five Star Data Recovery we're happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that'
+  description: 'At Five Star Data Recovery we\'re happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that your case will be worked on diligently 24/7?'
 })
 
 const issues = [

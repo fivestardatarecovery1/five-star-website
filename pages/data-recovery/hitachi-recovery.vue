@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Hitachi Data Recovery Services - Five Star Data Recovery',
-  description: 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic-there's still hope. At Five Star Data Rec'
+  description: 'If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn\'t being detected, don\'t panic — there\'s still hope. At Five Star Data Recovery, we specialize in professional Hitachi data recovery.'
 })
 
 const issues = [
@@ -47,7 +47,7 @@ const tips: string[] = []
 
 const d2Texts: string[] = []
 const d3Texts = [
-  'We know that losing important data can be stressful. That's why we've built a process that's fast, secure, and customer-friendly:',
+  'We know that losing important data can be stressful. That\'s why we\'ve built a process that\'s fast, secure, and customer-friendly:',
 ]
 const d4Texts: string[] = []
 
@@ -67,8 +67,8 @@ const contactOutro = 'Trust our experts for fast, secure, and professional hitac
 
 const reviews = [
   { 'text': 'My Hitachi external hard drive suddenly stopped showing up, and I was devastated thinking years of photos were gone. Five Star Data Recovery not only diagnosed the issue quickly but also recovered 100% of my data. The process was smooth, and they kept me informed every step of the way. Highly recommended for anyone dealing with Hitachi drive issues!', 'name': 'Michael R.', 'location': 'Seattle, WA' },
-  { 'text': 'I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn't recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish.', 'name': 'Sarah T.', 'location': 'Chicago, IL' },
-  { 'text': 'My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star's clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery.', 'name': 'David N.', 'location': 'Glendale, CA' },
+  { 'text': 'I had a Hitachi laptop drive with bad sectors, and my local computer shop told me it wasn\'t recoverable. Five Star Data Recovery proved them wrong! They were able to recover almost 92% of my files, including some important business documents. The flat-rate pricing was upfront, and there were no surprises. Excellent service from start to finish.', 'name': 'Sarah T.', 'location': 'Chicago, IL' },
+  { 'text': 'My Hitachi hard drive was making a clicking noise after I dropped it, and I knew it was serious. Five Star\'s clean room service saved the day. They replaced the internal parts and got my data back within a week. I was especially impressed with their no data, no charge policy. Great experience and true experts when it comes to Hitachi data recovery.', 'name': 'David N.', 'location': 'Glendale, CA' },
 ]
 const faqs = [
   { q: '1. Do you recover data from all types of Hitachi hard drives?', a: 'Yes, we recover data from Hitachi internal and external hard drives, including both consumer-grade and enterprise-level models. Whether you\'re dealing with an old Deskstar or a newer Ultrastar series, our experts are trained in Hitachi data recovery techniques.' },
