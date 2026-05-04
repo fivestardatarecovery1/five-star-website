@@ -1,7 +1,11 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Reviews — Five Star Data Recovery | Glendale, CA',
-  description: 'Read verified client reviews for Five Star Data Recovery. 500+ five-star reviews from customers who got their data back. Serving Glendale, Los Angeles, and nationwide.'
+  title: 'Reviews - Five Star Data Recovery',
+  description: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
+  ogTitle: 'Reviews',
+  ogDescription: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/pl-01-150x150.png',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 })
 
 const reviews = []
@@ -14,7 +18,8 @@ const reviews = []
       title="Customer Reviews"
       subtitle="Hear What Our Customers Are Saying."
       description="At Five Star Data Recovery, we take pride in delivering professional, reliable, and compassionate data recovery services. But don't just take our word for it — hear directly from the clients we've helped get their data back."
-      bgImage="/five-star-data-recovery-lab-technician-glendale-ca.png"
+      bgImage="/reviews-hero-bg.jpg"
+      :showForm="false"
     />
     <StatsBar />
 
@@ -36,46 +41,19 @@ const reviews = []
       </div>
     </section>
 
-    <!-- REVIEWS GRID -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Client Stories</div>
-        <h2 class="s-heading center">Testimonials from Satisfied Clients</h2>
-        <div class="reviews-grid-large">
-          <div v-for="r in reviews" :key="r.name" class="review-card">
-            <div class="review-quote">"</div>
-            <p class="review-body">{{ r.text }}</p>
-            <div class="review-footer">
-              <div class="review-stars">★★★★★</div>
-              <div class="review-meta">
-                <strong class="review-name">{{ r.name }}</strong>
-                <span class="review-loc">{{ r.location }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" bg-class="section-bg-1" />
 
     <!-- VIDEO -->
     <section class="page-video-section">
       <div class="container page-video-inner">
         <div>
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc" style="margin-top:16px;">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision.</p>
+          <p class="page-video-desc" style="margin-top:16px;">Data loss is stressful - but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision.</p>
         </div>
         <div class="page-video-embed">
           <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
         </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="s-white" style="text-align:center;">
-      <div class="container" style="max-width:640px;margin:0 auto;">
-        <h2 class="s-heading center">Ready to Become Our Next Success Story?</h2>
-        <p class="s-intro center">Join thousands of satisfied clients who trusted Five Star Data Recovery with their most important data.</p>
-        <NuxtLink to="/start-recovery" class="btn-gold-full">Start Your Recovery Today</NuxtLink>
       </div>
     </section>
 
