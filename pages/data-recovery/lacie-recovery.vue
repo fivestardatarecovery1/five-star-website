@@ -16,7 +16,8 @@ const driveTypes: string[] = []
 const tipIntro = ''
 const tipOutro = ''
 const tips: string[] = []
-const d2Texts: string[] = []const d3Texts = [
+const d2Texts: string[] = []
+const d3Texts = [
   'Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage.',
   'We\'ve recovered data from Lacie devices used in film sets, music studios, animation workstations, and commercial photography sessions. Whether you formatted your Lacie hard disk, dropped it on location, or it became unreadable mid-edit, we\'re here to help. Our lab handles not just recovery, but also the specialized file types used in creative workflows.',
 ]

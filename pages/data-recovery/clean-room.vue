@@ -16,7 +16,8 @@ const driveTypes: string[] = []
 const tipIntro = ''
 const tipOutro = ''
 const tips: string[] = []
-const d2Texts: string[] = []const d3Texts = [
+const d2Texts: string[] = []
+const d3Texts = [
   'Not always. While clicking hard drives, non-spinning drives, and physically dead drives are common clean room cases, there are many other scenarios where clean room access is essential. This includes drives affected by impact, fire, water, or firmware-related read issues.',
   'At Five Star Data Recovery, we open the drive\'s cover inside our certified clean room to visually inspect the platters and slider assemblies. This allows our engineers to determine whether the read failure is due to surface damage, head crash, or severe bad sectors. This critical step ensures we take the safest and most effective approach to recovering your data.',
 ]
@@ -25,7 +26,8 @@ const midBody: string[] = []
 const contactText = ''
 const contactList: string[] = []
 const contactOutro = ''
-const reviews: { text: string; name: string; location: string }[] = []const faqs = [
+const reviews: { text: string; name: string; location: string }[] = []
+const faqs = [
 ]
 
 const openFaq = ref<number | null>(null)

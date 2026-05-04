@@ -16,7 +16,8 @@ const driveTypes: string[] = []
 const tipIntro = ''
 const tipOutro = ''
 const tips: string[] = []
-const d2Texts: string[] = []const d3Texts = [
+const d2Texts: string[] = []
+const d3Texts = [
   'At Five Star Data Recovery, we offer specialized Toshiba data recovery services for customers dealing with failed drives, deleted files, and physical damage. Whether your Toshiba HDD stopped spinning, won\'t connect, or shows up blank, we have the tools and expertise to recover your data safely.',
 ]
 const d4Texts: string[] = []
@@ -24,7 +25,8 @@ const midBody: string[] = []
 const contactText = ''
 const contactList: string[] = []
 const contactOutro = ''
-const reviews: { text: string; name: string; location: string }[] = []const faqs = [
+const reviews: { text: string; name: string; location: string }[] = []
+const faqs = [
 ]
 
 const openFaq = ref<number | null>(null)
