@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { icon: '🔌', title: 'Complete power failure', text: 'Five Star Data Recovery provides expert iPhone data recovery for complete power failure. We perform component-level repairs and NAND chip extraction to recover your data.' },
-  { icon: '📱', title: 'iPhones stuck in boot loop or Apple logo', text: 'Five Star Data Recovery provides expert iPhone data recovery for iphones stuck in boot loop or apple logo. We perform component-level repairs and NAND chip extraction to recover your data.' },
-  { icon: '💧', title: 'Burned logic boards', text: 'Five Star Data Recovery provides expert iPhone data recovery for burned logic boards. We perform component-level repairs and NAND chip extraction to recover your data.' },
-  { icon: '💥', title: 'Broken NAND or baseband components', text: 'Five Star Data Recovery provides expert iPhone data recovery for broken nand or baseband components. We perform component-level repairs and NAND chip extraction to recover your data.' },
+  { icon: '🔌', title: 'Complete power failure', text: '' },
+  { icon: '📱', title: 'iPhones stuck in boot loop or Apple logo', text: '' },
+  { icon: '💧', title: 'Burned logic boards', text: '' },
+  { icon: '💥', title: 'Broken NAND or baseband components', text: '' },
 ]
 
 const causesIntro = ''
@@ -22,12 +22,13 @@ const causes = [
   'Short circuits after third-party repair attempts',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every iPhone Data Recovery case.'
+const processIntro = 'Our recovery process is safe, thorough, and 100% focused on recovering your data—not fixing your phone.'
 const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
+  { num: '1', title: 'Free Diagnostic', text: 'We assess the board for damage.' },
+  { num: '2', title: 'Flat-Rate Quote', text: 'We provide upfront pricing before any recovery work begins.' },
+  { num: '3', title: 'Board-Level Repair', text: 'We restore basic functions only to access your data.' },
+  { num: '4', title: 'Secure Extraction', text: 'We perform a complete data recovery from iPhone memory.' },
+  { num: '5', title: 'Delivery', text: 'We return your files on a USB drive or through secure digital transfer.' },
 ]
 
 const driveTypesIntro = ''
@@ -77,15 +78,22 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional iphone data recovery services — and get back what matters most.'
 
-const reviews = [
-  { 'text': 'I thought all hope was lost after my iPhone completely shut down and wouldn’t turn back on. Apple couldn’t help, but Five Star Data Recovery recovered all my photos and videos! The team was professional, patient, and explained every step. Worth every penny.', 'name': 'Amanda S.', 'location': 'West Covina, CA' },
-  { 'text': 'I dropped my iPhone in a pool and thought everything was lost. Five Star recovered all of my data and gave me a clean iTunes backup I could restore to a new device. Their team kept me informed the whole time and the process was smooth and transparent.', 'name': 'Jason H.', 'location': 'Burbank, CA' },
-  { 'text': 'My iPhone wouldn’t power on after a bad update, and no one else had a solution. Five Star was able to extract all of my important files, including family photos and notes, without restoring the full device. They let me choose what I wanted recovered, and delivered exactly that.', 'name': 'Emily T.', 'location': 'New York, NY' },
+const reviews: { text: string; name: string; location: string }[] = [
+  { text: 'I thought all hope was lost after my iPhone completely shut down and wouldn\'t turn back on. Apple couldn\'t help, but Five Star Data Recovery recovered all my photos and videos! The team was professional, patient, and explained every step. Worth every penny.', name: 'Amanda S.', location: 'West Covina, CA' },
+  { text: 'I dropped my iPhone in a pool and thought everything was lost. Five Star recovered all of my data and gave me a clean iTunes backup I could restore to a new device. Their team kept me informed the whole time and the process was smooth and transparent.', name: 'Jason H.', location: 'Burbank, CA' },
+  { text: 'My iPhone wouldn\'t power on after a bad update, and no one else had a solution. Five Star was able to extract all of my important files, including family photos and notes, without restoring the full device. They let me choose what I wanted recovered, and delivered exactly that.', name: 'Emily T.', location: 'New York, NY' },
 ]
 const faqs = [
-  { q: 'Why Clients Choose Five Star Data Recovery', a: 'Real component-level logic board repair. Specialized equipment for iPhone-level diagnostics. Private, secure, and confidential service. Transparent communication throughout the process. No data, no charge – guaranteed' },
-  { q: 'Start Your Data Recovery Today', a: 'Walk in to our lab in Glendale, CA. Mail in your device from anywhere in the U.S.. Call now for a free diagnostic' },
-  { q: 'See Why Thousands Trust Us With Their Important Data', a: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.' },
+  { q: 'Can you recover data from a physically damaged iPhone?', a: 'Yes. Our iPhone data recovery service specializes in retrieving data from physically damaged devices, including those with water damage, broken logic boards, or failed components. We perform component-level repairs in-house to safely extract data when standard software tools won\'t work.' },
+  { q: 'What types of data can you recover from an iPhone?', a: 'We can recover photos, videos, contacts, messages, call logs, notes, and other important data stored directly on your iPhone. If the data is still on the device and hasn\'t been overwritten, we have a strong chance of recovering it — even if the phone is no longer powering on.' },
+  { q: 'Can you recover deleted files from an iPhone?', a: 'No, we do not offer deleted file recovery for iPhones. Our focus is on recovering data from physically damaged or non-functional iPhones, not files that were accidentally deleted from working devices.' },
+  { q: 'How much does iPhone data recovery cost?', a: 'Our Component Level iPhone Data Recovery is offered at a flat rate of $950.00, with no hidden fees. When your case is brought in, we collect a $200 refundable deposit to begin the process. If we\'re unable to recover your data, the deposit is fully refunded. If the recovery is successful, the $200 deposit is applied toward the total cost.' },
+  { q: 'Can I ship my iPhone in for recovery?', a: 'Yes. We offer free nationwide shipping within the U.S. If you\'re located outside of our service area, we\'ll provide a prepaid shipping label so you can send your iPhone to our secure recovery lab with ease.' },
+  { q: 'Is my data safe during the recovery process?', a: 'Absolutely. We follow strict security protocols and never access or share your personal data. Your privacy is a top priority, and all recovered data is returned to you securely.' },
+  { q: 'Is there a no data, no charge policy?', a: 'Yes. Our No Data, No Charge policy applies to all iPhone recoveries — you only pay if we successfully recover your data. The only exceptions are cases where the phone\'s internal components have been tampered with or the cover has been opened, which may require a non-refundable evaluation fee.' },
+  { q: 'What if my iPhone was repaired by another shop before I brought it in?', a: 'We can still attempt iPhone data recovery, even if another repair shop has worked on the device. However, if the iPhone has had component-level repair attempts, a non-refundable $200.00 evaluation fee will apply due to the increased complexity and risk.' },
+  { q: 'Can you recover data from an iPhone stuck in a boot loop or showing the Apple logo?', a: 'Yes, we specialize in iPhone data recovery from devices stuck in a boot loop or frozen on the Apple logo. These issues are often caused by system corruption or hardware failure. Our engineers perform board-level diagnostics to restore temporary functionality and extract your important files safely.' },
+  { q: 'Do you recover data from iPhones that have been in saltwater or extreme conditions?', a: 'We do recover data from water-damaged iPhones, including those exposed to saltwater, rain, or extreme heat. Saltwater damage is particularly aggressive, so immediate evaluation is critical. Bring the phone to us as soon as possible and avoid powering it on.' },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -99,7 +107,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="iPhone Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="Our Component Level iPhone Data Recovery is offered at a flat rate of $950.00, with no hidden fees. When your case is brought in, we collect a $200 refundable deposit to begin the process. If we’re unable to recover your data, the deposit is fully refunded—as long as the device hasn’t been previously tampered with at the component level. If the recovery is successful, the $200 deposit is applied toward the total cost, and the customer simply pays the remaining $750.00 balance. You only pay if we recover your data. For more information, please visit our  or contact us for a free consultation."
+      description="Has your iPhone suddenly gone dead? Water damaged? Stuck on the Apple logo or showing no signs of life? At Five Star Data Recovery, we specialize in advanced, component-level iPhone data recovery. We do not offer deleted file recovery—our focus is on physically or electrically damaged iPhones. We may still be able to recover your data, even if someone says it's gone."
       bgImage="/iphone-data-recovery-service-glendale-ca.webp"
     />
 

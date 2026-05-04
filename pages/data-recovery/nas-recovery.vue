@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'NAS Data Recovery Services — Five Star Data Recovery',
-  description: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagno'
+  description: 'At Five Star Data Recovery, we focus on advanced NAS data recovery. We work with all types of NAS devices, setups, and RAID volumes.'
 })
 
 const issues = [
-  { icon: '🖥️', title: 'Multiple drive failures in RAID-based NAS systems', text: 'Our expert team specializes in recovering data from cases involving multiple drive failures in raid-based nas systems. Contact us for a free diagnosis.' },
-  { icon: '🔌', title: 'Power surges or electrical damage', text: 'Our expert team specializes in recovering data from cases involving power surges or electrical damage. Contact us for a free diagnosis.' },
-  { icon: '💧', title: 'Overheating and cooling fan failure', text: 'Our expert team specializes in recovering data from cases involving overheating and cooling fan failure. Contact us for a free diagnosis.' },
-  { icon: '🖥️', title: 'NAS volumes not mounting or becoming inaccessible', text: 'Our expert team specializes in recovering data from cases involving nas volumes not mounting or becoming inaccessible. Contact us for a free diagnosis.' },
+  { icon: '🖥️', title: 'Multiple drive failures in RAID-based NAS systems', text: '' },
+  { icon: '🔌', title: 'Power surges or electrical damage', text: '' },
+  { icon: '💧', title: 'Overheating and cooling fan failure', text: '' },
+  { icon: '🖥️', title: 'NAS volumes not mounting or becoming inaccessible', text: '' },
 ]
 
 const causesIntro = ''
@@ -24,12 +24,14 @@ const causes = [
   'Failed RAID rebuilds or incorrect RAID configuration',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every NAS Data Recovery case.'
+const processIntro = 'Every NAS data recovery begins with safety and structure. Our lab follows a six-step process to recover data from NAS drives and RAID arrays:'
 const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
+  { num: '1', title: 'Drive Removal', text: 'We begin by safely removing each drive from your NAS system.' },
+  { num: '2', title: 'Sector-by-Sector Imaging', text: 'Each disk is imaged sector-by-sector to create exact working copies. We never operate on the original drives.' },
+  { num: '3', title: 'RAID Analysis', text: 'We analyze each clone to locate RAID metadata, parity information, and file system structures.' },
+  { num: '4', title: 'Virtual RAID Reconstruction', text: 'Our engineers use this data to reconstruct the original NAS RAID array virtually.' },
+  { num: '5', title: 'File System Verification', text: 'We verify file system integrity and validate recovered data with directory structure and file previews.' },
+  { num: '6', title: 'Data Delivery', text: 'Recovered data is copied to a new storage device and tested for integrity before being returned to you.' },
 ]
 
 const driveTypesIntro = ''
@@ -93,7 +95,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="NAS Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab."
+      description="At Five Star Data Recovery, we focus on advanced NAS data recovery. We work with all types of NAS devices, setups, and RAID volumes. It doesn't matter if you use your NAS system at home, in a small office, or a large corporate environment. We are here to help."
       bgImage="/nas-network-attached-storage-data-recovery-glendale-ca.jpg"
     />
 

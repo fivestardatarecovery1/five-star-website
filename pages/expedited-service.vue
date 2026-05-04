@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Expedited Data Recovery Service — Five Star Data Recovery',
-  description: 'Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would pu'
+  title: 'Expedited Data Recovery Service - Five Star Data Recovery',
+  description: 'When time is critical, our Expedited Data Recovery service gives your case immediate priority.'
 })
 
 const issues: { icon: string; title: string; text: string }[] = []
@@ -42,8 +42,13 @@ const contactOutro = ''
 
 const reviews = []
 const faqs = [
+  { q: 'What is your expedited data recovery service?', a: 'Our expedited service is a rush option available during normal business hours. Your case is moved to the front of the queue, and our engineers start working on your device immediately.' },
+  { q: 'How fast is the turnaround time for expedited service?', a: 'Most expedited cases are completed within 1 to 3 business days, depending on the complexity of the recovery. Some simpler cases may even be finished the same day.' },
+  { q: 'Does expedited service include nights or weekends?', a: 'No. This service only applies to standard business hours, Monday through Friday. If you need after-hours or weekend service, we offer a separate Expedited Plus Service for that level of urgency.' },
+  { q: 'How much does expedited data recovery cost?', a: 'Our expedited service is an additional $200.00 per drive on top of the standard flat-rate data recovery fee. This fee is paid upfront and is non-refundable, regardless of the recovery outcome.' },
+  { q: 'Will my recovery results be different with expedited service?', a: 'Not at all. The expedited service speeds up the start time and prioritizes your case, but the quality of work and recovery process remains the same as our standard service.' },
+  { q: 'How do I request expedited service?', a: 'Simply let us know when dropping off or shipping your device that you want expedited service. Our team will confirm the fee and prioritize your recovery right away.' },
 ]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -55,7 +60,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Expedited Data Recovery Service"
       subtitle="Get Your Data Back In No Time."
-      description="This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it's impossible to give an exact turnaround time."
+      description="When time is critical, our Expedited Data Recovery service gives your case immediate priority. Our engineers will begin working on your device right away—without waiting in the standard queue. Whether it's during business hours, after hours, or on weekends, we offer fast-track options to meet your urgent needs."
       bgImage="/hard-drive-data-recovery-specialist-glendale-ca.jpg"
     />
 

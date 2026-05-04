@@ -5,13 +5,10 @@ useSeoMeta({
 })
 
 const faqs = [
-  { q: 'What is Expedited Plus Data Recovery?', a: 'Expedited Plus is our highest-priority data recovery service, designed for urgent cases that require immediate attention. Your case is handled 24/7—including nights, weekends, and holidays—by our top-tier engineers. If your data recovery can’t wait, this is the fastest and most dedicated solution we offer.' },
-  { q: 'How is Expedited Plus different from your regular Expedited Service?', a: 'While our standard <a href="/expedited-service" class="faq-link">Expedited Service</a> prioritizes your case during business hours, Expedited Plus goes beyond that. This service guarantees continuous, around-the-clock recovery efforts from the moment your device arrives at our lab. It’s ideal for critical business needs, time-sensitive data, or personal emergencies.' },
-  { q: 'How much does Expedited Plus Data Recovery cost?', a: 'The process starts with an evaluation of your device to diagnose the issue. We then create a clone of the storage media to prevent further damage. Using advanced tools, our experts attempt to retrieve the lost data, ensuring the highest possible recovery success rate.' },
-  { q: 'What types of devices are eligible for Expedited Plus?', a: 'The process starts with an evaluation of your device to diagnose the issue. We then create a clone of the storage media to prevent further damage. Using advanced tools, our experts attempt to retrieve the lost data, ensuring the highest possible recovery success rate.' },
-  { q: 'Can I ship my device for Expedited Plus Recovery?', a: 'The cost of data recovery depends on factors like the type of device, the extent of the damage, and the complexity of the issue. We provide a detailed quote after the initial evaluation. Recovery times can vary from a few hours to several days, depending on the situation.' },
-  { q: 'Do you provide updates throughout the Expedited Plus process?', a: 'Yes. With Expedited Plus, you’ll receive regular updates from our engineers and direct communication regarding the progress of your recovery. You’re never left in the dark.' },
-  { q: 'When should I choose Expedited Plus over standard service?', a: 'Choose Expedited Plus when time is critical. Whether you\'re facing a business deadline, legal matter, or need emergency data recovery, this service ensures that your case gets uninterrupted attention from our most experienced recovery engineers.' },
+  { q: 'What is Expedited Plus Data Recovery?', a: "Expedited Plus is our highest-priority data recovery service, designed for urgent cases that require immediate attention. Your case is handled 24/7—including nights, weekends, and holidays—by our top-tier engineers. If your data recovery can't wait, this is the fastest and most dedicated solution we offer." },
+  { q: 'How is Expedited Plus different from your regular Expedited Service?', a: "While our standard Expedited Service prioritizes your case during business hours, Expedited Plus goes beyond that. This service guarantees continuous, around-the-clock recovery efforts from the moment your device arrives at our lab. It's ideal for critical business needs, time-sensitive data, or personal emergencies." },
+  { q: 'Do you provide updates throughout the Expedited Plus process?', a: "Yes. With Expedited Plus, you'll receive regular updates from our engineers and direct communication regarding the progress of your recovery. You're never left in the dark." },
+  { q: 'When should I choose Expedited Plus over standard service?', a: "Choose Expedited Plus when time is critical. Whether you're facing a business deadline, legal matter, or need emergency data recovery, this service ensures that your case gets uninterrupted attention from our most experienced recovery engineers." },
 ]
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
@@ -23,7 +20,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Frequently Asked Questions"
       subtitle="We Have Answers."
-      description="Have questions about data recovery? We've compiled answers to the most common questions our clients ask. If you don't see your question here, contact us anytime — we're available 24/7."
+      description="Have questions about the data recovery process, pricing, shipping, or our security policies? Our General FAQ page covers the most common concerns from customers nationwide. Whether you're curious about turnaround times, payment options, or how to safely ship your device, you'll find clear and helpful answers here."
       bgImage="/hard-drive-data-recovery-specialist-glendale-ca.jpg"
     />
     <StatsBar />

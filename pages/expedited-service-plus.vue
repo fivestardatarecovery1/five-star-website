@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Expedited Data Recovery Service Plus - Five Star Data Recovery',
-  description: 'At Five Star Data Recovery we\'re happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that your case will be worked on diligently 24/7?'
+  title: 'Expedited Service Plus - Five Star Data Recovery',
+  description: 'Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.'
 })
 
 const issues = [
@@ -66,7 +66,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Expedited Data Recovery Service Plus"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery we're happy to announce we now offer Expedited Service Plus. Is your recovery EXTREMELY time sensitive? Do you need a GUARANTEE that your case will be worked on diligently 24/7 to ensure you can meet your deadline? Then this service is for you."
+      description="Need your data recovered as quickly as possible? Our Expedited Service Plus guarantees that your case is worked on immediately — 24/7, including nights, weekends, and holidays. It's the fastest and most dedicated recovery option we offer, ideal for urgent business needs or personal emergencies."
       bgImage="/hard-drive-data-recovery-specialist-glendale-ca.jpg"
     />
 

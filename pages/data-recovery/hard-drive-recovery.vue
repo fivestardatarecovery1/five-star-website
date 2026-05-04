@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { icon: '🔌', title: 'Power surges or electrical damage', text: 'Our expert team specializes in recovering data from cases involving power surges or electrical damage. Contact us for a free diagnosis.' },
-  { icon: '💥', title: 'Drops, impacts, or vibration damage', text: 'Our expert team specializes in recovering data from cases involving drops, impacts, or vibration damage. Contact us for a free diagnosis.' },
-  { icon: '💧', title: 'Water, moisture, or liquid exposure', text: 'Our expert team specializes in recovering data from cases involving water, moisture, or liquid exposure. Contact us for a free diagnosis.' },
-  { icon: '💧', title: 'Overheating or poor ventilation', text: 'Our expert team specializes in recovering data from cases involving overheating or poor ventilation. Contact us for a free diagnosis.' },
+  { icon: '🔌', title: 'Power surges or electrical damage', text: '' },
+  { icon: '💥', title: 'Drops, impacts, or vibration damage', text: '' },
+  { icon: '💧', title: 'Water, moisture, or liquid exposure', text: '' },
+  { icon: '💧', title: 'Overheating or poor ventilation', text: '' },
 ]
 
 const causesIntro = 'Many ways exist for a hard drive to fail, including physical damage, electrical failure, and file system corruption. Some of the most common situations we see include:'
@@ -24,9 +24,13 @@ const causes = [
   'Operating system failure or boot loop',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Hard Drive Data Recovery case.'
+const processIntro = 'We use a systematic, proven approach for every hard drive recovery case.'
 const steps = [
-  { 'num': '03', 'title': 'Step 3: Recovery', 'text': 'Our engineers fix problems or replace parts in our cleanroom. They work to recover lost data from your device.' },
+  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
+  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
+  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
+  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
+  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
 ]
 
 const driveTypesIntro = ''

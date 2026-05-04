@@ -5,10 +5,10 @@ useSeoMeta({
 })
 
 const issues = [
-  { icon: '🗑️', title: 'Accidental file deletion or emptying the recycle bin', text: 'Our expert team specializes in recovering data from cases involving accidental file deletion or emptying the recycle bin. Contact us for a free diagnosis.' },
-  { icon: '⚠️', title: 'Corruption of the operating system after a failed update', text: 'Our expert team specializes in recovering data from cases involving corruption of the operating system after a failed update. Contact us for a free diagnosis.' },
-  { icon: '🔌', title: 'Crashes caused by power outages or hardware failure', text: 'Our expert team specializes in recovering data from cases involving crashes caused by power outages or hardware failure. Contact us for a free diagnosis.' },
-  { icon: '🐢', title: 'Lost partition due to formatting or bad sectors', text: 'Our expert team specializes in recovering data from cases involving lost partition due to formatting or bad sectors. Contact us for a free diagnosis.' },
+  { icon: '🗑️', title: 'Accidental file deletion or emptying the recycle bin', text: '' },
+  { icon: '⚠️', title: 'Corruption of the operating system after a failed update', text: '' },
+  { icon: '🔌', title: 'Crashes caused by power outages or hardware failure', text: '' },
+  { icon: '🐢', title: 'Lost partition due to formatting or bad sectors', text: '' },
 ]
 
 const causesIntro = 'Many issues can lead to lost files on a desktop computer, including:'
@@ -21,12 +21,13 @@ const causes = [
   'Damage to internal or external hard drives',
 ]
 
-const processIntro = 'We use a systematic, proven approach for every Desktop Computer Data Recovery case.'
+const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind.'
 const steps = [
-  { 'num': '01', 'title': 'Step 1: Free Diagnostic', 'text': 'We examine the device to determine the failure type—physical, logical, or both. If the device is clicking, beeping, or not powering on, we proceed with care.' },
-  { 'num': '02', 'title': 'Step 2: Cleanroom Imaging', 'text': 'If needed, the device is opened in our certified cleanroom. Using specialized tools, we attempt to stabilize the device and create a sector-by-sector image.' },
-  { 'num': '03', 'title': 'Step 3: File Extraction', 'text': 'Once stable, we extract and verify the data using advanced recovery hardware and software. We only proceed to recovery after imaging to avoid damage to the original device.' },
-  { 'num': '04', 'title': 'Step 4: File Verification & Delivery', 'text': 'Once the recovery is complete, we\'ll send you an Interactive HTML File Report of the recovery. This report shows which files we successfully recovered. Once you approve, we save your files onto a new device that you provide or purchase from us.' },
+  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
+  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
+  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
+  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
+  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
 ]
 
 const driveTypesIntro = 'We work with almost all desktop computer models, including:'
@@ -93,7 +94,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Desktop Computer Data Recovery"
       subtitle="Get Your Data Back In No Time."
-      description="When your desktop computer stops working or a drive goes missing, it can feel like everything is lost. Important documents, family photos, and business files might seem gone forever. But in many cases, your data can be recovered — even if the system won’t boot or the files were deleted."
+      description="When your desktop computer stops working or a drive goes missing, it can feel like everything is lost. Important documents, family photos, and business files might seem gone forever. But in many cases, your data can be recovered — even if the system won't boot or the files were deleted. At Five Star Data Recovery, we specialize in fast, safe, and secure desktop data recovery."
       bgImage="/desktop-computer-data-recovery-los-angeles.webp"
     />
 
