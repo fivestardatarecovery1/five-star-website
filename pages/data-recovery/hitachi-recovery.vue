@@ -28,7 +28,7 @@ const steps: { num: string; title: string; text: string }[] = [
   { num: '2', title: 'Cloning', text: 'If the drive is unstable, we create a complete clone to avoid further wear on the original.' },
   { num: '3', title: 'File System Repair', text: 'For logical problems like file system corruption, we use advanced tools to reconstruct the partition.' },
   { num: '4', title: 'File Recovery', text: 'We extract recoverable files and check for lost files, folder structures, and data consistency.' },
-  { num: '5', title: 'Verification', text: 'You'll receive a preview of the recovered content before final delivery.' },
+  { num: '5', title: 'Verification', text: "You'll receive a preview of the recovered content before final delivery." },
 ]
 const driveTypesIntro = 'Our team provides data recovery services for all types of Hitachi drives, including:'
 const driveTypesOutro = 'No matter the drive type, we can help with Hitachi hard disk data recovery for a wide range of systems and storage capacities.'
