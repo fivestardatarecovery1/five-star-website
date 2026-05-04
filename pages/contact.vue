@@ -1,7 +1,15 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Contact Us — Five Star Data Recovery | Glendale, CA',
-  description: 'Contact Five Star Data Recovery in Glendale, CA. Free evaluation, free shipping, no data no charge. Call, email, or visit our lab today.'
+  title: 'Contact Us - Five Star Data Recovery',
+  description: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
+  ogTitle: 'Contact us',
+  ogDescription: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/an-02.png',
+  ogUrl: 'https://www.fivestardatarecovery.com/contact-us/',
+  ogType: 'article',
+  ogLocale: 'en_US',
+  twitterCard: 'summary_large_image',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 })
 
 useHead({
