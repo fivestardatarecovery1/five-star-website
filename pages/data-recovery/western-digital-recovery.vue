@@ -336,9 +336,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
             <div class="mf-row">
               <div class="mf-group">
-                <label>SELECT YOUR DEVICE TYPE</label>
+                <label for="wd-device-type">SELECT YOUR DEVICE TYPE</label>
                 <div class="mf-select-wrap">
-                  <select class="mf-input">
+                  <select id="wd-device-type" class="mf-input">
                     <option value="">— Select (Optional) —</option>
                     <option>Hard Drive</option>
                     <option>SSD</option>
@@ -360,9 +360,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
             <div class="mf-row">
               <div class="mf-group">
-                <label>SELECT ISSUE WITH DEVICE</label>
+                <label for="wd-device-issue">SELECT ISSUE WITH DEVICE</label>
                 <div class="mf-select-wrap">
-                  <select class="mf-input">
+                  <select id="wd-device-issue" class="mf-input">
                     <option value="">Select Issue</option>
                     <option>Not Detected / Not Showing Up</option>
                     <option>Clicking / Grinding Noise</option>
@@ -385,9 +385,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               </div>
             </div>
             <div class="mf-group mf-full">
-              <label>PREFERRED RESPONSE TIME</label>
+              <label for="wd-response-time">PREFERRED RESPONSE TIME</label>
               <div class="mf-select-wrap">
-                <select class="mf-input">
+                <select id="wd-response-time" class="mf-input">
                   <option value="">Select Preferred Time</option>
                   <option>Immediately (24/7)</option>
                   <option>During Business Hours</option>
@@ -473,7 +473,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* SECTION SCAFFOLDING */
 .s-white { background: #fff; padding: 88px 0; }
 .s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px; }
+.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
 .section-label.center { text-align: center; }
 .section-label.light { color: #C9A84C; }
 .s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }

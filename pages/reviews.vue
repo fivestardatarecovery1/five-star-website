@@ -169,7 +169,7 @@ const socialPosts = [
 .s-white { background: #fff; padding: 88px 0; }
 .s-grey { background: #f4f7fc; padding: 88px 0; }
 .s-dark { background: #1a1a2e; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #C9A84C; margin-bottom: 10px; }
+.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
 .section-label.center { text-align: center; }
 .s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
 .s-heading.center { text-align: center; }
