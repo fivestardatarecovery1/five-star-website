@@ -35,7 +35,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="About Five Star Data Recovery"
       subtitle="Trusted Data Recovery Specialists."
       description="At Five Star Data Recovery, we understand that losing data can be stressful, overwhelming, and sometimes even heartbreaking. Whether it's personal photos, important business documents, or critical client files, we know how valuable your data is — and we've built our business around helping you get it back."
-      bgImage="/five-star-data-recovery-lab-technician-glendale-ca.png"
+      bgImage="/five-star-data-recovery-lab-technician-glendale-ca.webp"
     />
     <StatsBar />
 
@@ -48,7 +48,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p v-for="t in whoWeAre" :key="t" class="s-body">{{ t }}</p>
         </div>
         <div style="position:relative;">
-          <img src="/five-star-data-recovery-lab-technician-glendale-ca.png" alt="Five Star Data Recovery team" style="width:100%;border-radius:14px;object-fit:cover;max-height:440px;display:block;" />
+          <img src="/five-star-data-recovery-lab-technician-glendale-ca.webp" alt="Five Star Data Recovery team" style="width:100%;border-radius:14px;object-fit:cover;max-height:440px;display:block;" />
           <div style="position:absolute;bottom:-20px;left:24px;background:#C9A84C;color:#fff;border-radius:10px;padding:14px 22px;box-shadow:0 8px 24px rgba(201,168,76,0.4);">
             <span style="display:block;font-size:1.6rem;font-weight:900;line-height:1;">21,000+</span>
             <span style="display:block;font-size:0.75rem;font-weight:600;opacity:0.85;margin-top:3px;">Successful Recoveries</span>

@@ -68,6 +68,7 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
           v-for="p in pages" :key="p"
           :class="['rsc-dot', { active: index === (p - 1) * perPage }]"
           @click="index = (p - 1) * perPage"
+          :aria-label="`Go to page ${p}`"
         />
       </div>
     </div>
@@ -214,6 +215,18 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
   border: none;
   cursor: pointer;
   transition: background 0.2s, width 0.2s;
+  /* ensure minimum 44px touch target */
+  position: relative;
+}
+.rsc-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+  display: block;
 }
 .rsc-dot.active {
   background: #F5C842;

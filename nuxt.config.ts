@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: { lang: 'en' },
       titleTemplate: '%s | Five Star Data Recovery',
       title: 'Expert Data Recovery Services in Glendale, CA',
       meta: [
@@ -25,6 +26,7 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0A0C14' }
       ],
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {

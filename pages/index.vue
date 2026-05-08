@@ -169,18 +169,18 @@ useHead({
 })
 
 const services = [
-  { img: '/service-hdd-new-nobg.png', title: 'Hard Drive Recovery', desc: 'Mechanical failures, clicking drives, read errors, and firmware corruption. We recover from all major HDD brands.', href: '/data-recovery/hard-drive-recovery' },
-  { img: '/service-ssd-new-nobg.png', title: 'SSD Recovery', desc: 'Flash memory failures, controller issues, and NAND chip recovery. NVMe, SATA and mSATA SSDs.', href: '/data-recovery/ssd-recovery' },
-  { img: '/raid-server-data-recovery-glendale-ca-nobg.png', title: 'RAID / Server Recovery', desc: 'RAID 0, 1, 5, 6, 10, and NAS array reconstruction. Enterprise-grade recovery with minimal downtime.', href: '/data-recovery/raid-recovery' },
-  { img: '/laptop-computer-data-recovery-glendale-ca-nobg.png', title: 'Laptop Recovery', desc: 'Dropped laptops, liquid spills, and dead drives from all brands — Dell, HP, Lenovo, Asus, and more.', href: '/data-recovery/laptop-recovery' },
-  { img: '/external-hard-drive-data-recovery-glendale-ca-nobg.png', title: 'External HDD Recovery', desc: 'WD My Passport, Seagate Backup Plus, LaCie, and other portable drives recovered quickly.', href: '/data-recovery/external-hard-drive' },
-  { img: '/mac-imac-macbook-data-recovery-glendale-ca-nobg.png', title: 'Mac / iMac Recovery', desc: 'Apple Fusion Drive, T2/M1/M2 chip Macs, and Time Machine failures handled by certified technicians.', href: '/data-recovery/mac-recovery' },
-  { img: '/service-iphone-nobg.png', title: 'iPhone & Mobile', desc: 'iOS and Android data recovery from broken screens, water damage, and failed updates.', href: '/data-recovery/iphone-recovery', small: true },
-  { img: '/service-sd-new-nobg.png', title: 'SD Card Recovery', desc: 'Camera cards, drone footage, and dashcam recovery from all SD card formats.', href: '/data-recovery/sd-card-recovery' },
-  { img: '/nas-network-attached-storage-data-recovery-glendale-ca-nobg.png', title: 'NAS Device Recovery', desc: 'Synology, QNAP, Buffalo, and custom NAS enclosures with failed drives or corrupted volumes.', href: '/data-recovery/nas-recovery' },
-  { img: '/deleted-file-recovery-service-glendale-ca-nobg.png', title: 'Deleted File Recovery', desc: 'Accidentally deleted files, formatted drives, and corrupted partitions recovered safely.', href: '/data-recovery/deleted-files' },
-  { img: '/clean-room-data-recovery-equipment-glendale-ca-nobg.png', title: 'Clean Room Recovery', desc: 'ISO Class 5 cleanroom for physically damaged drives with platter, head, and motor failures.', href: '/data-recovery/clean-room' },
-  { img: '/cfast-card-data-recovery-service-glendale-ca-nobg.png', title: 'Video File Repair', desc: 'Corrupted, unplayable, or damaged video footage recovered from cameras, drones, and all formats.', href: '/data-recovery/video-file-repair' },
+  { img: '/service-hdd-new-nobg.webp', title: 'Hard Drive Recovery', desc: 'Mechanical failures, clicking drives, read errors, and firmware corruption. We recover from all major HDD brands.', href: '/data-recovery/hard-drive-recovery' },
+  { img: '/service-ssd-new-nobg.webp', title: 'SSD Recovery', desc: 'Flash memory failures, controller issues, and NAND chip recovery. NVMe, SATA and mSATA SSDs.', href: '/data-recovery/ssd-recovery' },
+  { img: '/raid-server-data-recovery-glendale-ca-nobg.webp', title: 'RAID / Server Recovery', desc: 'RAID 0, 1, 5, 6, 10, and NAS array reconstruction. Enterprise-grade recovery with minimal downtime.', href: '/data-recovery/raid-recovery' },
+  { img: '/laptop-computer-data-recovery-glendale-ca-nobg.webp', title: 'Laptop Recovery', desc: 'Dropped laptops, liquid spills, and dead drives from all brands — Dell, HP, Lenovo, Asus, and more.', href: '/data-recovery/laptop-recovery' },
+  { img: '/external-hard-drive-data-recovery-glendale-ca-nobg.webp', title: 'External HDD Recovery', desc: 'WD My Passport, Seagate Backup Plus, LaCie, and other portable drives recovered quickly.', href: '/data-recovery/external-hard-drive' },
+  { img: '/mac-imac-macbook-data-recovery-glendale-ca-nobg.webp', title: 'Mac / iMac Recovery', desc: 'Apple Fusion Drive, T2/M1/M2 chip Macs, and Time Machine failures handled by certified technicians.', href: '/data-recovery/mac-recovery' },
+  { img: '/service-iphone-nobg.webp', title: 'iPhone & Mobile', desc: 'iOS and Android data recovery from broken screens, water damage, and failed updates.', href: '/data-recovery/iphone-recovery', small: true },
+  { img: '/service-sd-new-nobg.webp', title: 'SD Card Recovery', desc: 'Camera cards, drone footage, and dashcam recovery from all SD card formats.', href: '/data-recovery/sd-card-recovery' },
+  { img: '/nas-network-attached-storage-data-recovery-glendale-ca-nobg.webp', title: 'NAS Device Recovery', desc: 'Synology, QNAP, Buffalo, and custom NAS enclosures with failed drives or corrupted volumes.', href: '/data-recovery/nas-recovery' },
+  { img: '/deleted-file-recovery-service-glendale-ca-nobg.webp', title: 'Deleted File Recovery', desc: 'Accidentally deleted files, formatted drives, and corrupted partitions recovered safely.', href: '/data-recovery/deleted-files' },
+  { img: '/clean-room-data-recovery-equipment-glendale-ca-nobg.webp', title: 'Clean Room Recovery', desc: 'ISO Class 5 cleanroom for physically damaged drives with platter, head, and motor failures.', href: '/data-recovery/clean-room' },
+  { img: '/cfast-card-data-recovery-service-glendale-ca-nobg.webp', title: 'Video File Repair', desc: 'Corrupted, unplayable, or damaged video footage recovered from cameras, drones, and all formats.', href: '/data-recovery/video-file-repair' },
 ]
 
 const whyUs = [
@@ -247,6 +247,7 @@ const faqs = [
 ]
 
 const reviewIndex = ref(0)
+const videoPlaying = ref(false)
 const maxReviewIndex = reviews.length - 3
 const nextReview = () => { reviewIndex.value = reviewIndex.value >= maxReviewIndex ? 0 : reviewIndex.value + 1 }
 const prevReview = () => { reviewIndex.value = reviewIndex.value <= 0 ? maxReviewIndex : reviewIndex.value - 1 }
@@ -291,7 +292,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
         <div class="services-grid">
           <NuxtLink v-for="s in services" :key="s.title" :to="s.href" class="service-card card">
             <div class="service-img-wrap">
-              <img :src="s.img" :alt="s.title" class="service-img" :class="{ 'service-img-small': s.small }" />
+              <img :src="s.img" :alt="s.title" class="service-img" :class="{ 'service-img-small': s.small }" width="200" height="200" loading="lazy" />
             </div>
             <h3 class="service-title">{{ s.title }}</h3>
             <p class="service-desc">{{ s.desc }}</p>
@@ -369,7 +370,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
           </button>
         </div>
         <div v-if="reviews.length > 3" class="carousel-dots">
-          <button v-for="(_, i) in reviews" :key="i" class="carousel-dot" :class="{ active: i === reviewIndex }" @click="reviewIndex = i" />
+          <button v-for="(_, i) in reviews" :key="i" class="carousel-dot" :class="{ active: i === reviewIndex }" @click="reviewIndex = i" :aria-label="`Go to review ${i + 1}`" />
         </div>
       </div>
     </section>
@@ -383,8 +384,22 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
           <p class="video-desc">Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
         <div class="video-embed">
+          <!-- YouTube facade: load iframe only on click to prevent 435KB JS blocking LCP -->
+          <div v-if="!videoPlaying" class="yt-facade" @click="videoPlaying = true" role="button" aria-label="Play video: Five Star Data Recovery" tabindex="0" @keydown.enter="videoPlaying = true" @keydown.space.prevent="videoPlaying = true">
+            <img
+              src="https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg"
+              alt="Five Star Data Recovery — Play Video"
+              width="480" height="360"
+              loading="lazy"
+              class="yt-thumb"
+            />
+            <div class="yt-play-btn" aria-hidden="true">
+              <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
+            </div>
+          </div>
           <iframe
-            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60"
+            v-else
+            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60&autoplay=1"
             title="Five Star Data Recovery"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -423,9 +438,9 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
             </div>
             <div class="cta-form-row">
               <div class="cta-field">
-                <label>SELECT YOUR DEVICE TYPE</label>
+                <label for="cta-device-type">SELECT YOUR DEVICE TYPE</label>
                 <div class="cta-select-wrap">
-                  <select><option value="">Device Type</option><option>Hard Drive</option><option>SSD</option><option>RAID/Server</option><option>Laptop</option><option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option><option>USB Flash Drive</option><option>SD Card</option><option>Other</option></select>
+                  <select id="cta-device-type"><option value="">Device Type</option><option>Hard Drive</option><option>SSD</option><option>RAID/Server</option><option>Laptop</option><option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option><option>USB Flash Drive</option><option>SD Card</option><option>Other</option></select>
                   <svg class="sel-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
                 </div>
               </div>
@@ -436,9 +451,9 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
             </div>
             <div class="cta-form-row">
               <div class="cta-field">
-                <label>SELECT ISSUE WITH DEVICE</label>
+                <label for="cta-device-issue">SELECT ISSUE WITH DEVICE</label>
                 <div class="cta-select-wrap">
-                  <select><option value="">Select Issue with Device</option><option>Not Detected</option><option>Clicking/Grinding Noise</option><option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option><option>Physical Damage</option><option>Other</option></select>
+                  <select id="cta-device-issue"><option value="">Select Issue with Device</option><option>Not Detected</option><option>Clicking/Grinding Noise</option><option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option><option>Physical Damage</option><option>Other</option></select>
                   <svg class="sel-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
                 </div>
               </div>
@@ -453,9 +468,9 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
             </div>
             <div class="cta-form-row">
               <div class="cta-field" style="grid-column: 1 / -1">
-                <label>PREFERRED RESPONSE TIME</label>
+                <label for="cta-response-time">PREFERRED RESPONSE TIME</label>
                 <div class="cta-select-wrap">
-                  <select>
+                  <select id="cta-response-time">
                     <option value="">Select Preferred Time</option>
                     <option>Immediately (24/7)</option>
                     <option>During Business Hours</option>
@@ -780,7 +795,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   flex-shrink: 0;
 }
 .author-name { font-weight: 700; font-size: 15px; color: #0d1520; }
-.author-role { font-size: 13px; color: #F5C842; font-weight: 600; }
+.author-role { font-size: 13px; color: #7a5900; font-weight: 600; }
 .carousel-btn {
   width: 44px;
   height: 44px;
@@ -811,6 +826,17 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   border: none;
   cursor: pointer;
   transition: background 0.2s, width 0.2s;
+  position: relative;
+}
+.carousel-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+  display: block;
 }
 .carousel-dot.active {
   background: #F5C842;
@@ -868,6 +894,32 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   inset: 0;
   width: 100%;
   height: 100%;
+}
+/* YouTube lazy-load facade */
+.yt-facade {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+.yt-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.yt-play-btn {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.15s;
+}
+.yt-facade:hover .yt-play-btn {
+  transform: scale(1.1);
 }
 @media (max-width: 900px) {
   .video-inner { grid-template-columns: 1fr; }

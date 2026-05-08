@@ -4,7 +4,7 @@
 
       <!-- Col 1: Brand -->
       <div class="footer-brand">
-        <h4 class="footer-heading">Contact Us</h4>
+        <h3 class="footer-heading">Contact Us</h3>
         <div class="footer-contact-item">
           <span class="contact-emoji">📍</span>
           <span>1731 S Brand Blvd Suite 100<br>Glendale, CA 91204</span>
@@ -22,7 +22,7 @@
 
       <!-- Col 2: Common Issues -->
       <div class="footer-col">
-        <h4 class="footer-heading">Common Issues:</h4>
+        <h3 class="footer-heading">Common Issues:</h3>
         <ul>
           <li><NuxtLink to="/hard-drive-clicking">Hard Drive Clicking</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/hard-drive-not-showing-up">Hard Drive Not Showing Up</NuxtLink></li>
@@ -35,7 +35,7 @@
 
       <!-- Col 3: Helpful Links -->
       <div class="footer-col">
-        <h4 class="footer-heading">Helpful Links</h4>
+        <h3 class="footer-heading">Helpful Links</h3>
         <ul>
           <li><NuxtLink to="/data-recovery/express-drop-off">Express Drop Off</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/mail-in-service">Mail in Service</NuxtLink></li>
@@ -48,7 +48,7 @@
 
       <!-- Col 4: Service Areas -->
       <div class="footer-col">
-        <h4 class="footer-heading">Service Areas</h4>
+        <h3 class="footer-heading">Service Areas</h3>
         <ul>
           <li><NuxtLink to="/data-recovery-burbank">Burbank</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-los-angeles">Los Angeles</NuxtLink></li>
@@ -61,7 +61,7 @@
 
       <!-- Col 5: Common Drives -->
       <div class="footer-col">
-        <h4 class="footer-heading">Common Drives:</h4>
+        <h3 class="footer-heading">Common Drives:</h3>
         <ul>
           <li><NuxtLink to="/data-recovery/lacie-recovery">LaCie</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/hitachi-recovery">Hitachi</NuxtLink></li>

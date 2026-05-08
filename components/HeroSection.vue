@@ -81,7 +81,7 @@ function handleSubmit() {
       <!-- RIGHT: Consultation Form -->
       <div v-if="props.showForm" class="hero-form-wrap">
         <div v-if="!submitted" class="hero-form-card">
-          <h3 class="form-title">Request a Free Consultation</h3>
+          <p class="form-title">Request a Free Consultation</p>
 
           <form @submit.prevent="handleSubmit" class="consult-form">
             <div class="form-row">
@@ -247,7 +247,7 @@ function handleSubmit() {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #e53935;
+  background: #c62828;
   color: #fff;
   font-weight: 800;
   font-size: 15px;

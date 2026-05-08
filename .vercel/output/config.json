@@ -1,184 +1,6 @@
 {
   "version": 3,
-  "overrides": {
-    "index.html": {
-      "path": ""
-    },
-    "privacy-policy/index.html": {
-      "path": "privacy-policy"
-    },
-    "blog/index.html": {
-      "path": "blog"
-    },
-    "start-recovery/index.html": {
-      "path": "start-recovery"
-    },
-    "faq/index.html": {
-      "path": "faq"
-    },
-    "about/index.html": {
-      "path": "about"
-    },
-    "contact/index.html": {
-      "path": "contact"
-    },
-    "pricing/index.html": {
-      "path": "pricing"
-    },
-    "reviews/index.html": {
-      "path": "reviews"
-    },
-    "terms/index.html": {
-      "path": "terms"
-    },
-    "drive-doesnt-power-on/index.html": {
-      "path": "drive-doesnt-power-on"
-    },
-    "hard-drive-clicking/index.html": {
-      "path": "hard-drive-clicking"
-    },
-    "payment-plan/index.html": {
-      "path": "payment-plan"
-    },
-    "data-recovery-pasadena/index.html": {
-      "path": "data-recovery-pasadena"
-    },
-    "data-recovery-los-angeles/index.html": {
-      "path": "data-recovery-los-angeles"
-    },
-    "data-recovery-burbank/index.html": {
-      "path": "data-recovery-burbank"
-    },
-    "data-recovery-hollywood/index.html": {
-      "path": "data-recovery-hollywood"
-    },
-    "data-recovery-beverly-hills/index.html": {
-      "path": "data-recovery-beverly-hills"
-    },
-    "expedited-service-plus/index.html": {
-      "path": "expedited-service-plus"
-    },
-    "expedited-service/index.html": {
-      "path": "expedited-service"
-    },
-    "data-recovery-glendale/index.html": {
-      "path": "data-recovery-glendale"
-    },
-    "data-recovery/free-quote/index.html": {
-      "path": "data-recovery/free-quote"
-    },
-    "data-recovery/hard-drive-recovery/index.html": {
-      "path": "data-recovery/hard-drive-recovery"
-    },
-    "data-recovery/laptop-recovery/index.html": {
-      "path": "data-recovery/laptop-recovery"
-    },
-    "data-recovery/external-hard-drive/index.html": {
-      "path": "data-recovery/external-hard-drive"
-    },
-    "data-recovery/raid-recovery/index.html": {
-      "path": "data-recovery/raid-recovery"
-    },
-    "data-recovery/iphone-recovery/index.html": {
-      "path": "data-recovery/iphone-recovery"
-    },
-    "data-recovery/ssd-recovery/index.html": {
-      "path": "data-recovery/ssd-recovery"
-    },
-    "data-recovery/nas-recovery/index.html": {
-      "path": "data-recovery/nas-recovery"
-    },
-    "data-recovery/deleted-files/index.html": {
-      "path": "data-recovery/deleted-files"
-    },
-    "data-recovery/sd-card-recovery/index.html": {
-      "path": "data-recovery/sd-card-recovery"
-    },
-    "data-recovery/clean-room/index.html": {
-      "path": "data-recovery/clean-room"
-    },
-    "data-recovery/video-file-repair/index.html": {
-      "path": "data-recovery/video-file-repair"
-    },
-    "data-recovery/hard-drive-not-showing-up/index.html": {
-      "path": "data-recovery/hard-drive-not-showing-up"
-    },
-    "data-recovery/bad-sectors/index.html": {
-      "path": "data-recovery/bad-sectors"
-    },
-    "data-recovery/mail-in-service/index.html": {
-      "path": "data-recovery/mail-in-service"
-    },
-    "data-recovery/dropped-hard-drive/index.html": {
-      "path": "data-recovery/dropped-hard-drive"
-    },
-    "data-recovery/mac-recovery/index.html": {
-      "path": "data-recovery/mac-recovery"
-    },
-    "data-recovery/express-drop-off/index.html": {
-      "path": "data-recovery/express-drop-off"
-    },
-    "data-recovery/lacie-recovery/index.html": {
-      "path": "data-recovery/lacie-recovery"
-    },
-    "data-recovery/hitachi-recovery/index.html": {
-      "path": "data-recovery/hitachi-recovery"
-    },
-    "data-recovery/western-digital-recovery/index.html": {
-      "path": "data-recovery/western-digital-recovery"
-    },
-    "data-recovery/toshiba-recovery/index.html": {
-      "path": "data-recovery/toshiba-recovery"
-    },
-    "data-recovery/seagate-recovery/index.html": {
-      "path": "data-recovery/seagate-recovery"
-    },
-    "data-recovery/usb-recovery/index.html": {
-      "path": "data-recovery/usb-recovery"
-    },
-    "data-recovery/samsung-recovery/index.html": {
-      "path": "data-recovery/samsung-recovery"
-    },
-    "data-recovery/cfast-recovery/index.html": {
-      "path": "data-recovery/cfast-recovery"
-    },
-    "data-recovery/desktop-recovery/index.html": {
-      "path": "data-recovery/desktop-recovery"
-    },
-    "blog/usb-data-recovery-chip-off/index.html": {
-      "path": "blog/usb-data-recovery-chip-off"
-    },
-    "blog/how-to-repair-external-hard-drive-after-it-was-dropped/index.html": {
-      "path": "blog/how-to-repair-external-hard-drive-after-it-was-dropped"
-    },
-    "data-recovery/index.html": {
-      "path": "data-recovery"
-    },
-    "services/ssd-recovery/index.html": {
-      "path": "services/ssd-recovery"
-    },
-    "services/usb-recovery/index.html": {
-      "path": "services/usb-recovery"
-    },
-    "services/mac-recovery/index.html": {
-      "path": "services/mac-recovery"
-    },
-    "services/raid-recovery/index.html": {
-      "path": "services/raid-recovery"
-    },
-    "services/hard-drive-recovery/index.html": {
-      "path": "services/hard-drive-recovery"
-    },
-    "services/external-hdd-recovery/index.html": {
-      "path": "services/external-hdd-recovery"
-    },
-    "services/mobile-recovery/index.html": {
-      "path": "services/mobile-recovery"
-    },
-    "services/laptop-recovery/index.html": {
-      "path": "services/laptop-recovery"
-    }
-  },
+  "overrides": {},
   "routes": [
     {
       "headers": {
@@ -221,6 +43,14 @@
     },
     {
       "handle": "filesystem"
+    },
+    {
+      "src": "(?<__isr_route>/__nuxt_error)",
+      "dest": "/__fallback"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/__fallback"
     }
   ]
 }
