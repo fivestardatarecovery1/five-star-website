@@ -71,12 +71,28 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- STATS -->
-    <section style="background:#0d111f;padding:64px 0;">
-      <div class="container" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;">
-        <div><span style="display:block;font-size:2.4rem;font-weight:900;color:#C9A84C;">21,000+</span><span style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Drives Recovered</span></div>
-        <div><span style="display:block;font-size:2.4rem;font-weight:900;color:#C9A84C;">99%</span><span style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Recovery Success Rate</span></div>
-        <div><span style="display:block;font-size:2.4rem;font-weight:900;color:#C9A84C;">10+</span><span style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Years in Business</span></div>
-        <div><span style="display:block;font-size:2.4rem;font-weight:900;color:#C9A84C;">4.9★</span><span style="font-size:0.85rem;color:rgba(255,255,255,0.6);">Average Rating</span></div>
+    <section class="about-stats-section">
+      <div class="container about-stats-grid">
+        <div class="about-stat-card">
+          <div class="about-stat-icon">💾</div>
+          <span class="about-stat-num">21,000+</span>
+          <span class="about-stat-label">Drives Recovered</span>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-icon">✅</div>
+          <span class="about-stat-num">99%</span>
+          <span class="about-stat-label">Recovery Success Rate</span>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-icon">🏆</div>
+          <span class="about-stat-num">10+</span>
+          <span class="about-stat-label">Years in Business</span>
+        </div>
+        <div class="about-stat-card">
+          <div class="about-stat-icon">⭐</div>
+          <span class="about-stat-num">4.9★</span>
+          <span class="about-stat-label">Average Rating</span>
+        </div>
       </div>
     </section>
 
@@ -216,5 +232,70 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   div[style*="grid-template-columns:repeat(4"] { grid-template-columns: repeat(2,1fr) !important; }
   div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+}
+/* About stats section */
+.about-stats-section {
+  background: linear-gradient(135deg, #0a0e1a 0%, #111827 100%);
+  padding: 64px 0;
+  border-top: 1px solid rgba(245,200,66,0.2);
+  border-bottom: 1px solid rgba(245,200,66,0.2);
+}
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.about-stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(245,200,66,0.15);
+  border-radius: 14px;
+  padding: 36px 20px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.about-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  border-radius: 0 0 4px 4px;
+}
+.about-stat-card:hover {
+  background: rgba(245,200,66,0.05);
+  border-color: rgba(245,200,66,0.35);
+  transform: translateY(-3px);
+}
+.about-stat-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+.about-stat-num {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.about-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #8892a4;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .about-stat-card { padding: 28px 16px 24px; }
 }
 </style>
