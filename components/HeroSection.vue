@@ -7,18 +7,20 @@ interface Props {
   showForm?: boolean
   showButtons?: boolean
   bgImage?: string
+  bgSize?: string
 }
 const props = withDefaults(defineProps<Props>(), {
   showTrustBadges: true,
   showForm: true,
   showButtons: true,
+  bgSize: 'cover',
   bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
 })
 
 const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false
 
 const heroStyle = computed(() => ({
-  background: `linear-gradient(to right, rgba(20,22,30,0.95) 0%, rgba(20,22,30,0.88) 50%, rgba(20,22,30,0.75) 100%), url('${props.bgImage}') right center / cover no-repeat`
+  background: `linear-gradient(to right, rgba(20,22,30,0.95) 0%, rgba(20,22,30,0.88) 50%, rgba(20,22,30,0.75) 100%), url('${props.bgImage}') center center / ${props.bgSize} no-repeat`
 }))
 
 const submitted = ref(false)
