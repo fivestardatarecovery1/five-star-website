@@ -1,7 +1,16 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Blog — Tips, Guides & Industry News | Five Star Data Recovery',
-  description: 'Expert data recovery tips, guides, and industry news from Five Star Data Recovery certified engineers. Learn how to protect and recover your data.'
+  title: 'Blog Posts - Five Star Data Recovery',
+  description: 'Five Star Data Recovery offers expert advice and tips to help you with your data recovery needs. Read our latest blog posts here!',
+  ogTitle: 'Blog',
+  ogDescription: 'Five Star Data Recovery offers expert advice and tips to help you with your data recovery needs. Read our latest blog posts here!',
+  ogUrl: 'https://www.fivestardatarecovery.com/blog/',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/Lexar-USB-Data-Recovery-scaled.jpg',
+  ogType: 'article',
+  ogSiteName: 'Five Star Data Recovery',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Blog Posts - Five Star Data Recovery',
+  twitterDescription: 'Five Star Data Recovery offers expert advice and tips to help you with your data recovery needs. Read our latest blog posts here!',
 })
 
 const categories = [
