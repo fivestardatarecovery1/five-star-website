@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Pasadena CA — Five Star Data Recovery',
-  description: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.'
+  title: 'Data Recovery Pasadena, CA — Five Star Data Recovery',
+  description: 'Professional data recovery services in Pasadena, CA. Five Star Data Recovery offers free same-day pickup, flat-rate pricing, and a clean room lab in nearby Glendale. Call 818-272-8866.'
 })
 
 const issues = [
@@ -95,9 +95,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="Data Recovery Pasadena CA"
+      title="Data Recovery Pasadena, CA"
       subtitle="Get Your Data Back In No Time."
-      description="If you\'ve experienced data loss—whether it\'s from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Pasadena, CA. While we\'re located in nearby Glendale, CA, we offer free pickup and return service for all Pasadena clients."
+      description="If you&rsquo;ve experienced data loss&mdash;whether it&rsquo;s from a crashed hard drive, a damaged SD card, or a non-responsive USB stick&mdash;Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Pasadena, CA.<br><br>While we&rsquo;re located in nearby Glendale, CA, we offer free same-day pickup in Pasadena for added convenience."
       bgImage="/data-recovery-los-angeles-ca.webp"
     />
 
