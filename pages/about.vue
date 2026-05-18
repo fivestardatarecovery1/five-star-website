@@ -1,7 +1,16 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'About Us — Five Star Data Recovery | Glendale, CA',
-  description: 'Learn about Five Star Data Recovery — a trusted data recovery lab in Glendale, CA. 10+ years of experience, Class 100 cleanroom, 21,000+ successful recoveries.'
+  title: 'About Five Star Data Recovery | Trusted Data Recovery Experts',
+  description: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.',
+  ogTitle: 'About us',
+  ogDescription: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.',
+  ogUrl: 'https://www.fivestardatarecovery.com/about-us/',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/an-02.png',
+  ogType: 'article',
+  ogSiteName: 'Five Star Data Recovery',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'About Five Star Data Recovery | Trusted Data Recovery Experts',
+  twitterDescription: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service.',
 })
 
 const whoWeAre = ['At Five Star Data Recovery, we’re more than just engineers — we’re problem solvers dedicated to helping you recover what matters most. Based in Glendale, California, our team specializes in professional data recovery services for hard drives, SSDs, RAID systems, iPhones, USBs, and more.', 'With years of hands-on experience and a state-of-the-art Class 100 cleanroom lab, we’ve earned a reputation for delivering high success rates, honest diagnostics, and upfront pricing. Every case is handled by trained recovery experts who follow strict protocols to maximize the chances of success — all while maintaining full transparency with our clients.', 'We believe in doing things the right way — no gimmicks, no hidden fees, just skilled engineers working hard to recover your data as quickly and safely as possible.']
@@ -35,7 +44,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="About Five Star Data Recovery"
       subtitle="Trusted Data Recovery Specialists."
       description="At Five Star Data Recovery, we understand that losing data can be stressful, overwhelming, and sometimes even heartbreaking. Whether it's personal photos, important business documents, or critical client files, we know how valuable your data is — and we've built our business around helping you get it back."
-      bgImage="/five-star-data-recovery-lab-technician-glendale-ca.webp"
+      bgImage="/about-us-hero.webp"
     />
     <StatsBar />
 
