@@ -24,6 +24,7 @@ const posts = [
     readTime: '8 min read',
     desc: 'Before getting more in depth about how to fix an external hard drive after it was dropped, the first thing to do is STOP trying to power on the drive — this will only cause more damage to the platters.',
     href: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped',
+    image: '/blog-dropped-hard-drive.jpg',
     icon: '💾'
   },
   {
@@ -33,6 +34,7 @@ const posts = [
     readTime: '6 min read',
     desc: 'USB chip-off data recovery is a process of removing the memory chip from the USB drive and reading it directly. Learn how we recovered data from a 64GB USB thumb drive that was not detected.',
     href: '/blog/usb-data-recovery-chip-off',
+    image: '/blog-usb-chip-off.jpg',
     icon: '🔌'
   },
 ]
@@ -76,7 +78,10 @@ const filteredPosts = computed(() =>
 
         <div class="posts-grid">
           <NuxtLink v-for="post in filteredPosts" :key="post.title" :to="post.href" class="post-card">
-            <div class="post-icon">{{ post.icon }}</div>
+            <div v-if="post.image" class="post-img-wrap">
+              <img :src="post.image" :alt="post.title" class="post-img" />
+            </div>
+            <div v-else class="post-icon">{{ post.icon }}</div>
             <div class="post-meta">
               <span class="post-cat">{{ post.category }}</span>
               <span class="post-dot">·</span>
@@ -193,6 +198,22 @@ const filteredPosts = computed(() =>
   font-size: 36px;
   margin-bottom: 20px;
   line-height: 1;
+}
+.post-img-wrap {
+  margin: -36px -32px 24px;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+  height: 210px;
+}
+.post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.post-card:hover .post-img {
+  transform: scale(1.04);
 }
 
 .post-meta {
