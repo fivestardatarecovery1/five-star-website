@@ -142,8 +142,8 @@ watch(() => route.path, closeAll)
           </li>
 
           <li><NuxtLink to="/pricing" active-class="active">Pricing</NuxtLink></li>
+          <li><NuxtLink to="/blog" active-class="active">Blog</NuxtLink></li>
           <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
-
           <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
         </ul>
 
@@ -174,6 +174,7 @@ watch(() => route.path, closeAll)
           <NuxtLink v-for="s in special" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
         </div>
         <NuxtLink to="/pricing" @click="closeAll">Pricing</NuxtLink>
+        <NuxtLink to="/blog" @click="closeAll">Blog</NuxtLink>
         <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
         <NuxtLink to="/contact" @click="closeAll">Contact</NuxtLink>
         <a href="tel:8182728866" class="mobile-phone">📞 818-272-8866</a>

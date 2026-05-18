@@ -5,11 +5,13 @@ interface Props {
   description?: string
   showTrustBadges?: boolean
   showForm?: boolean
+  showButtons?: boolean
   bgImage?: string
 }
 const props = withDefaults(defineProps<Props>(), {
   showTrustBadges: true,
   showForm: true,
+  showButtons: true,
   bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
 })
 
@@ -45,7 +47,7 @@ function handleSubmit() {
         <p v-if="subtitle" class="hero-subtitle">{{ subtitle }}</p>
         <p v-if="description" class="hero-desc" v-html="description"></p>
 
-        <div class="hero-buttons">
+        <div v-if="showButtons" class="hero-buttons">
           <NuxtLink to="/start-recovery" class="btn-start">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             Start Recovery
@@ -493,18 +495,26 @@ function handleSubmit() {
 
 @media (max-width: 640px) {
   .hero { padding: 36px 0 44px; }
-  .hero-inner { gap: 28px; padding: 0 20px; }
+  .hero-inner { gap: 28px; padding: 0 20px; box-sizing: border-box; width: 100%; }
   .hero-title { font-size: clamp(26px, 7vw, 36px); letter-spacing: -0.01em; }
   .hero-subtitle { font-size: 15px; }
-  .hero-desc { font-size: 14px; margin-bottom: 20px; }
-  .hero-copy { padding-right: 0; }
+  .hero-desc { font-size: 14px; margin-bottom: 20px; max-width: 100%; }
+  .hero-copy { padding-right: 0; width: 100%; box-sizing: border-box; }
   .form-row { grid-template-columns: 1fr; }
   .trust-bar { flex-direction: column; gap: 12px; }
   .trust-divider { display: none; }
-  .hero-buttons { flex-direction: column; }
+  .hero-buttons { flex-direction: column; width: 100%; }
   .btn-start, .btn-quote { justify-content: center; width: 100%; box-sizing: border-box; }
   .hero-form-card { padding: 20px 16px; }
-  .trust-box { gap: 10px; }
-  .trust-item { font-size: 13px; }
+  .trust-box {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 12px 16px;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .trust-item { font-size: 12px; gap: 8px; white-space: normal; }
+  .trust-item svg { flex-shrink: 0; width: 18px; height: 18px; }
 }
 </style>

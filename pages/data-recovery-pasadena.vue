@@ -1,38 +1,17 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Pasadena, CA — Five Star Data Recovery',
-  description: 'Professional data recovery services in Pasadena, CA. Five Star Data Recovery offers free same-day pickup, flat-rate pricing, and a clean room lab in nearby Glendale. Call 818-272-8866.'
+  title: 'Data Recovery Services in Pasadena CA - Five Star Data Recovery',
+  description: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogTitle: 'Data Recovery Services in Pasadena CA - Five Star Data Recovery',
+  ogDescription: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogUrl: 'https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Data Recovery Services in Pasadena CA - Five Star Data Recovery',
+  twitterDescription: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
 })
 
-const issues = [
-  { icon: '💾', title: 'Crashed hard drives', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
-  { icon: '🔊', title: 'Clicking or non-spinning drives', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
-  { icon: '⚠️', title: 'Failed SSDs and flash drives', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
-  { icon: '💥', title: 'Water-damaged or dropped devices', text: 'Cloning and AnalysisYour drive is cloned to avoid further damage, and our engineers analyze the copy.' },
-]
-
-const causesIntro = ''
-const causesOutro = ''
-const causes = [
-  'Free DiagnosticsNo-cost, no-obligation evaluation to assess your data recovery case.',
-  'Fast Turnaround OptionsRush and Expedited services available for time-sensitive cases.Flat-rate pricing with no hidden fees',
-  'Class 100 Clean RoomSafe environment for physically damaged drives and internal repairs.',
-  'Component-Level RepairsWe specialize in board-level and firmware recovery others can’t handle.',
-  'Flat Rate PricingTransparent pricing — no hidden fees or hourly charges.',
-]
-
-const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
-const steps = [
-  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
-  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
-  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
-]
-
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes = [
+const trustedBullets = [
   'Crashed hard drives',
   'Clicking or non-spinning drives',
   'Failed SSDs and flash drives',
@@ -40,6 +19,34 @@ const driveTypes = [
   'Deleted files and formatted media',
   'Damaged RAID arrays and servers',
 ]
+
+const whyChooseUs = [
+  { title: 'Free Diagnostics', text: 'No-cost, no-obligation evaluation to assess your data recovery case.' },
+  { title: 'Fast Turnaround Options', text: 'Rush and Expedited services available for time-sensitive cases. Flat-rate pricing with no hidden fees.' },
+  { title: 'Class 100 Clean Room', text: 'Safe environment for physically damaged drives and internal repairs.' },
+  { title: 'Component-Level Repairs', text: "We specialize in board-level and firmware recovery others can't handle." },
+  { title: 'Flat Rate Pricing', text: 'Transparent pricing — no hidden fees or hourly charges.' },
+]
+
+const recoveryDevices = [
+  { title: 'Hard Drives (HDDs)', link: '/data-recovery/hard-drive-recovery', text: 'We recover data from failed internal and external hard drives due to mechanical or logical issues, including SSDs and USB flash drives.' },
+  { title: 'Solid State Drives (SSDs)', link: '/data-recovery/ssd-recovery', text: 'We retrieve lost data from SSDs with firmware errors, bad blocks, or sudden failure.' },
+  { title: 'iPhones and Mobile Devices', link: '/data-recovery/iphone-recovery', text: "We perform component-level recovery from iPhones that won't power on or are stuck in boot loops." },
+  { title: 'RAID Arrays and NAS Devices', link: '/data-recovery/raid-recovery', text: 'We recover critical business and personal data from failed or degraded RAID/NAS systems.' },
+  { title: 'USB Flash Drives', link: '/data-recovery/usb-recovery', text: 'We handle broken or corrupted USB drives, including chip-off recovery when needed.' },
+]
+
+const processIntro = ''
+const steps = [
+  { num: '1', title: 'Free Evaluation', text: 'We assess your device at no cost to determine the issue and recovery options.' },
+  { num: '2', title: 'Cloning and Analysis', text: 'Your drive is cloned to avoid further damage, and our engineers analyze the copy.' },
+  { num: '3', title: 'Data Extraction', text: 'We extract recoverable data from the cloned image using advanced tools.' },
+  { num: '4', title: 'Verification', text: 'Recovered files are reviewed and validated for completeness and integrity.' },
+  { num: '5', title: 'Delivery', text: 'Your data is transferred to a new drive and returned securely.' },
+]
+
+const driveTypesIntro = ''
+const driveTypesOutro = ''
 
 const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
 const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
@@ -76,7 +83,23 @@ const contactList = [
 ]
 const contactOutro = 'Trust our experts for fast, secure, and professional data recovery pasadena ca — and get back what matters most.'
 
-const reviews: { text: string; name: string; location: string }[] = []
+const reviews = [
+  {
+    text: 'I needed urgent help after my external hard drive suddenly stopped working. I called Five Star and was shocked at how fast they acted — they picked up my drive from my Pasadena office <strong>within an hour</strong> of creating the ticket. Two days later, I had all my data back. Truly professional and reliable.',
+    name: 'Ann M',
+    location: 'Pasadena, CA'
+  },
+  {
+    text: "Even though their lab isn't directly in Pasadena, it was <strong>only a 15-minute drive</strong> and well worth it. They recovered every single file from my failed MacBook, including irreplaceable family photos. The service was fast, friendly, and honest from start to finish.",
+    name: 'Antonio R.',
+    location: 'Pasadena, CA'
+  },
+  {
+    text: 'Five Star handled my NAS recovery like true pros. The diagnosis was free, pricing was transparent, and they even sent updates during the process. I was impressed with how knowledgeable the team was. I wouldn\'t trust anyone else with my data again.',
+    name: 'Hillary T.',
+    location: 'Pasadena, CA'
+  },
+]
 
 const faqs = [
   { q: 'Is your lab located in Pasadena, CA?', a: 'Although we are not located in Pasadena, CA, we’re only minutes away and proudly offer same-day free pickup service for all Pasadena residents and businesses. Simply give us a call, and we’ll create a ticket and schedule a pickup the same day to get your recovery started immediately.' },
@@ -88,6 +111,143 @@ const faqs = [
 
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+          "name": "Five Star Data Recovery",
+          "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+          "url": "https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/",
+          "telephone": "(818) 272-8866",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1731 S Brand Blvd",
+            "addressLocality": "Glendale",
+            "addressRegion": "CA",
+            "postalCode": "91204",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.1233,
+            "longitude": -118.2567
+          },
+          "areaServed": [
+            { "@type": "Place", "name": "Pasadena, CA" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "10:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "10:00",
+              "closes": "14:00"
+            }
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "498"
+          },
+          "priceRange": "$300-$950",
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Ann M. \u2013 Pasadena, CA" },
+              "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+              "reviewBody": "I needed urgent help after my external hard drive suddenly stopped working. I called Five Star and was shocked at how fast they acted \u2014 they picked up my drive from my Pasadena office within an hour of creating the ticket. Two days later, I had all my data back. Truly professional and reliable.",
+              "datePublished": "2025-07-11"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Antonio R. \u2013 Pasadena, CA" },
+              "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+              "reviewBody": "Even though their lab isn't directly in Pasadena, it was only a 15-minute drive and well worth it. They recovered every single file from my failed MacBook, including irreplaceable family photos. The service was fast, friendly, and honest from start to finish.",
+              "datePublished": "2025-07-11"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Hillary T. \u2013 Pasadena, CA" },
+              "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+              "reviewBody": "Five Star handled my NAS recovery like true pros. The diagnosis was free, pricing was transparent, and they even sent updates during the process. I was impressed with how knowledgeable the team was. I wouldn't trust anyone else with my data again.",
+              "datePublished": "2025-07-11"
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/#webpage",
+          "url": "https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/",
+          "name": "Data Recovery Pasadena CA - Five Star Data Recovery",
+          "description": "Reliable and fast data recovery services for Pasadena, CA. We provide expert recovery for hard drives, SSDs, phones, and more with free same-day pickup and free diagnostics.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Data Recovery Pasadena CA", "item": "https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/" }
+          ]
+        },
+        {
+          "@type": "Service",
+          "serviceType": "Data Recovery Services in Pasadena CA",
+          "areaServed": [
+            { "@type": "Place", "name": "Pasadena, CA" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "provider": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" },
+          "url": "https://www.fivestardatarecovery.com/data-recovery-pasadena-ca/",
+          "description": "Five Star Data Recovery offers professional data recovery services to Pasadena, CA clients. Whether you're an individual or a business, we help recover data from hard drives, SSDs, RAID systems, and mobile devices."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is your lab located in Pasadena, CA?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Although we are not located in Pasadena, CA, we're only minutes away and proudly offer same-day free pickup service for all Pasadena residents and businesses. Simply give us a call, and we'll create a ticket and schedule a pickup the same day to get your recovery started immediately." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you offer emergency data recovery services in Pasadena?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer both Expedited Service (during business hours) and Expedited Plus (24/7/365) for Pasadena clients. If you need your data recovered urgently, just give us a call and we'll get your case prioritized immediately." }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can you recover data for Pasadena customers?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Most standard recoveries are completed within 1\u20133 business days, but we also offer same-day evaluations and rush service. Thanks to our free pickup option in Pasadena, we can begin recovery within hours of your call." }
+            },
+            {
+              "@type": "Question",
+              "name": "What types of devices do you recover data from in Pasadena?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We recover data from external hard drives, MacBooks, PC laptops, RAID/NAS systems, USB drives, and SD cards \u2014 no matter the failure type or operating system. If you're in Pasadena and not sure if your device qualifies, we offer free diagnostics." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the pickup service really free for Pasadena clients?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes \u2014 100% free. There's no fee for pickup or evaluation. You only pay if you approve the recovery. We believe in fair, transparent service for all of Pasadena and surrounding areas." }
+            }
+          ]
+        }
+      ]
+    })
+  }]
+})
 </script>
 
 <template>
@@ -98,92 +258,65 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Data Recovery Pasadena, CA"
       subtitle="Get Your Data Back In No Time."
       description="If you&rsquo;ve experienced data loss&mdash;whether it&rsquo;s from a crashed hard drive, a damaged SD card, or a non-responsive USB stick&mdash;Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Pasadena, CA.<br><br>While we&rsquo;re located in nearby Glendale, CA, we offer free same-day pickup in Pasadena for added convenience."
-      bgImage="/data-recovery-los-angeles-ca.webp"
+      bgImage="/data-recovery-pasadena-ca.jpg"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- TRUSTED + WHY CHOOSE US — 2-col white -->
     <section class="s-white">
-      <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Data Recovery Pasadena CA Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
-          </div>
-        </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
+      <div class="container two-col-boxes">
 
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes Data Recovery Pasadena CA Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
+        <!-- Left: Trusted Data Recovery Services -->
+        <div class="info-box">
+          <h2 class="info-box-heading">Trusted Data Recovery Services in Pasadena</h2>
+          <p class="s-body">Whether you're a student, business owner, creative professional, or just someone with important files, we understand how devastating data loss can be. Our team has successfully recovered data from:</p>
+          <ul class="bullet-list">
+            <li v-for="b in trustedBullets" :key="b">{{ b }}</li>
           </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
+          <p class="s-body s-mt">We handle each recovery case with care, precision, and confidentiality. From routine to complex cases, our engineers work to bring your data back safely.</p>
         </div>
-        <div class="asym-major">
-          <img src="/data-recovery-los-angeles-ca.webp" alt="Data Recovery Pasadena CA service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
-          </div>
+
+        <!-- Right: Why Choose Us -->
+        <div class="info-box">
+          <h2 class="info-box-heading">Why Choose Us for Data Recovery in Pasadena?</h2>
+          <ul class="why-list">
+            <li v-for="item in whyChooseUs" :key="item.title">
+              <strong>{{ item.title }}</strong>
+              <span>{{ item.text }}</span>
+            </li>
+          </ul>
         </div>
+
       </div>
     </section>
 
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
+    <!-- PROCESS + DEVICES — 2-col grey -->
     <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
+      <div class="container two-col-boxes">
+
+        <!-- Left: Our Recovery Process -->
+        <div class="info-box">
+          <h2 class="info-box-heading">Our Recovery Process</h2>
+          <ol class="process-ol">
+            <li v-for="step in steps" :key="step.num">
+              <strong>{{ step.title }}</strong>
+              <span>{{ step.text }}</span>
+            </li>
+          </ol>
         </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Trusted Data Recovery Services in Pasadena</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
+
+        <!-- Right: Devices We Recover Data From -->
+        <div class="info-box">
+          <h2 class="info-box-heading">Devices We Recover Data From</h2>
+          <ul class="device-list">
+            <li v-for="d in recoveryDevices" :key="d.title">
+              <NuxtLink :to="d.link" class="device-link"><strong>{{ d.title }}</strong></NuxtLink>
+              <span>{{ d.text }}</span>
+            </li>
+          </ul>
         </div>
+
       </div>
     </section>
 
@@ -205,42 +338,24 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
+    <!-- FAQ — grey -->
     <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Data Recovery Pasadena CA Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
+      <div class="container">
+        <div class="section-label center">Got Questions?</div>
+        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+            <button class="faq-trigger" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+          </div>
         </div>
       </div>
     </section>
 
+    
     <!-- MID-PAGE FORM -->
     <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/data-recovery-los-angeles-ca.webp') right center / cover no-repeat;">
       <div class="container mid-form-inner">
@@ -321,23 +436,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- FAQ — grey -->
-    <section class="s-grey">
-      <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
-        <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
-            <button class="faq-trigger" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- REVIEWS — white -->
+    <ReviewsSection :reviews="reviews" />
 
+    
     <!-- VIDEO SECTION -->
     <section class="page-video-section">
       <div class="container page-video-inner">
@@ -350,9 +452,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
       </div>
     </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band">
@@ -505,5 +604,116 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 @media (max-width: 480px) {
   .process-track { grid-template-columns: 1fr; }
+}
+
+/* Two-column info boxes (Trusted + Why Choose Us / Process + Devices) */
+.two-col-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.info-box {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 36px 32px;
+}
+.s-grey .info-box { background: #fff; }
+.info-box-heading {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 18px;
+  line-height: 1.3;
+}
+.bullet-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 14px 0;
+  color: #4a5568;
+  font-size: 0.94rem;
+  line-height: 2;
+}
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.why-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.why-list li strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.why-list li span {
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.65;
+}
+.process-ol {
+  list-style: decimal;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #4a5568;
+}
+.process-ol li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-left: 4px;
+}
+.process-ol li strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.process-ol li span {
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.65;
+  font-style: italic;
+}
+.device-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.device-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.device-link {
+  text-decoration: none;
+  color: inherit;
+}
+.device-link:hover strong { color: #c62828; text-decoration: underline; }
+.device-list li strong {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.device-list li span {
+  font-size: 0.88rem;
+  color: #4a5568;
+  line-height: 1.65;
+}
+@media (max-width: 768px) {
+  .two-col-boxes { grid-template-columns: 1fr; }
+  .info-box { padding: 24px 20px; }
 }
 </style>

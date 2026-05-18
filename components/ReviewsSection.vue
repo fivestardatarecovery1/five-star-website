@@ -36,14 +36,12 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
       </div>
 
       <div class="rsc-carousel">
-        <button class="rsc-btn rsc-prev" @click="prev" :disabled="index === 0" aria-label="Previous reviews">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
+
 
         <div class="rsc-grid">
           <div v-for="r in visible" :key="r.name + r.location" class="rsc-card">
             <div class="rsc-stars">★★★★★</div>
-            <p class="rsc-text">&ldquo;{{ r.text }}&rdquo;</p>
+            <p class="rsc-text" v-html="'&ldquo;' + r.text + '&rdquo;'"></p>
             <div class="rsc-footer">
               <div class="rsc-avatar">
           <img v-if="r.photo" :src="r.photo" :alt="r.name" class="rsc-avatar-img" />
@@ -57,9 +55,7 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
           </div>
         </div>
 
-        <button class="rsc-btn rsc-next" @click="next" :disabled="index + perPage >= total" aria-label="Next reviews">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
+
       </div>
 
       <!-- Dots -->
