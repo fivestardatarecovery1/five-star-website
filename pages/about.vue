@@ -70,31 +70,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="about-stats-section">
-      <div class="container about-stats-grid">
-        <div class="about-stat-card">
-          <div class="about-stat-icon">💾</div>
-          <span class="about-stat-num">21,000+</span>
-          <span class="about-stat-label">Drives Recovered</span>
-        </div>
-        <div class="about-stat-card">
-          <div class="about-stat-icon">✅</div>
-          <span class="about-stat-num">99%</span>
-          <span class="about-stat-label">Recovery Success Rate</span>
-        </div>
-        <div class="about-stat-card">
-          <div class="about-stat-icon">🏆</div>
-          <span class="about-stat-num">10+</span>
-          <span class="about-stat-label">Years in Business</span>
-        </div>
-        <div class="about-stat-card">
-          <div class="about-stat-icon">⭐</div>
-          <span class="about-stat-num">4.9★</span>
-          <span class="about-stat-label">Average Rating</span>
-        </div>
-      </div>
-    </section>
+
 
     <!-- HOW WE GOT HERE -->
     <section class="s-grey">
