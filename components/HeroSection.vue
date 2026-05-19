@@ -8,19 +8,21 @@ interface Props {
   showButtons?: boolean
   bgImage?: string
   bgSize?: string
+  overlayOpacity?: number
 }
 const props = withDefaults(defineProps<Props>(), {
   showTrustBadges: true,
   showForm: true,
   showButtons: true,
   bgSize: 'cover',
+  overlayOpacity: 0.95,
   bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
 })
 
 const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false
 
 const heroStyle = computed(() => ({
-  background: `linear-gradient(to right, rgba(20,22,30,0.95) 0%, rgba(20,22,30,0.88) 50%, rgba(20,22,30,0.75) 100%), url('${props.bgImage}') center center / ${props.bgSize} no-repeat`
+  background: `linear-gradient(to right, rgba(20,22,30,${props.overlayOpacity}) 0%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.15, 0)}) 50%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.35, 0)}) 100%), url('${props.bgImage}') center center / ${props.bgSize} no-repeat`
 }))
 
 const submitted = ref(false)

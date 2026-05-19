@@ -46,9 +46,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       description="At Five Star Data Recovery, we understand that losing data can be stressful, overwhelming, and sometimes even heartbreaking. Whether it's personal photos, important business documents, or critical client files, we know how valuable your data is — and we've built our business around helping you get it back."
       bgImage="/about-us-hero.webp"
       :showForm="false"
-      :showButtons="false"
-      :showTrustBadges="false"
-      bgSize="70%"
+      bgSize="cover"
+      :overlayOpacity="0.72"
     />
     <StatsBar />
 
