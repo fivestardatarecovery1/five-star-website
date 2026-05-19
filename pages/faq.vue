@@ -33,6 +33,62 @@ useHead({
           ]
         },
         {
+          "@type": "LocalBusiness",
+          "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+          "name": "Five Star Data Recovery",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "6",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Mikey W." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. This place not only recovered all our files, they were completely upfront and honest about the process. They were able to get us our precious memories back. Highly recommended!",
+              "datePublished": "2025-06-01"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Arin K." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Don't trust your important data anywhere else. These guys are the best. They came in on a Sunday especially for me to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it's at.",
+              "datePublished": "2025-06-01"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Vance K." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "My son's laptop hard drive failed, and I knew how much all the data on there meant to him. Five Star was able to get the data back. They went over and above to try additional steps when they found each new issue. Their communication was thorough and timely.",
+              "datePublished": "2025-06-01"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Cesar R." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "What really impressed me was how transparent the entire process was. Everything I read on their website — the pricing, the turnaround time, the no data no charge policy — was exactly how things turned out. No hidden fees, no surprises.",
+              "datePublished": "2025-06-15"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Catherine" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "I had already taken my drive to two other companies who said recovery wasn't possible. Vahan pulled it off and saved all my important files. Definitely worth the wait.",
+              "datePublished": "2025-06-15"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Anton N." },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "I had a question and decided to send an email late at night. To my surprise, I got a reply back at 11 PM! They were able to answer my question and give me peace of mind right when I needed it. That level of customer care is hard to find.",
+              "datePublished": "2025-06-15"
+            }
+          ]
+        },
+        {
           "@type": "VideoObject",
           "@id": "https://www.fivestardatarecovery.com/faq/#videoobject",
           "url": "https://www.fivestardatarecovery.com/faq/",
