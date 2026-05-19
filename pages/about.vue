@@ -1,4 +1,114 @@
 <script setup lang="ts">
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "AboutPage",
+          "@id": "https://www.fivestardatarecovery.com/about-us/#aboutpage",
+          "url": "https://www.fivestardatarecovery.com/about-us/",
+          "name": "About Five Star Data Recovery | Trusted Data Recovery Experts",
+          "description": "Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service.",
+          "inLanguage": "en-US",
+          "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.fivestardatarecovery.com/about-us/" }
+            ]
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+          "name": "Five Star Data Recovery",
+          "url": "https://www.fivestardatarecovery.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png"
+          },
+          "image": "https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/team-01.png",
+          "description": "Five Star Data Recovery is a professional data recovery lab in Glendale, CA specializing in hard drives, SSDs, RAID systems, iPhones, and USB flash drives. Flat-rate pricing, Class 100 cleanroom, and a no data no charge guarantee.",
+          "telephone": "+1-818-272-8866",
+          "email": "info@fivestardatarecovery.com",
+          "foundingDate": "2012",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1731 S Brand Blvd",
+            "addressLocality": "Glendale",
+            "addressRegion": "CA",
+            "postalCode": "91204",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 34.1233,
+            "longitude": -118.2567
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "10:00",
+              "closes": "18:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Saturday",
+              "opens": "10:00",
+              "closes": "14:00"
+            }
+          ],
+          "areaServed": [
+            { "@type": "Place", "name": "Glendale, CA" },
+            { "@type": "Place", "name": "Los Angeles, CA" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "priceRange": "$300 - $950",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "498"
+          },
+          "sameAs": [
+            "https://www.fivestardatarecovery.com"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.fivestardatarecovery.com/#organization",
+          "name": "Five Star Data Recovery",
+          "url": "https://www.fivestardatarecovery.com/",
+          "foundingDate": "2012",
+          "founder": {
+            "@type": "Person",
+            "name": "Vahan Hovsepian"
+          },
+          "numberOfEmployees": {
+            "@type": "QuantitativeValue",
+            "value": 10
+          },
+          "description": "Data recovery lab founded in 2012, previously known as Platinum Plus Services. Specializing in professional data recovery for individuals and businesses across the United States.",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-818-272-8866",
+            "contactType": "customer service",
+            "availableLanguage": "English",
+            "hoursAvailable": "Mo-Fr 10:00-18:00, Sa 10:00-14:00"
+          }
+        }
+      ]
+    })
+  }]
+})
+
 useSeoMeta({
   title: 'About Five Star Data Recovery | Trusted Data Recovery Experts',
   description: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.',
