@@ -84,7 +84,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
         <div style="position:relative;">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Five Star Data Recovery cleanroom technician" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" />
+          <img src="/five-star-lab-engineers.jpg" alt="Five Star Data Recovery lab engineers at work" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" />
         </div>
         <div>
           <div class="section-label">Innovation</div>
