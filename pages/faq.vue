@@ -1,7 +1,51 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Frequently Asked Questions — Five Star Data Recovery',
-  description: 'Find answers to common questions about data recovery services, pricing, shipping, process, and security at Five Star Data Recovery in Glendale, CA.'
+  title: 'Frequently Asked Questions - Five Star Data Recovery',
+  description: 'Not sure how data recovery services work? Check out Five Star Data Recovery\'s FAQs page to learn more about data recovery solutions.',
+  ogTitle: 'FAQ\'s',
+  ogDescription: 'Not sure how data recovery services work? Check out Five Star Data Recovery\'s FAQs page to learn more about data recovery solutions.',
+  ogUrl: 'https://www.fivestardatarecovery.com/faq/',
+  ogType: 'article',
+  ogSiteName: 'Five Star Data Recovery',
+  twitterCard: 'summary_large_image',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Do you offer free shipping for mail-in data recovery cases?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer free round-trip shipping anywhere in the United States. Once you fill out our Mail-In Form, we'll send you a prepaid shipping label." } },
+            { "@type": "Question", "name": "How long does the data recovery process take?", "acceptedAnswer": { "@type": "Answer", "text": "Standard turnaround is 3–5 business days. Expedited options are available for faster service." } },
+            { "@type": "Question", "name": "When is payment due for data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Payment is only due after we successfully recover your data and you've had a chance to review and approve the file list. However, there are a few exceptions that require an upfront, non-refundable fee, including Expedited or Expedited Plus Service, Deleted File Recoveries, or drives previously opened at the component level." } },
+            { "@type": "Question", "name": "Are donor parts included in your flat-rate pricing?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our flat-rate pricing is fully inclusive and covers everything needed for your recovery, including any required donor parts such as compatible read/write heads, PCBs, or other internal drive components. There are no hidden part fees, no additional lab charges, and no surprise costs added later." } },
+            { "@type": "Question", "name": "Do you work directly on my original drive?", "acceptedAnswer": { "@type": "Answer", "text": "No, we never perform recovery work directly on your original drive, except for creating a full sector-by-sector image (clone). All recovery work is done from the cloned image, not your original drive." } },
+            { "@type": "Question", "name": "Do you keep a copy of my recovered files?", "acceptedAnswer": { "@type": "Answer", "text": "No, we never keep a copy of your actual recovered files. We permanently delete the recovery image from our systems once you confirm successful delivery of your data." } },
+            { "@type": "Question", "name": "Do you offer data recovery payment plans?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer flexible Payment Plans. Typically, we require a 25% down payment upfront, with the remaining balance paid over an agreed-upon period." } },
+            { "@type": "Question", "name": "Can I drop off my device in person?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! You're welcome to drop off your device at our Glendale, CA lab during business hours." } },
+            { "@type": "Question", "name": "Is clean room service included if needed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer flat-rate pricing for both Logical and Clean Room data recovery cases. If your device requires Clean Room service, all Clean Room labor and necessary donor parts are included in the flat-rate price." } },
+            { "@type": "Question", "name": "Can I get a Non-Disclosure Agreement (NDA)?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We're happy to sign an NDA upon request for added peace of mind." } }
+          ]
+        },
+        {
+          "@type": "VideoObject",
+          "@id": "https://www.fivestardatarecovery.com/faq/#videoobject",
+          "url": "https://www.fivestardatarecovery.com/faq/",
+          "name": "Frequently Asked Questions - Five Star Data Recovery",
+          "description": "Not sure how data recovery services work? Check out Five Star Data Recovery's FAQs page to learn more about data recovery solutions.",
+          "uploadDate": "2025-05-14T08:19:53-07:00",
+          "thumbnailUrl": "https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg",
+          "contentUrl": "https://youtu.be/14ACFHJ24hg",
+          "embedUrl": "https://youtu.be/14ACFHJ24hg"
+        }
+      ]
+    })
+  }]
 })
 
 const categories = [
@@ -84,9 +128,9 @@ const reviews = [
   { text: 'When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!', name: 'Satisfied Customer', location: 'Los Angeles, CA', rating: 5 },
   { text: "Don't trust your important data anywhere else. These guys are the best. It's all in the name: 5 star performance and service all the way. You'll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it's at. Honestly: don't go anywhere else. Don't even think about it. Thank you guys!", name: 'Verified Client', location: 'Glendale, CA', rating: 5 },
   { text: "My son's laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly.", name: 'Verified Client', location: 'Burbank, CA', rating: 5 },
-  { text: "What really impressed me was how transparent the entire process was. Everything I read on their website — the pricing, the turnaround time, the no data no charge policy — was exactly how things turned out. No hidden fees, no surprises. It's rare to find a company that sticks to its word like this. Highly recommend.", name: 'Satisfied Customer', location: 'Pasadena, CA', rating: 5 },
-  { text: "The recovery took about two days longer than I originally expected, but honestly, I'm just grateful they were able to get my data back. I had already taken my drive to two other companies who said recovery wasn't possible. Vahan pulled it off and saved all my important files. Definitely worth the wait.", name: 'Verified Client', location: 'Hollywood, CA', rating: 5 },
-  { text: "I had a question about my case and decided to send an email late at night, not expecting a response until the next day. To my surprise, I got a reply back at 11 PM! They were able to answer my question and give me peace of mind right when I needed it. That level of customer care is hard to find.", name: 'Verified Client', location: 'Beverly Hills, CA', rating: 5 },
+  { text: "What really impressed me was how transparent the entire process was. Everything I read on their website — the pricing, the turnaround time, the no data no charge policy — was exactly how things turned out. No hidden fees, no surprises. It's rare to find a company that sticks to its word like this. Highly recommend.", name: 'Cesar R.', location: 'San Francisco, CA', rating: 5 },
+  { text: "The recovery took about two days longer than I originally expected, but honestly, I'm just grateful they were able to get my data back. I had already taken my drive to two other companies who said recovery wasn't possible. Vahan pulled it off and saved all my important files. Definitely worth the wait.", name: 'Catherine', location: 'Los Angeles, CA', rating: 5 },
+  { text: "I had a question about my case and decided to send an email late at night, not expecting a response until the next day. To my surprise, I got a reply back at 11 PM! They were able to answer my question and give me peace of mind right when I needed it. That level of customer care is hard to find.", name: 'Anton N.', location: 'Austin, TX', rating: 5 },
 ]
 </script>
 
