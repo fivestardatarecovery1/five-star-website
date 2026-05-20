@@ -92,20 +92,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- PAYMENT PLAN FAQ — white -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Data Recovery Payment Plan Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
-          </div>
+        <div class="payment-faq-card">
+          <h3 class="pf-question">Do you offer Payment Plans for Data Recovery?</h3>
+          <p class="pf-body">Yes, of course! We understand that an expense for data recovery is something that is unexpected and not budgeted for. So we are happy to offer flexible Data Recovery Payment options.</p>
+          <p class="pf-body">Same terms apply to all of our data recovery cases. There is nothing due up front. You would ONLY pay once the data is recovered and you are satisfied with the results. IF the data is unrecoverable OR you are not satisfied with the results, you pay nothing.</p>
+          <p class="pf-body">When it comes to cases that require a Payment Plan; once the recovery is successful and complete, you would pay 20% of the total balance. The remaining balance can be paid within 12 months in any increments that you feel comfortable with.</p>
+          <p class="pf-body">We would safely store the recovered data for you until the balance is paid in full. Once the balance is paid, you can pickup the recovery or have us ship it to you for free!</p>
+          <NuxtLink to="/contact" class="pf-btn">Start Your Recovery</NuxtLink>
         </div>
-        <p  class="s-outro"></p>
       </div>
     </section>
 
@@ -380,12 +377,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
 .s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
 .s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
+.payment-faq-card { background: #fff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 48px 56px; box-shadow: 0 4px 32px rgba(0,0,0,0.07); max-width: 860px; margin: 0 auto; }
+.pf-question { font-size: 1.3rem; font-weight: 900; color: #1a1a2e; margin-bottom: 24px; line-height: 1.3; }
+.pf-body { font-size: 0.97rem; color: #4a5568; line-height: 1.85; margin-bottom: 18px; }
+.pf-btn { display: block; width: 100%; margin-top: 32px; background: #F5C842; color: #1a1a2e; font-size: 1rem; font-weight: 800; text-align: center; padding: 18px 0; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
+.pf-btn:hover { background: #e0b030; transform: translateY(-1px); }
 .asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
 .asym-major { position: relative; }
 .rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
