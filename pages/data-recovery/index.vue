@@ -1,65 +1,144 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Services — Five Star Data Recovery',
-  description: 'Expert Data Recovery Services services at Five Star Data Recovery. Free diagnostic, no data no charge guarantee. Located in Glendale, CA.'
+  title: 'Data Recovery Services — Five Star Data Recovery | Glendale, CA',
+  description: 'Expert data recovery services for hard drives, SSDs, RAID arrays, iPhones, USB drives, and more. Free evaluation, flat-rate pricing, no data no charge. Glendale, CA.'
 })
 
-const issues = []
+const services = [
+  {
+    icon: '💾',
+    title: 'Hard Drive Recovery',
+    text: 'We recover data from all HDD brands and models — clicking drives, firmware failures, bad sectors, and more.',
+    href: '/data-recovery/hard-drive-recovery',
+  },
+  {
+    icon: '⚡',
+    title: 'SSD Recovery',
+    text: 'Specialized tools for SATA, NVMe, and mSATA solid-state drives — including controller failures and NAND damage.',
+    href: '/data-recovery/ssd-recovery',
+  },
+  {
+    icon: '🖥️',
+    title: 'RAID Recovery',
+    text: 'We rebuild and recover from all RAID configurations (RAID 0, 1, 5, 6, 10) and NAS/server arrays.',
+    href: '/data-recovery/raid-recovery',
+  },
+  {
+    icon: '💻',
+    title: 'Laptop Recovery',
+    text: 'Crashed, dropped, or water-damaged laptop? We recover data from all laptop drive types.',
+    href: '/data-recovery/laptop-recovery',
+  },
+  {
+    icon: '🖥️',
+    title: 'Desktop Recovery',
+    text: 'From accidental deletion to complete drive failure — we recover files from desktop HDDs and SSDs.',
+    href: '/data-recovery/desktop-recovery',
+  },
+  {
+    icon: '📦',
+    title: 'External HDD Recovery',
+    text: 'WD My Passport, Seagate Backup Plus, LaCie, G-Drive — we specialize in external hard drive recovery.',
+    href: '/data-recovery/external-hard-drive',
+  },
+  {
+    icon: '🍎',
+    title: 'Mac / iMac Recovery',
+    text: 'Recovery for all Apple machines — MacBook Pro, MacBook Air, iMac, Mac Mini, and Mac Pro.',
+    href: '/data-recovery/mac-recovery',
+  },
+  {
+    icon: '📱',
+    title: 'iPhone Recovery',
+    text: 'Component-level iPhone data recovery for devices with water damage, screen damage, or boot failures.',
+    href: '/data-recovery/iphone-recovery',
+  },
+  {
+    icon: '🔌',
+    title: 'USB Flash Drive',
+    text: 'Chip-off and logical recovery for USB flash drives of all brands and capacities.',
+    href: '/data-recovery/usb-recovery',
+  },
+  {
+    icon: '📷',
+    title: 'SD Card Recovery',
+    text: 'Camera, drone, GoPro, or phone SD cards — we recover photos, videos, and all file types.',
+    href: '/data-recovery/sd-card-recovery',
+  },
+  {
+    icon: '🌐',
+    title: 'NAS Recovery',
+    text: 'Synology, QNAP, Drobo, and custom NAS arrays — multi-drive recovery handled with precision.',
+    href: '/data-recovery/nas-recovery',
+  },
+  {
+    icon: '🎥',
+    title: 'Video File Repair',
+    text: 'Corrupted or unplayable footage from cameras, drones, and professional video equipment.',
+    href: '/data-recovery/video-file-repair',
+  },
+]
 
-const causesIntro = ''
-const causesOutro = ''
-const causes = []
+const brands = [
+  { label: 'Western Digital', href: '/data-recovery/western-digital-recovery' },
+  { label: 'Seagate', href: '/data-recovery/seagate-recovery' },
+  { label: 'Samsung', href: '/data-recovery/samsung-recovery' },
+  { label: 'LaCie', href: '/data-recovery/lacie-recovery' },
+  { label: 'Toshiba', href: '/data-recovery/toshiba-recovery' },
+  { label: 'Hitachi', href: '/data-recovery/hitachi-recovery' },
+]
 
-const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
+const problems = [
+  { label: 'Hard Drive Clicking', href: '/hard-drive-clicking' },
+  { label: "Drive Won't Power On", href: '/drive-doesnt-power-on' },
+  { label: 'Dropped Hard Drive', href: '/data-recovery/dropped-hard-drive' },
+  { label: 'Bad Sectors', href: '/data-recovery/bad-sectors' },
+  { label: 'Drive Not Showing Up', href: '/data-recovery/hard-drive-not-showing-up' },
+  { label: 'Deleted Files', href: '/data-recovery/deleted-files' },
+]
+
+const special = [
+  { label: 'Clean Room Recovery', href: '/data-recovery/clean-room' },
+  { label: 'Mail-In Service', href: '/data-recovery/mail-in-service' },
+  { label: 'Express Drop-Off', href: '/data-recovery/express-drop-off' },
+  { label: 'Free Quote', href: '/data-recovery/free-quote' },
+  { label: 'Expedited Service', href: '/expedited-service' },
+  { label: 'Expedited Service Plus', href: '/expedited-service-plus' },
+]
+
 const steps = [
-  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
-  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
-  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
+  { num: '1', title: 'Drop Off or Mail In Your Drive', text: 'Visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
+  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team evaluates your device and provides a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
+  { num: '3', title: 'Engineers Begin Recovery', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures for physically damaged media.' },
+  { num: '4', title: 'Review Recovered Files', text: "After recovery is complete, you'll receive a detailed file list to review and confirm everything important has been successfully recovered." },
+  { num: '5', title: 'Receive Your Data', text: "Once approved, we securely transfer your data to a new drive and return it via pickup or insured shipping — ready for immediate use." },
 ]
 
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes = []
-
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Data Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'It can be frustrating to deal with a failed Data Recovery. Our experts are here to help guide you through the recovery process from start to finish.',
-  'Stop using the device immediately if you notice any unusual symptoms. The sooner you bring it to us, the better your chances of a full recovery.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional data recovery services — and get back what matters most.'
-
-const reviews = []
 const faqs = [
+  {
+    q: 'How long does data recovery take?',
+    a: 'Our standard turnaround is 3–5 business days. Expedited and same-day options are available for urgent cases. Complex RAID or multi-drive recoveries may take longer depending on the failure type.'
+  },
+  {
+    q: 'How much does data recovery cost?',
+    a: 'Our pricing is flat-rate and transparent. Hard drive recovery typically ranges from $300–$800. SSD, RAID, and chip-off recoveries vary by complexity. We provide a free evaluation with an exact quote before any work begins — no surprises.'
+  },
+  {
+    q: 'What is the "No Data, No Charge" guarantee?',
+    a: 'If we are unable to recover your data, you owe nothing in most cases. We believe you should only pay for results. A detailed file list is provided for your approval before final payment.'
+  },
+  {
+    q: 'Can you recover data from a physically damaged drive?',
+    a: 'Yes. Our ISO-certified clean room allows us to safely open drives and perform head swaps, platter transfers, and other physical repairs needed before logical recovery can begin.'
+  },
+  {
+    q: 'Is my data kept confidential?',
+    a: 'Absolutely. All recoveries are handled with strict confidentiality. We never access your files beyond what is necessary for the recovery process, and we do not retain copies of your data.'
+  },
+  {
+    q: 'Do you offer mail-in service?',
+    a: 'Yes — we serve clients nationwide with our secure mail-in program. We provide prepaid shipping labels so you can send your device from anywhere in the U.S. safely and at no cost to you.'
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -72,44 +151,94 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <HeroSection
       title="Data Recovery Services"
-      subtitle="Get Your Data Back In No Time."
+      subtitle="We recover files from all types of storage devices, no matter the brand, operating system, or failure type."
       description=""
       bgImage="/hard-drive-recovery-service-los-angeles.webp"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SERVICES GRID -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Data Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
-          </div>
+        <div class="section-label center">What We Recover</div>
+        <h2 class="s-heading center">Data Recovery for Every Device Type</h2>
+        <p class="s-intro center">It doesn't matter if you are a student, a small business owner, a photographer, or an IT worker — we can help. Our team works with care, precision, and complete confidentiality.</p>
+        <div class="services-grid">
+          <NuxtLink v-for="svc in services" :key="svc.href" :to="svc.href" class="service-card">
+            <div class="svc-icon">{{ svc.icon }}</div>
+            <h3 class="svc-title">{{ svc.title }}</h3>
+            <p class="svc-body">{{ svc.text }}</p>
+            <span class="svc-link">Learn more →</span>
+          </NuxtLink>
         </div>
-        <p  class="s-outro"></p>
       </div>
     </section>
 
-    <!-- CAUSES — grey -->
+    <!-- BY BRAND + BY PROBLEM + SPECIAL -->
     <section class="s-grey">
+      <div class="container three-col">
+        <div class="ref-col">
+          <div class="ref-col-header">Recovery by Brand</div>
+          <NuxtLink v-for="b in brands" :key="b.href" :to="b.href" class="ref-link">
+            <span class="ref-dot">›</span>{{ b.label }}
+          </NuxtLink>
+        </div>
+        <div class="ref-col">
+          <div class="ref-col-header">Recovery by Problem</div>
+          <NuxtLink v-for="p in problems" :key="p.href" :to="p.href" class="ref-link">
+            <span class="ref-dot">›</span>{{ p.label }}
+          </NuxtLink>
+        </div>
+        <div class="ref-col">
+          <div class="ref-col-header">Special Services</div>
+          <NuxtLink v-for="s in special" :key="s.href" :to="s.href" class="ref-link">
+            <span class="ref-dot">›</span>{{ s.label }}
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US — white -->
+    <section class="s-white">
       <div class="container asym-layout">
         <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes Data Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
+          <div class="section-label">Why Choose Us</div>
+          <h2 class="s-heading">Trusted by Thousands Across the Greater Los Angeles Area</h2>
+          <p class="s-body">At Five Star Data Recovery, we offer flat-rate pricing for all of our data recovery services. No need to wonder how much it's going to cost. Simply visit our pricing page for details — never any bait-and-switch gimmicks.</p>
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-icon">🛡</div>
+              <div>
+                <strong class="why-title">No Data = No Charge</strong>
+                <p class="why-body">If we aren't able to recover your data or you're not 100% satisfied with the results, you can decline the recovery and pay nothing (most cases).</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">💰</div>
+              <div>
+                <strong class="why-title">Flat Rate Pricing</strong>
+                <p class="why-body">All prices are upfront and transparent. Pricing is flat-rate depending on the exact issue with your drive. No hidden fees, ever.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">🔬</div>
+              <div>
+                <strong class="why-title">Top Notch Engineers</strong>
+                <p class="why-body">All of our engineers have received the highest level of training — qualified to handle all types of logical and clean room recoveries.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-icon">⭐</div>
+              <div>
+                <strong class="why-title">Five Star Service</strong>
+                <p class="why-body">We take pride in providing only the best customer service possible. Five Star is more than just a name — it's our standard.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="asym-major">
-          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Data Recovery Services service Glendale CA" class="rounded-img" />
+          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Data recovery lab Glendale CA" class="rounded-img" />
           <div class="img-stat-badge">
             <span class="stat-num">21,000+</span>
             <span class="stat-label">Successful Recoveries</span>
@@ -118,12 +247,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- PROCESS — white -->
-    <section class="s-white">
+    <!-- PROCESS — grey -->
+    <section class="s-grey">
       <div class="container">
         <div class="section-label center">Our Process</div>
         <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
+        <p class="s-intro center">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.</p>
         <div class="process-track">
           <div v-for="(step, i) in steps" :key="step.num" class="process-node">
             <div class="process-circle">{{ step.num }}</div>
@@ -139,36 +268,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Supported Devices</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
     <!-- FULL-WIDTH BANNER -->
     <section class="fullwidth-banner">
       <div class="banner-overlay" />
       <div class="container banner-inner">
         <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. We offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         <div class="banner-stats">
           <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
           <div class="bstat-div" />
@@ -181,49 +286,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Data Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
     <!-- MID-PAGE FORM -->
     <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/hard-drive-recovery-service-los-angeles.webp') right center / cover no-repeat;">
       <div class="container mid-form-inner">
         <div class="mid-form-text">
           <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your Data Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
+          <h2 class="dark-heading">Start Your Data Recovery Today</h2>
+          <p class="dark-body">Don't wait — the longer a failing drive is used, the lower the chances of a full recovery. Our engineers are standing by to evaluate your device and give you a free, no-obligation quote.</p>
+          <p class="dark-body">Stop using the device immediately if you notice any unusual symptoms. The sooner you bring it to us, the better your chances of a full recovery.</p>
           <div class="dark-features">
             <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
             <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
@@ -275,9 +345,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <div class="mf-group">
                 <label>Preferred Contact Method</label>
                 <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactDataRec" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactDataRec" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactDataRec" value="text" /> TEXT</label>
+                  <label class="mf-radio"><input type="radio" name="contactDataRecIdx" value="call" checked /> CALL</label>
+                  <label class="mf-radio"><input type="radio" name="contactDataRecIdx" value="email" /> EMAIL</label>
+                  <label class="mf-radio"><input type="radio" name="contactDataRecIdx" value="text" /> TEXT</label>
                 </div>
               </div>
             </div>
@@ -291,7 +361,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </select>
               </div>
             </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
+            <button type="submit" class="mf-submit">Request a Free Evaluation</button>
           </form>
         </div>
       </div>
@@ -308,7 +378,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
             </button>
-            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
           </div>
         </div>
       </div>
@@ -327,26 +397,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- REVIEWS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Client Stories</div>
-        <h2 class="s-heading center">Testimonials from Satisfied Clients</h2>
-        <div class="reviews-grid">
-          <div v-for="r in reviews" :key="r.name" class="review-card">
-            <div class="review-quote">"</div>
-            <p class="review-body">{{ r.text }}</p>
-            <div class="review-footer">
-              <div class="review-stars">★★★★★</div>
-              <div class="review-meta">
-                <strong class="review-name">{{ r.name }}</strong>
-                <span class="review-loc">{{ r.location }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <ReviewsSection />
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band">
@@ -355,11 +406,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="contact-banner-heading">Contact Us for Data Recovery Services</h2>
         </div>
         <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
+          <p class="contact-body-text">If you're experiencing data loss, don't wait. Acting early gives you the best chance of recovering your data safely and completely.</p>
           <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
+            <li>Visit our lab in Glendale, CA</li>
+            <li>Mail your drive to us from anywhere in the U.S.</li>
+            <li>Call us today for a free evaluation</li>
           </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
+          <p class="contact-outro">Trust our experts for fast, secure, and professional data recovery services — and get back what matters most.</p>
         </div>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
@@ -383,37 +436,87 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
 .s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
 .s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
+
+/* ── Services Grid ── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 8px;
+}
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1.5px solid #e8ecf2;
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: #C9A84C;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.service-card:hover { border-color: #C9A84C; box-shadow: 0 8px 32px rgba(201,168,76,0.15); transform: translateY(-3px); }
+.service-card:hover::before { transform: scaleX(1); }
+.svc-icon { font-size: 1.8rem; margin-bottom: 12px; line-height: 1; }
+.svc-title { font-size: 0.97rem; font-weight: 800; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
+.svc-body { font-size: 0.85rem; color: #4a5568; line-height: 1.7; flex: 1; }
+.svc-link { margin-top: 16px; font-size: 0.82rem; font-weight: 700; color: #C9A84C; letter-spacing: 0.03em; }
+
+/* ── Three-col reference section ── */
+.three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.ref-col { display: flex; flex-direction: column; gap: 4px; }
+.ref-col-header {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #7a5900; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid #e8ecf2;
+}
+.ref-link {
+  display: flex; align-items: center; gap: 7px;
+  padding: 8px 0;
+  font-size: 0.9rem; color: #2d3748; text-decoration: none;
+  border-bottom: 1px solid #e8ecf2;
+  transition: color 0.15s, gap 0.15s;
+}
+.ref-link:hover { color: #C9A84C; gap: 12px; }
+.ref-dot { color: #C9A84C; font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
+
+/* ── Why Choose Us ── */
+.asym-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; }
 .asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
+.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 460px; }
 .img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
 .stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
+.why-list { display: flex; flex-direction: column; gap: 24px; margin-top: 28px; }
+.why-item { display: flex; gap: 18px; align-items: flex-start; }
+.why-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.why-title { display: block; font-size: 0.97rem; font-weight: 800; color: #1a1a2e; margin-bottom: 5px; }
+.why-body { font-size: 0.88rem; color: #4a5568; line-height: 1.7; margin: 0; }
+
+/* ── Process ── */
+.process-track { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
+.process-node { position: relative; padding: 0 12px; text-align: center; }
 .process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
 .process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
+.process-title { font-size: 0.82rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
+.process-body { font-size: 0.8rem; color: #4a5568; line-height: 1.65; }
 .guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
 .guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
 .guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
 .guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
+
+/* ── Banner ── */
 .fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
 .banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
 .banner-inner { position: relative; text-align: center; }
@@ -425,14 +528,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
 .bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
 .bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
+
+/* ── Mid-page form ── */
 .mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
 .mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
 .mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
@@ -458,6 +555,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
 .df-check { color: #C9A84C; font-weight: 700; }
 .df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+/* ── FAQ ── */
+.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; max-width: 820px; margin-left: auto; margin-right: auto; }
+.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
+.faq-row.active { border-color: #C9A84C; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
+.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
+
+/* ── Video ── */
 .page-video-section { background: #2a2d38; padding: 70px 0; }
 .page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .page-video-copy { display: flex; flex-direction: column; gap: 20px; }
@@ -465,6 +572,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
 .page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
 .page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+
+/* ── Contact Band ── */
 .s-contact-band { background: #fff; padding: 64px 0; }
 .contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
 .contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
@@ -475,39 +584,30 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .contact-outro { font-size: 0.9rem; color: #4a5568; }
 .btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
-.review-card { background: #fff; border: 1.5px solid #e8ecf2; border-radius: 14px; padding: 32px 28px; display: flex; flex-direction: column; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-.review-quote { font-size: 3.5rem; color: #C9A84C; line-height: 0.8; margin-bottom: 14px; font-family: Georgia, serif; }
-.review-body { font-size: 0.9rem; color: #4a5568; line-height: 1.75; flex: 1; font-style: italic; margin-bottom: 20px; }
-.review-footer { border-top: 1px solid #f0f2f7; padding-top: 16px; display: flex; align-items: center; justify-content: space-between; }
-.review-stars { color: #C9A84C; font-size: 0.95rem; letter-spacing: 2px; }
-.review-meta { text-align: right; }
-.review-name { display: block; font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
-.review-loc { display: block; font-size: 0.78rem; color: #718096; margin-top: 2px; }
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .process-track { grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .process-connector { display: none; }
   .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
+  .asym-layout { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .three-col { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
+  .asym-layout, .mid-form-inner { grid-template-columns: 1fr; gap: 36px; }
   .page-video-inner { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
   .bstat-div { display: none; }
   .img-stat-badge { bottom: 12px; }
   .mf-row { grid-template-columns: 1fr; }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
   .process-track { grid-template-columns: 1fr; }
 }
 </style>

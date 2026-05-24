@@ -97,12 +97,12 @@ watch(() => route.path, closeAll)
             @mouseenter="openDropdown"
             @mouseleave="scheduleClose"
           >
-            <span class="dropdown-trigger" :class="{ active: servicesOpen }">
-              Services
+            <NuxtLink to="/data-recovery" class="dropdown-trigger" :class="{ active: servicesOpen || $route.path.startsWith('/data-recovery') }" @click="closeAll">
+              Data Recovery
               <svg class="chevron" :class="{ rotated: servicesOpen }" width="11" height="7" viewBox="0 0 11 7" fill="none">
                 <path d="M1 1l4.5 4.5L10 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-            </span>
+            </NuxtLink>
 
             <!-- Mega dropdown -->
             <Transition name="dropdown">
@@ -136,7 +136,10 @@ watch(() => route.path, closeAll)
                     </NuxtLink>
                   </div>
                 </div>
-                
+                <div class="mega-footer">
+                  <NuxtLink to="/data-recovery" class="mega-footer-link" @click="closeAll">→ View All Data Recovery Services</NuxtLink>
+                  <a href="tel:8182728866" class="mega-footer-phone">📞 818-272-8866</a>
+                </div>
               </div>
             </Transition>
           </li>
@@ -161,7 +164,7 @@ watch(() => route.path, closeAll)
       <div v-if="menuOpen" class="mobile-menu">
         <NuxtLink to="/" @click="closeAll">Home</NuxtLink>
         <button class="mobile-section-toggle" @click="mobileServicesOpen = !mobileServicesOpen">
-          Services <span class="toggle-icon">{{ mobileServicesOpen ? '▲' : '▼' }}</span>
+          Data Recovery <span class="toggle-icon">{{ mobileServicesOpen ? '▲' : '▼' }}</span>
         </button>
         <div v-if="mobileServicesOpen" class="mobile-services">
           <div class="mobile-section-label">By Device</div>
