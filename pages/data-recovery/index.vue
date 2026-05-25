@@ -153,7 +153,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Professional Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
       description="Losing access to your photos, videos, or work files can feel overwhelming. Whether it's a failed hard drive, damaged phone, or broken USB stick, Five Star Data Recovery is here to help. Our lab handles everything from corrupted files to failed external hard drives. We offer expert, in-house data recovery services to restore your most important data—quickly, safely, and affordably."
-      bgImage="/hard-drive-recovery-service-los-angeles.webp"
+      bgImage="/data-recovery-hero.jpg"
     >
       <template #trustBadges>
         <div class="trust-item">
