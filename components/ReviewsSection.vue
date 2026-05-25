@@ -12,7 +12,8 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  bgClass: 'section-bg-2'
+  bgClass: 'section-bg-2',
+  reviews: () => []
 })
 
 const index = ref(0)

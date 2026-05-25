@@ -141,6 +141,39 @@ const faqs = [
   },
 ]
 
+const reviews = [
+  {
+    text: 'Five Star Data Recovery saved my business. My external hard drive crashed right before a major deadline and I thought everything was lost. They recovered <strong>100% of my files</strong> within two days. The pricing was completely transparent — no surprises. I can\'t recommend them enough.',
+    name: 'Michael T.',
+    location: 'Glendale, CA'
+  },
+  {
+    text: 'I dropped my MacBook and the hard drive stopped working entirely. I was devastated — five years of photos and work gone. Five Star recovered everything. The technicians were incredibly professional and kept me updated throughout the process. Worth every penny.',
+    name: 'Sarah L.',
+    location: 'Los Angeles, CA'
+  },
+  {
+    text: 'After my NAS array failed, I thought our company data was gone for good. Five Star\'s engineers rebuilt the RAID and recovered <strong>all critical files</strong>. Their flat-rate pricing meant no surprises on the bill. Hands down the best data recovery lab in the area.',
+    name: 'David R.',
+    location: 'Burbank, CA'
+  },
+  {
+    text: 'My clicking hard drive had years of irreplaceable family photos. Five Star diagnosed it for free, gave me an honest quote, and delivered all my photos back within 3 days. The clean room process they use is state-of-the-art. Truly five-star service.',
+    name: 'Jennifer K.',
+    location: 'Pasadena, CA'
+  },
+  {
+    text: 'I tried two other places before Five Star — both said recovery was impossible. Five Star got <strong>everything back</strong>. The team is incredibly skilled and honest. If you have data that needs recovering, stop looking and call them first.',
+    name: 'Carlos M.',
+    location: 'Hollywood, CA'
+  },
+  {
+    text: 'Water damaged my external drive and I panicked. Five Star recovered all my files within 48 hours. The no-data no-charge policy gave me peace of mind from the start. Exceptional service and extremely knowledgeable staff.',
+    name: 'Amanda S.',
+    location: 'Beverly Hills, CA'
+  },
+]
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -403,7 +436,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <ReviewsSection />
+    <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band">
