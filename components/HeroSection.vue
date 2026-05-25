@@ -1,4 +1,8 @@
 <script setup lang="ts">
+interface TrustBadge {
+  icon: 'clock' | 'shield' | 'check' | 'star'
+  text: string
+}
 interface Props {
   title: string
   subtitle?: string
@@ -9,6 +13,7 @@ interface Props {
   bgImage?: string
   bgSize?: string
   overlayOpacity?: number
+  trustBadges?: TrustBadge[]
 }
 const props = withDefaults(defineProps<Props>(), {
   showTrustBadges: true,
@@ -16,7 +21,13 @@ const props = withDefaults(defineProps<Props>(), {
   showButtons: true,
   bgSize: 'cover',
   overlayOpacity: 0.95,
-  bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg'
+  bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg',
+  trustBadges: () => [
+    { icon: 'clock', text: 'Available 24/7/365' },
+    { icon: 'shield', text: 'Clean Room On-Site' },
+    { icon: 'check', text: 'Flat Rate Pricing' },
+    { icon: 'star', text: 'Free Nationwide Shipping' },
+  ]
 })
 
 const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false
@@ -63,24 +74,13 @@ function handleSubmit() {
         </div>
 
         <div v-if="showTrustBadges" class="trust-box">
-          <slot name="trustBadges">
-            <div class="trust-item">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-              <span>Available 24/7/365</span>
-            </div>
-            <div class="trust-item">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Clean Room On-Site</span>
-            </div>
-            <div class="trust-item">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Flat Rate Pricing</span>
-            </div>
-            <div class="trust-item">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              <span>Free Nationwide Shipping</span>
-            </div>
-          </slot>
+          <div v-for="badge in trustBadges" :key="badge.text" class="trust-item">
+            <svg v-if="badge.icon === 'clock'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <svg v-else-if="badge.icon === 'shield'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg v-else-if="badge.icon === 'check'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            <svg v-else width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F5C842" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>{{ badge.text }}</span>
+          </div>
         </div>
 
         <slot />
