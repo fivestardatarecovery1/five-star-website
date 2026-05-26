@@ -290,9 +290,9 @@ useSeoMeta({
 .inline-link { color: #C9A84C; font-weight: 600; text-decoration: underline; }
 
 /* Content list */
-.content-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
-.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; display: flex; align-items: flex-start; gap: 10px; }
-.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; flex-shrink: 0; margin-top: 2px; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
 
 /* Do/Don't grid */
 .dos-donts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 8px; }
