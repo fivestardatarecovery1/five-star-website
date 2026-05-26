@@ -116,28 +116,84 @@ const steps = [
 
 const faqs = [
   {
-    q: 'How long does data recovery take?',
-    a: 'Our standard turnaround is 3–5 business days. Expedited and same-day options are available for urgent cases. Complex RAID or multi-drive recoveries may take longer depending on the failure type.'
+    q: '1. How much does Data Recovery Cost?',
+    a: `The cost of data recovery depends on several factors, including the type of device, the nature of the failure, and the complexity of the recovery process. For example, recovering data from a hard drive with logical issues is generally less expensive than performing a chip-off recovery on a physically damaged SD card or USB drive.<br><br>At Five Star Data Recovery, our pricing is flat-rate and transparent, with no hidden fees. We also offer a free evaluation in most cases, so you’ll know exactly what to expect before moving forward. For certain recovery types—like deleted file recovery or expedited services—there may be an upfront labor fee, which will be explained before any work begins.<br><br>To see a full breakdown of our rates by device type and service level, please visit our <a href="/pricing" class="faq-link">Data Recovery Pricing Page</a>.<br><br>
+<table class="faq-table">
+<thead><tr><th>Device / Service</th><th>Flat Rate Price</th></tr></thead>
+<tbody>
+<tr><td>Hard Drive Data Recovery (SATA)</td><td>$300.00 – $800.00</td></tr>
+<tr><td>External USB 3.0/USB C Hard Drives (WD, SanDisk, G-Drive)</td><td>$600.00</td></tr>
+<tr><td>SD Card Data Recovery (Logical)</td><td>$300.00</td></tr>
+<tr><td>SD Card Chip-Off / Monolith Recovery</td><td>$950.00</td></tr>
+<tr><td>USB Flash Drive Recovery</td><td>$300.00 – $950.00</td></tr>
+<tr><td>iPhone Data Recovery (Component Level)</td><td>$950.00</td></tr>
+<tr><td>RAID Data Recovery</td><td>Starting at $300/drive</td></tr>
+<tr><td>Deleted File Recovery (Add-On)</td><td>$500.00 ($200 upfront)</td></tr>
+<tr><td>Expedited Service (Business Hours)</td><td>+$200.00</td></tr>
+<tr><td>Expedited Plus (Nights/Weekends)</td><td>+$500.00</td></tr>
+</tbody>
+</table>
+<em class="faq-note">Note: All prices are flat rate. No data = no charge (unless noted).</em>`
   },
   {
-    q: 'How much does data recovery cost?',
-    a: 'Our pricing is flat-rate and transparent. Hard drive recovery typically ranges from $300–$800. SSD, RAID, and chip-off recoveries vary by complexity. We provide a free evaluation with an exact quote before any work begins — no surprises.'
+    q: '2. What does a data recovery lab do?',
+    a: 'A data recovery lab specializes in retrieving lost files from storage devices that have failed, become unreadable, or suffered corruption. Using advanced hardware and custom software tools, engineers work on drives that can’t be accessed through normal computer methods.'
   },
   {
-    q: 'What is the "No Data, No Charge" guarantee?',
-    a: 'If we are unable to recover your data, you owe nothing in most cases. We believe you should only pay for results. A detailed file list is provided for your approval before final payment.'
+    q: '3. I’m not near your location. Can I still use your services?',
+    a: 'Absolutely. We offer a mail-in recovery option with free round-trip shipping anywhere in the United States. Just fill out our form and we’ll send you a prepaid label to ship your device to us securely.'
   },
   {
-    q: 'Can you recover data from a physically damaged drive?',
-    a: 'Yes. Our ISO-certified clean room allows us to safely open drives and perform head swaps, platter transfers, and other physical repairs needed before logical recovery can begin.'
+    q: '4. How does your fastest recovery option work for emergencies?',
+    a: 'Our Expedited Plus Service puts your recovery at the top of our priority list with non-stop engineer focus, day and night, until the process is complete. This is ideal for businesses or individuals with time-sensitive data loss.'
   },
   {
-    q: 'Is my data kept confidential?',
-    a: 'Absolutely. All recoveries are handled with strict confidentiality. We never access your files beyond what is necessary for the recovery process, and we do not retain copies of your data.'
+    q: '5. Are there any hidden costs during the recovery process?',
+    a: 'No. After diagnosing your case, we’ll provide a clear, flat-rate quote upfront. The only additional fee would be if you select an expedited service like Expedited Plus.'
   },
   {
-    q: 'Do you offer mail-in service?',
-    a: 'Yes — we serve clients nationwide with our secure mail-in program. We provide prepaid shipping labels so you can send your device from anywhere in the U.S. safely and at no cost to you.'
+    q: '6. Is there a way to check if my data is still recoverable before starting?',
+    a: 'Yes. Before we begin any data recovery work, we always provide an initial quote after a free phone or email consultation. During this consultation, we’ll ask detailed questions about your device, its failure symptoms, and any previous recovery attempts. Once you approve the quoted price range, we’ll proceed with the diagnostic and recovery process. If we’re able to successfully recover your data within the pricing we originally quoted, we’ll automatically move forward with the recovery without requiring further approval—this helps avoid unnecessary delays. If, during the process, we discover that the issue is different and falls into a higher recovery category, we’ll contact you first with an updated quote before doing anything further. This approach ensures pricing transparency and keeps you fully informed throughout the entire process.'
+  },
+  {
+    q: '7. Is there a risk of further damage to my device during the recovery process?',
+    a: 'No. At Five Star Data Recovery, we never work directly on your original storage device when performing recovery. We first create a sector-by-sector clone of your drive and conduct all recovery work on the clone to ensure the integrity of your original media.'
+  },
+  {
+    q: '8. Can I provide my own transfer drive for the recovered data?',
+    a: 'Absolutely. Once your recovery is complete, you’re welcome to provide your own external hard drive, SSD, or USB drive for us to transfer the recovered files. If you don’t have one, we also offer new transfer drives for purchase.'
+  },
+  {
+    q: '9. How do I know if my data is actually recoverable?',
+    a: 'Every case starts with a free consultation and diagnostic evaluation. Based on the symptoms and test results, we’ll give you an honest assessment of the likelihood of recovery before you commit to the process.'
+  },
+  {
+    q: '10. Do you recover data from devices that have suffered water or fire damage?',
+    a: 'Yes, we specialize in physically damaged storage devices, including those affected by water exposure, flooding, or even fire. These cases often require clean room service and component-level repairs.'
+  },
+  {
+    q: '11. What happens if my recovery case is extremely urgent?',
+    a: 'For time-sensitive cases, we offer Expedited and Expedited Plus services. These options prioritize your case ahead of others and can dramatically reduce turnaround time—even providing 24/7 service if needed.'
+  },
+  {
+    q: '12. Is there a size limit on the drives you work with?',
+    a: 'No. We can recover data from drives as small as a USB flash drive to multi-terabyte enterprise RAID systems. Whether your storage device is 2GB or 20TB, we have the tools to handle it.'
+  },
+  {
+    q: '13. What payment methods do you accept?',
+    a: 'We accept all major credit cards, debit cards, and cash payments. For larger recovery projects, we also offer in-house payment plans with no credit check. Please contact us for details.'
+  },
+  {
+    q: '14. Can you recover data from older hard drives and legacy storage formats?',
+    a: 'Yes! We regularly perform data recovery on older hard drive models, including IDE hard drives, early-generation SATA drives, and legacy internal laptop or desktop drives. If you have an older storage device and aren’t sure if it’s recoverable, contact us for a free consultation.'
+  },
+  {
+    q: '15. How should I package my device if I’m shipping it to you?',
+    a: 'We recommend using anti-static materials and plenty of cushioning to prevent additional damage during transit. Once you fill out our Mail-In Recovery Form, we’ll provide a prepaid shipping label along with detailed packaging instructions.'
+  },
+  {
+    q: '16. What if my drive was opened by another company before bringing it to you?',
+    a: 'If the drive’s cover (where the platters are located) was opened by another lab or repair shop before arriving here, a non-refundable evaluation fee will apply due to the added complexity and risk involved in such cases.'
   },
 ]
 
@@ -441,7 +497,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
             </button>
-            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
       </div>
@@ -692,6 +748,44 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   border-radius: 16px;
   display: block;
   object-fit: cover;
+}
+
+/* ── FAQ Table ── */
+.faq-answer :deep(.faq-table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 12px;
+  font-size: 0.88rem;
+}
+.faq-answer :deep(.faq-table th) {
+  background: #1a1a2e;
+  color: #C9A84C;
+  text-align: left;
+  padding: 10px 14px;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.faq-answer :deep(.faq-table td) {
+  padding: 9px 14px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+.faq-answer :deep(.faq-table tr:nth-child(even) td) {
+  background: #f8f9fb;
+}
+.faq-answer :deep(.faq-note) {
+  display: block;
+  font-size: 0.82rem;
+  color: #777;
+  font-style: italic;
+  margin-top: 8px;
+}
+.faq-answer :deep(.faq-link) {
+  color: #C9A84C;
+  font-weight: 600;
+  text-decoration: underline;
 }
 
 /* ── Responsive ── */
