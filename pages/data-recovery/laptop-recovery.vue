@@ -227,6 +227,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="s-heading">We Recover All File Types and Scenarios</h2>
           <p class="s-body">Our team can recover lost files in almost any situation. This includes retrieving a deleted file from the recycle bin, restoring formatted partitions, and resolving file system corruption. We work with hundreds of file types—from documents and spreadsheets to photos, videos, and business data.</p>
           <p class="s-body">Whether you lost personal data from a failed backup or deleted work files by mistake, we can help. We also recover data from systems affected by failed software updates, virus damage, or even factory resets. Whether you need a single presentation back or your entire photo library, we're ready to help.</p>
+          <img src="/laptop-file-types.webp" alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img" />
         </div>
       </div>
     </section>
@@ -314,6 +315,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 /* Two-col */
 .two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.file-types-img { width: 100%; max-width: 420px; height: auto; display: block; border-radius: 12px; margin-top: 20px; }
 
 /* Content list */
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
