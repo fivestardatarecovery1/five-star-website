@@ -175,8 +175,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 3 — s-white: Physical Damage + 3-Step Process -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Physical Damage? We Can Help.</h2>
-        <p class="s-body">Devices with physical damage often require cleanroom recovery. This applies to drives that someone has dropped, bumped, or exposed to liquid. We’re one of the few data recovery labs near Burbank equipped with a certified cleanroom. Our engineers can carefully take apart your drive. They can fix or replace parts and recover your data. This is done without causing more damage. If you’re unsure whether your device can be saved, don’t throw it away. We may be able to recover more than you think.</p>
+        <div class="two-col-img-layout">
+          <div>
+            <h2 class="s-heading">Physical Damage? We Can Help.</h2>
+            <p class="s-body">Devices with physical damage often require cleanroom recovery. This applies to drives that someone has dropped, bumped, or exposed to liquid. We’re one of the few data recovery labs near Burbank equipped with a certified cleanroom. Our engineers can carefully take apart your drive. They can fix or replace parts and recover your data. This is done without causing more damage. If you’re unsure whether your device can be saved, don’t throw it away. We may be able to recover more than you think.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/burbank-hdd-components.jpg" alt="Hard drive components disassembled" class="section-img" />
+          </div>
+        </div>
+        </div>
         <h2 class="s-heading" style="margin-top:48px;">Our 3‑Step Recovery Process</h2>
         <p class="s-body">We’ve designed our process to be simple, transparent, and stress-free:</p>
         <div class="process-steps">
@@ -325,5 +333,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; gap: 36px; } }
+.two-col-img-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; gap: 36px; } .two-col-img-layout { grid-template-columns: 1fr; } }
 </style>
