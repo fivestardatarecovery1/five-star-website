@@ -184,7 +184,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <img src="/burbank-hdd-components.jpg" alt="Hard drive components disassembled" class="section-img" />
           </div>
         </div>
-        </div>
         <h2 class="s-heading" style="margin-top:48px;">Our 3‑Step Recovery Process</h2>
         <p class="s-body">We’ve designed our process to be simple, transparent, and stress-free:</p>
         <div class="process-steps">
