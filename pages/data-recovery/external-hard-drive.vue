@@ -93,6 +93,24 @@ Visit our full <a href="/pricing" class="faq-link">Data Recovery Pricing</a> pag
   },
 ]
 
+const reviews = [
+  {
+    text: '“I thought all my family vacation photos were gone forever after my external hard drive stopped showing up on my computer. I called the team, and within a few days, they had recovered everything for me! The process was stress-free, and they kept me updated the whole time. Highly recommend if you’re facing a similar situation.”',
+    name: 'Sarah T.',
+    location: 'Miami, FL'
+  },
+  {
+    text: '“My 2TB Seagate external drive suddenly started making clicking noises and became completely unreadable. I dropped it off for recovery, and they explained everything clearly from the start. In less than a week, I had all my business files back. The flat-rate pricing gave me peace of mind—no hidden fees or surprises.”',
+    name: 'Jason M.',
+    location: 'Los Angeles, CA'
+  },
+  {
+    text: '“I accidentally dropped my Western Digital external hard drive off my desk, and it wouldn’t power on anymore. I was really worried about losing years of photos and documents. Luckily, the engineers here worked their magic. They recovered almost every single file. I’m beyond grateful!”',
+    name: 'Sean T.',
+    location: 'Westwood, CA'
+  },
+]
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 
@@ -356,6 +374,8 @@ useSeoMeta({
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
+
+    <ReviewsSection :reviews="reviews" />
 
     <FooterBar />
   </div>
