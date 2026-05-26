@@ -250,7 +250,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
 .step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
 .s-contact-band { background: #0f1623; padding: 72px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
-.contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
 .contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
 .contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
 .contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
