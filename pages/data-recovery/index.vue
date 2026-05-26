@@ -76,8 +76,11 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Data Recovery Services — Five Star Data Recovery | Glendale, CA',
-  description: 'Expert data recovery services for hard drives, SSDs, RAID arrays, iPhones, USB drives, and more. Free evaluation, flat-rate pricing, no data no charge. Glendale, CA.'
+  title: 'Data Recovery Services - Five Star Data Recovery',
+  ogTitle: 'Data Recovery',
+  description: 'Need help recovering data from a hard drive not being recognized? Our team offers expert Data Recovery Services with fast turnaround times.',
+  ogDescription: 'Need help recovering data from a hard drive not being recognized? Our team offers expert Data Recovery Services with fast turnaround times.',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png',
 })
 
 const services = [
