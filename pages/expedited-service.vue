@@ -15,46 +15,46 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: "I had an urgent deadline and needed my data recovered fast. Five Star's expedited service was exactly what I needed — they started working on my drive within the hour and had a diagnosis ready in under 3 hours. I got all my files back in two days. Worth every penny.",
-    name: 'Marcus T.',
+    text: "I had a project deadline and my external hard drive failed the night before. I called and opted for their expedited service. The team started the recovery immediately and had my files back within 24 hours. I honestly didn't expect it to be that fast!",
+    name: 'Jason M.',
+    location: 'Pasadena, CA',
+  },
+  {
+    text: "I was impressed with how quickly the engineers prioritized my case. I dropped off my drive in the morning, and by the afternoon I had a full update on the recovery status. They really deliver on their promise of fast service.",
+    name: 'Michael L.',
     location: 'Los Angeles, CA',
   },
   {
-    text: "After my laptop hard drive failed the night before an important presentation, I called Five Star and they put me on their expedited queue immediately. The team was professional, communicative, and recovered everything. I honestly can't thank them enough.",
-    name: 'Rebecca H.',
-    location: 'Santa Monica, CA',
-  },
-  {
-    text: 'Used the expedited service for a business emergency — critical project files on a clicking drive. Five Star had it diagnosed within 3 hours and fully recovered in 3 days. They were transparent about pricing upfront and delivered exactly what they promised.',
-    name: 'James C.',
-    location: 'Burbank, CA',
+    text: 'I needed data from a failing SSD for a legal case and time was tight. Their expedited service was worth every penny. The communication was great and I had my recovered data the next day. Highly recommend for any urgent situation!',
+    name: 'Sophia K.',
+    location: 'Glendale, CA',
   },
 ]
 
 const faqs = [
   {
-    q: 'What is the Expedited Data Recovery Service?',
-    a: 'Our Expedited Data Recovery Service puts your case at the top of the queue. As soon as your device arrives at our lab, our engineers begin working on it immediately — without waiting in the standard recovery line. You are guaranteed a diagnosis within 3 hours of drop-off, and your case will be worked on non-stop during normal business hours.',
+    q: 'What is your expedited data recovery service?',
+    a: 'Our expedited service is a rush option available during normal business hours. Your case is moved to the front of the queue, and our engineers start working on your device immediately.',
   },
   {
-    q: 'How much does Expedited Service cost?',
-    a: 'Expedited Service includes a flat $200 upfront fee in addition to the standard flat-rate data recovery cost. This fee is paid at the time of drop-off and ensures your case is prioritized immediately. All pricing is transparent — no surprises.',
+    q: 'How fast is the turnaround time for expedited service?',
+    a: 'Most expedited cases are completed within 1 to 3 business days, depending on the complexity of the recovery. Some simpler cases may even be finished the same day.',
   },
   {
-    q: 'How quickly will I get my data back with Expedited Service?',
-    a: 'Turnaround depends on the type of issue. Logical failures (bad sectors, firmware issues, corrupted file systems) with less than 2TB of data are typically resolved in 2–3 business days. Mechanical failures (clicking, beeping, stuck motor) with less than 2TB typically take 3–5 days due to sourcing donor parts.',
+    q: 'Does expedited service include nights or weekends?',
+    a: 'No. This service only applies to standard business hours, Monday through Friday. If you need after-hours or weekend service, we offer a separate <a href="/expedited-service-plus" class="faq-link">Expedited Plus Service</a> for that level of urgency.',
   },
   {
-    q: 'Does Expedited Service run 24/7?',
-    a: 'Expedited Service runs non-stop during normal business hours. If you need 24/7 around-the-clock recovery — including nights, weekends, and holidays — please ask about our <a href="/expedited-service-plus" class="faq-link">Expedited Service Plus</a> option.',
+    q: 'How much does expedited data recovery cost?',
+    a: 'Our expedited service is an additional $200.00 per drive on top of the standard flat-rate data recovery fee. This fee is paid upfront and is non-refundable, regardless of the recovery outcome. It covers the cost of prioritizing your case and dedicating immediate engineering time during business hours.',
   },
   {
-    q: 'Do I still qualify for No Data, No Charge with Expedited Service?',
-    a: 'The $200 expedited fee is paid upfront and is non-refundable, as it covers the priority scheduling and engineering time. However, if we are unable to recover your data, you will not be charged the standard flat-rate recovery fee — our No Data, No Charge (most cases) guarantee still applies to the recovery portion.',
+    q: 'Will my recovery results be different with expedited service?',
+    a: 'Not at all. The expedited service speeds up the start time and prioritizes your case, but the quality of work and recovery process remains the same as our standard service.',
   },
   {
-    q: 'Can I ship my drive in for Expedited Service?',
-    a: 'Yes — we accept mail-in devices for expedited cases nationwide. We offer free prepaid shipping labels so you can send your drive securely. Please call us ahead of time so we can prepare your expedited slot before your device arrives.',
+    q: 'How do I request expedited service?',
+    a: 'Simply let us know when dropping off or shipping your device that you want expedited service. Our team will confirm the fee and prioritize your recovery right away.',
   },
 ]
 
@@ -86,7 +86,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 2 — s-grey -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading">What's the average turnaround time for Expedited Data Recovery Cases?</h2>
+        <h2 class="s-heading">Whats the average turnaround time for Expedited Data Recovery Cases?</h2>
+        <p class="s-body">This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it's impossible to give an exact turnaround time.</p>
         <p class="s-body"><strong>IF</strong> the issue with your drive is logical (bad sectors, firmware corruption, damaged file system, etc), and you have less than 2TB of data, we should be able to get the data back to you within 2-3 days.</p>
         <p class="s-body"><strong>IF</strong> the issue with your drive is mechanical (clicking, beeping, stuck motor, etc), and you have less than 2TB of data, we should be able to get your data back to you within 3-5 days (the delay is for the time needed to source the donor parts).</p>
         <p class="s-body"><strong>IF</strong> you have a lot of data on your drive, we can work with you to get you back the most important files needed first, then continue working on the rest of the recovery.</p>
@@ -97,6 +98,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Data Recovery Process</h2>
+        <p class="s-body">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
@@ -140,11 +142,25 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />
 
+    <!-- YOUR DATA STAYS SECURE -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Your Data Stays Secure</h2>
+        <p class="s-body">We understand your files are private. Whether you're recovering sensitive business files or personal memories, we keep your data protected from start to finish.</p>
+        <ul class="content-list">
+          <li>In-house recovery only — no third-party labs</li>
+          <li>All data is securely stored and permanently deleted after final delivery</li>
+          <li>NDA available for sensitive projects</li>
+          <li>Our lab uses access control and 24/7 surveillance</li>
+        </ul>
+      </div>
+    </section>
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Start Your Expedited Recovery Today</h2>
+          <h2 class="contact-banner-heading">Get a Free Quote within Minutes!</h2>
         </div>
         <ul class="contact-bullets">
           <li>Priority queue — work starts within 1 hour of drop-off</li>
