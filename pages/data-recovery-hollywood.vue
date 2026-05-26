@@ -33,8 +33,8 @@ const reviews = [
 
 const faqs = [
   {
-    q: 'Do you offer same-day pickup in Hollywood?',
-    a: "Yes! We provide free same-day pickup in Hollywood for customers who can't visit our Glendale lab. Just give us a call and we'll schedule a pickup right away."
+    q: 'Do you offer same-day pickup near Hollywood?',
+    a: "Yes! We provide free same-day pickup near Hollywood for customers who can't visit our Glendale lab. Just give us a call and we'll schedule a pickup right away."
   },
   {
     q: 'What types of storage devices can you recover data from?',
@@ -65,7 +65,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Hollywood, CA"
       subtitle="Get Your Data Back In No Time."
-      description="If you've lost data from a hard drive, flash drive, memory card, or RAID system—Five Star Data Recovery is here to help. We provide expert-level service to clients in Hollywood, CA with fast turnaround and fair pricing. Although our lab is based in Glendale, CA, we offer free same-day pickup for customers in Hollywood."
+      description="If you've lost data from a hard drive, flash drive, memory card, or RAID system—Five Star Data Recovery is here to help. We provide expert-level service to clients near Hollywood, CA with fast turnaround and fair pricing. Although our lab is based in Glendale, CA, we offer free same-day pickup for customers near Hollywood."
       bgImage="/data-recovery-los-angeles-ca.webp"
       :trustBadges="trustBadges"
     />
@@ -75,7 +75,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 1 — s-white -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Trusted Data Recovery Services in Hollywood</h2>
+        <h2 class="s-heading">Trusted Data Recovery Services near Hollywood</h2>
         <p class="s-body">We’ve helped thousands of customers recover lost data from:</p>
         <ul class="content-list">
           <li><strong>Mac Data Recovery</strong> – Specializing in component-level recovery for no-power MacBooks, including M1 and M2 models.</li>
@@ -91,7 +91,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 2 — s-grey -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading">Why Choose Us for Data Recovery in Hollywood?</h2>
+        <h2 class="s-heading">Why Choose Us for Data Recovery near Hollywood?</h2>
         <div class="reason-cards">
           <div class="reason-card">
             <h3 class="reason-title">Over a Decade of Experience</h3>
@@ -106,7 +106,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">You only pay if we recover your data; we offer free diagnostics and transparent, flat-rate pricing.</p>
           </div>
           <div class="reason-card">
-            <h3 class="reason-title">Same-Day Pickup in Hollywood</h3>
+            <h3 class="reason-title">Same-Day Pickup near Hollywood</h3>
             <p class="s-body">Located minutes from Hollywood, we offer fast, free same-day pickup to get your recovery started immediately.</p>
           </div>
           <div class="reason-card">
@@ -183,9 +183,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="contact-banner-card">
           <h2 class="contact-banner-heading">Let’s Get Your Files Back</h2>
         </div>
-        <p class="contact-body-text">If you’re in Hollywood, CA and need help fast—call Five Star Data Recovery today for same-day pickup and expert service.</p>
+        <p class="contact-body-text">If you’re near Hollywood, CA and need help fast—call Five Star Data Recovery today for same-day pickup and expert service.</p>
         <ul class="contact-bullets">
-          <li>Free same-day pickup in Hollywood</li>
+          <li>Free same-day pickup near Hollywood</li>
           <li>Free diagnostic — no obligation</li>
           <li>3–5 business day standard turnaround</li>
           <li>No Data, No Charge (most cases)</li>
