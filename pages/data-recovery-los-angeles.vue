@@ -1,4 +1,65 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#business",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/logo.png",
+            "priceRange": "$$",
+            "telephone": "(818) 272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "url": "https://www.fivestardatarecovery.com",
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery Los Angeles", "item": "https://www.fivestardatarecovery.com/data-recovery-los-angeles/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you offer professional data recovery services in Los Angeles, CA?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in professional data recovery in Los Angeles. Whether you're facing a failed hard drive, a corrupted SSD, or a non-responsive USB flash drive, our local recovery experts are here to help. We have over a decade of experience handling complex data loss scenarios, right here in the heart of Los Angeles." } },
+              { "@type": "Question", "name": "How long does a typical Los Angeles data recovery take?", "acceptedAnswer": { "@type": "Answer", "text": "Most standard recoveries take 3\u20135 business days. If your situation is urgent, we offer both Expedited and Expedited Plus services. Every recovery begins with a thorough diagnostic and we provide same-day updates for all Los Angeles-based drop-offs or pickups." } },
+              { "@type": "Question", "name": "Where is your data recovery lab located in Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Our certified recovery lab is just outside Los Angeles in Glendale, CA, and we proudly serve clients across the entire Los Angeles area. We also offer free same-day pickup for local clients and nationwide mail-in service for out-of-area recoveries." } },
+              { "@type": "Question", "name": "Is there a free diagnostic included with your Los Angeles data recovery service?", "acceptedAnswer": { "@type": "Answer", "text": "Yes\u2014your diagnostic is free as long as you're comfortable with the initial flat-rate quote we provide upfront. There are no hidden fees or surprises. If the scope of the recovery changes, you'll have the option to approve the new rate or walk away without paying anything." } },
+              { "@type": "Question", "name": "What types of devices do you recover data from in Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "We recover data from hard drives, SSDs, external drives, USB flash drives, SD cards, iPhones, MacBooks, iMacs, RAID arrays, and more. Whether you lost files due to accidental deletion, physical damage, or logical failure, our team is equipped to recover your data securely and efficiently." } },
+              { "@type": "Question", "name": "Do you offer emergency or same-day data recovery in Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer emergency data recovery services for Los Angeles clients. Our Expedited Plus Service is available 24/7 for time-sensitive situations. Your case is prioritized immediately, even outside normal business hours." } },
+              { "@type": "Question", "name": "Can you recover data from water-damaged or physically broken devices in Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We specialize in recovering data from physically damaged devices\u2014including water-damaged hard drives, phones, MacBooks and SSDs. Our Los Angeles cleanroom lab is fully equipped to handle severe cases involving hardware failure." } },
+              { "@type": "Question", "name": "Do you provide business data recovery for companies in Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer professional data recovery services for businesses throughout Los Angeles. From RAID systems and servers to encrypted drives and file systems, we handle business-critical recoveries with confidentiality and offer NDAs upon request." } },
+              { "@type": "Question", "name": "What is your success rate for data recovery in Los Angeles?", "acceptedAnswer": { "@type": "Answer", "text": "We maintain a 98% success rate across most recovery cases. Thanks to our experienced engineers and certified cleanroom lab in Los Angeles, we're able to recover data from a wide range of devices, even those considered unrecoverable by others." } },
+              { "@type": "Question", "name": "Is your Los Angeles data recovery lab certified?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our facility is ISO-certified and operates in a professional Class 100 cleanroom environment. This ensures all physically damaged drives are handled under optimal conditions for maximum recovery success." } }
+            ]
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Sarah K. (Los Angeles, CA)" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Five Star Data Recovery saved my business files after a failed hard drive. Fast, transparent, and professional from start to finish.",
+            "itemReviewed": { "@type": "LocalBusiness", "@id": "https://www.fivestardatarecovery.com/#business", "name": "Five Star Data Recovery" }
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Data Recovery in Los Angeles CA - Five Star Data Recovery',
   ogTitle: 'Data Recovery Los Angeles',
@@ -15,17 +76,17 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: "I was devastated when my hard drive failed and I thought I'd lost years of photos and work documents. Five Star Data Recovery not only recovered everything, but they offered free same-day pickup right here in Los Angeles. The process was smooth, professional, and the pricing was completely transparent.",
+    text: "After my external hard drive suddenly stopped showing up, I reached out to Five Star Data Recovery. They explained the process clearly and gave me a flat-rate price with no hidden fees. Within a few days, I had all my files back—including hundreds of family photos I thought were gone forever. Highly recommended!",
     name: 'Melissa C.',
     location: 'Los Angeles, CA',
   },
   {
-    text: "My external SSD stopped working out of nowhere and I had no backup. Five Star's team in Glendale diagnosed it the same day and recovered 100% of my data within 3 business days. The free pickup from my LA office made it incredibly easy. I can't recommend them highly enough.",
+    text: 'The team at Five Star was incredible! My RAID system failed, and I was on the verge of losing years of business data. They walked me through the recovery process, kept me updated daily, and delivered a full recovery within the estimated timeframe. Their professionalism and expertise gave me real peace of mind.',
     name: 'David R.',
     location: 'Los Angeles, CA',
   },
   {
-    text: "After a water spill destroyed my laptop, I was sure everything was gone. Five Star assessed the drive in their cleanroom and managed to recover all of my client files and personal photos. The flat-rate pricing meant no surprises, and their No Data, No Charge policy gave me total peace of mind.",
+    text: "I had a clicking hard drive that I thought was beyond saving. Five Star Data Recovery handled everything quickly and professionally. The fact that they don't charge unless they recover your data made the decision stress-free. Thankfully, they were able to recover everything I needed.",
     name: 'Jennifer M.',
     location: 'Los Angeles, CA',
   },
@@ -33,31 +94,46 @@ const reviews = [
 
 const faqs = [
   {
-    q: 'Do you offer data recovery services in Los Angeles?',
-    a: "Yes — Five Star Data Recovery serves all of Los Angeles and surrounding areas. Our lab is based in Glendale, CA and we offer free same-day pickup Monday through Friday throughout Los Angeles. Simply call us or submit an online request to get started.",
+    q: 'Do you offer professional data recovery services in Los Angeles, CA?',
+    a: "Yes, we specialize in professional data recovery in Los Angeles. Whether you're facing a failed hard drive, a corrupted SSD, or a non-responsive USB flash drive, our local recovery experts are here to help. We have over a decade of experience handling complex data loss scenarios, right here in the heart of Los Angeles.",
   },
   {
-    q: 'How does your free same-day pickup work?',
-    a: "Give us a call or fill out a request online. We'll schedule a pickup from your Los Angeles home or office at no charge, typically the same day. Your device will be transported securely to our Glendale lab and evaluated immediately upon arrival.",
+    q: 'How long does a typical Los Angeles data recovery take?',
+    a: 'Most standard recoveries take 3–5 business days. If your situation is urgent, we offer both Expedited and Expedited Plus services. Every recovery begins with a thorough diagnostic and we provide same-day updates for all Los Angeles-based drop-offs or pickups.',
   },
   {
-    q: 'What types of devices can you recover data from in Los Angeles?',
-    a: 'We recover data from hard drives, SSDs, external drives, RAID arrays, NAS devices, USB flash drives, SD cards, iPhones, and more. Whether it\'s a personal device or a business server, we handle all storage media types.',
+    q: 'Where is your data recovery lab located in Los Angeles?',
+    a: 'Our certified recovery lab is just outside Los Angeles in Glendale, CA, and we proudly serve clients across the entire Los Angeles area. We also offer free same-day pickup for local clients and nationwide mail-in service for out-of-area recoveries.',
   },
   {
-    q: 'How long does data recovery take?',
-    a: 'Standard cases for Los Angeles clients are typically completed within 3–5 business days. We also offer <a href="/expedited-service" class="faq-link">Expedited Service</a> for priority business-hour recovery and <a href="/expedited-service-plus" class="faq-link">Expedited Service Plus</a> for 24/7 around-the-clock recovery.',
+    q: 'Is there a free diagnostic included with your Los Angeles data recovery service?',
+    a: "Yes—your diagnostic is free as long as you're comfortable with the initial flat-rate quote we provide upfront. There are no hidden fees or surprises. If the scope of the recovery changes, you'll have the option to approve the new rate or walk away without paying anything.",
   },
   {
-    q: 'What does No Data, No Charge mean?',
-    a: 'Our No Data, No Charge (most cases) policy means that if we cannot recover your data, you will not be charged for the recovery service. The free diagnostic evaluation is always included at no cost and with no obligation to proceed.',
+    q: 'What types of devices do you recover data from in Los Angeles?',
+    a: 'We recover data from hard drives, SSDs, external drives, USB flash drives, SD cards, iPhones, MacBooks, iMacs, RAID arrays, and more. Whether you lost files due to accidental deletion, physical damage, or logical failure, our team is equipped to recover your data securely and efficiently.',
   },
   {
-    q: 'How much does data recovery cost in Los Angeles?',
-    a: 'We use flat-rate pricing with no hidden fees. Recovery costs typically range from $300 to $950 depending on the device type and severity of the failure. You\'ll receive a complete quote after the free diagnosis before any work begins.',
+    q: 'Do you offer emergency or same-day data recovery in Los Angeles?',
+    a: 'Yes, we offer emergency data recovery services for Los Angeles clients. Our Expedited Plus Service is available 24/7 for time-sensitive situations. Your case is prioritized immediately, even outside normal business hours.',
+  },
+  {
+    q: 'Can you recover data from water-damaged or physically broken devices in Los Angeles?',
+    a: 'Absolutely. We specialize in recovering data from physically damaged devices—including water-damaged hard drives, phones, MacBooks and SSDs. Our Los Angeles cleanroom lab is fully equipped to handle severe cases involving hardware failure.',
+  },
+  {
+    q: 'Do you provide business data recovery for companies in Los Angeles?',
+    a: 'Yes, we offer professional data recovery services for businesses throughout Los Angeles. From RAID systems and servers to encrypted drives and file systems, we handle business-critical recoveries with confidentiality and offer NDAs upon request.',
+  },
+  {
+    q: 'What is your success rate for data recovery in Los Angeles?',
+    a: "We maintain a 98% success rate across most recovery cases. Thanks to our experienced engineers and certified cleanroom lab in Los Angeles, we're able to recover data from a wide range of devices, even those considered unrecoverable by others.",
+  },
+  {
+    q: 'Is your Los Angeles data recovery lab certified?',
+    a: 'Yes, our facility is ISO-certified and operates in a professional Class 100 cleanroom environment. This ensures all physically damaged drives are handled under optimal conditions for maximum recovery success.',
   },
 ]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -80,9 +156,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Free Same-Day Pickup in Los Angeles</h2>
-        <p class="s-body">We know that dealing with data loss is stressful enough without having to figure out how to get your device to a lab. That's why Five Star Data Recovery offers free same-day pickup throughout Los Angeles — Monday through Friday. Just give us a call or submit an online request, and we'll come to you.</p>
-        <p class="s-body">Whether you're in Downtown LA, West Hollywood, Culver City, Santa Monica, or anywhere else in the city, our team will pick up your device at no charge. We bring it securely to our Glendale lab where our certified engineers begin the evaluation immediately.</p>
-        <p class="s-body">No need to worry about packaging, shipping, or finding a way to transport a damaged or sensitive device. Our free pickup service is designed to make the recovery process as simple and stress-free as possible for every Los Angeles client.</p>
+        <p class="s-body">Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles. Whether you’re at your home, office, or school, just contact us before noon, and we’ll come to you. The easiest way to get your recovery started without leaving your space is available. This service is available from Monday to Friday. One more reason data recovery clients trust us to make the process easy.</p>
       </div>
     </section>
 
@@ -90,8 +164,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Trusted by Locals Across LA</h2>
-        <p class="s-body">Five Star Data Recovery has helped thousands of individuals and businesses across Los Angeles recover their most important data. From Hollywood film producers and Culver City tech startups to Westside families and downtown businesses, we've built our reputation on results, transparency, and genuine care for our clients.</p>
-        <p class="s-body">Our engineers have successfully recovered data from every major brand and device type — including Seagate, Western Digital, Samsung, Toshiba, LaCie, and more. With a 98% recovery success rate and flat-rate pricing, Los Angeles residents trust us because we deliver.</p>
+        <p class="s-body">We’re proud to be a top-rated data recovery company serving customers all over Los Angeles. Our data recovery clients include students, photographers, businesses, and IT teams. They come to us when it matters most. With high success rates, secure handling, and real technical expertise, we’ve helped thousands of satisfied customers. If you’re searching for Los Angeles data recovery that’s reliable and local—we’re the team to call.</p>
       </div>
     </section>
 
@@ -99,15 +172,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">What We Recover</h2>
+        <p class="s-body">Our engineers recover files from nearly any storage device, including:</p>
         <ul class="content-list">
-          <li><NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">Hard Drive Recovery</NuxtLink> — Mechanical failures, clicking drives, unresponsive HDDs</li>
-          <li><NuxtLink to="/data-recovery/ssd-recovery" class="inline-link">SSD Recovery</NuxtLink> — Firmware errors, controller failures, sudden death</li>
-          <li><NuxtLink to="/data-recovery/raid-recovery" class="inline-link">RAID &amp; NAS Recovery</NuxtLink> — All RAID levels, NAS devices, business servers</li>
-          <li><NuxtLink to="/data-recovery/external-hard-drive" class="inline-link">External Hard Drive Recovery</NuxtLink> — Dropped, damaged, or corrupt external drives</li>
-          <li><NuxtLink to="/data-recovery/usb-recovery" class="inline-link">USB Flash Drive Recovery</NuxtLink> — Broken connectors, unrecognized drives</li>
-          <li><NuxtLink to="/data-recovery/sd-card-recovery" class="inline-link">SD Card Recovery</NuxtLink> — Camera cards, drone media, corrupted memory</li>
-          <li><NuxtLink to="/data-recovery/iphone-recovery" class="inline-link">iPhone &amp; Mobile Recovery</NuxtLink> — Component-level iOS device recovery</li>
+          <li>External and internal hard drives</li>
+          <li>SSDs and hybrid drives</li>
+          <li>Flash drives and SD cards</li>
+          <li>Encrypted or password-protected storage</li>
+          <li>RAID arrays, NAS, and servers</li>
+          <li>Windows, macOS, and Linux systems</li>
         </ul>
+        <p class="s-body">We handle cases involving physically damaged devices, accidental deletion, formatting, failed updates, and more. Whether you’re facing data loss after a crash or corruption, we’ll work to recover the data that matters to you.</p>
       </div>
     </section>
 
@@ -115,52 +189,81 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Hardware and Software Expertise</h2>
-        <p class="s-body">Our team specializes in both hardware-level and software-level data recovery. For mechanically damaged drives — including those with clicking read/write heads, seized motors, or damaged platters — we use our ISO 5 certified cleanroom to safely perform component-level repairs before extracting data.</p>
-        <p class="s-body">For logical failures such as corrupted file systems, accidental formatting, bad sectors, and deleted files, we use industry-leading imaging and reconstruction tools to retrieve your data without risking further damage. Every recovery is handled with the utmost care and precision.</p>
+        <p class="s-body">Hardware issues cause some data loss, while software failure causes others. Our recovery experts receive training in both hardware and software data recovery. Whether it’s a head crash or a virus, we’ll know how to handle it. We perform all recoveries that involve fixing internal drives in our Class 100 cleanroom. This cleanroom keeps delicate parts safe from dust and damage. Every cleanroom procedure is handled by certified engineers using anti-static protocols to ensure data integrity.</p>
+        <p class="s-body">Our team also uses specialized tools to address firmware corruption, file system damage, and partition-level failures—ensuring we can recover data even from complex or hybrid failure scenarios.</p>
       </div>
     </section>
 
     <!-- SECTION 5 — s-white: Data Recovery Process -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Data Recovery Process</h2>
+        <h2 class="s-heading">Our 5-Step Data Recovery Process</h2>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
-              <h3 class="step-title">Drop off or Mail in Your Drive</h3>
-              <p class="step-body">You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.</p>
+              <h3 class="step-title">Free Evaluation</h3>
+              <p class="step-body">We assess your device and provide a diagnostic report with a flat-rate quote—no obligation.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
-              <h3 class="step-title">Receive a Free Diagnosis</h3>
-              <p class="step-body">Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
+              <h3 class="step-title">Drive Imaging</h3>
+              <p class="step-body">We create a sector-by-sector clone of your storage device to preserve the original data.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
             <div>
-              <h3 class="step-title">Our Engineers work on Recovering your Data</h3>
-              <p class="step-body">We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
+              <h3 class="step-title">Recovery Process</h3>
+              <p class="step-body">Using advanced tools, we extract and rebuild the data from the cloned image.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">4</div>
             <div>
-              <h3 class="step-title">Review &amp; Approve the Recovered</h3>
-              <p class="step-body">After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
+              <h3 class="step-title">File Review</h3>
+              <p class="step-body">You review a list or preview of the recovered files before finalizing the case.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">5</div>
             <div>
-              <h3 class="step-title">Receive your recovered data</h3>
-              <p class="step-body">Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+              <h3 class="step-title">Data Delivery</h3>
+              <p class="step-body">We transfer your recovered data to a new drive and return it securely.</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- YOUR PRIVACY COMES FIRST -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Your Privacy Comes First</h2>
+        <p class="s-body">We treat your data with complete confidentiality—just like we’d want our own handled. Whether you are a student with lost essays or a business with private files, we take steps to keep your data safe. We also offer:</p>
+        <ul class="content-list">
+          <li>Optional NDAs for sensitive projects</li>
+          <li>Secure file transfers and storage</li>
+          <li>Permanent file deletion after delivery (on request)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- WHO WE HELP -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Who We Help</h2>
+        <p class="s-body">We provide data recovery services in Los Angeles for a wide range of people and businesses, including:</p>
+        <ul class="content-list">
+          <li>Students who accidentally deleted assignments or lost access to school projects</li>
+          <li>Small businesses experiencing server crashes or corrupted files</li>
+          <li>Creative professionals like photographers, editors, and producers who need to restore media</li>
+          <li>Home users trying to recover family photos, videos, or personal documents</li>
+          <li>IT departments and tech consultants managing RAID, NAS, or multi-drive failures</li>
+          <li>Legal, healthcare, and finance professionals needing secure, confidential recovery</li>
+        </ul>
       </div>
     </section>
 
@@ -168,16 +271,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
-    <section class="s-contact-band">
+    <section class="s-contact-band contact-band-bg">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Los Angeles Data Recovery</h2>
+          <h2 class="contact-banner-heading">Let’s Recover Your Files</h2>
         </div>
+        <p class="contact-body-text">If your files are stuck, corrupted, or just gone—don’t wait. Reach out to Five Star Data Recovery today. The sooner we start, the better your chance of a full recovery.</p>
         <ul class="contact-bullets">
-          <li>Free same-day pickup Monday–Friday</li>
-          <li>Free diagnostic</li>
-          <li>3–5 business day turnaround</li>
-          <li>No Data, No Charge (most cases)</li>
+          <li>Based near Los Angeles – Serving all surrounding areas</li>
+          <li>Free same-day pickup available (Mon–Fri)</li>
+          <li>Call us now or create a ticket online</li>
         </ul>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
@@ -221,9 +324,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
 .step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
-.s-contact-band { background: #0f1623; padding: 72px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
-.contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/pasadena-contact-bg.jpg') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
 .contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
 .contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
 .contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
 .contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
