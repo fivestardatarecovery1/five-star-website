@@ -1,4 +1,106 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com#localbusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "url": "https://www.fivestardatarecovery.com",
+            "telephone": "+1-818-272-8866",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "10:00",
+                "closes": "18:00"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.fivestardatarecovery.com#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com" },
+              { "@type": "ListItem", "position": 2, "name": "Expedited Plus Data Recovery", "item": "https://www.fivestardatarecovery.com/expedited-service-plus/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://www.fivestardatarecovery.com/expedited-service-plus/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is Expedited Plus Data Recovery?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Expedited Plus is our highest-priority data recovery service, designed for urgent cases that require immediate attention. Your case is handled 24/7—including nights, weekends, and holidays—by our top-tier engineers. If your data recovery can't wait, this is the fastest and most dedicated solution we offer." }
+              },
+              {
+                "@type": "Question",
+                "name": "How is Expedited Plus different from your regular Expedited Service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "While our standard Expedited Service prioritizes your case during business hours, Expedited Plus goes beyond that. This service guarantees continuous, around-the-clock recovery efforts from the moment your device arrives at our lab. It's ideal for critical business needs, time-sensitive data, or personal emergencies." }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does Expedited Plus Data Recovery cost?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The cost for our Expedited Plus Data Recovery service is $500.00 per drive or device, paid upfront and non-refundable regardless of the results. This fee is in addition to the standard data recovery fee and helps cover the extra resources, after-hours labor, and dedicated priority handling required to work on your case 24/7—including nights, weekends, and holidays." }
+              },
+              {
+                "@type": "Question",
+                "name": "What types of devices are eligible for Expedited Plus?",
+                "acceptedAnswer": { "@type": "Answer", "text": "We can perform Expedited Plus Data Recovery on hard drives, SSDs, RAID systems, iPhones, flash drives, and most other storage devices. This service is available for both physically damaged and logically failed devices." }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does Expedited Plus Data Recovery take?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Turnaround time for Expedited Plus Data Recovery typically ranges from a few hours to a couple of days, depending on the complexity of the case and the amount of data involved. If you urgently need just a few critical files to continue working, our engineers can prioritize and recover those files as quickly as humanly possible, while continuing to work on the full recovery in the background. This service ensures zero downtime, direct communication with a dedicated engineer, and continuous 24/7 recovery efforts until your case is complete." }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there a success guarantee with Expedited Plus?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The success rate of your recovery is the same whether you choose our Expedited Plus, Expedited Service, or Standard Service. The only difference between the service levels is turnaround time and priority handling—not the recovery outcome itself. Success largely depends on the condition of the device when it arrives at our lab. If the drive or device hasn't been tampered with after failure, success rates are typically 98% or higher. However, if there have been multiple recovery attempts or further damage caused after the initial failure, the chances of a successful recovery can decrease." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I ship my device for Expedited Plus Recovery?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. When you choose our Expedited Plus service, we provide free overnight shipping both ways to ensure the fastest turnaround possible. If the critical files you need are not too large, we can also upload the recovered files for immediate access while the full data transfer is being completed. This way, you can get back to work without delay." }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide updates throughout the Expedited Plus process?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. With Expedited Plus, you'll receive regular updates from our engineers and direct communication regarding the progress of your recovery. You're never left in the dark." }
+              },
+              {
+                "@type": "Question",
+                "name": "When should I choose Expedited Plus over standard service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Choose Expedited Plus when time is critical. Whether you're facing a business deadline, legal matter, or need emergency data recovery, this service ensures that your case gets uninterrupted attention from our most experienced recovery engineers." }
+              }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Expedited Service Plus - Five Star Data Recovery',
   ogTitle: 'Expedited Service Plus',
