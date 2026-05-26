@@ -404,7 +404,7 @@ useSeoMeta({
     <!-- FAQ SECTION -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading">Frequently Asked Questions</h2>
+        <h2 class="s-heading" style="text-align: center; margin-bottom: 36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
             <button class="faq-trigger" @click="toggleFaq(i)">
