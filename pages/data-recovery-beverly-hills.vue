@@ -197,6 +197,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="contact-banner-heading">Ready to Start?</h2>
         </div>
         <p class="contact-body-text">Five Star Data Recovery brings expert-level care and precision to your doorstep. Contact us today for data recovery in Beverly Hills, CA.</p>
+        <ul class="contact-bullets">
+          <li>Free same-day pickup in Beverly Hills</li>
+          <li>Free diagnostic — no obligation</li>
+          <li>3–5 business day turnaround</li>
+          <li>No Data, No Charge (most cases)</li>
+        </ul>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
