@@ -1,78 +1,113 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Data Recovery Payment Plan — Five Star Data Recovery',
-  description: 'Need data recovery but concerned about cost? We offer interest-free, in-house payment plans to make professional data recovery more accessible. No credit checks'
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "priceRange": "$$",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/"
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Payment Plan", "item": "https://www.fivestardatarecovery.com/payment-plan/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you offer payment plans for data recovery services?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer in-house, interest-free payment plans for customers who need help managing the cost of data recovery. These plans are designed to make our services more accessible while still maintaining our high recovery standards. Please note, recovered data will only be released once the full balance is paid in full." } },
+              { "@type": "Question", "name": "Who qualifies for a data recovery payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Our interest-free payment plans are available to all customers—no credit check required. To get started, we simply require 25% of the total recovery cost upfront, with the remaining balance paid over time." } },
+              { "@type": "Question", "name": "How do I apply for a payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Our payment plans are handled in-store only—no online application or credit check is required. During your visit, our team will walk you through the simple process. Once you make the 25% upfront payment, we'll get started on your recovery and provide a clear payment schedule for the remaining balance." } },
+              { "@type": "Question", "name": "Is there a minimum or maximum amount for a payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, payment plans are available for recovery cases starting at $300 and up. There's no strict maximum, and we're happy to work with you on larger recoveries as long as the 25% upfront requirement is met." } },
+              { "@type": "Question", "name": "Will applying for a payment plan affect my credit score?", "acceptedAnswer": { "@type": "Answer", "text": "No — we do not perform any credit checks for our in-house payment plans. Approval is guaranteed as long as the minimum upfront payment is made, and your credit score is never impacted." } },
+              { "@type": "Question", "name": "What types of devices are eligible for payment plan options?", "acceptedAnswer": { "@type": "Answer", "text": "Payment plans are available for all major recovery types, including hard drives, SSDs, RAID systems, USB drives, SD cards, and mobile phones." } },
+              { "@type": "Question", "name": "Can I still qualify for a payment plan if I live outside California?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our payment plan options are available nationwide, and so is our data recovery service. We offer free shipping across the U.S., making it easy for anyone to get started, no matter their location." } },
+              { "@type": "Question", "name": "When do I start making payments?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases, payments begin after the recovery is complete and you've approved the results. You'll receive a breakdown of your payment schedule based on your selected plan." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
-const issues = [
-  { icon: '💳', title: 'Flexible Payment Plans Available', text: 'We understand data recovery can be an unexpected expense. We offer flexible payment options so you can get your data back without financial stress. Ask us about financing at checkout.' },
-  { icon: '🔍', title: 'Free Upfront Diagnostic', text: 'Every case starts with a free diagnosis. You\'ll know exactly what it costs before any work begins. No hidden fees, no surprises — transparent pricing from day one.' },
-  { icon: '🚫', title: 'No Data = No Fee Guarantee', text: 'If we can\'t recover your data, you owe us nothing. Our no-data-no-fee policy means zero financial risk for you. We only get paid when your files are successfully recovered.' },
-  { icon: '⚡', title: 'Multiple Pricing Tiers Available', text: 'Choose standard or expedited service based on your timeline and budget. Logical recoveries start at $300, with clean room and emergency options available for complex cases.' },
+useSeoMeta({
+  title: 'Data Recovery Payment Plan - Five Star Data Recovery',
+  ogTitle: 'Payment Plan',
+  description: 'Five Star Data Recovery offers flexible payment plan options for Data Recovery Services. Contact us today for more details.',
+  ogDescription: 'Five Star Data Recovery offers flexible payment plan options for Data Recovery Services. Contact us today for more details.',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png',
+})
+
+const reviews = [
+  {
+    text: '\u201cExcellent service from start to finish. They recovered all of my business documents from a failed SSD, and the payment plan option made it manageable for me to move forward without delay. It\u2019s rare to find a company that combines technical skill with true customer care.\u201d',
+    name: 'Luis D.',
+    location: 'Austin, TX'
+  },
+  {
+    text: '\u201cMy RAID setup crashed, and I was in a panic. Five Star managed to recover a large portion of the data and explained everything in clear terms. Their interest-free payment plan gave me the breathing room I needed financially. I\u2019m grateful for their professionalism.\u201d',
+    name: 'Melisa T.',
+    location: 'Burbank, CA'
+  },
+  {
+    text: '\u201cThey were upfront about the cost and what to expect. I couldn\u2019t afford the full amount right away, so their in-house payment plan made it possible for me to recover years of personal data. Not everything came back, but what I got was absolutely worth it.\u201d',
+    name: 'Henry C.',
+    location: 'Los Angeles, CA'
+  },
 ]
 
-const causesIntro = 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.'
-const causesOutro = ''
-const causes = [
-  'Quick and Secure Data Recovery',
-  'Expert Engineers for All Devices',
-  'No Data, No Fee Guarantee',
-]
-
-const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
-const steps = [
-  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
-  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
-  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
-]
-
-const driveTypesIntro = 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.'
-const driveTypesOutro = ''
-const driveTypes = [
-  'Quick and Secure Data Recovery',
-  'Expert Engineers for All Devices',
-  'No Data, No Fee Guarantee',
-]
-
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Data Recovery Payment Plan devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'Our interest-free payment plans are available to all customers—no credit check required. To get started, we simply require 25% of the total recovery cost upfront, with the remaining balance paid over time. This flexible option helps make professional data recovery more accessible when you need it most.',
-  'Our interest-free payment plans are available to all customers—no credit check required. To get started, we simply require 25% of the total recovery cost upfront, with the remaining balance paid over time. This flexible option helps make professional data recovery more accessible when you need it most.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Data Recovery Payment Plan, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional data recovery payment plan — and get back what matters most.'
-
-const reviews = []
 const faqs = [
+  {
+    q: '1. Do you offer payment plans for data recovery services?',
+    a: 'Yes, we offer <strong>in-house, interest-free payment plans</strong> for customers who need help managing the cost of data recovery. These plans are designed to make our services more accessible while still maintaining our high recovery standards. Please note, <strong>recovered data will only be released once the full balance is paid in full</strong>.'
+  },
+  {
+    q: '2. Who qualifies for a data recovery payment plan?',
+    a: 'Our <strong>interest-free payment plans</strong> are available to <strong>all customers\u2014no credit check required</strong>. To get started, we simply require <strong>25% of the total recovery cost upfront</strong>, with the remaining balance paid over time. This flexible option helps make professional data recovery more accessible when you need it most.'
+  },
+  {
+    q: '3. How do I apply for a payment plan?',
+    a: 'Our <strong>payment plans are handled in-store only</strong>\u2014no online application or credit check is required. During your visit, our team will walk you through the simple process. Once you make the 25% upfront payment, we\u2019ll get started on your recovery and provide a clear payment schedule for the remaining balance.'
+  },
+  {
+    q: '4. Is there a minimum or maximum amount for a payment plan?',
+    a: 'Yes, <strong>payment plans are available for recovery cases starting at $300 and up</strong>. There\u2019s no strict maximum, and we\u2019re happy to work with you on larger recoveries as long as the 25% upfront requirement is met. If you\u2019re unsure whether your case qualifies, feel free to contact us or visit our store for a free consultation.'
+  },
+  {
+    q: '5. Will applying for a payment plan affect my credit score?',
+    a: 'No \u2014 we <strong>do not perform any credit checks</strong> for our in-house payment plans. Approval is guaranteed as long as the minimum upfront payment is made, and your credit score is never impacted.'
+  },
+  {
+    q: '6. What types of devices are eligible for payment plan options?',
+    a: 'Payment plans are available for all major recovery types, including <strong>hard drives</strong>, <strong>SSDs</strong>, <strong>RAID systems</strong>, <strong>USB drives</strong>, <strong>SD cards</strong>, and <strong>mobile phones</strong>. Whether your case is logical, physical, or complex, our payment plan options can help make recovery more accessible.'
+  },
+  {
+    q: '7. Can I still qualify for a payment plan if I live outside California?',
+    a: 'Yes! Our <strong>payment plan options are available nationwide</strong>, and so is our data recovery service. We offer <strong>free shipping</strong> across the U.S., making it easy for anyone to get started, no matter their location.'
+  },
+  {
+    q: '8. When do I start making payments?',
+    a: 'In most cases, payments begin <strong>after the recovery is complete</strong> and you\u2019ve approved the results. You\u2019ll receive a breakdown of your payment schedule based on your selected plan.'
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -86,167 +121,142 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Payment Plan"
       subtitle="Get Your Data Back In No Time."
-      description="Yes, of course! We understand that an expense for data recovery is something that is unexpected and not budgeted for. So we are happy to offer flexible Data Recovery Payment options. There is nothing due up front. You would ONLY pay once the data is recovered and you are satisfied with the results."
+      description="Need data recovery but concerned about cost? We offer interest-free, in-house payment plans to make professional data recovery more accessible. No credit checks, no hidden fees — just a simple process with only 25% down to get started. Your data is recovered safely and securely, and you pay the remaining balance over time."
       bgImage="/data-recovery-payment-plan-financing.jpg"
+      :trustBadges="[
+        { icon: 'clock', text: 'Available 24/7/365' },
+        { icon: 'check', text: 'No Data = No Charge' },
+        { icon: 'shield', text: '10+ Years in Business' },
+        { icon: 'star', text: 'Free Nationwide Shipping' },
+      ]"
     />
 
     <StatsBar />
 
-    <!-- PAYMENT PLAN FAQ — white -->
+    <!-- DO YOU OFFER PAYMENT PLANS -->
     <section class="s-white">
-      <div class="container">
-        <div class="payment-faq-card">
-          <h3 class="pf-question">Do you offer Payment Plans for Data Recovery?</h3>
-          <p class="pf-body">Yes, of course! We understand that an expense for data recovery is something that is unexpected and not budgeted for. So we are happy to offer flexible Data Recovery Payment options.</p>
-          <p class="pf-body">Same terms apply to all of our data recovery cases. There is nothing due up front. You would ONLY pay once the data is recovered and you are satisfied with the results. IF the data is unrecoverable OR you are not satisfied with the results, you pay nothing.</p>
-          <p class="pf-body">When it comes to cases that require a Payment Plan; once the recovery is successful and complete, you would pay 20% of the total balance. The remaining balance can be paid within 12 months in any increments that you feel comfortable with.</p>
-          <p class="pf-body">We would safely store the recovered data for you until the balance is paid in full. Once the balance is paid, you can pickup the recovery or have us ship it to you for free!</p>
-          <NuxtLink to="/contact" class="pf-btn">Start Your Recovery</NuxtLink>
+      <div class="container two-col-layout">
+        <div>
+          <h2 class="s-heading">Do you offer Payment Plans for Data Recovery?</h2>
+          <p class="s-body">Yes, of course! We understand that an expense for data recovery is something that is unexpected and not budgeted for. So we are happy to offer flexible Data Recovery Payment options.</p>
+          <p class="s-body">Same terms apply to all of our data recovery cases. There is nothing due up front. You would ONLY pay once the data is recovered and you are satisfied with the results. IF the data is unrecoverable OR you are not satisfied with the results, you pay nothing.</p>
+          <p class="s-body">When it comes to cases that require a Payment Plan; once the recovery is successful and complete, you would pay 20% of the total balance. The remaining balance can be paid within 12 months in any increments that you feel comfortable with.</p>
+          <p class="s-body">We would safely store the recovered data for you until the balance is paid in full. Once the balance is paid, you can pickup the recovery or have us ship it to you for free!</p>
+          <NuxtLink to="/start-recovery" class="btn-cta">Start Your Recovery</NuxtLink>
         </div>
-      </div>
-    </section>
-
-
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Data Recovery Payment Plan Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/data-recovery-payment-plan-financing.jpg') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your Data Recovery Payment Plan?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
+        <div class="plan-highlights">
+          <div class="highlight-card">
+            <div class="h-icon">💳</div>
+            <h3 class="h-title">Interest-Free</h3>
+            <p class="h-body">0% interest — ever. No hidden charges on your payment plan.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="h-icon">✅</div>
+            <h3 class="h-title">No Credit Check</h3>
+            <p class="h-body">No application, no credit inquiry. Available to everyone.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="h-icon">📅</div>
+            <h3 class="h-title">Up to 12 Months</h3>
+            <p class="h-body">Pay the remaining balance in any increments over 12 months.</p>
+          </div>
+          <div class="highlight-card">
+            <div class="h-icon">🔒</div>
+            <h3 class="h-title">Data Held Securely</h3>
+            <p class="h-body">Your recovered data is stored safely until the balance is paid in full.</p>
           </div>
         </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
+      </div>
+    </section>
+
+    <!-- DATA RECOVERY PROCESS -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading center">Data Recovery Process</h2>
+        <p class="s-intro center">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">Drop off or Mail in Your Drive</h3>
+              <p class="step-body">You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.</p>
             </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">Receive a Free Diagnosis</h3>
+              <p class="step-body">Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
             </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactDataRec" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactDataRec" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactDataRec" value="text" /> TEXT</label>
-                </div>
-              </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">Our Engineers work on Recovering your Data</h3>
+              <p class="step-body">We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
             </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3 class="step-title">Review &amp; Approve the Recovered</h3>
+              <p class="step-body">After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
             </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div>
+              <h3 class="step-title">Receive your recovered data</h3>
+              <p class="step-body">Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ — grey -->
-    <section class="s-grey">
+    <!-- GET A FREE QUOTE BAND -->
+    <section class="s-white">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <h2 class="s-heading center">Get a Free Quote within Minutes!</h2>
+        <p class="s-intro center">Our expert engineers use advanced technology to recover your data quickly and securely. We specialize in complex cases with high success rates, offering tailored solutions for both businesses and individuals.</p>
+        <div class="quote-features">
+          <div class="qf"><span class="qf-check">✓</span> Quick and Secure Data Recovery</div>
+          <div class="qf"><span class="qf-check">✓</span> Expert Engineers for All Devices</div>
+          <div class="qf"><span class="qf-check">✓</span> No Data, No Fee Guarantee <em>(most cases)</em></div>
+        </div>
+        <p class="s-body" style="text-align:center; margin-top: 16px;">Contact our specialists today for a quick, hassle-free recovery. We're here to guide you every step of the way and ensure your data is securely restored. Your peace of mind is our priority.</p>
+        <div style="text-align:center; margin-top: 28px;">
+          <NuxtLink to="/start-recovery" class="btn-cta">Start Your Recovery</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Start Your Data Recovery Today</h2>
+        </div>
+        <div class="contact-body">
+          <p class="contact-body-text">Don't let cost stand in the way of getting your data back. Our flexible, interest-free payment plans make professional data recovery accessible to everyone. Call or visit us today to get started.</p>
+          <ul class="contact-bullets">
+            <li>No credit check required</li>
+            <li>25% down to get started</li>
+            <li>Pay the rest over up to 12 months</li>
+            <li>Data held securely until balance is paid</li>
+          </ul>
+        </div>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align: center; margin-bottom: 36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
             <button class="faq-trigger" @click="toggleFaq(i)">
@@ -259,39 +269,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Data Recovery Payment Plan</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
-      </div>
-    </section>
-
     <FooterBar />
   </div>
 </template>
@@ -300,130 +277,69 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey  { background: #f4f7fc; padding: 72px 0; }
+
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
 .s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.payment-faq-card { background: #fff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 48px 56px; box-shadow: 0 4px 32px rgba(0,0,0,0.07); max-width: 860px; margin: 0 auto; }
-.pf-question { font-size: 1.3rem; font-weight: 900; color: #1a1a2e; margin-bottom: 24px; line-height: 1.3; }
-.pf-body { font-size: 0.97rem; color: #4a5568; line-height: 1.85; margin-bottom: 18px; }
-.pf-btn { display: block; width: 100%; margin-top: 32px; background: #F5C842; color: #1a1a2e; font-size: 1rem; font-weight: 800; text-align: center; padding: 18px 0; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.15s; }
-.pf-btn:hover { background: #e0b030; transform: translateY(-1px); }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 20px; }
+.s-intro.center { text-align: center; }
+
+/* Two-col */
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+/* Highlight cards */
+.plan-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.highlight-card { background: #f4f7fc; border-radius: 12px; padding: 28px 24px; border-top: 4px solid #C9A84C; }
+.h-icon { font-size: 1.8rem; margin-bottom: 12px; }
+.h-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.h-body { font-size: 0.88rem; color: #4a5568; line-height: 1.6; margin: 0; }
+
+/* Process steps */
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
+.process-step:last-child { border-bottom: none; }
+.step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
+
+/* Quote features */
+.quote-features { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 8px; }
+.qf { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; display: flex; align-items: center; gap: 8px; }
+.qf-check { color: #C9A84C; font-weight: 900; font-size: 1.1rem; }
+
+/* CTA button */
+.btn-cta { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 0.95rem; padding: 14px 32px; border-radius: 6px; text-decoration: none; margin-top: 20px; transition: background 0.2s; }
+.btn-cta:hover { background: #b8923e; }
+
+/* FAQ */
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+
+/* Contact band */
+.s-contact-band { background: #0f1623; padding: 72px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 14px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
+
+@media (max-width: 900px) {
+  .two-col-layout { grid-template-columns: 1fr; gap: 40px; }
+  .plan-highlights { grid-template-columns: 1fr 1fr; }
+  .quote-features { flex-direction: column; align-items: center; gap: 16px; }
 }
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .plan-highlights { grid-template-columns: 1fr; }
+  .process-step { flex-direction: column; gap: 14px; }
 }
 </style>
