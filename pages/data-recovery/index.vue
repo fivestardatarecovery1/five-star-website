@@ -1,4 +1,80 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "priceRange": "$$",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            },
+            "review": {
+              "@type": "Review",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+              "author": { "@type": "Person", "name": "Michael D. (Los Angeles)" },
+              "reviewBody": "Absolutely amazing service. I thought I lost 10 years of family photos after my hard drive died, but these guys brought everything back. Super professional and quick turnaround."
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Data Recovery Services",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Professional Data Recovery Services specializing in hard drive recovery, SSD recovery, RAID recovery, and more. Free diagnostics and flat-rate pricing. Serving clients nationwide with mail-in and walk-in service options."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What does a data recovery lab do?", "acceptedAnswer": { "@type": "Answer", "text": "A data recovery lab specializes in retrieving lost files from storage devices that have failed, become unreadable, or suffered corruption. Using advanced hardware and custom software tools, engineers work on drives that can't be accessed through normal computer methods." } },
+              { "@type": "Question", "name": "I'm not near your location. Can I still use your services?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We offer a mail-in recovery option with free round-trip shipping anywhere in the United States. Just fill out our form and we'll send you a prepaid label to ship your device to us securely." } },
+              { "@type": "Question", "name": "How does your fastest recovery option work for emergencies?", "acceptedAnswer": { "@type": "Answer", "text": "Our Expedited Plus Service puts your recovery at the top of our priority list with non-stop engineer focus, day and night, until the process is complete. This is ideal for businesses or individuals with time-sensitive data loss." } },
+              { "@type": "Question", "name": "Are there any hidden costs during the recovery process?", "acceptedAnswer": { "@type": "Answer", "text": "No. After diagnosing your case, we'll provide a clear, flat-rate quote upfront. The only additional fee would be if you select an expedited service like Expedited Plus." } },
+              { "@type": "Question", "name": "Is there a way to check if my data is still recoverable before starting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Before we begin any data recovery work, we always provide an initial quote after a free phone or email consultation. During this consultation, we'll ask detailed questions about your device, its failure symptoms, and any previous recovery attempts. Once you approve the quoted price range, we'll proceed with the diagnostic and recovery process. If we're able to successfully recover your data within the pricing we originally quoted, we'll automatically move forward with the recovery without requiring further approval\u2014this helps avoid unnecessary delays. If, during the process, we discover that the issue is different and falls into a higher recovery category, we'll contact you first with an updated quote before doing anything further. This approach ensures pricing transparency and keeps you fully informed throughout the entire process." } },
+              { "@type": "Question", "name": "Is there a risk of further damage to my device during the recovery process?", "acceptedAnswer": { "@type": "Answer", "text": "No. At Five Star Data Recovery, we never work directly on your original storage device when performing recovery. We first create a sector-by-sector clone of your drive and conduct all recovery work on the clone to ensure the integrity of your original media." } },
+              { "@type": "Question", "name": "Can I provide my own transfer drive for the recovered data?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Once your recovery is complete, you're welcome to provide your own external hard drive, SSD, or USB drive for us to transfer the recovered files. If you don't have one, we also offer new transfer drives for purchase." } },
+              { "@type": "Question", "name": "How do I know if my data is actually recoverable?", "acceptedAnswer": { "@type": "Answer", "text": "Every case starts with a free consultation and diagnostic evaluation. Based on the symptoms and test results, we'll give you an honest assessment of the likelihood of recovery before you commit to the process." } },
+              { "@type": "Question", "name": "Do you recover data from devices that have suffered water or fire damage?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in physically damaged storage devices, including those affected by water exposure, flooding, or even fire. These cases often require clean room service and component-level repairs." } },
+              { "@type": "Question", "name": "What happens if my recovery case is extremely urgent?", "acceptedAnswer": { "@type": "Answer", "text": "For time-sensitive cases, we offer Expedited and Expedited Plus services. These options prioritize your case ahead of others and can dramatically reduce turnaround time\u2014even providing 24/7 service if needed." } },
+              { "@type": "Question", "name": "Is there a size limit on the drives you work with?", "acceptedAnswer": { "@type": "Answer", "text": "No. We can recover data from drives as small as a USB flash drive to multi-terabyte enterprise RAID systems. Whether your storage device is 2GB or 20TB, we have the tools to handle it." } },
+              { "@type": "Question", "name": "What payment methods do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "We accept all major credit cards, debit cards, and cash payments. For larger recovery projects, we also offer in-house payment plans with no credit check. Please contact us for details." } },
+              { "@type": "Question", "name": "Can you recover data from older hard drives and legacy storage formats?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We regularly perform data recovery on older hard drive models, including IDE hard drives, early-generation SATA drives, and legacy internal laptop or desktop drives. If you have an older storage device and aren't sure if it's recoverable, contact us for a free consultation." } },
+              { "@type": "Question", "name": "How should I package my device if I'm shipping it to you?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend using anti-static materials and plenty of cushioning to prevent additional damage during transit. Once you fill out our Mail-In Recovery Form, we'll provide a prepaid shipping label along with detailed packaging instructions." } },
+              { "@type": "Question", "name": "What if my drive was opened by another company before bringing it to you?", "acceptedAnswer": { "@type": "Answer", "text": "If the drive's cover (where the platters are located) was opened by another lab or repair shop before arriving here, a non-refundable evaluation fee will apply due to the added complexity and risk involved in such cases." } },
+              { "@type": "Question", "name": "How much does Data Recovery Cost?", "acceptedAnswer": { "@type": "Answer", "text": "The cost of data recovery depends on several factors, including the type of device, the nature of the failure, and the complexity of the recovery process. For example, recovering data from a hard drive with logical issues is generally less expensive than performing a chip-off recovery on a physically damaged SD card or USB drive.\n\nAt Five Star Data Recovery, our pricing is flat-rate and transparent, with no hidden fees. We also offer a free evaluation in most cases, so you'll know exactly what to expect before moving forward. For certain recovery types\u2014like deleted file recovery or expedited services\u2014there may be an upfront labor fee, which will be explained before any work begins.\n\nTo see a full breakdown of our rates by device type and service level, please visit our Data Recovery Pricing Page at https://www.fivestardatarecovery.com/data-recovery-pricing/." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Data Recovery Services — Five Star Data Recovery | Glendale, CA',
   description: 'Expert data recovery services for hard drives, SSDs, RAID arrays, iPhones, USB drives, and more. Free evaluation, flat-rate pricing, no data no charge. Glendale, CA.'
