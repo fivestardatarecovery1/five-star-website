@@ -33,32 +33,40 @@ const reviews = [
 
 const faqs = [
   {
-    q: 'What is Expedited Service Plus?',
-    a: 'Expedited Service Plus is our fastest and most dedicated recovery option. Unlike our standard Expedited Service which operates during business hours, Expedited Plus means our engineers work on your case non-stop — 24/7 including nights, weekends, and holidays — from the moment your device arrives until recovery is complete.',
+    q: 'What is Expedited Plus Data Recovery?',
+    a: 'Expedited Plus is our highest-priority data recovery service, designed for urgent cases that require immediate attention. Your case is handled 24/7—including nights, weekends, and holidays—by our top-tier engineers. If your data recovery can\'t wait, this is the fastest and most dedicated solution we offer.',
   },
   {
-    q: 'How much does Expedited Service Plus cost?',
-    a: 'Expedited Service Plus starts at $500.00 per drive. This fee is in addition to the standard flat-rate data recovery cost. The exact total depends on how long we estimate the case will take. Our engineers will provide a detailed estimate after the initial free diagnosis.',
+    q: 'How is Expedited Plus different from your regular Expedited Service?',
+    a: 'While our standard Expedited Service prioritizes your case during business hours, Expedited Plus goes beyond that. This service guarantees continuous, around-the-clock recovery efforts from the moment your device arrives at our lab. It\'s ideal for critical business needs, time-sensitive data, or personal emergencies.',
   },
   {
-    q: 'How fast can you recover my data with Expedited Service Plus?',
-    a: 'Because engineers work around the clock without stopping, recovery times are significantly faster than standard or even regular expedited service. Logical failures can often be resolved within 24–48 hours. Mechanical failures requiring donor parts may take slightly longer, but we source parts as quickly as possible to minimize delay.',
+    q: 'How much does Expedited Plus Data Recovery cost?',
+    a: 'The cost for our Expedited Plus Data Recovery service is $500.00 per drive or device, paid upfront and non-refundable regardless of the results. This fee is in addition to the standard data recovery fee and helps cover the extra resources, after-hours labor, and dedicated priority handling required to work on your case 24/7—including nights, weekends, and holidays.',
   },
   {
-    q: 'Does Expedited Service Plus really run nights, weekends, and holidays?',
-    a: 'Yes — absolutely. Expedited Service Plus is truly 24/7/365. Your case is assigned a dedicated engineer who works continuously until your data is recovered. This is our highest-tier service designed for genuine emergencies.',
+    q: 'What types of devices are eligible for Expedited Plus?',
+    a: 'We can perform Expedited Plus Data Recovery on hard drives, SSDs, RAID systems, iPhones, flash drives, and most other storage devices. This service is available for both physically damaged and logically failed devices.',
   },
   {
-    q: 'Do I need to provide information before dropping off my device?',
-    a: 'Yes, it helps significantly. Before bringing or shipping your device, please have ready: whether the drive is clicking or beeping, whether it is recognized by Disk Utility or Disk Management, whether it has been dropped, the make/model and storage capacity, how much data needs to be recovered, and what file types are on it. Do not attempt to diagnose or repair the drive yourself — power it down and set it aside until you contact us.',
+    q: 'How long does Expedited Plus Data Recovery take?',
+    a: 'Turnaround time for Expedited Plus Data Recovery typically ranges from a few hours to a couple of days, depending on the complexity of the case and the amount of data involved. If you urgently need just a few critical files to continue working, our engineers can prioritize and recover those files as quickly as humanly possible, while continuing to work on the full recovery in the background. This service ensures zero downtime, direct communication with a dedicated engineer, and continuous 24/7 recovery efforts until your case is complete.',
   },
   {
-    q: 'Can I ship my drive in for Expedited Service Plus?',
-    a: 'Yes — we accept devices nationwide via our free prepaid shipping labels. Please call us first so we can prepare your dedicated engineer slot before your drive arrives. The 24/7 recovery clock starts the moment your device is received at our lab.',
+    q: 'Is there a success guarantee with Expedited Plus?',
+    a: 'The success rate of your recovery is the same whether you choose our Expedited Plus, Expedited Service, or Standard Service. The only difference between the service levels is turnaround time and priority handling—not the recovery outcome itself. Success largely depends on the condition of the device when it arrives at our lab. If the drive or device hasn\'t been tampered with after failure, success rates are typically 98% or higher. However, if there have been multiple recovery attempts or further damage caused after the initial failure, the chances of a successful recovery can decrease.',
   },
   {
-    q: 'Does No Data, No Charge apply to Expedited Service Plus?',
-    a: 'The Expedited Service Plus fee (starting at $500/drive) is paid upfront and is non-refundable as it covers dedicated engineering time. However, if we cannot recover your data, the standard flat-rate recovery fee will not be charged — our No Data, No Charge (most cases) policy still applies to the recovery portion of the cost.',
+    q: 'Can I ship my device for Expedited Plus Recovery?',
+    a: 'Yes, absolutely. When you choose our Expedited Plus service, we provide free overnight shipping both ways to ensure the fastest turnaround possible. If the critical files you need are not too large, we can also upload the recovered files for immediate access while the full data transfer is being completed. This way, you can get back to work without delay.',
+  },
+  {
+    q: 'Do you provide updates throughout the Expedited Plus process?',
+    a: 'Yes. With Expedited Plus, you\'ll receive regular updates from our engineers and direct communication regarding the progress of your recovery. You\'re never left in the dark.',
+  },
+  {
+    q: 'When should I choose Expedited Plus over standard service?',
+    a: 'Choose Expedited Plus when time is critical. Whether you\'re facing a business deadline, legal matter, or need emergency data recovery, this service ensures that your case gets uninterrupted attention from our most experienced recovery engineers.',
   },
 ]
 
@@ -99,15 +107,81 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>How much data needs to be recovered?</li>
           <li>What type of files are we recovering? (file extensions)</li>
         </ul>
-        <p class="s-body">(Please do not try to diagnose the drive yourself. Power down the drive and put it safely aside before you do anything).</p>
-        <p class="s-body">(Please be 100% honest and upfront about the events that led to your drive failing. Let us know if the drive has been acting up recently as well as any unusual activities you've realized with the drive before it failed. This will help keep the cost of the recovery <strong>MUCH</strong> lower since we'll know exactly what the issue is and take the safest and quickest approach to recovering the data).</p>
+        <div class="warning-box">
+          <p class="warning-text">⚠️ Please do not try to diagnose the drive yourself. Power down the drive and put it safely aside before you do anything.</p>
+        </div>
+        <div class="warning-box">
+          <p class="warning-text">⚠️ Please be 100% honest and upfront about the events that led to your drive failing. Let us know if the drive has been acting up recently as well as any unusual activities you've realized with the drive before it failed. This will help keep the cost of the recovery <strong>MUCH</strong> lower since we'll know exactly what the issue is and take the safest and quickest approach to recovering the data.</p>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 2 — s-grey: Data Recovery Process -->
+    <!-- COMPARISON TABLE -->
     <section class="s-grey">
       <div class="container">
+        <h2 class="s-heading center">Expedited vs. Expedited Plus — What's the Difference?</h2>
+        <p class="s-body" style="text-align:center; margin-bottom: 40px;">Not sure which service is right for you? Here's a quick side-by-side breakdown.</p>
+        <div class="compare-table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th class="col-feature">Feature</th>
+                <th class="col-expedited">Expedited</th>
+                <th class="col-plus">Expedited Plus ⚡</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hours of Operation</td>
+                <td>Business hours only<br><span class="sub">Mon – Fri</span></td>
+                <td class="plus-col">24/7 — nights, weekends &amp; holidays</td>
+              </tr>
+              <tr class="alt">
+                <td>Work Starts</td>
+                <td>Within 1 hour of drop-off</td>
+                <td class="plus-col">Immediately upon arrival</td>
+              </tr>
+              <tr>
+                <td>Diagnosis</td>
+                <td>Within 3 hours</td>
+                <td class="plus-col">Immediate</td>
+              </tr>
+              <tr class="alt">
+                <td>Upfront Fee</td>
+                <td>$200 per drive</td>
+                <td class="plus-col">Starting at $500 per drive</td>
+              </tr>
+              <tr>
+                <td>Turnaround Time</td>
+                <td>2–5 business days</td>
+                <td class="plus-col">Few hours to 2 days</td>
+              </tr>
+              <tr class="alt">
+                <td>Engineer Communication</td>
+                <td>Standard updates</td>
+                <td class="plus-col">Direct dedicated engineer</td>
+              </tr>
+              <tr>
+                <td>Shipping</td>
+                <td>Free prepaid label</td>
+                <td class="plus-col">Free overnight — both ways</td>
+              </tr>
+              <tr class="alt">
+                <td>Best For</td>
+                <td>Urgent but flexible deadlines</td>
+                <td class="plus-col">True emergencies — zero downtime</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA RECOVERY PROCESS -->
+    <section class="s-white">
+      <div class="container">
         <h2 class="s-heading">Data Recovery Process</h2>
+        <p class="s-body">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
@@ -155,7 +229,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-contact-band">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Start Your Expedited Plus Recovery Now</h2>
+          <h2 class="contact-banner-heading">Get a Free Quote within Minutes!</h2>
         </div>
         <ul class="contact-bullets">
           <li>24/7 recovery — nights, weekends, holidays</li>
@@ -220,4 +294,26 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+
+/* Warning boxes */
+.warning-box { background: #fff5f5; border-left: 4px solid #e53e3e; border-radius: 6px; padding: 16px 20px; margin-bottom: 16px; }
+.warning-text { color: #c53030; font-size: 0.95rem; font-weight: 700; line-height: 1.7; margin: 0; }
+.warning-text strong { color: #c53030; }
+
+/* Comparison table */
+.compare-table-wrap { overflow-x: auto; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+.compare-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.compare-table thead tr { background: #1a1a2e; }
+.compare-table thead th { padding: 18px 20px; text-align: left; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.03em; }
+.col-feature { color: rgba(255,255,255,0.6); width: 28%; }
+.col-expedited { color: #fff; width: 32%; }
+.col-plus { color: #C9A84C; width: 40%; }
+.compare-table tbody tr { border-bottom: 1px solid #e2e6ee; }
+.compare-table tbody tr.alt { background: #f9fafc; }
+.compare-table tbody td { padding: 16px 20px; color: #4a5568; vertical-align: middle; line-height: 1.5; }
+.compare-table tbody td:first-child { font-weight: 700; color: #1a1a2e; }
+.plus-col { color: #1a1a2e; font-weight: 700; }
+.sub { font-size: 0.8rem; color: #718096; }
+.s-heading.center { text-align: center; }
+@media (max-width: 640px) { .compare-table thead th, .compare-table tbody td { padding: 12px 12px; font-size: 0.85rem; } }
 </style>
