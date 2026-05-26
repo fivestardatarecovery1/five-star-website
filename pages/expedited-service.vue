@@ -69,7 +69,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Expedited Data Recovery Service"
       description="When time is critical, our Expedited Data Recovery service gives your case immediate priority. Our engineers will begin working on your device right away—without waiting in the standard queue. Whether it's during business hours, after hours, or on weekends, we offer fast-track options to meet your urgent needs. Every expedited case is handled with the highest level of attention and care to recover your data as quickly as possible."
-      bgImage="/data-recovery-pricing-los-angeles.jpg"
+      bgImage="/expedited-service-hero.jpg"
       :trustBadges="trustBadges"
     />
 
