@@ -86,7 +86,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Data Recovery Beverly Hills, CA"
       subtitle="Get Your Data Back In No Time."
       description="When critical data goes missing, trust Five Star Data Recovery to help recover what you thought was lost forever. We offer expert data recovery services for customers in Beverly Hills, CA and surrounding areas. We're located just a short distance from Beverly Hills and provide free same-day pickup throughout the area."
-      bgImage="/data-recovery-los-angeles-ca.webp"
+      bgImage="/beverly-hills-hero.jpg"
       :trustBadges="trustBadges"
     />
 
