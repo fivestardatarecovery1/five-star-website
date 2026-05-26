@@ -28,6 +28,74 @@ useHead({
   ]
 })
 
+const faqs = [
+  {
+    q: '1. Will the recovered data be in the same structure as before?',
+    a: 'Yes. Whenever possible, we recover your files in the same folder and directory structure they were originally stored in. This includes file names, folder organization, and hierarchy. However, in rare cases where the file system is heavily damaged, recovered data may be provided in raw format.'
+  },
+  {
+    q: '2. What’s the most common reason an external drive fails?',
+    a: 'The most common causes of external hard drive failure include physical damage (such as being dropped), file system corruption, bad sectors, electronic failure, or worn-out internal components. Improper ejection and power surges can also lead to drive failure.'
+  },
+  {
+    q: '3. Can you recover data from an external hard drive that isn’t showing up?',
+    a: 'Yes. If your external hard drive isn’t recognized by your computer, the issue could be logical, firmware-related, or hardware-based. We diagnose the exact cause and use specialized tools to recover the data safely.'
+  },
+  {
+    q: '4. Do you work with all brands of external hard drives?',
+    a: 'Absolutely. We recover data from all major brands, including Western Digital, Seagate, Toshiba, LaCie, G-Technology, and others. Whether it’s a portable USB drive or a larger desktop external drive, we can help.'
+  },
+  {
+    q: '5. How long does external hard drive data recovery take?',
+    a: 'Typical turnaround time for external hard drive recovery is <strong>3–5 business days</strong>. For urgent cases, we offer Expedited and Expedited Plus services with faster, prioritized turnaround.'
+  },
+  {
+    q: '6. Can you recover data from physically damaged external hard drives?',
+    a: 'Yes. If your external hard drive has suffered physical damage—such as from a drop, liquid exposure, or electrical failure—we use cleanroom technology and donor parts (if needed) to recover the data safely.'
+  },
+  {
+    q: '7. Is there a No Data, No Charge policy for external hard drive recovery?',
+    a: '<strong>Yes</strong>. For most standard cases, you only pay if we successfully recover your data. Exceptions may apply for deleted file recovery or drives that were previously opened or tampered with.'
+  },
+  {
+    q: '8. What if my external hard drive makes clicking or beeping sounds?',
+    a: 'Clicking or beeping noises often indicate mechanical failure inside the drive. Stop powering it on and contact a professional <a href="/data-recovery" class="faq-link"><strong>data recovery service</strong></a> immediately to avoid further damage. These cases usually require cleanroom recovery.'
+  },
+  {
+    q: '9. Can you recover files from an accidentally formatted external hard drive?',
+    a: 'Yes. If your external drive was accidentally formatted and new data hasn’t heavily overwritten it, we can perform a deep scan to recover your deleted files and folders.<br><br><strong>Important:</strong> If your external drive is a <strong>Western Digital</strong>, <strong>SanDisk</strong>, or <strong>G-Drive</strong>, please <strong>power it down immediately after deletion or formatting</strong>. These brands use <strong>complex firmware structures</strong>, and continued use can cause <strong>translator issues</strong> that make deleted file recovery much more difficult, or in some cases, impossible.'
+  },
+  {
+    q: '10. Can I ship my external hard drive to you for recovery?',
+    a: 'Absolutely. We offer <strong>free, nationwide round-trip shipping</strong> for external hard drive data recovery. Simply fill out our Mail-In Recovery Form, and we’ll provide a prepaid shipping label for your convenience.'
+  },
+  {
+    q: '11. How much does External Hard Drive Recovery Cost?',
+    a: `At Five Star Data Recovery, we offer transparent <strong>flat-rate pricing</strong> with no hidden fees. Costs are based on the drive’s capacity, brand, and the level of damage:<br><br>
+<table class="faq-table">
+<thead><tr><th>Drive Type &amp; Condition</th><th>Flat Rate Price*</th></tr></thead>
+<tbody>
+<tr><td>External Hard Drives up to 2TB (Logical Issues – excluding WD, SanDisk, G-Drive)</td><td><strong>$300</strong></td></tr>
+<tr><td>External Hard Drives up to 6TB (Logical Issues – excluding WD, SanDisk, G-Drive)</td><td><strong>$500</strong></td></tr>
+<tr><td>Western Digital, SanDisk, G-Drive External Hard Drives &amp; Drives up to 12TB</td><td><strong>$600</strong></td></tr>
+<tr><td>Drives Requiring Mechanical / Clean Room Recovery (e.g., clicking, beeping, head failure)</td><td><strong>$950</strong></td></tr>
+</tbody>
+</table>
+<em class="faq-note">*All prices are <strong>per drive</strong>, include parts and labor, and fall under our <strong>No Data, No Charge</strong> policy.</em><br><br>
+If your recovery is urgent, we also offer:<br>
+<a href="/expedited-service" class="faq-link"><strong>Expedited Service</strong></a>: $200/drive (during business hours)<br>
+<a href="/expedited-service-plus" class="faq-link"><strong>Expedited Plus</strong></a>: $500/drive (24/7 priority)<br><br>
+Visit our full <a href="/pricing" class="faq-link">Data Recovery Pricing</a> page for more details and examples.`
+  },
+  {
+    q: '12. Why is Western Digital, SanDisk, and G-Drive external hard drive recovery more expensive?',
+    a: 'Western Digital, SanDisk, and G-Technology (G-Drive) external hard drives often use <strong>proprietary encryption</strong>, <strong>embedded USB-to-SATA bridges</strong>, or <strong>self-encrypting controller boards</strong> that complicate the recovery process. In many cases, these drives require advanced techniques such as:<br><br><strong>Bypassing encrypted USB bridges</strong><br><strong>Custom firmware manipulation</strong><br><strong>Donor board matching with ROM transfer</strong><br><strong>Decryption of WD Self-Encrypting Drives (SEDs)</strong><br><br>These brands are engineered in ways that make standard recovery methods ineffective, even when the internal hard drive itself is healthy. That added complexity results in <strong>longer recovery times</strong>, <strong>more specialized equipment</strong>, and <strong>greater risk</strong>, which is why they fall under a higher flat-rate tier.'
+  },
+]
+
+const openFaq = ref<number | null>(null)
+const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
+
 useSeoMeta({
   title: 'External Hard Drive Not Showing Up - Five Star Data Recovery',
   ogTitle: 'External Hard Drive Data Recovery',
@@ -255,6 +323,22 @@ useSeoMeta({
       </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+            <button class="faq-trigger" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band">
       <div class="container">
@@ -323,6 +407,22 @@ useSeoMeta({
 .contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
 .btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
+
+/* ── FAQ ── */
+.faq-wrap { display: flex; flex-direction: column; gap: 0; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-row.active { background: #fff; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.faq-answer :deep(.faq-table) { width: 100%; border-collapse: collapse; margin: 14px 0 10px; font-size: 0.87rem; }
+.faq-answer :deep(.faq-table th) { background: #1a1a2e; color: #C9A84C; text-align: left; padding: 10px 14px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.faq-answer :deep(.faq-table td) { padding: 9px 14px; border-bottom: 1px solid #eee; color: #333; }
+.faq-answer :deep(.faq-table tr:nth-child(even) td) { background: #f8f9fb; }
+.faq-answer :deep(.faq-note) { display: block; font-size: 0.82rem; color: #777; font-style: italic; margin-top: 8px; }
 
 @media (max-width: 768px) {
   .dos-donts-grid, .two-col-layout { grid-template-columns: 1fr; gap: 20px; }
