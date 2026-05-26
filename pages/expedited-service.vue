@@ -78,19 +78,33 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 1 — s-white -->
     <section class="s-white">
       <div class="container">
-        <h4 class="s-heading">Do you offer a Priority Data Recovery Service?</h4>
-        <p class="s-body">Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would put your case at the top of the que. With our Expedited Service, our Engineers will start working on your data recovery case within an hour of drop off, and the case will be handled as a priority within business hours. With this service, you are guaranteed a diagnosis within 3 hours of the time you drop off your drive. Your case will be worked on non-stop during normal business hours.</p>
+        <div class="two-col-layout">
+          <div>
+            <h4 class="s-heading">Do you offer a Priority Data Recovery Service?</h4>
+            <p class="s-body">Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would put your case at the top of the que. With our Expedited Service, our Engineers will start working on your data recovery case within an hour of drop off, and the case will be handled as a priority within business hours. With this service, you are guaranteed a diagnosis within 3 hours of the time you drop off your drive. Your case will be worked on non-stop during normal business hours.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/expedited-service-technician.jpg" alt="Data recovery technician working on hard drive" class="section-img" />
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- SECTION 2 — s-grey -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading">Whats the average turnaround time for Expedited Data Recovery Cases?</h2>
-        <p class="s-body">This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it's impossible to give an exact turnaround time.</p>
-        <p class="s-body"><strong>IF</strong> the issue with your drive is logical (bad sectors, firmware corruption, damaged file system, etc), and you have less than 2TB of data, we should be able to get the data back to you within 2-3 days.</p>
-        <p class="s-body"><strong>IF</strong> the issue with your drive is mechanical (clicking, beeping, stuck motor, etc), and you have less than 2TB of data, we should be able to get your data back to you within 3-5 days (the delay is for the time needed to source the donor parts).</p>
-        <p class="s-body"><strong>IF</strong> you have a lot of data on your drive, we can work with you to get you back the most important files needed first, then continue working on the rest of the recovery.</p>
+        <div class="two-col-layout reverse">
+          <div class="section-img-wrap">
+            <img src="/expedited-service-shipping.jpg" alt="Expedited data recovery mail-in shipping service" class="section-img" />
+          </div>
+          <div>
+            <h2 class="s-heading">Whats the average turnaround time for Expedited Data Recovery Cases?</h2>
+            <p class="s-body">This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it's impossible to give an exact turnaround time.</p>
+            <p class="s-body"><strong>IF</strong> the issue with your drive is logical (bad sectors, firmware corruption, damaged file system, etc), and you have less than 2TB of data, we should be able to get the data back to you within 2-3 days.</p>
+            <p class="s-body"><strong>IF</strong> the issue with your drive is mechanical (clicking, beeping, stuck motor, etc), and you have less than 2TB of data, we should be able to get your data back to you within 3-5 days (the delay is for the time needed to source the donor parts).</p>
+            <p class="s-body"><strong>IF</strong> you have a lot of data on your drive, we can work with you to get you back the most important files needed first, then continue working on the rest of the recovery.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -203,7 +217,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
 .s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 20px; }
 .inline-link { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col-layout.reverse { direction: rtl; }
+.two-col-layout.reverse > * { direction: ltr; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+@media (max-width: 768px) { .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } }
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
 .content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
 .content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
