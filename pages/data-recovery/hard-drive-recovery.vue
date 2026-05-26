@@ -229,19 +229,24 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <!-- HOW HARD DRIVES WORK -->
     <section class="s-grey">
-      <div class="container">
-        <h2 class="s-heading">How Hard Drives Work (And Why They Fail)</h2>
-        <p class="s-body">A hard drive stores data on spinning magnetic disks known as platters. When you save a file, a tiny read/write head moves across the platter to write or retrieve information. These parts work with incredible precision—but they're also extremely fragile.</p>
-        <p class="s-body">Failed hard drives can happen in several ways:</p>
-        <ul class="content-list">
-          <li>Mechanical failure — such as a head crash or stuck spindle</li>
-          <li>Electrical failure — power surges can fry the drive's PCB</li>
-          <li>Firmware corruption — software inside the drive malfunctions</li>
-          <li>Logical errors — corruption in the file system or partition table</li>
-          <li>Encryption lockout — inaccessible because of failed password or software (correct password must be provided)</li>
-          <li>Virus damage — some malware destroys key structures or the boot sector. In some cases, the computer may still see the drive, but the user interface will freeze or the contents appear blank. In some cases, the drive won't spin or the system won't detect it at all.</li>
-        </ul>
-        <p class="s-body">We can recover hard drive data from almost any model or format. This includes brands like Seagate, Western Digital, Toshiba, and Samsung.</p>
+      <div class="container two-col-layout">
+        <div>
+          <h2 class="s-heading">How Hard Drives Work (And Why They Fail)</h2>
+          <p class="s-body">A hard drive stores data on spinning magnetic disks known as platters. When you save a file, a tiny read/write head moves across the platter to write or retrieve information. These parts work with incredible precision—but they're also extremely fragile.</p>
+          <p class="s-body">Failed hard drives can happen in several ways:</p>
+          <ul class="content-list">
+            <li>Mechanical failure — such as a head crash or stuck spindle</li>
+            <li>Electrical failure — power surges can fry the drive's PCB</li>
+            <li>Firmware corruption — software inside the drive malfunctions</li>
+            <li>Logical errors — corruption in the file system or partition table</li>
+            <li>Encryption lockout — inaccessible because of failed password or software (correct password must be provided)</li>
+            <li>Virus damage — some malware destroys key structures or the boot sector. In some cases, the computer may still see the drive, but the user interface will freeze or the contents appear blank. In some cases, the drive won't spin or the system won't detect it at all.</li>
+          </ul>
+          <p class="s-body">We can recover hard drive data from almost any model or format. This includes brands like Seagate, Western Digital, Toshiba, and Samsung.</p>
+        </div>
+        <div>
+          <img src="/hard-drive-internal-platters.jpg" alt="Open hard drive showing internal platters and read/write heads" class="rounded-img" />
+        </div>
       </div>
     </section>
 
@@ -382,6 +387,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 /* Two-col */
 .two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.rounded-img { width: 100%; height: auto; border-radius: 16px; display: block; object-fit: cover; }
 
 /* Process steps */
 .process-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 36px; }
