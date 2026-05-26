@@ -197,6 +197,30 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <StatsBar />
 
+    <!-- COMMON REASONS SECTION -->
+    <section class="s-white">
+      <div class="container reasons-layout">
+        <div class="reasons-copy">
+          <h2 class="reasons-heading">Common Reasons You May Need Data Recovery</h2>
+          <p class="reasons-intro">Data loss can happen when you least expect it. Some of the most common causes include:</p>
+          <ul class="reasons-list">
+            <li>Accidental deletion of important files</li>
+            <li>Reformatting the drive without backup</li>
+            <li>Virus or ransomware attacks</li>
+            <li>Failed iOS or system updates</li>
+            <li>Drops, spills, or other physical damage</li>
+            <li>Electrical surges or overheating</li>
+            <li>Crashes or corruption caused by a failed operating system update</li>
+          </ul>
+          <p class="reasons-body">You still have options if your file system becomes corrupted or you work with damaged drives.</p>
+          <p class="reasons-body">Our team can recover data quickly and professionally—even from completely dead devices.</p>
+        </div>
+        <div class="reasons-image">
+          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Data recovery technician working on hard drive" class="reasons-img" />
+        </div>
+      </div>
+    </section>
+
     <!-- SERVICES GRID -->
     <section class="s-white">
       <div class="container">
@@ -624,6 +648,52 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
 
+/* ── Common Reasons Section ── */
+.reasons-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.reasons-heading {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  font-weight: 900;
+  color: #1a1a2e;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+.reasons-intro {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.reasons-list {
+  margin: 0 0 18px 0;
+  padding: 0 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.reasons-list li {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+.reasons-body {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+.reasons-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1200px) {
   .services-grid { grid-template-columns: repeat(3, 1fr); }
@@ -639,7 +709,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .three-col { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
-  .asym-layout, .mid-form-inner { grid-template-columns: 1fr; gap: 36px; }
+  .asym-layout, .mid-form-inner, .reasons-layout { grid-template-columns: 1fr; gap: 36px; }
   .page-video-inner { grid-template-columns: 1fr; }
   .bstat-div { display: none; }
   .img-stat-badge { bottom: 12px; }
