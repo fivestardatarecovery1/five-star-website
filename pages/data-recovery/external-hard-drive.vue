@@ -5,24 +5,84 @@ useHead({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Service",
-        "name": "External Hard Drive Data Recovery",
-        "url": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery/",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Five Star Data Recovery",
-          "telephone": "+1-818-272-8866",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "1731 S Brand Blvd.",
-            "addressLocality": "Glendale",
-            "addressRegion": "CA",
-            "postalCode": "91204",
-            "addressCountry": "US"
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "priceRange": "$300-$950",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/"
+          },
+          {
+            "@type": "Product",
+            "name": "External Hard Drive Data Recovery",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery/",
+            "description": "Professional External Hard Drive Data Recovery services for all brands and failure types. Recover data from non-detected drives, damaged devices, clicking drives, and formatted external hard drives. Free diagnostics and flat-rate pricing.",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sarah T." },
+                "datePublished": "2024-11-14",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                "reviewBody": "I thought all my family vacation photos were gone forever after my external hard drive stopped showing up on my computer. I called the team, and within a few days, they had recovered everything for me! The process was stress-free, and they kept me updated the whole time. Highly recommend if you're facing a similar situation."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Jason M." },
+                "datePublished": "2025-03-02",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                "reviewBody": "My 2TB Seagate external drive suddenly started making clicking noises and became completely unreadable. I dropped it off for recovery, and they explained everything clearly from the start. In less than a week, I had all my business files back. The flat-rate pricing gave me peace of mind\u2014no hidden fees or surprises."
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Sean T." },
+                "datePublished": "2025-06-21",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                "reviewBody": "I accidentally dropped my Western Digital external hard drive off my desk, and it wouldn't power on anymore. I was really worried about losing years of photos and documents. Luckily, the engineers here worked their magic. They recovered almost every single file. I'm beyond grateful!"
+              }
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "External Hard Drive Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Will the recovered data be in the same structure as before?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Whenever possible, we recover your files in the same folder and directory structure they were originally stored in. This includes file names, folder organization, and hierarchy. However, in rare cases where the file system is heavily damaged, recovered data may be provided in raw format." } },
+              { "@type": "Question", "name": "What's the most common reason an external drive fails?", "acceptedAnswer": { "@type": "Answer", "text": "The most common causes of external hard drive failure include physical damage (such as being dropped), file system corruption, bad sectors, electronic failure, or worn-out internal components. Improper ejection and power surges can also lead to drive failure." } },
+              { "@type": "Question", "name": "Can you recover data from an external hard drive that isn't showing up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your external hard drive isn't recognized by your computer, the issue could be logical, firmware-related, or hardware-based. We diagnose the exact cause and use specialized tools to recover the data safely." } },
+              { "@type": "Question", "name": "Do you work with all brands of external hard drives?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We recover data from all major brands, including Western Digital, Seagate, Toshiba, LaCie, G-Technology, and others. Whether it's a portable USB drive or a larger desktop external drive, we can help." } },
+              { "@type": "Question", "name": "How long does external hard drive data recovery take?", "acceptedAnswer": { "@type": "Answer", "text": "Typical turnaround time for external hard drive recovery is 3-5 business days. For urgent cases, we offer Expedited and Expedited Plus services with faster, prioritized turnaround." } },
+              { "@type": "Question", "name": "Can you recover data from physically damaged external hard drives?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your external hard drive has suffered physical damage\u2014such as from a drop, liquid exposure, or electrical failure\u2014we use cleanroom technology and donor parts (if needed) to recover the data safely." } },
+              { "@type": "Question", "name": "Is there a No Data, No Charge policy for external hard drive recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. For most standard cases, you only pay if we successfully recover your data. Exceptions may apply for deleted file recovery or drives that were previously opened or tampered with." } },
+              { "@type": "Question", "name": "What if my external hard drive makes clicking or beeping sounds?", "acceptedAnswer": { "@type": "Answer", "text": "Clicking or beeping noises often indicate mechanical failure inside the drive. Stop powering it on and contact a professional data recovery service immediately to avoid further damage. These cases usually require cleanroom recovery." } },
+              { "@type": "Question", "name": "Can you recover files from an accidentally formatted external hard drive?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your external drive was accidentally formatted and new data hasn't heavily overwritten it, we can perform a deep scan to recover your deleted files and folders. Important: If your external drive is a Western Digital, SanDisk, or G-Drive, please power it down immediately after deletion or formatting. These brands use complex firmware structures, and continued use can cause translator issues that make deleted file recovery much more difficult, or in some cases, impossible." } },
+              { "@type": "Question", "name": "Can I ship my external hard drive to you for recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We offer free, nationwide round-trip shipping for external hard drive data recovery. Simply fill out our Mail-In Recovery Form, and we'll provide a prepaid shipping label for your convenience." } },
+              { "@type": "Question", "name": "How much does External Hard Drive Recovery cost?", "acceptedAnswer": { "@type": "Answer", "text": "At Five Star Data Recovery, we offer transparent flat-rate pricing with no hidden fees. Costs are based on the drive's capacity, brand, and the level of damage:\n\n| Drive Type & Condition | Flat Rate Price* |\n|------------------------|------------------|\n| External hard drives up to 2TB (basic issues) | $300 |\n| External drives up to 6TB (standard cases \u2013 excluding WD, SanDisk, G-Drive) | $500 |\n| Western Digital, SanDisk, or G-Drive external drives (up to 12TB) | $600 |\n| Drives requiring mechanical/clean room recovery (e.g., clicking, head failure) | $950 |\n\n*All prices are per drive, include parts and labor, and fall under our No Data, No Charge policy.\n\nIf your recovery is urgent, we also offer:\n- Expedited Service: $200/drive (during business hours)\n- Expedited Plus: $500/drive (24/7 priority)\n\nVisit our full Data Recovery Pricing page for more details and examples." } },
+              { "@type": "Question", "name": "Why is Western Digital, SanDisk, and G-Drive external hard drive recovery more expensive?", "acceptedAnswer": { "@type": "Answer", "text": "Western Digital, SanDisk, and G-Technology (G-Drive) external hard drives often use proprietary encryption, embedded USB-to-SATA bridges, or self-encrypting controller boards that complicate the recovery process. In many cases, these drives require advanced techniques such as:\n\n- Bypassing encrypted USB bridges\n- Custom firmware manipulation\n- Donor board matching with ROM transfer\n- Decryption of WD Self-Encrypting Drives (SEDs)\n\nThese brands are engineered in ways that make standard recovery methods ineffective, even when the internal hard drive itself is healthy. That added complexity results in longer recovery times, more specialized equipment, and greater risk, which is why they fall under a higher flat-rate tier." } }
+            ]
           }
-        },
-        "areaServed": [{ "@type": "Country", "name": "United States" }],
-        "description": "Professional external hard drive data recovery services for all brands and failure types. Free diagnostics, flat-rate pricing, no data no charge."
+        ]
       })
     }
   ]
