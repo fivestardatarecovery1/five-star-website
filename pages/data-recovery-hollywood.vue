@@ -33,24 +33,24 @@ const reviews = [
 
 const faqs = [
   {
-    q: 'Do you offer data recovery services in Hollywood, CA?',
-    a: 'Yes — although our lab is based in Glendale, CA, we proudly serve Hollywood clients with free same-day pickup. Just give us a call or fill out an online request, and we\'ll come to your location in Hollywood at no charge.',
+    q: 'Do you offer same-day pickup in Hollywood?',
+    a: "Yes! We provide free same-day pickup in Hollywood for customers who can't visit our Glendale lab. Just give us a call and we'll schedule a pickup right away."
   },
   {
     q: 'What types of storage devices can you recover data from?',
-    a: 'We recover data from hard drives, SSDs, RAID arrays, NAS devices, USB flash drives, SD cards, iPhones, and more. Whether it\'s a personal device or a professional production drive, we handle all types of storage media.',
+    a: 'We recover data from hard drives, SSDs, USB flash drives, SD cards, RAID systems, MacBooks, iPhones, Samsung Phones, external drives, and more. If it stores data, there\'s a good chance we can recover it.',
   },
   {
-    q: 'How long does a standard data recovery take for Hollywood clients?',
-    a: 'Standard cases typically take 3–5 business days. If you need faster turnaround, we offer <a href="/expedited-service" class="faq-link">Expedited Service</a> (priority during business hours) and <a href="/expedited-service-plus" class="faq-link">Expedited Service Plus</a> (24/7 recovery).',
+    q: 'If I schedule same day pickup from Hollywood, how do I get my recovered data back?',
+    a: 'Once your data recovery is complete, you have two convenient options: you can pick up your recovered data from our Glendale office, or we can ship it back to you at no additional cost. Just let us know which option works best for you.',
   },
   {
-    q: 'What does your No Data, No Charge policy mean?',
-    a: 'If we are unable to recover your data, you will not be charged for the recovery service (most cases). The diagnostic is always free — no obligation to proceed. You only pay when we successfully recover your files.',
+    q: 'How long does the data recovery process take?',
+    a: 'Standard recoveries take about 3–5 business days, but we also offer Expedited and Expedited Plus services for urgent cases. These services prioritize your recovery based on the level of urgency.',
   },
   {
-    q: 'How much does data recovery cost?',
-    a: 'We use flat-rate pricing with no hidden fees. Recovery costs typically range from $300 to $950 depending on the device type and severity of the failure. You\'ll receive a full quote after the free diagnosis before any work begins.',
+    q: 'Do you work on drives that have been dropped or physically damaged?',
+    a: 'Absolutely. We specialize in physical data recovery, including dropped drives, water-damaged devices, and drives with internal mechanical failure. All work is done in a certified clean room environment.',
   },
 ]
 
@@ -76,15 +76,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Trusted Data Recovery Services in Hollywood</h2>
-        <p class="s-body">Hollywood is home to creators, producers, and professionals who rely on their data every day. When a drive fails, the stakes are high. Five Star Data Recovery offers expert recovery services for all types of storage media, including:</p>
+        <p class="s-body">We’ve helped thousands of customers recover lost data from:</p>
         <ul class="content-list">
-          <li><NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">Hard Drive Recovery</NuxtLink> — Mechanical and logical failures, clicking drives, unresponsive HDDs</li>
-          <li><NuxtLink to="/data-recovery/ssd-recovery" class="inline-link">SSD Recovery</NuxtLink> — Firmware errors, sudden failure, unrecognized drives</li>
-          <li><NuxtLink to="/data-recovery/raid-recovery" class="inline-link">RAID &amp; NAS Recovery</NuxtLink> — All RAID levels, production servers, studio storage arrays</li>
-          <li><NuxtLink to="/data-recovery/external-hard-drive" class="inline-link">External Hard Drive Recovery</NuxtLink> — Dropped, damaged, or corrupted external drives</li>
-          <li><NuxtLink to="/data-recovery/usb-recovery" class="inline-link">USB Flash Drive Recovery</NuxtLink> — Broken connectors, corrupted drives, chip-level recovery</li>
-          <li><NuxtLink to="/data-recovery/sd-card-recovery" class="inline-link">SD Card Recovery</NuxtLink> — Camera cards, drone footage, corrupted memory cards</li>
+          <li><strong>Mac Data Recovery</strong> – Specializing in component-level recovery for no-power MacBooks, including M1 and M2 models.</li>
+          <li><strong>Hard Drive Data Recovery</strong> – Expert recovery from drives with mechanical failure or logical corruption.</li>
+          <li><strong>RAID Data Recovery</strong> – Safe and precise recovery from RAID 0, 1, 5, 10, and custom RAID configurations.</li>
+          <li><strong>SSD Data Recovery</strong> – Advanced tools to recover data from physically or electronically failed SSDs.</li>
+          <li><strong>External Hard Drive Data Recovery</strong> – Recovering data from non-detected, clicking, or accidentally dropped external drives.</li>
         </ul>
+        <p class="s-body">Every recovery is handled by experienced engineers using safe and proven methods.</p>
       </div>
     </section>
 
@@ -92,55 +92,84 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Why Choose Us for Data Recovery in Hollywood?</h2>
-        <ul class="content-list">
-          <li><strong>Free Same-Day Pickup in Hollywood</strong> — We come to you. No need to drive to our lab. We pick up your device directly from your Hollywood address at no cost.</li>
-          <li><strong>Free Diagnostic with No Obligation</strong> — Our engineers assess your device and provide a full quote for free. You decide whether to proceed — no pressure, no charge if you don't.</li>
-          <li><strong>Flat-Rate Pricing &amp; No Data, No Charge</strong> — Transparent pricing with no hidden fees. If we can't recover your data, you don't pay for the recovery (most cases).</li>
-          <li><strong>Certified Cleanroom On-Site</strong> — Our ISO 5 certified cleanroom allows us to safely open and repair physically damaged drives that would be impossible to recover otherwise.</li>
-        </ul>
+        <div class="reason-cards">
+          <div class="reason-card">
+            <h3 class="reason-title">Over a Decade of Experience</h3>
+            <p class="s-body">Trusted by thousands, we’ve been recovering data for over 10 years with industry-leading expertise.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Hundreds of 5-Star Reviews</h3>
+            <p class="s-body">Our reputation speaks for itself — hundreds of satisfied customers have left glowing reviews online.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Free Evaluation &amp; No Data, No Charge</h3>
+            <p class="s-body">You only pay if we recover your data; we offer free diagnostics and transparent, flat-rate pricing.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Same-Day Pickup in Hollywood</h3>
+            <p class="s-body">Located minutes from Hollywood, we offer fast, free same-day pickup to get your recovery started immediately.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Expedited and 24/7 Services Available</h3>
+            <p class="s-body">For urgent cases, we offer rush recovery options — including after-hours and weekend availability.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SECTION 3 — s-white: Data Recovery Process -->
+    <!-- SECTION 3 — s-white: Recovery Process -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Data Recovery Process</h2>
+        <h2 class="s-heading">Our Recovery Process</h2>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
-              <h3 class="step-title">Drop off or Mail in Your Drive</h3>
-              <p class="step-body">You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.</p>
+              <h3 class="step-title">Free Evaluation</h3>
+              <p class="step-body">We begin by diagnosing your device to identify the problem and determine the best recovery strategy—completely free of charge.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
-              <h3 class="step-title">Receive a Free Diagnosis</h3>
-              <p class="step-body">Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
+              <h3 class="step-title">Secure Imaging</h3>
+              <p class="step-body">A sector-by-sector clone of your storage device is created to protect the original data from further damage during the recovery process.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
             <div>
-              <h3 class="step-title">Our Engineers work on Recovering your Data</h3>
-              <p class="step-body">We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
+              <h3 class="step-title">Advanced Scanning</h3>
+              <p class="step-body">Our engineers scan the cloned image using professional tools to locate lost files, partitions, and file structures.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">4</div>
             <div>
-              <h3 class="step-title">Review &amp; Approve the Recovered</h3>
-              <p class="step-body">After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
+              <h3 class="step-title">Data Extraction &amp; Repair</h3>
+              <p class="step-body">We extract all recoverable data and, if needed, repair damaged files to ensure they’re usable and complete.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">5</div>
             <div>
-              <h3 class="step-title">Receive your recovered data</h3>
-              <p class="step-body">Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+              <h3 class="step-title">File Review &amp; Delivery</h3>
+              <p class="step-body">You preview the recovered files, and once approved, we deliver your data on a new drive or via a secure transfer method.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT SUCCESS STORY -->
+    <section class="s-grey">
+      <div class="container">
+        <div class="success-story">
+          <h2 class="s-heading">⭐ Client Success Story – Hollywood Film Editor Recovers 2TB of Critical Project Files</h2>
+          <p class="s-body">A Hollywood film editor reached out after their external hard drive stopped showing up. It contained over 2TB of raw footage, edited timelines, and sound libraries for an indie film nearing its premiere.</p>
+          <p class="s-body">Our diagnostics revealed a mechanical failure caused by a drop, and our engineers performed a clean room head swap followed by a full clone of the drive. Using deep scan tools, we successfully recovered all critical files in their original structure.</p>
+          <p class="s-body">The client received their data just in time to meet their deadline — and later thanked us during their post-screening Q&amp;A. They admitted they had lost all hope before finding our lab. Now, we’re the first call they make for any data-related emergency on set.</p>
+          <p class="s-body">The successful recovery saved not only the project, but also the client’s reputation with investors and the production team.</p>
         </div>
       </div>
     </section>
@@ -152,11 +181,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-contact-band">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Hollywood Data Recovery</h2>
+          <h2 class="contact-banner-heading">Let’s Get Your Files Back</h2>
         </div>
+        <p class="contact-body-text">If you’re in Hollywood, CA and need help fast—call Five Star Data Recovery today for same-day pickup and expert service.</p>
         <ul class="contact-bullets">
           <li>Free same-day pickup in Hollywood</li>
-          <li>Free diagnostic</li>
+          <li>Free diagnostic — no obligation</li>
           <li>3–5 business day standard turnaround</li>
           <li>No Data, No Charge (most cases)</li>
         </ul>
@@ -218,4 +248,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.reason-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.reason-card { background: #fff; border: 1px solid #e2e6ee; border-radius: 10px; padding: 28px 24px; border-top: 4px solid #C9A84C; }
+.reason-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 12px; }
+.success-story { max-width: 860px; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.s-contact-band { padding: 44px 0; }
+@media (max-width: 768px) { .reason-cards { grid-template-columns: 1fr; } }
 </style>
