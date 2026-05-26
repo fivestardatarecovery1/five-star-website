@@ -225,19 +225,25 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- WHEN TO REMOVE + WE RECOVER ALL FILES -->
+    <!-- WHEN TO REMOVE THE HARD DRIVE -->
     <section class="s-white">
-      <div class="container two-col-layout">
-        <div>
-          <h2 class="s-heading">When Should You Remove the Hard Drive?</h2>
-          <p class="s-body">If your laptop won't boot or shows no sign of power, you may need to remove the hard drive for evaluation. If you're unsure how to do this, our technicians can help or walk you through it safely. In some cases, removing the drive helps us isolate the issue without risking further damage to the system.</p>
-          <p class="s-body">Removing the drive is especially helpful when a system is water-damaged or stuck in a boot loop. This step allows us to bypass system-level issues and focus directly on the drive itself.</p>
-        </div>
+      <div class="container">
+        <h2 class="s-heading">When Should You Remove the Hard Drive?</h2>
+        <p class="s-body">If your laptop won't boot or shows no sign of power, you may need to remove the hard drive for evaluation. If you're unsure how to do this, our technicians can help or walk you through it safely. In some cases, removing the drive helps us isolate the issue without risking further damage to the system.</p>
+        <p class="s-body">Removing the drive is especially helpful when a system is water-damaged or stuck in a boot loop. This step allows us to bypass system-level issues and focus directly on the drive itself.</p>
+      </div>
+    </section>
+
+    <!-- WE RECOVER ALL FILE TYPES -->
+    <section class="s-grey">
+      <div class="container two-col-layout align-center">
         <div>
           <h2 class="s-heading">We Recover All File Types and Scenarios</h2>
           <p class="s-body">Our team can recover lost files in almost any situation. This includes retrieving a deleted file from the recycle bin, restoring formatted partitions, and resolving file system corruption. We work with hundreds of file types—from documents and spreadsheets to photos, videos, and business data.</p>
           <p class="s-body">Whether you lost personal data from a failed backup or deleted work files by mistake, we can help. We also recover data from systems affected by failed software updates, virus damage, or even factory resets. Whether you need a single presentation back or your entire photo library, we're ready to help.</p>
-          <img src="/laptop-file-types.webp" alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img" />
+        </div>
+        <div class="file-types-col">
+          <img src="/laptop-file-types.webp" alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img-large" />
         </div>
       </div>
     </section>
@@ -326,6 +332,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* Two-col */
 .two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
 .file-types-img { width: 100%; max-width: 420px; height: auto; display: block; border-radius: 12px; margin-top: 20px; }
+.two-col-layout.align-center { align-items: center; }
+.file-types-col { display: flex; align-items: center; justify-content: center; }
+.file-types-img-large { width: 100%; height: auto; display: block; border-radius: 16px; }
 
 /* Content list */
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
