@@ -314,7 +314,7 @@ useSeoMeta({
 .scenarios-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.7; background: #fff; border-radius: 10px; padding: 20px 22px; border-left: 4px solid #C9A84C; }
 
 /* Contact band */
-.s-contact-band { background: #0a0c14; padding: 72px 0; }
+.s-contact-band { background: #0a0c14; padding: 72px 0; border-bottom: 3px solid #C9A84C; }
 .contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
 .contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
 .contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 16px; }
