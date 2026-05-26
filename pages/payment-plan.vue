@@ -19,26 +19,42 @@ useHead({
               "postalCode": "91204",
               "addressCountry": "US"
             },
-            "priceRange": "$$",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "url": "https://www.fivestardatarecovery.com/"
+            "url": "https://www.fivestardatarecovery.com/",
+            "priceRange": "$300 - $950",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [{
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Jessica M." },
+              "datePublished": "2024-10-02",
+              "reviewBody": "I needed urgent data recovery but couldn't afford it all at once. Their payment plan saved me. Great service and support!",
+              "name": "Flexible and Reliable",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+            }]
+          },
+          {
+            "@type": "Service",
+            "name": "Data Recovery Payment Plans",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/payment-plans/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Affordable, interest-free in-house data recovery payment plans available from Five Star Data Recovery. Serving Glendale, Los Angeles, and nationwide customers with flexible options."
           },
           {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Payment Plan", "item": "https://www.fivestardatarecovery.com/payment-plan/" }
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery Payment Plans", "item": "https://www.fivestardatarecovery.com/data-recovery/payment-plans/" }
             ]
           },
           {
             "@type": "FAQPage",
             "mainEntity": [
               { "@type": "Question", "name": "Do you offer payment plans for data recovery services?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer in-house, interest-free payment plans for customers who need help managing the cost of data recovery. These plans are designed to make our services more accessible while still maintaining our high recovery standards. Please note, recovered data will only be released once the full balance is paid in full." } },
-              { "@type": "Question", "name": "Who qualifies for a data recovery payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Our interest-free payment plans are available to all customers—no credit check required. To get started, we simply require 25% of the total recovery cost upfront, with the remaining balance paid over time." } },
-              { "@type": "Question", "name": "How do I apply for a payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Our payment plans are handled in-store only—no online application or credit check is required. During your visit, our team will walk you through the simple process. Once you make the 25% upfront payment, we'll get started on your recovery and provide a clear payment schedule for the remaining balance." } },
-              { "@type": "Question", "name": "Is there a minimum or maximum amount for a payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, payment plans are available for recovery cases starting at $300 and up. There's no strict maximum, and we're happy to work with you on larger recoveries as long as the 25% upfront requirement is met." } },
-              { "@type": "Question", "name": "Will applying for a payment plan affect my credit score?", "acceptedAnswer": { "@type": "Answer", "text": "No — we do not perform any credit checks for our in-house payment plans. Approval is guaranteed as long as the minimum upfront payment is made, and your credit score is never impacted." } },
-              { "@type": "Question", "name": "What types of devices are eligible for payment plan options?", "acceptedAnswer": { "@type": "Answer", "text": "Payment plans are available for all major recovery types, including hard drives, SSDs, RAID systems, USB drives, SD cards, and mobile phones." } },
+              { "@type": "Question", "name": "Who qualifies for a data recovery payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Our interest-free payment plans are available to all customers\u2014no credit check required. To get started, we simply require 25% of the total recovery cost upfront, with the remaining balance paid over time. This flexible option helps make professional data recovery more accessible when you need it most." } },
+              { "@type": "Question", "name": "How do I apply for a payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Our payment plans are handled in-store only\u2014no online application or credit check is required. During your visit, our team will walk you through the simple process. Once you make the 25% upfront payment, we'll get started on your recovery and provide a clear payment schedule for the remaining balance." } },
+              { "@type": "Question", "name": "Is there a minimum or maximum amount for a payment plan?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, payment plans are available for recovery cases starting at $300 and up. There's no strict maximum, and we're happy to work with you on larger recoveries as long as the 25% upfront requirement is met. If you're unsure whether your case qualifies, feel free to contact us or visit our store for a free consultation." } },
+              { "@type": "Question", "name": "Will applying for a payment plan affect my credit score?", "acceptedAnswer": { "@type": "Answer", "text": "No \u2014 we do not perform any credit checks for our in-house payment plans. Approval is guaranteed as long as the minimum upfront payment is made, and your credit score is never impacted." } },
+              { "@type": "Question", "name": "What types of devices are eligible for payment plan options?", "acceptedAnswer": { "@type": "Answer", "text": "Payment plans are available for all major recovery types, including hard drives, SSDs, RAID systems, USB drives, SD cards, and mobile phones. Whether your case is logical, physical, or complex, our payment plan options can help make recovery more accessible." } },
               { "@type": "Question", "name": "Can I still qualify for a payment plan if I live outside California?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our payment plan options are available nationwide, and so is our data recovery service. We offer free shipping across the U.S., making it easy for anyone to get started, no matter their location." } },
               { "@type": "Question", "name": "When do I start making payments?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases, payments begin after the recovery is complete and you've approved the results. You'll receive a breakdown of your payment schedule based on your selected plan." } }
             ]
