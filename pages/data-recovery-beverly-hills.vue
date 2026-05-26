@@ -191,7 +191,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
-    <section class="s-contact-band">
+    <section class="s-contact-band contact-band-bg">
       <div class="container">
         <div class="contact-banner-card">
           <h2 class="contact-banner-heading">Ready to Start?</h2>
@@ -264,5 +264,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/contact-band-bg.jpg') center center / cover no-repeat !important; }
 @media (max-width: 768px) { .reason-cards { grid-template-columns: 1fr; } }
 </style>
