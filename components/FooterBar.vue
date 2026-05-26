@@ -54,7 +54,7 @@
           <li><NuxtLink to="/data-recovery-los-angeles">Los Angeles</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-pasadena">Pasadena</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-hollywood">Hollywood</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery-glendale">Glendale</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-services-glendale-ca">Glendale</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-beverly-hills">Beverly Hills</NuxtLink></li>
         </ul>
       </div>
