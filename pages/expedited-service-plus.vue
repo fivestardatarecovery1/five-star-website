@@ -82,7 +82,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Expedited Service Plus"
       subtitle="Get Your Data Back In No Time."
       description="Need your data recovered as quickly as possible? Our Expedited Service Plus guarantees that your case is worked on immediately — 24/7, including nights, weekends, and holidays. It's the fastest and most dedicated recovery option we offer, ideal for urgent business needs or personal emergencies."
-      bgImage="/data-recovery-pricing-los-angeles.jpg"
+      bgImage="/expedited-service-plus-hero.jpg"
       :overlayOpacity="0.8"
       :trustBadges="trustBadges"
     />
