@@ -143,11 +143,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <!-- INTRO -->
     <section class="s-white">
-      <div class="container">
-        <p class="s-body">We recover files from all types of storage devices, no matter the brand, operating system, or failure type. If your <NuxtLink to="/hard-drive-clicking" class="inline-link">drive clicks</NuxtLink>, won't mount, or your <NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link">system doesn't recognize it</NuxtLink>, our team of experienced engineers will be able to help you.</p>
-        <p class="s-body">Our <NuxtLink to="/data-recovery" class="inline-link">data recovery service</NuxtLink> is for everyone. It doesn't matter if you are a student, a small business owner, a photographer, or an IT worker. We can help you. Our team works with care, precision, and complete confidentiality.</p>
-        <p class="s-body">We also understand how overwhelming data loss can feel. That's why our staff takes the time to explain the process clearly, answer your questions, and keep you updated at every stage.</p>
-        <p class="s-body"><em>Expert service with real results always keeps you informed.</em></p>
+      <div class="container two-col-layout">
+        <div>
+          <p class="s-body">We recover files from all types of storage devices, no matter the brand, operating system, or failure type. If your <NuxtLink to="/hard-drive-clicking" class="inline-link">drive clicks</NuxtLink>, won't mount, or your <NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link">system doesn't recognize it</NuxtLink>, our team of experienced engineers will be able to help you.</p>
+          <p class="s-body">Our <NuxtLink to="/data-recovery" class="inline-link">data recovery service</NuxtLink> is for everyone. It doesn't matter if you are a student, a small business owner, a photographer, or an IT worker. We can help you. Our team works with care, precision, and complete confidentiality.</p>
+          <p class="s-body">We also understand how overwhelming data loss can feel. That's why our staff takes the time to explain the process clearly, answer your questions, and keep you updated at every stage.</p>
+          <p class="s-body"><em>Expert service with real results always keeps you informed.</em></p>
+        </div>
+        <div>
+          <img src="/hard-drive-internal-platters.jpg" alt="Open hard drive showing internal platters and read/write heads" class="rounded-img" />
+        </div>
       </div>
     </section>
 
@@ -229,24 +234,19 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <!-- HOW HARD DRIVES WORK -->
     <section class="s-grey">
-      <div class="container two-col-layout">
-        <div>
-          <h2 class="s-heading">How Hard Drives Work (And Why They Fail)</h2>
-          <p class="s-body">A hard drive stores data on spinning magnetic disks known as platters. When you save a file, a tiny read/write head moves across the platter to write or retrieve information. These parts work with incredible precision—but they're also extremely fragile.</p>
-          <p class="s-body">Failed hard drives can happen in several ways:</p>
-          <ul class="content-list">
-            <li>Mechanical failure — such as a head crash or stuck spindle</li>
-            <li>Electrical failure — power surges can fry the drive's PCB</li>
-            <li>Firmware corruption — software inside the drive malfunctions</li>
-            <li>Logical errors — corruption in the file system or partition table</li>
-            <li>Encryption lockout — inaccessible because of failed password or software (correct password must be provided)</li>
-            <li>Virus damage — some malware destroys key structures or the boot sector. In some cases, the computer may still see the drive, but the user interface will freeze or the contents appear blank. In some cases, the drive won't spin or the system won't detect it at all.</li>
-          </ul>
-          <p class="s-body">We can recover hard drive data from almost any model or format. This includes brands like Seagate, Western Digital, Toshiba, and Samsung.</p>
-        </div>
-        <div>
-          <img src="/hard-drive-internal-platters.jpg" alt="Open hard drive showing internal platters and read/write heads" class="rounded-img" />
-        </div>
+      <div class="container">
+        <h2 class="s-heading">How Hard Drives Work (And Why They Fail)</h2>
+        <p class="s-body">A hard drive stores data on spinning magnetic disks known as platters. When you save a file, a tiny read/write head moves across the platter to write or retrieve information. These parts work with incredible precision—but they're also extremely fragile.</p>
+        <p class="s-body">Failed hard drives can happen in several ways:</p>
+        <ul class="content-list">
+          <li>Mechanical failure — such as a head crash or stuck spindle</li>
+          <li>Electrical failure — power surges can fry the drive's PCB</li>
+          <li>Firmware corruption — software inside the drive malfunctions</li>
+          <li>Logical errors — corruption in the file system or partition table</li>
+          <li>Encryption lockout — inaccessible because of failed password or software (correct password must be provided)</li>
+          <li>Virus damage — some malware destroys key structures or the boot sector. In some cases, the computer may still see the drive, but the user interface will freeze or the contents appear blank. In some cases, the drive won't spin or the system won't detect it at all.</li>
+        </ul>
+        <p class="s-body">We can recover hard drive data from almost any model or format. This includes brands like Seagate, Western Digital, Toshiba, and Samsung.</p>
       </div>
     </section>
 
