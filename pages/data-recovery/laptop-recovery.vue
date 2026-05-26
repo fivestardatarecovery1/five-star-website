@@ -19,16 +19,26 @@ useHead({
               "postalCode": "91204",
               "addressCountry": "US"
             },
-            "priceRange": "$$",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "url": "https://www.fivestardatarecovery.com/"
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [{
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Anna R." },
+              "datePublished": "2024-11-12",
+              "reviewBody": "They recovered all my business documents from a non-booting laptop. Quick service and very professional!",
+              "name": "Highly Recommend",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+            }],
+            "priceRange": "$300 - $950",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery"
           },
           {
             "@type": "Service",
-            "name": "Laptop Data Recovery",
+            "name": "Laptop Data Recovery Services",
             "url": "https://www.fivestardatarecovery.com/data-recovery/laptop-data-recovery/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional laptop data recovery services for all brands including HP, Dell, Lenovo, MacBook, and more. Flat-rate pricing, free diagnostics, no data no charge."
+            "description": "Expert Laptop Data Recovery services for all major brands and models. Serving Glendale, Los Angeles, and nationwide with free mail-in service and flat-rate pricing."
           },
           {
             "@type": "BreadcrumbList",
