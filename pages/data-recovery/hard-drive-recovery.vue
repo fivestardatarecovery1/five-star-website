@@ -222,7 +222,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="guarantee-strip">
           <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge</strong> — If we can't recover your hard drive data, you don't pay.</p>
+          <p><strong>No Data, No Charge</strong> — If we can't recover your hard drive data, you don't pay. <em>(most cases)</em></p>
         </div>
       </div>
     </section>
@@ -297,7 +297,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <li>Skilled Engineers &amp; Recovery Specialists</li>
             <li>Confidential &amp; Secure Handling</li>
             <li>Transparent Quotes &amp; No Unexpected Fees</li>
-            <li>"No Data, No Charge" Guarantee</li>
+            <li>"No Data, No Charge" Guarantee <em>(most cases)</em></li>
             <li>Based in Glendale, CA — Nationwide Service Available</li>
           </ul>
         </div>
