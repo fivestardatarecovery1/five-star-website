@@ -1,4 +1,88 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "priceRange": "$200+",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498"
+            }
+          },
+          {
+            "@type": "Service",
+            "name": "Expedited Data Recovery Service",
+            "url": "https://www.fivestardatarecovery.com/expedited-service/",
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "description": "Our Expedited Data Recovery service offers prioritized recovery during normal business hours for customers needing faster turnaround. Available Monday through Friday with a $200 upfront fee."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Expedited Service", "item": "https://www.fivestardatarecovery.com/expedited-service/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is your expedited data recovery service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Our expedited service is a rush option available during normal business hours. Your case is moved to the front of the queue, and our engineers start working on your device immediately." }
+              },
+              {
+                "@type": "Question",
+                "name": "How fast is the turnaround time for expedited service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Most expedited cases are completed within 1 to 3 business days, depending on the complexity of the recovery. Some simpler cases may even be finished the same day." }
+              },
+              {
+                "@type": "Question",
+                "name": "Does expedited service include nights or weekends?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. This service only applies to standard business hours, Monday through Friday. If you need after-hours or weekend service, we offer a separate Expedited Plus Service for that level of urgency." }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does expedited data recovery cost?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Our expedited service is an additional $200.00 per drive on top of the standard flat-rate data recovery fee. This fee is paid upfront and is non-refundable, regardless of the recovery outcome. It covers the cost of prioritizing your case and dedicating immediate engineering time during business hours." }
+              },
+              {
+                "@type": "Question",
+                "name": "Will my recovery results be different with expedited service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Not at all. The expedited service speeds up the start time and prioritizes your case, but the quality of work and recovery process remains the same as our standard service." }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I request expedited service?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Simply let us know when dropping off or shipping your device that you want expedited service. Our team will confirm the fee and prioritize your recovery right away." }
+              }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Expedited Data Recovery Service - Five Star Data Recovery',
   ogTitle: 'Data Recovery Expedited Service',
