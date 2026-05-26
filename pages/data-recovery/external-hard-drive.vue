@@ -45,7 +45,7 @@ useSeoMeta({
       title="External Hard Drive Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
       description="At Five Star Data Recovery, we specialize in professional, reliable, and fast external hard drive data recovery services. We know how stressful it is to lose access to your personal or business data. This can happen from a corrupted file system, accidental deletion, or physical damage. We provide a wide range of recovery options to help recover data from external hard drives of all types. This includes USB flash drives, portable SSDs, and RAID-based enclosures. Our experienced engineers handle everything from simple software problems to complex mechanical failures."
-      bgImage="/external-hard-drive-data-recovery-glendale-ca.jpg"
+      bgImage="/external-hard-drive-hero.jpg"
       :trustBadges="[
         { icon: 'clock', text: 'Available 24/7/365' },
         { icon: 'check', text: 'No Data = No Charge' },
