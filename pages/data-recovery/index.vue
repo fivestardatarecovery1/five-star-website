@@ -351,6 +351,38 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- SECURE + TIPS TWO-CARD SECTION -->
+    <section class="s-white">
+      <div class="container two-card-grid">
+
+        <div class="info-card">
+          <h3 class="info-card-heading">Secure, Confidential, and Professional Data Recovery</h3>
+          <p class="info-card-intro">We understand that your data can be personal, private, or mission-critical. That’s why we:</p>
+          <ul class="info-card-list">
+            <li>Never outsource or ship your device</li>
+            <li>Work exclusively in our secure, in-house facility</li>
+            <li>Delete your recovered files from our system after delivery</li>
+            <li>Offer NDAs for sensitive projects upon request</li>
+          </ul>
+          <p class="info-card-outro">Your trust is as important as your files—and we protect both.</p>
+        </div>
+
+        <div class="info-card">
+          <h3 class="info-card-heading">Tips to Avoid Permanent Data Loss</h3>
+          <p class="info-card-intro">While we’re here to help, we also want to help you prevent future issues. Follow these best practices:</p>
+          <ul class="info-card-list">
+            <li>Always back up important data (cloud + physical copy)</li>
+            <li>Stop using a failing device immediately</li>
+            <li>Don’t unplug a drive during file transfers</li>
+            <li>Look out for early signs like freezing or clicking</li>
+            <li>Contact a professional data recovery team before attempting DIY software or repair Early action can dramatically increase the chance of full recovery.</li>
+          </ul>
+          <p class="info-card-outro">Your trust is as important as your files—and we protect both.</p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- PROCESS — grey -->
     <section class="s-grey">
       <div class="container">
@@ -689,6 +721,62 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
 
+/* ── Two-Card Section ── */
+.two-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.info-card {
+  border: 1.5px solid #e2e6ee;
+  border-radius: 12px;
+  padding: 36px 32px;
+  background: #fff;
+}
+.info-card-heading {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.info-card-intro {
+  font-size: 0.93rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+.info-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.info-card-list li {
+  font-size: 0.93rem;
+  color: #4a5568;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.info-card-list li::before {
+  content: '»';
+  color: #C9A84C;
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.info-card-outro {
+  font-size: 0.93rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* ── Common Reasons Section ── */
 .reasons-layout {
   display: grid;
@@ -788,7 +876,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .three-col { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 768px) {
-  .asym-layout, .mid-form-inner, .reasons-layout { grid-template-columns: 1fr; gap: 36px; }
+  .asym-layout, .mid-form-inner, .reasons-layout, .two-card-grid { grid-template-columns: 1fr; gap: 36px; }
   .page-video-inner { grid-template-columns: 1fr; }
   .bstat-div { display: none; }
   .img-stat-badge { bottom: 12px; }
