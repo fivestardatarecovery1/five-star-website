@@ -216,7 +216,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="reasons-body">Our team can recover data quickly and professionally—even from completely dead devices.</p>
         </div>
         <div class="reasons-image">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Data recovery technician working on hard drive" class="reasons-img" />
+          <img src="/common-reasons-data-recovery.jpg" alt="Data recovery technician working on hard drive with blue gloves" class="reasons-img" />
         </div>
       </div>
     </section>
