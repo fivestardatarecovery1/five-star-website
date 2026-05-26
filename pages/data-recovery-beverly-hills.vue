@@ -1,4 +1,111 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "url": "https://www.fivestardatarecovery.com/data-recovery-beverly-hills-ca/",
+            "telephone": "(818) 272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 34.1233, "longitude": -118.2567 },
+            "areaServed": [
+              { "@type": "Place", "name": "Beverly Hills, CA" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" }
+            ],
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "priceRange": "$300-$950"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery-beverly-hills-ca/#webpage",
+            "url": "https://www.fivestardatarecovery.com/data-recovery-beverly-hills-ca/",
+            "name": "Data Recovery Beverly Hills CA - Five Star Data Recovery",
+            "description": "Fast and affordable data recovery services in Beverly Hills, CA. We recover data from hard drives, SSDs, iPhones, RAIDs, and more with free local pickup and flat-rate pricing.",
+            "inLanguage": "en-US",
+            "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery-beverly-hills-ca/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery Beverly Hills CA", "item": "https://www.fivestardatarecovery.com/data-recovery-beverly-hills-ca/" }
+            ]
+          },
+          {
+            "@type": "Service",
+            "serviceType": "Data Recovery Services in Beverly Hills CA",
+            "areaServed": [
+              { "@type": "Place", "name": "Beverly Hills, CA" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "provider": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" },
+            "url": "https://www.fivestardatarecovery.com/data-recovery-beverly-hills-ca/",
+            "description": "Five Star Data Recovery offers professional data recovery services to clients in Beverly Hills, CA. Whether it's a hard drive, SSD, smartphone, or RAID, we provide fast and reliable recovery solutions."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you offer data recovery services specifically in Beverly Hills?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! While our main lab is located nearby, we proudly offer professional data recovery services in Beverly Hills with free same-day pickup. Whether it's a failed hard drive, SSD, iPhone, or RAID system, our team is ready to help recover your data quickly and securely." } },
+              { "@type": "Question", "name": "How fast can you recover data for Beverly Hills customers?", "acceptedAnswer": { "@type": "Answer", "text": "Most standard Beverly Hills data recovery cases are completed within 3\u20135 business days. For urgent needs, we also offer Expedited and Expedited Plus services with 24/7 priority support. Call us for a free phone consultation." } },
+              { "@type": "Question", "name": "What types of devices can you recover data from in Beverly Hills?", "acceptedAnswer": { "@type": "Answer", "text": "We specialize in recovering data from external and internal hard drives, solid-state drives (SSDs), iPhones and Android devices, USB flash drives, SD cards, and RAID and NAS systems. Whatever your storage device, our data recovery experts in Beverly Hills can help." } },
+              { "@type": "Question", "name": "Is there a fee if you can't recover my data?", "acceptedAnswer": { "@type": "Answer", "text": "We follow a No Data, No Charge policy for most standard recoveries in Beverly Hills. You only pay if we successfully recover your files. Some exceptions apply, such as deleted file cases or previously tampered drives." } },
+              { "@type": "Question", "name": "Do you provide free pickup in Beverly Hills for data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer free same-day pickup in Beverly Hills for all data recovery jobs. Just give us a call or fill out our request form, and we'll arrange secure transportation of your device to our lab." } },
+              { "@type": "Question", "name": "What makes your Beverly Hills data recovery service different from others?", "acceptedAnswer": { "@type": "Answer", "text": "We stand out with our transparent flat-rate pricing, no data, no charge policy, and in-house recovery lab. Unlike many companies, we never outsource\u2014we perform all recoveries ourselves to maintain the highest success rate and confidentiality for our Beverly Hills data recovery clients." } },
+              { "@type": "Question", "name": "Can you recover data from physically damaged hard drives in Beverly Hills?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in physically damaged drive recovery. Whether your drive is clicking, not powering on, or has water or impact damage, our data recovery engineers near Beverly Hills are equipped with cleanroom tools to handle complex cases." } },
+              { "@type": "Question", "name": "How secure is your data recovery process for Beverly Hills clients?", "acceptedAnswer": { "@type": "Answer", "text": "We prioritize data privacy and security. All Beverly Hills data recovery cases are handled in a secure environment, and your files are never shared or stored beyond the recovery process. Confidentiality agreements are also available upon request." } },
+              { "@type": "Question", "name": "Do you recover data from iPhones and smartphones in Beverly Hills?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer component-level iPhone data recovery in Beverly Hills and can recover data even from non-booting or physically damaged iPhones. Whether you need a full iTunes backup or file extraction, we're here to help." } },
+              { "@type": "Question", "name": "How do I get started with your Beverly Hills data recovery service?", "acceptedAnswer": { "@type": "Answer", "text": "Getting started is easy. Call us for a free consultation or request a free same-day pickup in Beverly Hills. You can also mail your device or visit our lab. Once we receive it, we'll provide a diagnostic and begin recovery as soon as you approve." } }
+            ]
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Ashton M. (Beverly Hills)" },
+            "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+            "reviewBody": "I thought my files were gone forever after my hard drive started making clicking sounds. Five Star Data Recovery came through and recovered everything\u2014from important business documents to personal photos. The flat-rate pricing and no data, no charge policy made me feel comfortable throughout the process.",
+            "datePublished": "2025-07-11",
+            "itemReviewed": { "@type": "LocalBusiness", "name": "Five Star Data Recovery", "@id": "https://www.fivestardatarecovery.com/#localbusiness" }
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Anthony R. (Beverly Hills)" },
+            "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+            "reviewBody": "Excellent service from start to finish. I had a RAID failure and was quoted outrageous prices by other companies. Five Star gave me a fair, flat-rate quote and stuck to it. Communication was great, and I was able to get back critical business files in time for an important deadline.",
+            "datePublished": "2025-07-10",
+            "itemReviewed": { "@type": "LocalBusiness", "name": "Five Star Data Recovery", "@id": "https://www.fivestardatarecovery.com/#localbusiness" }
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Michael B. (Beverly Hills)" },
+            "reviewRating": { "@type": "Rating", "ratingValue": 5 },
+            "reviewBody": "My SSD completely failed without warning, and I was in a panic. The team at Five Star provided a free consultation, explained all my options, and managed to recover 100% of my data within just a few days. They were fast, professional, and truly lived up to their name.",
+            "datePublished": "2025-07-09",
+            "itemReviewed": { "@type": "LocalBusiness", "name": "Five Star Data Recovery", "@id": "https://www.fivestardatarecovery.com/#localbusiness" }
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Data Recovery in Beverly Hills CA - Five Star Data Recovery',
   ogTitle: 'Data Recovery Beverly Hills',
