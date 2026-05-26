@@ -1,4 +1,76 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [
+              { "@type": "City", "name": "Burbank" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Melissa J." },
+                "datePublished": "2024-10-03",
+                "reviewBody": "Same-day pickup in Burbank was super convenient. They recovered my SSD data fast and professionally.",
+                "name": "Great Burbank Service",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$300 - $950",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery"
+          },
+          {
+            "@type": "Service",
+            "name": "Data Recovery Services in Burbank, CA",
+            "url": "https://www.fivestardatarecovery.com/data-recovery-burbank-ca/",
+            "areaServed": [
+              { "@type": "City", "name": "Burbank" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "description": "Professional Data Recovery services for Burbank, CA residents and businesses. Free same-day pickup available. Serving all device types including hard drives, SSDs, RAID, and iPhones."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery Burbank", "item": "https://www.fivestardatarecovery.com/data-recovery-burbank-ca/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Is your data recovery lab located in Burbank, CA?", "acceptedAnswer": { "@type": "Answer", "text": "While our main lab is not physically located in Burbank, we proudly serve the Burbank area and offer free same-day pickup for local residents and businesses. Our close proximity allows us to provide fast, convenient, and professional service throughout the region." } },
+              { "@type": "Question", "name": "How long does the data recovery process take in Burbank?", "acceptedAnswer": { "@type": "Answer", "text": "Most data recovery cases are completed in 3-5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data." } },
+              { "@type": "Question", "name": "What types of devices do you recover data from?", "acceptedAnswer": { "@type": "Answer", "text": "We recover data from hard drives, SSDs, USB flash drives, iPhones, RAID setups, SD cards, and more. If you've experienced data loss in Burbank, we can help." } },
+              { "@type": "Question", "name": "Do you offer free pickup in the Burbank area?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer free local pickup for most addresses in Burbank. Simply contact us to schedule a same-day pickup and we'll handle the logistics." } },
+              { "@type": "Question", "name": "What happens if my data can't be recovered?", "acceptedAnswer": { "@type": "Answer", "text": "We follow a No Data, No Charge policy. If your data is unrecoverable, you won't owe us anything for most standard recovery cases." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Data Recovery Services in Burbank CA - Five Star Data Recovery',
   ogTitle: 'Data Recovery Burbank',
