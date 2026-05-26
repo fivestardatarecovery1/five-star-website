@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Services in Pasadena CA - Five Star Data Recovery',
+  title: 'Data Recovery Services near Pasadena CA - Five Star Data Recovery',
   ogTitle: 'Data Recovery Pasadena',
   description: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
   ogDescription: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
@@ -37,16 +37,16 @@ const faqs = [
     a: "Although we are not located in Pasadena, CA, we're only minutes away and proudly offer same-day free pickup service for all Pasadena residents and businesses. Simply give us a call, and we'll create a ticket and schedule a pickup the same day to get your recovery started immediately.",
   },
   {
-    q: 'Do you offer emergency data recovery services in Pasadena?',
+    q: 'Do you offer emergency data recovery services near Pasadena?',
     a: "Yes! We offer both Expedited Service (during business hours) and Expedited Plus (24/7/365) for Pasadena clients. If you need your data recovered urgently, just give us a call and we'll get your case prioritized immediately.",
   },
   {
     q: 'How quickly can you recover data for Pasadena customers?',
-    a: "Most standard recoveries are completed within 1–3 business days, but we also offer same-day evaluations and rush service. Thanks to our free pickup option in Pasadena, we can begin recovery within hours of your call.",
+    a: "Most standard recoveries are completed within 1–3 business days, but we also offer same-day evaluations and rush service. Thanks to our free pickup option near Pasadena, we can begin recovery within hours of your call.",
   },
   {
-    q: 'What types of devices do you recover data from in Pasadena?',
-    a: "We recover data from external hard drives, MacBooks, PC laptops, RAID/NAS systems, USB drives, and SD cards — no matter the failure type or operating system. If you're in Pasadena and not sure if your device qualifies, we offer free diagnostics.",
+    q: 'What types of devices do you recover data from near Pasadena?',
+    a: "We recover data from external hard drives, MacBooks, PC laptops, RAID/NAS systems, USB drives, and SD cards — no matter the failure type or operating system. If you're near Pasadena and not sure if your device qualifies, we offer free diagnostics.",
   },
   {
     q: 'Is the pickup service really free for Pasadena clients?',
@@ -65,7 +65,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Pasadena, CA"
       subtitle="Get Your Data Back In No Time."
-      description="If you've experienced data loss—whether it's from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Pasadena, CA. While we're located in nearby Glendale, CA, we offer free same-day pickup in Pasadena for added convenience."
+      description="If you've experienced data loss—whether it's from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients near Pasadena, CA. While we're located in nearby Glendale, CA, we offer free same-day pickup near Pasadena for added convenience."
       bgImage="/data-recovery-pasadena-ca.jpg"
       :trustBadges="trustBadges"
     />
@@ -75,7 +75,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 1 — s-white -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Trusted Data Recovery Services in Pasadena</h2>
+        <h2 class="s-heading">Trusted Data Recovery Services near Pasadena</h2>
         <p class="s-body">Whether you’re a student, business owner, creative professional, or just someone with important files, we understand how devastating data loss can be. Our team has successfully recovered data from:</p>
         <ul class="content-list">
           <li>Crashed hard drives</li>
@@ -92,7 +92,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 2 — s-grey -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading">Why Choose Us for Data Recovery in Pasadena?</h2>
+        <h2 class="s-heading">Why Choose Us for Data Recovery near Pasadena?</h2>
         <div class="reason-cards">
           <div class="reason-card">
             <h3 class="reason-title">Free Diagnostics</h3>
@@ -200,9 +200,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="contact-banner-card">
           <h2 class="contact-banner-heading">Get Started Today</h2>
         </div>
-        <p class="contact-body-text">Need data recovery in Pasadena, CA? Don’t wait—contact Five Star Data Recovery today for a free diagnostic and same-day support.</p>
+        <p class="contact-body-text">Need data recovery near Pasadena, CA? Don’t wait—contact Five Star Data Recovery today for a free diagnostic and same-day support.</p>
         <ul class="contact-bullets">
-          <li>Free same-day pickup in Pasadena</li>
+          <li>Free same-day pickup near Pasadena</li>
           <li>Free diagnostic — no obligation</li>
           <li>1–3 business day standard turnaround</li>
           <li>No Data, No Charge (most cases)</li>
