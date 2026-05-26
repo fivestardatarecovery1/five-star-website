@@ -140,7 +140,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Laptop Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
       description="Losing files on your laptop can happen without warning. Whether it's an accidental deletion, system crash, or physical damage, the results can be stressful. At Five Star Data Recovery, we specialize in fast, secure, and professional laptop data recovery. If you have a broken drive or a software error, we can help you recover your data fast."
-      bgImage="/laptop-computer-data-recovery-glendale-ca.jpg"
+      bgImage="/laptop-recovery-hero.jpg"
+      :overlayOpacity="0.75"
       :trustBadges="[
         { icon: 'clock', text: 'Available 24/7/365' },
         { icon: 'check', text: 'No Data = No Charge' },
