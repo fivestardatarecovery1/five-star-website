@@ -117,7 +117,7 @@ const steps = [
 const faqs = [
   {
     q: '1. How much does Data Recovery Cost?',
-    a: `The cost of data recovery depends on several factors, including the type of device, the nature of the failure, and the complexity of the recovery process. For example, recovering data from a hard drive with logical issues is generally less expensive than performing a chip-off recovery on a physically damaged SD card or USB drive.<br><br>At Five Star Data Recovery, our pricing is flat-rate and transparent, with no hidden fees. We also offer a free evaluation in most cases, so you’ll know exactly what to expect before moving forward. For certain recovery types—like deleted file recovery or expedited services—there may be an upfront labor fee, which will be explained before any work begins.<br><br>To see a full breakdown of our rates by device type and service level, please visit our <a href="/pricing" class="faq-link">Data Recovery Pricing Page</a>.<br><br>
+    a: `The cost of data recovery depends on several factors, including the <strong>type of device</strong>, the <strong>nature of the failure</strong>, and the <strong>complexity of the recovery process</strong>. For example, recovering data from a hard drive with logical issues is generally less expensive than performing a chip-off recovery on a physically damaged SD card or USB drive.<br><br><em>Five Star Data Recovery</em>, our pricing is <strong>flat-rate and transparent</strong>, with no hidden fees. We also offer a <strong>free evaluation</strong> in most cases, so you’ll know exactly what to expect before moving forward. For certain recovery types—like deleted file recovery or expedited services—there may be an upfront labor fee, which will be explained before any work begins.<br><br>To see a full breakdown of our rates by device type and service level, please visit our <a href="/pricing" class="faq-link"><strong>Data Recovery Pricing Page</strong></a>.<br><br>
 <table class="faq-table">
 <thead><tr><th>Device / Service</th><th>Flat Rate Price</th></tr></thead>
 <tbody>
@@ -141,19 +141,19 @@ const faqs = [
   },
   {
     q: '3. I’m not near your location. Can I still use your services?',
-    a: 'Absolutely. We offer a mail-in recovery option with free round-trip shipping anywhere in the United States. Just fill out our form and we’ll send you a prepaid label to ship your device to us securely.'
+    a: 'Absolutely. We offer a <a href="/data-recovery/mail-in-service" class="faq-link"><strong>mail-in recovery option with free round-trip shipping anywhere in the United States</strong></a>. Just fill out our form and we’ll send you a prepaid label to ship your device to us securely.'
   },
   {
     q: '4. How does your fastest recovery option work for emergencies?',
-    a: 'Our Expedited Plus Service puts your recovery at the top of our priority list with non-stop engineer focus, day and night, until the process is complete. This is ideal for businesses or individuals with time-sensitive data loss.'
+    a: 'Our <a href="/expedited-service-plus" class="faq-link"><strong>Expedited Plus Service</strong></a> puts your recovery at the top of our priority list with <strong>non-stop engineer focus</strong>, day and night, until the process is complete. This is ideal for businesses or individuals with time-sensitive data loss.'
   },
   {
     q: '5. Are there any hidden costs during the recovery process?',
-    a: 'No. After diagnosing your case, we’ll provide a clear, flat-rate quote upfront. The only additional fee would be if you select an expedited service like Expedited Plus.'
+    a: 'No. After diagnosing your case, we’ll provide a clear, <strong>flat-rate quote upfront</strong>. The only additional fee would be if you select an expedited service like <strong>Expedited Plus</strong>.'
   },
   {
     q: '6. Is there a way to check if my data is still recoverable before starting?',
-    a: 'Yes. Before we begin any data recovery work, we always provide an initial quote after a free phone or email consultation. During this consultation, we’ll ask detailed questions about your device, its failure symptoms, and any previous recovery attempts. Once you approve the quoted price range, we’ll proceed with the diagnostic and recovery process. If we’re able to successfully recover your data within the pricing we originally quoted, we’ll automatically move forward with the recovery without requiring further approval—this helps avoid unnecessary delays. If, during the process, we discover that the issue is different and falls into a higher recovery category, we’ll contact you first with an updated quote before doing anything further. This approach ensures pricing transparency and keeps you fully informed throughout the entire process.'
+    a: 'Yes. Before we begin any data recovery work, we always provide an <strong>initial quote after a free phone or email consultation</strong>. During this consultation, we’ll ask detailed questions about your device, its failure symptoms, and any previous recovery attempts.<br><br>Once you approve the quoted price range, we’ll proceed with the diagnostic and recovery process. If we’re able to successfully recover your data <strong>within the pricing we originally quoted</strong>, we’ll automatically move forward with the recovery without requiring further approval—this helps avoid unnecessary delays.<br><br>If, during the process, we discover that the issue is different and falls into a higher recovery category, we’ll contact you first with an updated quote before doing anything further.<br><br>This approach ensures <strong>pricing transparency</strong> and keeps you fully informed throughout the entire process.'
   },
   {
     q: '7. Is there a risk of further damage to my device during the recovery process?',
@@ -173,7 +173,7 @@ const faqs = [
   },
   {
     q: '11. What happens if my recovery case is extremely urgent?',
-    a: 'For time-sensitive cases, we offer Expedited and Expedited Plus services. These options prioritize your case ahead of others and can dramatically reduce turnaround time—even providing 24/7 service if needed.'
+    a: 'For time-sensitive cases, we offer <a href="/expedited-service" class="faq-link"><strong>Expedited</strong></a> and <a href="/expedited-service-plus" class="faq-link"><strong>Expedited Plus</strong></a> services. These options prioritize your case ahead of others and can dramatically reduce turnaround time—even providing 24/7 service if needed.'
   },
   {
     q: '12. Is there a size limit on the drives you work with?',
@@ -181,15 +181,15 @@ const faqs = [
   },
   {
     q: '13. What payment methods do you accept?',
-    a: 'We accept all major credit cards, debit cards, and cash payments. For larger recovery projects, we also offer in-house payment plans with no credit check. Please contact us for details.'
+    a: 'We accept all major credit cards, debit cards, and cash payments. For larger recovery projects, we also offer <strong>in-house payment plans</strong> with no credit check. Please contact us for details.'
   },
   {
     q: '14. Can you recover data from older hard drives and legacy storage formats?',
-    a: 'Yes! We regularly perform data recovery on older hard drive models, including IDE hard drives, early-generation SATA drives, and legacy internal laptop or desktop drives. If you have an older storage device and aren’t sure if it’s recoverable, contact us for a free consultation.'
+    a: 'Yes! We regularly perform data recovery on older hard drive models, including <strong>IDE hard drives</strong>, <strong>early-generation SATA drives</strong>, and legacy internal laptop or desktop drives. If you have an older storage device and aren’t sure if it’s recoverable, contact us for a free consultation.'
   },
   {
     q: '15. How should I package my device if I’m shipping it to you?',
-    a: 'We recommend using anti-static materials and plenty of cushioning to prevent additional damage during transit. Once you fill out our Mail-In Recovery Form, we’ll provide a prepaid shipping label along with detailed packaging instructions.'
+    a: 'We recommend using anti-static materials and plenty of cushioning to prevent additional damage during transit. Once you fill out our Mail-In Recovery Form, we’ll provide a <strong>prepaid shipping label</strong> along with detailed packaging instructions.'
   },
   {
     q: '16. What if my drive was opened by another company before bringing it to you?',
