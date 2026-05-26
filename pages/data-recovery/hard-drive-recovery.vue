@@ -130,7 +130,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Hard Drive Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
       description="When a hard drive fails, it can feel like everything is lost. Lost data can be profoundly upsetting. This includes personal memories, important work files, and family photos. At Five Star Data Recovery, we specialize in fast, secure, and professional hard drive data recovery for individuals, businesses, and organizations nationwide."
-      bgImage="/hard-drive-hdd-data-recovery-glendale-ca.jpg"
+      bgImage="/hard-drive-recovery-hero.jpg"
       :trustBadges="[
         { icon: 'clock', text: 'Available 24/7/365' },
         { icon: 'check', text: 'No Data = No Charge' },
