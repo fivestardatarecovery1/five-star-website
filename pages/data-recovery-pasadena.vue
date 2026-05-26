@@ -76,15 +76,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Trusted Data Recovery Services in Pasadena</h2>
+        <p class="s-body">Whether you’re a student, business owner, creative professional, or just someone with important files, we understand how devastating data loss can be. Our team has successfully recovered data from:</p>
         <ul class="content-list">
-          <li><NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">Hard Drive Recovery</NuxtLink> — HDDs that fail, click, or stop responding</li>
-          <li><NuxtLink to="/data-recovery/ssd-recovery" class="inline-link">SSD Recovery</NuxtLink> — Firmware failures, sudden death, unrecognized drives</li>
-          <li><NuxtLink to="/data-recovery/raid-recovery" class="inline-link">RAID &amp; NAS Recovery</NuxtLink> — Business-critical arrays and home NAS systems</li>
-          <li><NuxtLink to="/data-recovery/external-hard-drive" class="inline-link">External Hard Drive Recovery</NuxtLink> — Dropped, corrupt, or unresponsive externals</li>
-          <li><NuxtLink to="/data-recovery/usb-recovery" class="inline-link">USB Flash Drive Recovery</NuxtLink> — Broken, unrecognized, or damaged drives</li>
-          <li><NuxtLink to="/data-recovery/iphone-recovery" class="inline-link">iPhone &amp; Mobile Device Recovery</NuxtLink> — Component-level recovery from iOS devices</li>
+          <li>Crashed hard drives</li>
+          <li>Clicking or non-spinning drives</li>
+          <li>Failed SSDs and flash drives</li>
+          <li>Water-damaged or dropped devices</li>
+          <li>Deleted files and formatted media</li>
+          <li>Damaged RAID arrays and servers</li>
         </ul>
-        <p class="s-body">We handle each recovery case with care, precision, and confidentiality. From routine to complex cases, our engineers work to bring your data back safely and completely.</p>
+        <p class="s-body">We handle each recovery case with care, precision, and confidentiality. From routine to complex cases, our engineers work to bring your data back safely.</p>
       </div>
     </section>
 
@@ -92,13 +93,28 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Why Choose Us for Data Recovery in Pasadena?</h2>
-        <ul class="content-list">
-          <li><strong>Free Diagnostics</strong> — No-cost, no-obligation evaluation to assess your data recovery case.</li>
-          <li><strong>Fast Turnaround Options</strong> — Rush and Expedited services available for time-sensitive cases.</li>
-          <li><strong>Flat Rate Pricing</strong> — Transparent pricing with no hidden fees or hourly charges.</li>
-          <li><strong>ISO 5 Certified Cleanroom</strong> — Safe environment for physically damaged drives requiring internal repairs.</li>
-          <li><strong>Free Same-Day Pickup in Pasadena</strong> — We come to you. No need to leave your home or office.</li>
-        </ul>
+        <div class="reason-cards">
+          <div class="reason-card">
+            <h3 class="reason-title">Free Diagnostics</h3>
+            <p class="s-body">No-cost, no-obligation evaluation to assess your data recovery case.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Fast Turnaround Options</h3>
+            <p class="s-body">Rush and Expedited services available for time-sensitive cases.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Class 100 Clean Room</h3>
+            <p class="s-body">Safe environment for physically damaged drives and internal repairs.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Component-Level Repairs</h3>
+            <p class="s-body">We specialize in board-level and firmware recovery others can’t handle.</p>
+          </div>
+          <div class="reason-card">
+            <h3 class="reason-title">Flat Rate Pricing</h3>
+            <p class="s-body">Transparent pricing — no hidden fees or hourly charges.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -110,37 +126,66 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
-              <h3 class="step-title">Drop off or Mail in Your Drive</h3>
-              <p class="step-body">You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.</p>
+              <h3 class="step-title">Free Evaluation</h3>
+              <p class="step-body">We assess your device at no cost to determine the issue and recovery options.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
-              <h3 class="step-title">Receive a Free Diagnosis</h3>
-              <p class="step-body">Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
+              <h3 class="step-title">Cloning and Analysis</h3>
+              <p class="step-body">Your drive is cloned to avoid further damage, and our engineers analyze the copy.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
             <div>
-              <h3 class="step-title">Our Engineers work on Recovering your Data</h3>
-              <p class="step-body">We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
+              <h3 class="step-title">Data Extraction</h3>
+              <p class="step-body">We extract recoverable data from the cloned image using advanced tools.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">4</div>
             <div>
-              <h3 class="step-title">Review &amp; Approve the Recovered</h3>
-              <p class="step-body">After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
+              <h3 class="step-title">Verification</h3>
+              <p class="step-body">Recovered files are reviewed and validated for completeness and integrity.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">5</div>
             <div>
-              <h3 class="step-title">Receive your recovered data</h3>
-              <p class="step-body">Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+              <h3 class="step-title">Delivery</h3>
+              <p class="step-body">Your data is transferred to a new drive and returned securely.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVICES WE RECOVER DATA FROM -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Devices We Recover Data From</h2>
+        <div class="device-cards">
+          <div class="device-card">
+            <h3 class="device-title">Hard Drives (HDDs)</h3>
+            <p class="s-body">We recover data from failed internal and external hard drives due to mechanical or logical issues.</p>
+          </div>
+          <div class="device-card">
+            <h3 class="device-title">Solid State Drives (SSDs)</h3>
+            <p class="s-body">We retrieve lost data from SSDs with firmware errors, bad blocks, or sudden failure.</p>
+          </div>
+          <div class="device-card">
+            <h3 class="device-title">iPhones and Mobile Devices</h3>
+            <p class="s-body">We perform component-level recovery from iPhones that won’t power on or are stuck in boot loops.</p>
+          </div>
+          <div class="device-card">
+            <h3 class="device-title">RAID Arrays and NAS Devices</h3>
+            <p class="s-body">We recover critical business and personal data from failed or degraded RAID/NAS systems.</p>
+          </div>
+          <div class="device-card">
+            <h3 class="device-title">USB Flash Drives</h3>
+            <p class="s-body">We handle broken or corrupted USB drives, including chip-off recovery when needed.</p>
           </div>
         </div>
       </div>
@@ -150,14 +195,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
-    <section class="s-contact-band">
+    <section class="s-contact-band contact-band-bg">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Pasadena Data Recovery</h2>
+          <h2 class="contact-banner-heading">Get Started Today</h2>
         </div>
+        <p class="contact-body-text">Need data recovery in Pasadena, CA? Don’t wait—contact Five Star Data Recovery today for a free diagnostic and same-day support.</p>
         <ul class="contact-bullets">
           <li>Free same-day pickup in Pasadena</li>
-          <li>Free diagnostic</li>
+          <li>Free diagnostic — no obligation</li>
           <li>1–3 business day standard turnaround</li>
           <li>No Data, No Charge (most cases)</li>
         </ul>
@@ -219,4 +265,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.reason-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.reason-card { background: #fff; border: 1px solid #e2e6ee; border-radius: 10px; padding: 28px 24px; border-top: 4px solid #C9A84C; }
+.reason-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 12px; }
+.device-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.device-card { background: #fff; border: 1px solid #e2e6ee; border-radius: 10px; padding: 24px; }
+.device-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 10px; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/pasadena-contact-bg.jpg') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; padding: 0; margin-bottom: 16px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.s-contact-band { padding: 44px 0; }
+@media (max-width: 768px) { .reason-cards, .device-cards { grid-template-columns: 1fr; } }
 </style>
