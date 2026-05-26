@@ -15,42 +15,42 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: 'I run a small video production company in Burbank and my primary editing drive died with an entire client project on it. Five Star had free pickup within hours and recovered every single file. Their pricing was fair and the communication was excellent throughout. Highly recommended for anyone in the industry.',
-    name: 'Stephanie B.',
+    text: "They recovered all my footage in 2 days \u2014 saved my entire project. Absolutely worth it.",
+    name: 'John H., Video Editor',
     location: 'Burbank, CA',
   },
   {
-    text: "My laptop stopped recognizing its internal hard drive and I couldn't afford to lose the files inside. Five Star did a free diagnostic, gave me a flat-rate quote with no surprises, and had my data back in 3 days. They even delivered the recovered drive to my Burbank office. Outstanding service.",
-    name: 'Mark T.',
+    text: 'Professional, transparent, and fast. They kept me updated the whole time.',
+    name: 'Emily P., Photographer',
     location: 'Burbank, CA',
   },
   {
-    text: 'After dropping my external hard drive, I assumed my photos and videos were gone forever. Five Star assessed it in their cleanroom and recovered almost everything. The team was professional and patient with all my questions. I would not go anywhere else for data recovery.',
-    name: 'Carla R.',
+    text: "My team uses a 4big RAID for media production. One drive failed, then another. We thought we lost the whole project. Five Star not only recovered the files\u2014they kept the folder structure completely intact.",
+    name: 'Brandon H., Editor',
     location: 'Burbank, CA',
   },
 ]
 
 const faqs = [
   {
-    q: 'Do you have a data recovery lab in Burbank, CA?',
-    a: "Our certified lab is located in Glendale, CA — just minutes from Burbank. We offer free local pickup in Burbank so you never have to leave your home or office. Simply call us to schedule and we'll handle the rest.",
+    q: 'Is your data recovery lab located in Burbank, CA?',
+    a: 'While our main lab is not physically located in Burbank, we proudly serve the Burbank area and offer free same-day pickup for local residents and businesses. Our close proximity allows us to provide fast, convenient, and professional service throughout the region.',
   },
   {
-    q: 'What kinds of data loss do you handle for Burbank clients?',
-    a: 'We handle all types of data loss including mechanical hard drive failure, SSD failure, accidental deletion, RAID array failure, water or physical damage, and corrupted storage media. No case is too complex for our certified engineers.',
+    q: 'How long does the data recovery process take in Burbank?',
+    a: 'Most data recovery cases are completed in 3–5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data.',
   },
   {
-    q: 'How long does data recovery take?',
-    a: 'Standard cases typically take 3–5 business days. We also offer <a href="/expedited-service" class="faq-link">Expedited Service</a> for priority business-hour recovery and <a href="/expedited-service-plus" class="faq-link">Expedited Service Plus</a> for 24/7 around-the-clock recovery when time is critical.',
+    q: 'What types of devices do you recover data from?',
+    a: "We recover data from hard drives, SSDs, USB flash drives, iPhones, RAID setups, SD cards, and more. If you've experienced data loss near Burbank, we can help.",
   },
   {
-    q: 'Do you offer a No Data, No Charge guarantee?',
-    a: 'Yes — our No Data, No Charge (most cases) policy means if we cannot recover your data, you will not be charged for the recovery service. The free diagnostic is always included at no cost.',
+    q: 'Do you offer free pickup in the Burbank area?',
+    a: "Yes! We offer free local pickup for most addresses near Burbank. Simply contact us to schedule a same-day pickup and we'll handle the logistics.",
   },
   {
-    q: 'How much does data recovery cost in Burbank?',
-    a: 'We use flat-rate pricing with no hidden fees. Recovery costs typically range from $300 to $950 depending on the device and failure type. All pricing is disclosed upfront after your free diagnosis before any work begins.',
+    q: "What happens if my data can't be recovered?",
+    a: "We follow a No Data, No Charge policy. If your data is unrecoverable, you won't owe us anything for most standard recovery cases.",
   },
 ]
 
@@ -71,26 +71,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <StatsBar />
 
-    <!-- SECTION 1 — s-white: two-col-layout -->
+    <!-- SECTION 1 — s-white: What Is Data Recovery -->
     <section class="s-white">
-      <div class="container two-col-layout">
-        <div>
-          <h2 class="s-heading">What Is Data Recovery?</h2>
-          <p class="s-body">Data recovery is the process of retrieving inaccessible, lost, corrupted, damaged, or formatted data from storage devices when it cannot be accessed normally. At Five Star Data Recovery, our certified engineers use advanced tools, a dedicated cleanroom, and years of experience to recover data from virtually any storage device under any failure condition.</p>
-          <p class="s-body">Whether your hard drive has physically failed, your SSD is unresponsive, or your RAID array has crashed — data recovery is often possible. The key is to stop using the device immediately and contact a professional as soon as possible to maximize recovery chances.</p>
-        </div>
-        <div>
-          <h2 class="s-heading">Common Scenarios We Handle in Burbank</h2>
-          <ul class="content-list">
-            <li>A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.</li>
-            <li>A post-production company's RAID 5 failed mid-project. We cloned all drives and rebuilt their file system in under 3 days.</li>
-            <li>A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.</li>
-          </ul>
-        </div>
+      <div class="container">
+        <h2 class="s-heading">What Is Data Recovery?</h2>
+        <p class="s-body">Data recovery is the process of retrieving lost, deleted, or inaccessible files from storage devices. These devices might include hard drives, SSDs, USB flash drives, and SD cards. When a device stops working, you might think you have lost your data for good—but that’s rarely the case. Even if your device doesn’t power on, or your computer can no longer recognize it, your data is often still there. Our experienced engineers use specialized tools to locate and recover your lost files, even in the most difficult cases.</p>
+        <h2 class="s-heading" style="margin-top:40px;">Common Scenarios We Handle near Burbank</h2>
+        <ul class="content-list">
+          <li>A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.</li>
+          <li>A post‑production company’s RAID 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.</li>
+          <li>A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- SECTION 2 — s-grey: We Specialize in Recovering Data From -->
+    <!-- SECTION 2 — s-grey: We Specialize In -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">We Specialize in Recovering Data From:</h2>
@@ -109,32 +104,76 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Physical Damage? We Can Help.</h2>
-        <p class="s-body">Our ISO 5 certified cleanroom allows our engineers to safely open and work on physically damaged hard drives in a particle-controlled environment. Whether your drive was dropped, submerged in water, or suffered an electrical surge, we have the capability to handle it. Don't attempt DIY repairs — contact us first for a free evaluation.</p>
-
-        <h2 class="s-heading" style="margin-top: 48px;">Our 3&#8209;Step Recovery Process</h2>
+        <p class="s-body">Devices with physical damage often require cleanroom recovery. This applies to drives that someone has dropped, bumped, or exposed to liquid. We’re one of the few data recovery labs near Burbank equipped with a certified cleanroom. Our engineers can carefully take apart your drive. They can fix or replace parts and recover your data. This is done without causing more damage. If you’re unsure whether your device can be saved, don’t throw it away. We may be able to recover more than you think.</p>
+        <h2 class="s-heading" style="margin-top:48px;">Our 3‑Step Recovery Process</h2>
+        <p class="s-body">We’ve designed our process to be simple, transparent, and stress-free:</p>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
               <h3 class="step-title">Free Diagnostic &amp; Quote</h3>
-              <p class="step-body">We evaluate your device at no charge and provide a full diagnosis with transparent flat-rate pricing — no surprises, no hidden fees.</p>
+              <p class="step-body">We evaluate your drive and give you a flat‑rate price. No surprises.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
               <h3 class="step-title">Data Recovery in Our Lab</h3>
-              <p class="step-body">Once you approve the quote, our certified engineers begin the recovery process using professional tools and our ISO 5 cleanroom as needed.</p>
+              <p class="step-body">Recovery is performed by trained engineers — never outsourced.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
             <div>
-              <h3 class="step-title">Your Data Delivered</h3>
-              <p class="step-body">After you review and approve the recovered file list, we transfer your data to a new drive and return it to you via pickup or insured shipping.</p>
+              <h3 class="step-title">Your Data, Delivered</h3>
+              <p class="step-body">We return your recovered data on a new drive or USB securely.</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- WHO WE WORK WITH -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Who We Work With</h2>
+        <p class="s-body">We assist a wide range of clients throughout Burbank:</p>
+        <ul class="content-list">
+          <li><strong>Students</strong> who have lost important schoolwork, research files, or media projects</li>
+          <li><strong>Small businesses</strong> dealing with lost invoices, accounting records, or databases</li>
+          <li><strong>Creative professionals</strong> recovering photos, videos, and editing files from damaged devices</li>
+          <li><strong>Everyday users</strong> looking to recover family photos, tax files, and personal documents</li>
+        </ul>
+        <p class="s-body">Regardless of your background or profession, our goal is the same: to recover your data and give you peace of mind.</p>
+      </div>
+    </section>
+
+    <!-- AREAS WE SERVE -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Areas We Serve near Burbank</h2>
+        <p class="s-body">We offer pickup service across the entire city, including:</p>
+        <ul class="content-list">
+          <li>Magnolia Park</li>
+          <li>Downtown Burbank</li>
+          <li>Media District</li>
+          <li>Rancho Equestrian &amp; Toluca Woods</li>
+          <li>McNeil &amp; Chandler Park</li>
+        </ul>
+        <p class="s-body">Or visit our lab directly — we’re just a short drive down the 5 freeway.</p>
+      </div>
+    </section>
+
+    <!-- YOUR DATA IS SAFE -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Your Data Is Safe With Us</h2>
+        <p class="s-body">We treat your data with the highest level of confidentiality and security. From start to finish, we protect your files. Whether you’re a private individual or a business, we handle your information with care. We also offer:</p>
+        <ul class="content-list">
+          <li>Encrypted data storage and transfers</li>
+          <li>Non-disclosure agreements for business clients</li>
+          <li>Secure deletion of temporary recovery files upon completion</li>
+        </ul>
       </div>
     </section>
 
@@ -142,15 +181,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
-    <section class="s-contact-band">
+    <section class="s-contact-band contact-band-bg">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Burbank Data Recovery</h2>
+          <h2 class="contact-banner-heading">Let’s Recover Your Files</h2>
         </div>
+        <p class="contact-body-text">Data loss doesn’t have to be permanent. If your device has failed, your files may still be recoverable—but time matters. The sooner we start the process, the better the outcome.</p>
         <ul class="contact-bullets">
-          <li>Free local pickup in Burbank</li>
-          <li>Certified cleanroom on-site</li>
-          <li>3–5 business day turnaround</li>
+          <li>We’re located in Glendale—just minutes from Burbank</li>
+          <li>Same-day pickup near Burbank available Monday through Friday</li>
           <li>No Data, No Charge (most cases)</li>
         </ul>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
@@ -196,9 +235,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
 .step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
-.s-contact-band { background: #0f1623; padding: 72px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
-.contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/pasadena-contact-bg.jpg') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
 .contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
 .contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
 .contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
 .contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
