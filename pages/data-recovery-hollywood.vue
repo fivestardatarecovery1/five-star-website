@@ -1,4 +1,87 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "url": "https://www.fivestardatarecovery.com/data-recovery-hollywood-ca/",
+            "telephone": "(818) 272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": 34.1233, "longitude": -118.2567 },
+            "areaServed": [
+              { "@type": "Place", "name": "Hollywood, CA" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "openingHoursSpecification": [
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "10:00", "closes": "18:00" },
+              { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" }
+            ],
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "priceRange": "$$",
+            "review": [
+              { "@type": "Review", "author": { "@type": "Person", "name": "Tiffany R." }, "reviewBody": "My hard drive failed right before a big deadline, and I was in full panic mode. I called Five Star Data Recovery, and to my surprise, they offered same-day pickup from my apartment in Hollywood. Within days, I had all my files back \u2014 including my client's entire photo shoot. Incredible service from start to finish." },
+              { "@type": "Review", "author": { "@type": "Person", "name": "Nina L." }, "reviewBody": "As a music producer, losing sessions is my worst nightmare. My RAID failed without warning, and I had no backup. The team at Five Star diagnosed it quickly and explained everything clearly. They got 100% of my files back, and the turnaround was quicker than expected. Highly recommend them!" },
+              { "@type": "Review", "author": { "@type": "Person", "name": "Anthony K." }, "reviewBody": "I was skeptical at first, but after reading reviews, I gave them a shot. My external SSD stopped working after a drop, and no software could read it. These guys recovered every single file \u2014 including my tax documents, family videos, and work archives. Their service was worth every penny." }
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery-hollywood-ca/#webpage",
+            "url": "https://www.fivestardatarecovery.com/data-recovery-hollywood-ca/",
+            "name": "Data Recovery Hollywood CA - Five Star Data Recovery",
+            "description": "Expert data recovery services for Hollywood, CA. We serve media professionals and residents needing urgent or standard data recovery solutions for hard drives, SSDs, phones, and more.",
+            "inLanguage": "en-US",
+            "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery-hollywood-ca/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery Hollywood CA", "item": "https://www.fivestardatarecovery.com/data-recovery-hollywood-ca/" }
+            ]
+          },
+          {
+            "@type": "Service",
+            "serviceType": "Data Recovery Services in Hollywood CA",
+            "areaServed": [
+              { "@type": "Place", "name": "Hollywood, CA" },
+              { "@type": "Country", "name": "United States" }
+            ],
+            "provider": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" },
+            "url": "https://www.fivestardatarecovery.com/data-recovery-hollywood-ca/",
+            "description": "Five Star Data Recovery offers specialized data recovery services for Hollywood, CA clients. We support media professionals, businesses, and residents with expert recovery for hard drives, SSDs, mobile devices, and RAID systems."
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you offer same-day pickup in Hollywood?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we offer free same-day pickup in Hollywood for customers needing urgent data recovery services. Just give us a call and we'll schedule a pickup." } },
+              { "@type": "Question", "name": "What types of storage devices can you recover data from?", "acceptedAnswer": { "@type": "Answer", "text": "We recover data from hard drives, SSDs, USB flash drives, SD cards, RAID systems, MacBooks, iPhones, Samsung Phones, external drives, and more. If it stores data, there's a good chance we can recover it." } },
+              { "@type": "Question", "name": "If I schedule same day pickup from Hollywood, how do I get my recovered data back?", "acceptedAnswer": { "@type": "Answer", "text": "Once your data recovery is complete, you have two convenient options: you can pick up your recovered data from our Glendale office, or we can ship it back to you at no additional cost. Just let us know which option works best for you." } },
+              { "@type": "Question", "name": "How long does the data recovery process take?", "acceptedAnswer": { "@type": "Answer", "text": "Standard recoveries take about 3\u20135 business days, but we also offer Expedited and Expedited Plus services for urgent cases. These services prioritize your recovery based on the level of urgency." } },
+              { "@type": "Question", "name": "Do you work on drives that have been dropped or physically damaged?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We specialize in physical data recovery, including dropped drives, water-damaged devices, and drives with internal mechanical failure. All work is done in a certified clean room environment." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Data Recovery in Hollywood CA - Five Star Data Recovery',
   ogTitle: 'Data Recovery Hollywood',
