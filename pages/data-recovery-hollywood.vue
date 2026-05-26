@@ -149,7 +149,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Data Recovery Hollywood, CA"
       subtitle="Get Your Data Back In No Time."
       description="If you've lost data from a hard drive, flash drive, memory card, or RAID system—Five Star Data Recovery is here to help. We provide expert-level service to clients near Hollywood, CA with fast turnaround and fair pricing. Although our lab is based in Glendale, CA, we offer free same-day pickup for customers near Hollywood."
-      bgImage="/data-recovery-los-angeles-ca.webp"
+      bgImage="/hollywood-hero.jpg"
       :trustBadges="trustBadges"
     />
 
