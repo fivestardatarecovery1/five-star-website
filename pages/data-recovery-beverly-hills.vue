@@ -33,32 +33,44 @@ const reviews = [
 
 const faqs = [
   {
-    q: 'Do you have a lab in Beverly Hills, CA?',
-    a: "Our certified lab is located in Glendale, CA — just a short drive from Beverly Hills. We offer free same-day pickup throughout Beverly Hills, so you don't need to come to us. Simply give us a call and we'll schedule a pickup at your convenience."
+    q: 'Do you offer data recovery services specifically in Beverly Hills?',
+    a: "Yes! While our main lab is located nearby, we proudly offer professional data recovery services in Beverly Hills with free same-day pickup. Whether it's a failed hard drive, SSD, iPhone, or RAID system, our team is ready to help recover your data quickly and securely."
   },
   {
-    q: 'What types of devices do you recover data from for Beverly Hills clients?',
-    a: "We recover data from hard drives (HDDs), solid state drives (SSDs), RAID arrays, NAS devices, USB flash drives, SD cards, iPhones, and more. Whether it's a personal device or a business server, we handle it all."
+    q: 'How fast can you recover data for Beverly Hills customers?',
+    a: 'Most standard Beverly Hills data recovery cases are completed within 3–5 business days. For urgent needs, we also offer Expedited and Expedited Plus services with 24/7 priority support. Call us for a free phone consultation.',
   },
   {
-    q: 'How long does data recovery take?',
-    a: 'Standard recovery cases for Beverly Hills clients typically take 3–5 business days. We also offer <a href="/expedited-service" class="faq-link">Expedited Service</a> for priority same-day start, and <a href="/expedited-service-plus" class="faq-link">Expedited Service Plus</a> for 24/7 around-the-clock recovery.',
+    q: 'What types of devices can you recover data from in Beverly Hills?',
+    a: 'We specialize in recovering data from: External and internal hard drives, Solid-state drives (SSDs), iPhones and Android devices, USB flash drives, SD cards, RAID and NAS systems. Whatever your storage device, our data recovery experts in Beverly Hills can help.',
   },
   {
-    q: 'What is your No Data, No Charge policy?',
-    a: 'Our No Data, No Charge (most cases) policy means that if we are unable to successfully recover your data, you will not be charged for the recovery service. The free diagnostic is always included at no cost or obligation.',
+    q: 'Is there a fee if you can\'t recover my data?',
+    a: 'We follow a No Data, No Charge policy for most standard recoveries in Beverly Hills. You only pay if we successfully recover your files. Some exceptions apply, such as deleted file cases or previously tampered drives.',
   },
   {
-    q: 'How much does data recovery cost in Beverly Hills?',
-    a: 'We use flat-rate pricing — no hourly fees, no hidden charges. Recovery pricing typically ranges from $300 to $950 depending on the device type and complexity of the failure. All pricing is disclosed upfront after your free diagnosis.',
+    q: 'Do you provide free pickup in Beverly Hills for data recovery?',
+    a: "Yes! We offer free same-day pickup in Beverly Hills for all data recovery jobs. Just give us a call or fill out our request form, and we'll arrange secure transportation of your device to our lab."
   },
   {
-    q: 'Is my data kept confidential?',
-    a: 'Absolutely. All data and devices are handled with the highest level of confidentiality. We never share, copy, or retain your personal or business data. Our lab operates with strict data security protocols.',
+    q: 'What makes your Beverly Hills data recovery service different from others?',
+    a: 'We stand out with our transparent flat-rate pricing, no data, no charge policy, and in-house recovery lab. Unlike many companies, we never outsource—we perform all recoveries ourselves to maintain the highest success rate and confidentiality for our Beverly Hills data recovery clients.',
   },
   {
-    q: 'Can you recover data from a physically damaged hard drive?',
-    a: 'Yes — our ISO 5 certified cleanroom allows us to safely open and repair mechanically or physically damaged hard drives. From clicking drives to drives damaged by water or drops, we have the tools and expertise to handle complex physical recovery cases.',
+    q: 'Can you recover data from physically damaged hard drives in Beverly Hills?',
+    a: 'Yes, we specialize in physically damaged drive recovery. Whether your drive is clicking, not powering on, or has water or impact damage, our data recovery engineers near Beverly Hills are equipped with cleanroom tools to handle complex cases.',
+  },
+  {
+    q: 'How secure is your data recovery process for Beverly Hills clients?',
+    a: 'We prioritize data privacy and security. All Beverly Hills data recovery cases are handled in a secure environment, and your files are never shared or stored beyond the recovery process. Confidentiality agreements are also available upon request.',
+  },
+  {
+    q: 'Do you recover data from iPhones and smartphones in Beverly Hills?',
+    a: "Yes! We offer component-level iPhone data recovery in Beverly Hills and can recover data even from non-booting or physically damaged iPhones. Whether you need a full iTunes backup or file extraction, we're here to help."
+  },
+  {
+    q: 'How do I get started with your Beverly Hills data recovery service?',
+    a: 'Getting started is easy. Call us for a free consultation or request a free same-day pickup in Beverly Hills. You can also mail your device or visit our lab. Once we receive it, we\'ll provide a diagnostic and begin recovery as soon as you approve.',
   },
 ]
 
@@ -84,15 +96,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Your Local Recovery Experts</h2>
-        <p class="s-body">Five Star Data Recovery serves clients throughout Beverly Hills and the greater Los Angeles area. Whether you've lost files from a crashed hard drive, a corrupted SSD, or a damaged RAID array, we have the tools and experience to get your data back. We specialize in:</p>
+        <p class="s-body">From luxury retailers to entertainment professionals, we've assisted Beverly Hills clients in recovering critical data from:</p>
         <ul class="content-list">
-          <li><NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">Hard Drive Recovery</NuxtLink> — HDDs that won't spin, click, or show up</li>
-          <li><NuxtLink to="/data-recovery/ssd-recovery" class="inline-link">SSD Recovery</NuxtLink> — Failed solid-state drives with firmware or electrical issues</li>
-          <li><NuxtLink to="/data-recovery/raid-recovery" class="inline-link">RAID &amp; NAS Recovery</NuxtLink> — Multi-drive arrays and business storage systems</li>
-          <li><NuxtLink to="/data-recovery/external-hard-drive" class="inline-link">External Hard Drive Recovery</NuxtLink> — Dropped, unresponsive, or corrupted external drives</li>
-          <li><NuxtLink to="/data-recovery/usb-recovery" class="inline-link">USB Flash Drive Recovery</NuxtLink> — Broken, corrupt, or unrecognized flash drives</li>
-          <li><NuxtLink to="/data-recovery/sd-card-recovery" class="inline-link">SD Card Recovery</NuxtLink> — Memory cards from cameras, drones, and mobile devices</li>
+          <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Hard drives that are clicking</NuxtLink>, unresponsive, or damaged</li>
+          <li>Devices exposed to water or showing signs of physical damage</li>
+          <li>Drives with deleted files or formatted partitions</li>
+          <li>SSDs and flash drives experiencing failures</li>
+          <li>RAID systems suffering from corruption or multiple drive failures</li>
         </ul>
+        <p class="s-body">Every recovery is performed securely, confidentially, and in-house by our expert engineers.</p>
       </div>
     </section>
 
@@ -102,16 +114,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Why Beverly Hills Clients Choose Us</h2>
         <div class="reason-cards">
           <div class="reason-card">
-            <h3 class="reason-title">Free Same-Day Pickup</h3>
-            <p class="s-body">We come to you. Our free pickup service means you don't have to drive anywhere — we collect your device directly from your home or office in Beverly Hills at no charge.</p>
+            <h3 class="reason-title">No Recovery, No Charge Policy</h3>
+            <p class="s-body">Clients pay only if the recovery is successful. We charge no upfront fees (except in specific cases like deleted file recovery) — giving you peace of mind and risk-free service.</p>
           </div>
           <div class="reason-card">
-            <h3 class="reason-title">Flat-Rate Transparent Pricing</h3>
-            <p class="s-body">No hourly fees, no surprises. You'll know the full cost before we begin. Our No Data, No Charge (most cases) policy means you only pay if we successfully recover your data.</p>
+            <h3 class="reason-title">Free Same-Day Pickup in Beverly Hills</h3>
+            <p class="s-body">If you're in a rush or can't come to us, we'll come to you. Our free same-day pickup service in Beverly Hills makes the process effortless.</p>
           </div>
           <div class="reason-card">
-            <h3 class="reason-title">ISO 5 Certified Cleanroom</h3>
-            <p class="s-body">Our on-site certified cleanroom allows us to safely handle physically damaged drives that require internal work — the same standard used by the world's top data recovery labs.</p>
+            <h3 class="reason-title">Fast Turnaround with Optional Expedited Services</h3>
+            <p class="s-body">Standard recoveries take 3–5 business days, but we also offer two levels of expedited services for clients on tight deadlines.</p>
           </div>
         </div>
       </div>
@@ -125,39 +137,53 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
-              <h3 class="step-title">Drop off or Mail in Your Drive</h3>
-              <p class="step-body">You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.</p>
+              <h3 class="step-title">Initial Device Check-Up and Diagnostics</h3>
+              <p class="step-body">We begin by inspecting the device in a safe environment to determine the cause of failure.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
-              <h3 class="step-title">Receive a Free Diagnosis</h3>
-              <p class="step-body">Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.</p>
+              <h3 class="step-title">Non-Invasive Cloning of the Device</h3>
+              <p class="step-body">Our first recovery step is always to clone the original drive sector by sector.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
             <div>
-              <h3 class="step-title">Our Engineers work on Recovering your Data</h3>
-              <p class="step-body">We carefully begin the recovery process using advanced tools and cleanroom procedures.</p>
+              <h3 class="step-title">File System and Data Repair</h3>
+              <p class="step-body">After cloning, we analyze and rebuild the file system.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">4</div>
             <div>
-              <h3 class="step-title">Review &amp; Approve the Recovered</h3>
-              <p class="step-body">After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered.</p>
+              <h3 class="step-title">Client Review and Approval</h3>
+              <p class="step-body">You'll receive a full list of the recovered files to review.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">5</div>
             <div>
-              <h3 class="step-title">Receive your recovered data</h3>
-              <p class="step-body">Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+              <h3 class="step-title">Final Delivery or Secure Upload</h3>
+              <p class="step-body">Your recovered data is returned to you.</p>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- DEVICES WE SUPPORT -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Devices We Support</h2>
+        <ul class="content-list">
+          <li><strong>USB Drives, SSDs, and HDD Storage</strong> — From portable USB flash drives to internal and external hard drives (both solid-state and spinning disks).</li>
+          <li><strong>SD, microSD, and CF Cards</strong> — We recover lost files from memory cards used in cameras, phones, drones, and other digital devices.</li>
+          <li><strong>RAID Arrays</strong> — Our engineers specialize in RAID data recovery for RAID 0, 1, 5, 10, and hybrid configurations.</li>
+          <li><strong>iPhones (Component-Level Recovery)</strong> — We perform advanced hardware-level recovery on iPhones that have suffered severe physical damage or liquid exposure.</li>
+          <li><strong>MacBooks &amp; iMacs (Component-Level Recovery)</strong> — If your Apple device won't turn on due to logic board damage, we can perform board level repairs to retrieve your data.</li>
+        </ul>
       </div>
     </section>
 
@@ -168,14 +194,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-contact-band">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Beverly Hills Data Recovery</h2>
+          <h2 class="contact-banner-heading">Ready to Start?</h2>
         </div>
-        <ul class="contact-bullets">
-          <li>Free same-day pickup in Beverly Hills</li>
-          <li>Free diagnostic — no obligation</li>
-          <li>3–5 business day turnaround</li>
-          <li>No Data, No Charge (most cases)</li>
-        </ul>
+        <p class="contact-body-text">Five Star Data Recovery brings expert-level care and precision to your doorstep. Contact us today for data recovery in Beverly Hills, CA.</p>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
