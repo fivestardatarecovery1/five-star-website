@@ -1,87 +1,65 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Hard Drive Clicking Noise Recovery — Five Star Data Recovery',
-  description: 'Is your hard drive suddenly making a clicking sound? Don’t ignore it—this could be a serious warning sign. At Five Star Data Recovery, we focus on getting data'
+  title: 'Hard Drive Clicking - Five Star Data Recovery',
+  ogTitle: 'Hard Drive Clicking',
+  description: 'Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.',
+  ogDescription: 'Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.',
 })
 
-const issues = [
-  { icon: '💥', title: 'Head Crash: The read/write head physically touches the platter, damaging the surface and data.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
-  { icon: '🔌', title: 'Power Surge: Electrical spikes can damage the circuit board or firmware.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
-  { icon: '🔌', title: 'Power Surge: Electrical spikes can damage the circuit board or firmware.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
-  { icon: '💾', title: 'Stuck Heads: The heads fail to return to the parked position and keep trying to reset.', text: 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:' },
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
-
-const causesIntro = 'A hard drive making clicking noise usually signals internal damage. Some of the most common causes include:'
-const causesOutro = 'Regardless of the cause, if your HDD is clicking, it’s best to stop using it immediately to prevent further damage.'
-const causes = [
-  'Head Crash: The read/write head physically touches the platter, damaging the surface and data.',
-  'Power Surge: Electrical spikes can damage the circuit board or firmware.',
-  'Power Surge: Electrical spikes can damage the circuit board or firmware.',
-  'Stuck Heads: The heads fail to return to the parked position and keep trying to reset.',
-  'Factory Defects: Sometimes, drives leave the factory with underlying issues that worsen over time.',
-  'Impact Damage: Drops or shocks, especially while running, can cause severe internal damage.',
-]
-
-const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
-const steps = [
-  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
-  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
-  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
-]
-
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes = [
-  'Experts in clicking hard drive recovery',
-  'Full in-house cleanroom repair',
-  'Clear communication throughout',
-  'Flat-rate pricing — no surprise fees',
-  '“No Data, No Charge” guarantee',
-  'Located in Glendale, CA — Nationwide mail-in service available',
-]
-
-const tipIntro = 'If your hdd is clicking, follow these steps immediately'
-const tipOutro = 'Your clicking hard disk drive might be failing, but you can still save your data.'
-const tips = [
-  'Visit our Glendale, CA lab',
-  'Ship your drive to us from anywhere in the U.S.',
-  'Call now for a free diagnosis',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'We understand—you want your data back fast, and DIY videos make it look simple. But opening a drive or running software on a damaged disk often causes more harm than good.Here’s why you should avoid DIY recovery on a clicking hard disk drive:',
-]
-const d4Texts = [
-  'We verify your recovered files and transfer them to a new drive that you provide or purchase from us.No Data, No Charge — If we can’t recover your data, you don’t pay.',
-]
-
-const midBody = [
-  'A clicking hard drive usually indicates internal mechanical failure. This often happens due to damaged read/write heads, actuator arm issues, or spindle motor problems. When your HDD starts clicking, it’s critical to stop using the drive immediately to prevent further platter damage and permanent data loss.',
-  'Yes. At Five Star Data Recovery, we specialize in clicking hard drive recovery. Our engineers use Class 100 clean room technology to safely open the drive and replace damaged components like heads or actuators, giving us the best chance at recovering your important files.',
-  'No. Powering on a clicking hard drive repeatedly can cause the heads to scratch the platters, making data recovery much more difficult or impossible. If your HDD is clicking, turn it off immediately and contact a professional data recovery service.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Hard Drive Clicking Noise Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional hard drive clicking noise recovery — and get back what matters most.'
 
 const reviews = [
-  { 'text': 'My external hard drive started making loud clicking sounds, and I knew something was seriously wrong. I called Five Star Data Recovery, and Elen explained the process and got my case checked in right away. Within a week, they recovered all of my photos and work documents. Their communication was excellent from start to finish.', 'name': 'Eric S.', 'location': 'Burbank, CA' },
-  { 'text': 'I had a Western Digital drive that started clicking and wouldn’t mount at all. After reading reviews, I shipped it to Five Star Data Recovery. Vahan and his team did an amazing job. They explained that the heads had failed and performed a clean room recovery. I got back', 'name': '97%', 'location': 'of my files!"' },
-  { 'text': 'My desktop hard drive was making a clicking noise after a power outage. Alex handled the recovery and explained that the internal heads were damaged. They replaced the parts and recovered almost all of my data. The flat-rate pricing with no surprises made the experience stress-free.', 'name': 'Luis M.', 'location': 'Glendale, CA' },
+  {
+    text: "My hard drive started clicking and I panicked — Five Star told me to power it off immediately, which I did. They picked it up, assessed it in their cleanroom, sourced donor parts, and recovered 100% of my data. I can't imagine what would have happened if I had kept trying to use it. These guys are pros.",
+    name: 'Eric S.',
+    location: 'Burbank, CA',
+  },
+  {
+    text: "I had a clicking Western Digital drive with 4 years of photography work on it. Another lab said it was unrecoverable. Five Star disagreed — they opened it in their cleanroom, swapped the read head assembly, and got back everything. I was floored. Best data recovery service I've ever used.",
+    name: 'Jasmine T.',
+    location: 'Dallas, TX',
+  },
+  {
+    text: "My Seagate started clicking after a power surge. Five Star handled the entire process with complete professionalism — free diagnostic, flat-rate quote, cleanroom repair, and full data delivery in 4 days. The $950 flat rate was completely worth it for recovering irreplaceable business files.",
+    name: 'Luis M.',
+    location: 'Glendale, CA',
+  },
 ]
+
 const faqs = [
-  { q: 'See Why Thousands Trust Us With Their Important Data', a: 'Data loss is stressful — but working with us doesn’t have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.' },
+  {
+    q: 'What does it mean when my hard drive is clicking?',
+    a: "A clicking hard drive is one of the most serious warning signs in data recovery. It typically indicates a mechanical failure — most commonly damaged or stuck read/write heads that are unable to read the platters correctly. The clicking sound is the heads repeatedly attempting and failing to initialize. Power your drive off immediately and do not attempt to use it further.",
+  },
+  {
+    q: 'What should I do if my hard drive is clicking?',
+    a: 'Power it off immediately. Do not attempt to use the drive, run disk repair software, or open the drive yourself. Every additional spin cycle can cause the damaged heads to scratch the platters, making data recovery increasingly difficult or impossible. Contact us for a free evaluation before doing anything else.',
+  },
+  {
+    q: 'Can you recover data from a clicking hard drive?',
+    a: "Yes — we specialize in recovering data from mechanically failed drives, including clicking drives. Using our ISO 5 certified cleanroom, our engineers can safely open the drive, assess the damage, source matching donor parts, and perform a head swap or other necessary repairs to image the data. Recovery success depends on how early the drive is powered off and the extent of platter damage.",
+  },
+  {
+    q: 'How much does clicking hard drive recovery cost?',
+    a: "Mechanical hard drive recovery, including clicking drives, is priced at a flat rate of $950. This covers all engineering labor, cleanroom work, and any necessary component sourcing. There are no hidden fees — if we cannot recover your data, you will not be charged for the recovery service (most cases).",
+  },
+  {
+    q: 'How long does recovery take for a clicking hard drive?',
+    a: "Standard recovery for a clicking drive typically takes 3–5 business days. The delay is largely due to the time needed to source matching donor parts (head assembly, PCB, etc.) for your specific drive model. Once parts arrive, our engineers work quickly to complete the recovery. Expedited options are available if you have an urgent deadline.",
+  },
+  {
+    q: 'Will opening the drive myself fix the clicking?',
+    a: "No — and it will almost certainly make recovery impossible. Hard drive internals require an ISO 5 (Class 100) cleanroom environment. Even a single dust particle landing on the platters can cause permanent scratches that destroy data. Opening a hard drive in a normal room environment will contaminate the platters and likely result in total and unrecoverable data loss.",
+  },
+  {
+    q: 'What causes a hard drive to click?',
+    a: "The most common causes are: damaged or stuck read/write heads, failed head actuator assembly, corrupted firmware that prevents proper head initialization, physical impact or drop damage, or gradual wear that leads to head failure over time. Regardless of cause, the solution always requires professional cleanroom-level intervention.",
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -93,239 +71,126 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="Hard Drive Clicking Noise Recovery"
+      title="Hard Drive Clicking"
       subtitle="Get Your Data Back In No Time."
-      description="Is your hard drive suddenly making a clicking sound? Don't ignore it—this could be a serious warning sign. At Five Star Data Recovery, we focus on getting data back from drives with mechanical issues. This includes the annoying hard drive clicking sound. If your drive has started clicking, ticking, or making repeated noises when powered on, power it down immediately."
+      description="Is your hard drive suddenly making a clicking sound? Don't ignore it—this could be a serious warning sign. At Five Star Data Recovery, we focus on getting data back from drives with mechanical issues. If your drive has started clicking, ticking, or making repeated noises when powered on, power it down immediately. A clicking hard drive can get worse quickly. The longer it runs, the harder and more costly it is to recover your data."
       bgImage="/hard-drive-clicking-sound-data-recovery.webp"
+      :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SECTION 1 — s-white two-col with image -->
     <section class="s-white">
-      <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Hard Drive Clicking Noise Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
-          </div>
+      <div class="container two-col-layout">
+        <div>
+          <h2 class="s-heading">What Is the Clicking Sound in a Hard Drive?</h2>
+          <p class="s-body">The clicking sound in a hard drive is typically caused by the read/write heads repeatedly attempting to initialize — and failing. In a healthy hard drive, the heads glide nanometers above the spinning platters and read/write data precisely. When they are damaged, misaligned, or stuck, the actuator arm that moves them will click as it swings back and forth without successfully positioning the heads over the correct track.</p>
+          <p class="s-body">This mechanical failure is one of the most serious conditions a hard drive can experience. The longer the drive spins with damaged heads, the greater the risk of the heads physically contacting the platters — causing deep scratches that can permanently destroy data. The moment you hear clicking, the most important thing you can do is power off the drive immediately.</p>
         </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
-
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes Hard Drive Clicking Noise Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/hard-drive-clicking-sound-data-recovery.webp" alt="Hard Drive Clicking Noise Recovery service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
-          </div>
+        <div class="img-col">
+          <img src="/hard-drive-internal-platters.jpg" alt="Hard drive internal platters" class="section-img" />
         </div>
       </div>
     </section>
 
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Hard Drive Clicking Noise Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/hard-drive-clicking-sound-data-recovery.webp') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your Hard Drive Clicking Noise Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactHardDri" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactHardDri" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactHardDri" value="text" /> TEXT</label>
-                </div>
-              </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
+    <!-- SECTION 2 — s-grey: Common causes -->
     <section class="s-grey">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <h2 class="s-heading">Common causes of a clicking hard drive</h2>
+        <ul class="content-list">
+          <li><strong>Damaged read/write heads</strong> — The most common cause. Heads can fail due to age, sudden impact, or power surge, preventing them from properly reading the platters.</li>
+          <li><strong>Failed actuator assembly</strong> — The arm that moves the heads across the platters can seize or become stuck, causing the characteristic clicking noise.</li>
+          <li><strong>Corrupted firmware</strong> — Bad firmware can cause the drive's controller to repeatedly attempt head positioning routines that fail, producing a clicking pattern.</li>
+          <li><strong>Physical impact or drop damage</strong> — Dropping a hard drive — even a short distance — can dislodge or damage the read/write heads, instantly causing a clicking failure.</li>
+          <li><strong>Normal wear over time</strong> — Heads can gradually degrade over years of use, eventually failing to maintain proper flying height above the platters.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — s-white: Why you shouldn't try to fix it yourself -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Why you shouldn't try to fix a clicking hard drive yourself</h2>
+        <p class="s-body">We understand the impulse to try to fix things yourself, especially when important data is at stake. But when it comes to a clicking hard drive, DIY attempts almost always make things significantly worse. Here's why:</p>
+        <ul class="content-list">
+          <li><strong>Hard drive internals require cleanroom conditions.</strong> Opening a drive outside of an ISO 5 certified cleanroom introduces dust and contaminants that will land on the spinning platters and cause irreversible scratching.</li>
+          <li><strong>Freezer tricks don't work.</strong> The old myth of freezing a hard drive is not only ineffective for modern drives, it introduces condensation that can short circuit the PCB and further damage the platters.</li>
+          <li><strong>Recovery software cannot fix mechanical failures.</strong> If the heads are damaged, no software can compensate. Running disk repair software on a clicking drive will only cause more head passes and increase platter damage.</li>
+          <li><strong>Every extra spin cycle causes damage.</strong> The longer a clicking drive runs, the more contact between the damaged heads and the platters — reducing the chance of recovery exponentially.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — s-grey: How We Recover -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">How We Recover Data from a Clicking Hard Drive</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">Free Diagnostic</h3>
+              <p class="step-body">We evaluate your drive at no cost. Our engineers assess the type and severity of the mechanical failure and provide a detailed report with a flat-rate quote before any work begins.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">Cleanroom Assessment</h3>
+              <p class="step-body">Your drive is opened in our ISO 5 certified cleanroom. Our engineers inspect the internal components — heads, platters, and actuator — under controlled conditions to determine exactly what needs to be addressed.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">Component Repair or Replacement</h3>
+              <p class="step-body">We source matching donor parts from our extensive inventory. Read/write head assemblies, PCBs, and other components are swapped with precision in the cleanroom to restore the drive's ability to read data.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3 class="step-title">Data Imaging</h3>
+              <p class="step-body">With the drive stabilized, we create a forensic sector-by-sector image using professional imaging hardware. We work methodically to extract as much data as possible from every readable sector.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div>
+              <h3 class="step-title">File Delivery</h3>
+              <p class="step-body">You review a detailed file list of all recovered data before we finalize anything. Once approved, we transfer your files to a new drive and return it to you via pickup or insured shipping.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Contact Us for Clicking Hard Drive Recovery</h2>
+        </div>
+        <ul class="contact-bullets">
+          <li>Power down immediately — every second counts</li>
+          <li>Free diagnostic</li>
+          <li>$950 flat-rate — no hidden fees</li>
+          <li>ISO 5 certified cleanroom</li>
+        </ul>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
@@ -333,39 +198,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Hard Drive Clicking Noise Recovery</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -377,131 +209,38 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey { background: #f4f7fc; padding: 72px 0; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.inline-link { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+.img-col { display: flex; align-items: flex-start; }
+.section-img { width: 100%; border-radius: 10px; display: block; object-fit: cover; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
+.process-step:last-child { border-bottom: none; }
+.step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
+.s-contact-band { background: #0f1623; padding: 72px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
-}
+@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; gap: 36px; } }
 </style>
