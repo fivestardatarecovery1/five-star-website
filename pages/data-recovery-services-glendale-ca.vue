@@ -141,7 +141,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Data Recovery Glendale, CA"
       subtitle="Get Your Data Back In No Time."
       description="If you've experienced data loss—whether it's from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients in Glendale, CA. Our lab is located right here in Glendale, CA, making it easy for locals to visit us directly or use our free pickup option."
-      bgImage="/hard-drive-recovery-service-los-angeles.webp"
+      bgImage="/glendale-hero.jpg"
       :trustBadges="trustBadges"
     />
 
