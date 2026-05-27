@@ -161,7 +161,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="RAID Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery, we focus on safe and dependable <strong>RAID data recovery</strong>. We help businesses, IT teams, and individual users.<br><br>If your array has failed because of controller problems, drive wear, or accidental changes, we can help recover your files. Our engineers handle all RAID levels — from simple <strong>RAID 1 mirroring</strong> to complex <strong>RAID 10 and RAID 5 arrays</strong>."
+      description="At Five Star Data Recovery, we focus on safe and dependable RAID data recovery. We help businesses, IT teams, and individual users. If your array has failed because of controller problems, drive wear, or accidental changes, we can help recover your files. Our engineers handle all RAID levels—from simple RAID 1 mirroring to complex RAID 10 and RAID 5 arrays. We understand how critical RAID systems are to your operations. Data from RAID volumes often includes business databases, media libraries, customer records, and other irreplaceable data. Our goal is to help you recover data RAID systems store, with a focus on speed, precision, and safety."
       bgImage="/raid-data-recovery-hero.webp"
       :trustBadges="trustBadges"
     />
