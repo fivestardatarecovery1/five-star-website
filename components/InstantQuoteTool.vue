@@ -4,28 +4,28 @@ const selections = reactive({ device: '', issue: '', urgency: '' })
 const animating = ref(false)
 
 const devices = [
-  { id: 'hdd',      label: 'Hard Drive (HDD)',  icon: '🖴',  base: [300, 650]  },
-  { id: 'ssd',      label: 'SSD',               icon: '⚡',  base: [400, 800]  },
-  { id: 'external', label: 'External Drive',     icon: '📦',  base: [300, 650]  },
-  { id: 'raid',     label: 'RAID / NAS',         icon: '🗄️', base: [600, 1500] },
-  { id: 'usb',      label: 'USB / SD Card',      icon: '💾',  base: [200, 450]  },
-  { id: 'phone',    label: 'Phone / Tablet',     icon: '📱',  base: [300, 600]  },
+  { id: 'hdd',      label: 'Hard Drive (HDD)',  icon: '🖴',  base: 350  },
+  { id: 'ssd',      label: 'SSD',               icon: '⚡',  base: 450  },
+  { id: 'external', label: 'External Drive',     icon: '📦',  base: 350  },
+  { id: 'raid',     label: 'RAID / NAS',         icon: '🗄️', base: 800  },
+  { id: 'usb',      label: 'USB / SD Card',      icon: '💾',  base: 250  },
+  { id: 'phone',    label: 'Phone / Tablet',     icon: '📱',  base: 400  },
 ]
 
 const issues = [
-  { id: 'not-detected', label: 'Not Detected / Not Showing Up', icon: '🔌', add: [0,   0]   },
-  { id: 'clicking',     label: 'Clicking or Grinding Noise',    icon: '🔊', add: [100, 200]  },
-  { id: 'water',        label: 'Water Damage',                  icon: '💧', add: [150, 250]  },
-  { id: 'corrupted',    label: 'Corrupted / Unreadable Files',  icon: '⚠️', add: [0,   100]  },
-  { id: 'deleted',      label: 'Accidental Deletion',           icon: '🗑️', add: [0,   100]  },
-  { id: 'physical',     label: 'Physical Damage',               icon: '💥', add: [100, 200]  },
-  { id: 'no-power',     label: 'Not Powering On',               icon: '🔋', add: [50,  150]  },
+  { id: 'not-detected', label: 'Not Detected / Not Showing Up', icon: '🔌', add: 0   },
+  { id: 'clicking',     label: 'Clicking or Grinding Noise',    icon: '🔊', add: 200 },
+  { id: 'water',        label: 'Water Damage',                  icon: '💧', add: 250 },
+  { id: 'corrupted',    label: 'Corrupted / Unreadable Files',  icon: '⚠️', add: 0   },
+  { id: 'deleted',      label: 'Accidental Deletion',           icon: '🗑️', add: 50  },
+  { id: 'physical',     label: 'Physical Damage',               icon: '💥', add: 200 },
+  { id: 'no-power',     label: 'Not Powering On',               icon: '🔋', add: 100 },
 ]
 
 const urgencies = [
-  { id: 'standard',       label: 'Standard',       sub: '3–5 Business Days',          icon: '📅', add: [0,   0]   },
-  { id: 'expedited',      label: 'Expedited',      sub: '1–2 Business Days',          icon: '🚀', add: [150, 150] },
-  { id: 'expedited-plus', label: 'Expedited Plus', sub: '24/7 Rush · Priority Engineer', icon: '⚡', add: [300, 300] },
+  { id: 'standard',       label: 'Standard',       sub: '3–5 Business Days',             icon: '📅', add: 0   },
+  { id: 'expedited',      label: 'Expedited',      sub: '1–2 Business Days',             icon: '🚀', add: 200 },
+  { id: 'expedited-plus', label: 'Expedited Plus', sub: '24/7 Rush · Priority Engineer', icon: '⚡', add: 400 },
 ]
 
 const quote = computed(() => {
@@ -34,8 +34,7 @@ const quote = computed(() => {
   const u = urgencies.find(x => x.id === selections.urgency)
   if (!d || !i || !u) return null
   return {
-    low:  d.base[0] + i.add[0] + u.add[0],
-    high: d.base[1] + i.add[1] + u.add[1],
+    price: d.base + i.add + u.add,
     deviceLabel:  d.label,
     issueLabel:   i.label,
     urgencyLabel: u.label,
@@ -154,9 +153,9 @@ function reset() {
       <div v-else-if="step === 4 && quote" class="iqt-result">
         <div class="iqt-result-badge">Free Estimate</div>
         <div class="iqt-price-range">
-          ${{ quote.low.toLocaleString() }} – ${{ quote.high.toLocaleString() }}
+          ${{ quote.price.toLocaleString() }}
         </div>
-        <p class="iqt-price-label">Estimated Recovery Cost</p>
+        <p class="iqt-price-label">Flat-Rate Recovery Price</p>
 
         <div class="iqt-summary">
           <div class="iqt-summary-row"><span class="iqt-summary-key">Device</span><span class="iqt-summary-val">{{ quote.deviceLabel }}</span></div>
