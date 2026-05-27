@@ -1,91 +1,153 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'RAID Data Recovery Services — Five Star Data Recovery',
-  description: 'At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This e'
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Jason L." },
+                "datePublished": "2024-11-20",
+                "reviewBody": "After two drives failed in my RAID 5 setup, I thought years of client files were gone for good. The engineer I worked with was incredibly knowledgeable and explained every step of the recovery process. Within a week, I had nearly all my data back. The flat-rate pricing made the whole experience stress-free.",
+                "name": "RAID 5 Recovery Success",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$300 - $950 per drive"
+          },
+          {
+            "@type": "Service",
+            "name": "RAID Data Recovery Services",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/raid-data-recovery/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Professional RAID data recovery for all RAID levels including RAID 0, 1, 5, 6, 10, 50, NAS and server arrays. Sector-by-sector cloning, virtual reconstruction, clean room repairs. Flat-rate pricing per drive. Serving Glendale, Los Angeles, and nationwide."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "RAID Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/raid-data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What types of RAID configurations do you recover data from?", "acceptedAnswer": { "@type": "Answer", "text": "We recover data from all RAID levels, including RAID 0, RAID 1, RAID 5, RAID 6, RAID 10, and custom configurations. Whether it's a small business NAS or a large server array, we're equipped to handle it." } },
+              { "@type": "Question", "name": "Can you recover data from a failed RAID 5 array?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RAID 5 failures are common due to multiple drive failures or degraded arrays. We can safely rebuild your RAID and recover the data without risking further loss." } },
+              { "@type": "Question", "name": "What causes RAID data loss?", "acceptedAnswer": { "@type": "Answer", "text": "RAID data loss can result from multiple drive failures, controller malfunctions, power surges, human error, file system corruption, firmware issues, or failed RAID rebuilds." } },
+              { "@type": "Question", "name": "Do you need the original RAID controller for recovery?", "acceptedAnswer": { "@type": "Answer", "text": "No. We use specialized hardware and software tools that allow us to virtually reconstruct your RAID array without the original controller, ensuring data safety during recovery." } },
+              { "@type": "Question", "name": "How long does RAID data recovery take?", "acceptedAnswer": { "@type": "Answer", "text": "For most standard cases with 3 to 8 drives up to 20TB, average turnaround is 5 to 7 business days. Complex cases or physically damaged drives may take longer. Expedited and Expedited Plus services are available for urgent situations." } },
+              { "@type": "Question", "name": "Do you recover data from NAS RAID systems like Synology or QNAP?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We frequently recover data from NAS devices such as Synology, QNAP, Drobo, Buffalo, and others that use RAID storage setups." } },
+              { "@type": "Question", "name": "Can you recover data if one or more RAID drives are physically damaged?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. When a drive is physically damaged, our engineers perform component-level repairs in a certified Class 100 Clean Room. We clone all drives first, then virtually reconstruct the RAID from the clones." } },
+              { "@type": "Question", "name": "Is there a risk of further data loss during the recovery process?", "acceptedAnswer": { "@type": "Answer", "text": "No. We never work on your original drives. Our process starts by cloning each RAID member drive. All recovery work happens from these cloned copies." } },
+              { "@type": "Question", "name": "Do you offer a No Data, No Charge policy for RAID data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Most RAID data recovery cases qualify for our No Data, No Charge guarantee. You only pay if we successfully recover the data you need." } },
+              { "@type": "Question", "name": "Can I drop off my RAID or ship it in for recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer both in-person drop-off at our Glendale, CA lab and free nationwide mail-in service. Fill out our Mail-In Recovery Form and we'll provide a prepaid shipping label." } },
+              { "@type": "Question", "name": "How much does RAID Data Recovery cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing is per drive: $300 for drives up to 2TB, $500 for drives up to 6TB, $600 for drives between 8TB-12TB, and $950 for drives requiring clean room repair. For a 4-drive RAID with 2TB drives, total cost would be $1,200." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
-const issues = [
-  { icon: '🖥️', title: 'RAID 0 (Striping):', text: 'This configuration splits data evenly across two or more drives to maximize speed and performance. However, RAID 0 offers no redundancy—if one drive fails, the system loses all data. Recovery can be challenging if more than one disk has corruption or physical...' },
-  { icon: '🖥️', title: 'RAID 1 (Mirroring)', text: 'duplicates data across two drives, offering strong protection against single-drive failure. However, if someone attempts a rebuild incorrectly or both drives experience issues, they may still need to recover data. People often use it in workstations and small business...' },
-  { icon: '🖥️', title: 'RAID 5 (Striping with Parity):', text: 'This level offers a balance of speed, redundancy, and storage efficiency. It uses parity information distributed across all drives. If a single drive fails, the system can rebuild the data, but if a second drive fails during that rebuild, data loss can occur. RAID 5 is one of the most common...' },
-  { icon: '🖥️', title: 'RAID 6:', text: 'Similar to RAID 5, but with dual parity, allowing it to survive the failure of two drives. However, the rebuild time is longer and more sensitive to further degradation. Recovery from RAID 6 often involves detailed parity examination and controller-level...' },
-]
+useSeoMeta({
+  title: 'Data Recovery RAID Services - Five Star Data Recovery',
+  ogTitle: 'Data Recovery RAID Services - Five Star Data Recovery',
+  description: 'Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.',
+  ogDescription: 'Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.',
+})
 
-const causesIntro = ''
-const causesOutro = ''
-const causes = [
-  'Multiple disk failures or degraded arrays',
-  'Power loss or electrical surges',
-  'Failed rebuilds or incorrect RAID level reconstructions',
-  'Misconfigured RAID type after hardware swaps',
-  'Bad sectors or firmware issues',
-  'File corruption or accidental deletion',
-  'Outdated or failed RAID controller firmware',
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
-
-const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind.'
-const steps = [
-  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
-  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
-  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
-]
-
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes = [
-  'RAID 0 (Striping) – No redundancy, high-speed, high-risk',
-  'RAID 1 (Mirroring) – Redundant, but vulnerable to simultaneous failures',
-  'RAID 5 (Parity) – Can survive one disk failure; risky during rebuild',
-  'RAID 10 (Striped Mirrors) – Combines performance and redundancy',
-  'Nested or hybrid setups (e.g., RAID 0 RAID, RAID 50, etc.)',
-  'RAID 2, RAID 3, RAID 6, RAID 50, and custom hybrid RAID types',
-]
-
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved.',
-  'By working only from cloned drives, we can safely rebuild, test, and analyze your RAID array without risking further damage. This is especially important for unstable or degraded disks, where even one more read could cause permanent data loss.',
-  'If a drive is physically damaged, we stabilize it in a Class 100 Clean Room and then attempt to image it safely. Once all clones are complete, we reconstruct the RAID using specialized tools — without ever touching the originals.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'RAID data loss can happen for a variety of reasons — and often, it’s not just one issue but a combination of factors that lead to failure. Some of the most common causes include:',
-  'Multiple Drive Failures: RAID setups are designed to handle a single drive failure (depending on the RAID level), but if two or more drives fail — especially in RAID 5 or 6 — it can result in total data loss.',
-  'Controller or Hardware Malfunction: If the RAID controller card, backplane, or power supply fails, the system may not recognize the array or could corrupt the configuration.',
-]
-
-const contactText = 'If you\'re experiencing issues with your RAID Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional raid data recovery services — and get back what matters most.'
 
 const reviews = [
-  { 'text': 'After two drives failed in my RAID 5 setup, I thought years of client files were gone for good. The engineer I worked with was incredibly knowledgeable and explained every step of the recovery process. Within a week, I had nearly all my data back. The flat-rate pricing made the whole experience stress-free.', 'name': 'Jason L.', 'location': 'Pasadena, CA' },
-  { 'text': 'Our office RAID suddenly failed and we couldn’t access any of our files. Five Star Data Recovery handled it quickly and professionally. They kept us informed every step of the way, and the communication was excellent. If you’re dealing with a serious data loss, this is the team you want on your side.', 'name': 'Maria P.', 'location': 'Burbank, CA' },
-  { 'text': 'When one of the drives in my RAID 0 array failed, I was told by two other places that recovery wasn’t possible. I gave it one last try here, and thankfully they proved otherwise! They were able to rebuild the array and retrieve all my lost video editing projects. Highly recommend their RAID recovery service.', 'name': 'Daniel L.', 'location': 'New York, NY' },
+  {
+    text: "After two drives failed in my RAID 5 setup, I thought years of client files were gone for good. The engineer I worked with was incredibly knowledgeable and explained every step of the recovery process. Within a week, I had nearly all my data back. The flat-rate pricing made the whole experience stress-free.",
+    name: 'Jason L.',
+    location: 'Pasadena, CA',
+  },
+  {
+    text: "Our office RAID suddenly failed and we couldn&#39;t access any of our files. Five Star Data Recovery handled it quickly and professionally. They kept us informed every step of the way, and the communication was excellent. If you&#39;re dealing with a serious data loss, this is the team you want on your side.",
+    name: 'Maria P.',
+    location: 'Burbank, CA',
+  },
+  {
+    text: "When one of the drives in my RAID 0 array failed, I was told by two other places that recovery wasn&#39;t possible. I gave it one last try here, and thankfully they proved otherwise! They were able to rebuild the array and retrieve all my lost video editing projects. Highly recommend their RAID recovery service.",
+    name: 'Daniel L.',
+    location: 'New York, NY',
+  },
 ]
+
 const faqs = [
+  {
+    q: 'What types of RAID configurations do you recover data from?',
+    a: 'We recover data from <strong>all RAID levels</strong>, including RAID 0, RAID 1, RAID 5, RAID 6, RAID 10, and custom configurations. Whether it&#39;s a small business NAS or a large server array, we&#39;re equipped to handle it.',
+  },
+  {
+    q: 'Can you recover data from a failed RAID 5 array?',
+    a: 'Yes. RAID 5 failures are common due to <strong>multiple drive failures or degraded arrays</strong>. We can safely rebuild your RAID and recover the data without risking further loss.',
+  },
+  {
+    q: 'What causes RAID data loss?',
+    a: 'RAID data loss can result from: <strong>multiple drive failures</strong>, controller/hardware malfunction, power surges or outages, human error (wrong drive replacement, incorrect rebuild), file system corruption, firmware issues, or <strong>failed RAID rebuilds</strong> that overwrite parity. Even with built-in redundancy, RAID systems are not immune to failure.',
+  },
+  {
+    q: 'Do you need the original RAID controller for recovery?',
+    a: '<strong>No.</strong> We use specialized hardware and software tools that allow us to <strong>virtually reconstruct your RAID array</strong> without the original controller, ensuring data safety during recovery.',
+  },
+  {
+    q: 'How long does RAID data recovery take?',
+    a: 'For most standard cases with 3 to 8 drives and up to 20TB, average turnaround is <strong>5 to 7 business days</strong>. Physically damaged drives or larger arrays may take longer due to clean room repairs and donor parts sourcing. <strong>Expedited and Expedited Plus</strong> services are available for urgent situations.',
+  },
+  {
+    q: 'Do you recover data from NAS RAID systems like Synology or QNAP?',
+    a: 'Yes. We frequently recover data from NAS devices such as <strong>Synology, QNAP, Drobo, Buffalo</strong>, and others that use RAID storage setups.',
+  },
+  {
+    q: 'Can you recover data if one or more RAID drives are physically damaged?',
+    a: 'Yes. When a drive is physically damaged — not spinning, clicking, beeping, or undetected — our engineers perform <strong>component-level repairs in a certified Class 100 Clean Room</strong>. We clone all drives first, then virtually reconstruct the RAID. Never keep using a degraded RAID or attempt DIY rebuilds — power it down and contact us immediately.',
+  },
+  {
+    q: 'Is there a risk of further data loss during the recovery process?',
+    a: '<strong>No.</strong> We <strong>never work on your original drives</strong>. Our process starts by creating 1-to-1 clones of each RAID member drive. All recovery work happens from these cloned copies to ensure your original data remains untouched.',
+  },
+  {
+    q: 'Do you offer a No Data, No Charge policy for RAID data recovery?',
+    a: 'Yes. Most RAID data recovery cases qualify for our <strong>No Data, No Charge guarantee</strong>. You only pay if we successfully recover the data you need. Some exceptions apply for deleted data or drives that were previously opened.',
+  },
+  {
+    q: 'Can I drop off my RAID or ship it in for recovery?',
+    a: '<strong>Yes!</strong> We offer both in-person drop-off at our <strong>Glendale, CA lab</strong> and <strong>free nationwide mail-in service</strong>. Fill out our Mail-In Recovery Form and we&#39;ll provide a prepaid shipping label.',
+  },
+  {
+    q: 'How much does RAID Data Recovery cost?',
+    a: 'Pricing is <strong>flat-rate per drive</strong> based on drive size:<br><strong>$300</strong> – Drives up to 2TB<br><strong>$500</strong> – Drives up to 6TB<br><strong>$600</strong> – Drives between 8TB–12TB<br><strong>$950</strong> – Drives requiring clean room repair<br><br>Example: A 4-drive RAID array with 2TB drives = <strong>$1,200 total</strong> ($300 × 4). Includes full diagnostics, recovery, and data return.',
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -99,237 +161,254 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="RAID Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star, we never work directly on original RAID drives. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved."
-      bgImage="/raid-server-data-recovery-glendale-ca.jpg"
+      description="At Five Star Data Recovery, we focus on safe and dependable <strong>RAID data recovery</strong>. We help businesses, IT teams, and individual users.<br><br>If your array has failed because of controller problems, drive wear, or accidental changes, we can help recover your files. Our engineers handle all RAID levels — from simple <strong>RAID 1 mirroring</strong> to complex <strong>RAID 10 and RAID 5 arrays</strong>."
+      bgImage="/raid-data-recovery-hero.webp"
+      :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SECTION 1 — Understanding RAID -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common RAID Data Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">Understanding RAID Systems and Why They Fail</h2>
+            <p class="s-body">RAID stands for Redundant Array of Independent Disks. It combines several drives into one unit to improve performance, redundancy, or both. RAID 0 is best for speed. RAID 1 is good for redundancy. RAID 5 and RAID 10 offer a balance of protection and performance.</p>
+            <p class="s-body">Despite their design, RAID drives are not immune to failure. Common causes include multiple drive failures, broken RAID controllers, wrong RAID settings, power surges, and failed rebuilds. In some cases, a single failed drive in a degraded array can lead to complete system failure.</p>
           </div>
-        </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
-
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes RAID Data Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/raid-server-data-recovery-glendale-ca.jpg" alt="RAID Data Recovery Services service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
+          <div class="section-img-wrap">
+            <img src="/raid-server-room-recovery.webp" alt="RAID server room data recovery" class="section-img" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Types of RAID Levels We Recover</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why RAID Data Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/raid-server-data-recovery-glendale-ca.jpg') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your RAID Data Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactRAIDDat" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactRAIDDat" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactRAIDDat" value="text" /> TEXT</label>
-                </div>
-              </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
+    <!-- SECTION 2 — Recovery Process -->
     <section class="s-grey">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <h2 class="s-heading">Our Safe and Secure RAID Recovery Process</h2>
+        <p class="s-body">Every RAID recovery starts with detailed diagnostics and mapping of your RAID array. We document the block size, parity order, disk sequence, and configuration. Our engineers use specialized data recovery tools to identify the layout and virtually reconstruct the array. All work is done in a controlled lab using certified equipment.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — Why We Clone -->
+    <section class="s-white">
+      <div class="container">
+        <div class="two-col-layout reverse">
+          <div class="section-img-wrap">
+            <img src="/raid-recovery-engineers.webp" alt="RAID recovery engineers cloning drives" class="section-img" />
+          </div>
+          <div>
+            <h2 class="s-heading">Why We Always Clone Drives First</h2>
+            <p class="s-body">At Five Star, we <strong>never work directly on original RAID drives</strong>. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved.</p>
+            <p class="s-body">By working only from cloned drives, we can safely rebuild, test, and analyze your RAID array without risking further damage. This is especially important for unstable or degraded disks, where even one more read could cause permanent data loss.</p>
+            <p class="s-body">If a drive is physically damaged, we stabilize it in a Class 100 Clean Room and then attempt to image it safely. Cloning is our first line of defense in protecting your data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — RAID Levels -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Types of RAID Levels We Recover</h2>
+        <p class="s-body">Our lab is equipped to recover all major RAID levels and combinations, including:</p>
+        <ul class="content-list">
+          <li><strong>RAID 0 (Striping)</strong> – No redundancy, high-speed, high-risk</li>
+          <li><strong>RAID 1 (Mirroring)</strong> – Redundant, but vulnerable to simultaneous failures</li>
+          <li><strong>RAID 5 (Parity)</strong> – Can survive one disk failure; risky during rebuild</li>
+          <li><strong>RAID 10 (Striped Mirrors)</strong> – Combines performance and redundancy</li>
+          <li><strong>RAID 6</strong> – Dual parity, survives two drive failures</li>
+          <li><strong>RAID 50, RAID 60</strong> – Nested enterprise arrays</li>
+          <li>Custom and proprietary hybrid RAID types</li>
+        </ul>
+        <p class="s-body">Even when vendors use proprietary controllers or software-defined RAID, we can often reverse-engineer the structure.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — RAID Level Deep Dive -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">A Closer Look at Common RAID Levels</h2>
+        <div class="raid-grid">
+          <div class="raid-card">
+            <h3 class="raid-title">RAID 0 (Striping)</h3>
+            <p class="s-body">Splits data evenly across two or more drives to maximize speed. No redundancy — if one drive fails, the system loses all data. Recovery is challenging if more than one disk has corruption or physical damage.</p>
+          </div>
+          <div class="raid-card">
+            <h3 class="raid-title">RAID 1 (Mirroring)</h3>
+            <p class="s-body">Duplicates data across two drives, offering strong protection against single-drive failure. If someone attempts an incorrect rebuild or both drives experience issues, recovery is still often possible.</p>
+          </div>
+          <div class="raid-card">
+            <h3 class="raid-title">RAID 5 (Striping with Parity)</h3>
+            <p class="s-body">Balances speed, redundancy, and storage efficiency. If a single drive fails, the system can rebuild — but if a second drive fails during that rebuild, data loss occurs. One of the most common configurations in small to medium-sized businesses.</p>
+          </div>
+          <div class="raid-card">
+            <h3 class="raid-title">RAID 6 (Dual Parity)</h3>
+            <p class="s-body">Survives the failure of two drives. However, rebuild time is longer and more sensitive to further degradation. Recovery often involves detailed parity examination and controller-level diagnostics.</p>
+          </div>
+          <div class="raid-card">
+            <h3 class="raid-title">RAID 10 (1+0)</h3>
+            <p class="s-body">Mirrors data across pairs of striped drives — combining RAID 0 and RAID 1 benefits. Commonly used in video editing and database servers for both performance and redundancy.</p>
+          </div>
+          <div class="raid-card">
+            <h3 class="raid-title">RAID 50 and RAID 60</h3>
+            <p class="s-body">Nested RAID levels combining striping and distributed parity across multiple sub-arrays. Used in enterprise storage where redundancy and performance must scale. Experts should always handle recovery from these configurations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — Common Scenarios -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Common RAID Data Loss Scenarios</h2>
+        <p class="s-body">RAID systems can fail for many reasons. Common causes of lost data include:</p>
+        <ul class="content-list">
+          <li>Multiple disk failures or degraded arrays</li>
+          <li>Power loss or electrical surges</li>
+          <li>Failed rebuilds or incorrect RAID level reconstructions</li>
+          <li>Misconfigured RAID type after hardware swaps</li>
+          <li>Bad sectors or firmware issues</li>
+          <li>File corruption or accidental deletion</li>
+          <li>Outdated or failed RAID controller firmware</li>
+        </ul>
+        <p class="s-body">In non-redundant systems like RAID 0, even a single disk issue can result in total data loss. In parity-based arrays like RAID 5, failure during rebuild can be catastrophic.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — How Rebuilds Go Wrong -->
+    <section class="s-white">
+      <div class="container">
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">How RAID Rebuilds Can Go Wrong</h2>
+            <p class="s-body">Trying to fix a broken RAID array without expert help is a common reason for losing data forever. If someone swaps the wrong disk or the rebuild miscalculates parity, the system can instantly overwrite data. We've seen rebuilds destroy good data because of mismatched configurations or improper controller behavior.</p>
+            <p class="s-body">Even powerful software tools can't undo a corrupted rebuild. That's why we always image all disks before doing anything else — preserving every byte before rebuilding from clones.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/raid-array-recovery.webp" alt="RAID array data recovery process" class="section-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 — What We Can Recover -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">What We Can Recover from a RAID System</h2>
+        <p class="s-body">We've performed RAID drive data recovery on thousands of systems across virtually every setup. Common recoveries include:</p>
+        <ul class="content-list">
+          <li>Virtual machines, database files, and backups</li>
+          <li>Email servers and Exchange/Outlook files</li>
+          <li>Raw image and video libraries</li>
+          <li>Corrupted or inaccessible file systems</li>
+          <li>Accidentally deleted or formatted volumes</li>
+          <li>Critical documents and user files from failed RAID drives</li>
+          <li>Enterprise datasets, spreadsheets, ProRes video, CAD files, and more</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — Supported Platforms -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Supported RAID Configurations and Platforms</h2>
+        <p class="s-body">Our RAID data recovery solutions support a wide range of platforms, including:</p>
+        <ul class="content-list">
+          <li>Windows, Linux, and macOS RAID</li>
+          <li>NAS/SAN devices: Synology, QNAP, Drobo, Buffalo, and more</li>
+          <li>Server-grade arrays and custom hardware</li>
+          <li>Hardware/software RAID controllers (LSI, Dell PERC, Adaptec, etc.)</li>
+          <li>Software-defined RAID, like Microsoft Storage Spaces</li>
+          <li>Nested and hybrid RAID levels</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 10 — Emergency & Expedited -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Emergency &amp; Expedited RAID Recovery Services</h2>
+        <p class="s-body">RAID failures require urgent attention, especially where downtime equals lost revenue. We offer emergency RAID recovery services with prioritized diagnostics and 24/7 lab access for critical situations.</p>
+        <ul class="content-list">
+          <li><strong>Expedited Service ($200 per drive)</strong> – Case moves to the top of our recovery list during business hours. Fastest possible turnaround for urgent but non-emergency cases.</li>
+          <li><strong>Expedited Plus Service ($500 per drive)</strong> – Our highest-priority tier. Engineers work 24/7, including weekends and holidays, until the recovery is complete. For mission-critical data outages.</li>
+        </ul>
+        <p class="s-body">These fees are in addition to standard flat-rate recovery fees and are non-refundable, regardless of outcome.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 11 — What Sets Engineers Apart -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">What Sets Our Engineers Apart</h2>
+        <p class="s-body">At the heart of our RAID recovery success is our engineering team. Each specialist at Five Star is trained in disk architecture, file system repair, and binary analysis. We don&#39;t rely on automated tools alone — human experts carefully handle each case.</p>
+        <p class="s-body">Many of our engineers have backgrounds in forensic computing and electronics. This helps us solve complex problems, such as controller-level failures, encrypted file systems, and undocumented RAID formats.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 12 — Failed Rebuild -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Can You Recover Data After a Failed RAID Rebuild?</h2>
+        <p class="s-body">A failed RAID rebuild doesn&#39;t always mean you will lose your data forever, but it can make recovery much harder. If you try to rebuild the wrong RAID setup or drive, it can overwrite parity, corrupt partitions, or damage the file structure.</p>
+        <p class="s-body">We&#39;ve recovered many arrays after failed rebuilds by using cloned drives to reverse-engineer the damage. If your system got worse after a rebuild attempt, there&#39;s still hope — call us before doing anything else.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- SECTION 13 — Why Choose -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Why Choose Five Star for RAID Recovery</h2>
+        <ul class="content-list">
+          <li>We never recover from original drives — every case begins with exact 1-to-1 clones</li>
+          <li><strong>"No-Recovery, No-Charge"</strong> policy — you only pay if we successfully retrieve your files</li>
+          <li>Every quote is clear, honest, and upfront — no hidden charges</li>
+          <li>Physically damaged drives handled in our certified Class 100 Clean Room</li>
+          <li>Highly trained engineers in advanced RAID configurations, including complex hybrid setups</li>
+          <li>Standard and emergency turnaround options available</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="From a 2-drive RAID 1 at a small office to a 72TB enterprise RAID 60 array — we&#39;ve recovered them all. Our process always starts with 1-to-1 cloning before any reconstruction begins, so your originals are never touched."
+      bullet1="All RAID levels — 0, 1, 5, 6, 10, 50, 60 + custom"
+      bullet2="Synology, QNAP, Drobo, Dell PERC, LSI, Adaptec"
+      bullet3="No Data, No Charge — flat-rate per drive from $300"
+      closing="Don&#39;t attempt a rebuild — one wrong move can permanently overwrite your data. Fill out the form and let our RAID engineers take it from here."
+      bgImage="/raid-data-recovery-hero.webp"
+    />
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band contact-band-bg">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Start Your RAID Data Recovery Today</h2>
+        </div>
+        <p class="contact-body-text">If your RAID array has failed, don&#39;t risk making it worse. Let our certified RAID recovery engineers handle it safely, securely, and professionally.</p>
+        <ul class="contact-bullets">
+          <li>Free diagnostic — full array mapping included</li>
+          <li>Flat-rate per drive — no hidden fees</li>
+          <li>No Data, No Charge (most cases)</li>
+          <li>Free nationwide shipping both ways</li>
+        </ul>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
@@ -337,39 +416,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for RAID Data Recovery Services</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -381,131 +427,38 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey { background: #f4f7fc; padding: 72px 0; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col-layout.reverse { direction: rtl; }
+.two-col-layout.reverse > * { direction: ltr; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+.raid-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.raid-card { background: #f4f7fc; border: 1px solid #e2e6ee; border-radius: 10px; padding: 24px; }
+.raid-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 10px; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/raid-server-room-recovery.webp') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
-}
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+@media (max-width: 900px) { .raid-grid { grid-template-columns: 1fr 1fr; } .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } }
+@media (max-width: 600px) { .raid-grid { grid-template-columns: 1fr; } }
 </style>
