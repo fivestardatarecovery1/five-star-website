@@ -180,18 +180,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <li>Desktop and laptop computers</li>
             </ul>
             <p class="s-body"><strong>Please Note:</strong> We do not offer deleted file recovery services for smartphones (iPhones or Androids). Smartphones use encrypted NAND flash storage with TRIM enabled. This means that deleted data is usually unrecoverable right away.</p>
-            <p class="s-body">Each type of device stores data differently. For example:</p>
-            <ul class="content-list">
-              <li>Traditional hard drives (HDDs) may retain deleted file data in unallocated space until it is overwritten.</li>
-              <li>Solid state drives (SSDs) typically have TRIM enabled, which tells the device to erase deleted blocks instantly, reducing recovery chances.</li>
-              <li>SD cards and USB flash drives store data linearly, but when formatted or overwritten, metadata that maps the file system is often erased, complicating recovery.</li>
-            </ul>
-            <p class="s-body">Understanding these technical differences is crucial to developing the right recovery process.</p>
           </div>
           <div class="section-img-wrap">
             <img src="/deleted-file-recovery-devices.webp" alt="Storage devices for deleted file recovery — HDD, SSD, external drive" class="section-img" />
           </div>
         </div>
+        <p class="s-body" style="margin-top:32px;">Each type of device stores data differently. For example:</p>
+        <ul class="content-list">
+          <li>Traditional hard drives (HDDs) may retain deleted file data in unallocated space until it is overwritten.</li>
+          <li>Solid state drives (SSDs) typically have TRIM enabled, which tells the device to erase deleted blocks instantly, reducing recovery chances.</li>
+          <li>SD cards and USB flash drives store data linearly, but when formatted or overwritten, metadata that maps the file system is often erased, complicating recovery.</li>
+        </ul>
+        <p class="s-body">Understanding these technical differences is crucial to developing the right recovery process.</p>
       </div>
     </section>
 
