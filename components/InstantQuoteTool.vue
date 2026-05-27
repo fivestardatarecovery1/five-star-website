@@ -775,7 +775,7 @@ const progressIndex = computed(() => {
           ⚠️ This quote assumes both drives (HDD + SSD) have <strong>logical issues only</strong> and no mechanical failure. If a mechanical issue is found during our free diagnostic, we will contact you with an updated quote before any work begins. You are never charged without your approval.
         </div>
         <div class="iqt-guarantee">
-          <template v-if="quote.upfront > 0 || quote.appleDeposit > 0">
+          <template v-if="quote.upfront > 0 || quote.appleDeposit > 0 || quote.aioFee > 0">
             🛡 <strong>No Data, No Charge</strong> — You only pay the recovery fee if we successfully recover your data.<span v-if="quote.appleDeposit > 0"> Your ${{ quote.appleDeposit.toLocaleString() }} deposit is fully refundable if recovery is unsuccessful.</span><span v-if="quote.aioFee > 0"> The {{ quote.isFusion ? 'iMac disassembly' : 'hard drive removal' }} fee (${{ quote.aioFee }}) covers the labor to physically open and access the drive — this is a hardware labor fee, not a data recovery fee, and is non-refundable regardless of outcome.</span><span v-if="quote.upfront - (quote.aioFee || 0) > 0"> Other non-refundable fees totaling ${{ (quote.upfront - (quote.aioFee || 0)).toLocaleString() }} also apply at check-in.</span>
           </template>
           <template v-else>
