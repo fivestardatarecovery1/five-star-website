@@ -155,8 +155,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 1 — s-white: Free Same-Day Pickup -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Free Same-Day Pickup in Los Angeles</h2>
-        <p class="s-body">Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles. Whether you’re at your home, office, or school, just contact us before noon, and we’ll come to you. The easiest way to get your recovery started without leaving your space is available. This service is available from Monday to Friday. One more reason data recovery clients trust us to make the process easy.</p>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">Free Same-Day Pickup in Los Angeles</h2>
+            <p class="s-body">Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles. Whether you’re at your home, office, or school, just contact us before noon, and we’ll come to you. The easiest way to get your recovery started without leaving your space is available. This service is available from Monday to Friday. One more reason data recovery clients trust us to make the process easy.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/los-angeles-data-recovery-lab.webp" alt="Free same-day pickup data recovery Los Angeles" class="section-img" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -241,13 +248,20 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- YOUR PRIVACY COMES FIRST -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading">Your Privacy Comes First</h2>
-        <p class="s-body">We treat your data with complete confidentiality—just like we’d want our own handled. Whether you are a student with lost essays or a business with private files, we take steps to keep your data safe. We also offer:</p>
-        <ul class="content-list">
-          <li>Optional NDAs for sensitive projects</li>
-          <li>Secure file transfers and storage</li>
-          <li>Permanent file deletion after delivery (on request)</li>
-        </ul>
+        <div class="two-col-layout reverse">
+          <div class="section-img-wrap">
+            <img src="/los-angeles-data-recovery-service.webp" alt="Secure data recovery privacy Los Angeles" class="section-img" />
+          </div>
+          <div>
+            <h2 class="s-heading">Your Privacy Comes First</h2>
+            <p class="s-body">We treat your data with complete confidentiality—just like we’d want our own handled. Whether you are a student with lost essays or a business with private files, we take steps to keep your data safe. We also offer:</p>
+            <ul class="content-list">
+              <li>Optional NDAs for sensitive projects</li>
+              <li>Secure file transfers and storage</li>
+              <li>Permanent file deletion after delivery (on request)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -325,7 +339,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
 .step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
 .s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
-.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/pasadena-contact-bg.jpg') center center / cover no-repeat !important; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/los-angeles-contact-bg.webp') center center / cover no-repeat !important; }
 .contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
 .contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
 .contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
@@ -342,4 +356,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 .faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col-layout.reverse { direction: rtl; }
+.two-col-layout.reverse > * { direction: ltr; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+@media (max-width: 768px) { .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } }
 </style>
