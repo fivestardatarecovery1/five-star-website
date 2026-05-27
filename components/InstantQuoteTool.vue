@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -12,12 +12,13 @@ const sel = reactive({
   issue: '',
   encrypted: null as boolean | null,
   coverOpened: null as boolean | null,
+  aio: null as boolean | null,
   urgency: '',
 })
 
 const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast']
 const NEEDS_BRAND    = ['external']
-const NEEDS_CAPACITY = ['sata', 'other-ext']
+const NEEDS_CAPACITY = ['sata', 'laptop', 'other-ext']
 
 const deviceOptions = [
   { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
@@ -96,7 +97,7 @@ function getBasePrice(): number | null {
 
   const isMech = issue === 'mechanical'
 
-  if (device === 'sata') {
+  if (device === 'sata' || device === 'laptop') {
     if (!capacity) return null
     if (isMech) return (capacity === '8to12' || capacity === '12plus') ? 1800 : 950
     if (capacity === 'under2') return 300
@@ -129,6 +130,7 @@ const quote = computed(() => {
   if (!urg) return null
 
   const encryptFee     = sel.encrypted ? 200 : 0
+  const aioFee         = sel.aio ? 200 : 0
   const coverFee       = sel.coverOpened ? 200 : 0
   const urgFee         = urg.fee
   const heliumDeposit  = isHelium.value ? 300 : 0
@@ -136,13 +138,13 @@ const quote = computed(() => {
   const effectiveBase  = sel.issue === 'deleted' ? Math.max(base, 500) : base
   const deletedUpfront = sel.issue === 'deleted' ? 200 : 0
 
-  const total        = effectiveBase + urgFee + coverFee + encryptFee
+  const total        = effectiveBase + urgFee + coverFee + encryptFee + aioFee
   const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
   const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront
 
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
-    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee,
+    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee,
     deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
     issueLabel:    issueOptions.find(i => i.id === sel.issue)?.label,
@@ -157,10 +159,10 @@ function goTo(s: Step, delay = 220) {
 }
 
 function pickDevice(id: string) {
-  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.urgency = ''
+  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
-  else if (id === 'laptop') { sel.device = 'sata'; goTo('capacity') }
+  else if (id === 'laptop') goTo('capacity')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
@@ -173,7 +175,8 @@ function pickBrand(id: string) {
 function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
 function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
 function pickEncrypt(v: boolean)  { sel.encrypted = v;  goTo('cover') }
-function pickCover(v: boolean)    { sel.coverOpened = v; goTo('urgency') }
+function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'laptop' ? goTo('aio') : goTo('urgency') }
+function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
@@ -190,7 +193,8 @@ function back() {
   }
   else if (s === 'encrypt') goTo('issue', 0)
   else if (s === 'cover')   goTo('encrypt', 0)
-  else if (s === 'urgency') goTo('cover', 0)
+  else if (s === 'aio')     goTo('cover', 0)
+  else if (s === 'urgency') { sel.device === 'laptop' ? goTo('aio', 0) : goTo('cover', 0) }
   else if (s === 'result')  goTo('urgency', 0)
   else if (s === 'call')    goTo('device', 0)
 }
@@ -198,7 +202,7 @@ function reset() {
   animating.value = true
   setTimeout(() => {
     currentStep.value = 'device'
-    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.urgency = ''
+    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.urgency = ''
     animating.value = false
   }, 180)
 }
@@ -210,7 +214,9 @@ const progressSteps = computed(() => {
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
   if (isExternal) list.push('Brand')
   if (NEEDS_CAPACITY.includes(sel.device)) list.push('Capacity')
-  list.push('Issue', 'Encryption', 'Cover', 'Urgency', 'Quote')
+  list.push('Issue', 'Encryption', 'Cover')
+  if (sel.device === 'laptop') list.push('AIO')
+  list.push('Urgency', 'Quote')
   return list
 })
 
@@ -227,7 +233,10 @@ const progressIndex = computed(() => {
     return m[s] ?? 0
   }
   if (hasCap) {
-    const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, encrypt: 3, cover: 4, urgency: 5, result: 6 }
+    const isLaptop = sel.device === 'laptop'
+    const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, encrypt: 3, cover: 4 }
+    if (isLaptop) Object.assign(m, { aio: 5, urgency: 6, result: 7 })
+    else Object.assign(m, { urgency: 5, result: 6 })
     return m[s] ?? 0
   }
   const m: Partial<Record<Step, number>> = { issue: 1, encrypt: 2, cover: 3, urgency: 4, result: 5 }
@@ -392,6 +401,34 @@ const progressIndex = computed(() => {
         <button class="iqt-back" @click="back">← Back</button>
       </div>
 
+
+      <!-- STEP: All-in-One -->
+      <div v-else-if="currentStep === 'aio'">
+        <h3 class="iqt-q">Is this an All-in-One computer?</h3>
+        <p class="iqt-hint">Examples: iMac, Microsoft Surface Studio, HP Envy AIO, or any machine where the screen and computer are one unit and must be fully disassembled to access the drive.</p>
+        <div class="iqt-grid g2">
+          <button
+            class="iqt-card iqt-cover-card"
+            :class="{ selected: sel.aio === false }"
+            @click="pickAio(false)"
+          >
+            <span class="iqt-icon">🖥️</span>
+            <span class="iqt-clabel">No — Standard Tower or Laptop</span>
+            <span class="iqt-csub">Drive is accessible without full disassembly</span>
+          </button>
+          <button
+            class="iqt-card iqt-cover-card"
+            :class="{ selected: sel.aio === true }"
+            @click="pickAio(true)"
+          >
+            <span class="iqt-icon">🖥️</span>
+            <span class="iqt-clabel">Yes — All-in-One Design</span>
+            <span class="iqt-csub">iMac, AIO Windows PC — requires full disassembly</span>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
       <!-- STEP: Urgency -->
       <div v-else-if="currentStep === 'urgency'">
         <h3 class="iqt-q">How quickly do you need your data back?</h3>
@@ -438,6 +475,9 @@ const progressIndex = computed(() => {
           </div>
           <div v-if="quote.deletedUpfront" class="iqt-note">
             🗑️ Deleted file recovery requires a $200 upfront non-refundable fee, which applies toward your total.
+          </div>
+          <div v-if="quote.aioFee" class="iqt-note warn">
+            🖥️ All-in-One design — a $200 Hard Drive Removal Fee applies for full disassembly required to access the drive.
           </div>
           <div v-if="quote.encryptFee" class="iqt-note">
             🔐 Encrypted drive — an additional $200 fee applies for decryption handling during recovery.
