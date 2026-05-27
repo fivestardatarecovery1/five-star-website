@@ -1,4 +1,73 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Brian K." },
+                "datePublished": "2024-10-05",
+                "reviewBody": "Filled out the Express form online and dropped off my drive in under 2 minutes. Great option for busy people!",
+                "name": "Super Convenient",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$300 - $950"
+          },
+          {
+            "@type": "Service",
+            "name": "Express Drop-Off Data Recovery Service",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/express-drop-off/",
+            "provider": { "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery" },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Five Star Data Recovery's Express Drop-Off Service lets you skip the wait and get your device checked in quickly for data recovery. Convenient for local clients with urgent needs."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Express Drop-Off", "item": "https://www.fivestardatarecovery.com/data-recovery/express-drop-off/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What is the Express Drop-Off Form?", "acceptedAnswer": { "@type": "Answer", "text": "The Express Drop-Off Form is a fast and efficient way to start your data recovery case before you arrive. It helps us gather key information in advance so we can begin processing your device as soon as it's received\u2014minimizing wait times and streamlining the intake process." } },
+              { "@type": "Question", "name": "Why should I fill out the drop-off form in advance?", "acceptedAnswer": { "@type": "Answer", "text": "Completing the data recovery drop-off form before your visit speeds up check-in and ensures a smooth handoff. It allows our team to prepare for your device's arrival and start the diagnostic process more efficiently." } },
+              { "@type": "Question", "name": "Is this form required for data recovery services?", "acceptedAnswer": { "@type": "Answer", "text": "While not required, using the Express Drop-Off Form is highly recommended. It's designed purely for your convenience, allowing you to skip the wait and complete your drop-off in just a few minutes. A quick and simple way to get your device in without any delays." } },
+              { "@type": "Question", "name": "Can I drop off my device without filling out the form?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can walk in and drop off your device during business hours, but filling out the Express Drop-Off Form in advance helps minimize your time at the front desk and gets your device into the queue faster." } },
+              { "@type": "Question", "name": "Is there a cost to use the Express Drop-Off service?", "acceptedAnswer": { "@type": "Answer", "text": "No, there is no extra charge for using the Express Drop-Off Form. You only pay once the data recovery is complete and you've approved the results. For most standard recoveries, we also offer a No Data, No Charge policy\u2014so there's no risk in getting started." } },
+              { "@type": "Question", "name": "Is the information I submit secure?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. All information collected through the drop-off form is used strictly for your case and kept confidential. We never share your details with third parties." } },
+              { "@type": "Question", "name": "Where can I access the Express Drop-Off Form?", "acceptedAnswer": { "@type": "Answer", "text": "You can access and complete the form directly on our Express Drop-Off page. Once submitted, our team will be ready to assist you when you arrive during normal business hours." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Express Drop-Off Data Recovery — Five Star Data Recovery',
   description: 'Fast and convenient express drop-off for data recovery in Glendale, CA. Drop off your device in person for same-day diagnosis and priority service.'
