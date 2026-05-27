@@ -166,8 +166,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 1 — What Is the Clicking Sound -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">What Is the Clicking Sound in a Hard Drive?</h2>
-        <p class="s-body">When you hear a clicking hard disk drive, you're likely hearing the read/write head trying to find data, but failing. Instead of reading the correct track, it keeps resetting and trying again, causing a rhythmic "click-click-click" sound. People commonly refer to this issue as the <strong>click of death</strong>, and it represents one of the most serious symptoms a drive can show. In most cases, it's a mechanical failure—something inside the drive is either broken or misaligned.</p>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">What Is the Clicking Sound in a Hard Drive?</h2>
+            <p class="s-body">When you hear a clicking hard disk drive, you're likely hearing the read/write head trying to find data, but failing. Instead of reading the correct track, it keeps resetting and trying again, causing a rhythmic "click-click-click" sound. People commonly refer to this issue as the <strong>click of death</strong>, and it represents one of the most serious symptoms a drive can show. In most cases, it's a mechanical failure—something inside the drive is either broken or misaligned.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/clicking-hard-drive-internal.webp" alt="Open hard drive internal components — platters and read/write heads" class="section-img" />
+          </div>
+        </div>
       </div>
     </section>
 
@@ -360,6 +367,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
 .content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
 .content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; } }
 .process-steps { display: flex; flex-direction: column; }
 .process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
 .process-step:last-child { border-bottom: none; }
