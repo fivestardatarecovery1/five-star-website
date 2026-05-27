@@ -1008,8 +1008,8 @@ const progressIndex = computed(() => {
 .iqt-cover-card { padding: 24px 18px; }
 .iqt-cap-card   { padding: 22px 12px; }
 .iqt-drive-type-card { flex-direction: column; gap: 14px; padding: 22px 18px; }
-.iqt-drive-imgs { display: flex; align-items: center; gap: 8px; justify-content: center; height: 64px; }
-.iqt-drive-img  { height: 56px; width: auto; object-fit: contain; }
+.iqt-drive-imgs { display: flex; align-items: center; gap: 8px; justify-content: center; height: 90px; }
+.iqt-drive-img  { height: 80px; width: auto; object-fit: contain; }
 .iqt-drive-plus { font-size: 1.4rem; font-weight: 700; color: var(--color-gold, #F5C842); }
 
 .iqt-icon     { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
