@@ -175,7 +175,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div>
             <h2 class="s-heading">Understanding RAID Systems and Why They Fail</h2>
             <p class="s-body">RAID stands for Redundant Array of Independent Disks. It combines several drives into one unit to improve performance, redundancy, or both. RAID 0 is best for speed. RAID 1 is good for redundancy. RAID 5 and RAID 10 offer a balance of protection and performance.</p>
-            <p class="s-body">Despite their design, RAID drives are not immune to failure. Common causes include multiple drive failures, broken RAID controllers, wrong RAID settings, power surges, and failed rebuilds. In some cases, a single failed drive in a degraded array can lead to complete system failure.</p>
+            <p class="s-body">Despite their design, RAID drives are not immune to failure. Common causes include multiple drive failures, broken RAID controllers, wrong RAID settings, power surges, and failed rebuilds. In some cases, a single failed drive in a degraded array can lead to complete system failure. Knowing your RAID type and setup is essential when seeking professional data recovery services.</p>
           </div>
           <div class="section-img-wrap">
             <img src="/raid-server-room-recovery.webp" alt="RAID server room data recovery" class="section-img" />
@@ -188,7 +188,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Our Safe and Secure RAID Recovery Process</h2>
-        <p class="s-body">Every RAID recovery starts with detailed diagnostics and mapping of your RAID array. We document the block size, parity order, disk sequence, and configuration. Our engineers use specialized data recovery tools to identify the layout and virtually reconstruct the array. All work is done in a controlled lab using certified equipment.</p>
+        <p class="s-body">Every RAID recovery starts with detailed diagnostics and mapping of your RAID array. We document the block size, parity order, disk sequence, and configuration. Our engineers use specialized data recovery tools to identify the layout and virtually reconstruct the array. All work is done in a controlled lab using certified equipment. If you have a failed rebuild, corrupted files, or lost partitions, we can help. We find the problem, fix the issues, and recover your files using professional data recovery software.</p>
       </div>
     </section>
 
@@ -203,7 +203,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <h2 class="s-heading">Why We Always Clone Drives First</h2>
             <p class="s-body">At Five Star, we <strong>never work directly on original RAID drives</strong>. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved.</p>
             <p class="s-body">By working only from cloned drives, we can safely rebuild, test, and analyze your RAID array without risking further damage. This is especially important for unstable or degraded disks, where even one more read could cause permanent data loss.</p>
-            <p class="s-body">If a drive is physically damaged, we stabilize it in a Class 100 Clean Room and then attempt to image it safely. Cloning is our first line of defense in protecting your data.</p>
+            <p class="s-body">If a drive is physically damaged, we stabilize it in a Class 100 Clean Room and then attempt to image it safely. Once all clones are complete, we reconstruct the RAID using specialized tools — without ever touching the originals. Cloning is our first line of defense in protecting your data. It gives us the flexibility to recover files safely, even from complex or high-risk failures, while ensuring your drives remain exactly as they were when the issue occurred.</p>
           </div>
         </div>
       </div>
@@ -221,9 +221,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li><strong>RAID 10 (Striped Mirrors)</strong> – Combines performance and redundancy</li>
           <li><strong>RAID 6</strong> – Dual parity, survives two drive failures</li>
           <li><strong>RAID 50, RAID 60</strong> – Nested enterprise arrays</li>
-          <li>Custom and proprietary hybrid RAID types</li>
+          <li>RAID 2, RAID 3, RAID 6, RAID 50, and custom hybrid RAID types</li>
         </ul>
-        <p class="s-body">Even when vendors use proprietary controllers or software-defined RAID, we can often reverse-engineer the structure.</p>
+        <p class="s-body">Even when vendors use proprietary controllers or software-defined RAID, we can often reverse-engineer the structure. Our team has worked with thousands of variations, including legacy RAID setups on aging systems.</p>
       </div>
     </section>
 
@@ -324,6 +324,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>Software-defined RAID, like Microsoft Storage Spaces</li>
           <li>Nested and hybrid RAID levels</li>
         </ul>
+        <p class="s-body">If you are not sure about your RAID setup, our team can find and rebuild the RAID array. We use high-quality forensic tools for this.</p>
       </div>
     </section>
 
@@ -331,7 +332,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Emergency &amp; Expedited RAID Recovery Services</h2>
-        <p class="s-body">RAID failures require urgent attention, especially where downtime equals lost revenue. We offer emergency RAID recovery services with prioritized diagnostics and 24/7 lab access for critical situations.</p>
+        <p class="s-body">RAID failures require urgent attention, especially where downtime equals lost revenue. We offer emergency RAID recovery services with prioritized diagnostics and 24/7 lab access for critical situations. MSPs, IT departments, and disaster recovery firms trust us. They rely on us as the last option when in-house efforts do not work. Our RAID 0 and RAID 10 recovery options include proactive cloning, rebuilding, and quick response times.</p>
         <ul class="content-list">
           <li><strong>Expedited Service ($200 per drive)</strong> – Case moves to the top of our recovery list during business hours. Fastest possible turnaround for urgent but non-emergency cases.</li>
           <li><strong>Expedited Plus Service ($500 per drive)</strong> – Our highest-priority tier. Engineers work 24/7, including weekends and holidays, until the recovery is complete. For mission-critical data outages.</li>
