@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: 'Can you recover data from physically broken SD cards?',
-    a: 'It depends on the type of physical damage. If the SD card is cracked\u2014even slightly\u2014data recovery is <strong>not possible</strong>, as the internal memory chip is almost always destroyed. However, if the damage is limited to broken connector pins or minor board issues (without cracking the chip), we may be able to recover the data using advanced chip-off techniques. Each case is evaluated carefully to determine if the memory chip is still intact and readable.',
+    a: 'It depends on the type of physical damage. If the SD card is crackedu2014even slightlyu2014data recovery is <strong>not possible</strong>, as the internal memory chip is almost always destroyed. However, if the damage is limited to broken connector pins or minor board issues (without cracking the chip), we may be able to recover the data using advanced chip-off techniques. Each case is evaluated carefully to determine if the memory chip is still intact and readable.',
   },
   {
     q: 'Is it safe to run recovery software on a failing SD card?',
@@ -152,7 +152,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="SD Card Recovery"
       subtitle="Get Your Data Back In No Time."
-      description="Whether it&#39;s from a camera, phone, drone, or GoPro, losing files on your SD card is frustrating\u2014and often devastating. At Five Star Data Recovery, we focus on quick, safe, and professional SD card recovery.<br><br>We help individuals, photographers, businesses, and content creators all over the U.S. If your SD card isn&#39;t being read, was accidentally deleted, or has been physically damaged, we&#39;re here to help. We recover files others can&#39;t\u2014and we do it without gimmicks or guesswork."
+      description="Whether it&#39;s from a camera, phone, drone, or GoPro, losing files on your SD card is frustrating—and often devastating. At Five Star Data Recovery, we focus on quick, safe, and professional SD card recovery.<br><br>We help individuals, photographers, businesses, and content creators all over the U.S. If your SD card isn&#39;t being read, was accidentally deleted, or has been physically damaged, we&#39;re here to help. We recover files others can&#39;t—and we do it without gimmicks or guesswork."
       bgImage="/sd-card-data-recovery-hero.webp"
       :trustBadges="trustBadges"
     />
@@ -225,7 +225,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">4</div>
             <div>
               <h3 class="step-title">File Verification and Return</h3>
-              <p class="step-body">We provide you with a preview of what we can recover. Once approved, we copy your files to a USB or drive you provide\u2014or one you can purchase from us. If we can&#39;t recover your data, you pay nothing.</p>
+              <p class="step-body">We provide you with a preview of what we can recover. Once approved, we copy your files to a USB or drive you provide—or one you can purchase from us. If we can&#39;t recover your data, you pay nothing.</p>
             </div>
           </div>
         </div>
@@ -238,8 +238,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="two-col-layout">
           <div>
             <h2 class="s-heading">What If My SD Card Is Physically Damaged?</h2>
-            <p class="s-body">Not all physical damage to SD cards is the same. In some cases\u2014such as broken connectors or minor board damage\u2014recovery may be possible using advanced micro soldering techniques to access the internal memory chip.</p>
-            <p class="s-body">However, if the SD card is cracked\u2014even slightly\u2014<strong>recovery is impossible</strong>, as the memory chip itself is typically damaged beyond repair. Once the chip is fractured, there is no method to retrieve the data.</p>
+            <p class="s-body">Not all physical damage to SD cards is the same. In some casesu2014such as broken connectors or minor board damageu2014recovery may be possible using advanced micro soldering techniques to access the internal memory chip.</p>
+            <p class="s-body">However, if the SD card is crackedu2014even slightlyu2014<strong>recovery is impossible</strong>, as the memory chip itself is typically damaged beyond repair. Once the chip is fractured, there is no method to retrieve the data.</p>
           </div>
           <div class="section-img-wrap">
             <img src="/sd-card-physical-damage-recovery.webp" alt="Physically broken SD card — data recovery assessment" class="section-img" />
@@ -271,7 +271,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>In-house lab with certified engineers</li>
           <li>Industry-grade recovery tools for deep-level access</li>
           <li>Transparent pricing and honest diagnostics</li>
-          <li>High recovery success rates\u2014even with severe damage</li>
+          <li>High recovery success rates—even with severe damage</li>
           <li>Local drop-off or nationwide mail-in data recovery options</li>
           <li>No data, no charge (most cases)</li>
         </ul>
@@ -301,11 +301,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <!-- QUOTE FORM -->
     <QuoteFormSection
-      description="From a corrupted wedding shoot to drone footage that won&#39;t mount \u2014 we&#39;ve recovered data from every type of SD card failure. Our engineers go sector-by-sector to find files that generic tools miss, with flat-rate pricing and zero surprises."
+      description="From a corrupted wedding shoot to drone footage that won&#39;t mount — we&#39;ve recovered data from every type of SD card failure. Our engineers go sector-by-sector to find files that generic tools miss, with flat-rate pricing and zero surprises."
       bullet1="SD, microSD, SDHC, SDXC, CFast, CFexpress"
       bullet2="Cameras, drones, GoPros, phones, dash cams"
-      bullet3="No Data, No Charge \u2014 free evaluation included"
-      closing="Stop using the card immediately \u2014 don&#39;t format or run recovery software. Fill out the form and let our SD card specialists take it from here."
+      bullet3="No Data, No Charge — free evaluation included"
+      closing="Stop using the card immediately — don&#39;t format or run recovery software. Fill out the form and let our SD card specialists take it from here."
       bgImage="/sd-card-data-recovery-hero.webp"
     />
 
