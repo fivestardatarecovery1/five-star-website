@@ -130,14 +130,16 @@ const quote = computed(() => {
   const coverFee       = sel.coverOpened ? 200 : 0
   const urgFee         = urg.fee
   const heliumDeposit  = isHelium.value ? 300 : 0
+  // Deleted files/formatted: minimum fee is $500
+  const effectiveBase  = sel.issue === 'deleted' ? Math.max(base, 500) : base
   const deletedUpfront = sel.issue === 'deleted' ? 200 : 0
 
-  const total        = base + urgFee + coverFee
+  const total        = effectiveBase + urgFee + coverFee
   const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
-  const dueOnSuccess = base - heliumDeposit - deletedUpfront
+  const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront
 
   return {
-    total, base, upfront, dueOnSuccess,
+    total, base: effectiveBase, upfront, dueOnSuccess,
     coverFee, urgFee, heliumDeposit, deletedUpfront,
     deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
