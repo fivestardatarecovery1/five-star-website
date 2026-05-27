@@ -81,7 +81,7 @@ useSeoMeta({
     <!-- Tool -->
     <section class="iq-tool-section">
       <div class="container iq-tool-container">
-        <InstantQuoteTool />
+        <InstantQuoteTool :light="true" />
         <p class="iq-disclaimer">
           * Estimates are based on typical recovery scenarios and are not a binding quote. Final pricing is determined after a free diagnostic evaluation at our Glendale, CA lab. Prices may vary based on device condition, data volume, and recovery complexity.
         </p>
@@ -141,8 +141,8 @@ useSeoMeta({
 /* Hero */
 .iq-hero {
   position: relative;
-  background: linear-gradient(135deg, #0d0f1a 0%, #13161F 100%);
-  padding: 80px 0 72px;
+  background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
+  padding: 64px 0 56px;
   text-align: center;
   overflow: hidden;
 }
@@ -180,7 +180,7 @@ useSeoMeta({
 
 /* Tool section */
 .iq-tool-section {
-  background: var(--color-bg, #0A0C14);
+  background: #ffffff;
   padding: 60px 0;
 }
 .iq-tool-container {
@@ -189,7 +189,7 @@ useSeoMeta({
 .iq-disclaimer {
   margin-top: 20px;
   font-size: 0.78rem;
-  color: var(--color-muted, #A0A8B8);
+  color: #718096;
   text-align: center;
   line-height: 1.6;
 }

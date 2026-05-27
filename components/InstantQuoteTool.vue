@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const props = defineProps<{ light?: boolean }>()
+
 type Step = 'device' | 'capacity' | 'issue' | 'cover' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
@@ -191,7 +193,7 @@ const progressIndex = computed(() => {
 </script>
 
 <template>
-  <div class="iqt-wrap">
+  <div class="iqt-wrap" :class="{ 'iqt-light': props.light }">
 
     <!-- Progress -->
     <div class="iqt-progress">
@@ -594,4 +596,47 @@ const progressIndex = computed(() => {
 @media (max-width: 420px) {
   .g4 { grid-template-columns: 1fr; }
 }
+
+/* ── Light theme ──────────────────────────────── */
+.iqt-light {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+.iqt-light .iqt-ptrack      { background: #e2e8f0; }
+.iqt-light .iqt-pcircle     { background: #f8fafc; border-color: #cbd5e0; color: #4a5568; }
+.iqt-light .iqt-plabel      { color: #718096; }
+.iqt-light .iqt-pdot.active .iqt-pcircle { background: rgba(245,200,66,0.1); border-color: #d4a017; color: #9a6e00; }
+.iqt-light .iqt-pdot.active .iqt-plabel  { color: #9a6e00; }
+.iqt-light .iqt-pdot.done   .iqt-pcircle { background: #d4a017; border-color: #d4a017; color: #fff; }
+.iqt-light .iqt-q           { color: #1a202c; }
+.iqt-light .iqt-hint        { color: #718096; }
+.iqt-light .iqt-card        { background: #f8fafc; border-color: #e2e8f0; }
+.iqt-light .iqt-card:hover  { background: rgba(212,160,23,0.06); border-color: #d4a017; }
+.iqt-light .iqt-card.selected { background: rgba(212,160,23,0.1); border-color: #d4a017; }
+.iqt-light .iqt-clabel      { color: #1a202c; }
+.iqt-light .iqt-csub        { color: #718096; }
+.iqt-light .iqt-back,
+.iqt-light .iqt-restart     { color: #718096; }
+.iqt-light .iqt-back:hover,
+.iqt-light .iqt-restart:hover { color: #1a202c; }
+.iqt-light .iqt-price       { color: #9a6e00; }
+.iqt-light .iqt-price-lbl   { color: #718096; }
+.iqt-light .iqt-breakdown   { background: #f8fafc; border-color: #e2e8f0; }
+.iqt-light .iqt-brow        { color: #2d3748; }
+.iqt-light .iqt-brow + .iqt-brow { border-color: #e2e8f0; }
+.iqt-light .iqt-brow.upfront { background: rgba(212,160,23,0.05); }
+.iqt-light .iqt-brow em     { color: #718096; }
+.iqt-light .iqt-bamount     { color: #1a202c; }
+.iqt-light .iqt-note        { background: #f8fafc; border-color: #e2e8f0; color: #4a5568; }
+.iqt-light .iqt-note.warn   { border-color: rgba(180,100,0,0.3); color: #7b4500; }
+.iqt-light .iqt-summary     { background: #f8fafc; border-color: #e2e8f0; }
+.iqt-light .iqt-srow + .iqt-srow { border-color: #e2e8f0; }
+.iqt-light .iqt-srow span:first-child { color: #718096; }
+.iqt-light .iqt-srow span:last-child  { color: #1a202c; }
+.iqt-light .iqt-guarantee   { background: rgba(212,160,23,0.06); border-color: rgba(212,160,23,0.25); color: #2d3748; }
+.iqt-light .iqt-cta-call    { border-color: #cbd5e0; color: #2d3748; }
+.iqt-light .iqt-cta-call:hover { border-color: #d4a017; }
+.iqt-light .iqt-rbadge      { background: rgba(212,160,23,0.1); color: #9a6e00; border-color: rgba(212,160,23,0.3); }
+.iqt-light .iqt-call-body   { color: #4a5568; }
+
 </style>
