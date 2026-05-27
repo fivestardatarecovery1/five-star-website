@@ -16,9 +16,9 @@ const sel = reactive({
   urgency: '',
 })
 
-const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast']
+const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast', 'laptop']
 const NEEDS_BRAND    = ['external']
-const NEEDS_CAPACITY = ['sata', 'laptop', 'other-ext']
+const NEEDS_CAPACITY = ['sata', 'laptop', 'desktop', 'other-ext']
 
 const deviceOptions = [
   { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
@@ -97,7 +97,7 @@ function getBasePrice(): number | null {
 
   const isMech = issue === 'mechanical'
 
-  if (device === 'sata' || device === 'laptop') {
+  if (device === 'sata' || device === 'laptop' || device === 'desktop') {
     if (!capacity) return null
     if (isMech) return (capacity === '8to12' || capacity === '12plus') ? 1800 : 950
     if (capacity === 'under2') return 300
@@ -162,7 +162,8 @@ function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
-  else if (id === 'laptop') goTo('capacity')
+  else if (id === 'laptop') goTo('call')
+  else if (id === 'desktop') goTo('capacity')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
@@ -175,7 +176,7 @@ function pickBrand(id: string) {
 function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
 function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
 function pickEncrypt(v: boolean)  { sel.encrypted = v;  goTo('cover') }
-function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'laptop' ? goTo('aio') : goTo('urgency') }
+function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
 function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
@@ -194,7 +195,7 @@ function back() {
   else if (s === 'encrypt') goTo('issue', 0)
   else if (s === 'cover')   goTo('encrypt', 0)
   else if (s === 'aio')     goTo('cover', 0)
-  else if (s === 'urgency') { sel.device === 'laptop' ? goTo('aio', 0) : goTo('cover', 0) }
+  else if (s === 'urgency') { sel.device === 'desktop' ? goTo('aio', 0) : goTo('cover', 0) }
   else if (s === 'result')  goTo('urgency', 0)
   else if (s === 'call')    goTo('device', 0)
 }
@@ -215,7 +216,7 @@ const progressSteps = computed(() => {
   if (isExternal) list.push('Brand')
   if (NEEDS_CAPACITY.includes(sel.device)) list.push('Capacity')
   list.push('Issue', 'Encryption', 'Cover')
-  if (sel.device === 'laptop') list.push('AIO')
+  if (sel.device === 'desktop') list.push('AIO')
   list.push('Urgency', 'Quote')
   return list
 })
@@ -233,7 +234,7 @@ const progressIndex = computed(() => {
     return m[s] ?? 0
   }
   if (hasCap) {
-    const isLaptop = sel.device === 'laptop'
+    const isLaptop = sel.device === 'desktop'
     const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, encrypt: 3, cover: 4 }
     if (isLaptop) Object.assign(m, { aio: 5, urgency: 6, result: 7 })
     else Object.assign(m, { urgency: 5, result: 6 })
