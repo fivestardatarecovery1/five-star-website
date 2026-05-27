@@ -127,6 +127,13 @@ const faqs = [
   },
 ]
 
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
+]
+
 const steps = [
   { img: '/start-recovery-step-1.jpg', alt: 'Shipping Process: Step 1', text: 'Drop off or Mail in your drive' },
   { img: '/start-recovery-step-2.jpg', alt: 'Shipping Process: Step 2', text: 'Receive a free diagnosis' },
@@ -143,31 +150,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-content">
     <NavBar />
 
-    <!-- HERO -->
-    <section class="sr-hero">
-      <div class="sr-hero-overlay" />
-      <div class="sr-hero-content">
-        <div class="sr-hero-left">
-          <h1 class="sr-hero-title">Start Recovery</h1>
-          <p class="sr-hero-subtitle">Start Your Data Recovery Today</p>
-          <p class="sr-hero-desc">
-            Ready to get your data back? Starting your recovery with Five Star Data Recovery is fast and hassle-free. You can drop off your device, ship it in with our free prepaid label, or schedule a free local pickup.
-          </p>
-          <p class="sr-hero-desc">
-            For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround. From hard drives and SSDs to phones and RAID arrays, our expert engineers are ready to help you recover your important files.
-          </p>
-          <ul class="sr-hero-badges">
-            <li><span class="sr-badge-icon">✓</span> Available 24/7/365</li>
-            <li><span class="sr-badge-icon">✓</span> No Data = No Charge</li>
-            <li><span class="sr-badge-icon">✓</span> 10+ Years in Business</li>
-            <li><span class="sr-badge-icon">✓</span> Free Nationwide Shipping</li>
-          </ul>
-        </div>
-        <div class="sr-hero-right">
-          <img src="/start-recovery-hero.webp" alt="Five Star Data Recovery Lab" class="sr-hero-img" />
-        </div>
-      </div>
-    </section>
+    <HeroSection
+      title="Start Recovery"
+      subtitle="Start Your Data Recovery Today"
+      description="Ready to get your data back? Starting your recovery with Five Star Data Recovery is fast and hassle-free. You can drop off your device, ship it in with our free prepaid label, or schedule a free local pickup.<br><br>For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround. From hard drives and SSDs to phones and RAID arrays, our expert engineers are ready to help you recover your important files."
+      bgImage="/start-recovery-hero.webp"
+      :trustBadges="trustBadges"
+    />
 
     <StatsBar />
 
@@ -257,86 +246,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-grey { background: #f4f7fc; padding: 80px 0; }
 .s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
 .s-heading.center { text-align: center; }
-
-/* HERO */
-.sr-hero {
-  position: relative;
-  background: #0f1623;
-  min-height: 420px;
-  display: flex;
-  align-items: center;
-}
-.sr-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(15,22,35,0.95) 50%, rgba(15,22,35,0.6) 100%);
-  z-index: 1;
-}
-.sr-hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 28px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-  width: 100%;
-}
-.sr-hero-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
-  color: #fff;
-  margin: 0 0 10px;
-  line-height: 1.1;
-}
-.sr-hero-subtitle {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #F5C842;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin: 0 0 20px;
-}
-.sr-hero-desc {
-  font-size: 0.95rem;
-  color: #c0c8d8;
-  line-height: 1.75;
-  margin: 0 0 14px;
-}
-.sr-hero-badges {
-  list-style: none;
-  padding: 0;
-  margin: 24px 0 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.sr-hero-badges li {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #e2e8f0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.sr-badge-icon {
-  color: #F5C842;
-  font-weight: 800;
-}
-.sr-hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.sr-hero-img {
-  width: 100%;
-  max-width: 520px;
-  border-radius: 8px;
-  object-fit: cover;
-  max-height: 340px;
-}
 
 /* 5-STEP PROCESS */
 .sr-steps {
