@@ -8,6 +8,7 @@ useHead({
         "@graph": [
           {
             "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#localbusiness",
             "name": "Five Star Data Recovery",
             "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
             "telephone": "+1-818-272-8866",
@@ -19,9 +20,26 @@ useHead({
               "postalCode": "91204",
               "addressCountry": "US"
             },
-            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 34.1341,
+              "longitude": -118.2551
+            },
             "url": "https://www.fivestardatarecovery.com/",
-            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
             "review": [
               {
                 "@type": "Review",
@@ -30,19 +48,55 @@ useHead({
                 "reviewBody": "I thought I had lost all the footage from my sister's wedding after the memory card got corrupted. Five Star Data Recovery not only recovered the files, but they repaired the video so it actually played without glitches. Total lifesavers!",
                 "name": "Video File Repair Success",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Raj P." },
+                "datePublished": "2024-10-15",
+                "reviewBody": "We needed to repair several security camera files that wouldn't open after a power outage. These guys knew exactly what to do. The turnaround time was fast and they kept everything private\u2014very professional.",
+                "name": "Security Camera File Repair",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              },
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Daniel K." },
+                "datePublished": "2024-09-08",
+                "reviewBody": "We had several .mxf video files from a Canon C300 that got corrupted after a drive failure during a commercial shoot. I was worried the entire project was lost. Five Star Data Recovery was able to repair every file, and the footage came back clean and usable. Highly recommended for anyone in the film or production world.",
+                "name": "MXF Video File Recovery",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
               }
             ],
             "priceRange": "$300 - $950"
           },
           {
             "@type": "Service",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/#service",
             "name": "Video File Repair Services",
             "url": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/",
+            "provider": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" },
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional video file repair for corrupted, damaged, and unplayable video footage. Supports MP4, MOV, MXF, R3D, BRAW, ProRes, ARRI, RED, and more. Flat-rate pricing, No Data No Charge. Serving Glendale, Los Angeles, and nationwide."
+            "description": "Professional video file repair for corrupted, damaged, and unplayable video footage. Supports MP4, MOV, MXF, R3D, BRAW, ProRes, ARRI, RED, and more. Flat-rate pricing, No Data No Charge. Serving Glendale, Los Angeles, and nationwide.",
+            "serviceType": "Video File Repair",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "priceRange": "$300-$950",
+              "description": "No Data, No Charge. Free evaluation. Refundable deposit required only after quote approval."
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/#webpage",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/",
+            "name": "Video File Repair Service - Corrupted & Damaged Video Repair",
+            "description": "Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.",
+            "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" },
+            "about": { "@id": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/#service" },
+            "breadcrumb": { "@id": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/#breadcrumb" }
           },
           {
             "@type": "BreadcrumbList",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/#breadcrumb",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
               { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
@@ -50,15 +104,121 @@ useHead({
             ]
           },
           {
+            "@type": "HowTo",
+            "name": "Our Proven Video File Repair Process",
+            "description": "When you need video file repair, it's not just about fixing a single file \u2014 you're trusting us with your entire storage device to ensure the highest chance of success.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Full Drive Imaging and Cloning",
+                "text": "Before attempting any repair, we require the entire storage device (not just individual files). This is critical for preserving data integrity and preventing further corruption. Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive \u2014 this ensures your source data remains untouched and safe throughout the entire recovery and repair process."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Deep Scan for Damaged and Fragmented Files",
+                "text": "Our engineers run specialized data scans across the entire clone to locate not just obvious files, but also hidden, lost, or fragmented video file segments. This step is especially critical for drives showing 0 KB files or corrupt folder structures."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "File Structure Analysis",
+                "text": "We perform a deep internal analysis of each file's structure \u2014 inspecting and rebuilding file headers and footers, video frame indexes, metadata tables, codec information, and missing moov atoms or corrupted containers. We use proprietary software and manual hex-level editing to fix corruption at the binary level."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Video File Integrity Repair",
+                "text": "We carefully rebuild and repair each video file while preserving original resolution, bitrate, frame rate, and codec specifications. Whether it's a .MP4, .MOV, .MXF, or RAW video format, our priority is to maintain original quality during the repair."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Quality Validation",
+                "text": "Before delivering your repaired files, we fully test and verify that each video plays back correctly from start to finish. We check both video and audio streams for integrity."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 6,
+                "name": "Secure Data Delivery",
+                "text": "Your repaired video files are saved to a new external drive (either provided by you or available for purchase from us). We can also provide a detailed list of repaired files for your review before delivery."
+              }
+            ]
+          },
+          {
             "@type": "FAQPage",
             "mainEntity": [
-              { "@type": "Question", "name": "What causes video files to become damaged or corrupted?", "acceptedAnswer": { "@type": "Answer", "text": "Video files can be damaged due to sudden power loss, system crashes, incomplete transfers, storage failure, or issues with the recording device. File header corruption, missing metadata, and interrupted write processes are all common culprits." } },
-              { "@type": "Question", "name": "What should I do if my video files are corrupted?", "acceptedAnswer": { "@type": "Answer", "text": "The most important first step is to avoid working directly on the original device. Instead, perform a sector-level clone of the entire storage device where the damaged video files were stored. Once the cloning is complete, all repair or recovery attempts should be done on the cloned copy—not the original." } },
-              { "@type": "Question", "name": "Can my video files still be repaired if I've already used First Aid or CHKDSK?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in many cases we can still repair your video files even after First Aid or CHKDSK has been run. However, the outcome depends on what those utilities did to the file system. CHKDSK is more aggressive and can overwrite key file structures. If you've already run either tool, stop all further attempts and bring the drive to us for an evaluation." } },
-              { "@type": "Question", "name": "Can you recover and repair videos from a RAID or NAS system?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We first safely image each drive in the array, perform a virtual RAID reconstruction, scan the entire array at sector level, then repair the damaged video files using specialized tools. We support RAID 0, 5, 6, 10, and custom NAS setups." } },
-              { "@type": "Question", "name": "Can you repair professional camera video files like ARRI or RED footage?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We frequently repair high-bitrate professional footage from ARRI, RED, Canon C-series, Sony FS, and Blackmagic cameras. These formats often contain complex metadata that must be reconstructed accurately for successful playback." } },
-              { "@type": "Question", "name": "What types of video files can you repair?", "acceptedAnswer": { "@type": "Answer", "text": "We repair .mov, .mp4, .mxf, .avi, .mts, .m2ts, .r3d, and .braw, as well as professional video formats from ARRI, RED, Sony, Canon, and Blackmagic cameras." } },
-              { "@type": "Question", "name": "Can you recover deleted video files and repair them?", "acceptedAnswer": { "@type": "Answer", "text": "In some cases, yes. If the deleted video files are still intact on the drive and have not been overwritten, we may be able to recover them. However, deleted file recovery is not covered under our No Data, No Charge policy. Stop using the device immediately and contact us before attempting any DIY recovery." } }
+              {
+                "@type": "Question",
+                "name": "What causes video files to become damaged or corrupted?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Video files can be damaged due to sudden power loss, system crashes, incomplete transfers, storage failure, or issues with the recording device. File header corruption, missing metadata, and interrupted write processes are all common culprits." }
+              },
+              {
+                "@type": "Question",
+                "name": "What should I do if my video files are corrupted?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The most important first step is to avoid working directly on the original device. Instead, perform a sector-level clone of the entire storage device where the damaged video files were stored. This creates an exact bit-by-bit copy, preserving the original data. Once cloning is complete, all repair or recovery attempts should be done on the cloned copy \u2014 not the original. Clone first. Only work from the clone. Preserve the original device as-is." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can my video files still be repaired if I've already used First Aid (Mac) or CHKDSK (Windows)?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, in many cases we can still repair your video files even after First Aid or CHKDSK has been run. However, CHKDSK is more aggressive \u2014 it can sometimes relocate, truncate, or zero out sectors, potentially overwriting key video data. If you've already run either tool, stop all further attempts and bring the drive to us for an evaluation as soon as possible." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you recover and repair videos from a RAID or NAS system?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. We first safely image (clone) each individual drive in the array, then perform a virtual RAID reconstruction, scan the entire array at sector level for fragmented video files, and then proceed with the actual video file repair. Whether you're dealing with RAID 0, 5, 6, 10, or a custom NAS setup, our engineers are equipped to handle the complexities involved." }
+              },
+              {
+                "@type": "Question",
+                "name": "Video files on my RAID are starting to show 0MB capacity \u2014 what's going on?",
+                "acceptedAnswer": { "@type": "Answer", "text": "This is usually a sign of file system corruption, metadata damage, or RAID integrity issues. The actual video data may still exist, but the system can no longer locate or interpret the file correctly. Do not run CHKDSK, disk repair tools, or file recovery software that writes to the array. Contact us immediately \u2014 early action gives you the best chance of saving your footage." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you repair professional camera video files like ARRI or RED footage?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We frequently repair high-bitrate professional footage from ARRI, RED, Canon C-series, Sony FS, and Blackmagic cameras. These formats contain complex metadata that must be reconstructed accurately for successful playback." }
+              },
+              {
+                "@type": "Question",
+                "name": "What types of video files can you repair?",
+                "acceptedAnswer": { "@type": "Answer", "text": "We repair a wide variety of formats including .mov, .mp4, .mxf, .avi, .mts, .m2ts, .r3d, and .braw, as well as professional video formats from ARRI, RED, Sony, Canon, and Blackmagic cameras." }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer repair services for partially recovered or fragmented video files?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. We specialize in repairing fragmented, incomplete, or partially recovered video files \u2014 especially those extracted during data recovery. However, for the best results, we strongly prefer to work with the original storage device rather than just the damaged file. Having access to the original media gives us the highest likelihood of a successful reconstruction." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you recover deleted video files and repair them?",
+                "acceptedAnswer": { "@type": "Answer", "text": "In some cases, yes \u2014 if the deleted files are still intact and have not been overwritten. However, this is not covered under our No Data, No Charge policy. If TRIM is active (common on SSDs and modern systems), deleted sectors may be wiped instantly. Stop using the device immediately and contact us before attempting any DIY recovery." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you combine multiple file fragments into a single working video?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your footage was split into multiple segments due to corruption or incomplete recording, we can often reconstruct the original video by stitching the fragments back together. This is especially common with professional codecs like ProRes, MXF, RED, and ARRI, which rely on internal structures like GOP sequences, metadata tables, and codec-specific headers that must be carefully reassembled. Our repair process includes deep analysis of each segment's frame structure and timing, allowing us to manually re-link sequences and generate a functional video file." }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does video file repair usually take?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Video file repair timelines vary based on file size, codec complexity, and the extent of corruption. For smaller drives up to 2TB, repairs are often completed within 3 to 5 business days. Larger systems such as multi-drive RAID arrays require considerably more time due to cloning, RAID rebuilding, and deep file analysis. If you're on a tight production schedule, our Expedited Plus service gives your case top priority, runs 24/7/365, and assigns a dedicated engineer to your project." }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does video file repair cost?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Video file repair pricing varies depending on the number of files, their length, codec type, and severity of corruption. Our quoting process: We begin by repairing one sample file, use that to estimate the full effort, then provide a detailed quote. If you approve, you pay a refundable deposit and the full balance is only due after successful repair. The only exceptions where an upfront non-refundable fee applies: (1) Deleted file recovery required before repair, and (2) Expedited Plus Service. Outside of these, you won't pay anything unless we successfully repair your files." }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you charge a fee if the video files cannot be repaired?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No \u2014 we do not charge anything for video file repair unless we're successful. Our evaluation is completely free. If the files are beyond repair, you owe nothing for the repair portion. Upfront fees only apply for: (1) deleted file recovery before repair, and (2) Expedited Plus service. You will never pay unless we repair your video files." }
+              },
+              {
+                "@type": "Question",
+                "name": "Will I be able to preview the repaired video files before final delivery?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes, absolutely. Once we've completed the repair process, you'll have the opportunity to review the repaired video files before finalizing your case \u2014 either in person at our office or remotely, whichever is more convenient. You're welcome to test the files and ensure everything meets your expectations before completing payment or delivery arrangements." }
+              }
             ]
           }
         ]
