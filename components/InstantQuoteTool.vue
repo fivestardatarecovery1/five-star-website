@@ -348,7 +348,7 @@ const progressIndex = computed(() => {
           >
             <span class="iqt-icon">⚠️</span>
             <span class="iqt-clabel">Yes — Cover Was Opened</span>
-            <span class="iqt-csub">Additional $200 upfront non-refundable fee applies</span>
+            <span class="iqt-csub">The metal cover where the platters are stored has been opened</span>
           </button>
         </div>
         <button class="iqt-back" @click="back">← Back</button>
