@@ -611,9 +611,33 @@ const progressIndex = computed(() => {
             <span>Refundable Deposit at Check-In <em>(returned if unrecoverable)</em></span>
             <span class="iqt-bamount">${{ quote.appleDeposit.toLocaleString() }}</span>
           </div>
-          <div v-if="quote.upfront > 0" class="iqt-brow upfront">
-            <span>Non-Refundable Fees at Check-In</span>
-            <span class="iqt-bamount">${{ quote.upfront.toLocaleString() }}</span>
+          <div v-if="quote.boardRepairFee" class="iqt-brow upfront">
+            <span>Previous Board-Level Repair Fee <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.boardRepairFee.toLocaleString() }}</span>
+          </div>
+          <div v-if="quote.deletedUpfront" class="iqt-brow upfront">
+            <span>Deleted File Recovery Fee <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.deletedUpfront.toLocaleString() }}</span>
+          </div>
+          <div v-if="quote.heliumDeposit" class="iqt-brow upfront">
+            <span>Helium Drive Deposit <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.heliumDeposit.toLocaleString() }}</span>
+          </div>
+          <div v-if="quote.coverFee" class="iqt-brow upfront">
+            <span>Drive Cover Opened Fee <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.coverFee.toLocaleString() }}</span>
+          </div>
+          <div v-if="quote.encryptFee" class="iqt-brow upfront">
+            <span>Encryption Handling Fee <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.encryptFee.toLocaleString() }}</span>
+          </div>
+          <div v-if="quote.aioFee" class="iqt-brow upfront">
+            <span>All-in-One Removal Fee <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.aioFee.toLocaleString() }}</span>
+          </div>
+          <div v-if="quote.urgFee" class="iqt-brow upfront">
+            <span>{{ quote.urgencyLabel }} Service Fee <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.urgFee.toLocaleString() }}</span>
           </div>
           <div class="iqt-brow success">
             <span>Due on Successful Recovery</span>
@@ -624,20 +648,9 @@ const progressIndex = computed(() => {
         <!-- Line-item notes -->
         <div class="iqt-notes">
           <div v-if="quote.heliumDeposit" class="iqt-note warn">
-            ⚠️ Helium-filled drive (8TB+) — $300 non-refundable deposit included above. Additional cleanroom work may be required.
+            ⚠️ Helium-filled drive (8TB+) — additional cleanroom complexity may require further evaluation.
           </div>
-          <div v-if="quote.deletedUpfront" class="iqt-note">
-            🗑️ Deleted file recovery requires a $200 upfront non-refundable fee, which applies toward your total.
-          </div>
-          <div v-if="quote.boardRepairFee" class="iqt-note warn">
-            ⚠️ Previous board-level repair attempt — an additional $200 non-refundable fee applies due to prior work by another shop.
-          </div>
-          <div v-if="quote.aioFee" class="iqt-note warn">
-            🖥️ All-in-One design — a $200 Hard Drive Removal Fee applies for full disassembly required to access the drive.
-          </div>
-          <div v-if="quote.encryptFee" class="iqt-note">
-            🔐 Encrypted drive — an additional $200 fee applies for decryption handling during recovery.
-          </div>
+          <div v-if="sel.urgency === 'expedited-plus'" class="iqt-note">
           <div v-if="quote.coverFee" class="iqt-note warn">
             ⚠️ Drive cover previously opened — $200 upfront non-refundable fee included.
           </div>
