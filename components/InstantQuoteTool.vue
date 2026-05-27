@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -13,12 +13,13 @@ const sel = reactive({
   encrypted: null as boolean | null,
   coverOpened: null as boolean | null,
   aio: null as boolean | null,
+  boardRepair: null as boolean | null,
   urgency: '',
 })
 
-const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast', 'laptop']
+const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast']
 const NEEDS_BRAND    = ['external']
-const NEEDS_CAPACITY = ['sata', 'laptop', 'desktop', 'other-ext']
+const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext']
 
 const deviceOptions = [
   { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
@@ -97,7 +98,7 @@ function getBasePrice(): number | null {
 
   const isMech = issue === 'mechanical'
 
-  if (device === 'sata' || device === 'laptop' || device === 'desktop') {
+  if (device === 'sata' || device === 'win-laptop' || device === 'desktop') {
     if (!capacity) return null
     if (isMech) return (capacity === '8to12' || capacity === '12plus') ? 1800 : 950
     if (capacity === 'under2') return 300
@@ -106,6 +107,8 @@ function getBasePrice(): number | null {
     return 800 // 12TB+
   }
 
+  if (device === 'laptop-apple-old') return 650
+  if (device === 'laptop-apple-new') return 950
   if (device === 'wd-ext') return isMech ? 950 : 600
   if (device === 'toshiba-ext') return isMech ? 950 : 500
 
@@ -129,6 +132,7 @@ const quote = computed(() => {
   const urg = urgencyOptions.find(u => u.id === sel.urgency)
   if (!urg) return null
 
+  const boardRepairFee = sel.boardRepair ? 200 : 0
   const encryptFee     = sel.encrypted ? 200 : 0
   const aioFee         = sel.aio ? 200 : 0
   const coverFee       = sel.coverOpened ? 200 : 0
@@ -138,13 +142,13 @@ const quote = computed(() => {
   const effectiveBase  = sel.issue === 'deleted' ? Math.max(base, 500) : base
   const deletedUpfront = sel.issue === 'deleted' ? 200 : 0
 
-  const total        = effectiveBase + urgFee + coverFee + encryptFee + aioFee
+  const total        = effectiveBase + urgFee + coverFee + encryptFee + aioFee + boardRepairFee
   const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
   const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront
 
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
-    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee,
+    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee, boardRepairFee,
     deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
     issueLabel:    issueOptions.find(i => i.id === sel.issue)?.label,
@@ -159,14 +163,24 @@ function goTo(s: Step, delay = 220) {
 }
 
 function pickDevice(id: string) {
-  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.urgency = ''
+  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
-  else if (id === 'laptop') goTo('call')
+  else if (id === 'laptop') goTo('laptop-os')
   else if (id === 'desktop') goTo('capacity')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
+function pickLaptopOS(os: string) {
+  if (os === 'apple') { sel.device = 'laptop-apple-new'; goTo('apple-year') }
+  else { sel.device = 'win-laptop'; goTo('capacity') }
+}
+function pickAppleYear(era: string) {
+  if (era === 'old') { sel.device = 'laptop-apple-old'; goTo('encrypt') }
+  else { sel.device = 'laptop-apple-new'; goTo('board-repair') }
+}
+function pickBoardRepair(v: boolean) { sel.boardRepair = v; goTo('encrypt') }
+
 function pickBrand(id: string) {
   // Store brand as the device id so pricing logic works unchanged
   sel.device = id
@@ -175,27 +189,49 @@ function pickBrand(id: string) {
 }
 function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
 function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
-function pickEncrypt(v: boolean)  { sel.encrypted = v;  goTo('cover') }
+// After encryption: Apple → urgency, Windows/others → cover
+function pickEncrypt(v: boolean)  {
+  sel.encrypted = v
+  const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
+  goTo(isApple ? 'urgency' : 'cover')
+}
 function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
+
 function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
-  if (s === 'brand')    goTo('device', 0)
+  if (s === 'laptop-os')  goTo('device', 0)
+  else if (s === 'apple-year')  goTo('laptop-os', 0)
+  else if (s === 'board-repair') goTo('apple-year', 0)
+  else if (s === 'brand')    goTo('device', 0)
   else if (s === 'capacity') {
-    // came from brand step if device is an external brand
     const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
-    goTo(wasExternal ? 'brand' : 'device', 0)
+    const wasWinLaptop = sel.device === 'win-laptop'
+    if (wasExternal) goTo('brand', 0)
+    else if (wasWinLaptop) goTo('laptop-os', 0)
+    else goTo('device', 0)
   }
   else if (s === 'issue') {
     if (NEEDS_CAPACITY.includes(sel.device)) goTo('capacity', 0)
     else if (['wd-ext','toshiba-ext','other-ext'].includes(sel.device)) goTo('brand', 0)
     else goTo('device', 0)
   }
-  else if (s === 'encrypt') goTo('issue', 0)
+  else if (s === 'encrypt') {
+    const isAppleOld = sel.device === 'laptop-apple-old'
+    const isAppleNew = sel.device === 'laptop-apple-new'
+    if (isAppleOld) goTo('apple-year', 0)
+    else if (isAppleNew) goTo('board-repair', 0)
+    else goTo('issue', 0)
+  }
   else if (s === 'cover')   goTo('encrypt', 0)
   else if (s === 'aio')     goTo('cover', 0)
-  else if (s === 'urgency') { sel.device === 'desktop' ? goTo('aio', 0) : goTo('cover', 0) }
+  else if (s === 'urgency') {
+    const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
+    if (sel.device === 'desktop') goTo('aio', 0)
+    else if (isApple) goTo('encrypt', 0)
+    else goTo('cover', 0)
+  }
   else if (s === 'result')  goTo('urgency', 0)
   else if (s === 'call')    goTo('device', 0)
 }
@@ -203,7 +239,7 @@ function reset() {
   animating.value = true
   setTimeout(() => {
     currentStep.value = 'device'
-    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.urgency = ''
+    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.urgency = ''
     animating.value = false
   }, 180)
 }
@@ -213,9 +249,20 @@ const progressSteps = computed(() => {
   if (CALL_DEVICES.includes(sel.device) || currentStep.value === 'call') return ['Device', 'Quote']
   const list = ['Device']
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
+  const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new' || currentStep.value === 'apple-year' || currentStep.value === 'board-repair'
+  const isLaptopFlow = currentStep.value === 'laptop-os' || sel.device === 'win-laptop' || isApple
   if (isExternal) list.push('Brand')
+  if (isLaptopFlow) {
+    list.push('OS')
+    if (isApple) {
+      list.push('Year')
+      if (sel.device === 'laptop-apple-new' || currentStep.value === 'board-repair') list.push('Board Repair')
+    }
+  }
   if (NEEDS_CAPACITY.includes(sel.device)) list.push('Capacity')
-  list.push('Issue', 'Encryption', 'Cover')
+  if (!isApple) list.push('Issue')
+  list.push('Encryption')
+  if (!isApple) list.push('Cover')
   if (sel.device === 'desktop') list.push('AIO')
   list.push('Urgency', 'Quote')
   return list
@@ -288,6 +335,75 @@ const progressIndex = computed(() => {
             <span class="iqt-csub">{{ d.sub }}</span>
           </button>
         </div>
+      </div>
+
+
+      <!-- STEP: Laptop OS -->
+      <div v-else-if="currentStep === 'laptop-os'">
+        <h3 class="iqt-q">What operating system does your laptop use?</h3>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-cover-card" @click="pickLaptopOS('apple')">
+            <span class="iqt-icon">🍎</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Apple MacBook</span>
+              <span class="iqt-csub">MacBook Air, MacBook Pro, MacBook</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-cover-card" @click="pickLaptopOS('windows')">
+            <span class="iqt-icon">🪟</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Windows Laptop</span>
+              <span class="iqt-csub">Dell, HP, Lenovo, ASUS, Acer, Microsoft Surface</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
+      <!-- STEP: Apple Year -->
+      <div v-else-if="currentStep === 'apple-year'">
+        <h3 class="iqt-q">What year is your MacBook from?</h3>
+        <p class="iqt-hint">2015 and earlier MacBooks had a removable hard drive. 2016 and newer models use soldered storage directly on the logic board.</p>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-cover-card" @click="pickAppleYear('old')">
+            <span class="iqt-icon">📅</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">2015 or Earlier</span>
+              <span class="iqt-csub">MacBook with removable hard drive</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-cover-card" @click="pickAppleYear('new')">
+            <span class="iqt-icon">⚡</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">2016 or Newer</span>
+              <span class="iqt-csub">MacBook with soldered / non-removable storage</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
+      <!-- STEP: Board-Level Repair -->
+      <div v-else-if="currentStep === 'board-repair'">
+        <h3 class="iqt-q">Has this MacBook been worked on by another repair shop?</h3>
+        <p class="iqt-hint">Specifically, did another shop attempt a board-level repair? This means component-level soldering, chip replacement, or logic board repair — not just a software fix or screen replacement.</p>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-cover-card" @click="pickBoardRepair(false)">
+            <span class="iqt-icon">✅</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">No — Not Worked On</span>
+              <span class="iqt-csub">No prior board-level repair attempt</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-cover-card" @click="pickBoardRepair(true)">
+            <span class="iqt-icon">⚠️</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Yes — Previously Repaired</span>
+              <span class="iqt-csub">Another shop attempted board-level or component repair</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
       </div>
 
       <!-- STEP: Brand -->
@@ -476,6 +592,9 @@ const progressIndex = computed(() => {
           </div>
           <div v-if="quote.deletedUpfront" class="iqt-note">
             🗑️ Deleted file recovery requires a $200 upfront non-refundable fee, which applies toward your total.
+          </div>
+          <div v-if="quote.boardRepairFee" class="iqt-note warn">
+            ⚠️ Previous board-level repair attempt — an additional $200 fee applies due to prior work by another shop.
           </div>
           <div v-if="quote.aioFee" class="iqt-note warn">
             🖥️ All-in-One design — a $200 Hard Drive Removal Fee applies for full disassembly required to access the drive.
