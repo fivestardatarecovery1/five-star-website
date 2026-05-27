@@ -1,4 +1,188 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 34.1341,
+              "longitude": -118.2551
+            },
+            "url": "https://www.fivestardatarecovery.com/",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "10:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "10:00",
+                "closes": "14:00"
+              }
+            ],
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "498",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "priceRange": "$300 - $950"
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#service",
+            "name": "Data Recovery Mail-In Service",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/",
+            "provider": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Nationwide mail-in data recovery service. Ship your hard drive, SSD, external drive, USB, RAID, or mobile device to our Glendale, CA lab using a free prepaid shipping label. Free diagnostic, flat-rate pricing, and No Data No Charge guarantee.",
+            "serviceType": "Mail-In Data Recovery",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "priceRange": "$300-$950",
+              "description": "Free prepaid round-trip shipping. No Data, No Charge. Free evaluation with no obligation to proceed."
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#webpage",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/",
+            "name": "Data Recovery Mail-in Services - Five Star Data Recovery",
+            "description": "Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.",
+            "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" },
+            "about": { "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#service" },
+            "breadcrumb": { "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#breadcrumb" }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#breadcrumb",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "Mail-In Service", "item": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/" }
+            ]
+          },
+          {
+            "@type": "HowTo",
+            "name": "How Our Mail-In Data Recovery Process Works",
+            "description": "Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "Drop Off or Mail In Your Drive",
+                "text": "You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "Receive a Free Diagnosis",
+                "text": "Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "Our Engineers Work on Recovering Your Data",
+                "text": "We carefully begin the recovery process using advanced tools and cleanroom procedures."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "Review & Approve the Recovered Data",
+                "text": "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered."
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "Receive Your Recovered Data",
+                "text": "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the Mail-In Data Recovery Form?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival." }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I send in my device for mail-in data recovery?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Simply fill out our Mail-In Data Recovery Form online and we'll send you a prepaid shipping label at no cost. Package your device securely — use the original box if available, or wrap it in bubble wrap inside a sturdy box. Drop it off at your nearest FedEx or UPS location, and it will arrive at our Glendale lab within 1–2 business days." }
+              },
+              {
+                "@type": "Question",
+                "name": "What devices can I send in for data recovery?",
+                "acceptedAnswer": { "@type": "Answer", "text": "We accept all types of storage devices including hard drives (HDD and SSD), external hard drives, USB flash drives, SD cards, RAID arrays, NAS devices, iPhones, Android phones, and more. If you're unsure whether we can recover your specific device, contact us for a quick consultation." }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to pay anything upfront when mailing in a device?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Our diagnostic evaluation is completely free, and you're under no obligation to proceed after receiving your quote. You only pay if we successfully recover your data — that's our No Data, No Charge guarantee. The only exceptions are Expedited Plus service and cases requiring deleted file recovery." }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does the mail-in recovery process take?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Once your device arrives at our lab, standard recovery typically takes 3–5 business days from the time of diagnosis. For urgent situations, our Expedited service offers faster turnaround, and our Expedited Plus service provides 24/7 priority handling with a dedicated engineer." }
+              },
+              {
+                "@type": "Question",
+                "name": "Is shipping covered by your company?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide a free prepaid shipping label so you can ship your device to us at no cost. Once your data is recovered, we also cover the return shipping for your recovered data on a new drive — completely free, both ways." }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my data safe during the mail-in process?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Your device is tracked from the moment it ships and logged into our secure system upon arrival. All recovered data is handled under strict confidentiality protocols. We never share or access your data beyond what is required for the recovery process." }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I know when you've received my package?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Once your device arrives at our Glendale lab, you'll receive an email or phone notification confirming receipt and check-in. We'll keep you updated at every stage — from diagnosis to recovery completion — so you're never left wondering about the status of your case." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I track the progress of my recovery case?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your device is checked in, we'll provide updates at key milestones: when diagnosis is complete, when recovery begins, and when your data is ready for review. You can also contact us anytime at 818-272-8866 for a status update." }
+              },
+              {
+                "@type": "Question",
+                "name": "Where can I find the Mail-In Recovery Form?",
+                "acceptedAnswer": { "@type": "Answer", "text": "You can access the Mail-In Data Recovery Form directly on this page or by visiting fivestardatarecovery.com/start-recovery. Fill it out and we'll send you a prepaid shipping label right away." }
+              }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Data Recovery Mail-in Services - Five Star Data Recovery',
   description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.'
