@@ -257,7 +257,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">1</div>
             <div>
               <h3 class="step-title">Full Drive Imaging and Cloning</h3>
-              <p class="step-body">Before attempting any repair, we require the entire storage device (not just individual files). Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive.</p>
+              <p class="step-body">Before attempting any repair, we require the entire storage device (not just individual files). This is critical for preserving data integrity and preventing further corruption. Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive—this ensures your source data remains untouched and safe throughout the entire recovery and repair process.</p>
             </div>
           </div>
           <div class="process-step">

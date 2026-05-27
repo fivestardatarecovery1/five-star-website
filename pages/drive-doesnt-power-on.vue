@@ -141,7 +141,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Drive Doesn't Power On"
       subtitle="Get Your Data Back In No Time."
-      description="Is your hard drive not spinning, not lighting up, or completely unresponsive? A drive that doesn't power on can be caused by several different issues — from a simple cable problem to a more serious internal failure. At Five Star Data Recovery, we specialize in recovering data from drives that show no signs of power. Whether it's a failed PCB, power surge damage, or an internal short, our certified engineers have the tools and experience to bring your data back."
+      description="If your hard drive isn't turning on, you're not alone. Many people run into this problem and worry their files are lost forever. At Five Star Data Recovery, we specialize in helping people recover their files when a Hard Drive doesnt power on or shows no signs of life. Whether it's a family photo collection, important documents, or business files, we understand how serious data loss can be. If your Hard Drive has No Power, don't panic. Our engineers are trained to deal with these exact situations and can help recover your data."
       bgImage="/drive-no-power-hero.webp"
       :trustBadges="trustBadges"
     />

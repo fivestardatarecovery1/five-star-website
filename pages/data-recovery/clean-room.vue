@@ -116,7 +116,7 @@ const faqs = [
   },
   {
     q: 'Is clean room recovery only for clicking or dead drives?',
-    a: 'Not always. While <strong>clicking hard drives, non-spinning drives</strong>, and physically dead drives are common clean room cases, there are many other scenarios where clean room access is essential. This includes drives affected by <strong>impact, fire, water</strong>, or firmware-related read issues. We open the drive\'s cover inside our certified clean room to visually inspect the platters and slider assemblies to determine whether the read failure is due to surface damage, head crash, or severe bad sectors.',
+    a: 'Not always. While <strong>clicking hard drives, non-spinning drives</strong>, and physically dead drives are common clean room cases, there are many other scenarios where clean room access is essential. This includes drives affected by <strong>impact, fire, water</strong>, or firmware-related read issues. At Five Star Data Recovery, we open the drive&#39;s cover inside our certified clean room to visually inspect the platters and slider assemblies. This allows our engineers to determine whether the read failure is due to surface damage, head crash, or severe bad sectors. This critical step ensures we take the safest and most effective approach to recovering your data.',
   },
   {
     q: 'How can I tell if my drive needs clean room recovery?',

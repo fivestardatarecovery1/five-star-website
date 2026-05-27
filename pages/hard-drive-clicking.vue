@@ -156,7 +156,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Hard Drive Clicking"
       subtitle="Get Your Data Back In No Time."
-      description="Is your hard drive suddenly making a clicking sound? Don't ignore it—this could be a serious warning sign. At Five Star Data Recovery, we focus on getting data back from drives with mechanical issues. If your drive has started clicking, ticking, or making repeated noises when powered on, power it down immediately. A clicking hard drive can get worse quickly. The longer it runs, the harder and more costly it is to recover your data."
+      description="Is your hard drive suddenly making a clicking sound? Don't ignore it—this could be a serious warning sign. At Five Star Data Recovery, we focus on getting data back from drives with mechanical issues. This includes the annoying hard drive clicking sound. If your drive has started clicking, ticking, or making repeated noises when powered on, power it down immediately. A clicking hard drive can get worse quickly. The longer it runs, the harder and more costly it is to recover your data."
       bgImage="/hard-drive-clicking-sound-data-recovery.webp"
       :trustBadges="trustBadges"
     />

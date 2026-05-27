@@ -156,7 +156,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Solid State Drive Recovery"
       subtitle="Get Your Data Back In No Time."
-      description="<strong>Solid State Drives (SSDs)</strong> are fast, reliable, and small. However, if they fail, you need special tools and skills to recover your data. At Five Star Data Recovery, we offer expert-level <strong>SSD data recovery</strong> for all makes and models.<br><br>If you have a logical failure, controller issue, or file system corruption, we can help. Our team handles everything from deleted files to physical damage. If your SSD is no longer recognized, has been formatted, or has suffered a sudden power loss, don&#39;t panic."
+      description="<strong>Solid State Drives (SSDs)</strong> are fast, reliable, and small. However, if they fail, you need special tools and skills to recover your data. At Five Star Data Recovery, we offer expert-level <strong>SSD data recovery</strong> for all makes and models.<br><br>If you have a logical failure, controller issue, or file system corruption, we can help. We recover data from solid-state hard drives quickly and securely. Our team handles everything from deleted files to physical damage. If your SSD is no longer recognized, has been formatted, or has suffered a sudden power loss, don&#39;t panic. We use professional tools to recover the data and get you back on track."
       bgImage="/ssd-data-recovery-hero.webp"
       :trustBadges="trustBadges"
     />
