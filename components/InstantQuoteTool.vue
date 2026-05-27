@@ -14,17 +14,20 @@ const sel = reactive({
   urgency: '',
 })
 
-const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb']
+const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast']
 const NEEDS_BRAND    = ['external']
 const NEEDS_CAPACITY = ['sata', 'other-ext']
 
 const deviceOptions = [
-  { id: 'sata',     label: 'Hard Drive (HDD)',       sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
-  { id: 'external', label: 'External Hard Drive',    sub: 'WD, Seagate, Toshiba, LaCie, and more',   icon: '📦' },
-  { id: 'ssd',      label: 'SSD / NVMe',             sub: 'Solid state drive, internal or external', icon: '⚡'  },
-  { id: 'raid',     label: 'RAID / NAS',             sub: 'Multi-drive array or server storage',     icon: '🗄️' },
-  { id: 'phone',    label: 'Smartphone / Tablet',    sub: 'iPhone, Android, iPad',                   icon: '📱' },
-  { id: 'usb',      label: 'USB / SD Card',          sub: 'Flash drive or memory card',              icon: '💾' },
+  { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
+  { id: 'laptop',   label: 'Laptop / Desktop',         sub: 'Recovery from a laptop or desktop computer', icon: '💻' },
+  { id: 'external', label: 'External Hard Drive',       sub: 'WD, Seagate, Toshiba, LaCie, and more',   icon: '📦' },
+  { id: 'ssd',      label: 'SSD / NVMe',               sub: 'Solid state drive, internal or external', icon: '⚡'  },
+  { id: 'raid',     label: 'RAID / NAS',               sub: 'Multi-drive array or server storage',     icon: '🗄️' },
+  { id: 'phone',    label: 'Smartphone / Tablet',      sub: 'iPhone, Android, iPad',                   icon: '📱' },
+  { id: 'usb',      label: 'USB / SD Card',            sub: 'Flash drive or memory card',              icon: '💾' },
+  { id: 'nvr',      label: 'NVR / DVR',                sub: 'Security camera recorder or surveillance system', icon: '📷' },
+  { id: 'cfast',    label: 'CFast / RedMag / Pro Cards', sub: 'Professional cinema & camera media cards', icon: '🎬' },
 ]
 
 const brandOptions = [
@@ -153,6 +156,7 @@ function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.coverOpened = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
+  else if (id === 'laptop') { sel.device = 'sata'; goTo('capacity') }
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
