@@ -418,7 +418,12 @@ const progressIndex = computed(() => {
         </div>
 
         <div class="iqt-guarantee">
-          🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you owe nothing for the recovery.
+          <template v-if="quote.upfront > 0">
+            🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you owe nothing beyond the upfront fees already paid. Upfront fees are non-refundable regardless of outcome.
+          </template>
+          <template v-else>
+            🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you owe nothing. No charge, no risk.
+          </template>
         </div>
 
         <div class="iqt-cta-row">
