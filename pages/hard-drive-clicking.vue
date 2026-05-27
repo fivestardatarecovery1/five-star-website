@@ -9,31 +9,44 @@ useHead({
           {
             "@type": "LocalBusiness",
             "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
             "telephone": "+1-818-272-8866",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "1731 S Brand Blvd",
+              "streetAddress": "1731 S Brand Blvd.",
               "addressLocality": "Glendale",
               "addressRegion": "CA",
               "postalCode": "91204",
               "addressCountry": "US"
             },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
             "url": "https://www.fivestardatarecovery.com/",
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
-            "priceRange": "$950 flat rate"
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Elijah B." },
+                "datePublished": "2024-11-21",
+                "reviewBody": "My external drive was clicking and completely inaccessible. These guys recovered everything\u2014amazing service!",
+                "name": "Clicking Drive Recovery",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$300 - $950"
           },
           {
             "@type": "Service",
             "name": "Clicking Hard Drive Data Recovery",
-            "url": "https://www.fivestardatarecovery.com/hard-drive-clicking/",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/clicking-hard-drive-data-recovery/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional data recovery from clicking hard drives. Five Star Data Recovery uses a certified cleanroom and donor parts to recover data from mechanically failed HDDs. Flat-rate $950. No Data, No Charge."
+            "description": "Professional data recovery for clicking hard drives. Flat-rate pricing, cleanroom repairs, and expedited services available. Serving Glendale, Los Angeles, and offering nationwide mail-in recovery."
           },
           {
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Hard Drive Clicking", "item": "https://www.fivestardatarecovery.com/hard-drive-clicking/" }
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "Clicking Hard Drive Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/clicking-hard-drive-data-recovery/" }
             ]
           },
           {
