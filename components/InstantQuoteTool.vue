@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'laptop-type' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'laptop-type' | 'desktop-os' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -99,7 +99,7 @@ function getBasePrice(): number | null {
 
   const isMech = issue === 'mechanical'
 
-  if (device === 'sata' || device === 'win-laptop' || device === 'desktop') {
+  if (device === 'sata' || device === 'win-laptop' || device === 'desktop' || device === 'desktop-mac') {
     if (!capacity) return null
     if (isMech) return (capacity === '8to12' || capacity === '12plus') ? 1800 : 950
     if (capacity === 'under2') return 300
@@ -155,7 +155,8 @@ const quote = computed(() => {
       if (sel.device === 'laptop-apple-old') return 'Apple MacBook (2015 or Earlier)'
       if (sel.device === 'laptop-apple-new') return 'Apple MacBook (2016 or Newer)'
       if (sel.device === 'win-laptop')       return 'Windows Laptop'
-      if (sel.device === 'desktop')          return 'Desktop Computer'
+      if (sel.device === 'desktop')          return 'Windows Desktop Computer'
+      if (sel.device === 'desktop-mac')      return 'Mac Desktop (iMac)'
       return deviceOptions.find(d => d.id === sel.device)?.label ?? sel.device
     })(),
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
@@ -179,8 +180,14 @@ function pickDevice(id: string) {
   else goTo('issue')
 }
 function pickLaptopType(type: string) {
-  if (type === 'desktop') { sel.device = 'desktop'; goTo('capacity') }
+  if (type === 'desktop') { sel.device = 'desktop'; goTo('desktop-os') }
   else { sel.device = 'laptop'; goTo('laptop-os') }
+}
+function pickDesktopOS(os: string) {
+  // Both Windows and Mac desktops use the same capacity-based pricing.
+  // iMac is always AIO — we can note this but let the AIO step confirm.
+  sel.device = os === 'mac' ? 'desktop-mac' : 'desktop'
+  goTo('capacity')
 }
 function pickLaptopOS(os: string) {
   if (os === 'apple') { sel.device = 'laptop-apple-new'; goTo('apple-year') }
@@ -206,13 +213,14 @@ function pickEncrypt(v: boolean)  {
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
   goTo(isApple ? 'urgency' : 'cover')
 }
-function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
+function pickCover(v: boolean)    { sel.coverOpened = v; (sel.device === 'desktop' || sel.device === 'desktop-mac') ? goTo('aio') : goTo('urgency') }
 
 function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
   if (s === 'laptop-type') goTo('device', 0)
+  else if (s === 'desktop-os') goTo('laptop-type', 0)
   else if (s === 'laptop-os')  goTo('laptop-type', 0)
   else if (s === 'apple-year')  goTo('laptop-os', 0)
   else if (s === 'board-repair') goTo('apple-year', 0)
@@ -220,10 +228,10 @@ function back() {
   else if (s === 'capacity') {
     const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
     const wasWinLaptop = sel.device === 'win-laptop'
-    const wasDesktop = sel.device === 'desktop'
+    const wasDesktop = sel.device === 'desktop' || sel.device === 'desktop-mac'
     if (wasExternal) goTo('brand', 0)
     else if (wasWinLaptop) goTo('laptop-os', 0)
-    else if (wasDesktop) goTo('laptop-type', 0)
+    else if (wasDesktop) goTo('desktop-os', 0)
     else goTo('device', 0)
   }
   else if (s === 'issue') {
@@ -242,7 +250,7 @@ function back() {
   else if (s === 'aio')     goTo('cover', 0)
   else if (s === 'urgency') {
     const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-    if (sel.device === 'desktop') goTo('aio', 0)
+    if (sel.device === 'desktop' || sel.device === 'desktop-mac') goTo('aio', 0)
     else if (isApple) goTo('encrypt', 0)
     else goTo('cover', 0)
   }
@@ -264,7 +272,7 @@ const progressSteps = computed(() => {
   const list = ['Device']
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new' || currentStep.value === 'apple-year' || currentStep.value === 'board-repair'
-  const isLaptopFlow = currentStep.value === 'laptop-type' || currentStep.value === 'laptop-os' || sel.device === 'win-laptop' || sel.device === 'desktop' || isApple
+  const isLaptopFlow = currentStep.value === 'laptop-type' || currentStep.value === 'desktop-os' || currentStep.value === 'laptop-os' || sel.device === 'win-laptop' || sel.device === 'desktop' || sel.device === 'desktop-mac' || isApple
   if (isExternal) list.push('Brand')
   if (isLaptopFlow) {
     list.push('Type')
@@ -278,7 +286,7 @@ const progressSteps = computed(() => {
   if (!isApple) list.push('Issue')
   list.push('Encryption')
   if (!isApple) list.push('Cover')
-  if (sel.device === 'desktop') list.push('AIO')
+  if (sel.device === 'desktop' || sel.device === 'desktop-mac') list.push('AIO')
   list.push('Urgency', 'Quote')
   return list
 })
@@ -296,7 +304,7 @@ const progressIndex = computed(() => {
     return m[s] ?? 0
   }
   if (hasCap) {
-    const isLaptop = sel.device === 'desktop'
+    const isLaptop = sel.device === 'desktop' || sel.device === 'desktop-mac'
     const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, encrypt: 3, cover: 4 }
     if (isLaptop) Object.assign(m, { aio: 5, urgency: 6, result: 7 })
     else Object.assign(m, { urgency: 5, result: 6 })
@@ -370,6 +378,29 @@ const progressIndex = computed(() => {
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Desktop Computer</span>
               <span class="iqt-csub">Tower PC, iMac, AIO, custom build</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
+
+      <!-- STEP: Desktop OS -->
+      <div v-else-if="currentStep === 'desktop-os'">
+        <h3 class="iqt-q">Is it a Windows PC or a Mac desktop?</h3>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-cover-card" @click="pickDesktopOS('windows')">
+            <span class="iqt-icon">🪟</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Windows Desktop</span>
+              <span class="iqt-csub">Tower PC, All-in-One Windows, custom build</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-cover-card" @click="pickDesktopOS('mac')">
+            <span class="iqt-icon">🍎</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Mac Desktop (iMac)</span>
+              <span class="iqt-csub">iMac, Mac mini, Mac Pro, Mac Studio</span>
             </div>
           </button>
         </div>
