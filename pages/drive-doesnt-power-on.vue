@@ -164,7 +164,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">In these cases, the drive is likely not receiving electricity. This could be from a failed circuit board, damaged cable, or even a shorted power supply.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/drive-no-power-signs.webp" alt="Hard drive no power signs — data recovery diagnosis" class="section-img" />
+            <img src="/drive-no-power-pcb.webp" alt="Hard drive inspection — signs of no power failure" class="section-img" />
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/drive-no-power-pcb.webp" alt="Hard drive PCB inspection — common cause of no power failure" class="section-img" />
+            <img src="/drive-no-power-diy.webp" alt="Cleanroom technician — PCB and hard drive repair" class="section-img" />
           </div>
           <div>
             <h2 class="s-heading">Common Reasons Why a Hard Drive Doesn't Power On</h2>
@@ -195,29 +195,28 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- SECTION 3 — What To Do -->
     <section class="s-white">
       <div class="container">
-        <div class="two-col-layout">
-          <div>
-            <h2 class="s-heading">What You Should (and Shouldn't) Do</h2>
-            <p class="s-body">If your hard drive doesn't power on, the most important thing is to avoid doing anything that could make the situation worse.</p>
-            <p class="s-body"><strong>Don't:</strong></p>
+        <h2 class="s-heading">What You Should (and Shouldn't) Do</h2>
+        <p class="s-body">If your hard drive doesn't power on, the most important thing is to avoid doing anything that could make the situation worse.</p>
+        <div class="do-dont-grid">
+          <div class="dont-col">
+            <h3 class="col-label dont">Don't:</h3>
             <ul class="content-list">
               <li>Try to open the hard drive</li>
               <li>Swap circuit boards between different drives</li>
               <li>Plug and unplug the drive repeatedly</li>
               <li>Use DIY software—these tools won't help if the drive is not spinning</li>
             </ul>
-            <p class="s-body"><strong>Do:</strong></p>
+          </div>
+          <div class="do-col">
+            <h3 class="col-label do">Do:</h3>
             <ul class="content-list">
               <li>Check your cables and power source</li>
               <li>Try the drive on another computer or enclosure</li>
               <li>Bring it to a professional recovery lab if the issue continues</li>
             </ul>
-            <p class="s-body">A drive that doesn't spin can still hold your files. We have tools and cleanroom environments that allow us to fix hard drives and safely extract data without causing additional damage.</p>
-          </div>
-          <div class="section-img-wrap">
-            <img src="/drive-no-power-diy.webp" alt="Professional cleanroom data recovery technician" class="section-img" />
           </div>
         </div>
+        <p class="s-body">A drive that doesn't spin can still hold your files. We have tools and cleanroom environments that allow us to fix hard drives and safely extract data without causing additional damage.</p>
       </div>
     </section>
 
@@ -391,5 +390,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
-@media (max-width: 768px) { .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } }
+.do-dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 20px; }
+.col-label { font-size: 1rem; font-weight: 800; margin-bottom: 12px; }
+.col-label.dont { color: #c0392b; }
+.col-label.do { color: #27ae60; }
+@media (max-width: 768px) { .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } .do-dont-grid { grid-template-columns: 1fr; } }
 </style>
