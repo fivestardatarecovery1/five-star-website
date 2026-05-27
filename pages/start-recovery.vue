@@ -1,4 +1,72 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "url": "https://www.fivestardatarecovery.com",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "priceRange": "$300 - $950",
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Leah P." },
+                "datePublished": "2024-09-02",
+                "reviewBody": "The online form made it so easy to get started. I mailed in my hard drive and had updates within a few hours. Five Star really lives up to their name!",
+                "name": "Easy Online Recovery Process",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "url": "https://www.fivestardatarecovery.com/start-data-recovery/",
+            "name": "Start Your Data Recovery Case | Five Star Data Recovery",
+            "description": "Quickly start your data recovery case online with Five Star Data Recovery. Fill out our Start Recovery Form for fast drop-off or mail-in service. No appointment needed."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Start Data Recovery", "item": "https://www.fivestardatarecovery.com/start-data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Can I start a data recovery case online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! You can easily start your data recovery case online by filling out our Start Recovery Form. Once submitted, our team will contact you to confirm the next steps, including drop-off or mail-in options." } },
+              { "@type": "Question", "name": "Do I need to schedule an appointment before dropping off my device?", "acceptedAnswer": { "@type": "Answer", "text": "No appointment is necessary. You're welcome to walk in during our business hours. However, submitting the Start Recovery Form in advance helps us prepare for your device and minimize your wait time." } },
+              { "@type": "Question", "name": "What happens after I submit the Start Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "After you submit the form, we'll review your case details and reach out to you by phone or email to confirm receipt. From there, you can proceed with either dropping off your device in person or shipping it to our lab." } },
+              { "@type": "Question", "name": "Can I track the status of my data recovery case after starting it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your case is checked in, you'll receive all status updates exclusively through our ticketing system via email. This ensures clear, organized communication for every step of the recovery process." } },
+              { "@type": "Question", "name": "What if I'm not sure how to describe the issue with my device?", "acceptedAnswer": { "@type": "Answer", "text": "No problem. Just provide as much information as you can on the Start Recovery Form, and our engineers will diagnose the device after it arrives. If needed, we'll contact you for clarification before proceeding." } },
+              { "@type": "Question", "name": "Is there a fee just for submitting the Start Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "No, there's no fee to submit the form. Filling it out simply allows us to prepare for your case and start the process efficiently. Any applicable fees will only be discussed and charged after diagnostics." } },
+              { "@type": "Question", "name": "How quickly will my case be checked in after drop-off or arrival?", "acceptedAnswer": { "@type": "Answer", "text": "We check in most cases within 1-2 hours of arrival during business hours. For mail-in devices, cases are usually entered into our system the same day they arrive." } },
+              { "@type": "Question", "name": "Can I submit the Start Recovery Form if I'm mailing my device?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! In fact, submitting the form is highly recommended for mail-in clients. It helps us match your incoming shipment to your case file, reducing delays and ensuring faster processing once your device arrives." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Start Your Data Recovery — Five Star Data Recovery | Glendale, CA',
   description: 'Start your data recovery with Five Star Data Recovery. Free diagnostic, no data no charge guarantee. Drop off, mail-in, or call us today.'
