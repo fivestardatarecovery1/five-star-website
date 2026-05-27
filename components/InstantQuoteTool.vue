@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'capacity' | 'issue' | 'cover' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'brand' | 'capacity' | 'issue' | 'cover' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -15,17 +15,22 @@ const sel = reactive({
 })
 
 const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb']
+const NEEDS_BRAND    = ['external']
 const NEEDS_CAPACITY = ['sata', 'other-ext']
 
 const deviceOptions = [
-  { id: 'sata',        label: 'Internal SATA Drive',      sub: 'Laptop or desktop hard drive',          icon: '🖴'  },
-  { id: 'wd-ext',      label: 'WD / SanDisk / G-Drive',   sub: 'WD My Passport, SanDisk, G-Drive, etc.', icon: '📦' },
-  { id: 'toshiba-ext', label: 'Toshiba External',         sub: 'Toshiba Canvio, etc.',                  icon: '📦' },
-  { id: 'other-ext',   label: 'Other External Drive',     sub: 'Seagate, LaCie, Samsung, etc.',         icon: '📦' },
-  { id: 'ssd',         label: 'SSD / NVMe',               sub: 'Internal or external solid state',      icon: '⚡'  },
-  { id: 'raid',        label: 'RAID / NAS',               sub: 'Multi-drive array or server',           icon: '🗄️' },
-  { id: 'phone',       label: 'Phone / Tablet',           sub: 'iPhone, Android, iPad',                 icon: '📱' },
-  { id: 'usb',         label: 'USB / SD Card',            sub: 'Flash drive or memory card',            icon: '💾' },
+  { id: 'sata',     label: 'Hard Drive (HDD)',       sub: 'Internal laptop or desktop hard drive',    icon: '🖴'  },
+  { id: 'external', label: 'External Hard Drive',    sub: 'WD, Seagate, Toshiba, LaCie, and more',   icon: '📦' },
+  { id: 'ssd',      label: 'SSD / NVMe',             sub: 'Solid state drive, internal or external', icon: '⚡'  },
+  { id: 'raid',     label: 'RAID / NAS',             sub: 'Multi-drive array or server storage',     icon: '🗄️' },
+  { id: 'phone',    label: 'Smartphone / Tablet',    sub: 'iPhone, Android, iPad',                   icon: '📱' },
+  { id: 'usb',      label: 'USB / SD Card',          sub: 'Flash drive or memory card',              icon: '💾' },
+]
+
+const brandOptions = [
+  { id: 'wd-ext',      label: 'WD / SanDisk / G-Drive', sub: 'WD My Passport, WD Elements, SanDisk, G-Drive', icon: '🔵' },
+  { id: 'toshiba-ext', label: 'Toshiba',                sub: 'Toshiba Canvio, Toshiba Backup',                icon: '🔴' },
+  { id: 'other-ext',   label: 'Other Brand',            sub: 'Seagate, LaCie, Samsung, Transcend, etc.',      icon: '📦' },
 ]
 
 const capacityOptions = [
@@ -147,7 +152,14 @@ function goTo(s: Step, delay = 220) {
 function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.coverOpened = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
+  else if (id === 'external') goTo('brand')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
+  else goTo('issue')
+}
+function pickBrand(id: string) {
+  // Store brand as the device id so pricing logic works unchanged
+  sel.device = id
+  if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
 function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
@@ -156,12 +168,21 @@ function pickCover(v: boolean)    { sel.coverOpened = v; goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
-  if (s === 'capacity') goTo('device', 0)
-  else if (s === 'issue') goTo(NEEDS_CAPACITY.includes(sel.device) ? 'capacity' : 'device', 0)
-  else if (s === 'cover') goTo('issue', 0)
+  if (s === 'brand')    goTo('device', 0)
+  else if (s === 'capacity') {
+    // came from brand step if device is an external brand
+    const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
+    goTo(wasExternal ? 'brand' : 'device', 0)
+  }
+  else if (s === 'issue') {
+    if (NEEDS_CAPACITY.includes(sel.device)) goTo('capacity', 0)
+    else if (['wd-ext','toshiba-ext','other-ext'].includes(sel.device)) goTo('brand', 0)
+    else goTo('device', 0)
+  }
+  else if (s === 'cover')   goTo('issue', 0)
   else if (s === 'urgency') goTo('cover', 0)
-  else if (s === 'result') goTo('urgency', 0)
-  else if (s === 'call') goTo('device', 0)
+  else if (s === 'result')  goTo('urgency', 0)
+  else if (s === 'call')    goTo('device', 0)
 }
 function reset() {
   animating.value = true
@@ -174,21 +195,33 @@ function reset() {
 
 // ── Progress ─────────────────────────────────────────────────────────────────
 const progressSteps = computed(() => {
-  if (CALL_DEVICES.includes(sel.device)) return ['Device', 'Quote']
+  if (CALL_DEVICES.includes(sel.device) || currentStep.value === 'call') return ['Device', 'Quote']
   const list = ['Device']
+  const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
+  if (isExternal) list.push('Brand')
   if (NEEDS_CAPACITY.includes(sel.device)) list.push('Capacity')
   list.push('Issue', 'Cover', 'Urgency', 'Quote')
   return list
 })
 
 const progressIndex = computed(() => {
-  const map: Partial<Record<Step, number>> = { device: 0, call: 1 }
-  if (NEEDS_CAPACITY.includes(sel.device)) {
-    Object.assign(map, { capacity: 1, issue: 2, cover: 3, urgency: 4, result: 5 })
-  } else {
-    Object.assign(map, { issue: 1, cover: 2, urgency: 3, result: 4 })
+  const s = currentStep.value
+  const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
+  const hasCap = NEEDS_CAPACITY.includes(sel.device)
+  if (s === 'device') return 0
+  if (s === 'call') return 1
+  if (isExternal) {
+    const m: Partial<Record<Step, number>> = { brand: 1 }
+    if (hasCap) Object.assign(m, { capacity: 2, issue: 3, cover: 4, urgency: 5, result: 6 })
+    else Object.assign(m, { issue: 2, cover: 3, urgency: 4, result: 5 })
+    return m[s] ?? 0
   }
-  return map[currentStep.value] ?? 0
+  if (hasCap) {
+    const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, cover: 3, urgency: 4, result: 5 }
+    return m[s] ?? 0
+  }
+  const m: Partial<Record<Step, number>> = { issue: 1, cover: 2, urgency: 3, result: 4 }
+  return m[s] ?? 0
 })
 </script>
 
@@ -223,7 +256,7 @@ const progressIndex = computed(() => {
       <!-- STEP: Device -->
       <div v-if="currentStep === 'device'">
         <h3 class="iqt-q">What type of device needs recovery?</h3>
-        <div class="iqt-grid g4">
+        <div class="iqt-grid g3">
           <button
             v-for="d in deviceOptions" :key="d.id"
             class="iqt-card"
@@ -235,6 +268,26 @@ const progressIndex = computed(() => {
             <span class="iqt-csub">{{ d.sub }}</span>
           </button>
         </div>
+      </div>
+
+      <!-- STEP: Brand -->
+      <div v-else-if="currentStep === 'brand'">
+        <h3 class="iqt-q">What brand is the external drive?</h3>
+        <div class="iqt-grid g1">
+          <button
+            v-for="b in brandOptions" :key="b.id"
+            class="iqt-card iqt-issue-card"
+            :class="{ selected: sel.device === b.id }"
+            @click="pickBrand(b.id)"
+          >
+            <span class="iqt-icon">{{ b.icon }}</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">{{ b.label }}</span>
+              <span class="iqt-csub">{{ b.sub }}</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
       </div>
 
       <!-- STEP: Capacity -->
@@ -458,6 +511,7 @@ const progressIndex = computed(() => {
 /* ── Grids ────────────────────────────────────── */
 .iqt-grid { display: grid; gap: 12px; }
 .g4 { grid-template-columns: repeat(4, 1fr); }
+.g3 { grid-template-columns: repeat(3, 1fr); }
 .g2 { grid-template-columns: repeat(2, 1fr); }
 .g1 { grid-template-columns: 1fr; }
 
@@ -588,6 +642,7 @@ const progressIndex = computed(() => {
 @media (max-width: 720px) {
   .iqt-wrap { padding: 28px 18px 24px; }
   .g4 { grid-template-columns: repeat(2, 1fr); }
+  .g3 { grid-template-columns: repeat(2, 1fr); }
   .g2 { grid-template-columns: 1fr; }
   .iqt-price { font-size: 2.4rem; }
   .iqt-plabel { display: none; }

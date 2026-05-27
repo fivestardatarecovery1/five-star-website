@@ -66,14 +66,13 @@ useSeoMeta({
     <section class="iq-hero">
       <div class="iq-hero-overlay" />
       <div class="container iq-hero-inner">
-        <div class="section-label light">Free Estimate Tool</div>
         <h1 class="iq-hero-title">Get an Instant Data Recovery Quote</h1>
-        <p class="iq-hero-sub">Answer 3 quick questions — no contact info required. Get a realistic cost estimate instantly, backed by our <strong>No Data, No Charge</strong> guarantee.</p>
+        <p class="iq-hero-sub">Answer a few quick questions and get a real flat-rate price — no contact info required, no obligation to proceed.</p>
         <div class="iq-hero-trust">
-          <span>✓ Free Evaluation</span>
-          <span>✓ No Obligation</span>
           <span>✓ No Data = No Charge</span>
+          <span>✓ Free Evaluation</span>
           <span>✓ Free Round-Trip Shipping</span>
+          <span>✓ Available 24/7</span>
         </div>
       </div>
     </section>
@@ -141,19 +140,16 @@ useSeoMeta({
 /* Hero */
 .iq-hero {
   position: relative;
-  background: linear-gradient(135deg, #1a1f2e 0%, #0d1117 100%);
-  padding: 64px 0 56px;
+  background: url('/five-star-lab-engineers.jpg') center 40% / cover no-repeat;
+  padding: 90px 0 80px;
   text-align: center;
   overflow: hidden;
 }
-.iq-hero::before {
-  content: '';
+.iq-hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(245,200,66,0.08) 0%, transparent 65%);
-  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(8,10,18,0.82) 0%, rgba(8,10,18,0.75) 100%);
 }
-.iq-hero-overlay { display: none; }
 .iq-hero-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
 .iq-hero-title {
   font-size: clamp(1.9rem, 4vw, 3rem);
