@@ -63,7 +63,7 @@ useHead({
               { "@type": "Question", "name": "What CFast card brands can you recover data from?", "acceptedAnswer": { "@type": "Answer", "text": "We recover data from all major CFast card brands, including SanDisk, Lexar, Delkin Devices, Angelbird, ProGrade Digital, Sony, Transcend, ADATA, Hoodman, and Wise Advanced. Whether you're using CFast 2.0 cards for professional video production or earlier generation CFast models, our lab is equipped to handle recoveries from all manufacturers. Even if your CFast card brand isn't listed here, we likely support it as well\u2014just contact us for a free evaluation." } },
               { "@type": "Question", "name": "How much does CFast card data recovery cost?", "acceptedAnswer": { "@type": "Answer", "text": "At Five Star Data Recovery, CFast card recovery is priced using our flat-rate structure with no hidden fees: $300 for logical recovery (e.g., file system corruption, card not mounting) for cards up to 2TB. $500 for deleted file recovery, which includes a $200 non-refundable upfront fee with the balance due only if recovery is successful. $950 for component-level recovery involving physical damage, failed controllers, or chip-off procedures. In some cases, additional charges may apply if recovered video files are damaged or unplayable and require our advanced video file repair services. We'll evaluate your card and provide a clear estimate before starting any work. All evaluations are free, and every recovery is handled in-house by our experienced engineers." } }
             ]
-          }          }
+          }
         ]
       })
     }

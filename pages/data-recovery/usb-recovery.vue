@@ -62,7 +62,7 @@ useHead({
               { "@type": "Question", "name": "Do you offer free evaluations?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide free evaluations on all USB data recovery cases. When you drop off or mail in your device, we'll first review the issue and provide you with an initial quote based on the symptoms and failure type. As long as you're okay with that quote range, we'll proceed with the full diagnostic at no cost. If we're able to recover your data, you will be expected to pay the full recovery fee based on the quote provided. If the actual recovery ends up requiring more work than expected and the final cost exceeds the quote, we'll pause and get your approval first." } },
               { "@type": "Question", "name": "Do you offer nationwide USB data recovery services?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide USB data recovery services to customers across the United States. If you're not located near our Glendale, CA office, you can safely ship your USB drive to us for evaluation and recovery. Before you send anything in, we'll speak with you by phone or email to review the issue and provide an initial quote based on the symptoms. This way, you'll know what to expect before you ship the device. Once your device arrives, we'll confirm the quote and proceed with the evaluation. As always, you'll only pay if we're successful at recovering your data, unless deleted file recovery or expedited service applies." } }
             ]
-          }          }
+          }
         ]
       })
     }

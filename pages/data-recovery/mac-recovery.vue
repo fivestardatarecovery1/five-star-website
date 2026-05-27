@@ -64,7 +64,7 @@ useHead({
               { "@type": "Question", "name": "How much does Mac Data Recovery cost?", "acceptedAnswer": { "@type": "Answer", "text": "The cost of Mac data recovery depends on the model and type of failure. Logical Recovery (file system corruption, macOS errors, drives that mount but show no files): $300 flat rate. Removable SSD/HDD Recovery (2015 and earlier models): $300\u2013$650 depending on whether there's logical corruption or hardware-level issues. Soldered NAND/Logic Board Recovery (2016 and newer, including M1/M2): $950 for cases requiring board-level component repair. Deleted File Recovery: $500, which includes a $200 upfront non-refundable labor fee; the balance is only due if recovery is successful and approved. We provide free evaluations in most cases, and you'll always receive a clear quote before proceeding." } },
               { "@type": "Question", "name": "Can you recover deleted files from an M1 MacBook Pro?", "acceptedAnswer": { "@type": "Answer", "text": "In most cases, no. Deleted file recovery from M1 and M2 MacBook Pros is extremely limited due to Apple's hardware-level encryption and how APFS handles deletions. Once a file is deleted on these machines, the data is often immediately overwritten or rendered inaccessible because of how Apple integrates the SSD with the T2 or M-series security architecture. If the MacBook is still functional and files were recently deleted, there may be a very small window of opportunity\u2014but only if the machine hasn't been heavily used since the deletion. Even then, success is rare. Feel free to contact us for a free evaluation to see if your case qualifies." } }
             ]
-          }          }
+          }
         ]
       })
     }

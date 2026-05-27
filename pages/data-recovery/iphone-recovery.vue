@@ -63,7 +63,7 @@ useHead({
               { "@type": "Question", "name": "Can you recover data from an iPhone stuck in a boot loop or showing the Apple logo?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in iPhone data recovery from devices stuck in a boot loop or frozen on the Apple logo. These issues are often caused by system corruption or hardware failure. Our engineers perform board-level diagnostics to restore temporary functionality and extract your important files safely." } },
               { "@type": "Question", "name": "Do you recover data from iPhones that have been in saltwater or extreme conditions?", "acceptedAnswer": { "@type": "Answer", "text": "We do recover data from water-damaged iPhones, including those exposed to saltwater, rain, or extreme heat. Saltwater damage is particularly aggressive, so immediate evaluation is critical. Bring the phone to us as soon as possible and avoid powering it on\u2014this increases the chances of a successful iPhone data recovery." } }
             ]
-          }          }
+          }
         ]
       })
     }

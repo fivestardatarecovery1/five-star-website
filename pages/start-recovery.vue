@@ -54,10 +54,10 @@ useHead({
               { "@type": "Question", "name": "Can I start a data recovery case online?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! You can easily start your data recovery case online by filling out our Start Recovery Form. Once submitted, our team will contact you to confirm the next steps, including drop-off or mail-in options." } },
               { "@type": "Question", "name": "Do I need to schedule an appointment before dropping off my device?", "acceptedAnswer": { "@type": "Answer", "text": "No appointment is necessary. You're welcome to walk in during our business hours. However, submitting the Start Recovery Form in advance helps us prepare for your device and minimize your wait time." } },
               { "@type": "Question", "name": "What happens after I submit the Start Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "After you submit the form, we'll review your case details and reach out to you by phone or email to confirm receipt. From there, you can proceed with either dropping off your device in person or shipping it to our lab." } },
-              { "@type": "Question", "name": "Can I track the status of my data recovery case after starting it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your case is checked in, you'll receive all status updates exclusively through our ticketing system via email. This ensures clear, organized communication for every step of the recovery process." } },
+              { "@type": "Question", "name": "Can I track the status of my data recovery case after starting it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your case is checked in, you'll receive all status updates exclusively through our ticketing system via email. This ensures clear, organized communication for every step of the recovery process. If you have questions, you can reply directly to your ticket at any time for further assistance." } },
               { "@type": "Question", "name": "What if I'm not sure how to describe the issue with my device?", "acceptedAnswer": { "@type": "Answer", "text": "No problem. Just provide as much information as you can on the Start Recovery Form, and our engineers will diagnose the device after it arrives. If needed, we'll contact you for clarification before proceeding." } },
-              { "@type": "Question", "name": "Is there a fee just for submitting the Start Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "No, there's no fee to submit the form. Filling it out simply allows us to prepare for your case and start the process efficiently. Any applicable fees will only be discussed and charged after diagnostics." } },
-              { "@type": "Question", "name": "How quickly will my case be checked in after drop-off or arrival?", "acceptedAnswer": { "@type": "Answer", "text": "We check in most cases within 1-2 hours of arrival during business hours. For mail-in devices, cases are usually entered into our system the same day they arrive." } },
+              { "@type": "Question", "name": "Is there a fee just for submitting the Start Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "No, there's no fee to submit the form. Filling it out simply allows us to prepare for your case and start the process efficiently. Any applicable fees (like the recovery fee or expedited services) will only be discussed and charged after diagnostics." } },
+              { "@type": "Question", "name": "How quickly will my case be checked in after drop-off or arrival?", "acceptedAnswer": { "@type": "Answer", "text": "We check in most cases within 1\u20132 hours of arrival during business hours. For mail-in devices, cases are usually entered into our system the same day they arrive, and you'll receive confirmation once your device is logged." } },
               { "@type": "Question", "name": "Can I submit the Start Recovery Form if I'm mailing my device?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! In fact, submitting the form is highly recommended for mail-in clients. It helps us match your incoming shipment to your case file, reducing delays and ensuring faster processing once your device arrives." } }
             ]
           }
@@ -70,8 +70,8 @@ useHead({
 useSeoMeta({
   title: 'Start Recovery of Data - Five Star Data Recovery',
   ogTitle: 'Start Recovery of Data - Five Star Data Recovery',
-  description: 'Start your data recovery with Five Star Data Recovery. Free diagnostic, no data no charge guarantee. Drop off, mail-in, or call us today.',
-  ogDescription: 'Start your data recovery with Five Star Data Recovery. Free diagnostic, no data no charge guarantee. Drop off, mail-in, or call us today.',
+  description: 'Lost important files? Start Recovery of Data now! Drop-off or mail-in your device to get a free diagnosis from our certified engineers.',
+  ogDescription: 'Lost important files? Start Recovery of Data now! Drop-off or mail-in your device to get a free diagnosis from our certified engineers.',
 })
 
 const reviews = [
@@ -107,7 +107,7 @@ const faqs = [
   },
   {
     q: '4. Can I track the status of my data recovery case after starting it?',
-    a: 'Yes. Once your case is checked in, you\'ll receive all status updates exclusively through our ticketing system via email. This ensures clear, organized communication for every step of the recovery process.',
+    a: 'Yes. Once your case is checked in, you\'ll receive all status updates exclusively through our ticketing system via email. This ensures clear, organized communication for every step of the recovery process. If you have questions, you can reply directly to your ticket at any time for further assistance.',
   },
   {
     q: '5. What if I\'m not sure how to describe the issue with my device?',
@@ -115,11 +115,11 @@ const faqs = [
   },
   {
     q: '6. Is there a fee just for submitting the Start Recovery Form?',
-    a: 'No, there\'s no fee to submit the form. Filling it out simply allows us to prepare for your case and start the process efficiently. Any applicable fees will only be discussed and charged after diagnostics.',
+    a: 'No, there\'s no fee to submit the form. Filling it out simply allows us to prepare for your case and start the process efficiently. Any applicable fees (like the recovery fee or expedited services) will only be discussed and charged after diagnostics.',
   },
   {
     q: '7. How quickly will my case be checked in after drop-off or arrival?',
-    a: 'We check in most cases within 1-2 hours of arrival during business hours. For mail-in devices, cases are usually entered into our system the same day they arrive.',
+    a: 'We check in most cases within 1–2 hours of arrival during business hours. For mail-in devices, cases are usually entered into our system the same day they arrive, and you\'ll receive confirmation once your device is logged.',
   },
   {
     q: '8. Can I submit the Start Recovery Form if I\'m mailing my device?',
