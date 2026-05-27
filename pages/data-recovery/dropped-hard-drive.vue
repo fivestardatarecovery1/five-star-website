@@ -59,6 +59,24 @@ const trustBadges = [
   { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
 
+const reviews = [
+  {
+    text: "I accidentally knocked my external hard drive off my desk while it was plugged in. It started making clicking noises and wouldn't show up on my computer. I brought it to Five Star Data Recovery, and they explained the clean room process clearly. Within a few days, I had all of my family photos and videos back.",
+    name: 'Rachel R.',
+    location: 'Reno, NV',
+  },
+  {
+    text: "I was devastated after my portable drive fell off the nightstand and wouldn't mount on my Mac. I found Five Star Data Recovery through a friend and I'm so glad I did. They replaced the damaged heads in a clean room and got all my documents back. Transparent, fast, and worth every penny!",
+    name: 'Emily L',
+    location: 'Burbank, CA',
+  },
+  {
+    text: "My hard drive took a bad fall, and every other place I called gave me vague answers. Five Star was different\u2014they were upfront about the process and pricing. They even showed me a full list of the recovered files before I paid. Top-tier service all the way.",
+    name: 'Linda G',
+    location: 'New York, NY',
+  },
+]
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -268,6 +286,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">Although our lab is based in Los Angeles, we help customers across the United States. With free round-trip shipping, we make it easy to send us your dropped hard drive no matter where you live. Simply create a recovery ticket on our website, and we'll send you a prepaid shipping label. Once your device arrives, we'll run diagnostics and contact you with a detailed recovery plan.</p>
       </div>
     </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
