@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'brand' | 'capacity' | 'issue' | 'cover' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -10,6 +10,7 @@ const sel = reactive({
   device: '',
   capacity: '',
   issue: '',
+  encrypted: null as boolean | null,
   coverOpened: null as boolean | null,
   urgency: '',
 })
@@ -127,6 +128,7 @@ const quote = computed(() => {
   const urg = urgencyOptions.find(u => u.id === sel.urgency)
   if (!urg) return null
 
+  const encryptFee     = sel.encrypted ? 200 : 0
   const coverFee       = sel.coverOpened ? 200 : 0
   const urgFee         = urg.fee
   const heliumDeposit  = isHelium.value ? 300 : 0
@@ -134,13 +136,13 @@ const quote = computed(() => {
   const effectiveBase  = sel.issue === 'deleted' ? Math.max(base, 500) : base
   const deletedUpfront = sel.issue === 'deleted' ? 200 : 0
 
-  const total        = effectiveBase + urgFee + coverFee
+  const total        = effectiveBase + urgFee + coverFee + encryptFee
   const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
   const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront
 
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
-    coverFee, urgFee, heliumDeposit, deletedUpfront,
+    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee,
     deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
     issueLabel:    issueOptions.find(i => i.id === sel.issue)?.label,
@@ -155,7 +157,7 @@ function goTo(s: Step, delay = 220) {
 }
 
 function pickDevice(id: string) {
-  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.coverOpened = null; sel.urgency = ''
+  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
   else if (id === 'laptop') { sel.device = 'sata'; goTo('capacity') }
@@ -169,7 +171,8 @@ function pickBrand(id: string) {
   else goTo('issue')
 }
 function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
-function pickIssue(id: string)    { sel.issue = id;    goTo('cover') }
+function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
+function pickEncrypt(v: boolean)  { sel.encrypted = v;  goTo('cover') }
 function pickCover(v: boolean)    { sel.coverOpened = v; goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
@@ -185,7 +188,8 @@ function back() {
     else if (['wd-ext','toshiba-ext','other-ext'].includes(sel.device)) goTo('brand', 0)
     else goTo('device', 0)
   }
-  else if (s === 'cover')   goTo('issue', 0)
+  else if (s === 'encrypt') goTo('issue', 0)
+  else if (s === 'cover')   goTo('encrypt', 0)
   else if (s === 'urgency') goTo('cover', 0)
   else if (s === 'result')  goTo('urgency', 0)
   else if (s === 'call')    goTo('device', 0)
@@ -194,7 +198,7 @@ function reset() {
   animating.value = true
   setTimeout(() => {
     currentStep.value = 'device'
-    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.coverOpened = null; sel.urgency = ''
+    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.urgency = ''
     animating.value = false
   }, 180)
 }
@@ -206,7 +210,7 @@ const progressSteps = computed(() => {
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
   if (isExternal) list.push('Brand')
   if (NEEDS_CAPACITY.includes(sel.device)) list.push('Capacity')
-  list.push('Issue', 'Cover', 'Urgency', 'Quote')
+  list.push('Issue', 'Encryption', 'Cover', 'Urgency', 'Quote')
   return list
 })
 
@@ -218,15 +222,15 @@ const progressIndex = computed(() => {
   if (s === 'call') return 1
   if (isExternal) {
     const m: Partial<Record<Step, number>> = { brand: 1 }
-    if (hasCap) Object.assign(m, { capacity: 2, issue: 3, cover: 4, urgency: 5, result: 6 })
-    else Object.assign(m, { issue: 2, cover: 3, urgency: 4, result: 5 })
+    if (hasCap) Object.assign(m, { capacity: 2, issue: 3, encrypt: 4, cover: 5, urgency: 6, result: 7 })
+    else Object.assign(m, { issue: 2, encrypt: 3, cover: 4, urgency: 5, result: 6 })
     return m[s] ?? 0
   }
   if (hasCap) {
-    const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, cover: 3, urgency: 4, result: 5 }
+    const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, encrypt: 3, cover: 4, urgency: 5, result: 6 }
     return m[s] ?? 0
   }
-  const m: Partial<Record<Step, number>> = { issue: 1, cover: 2, urgency: 3, result: 4 }
+  const m: Partial<Record<Step, number>> = { issue: 1, encrypt: 2, cover: 3, urgency: 4, result: 5 }
   return m[s] ?? 0
 })
 </script>
@@ -333,6 +337,34 @@ const progressIndex = computed(() => {
         <button class="iqt-back" @click="back">← Back</button>
       </div>
 
+
+      <!-- STEP: Encryption -->
+      <div v-else-if="currentStep === 'encrypt'">
+        <h3 class="iqt-q">Is your drive encrypted with a password?</h3>
+        <p class="iqt-hint">For example: BitLocker (Windows), FileVault (Mac), or any third-party encryption app where you must enter a password to access your files.</p>
+        <div class="iqt-grid g2">
+          <button
+            class="iqt-card iqt-cover-card"
+            :class="{ selected: sel.encrypted === false }"
+            @click="pickEncrypt(false)"
+          >
+            <span class="iqt-icon">🔓</span>
+            <span class="iqt-clabel">No — Not Encrypted</span>
+            <span class="iqt-csub">No password required to access files</span>
+          </button>
+          <button
+            class="iqt-card iqt-cover-card"
+            :class="{ selected: sel.encrypted === true }"
+            @click="pickEncrypt(true)"
+          >
+            <span class="iqt-icon">🔐</span>
+            <span class="iqt-clabel">Yes — Drive is Encrypted</span>
+            <span class="iqt-csub">BitLocker, FileVault, or third-party encryption</span>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
       <!-- STEP: Cover Opened -->
       <div v-else-if="currentStep === 'cover'">
         <h3 class="iqt-q">Has the hard drive's metal cover been opened?</h3>
@@ -406,6 +438,9 @@ const progressIndex = computed(() => {
           </div>
           <div v-if="quote.deletedUpfront" class="iqt-note">
             🗑️ Deleted file recovery requires a $200 upfront non-refundable fee, which applies toward your total.
+          </div>
+          <div v-if="quote.encryptFee" class="iqt-note">
+            🔐 Encrypted drive — an additional $200 fee applies for decryption handling during recovery.
           </div>
           <div v-if="quote.coverFee" class="iqt-note warn">
             ⚠️ Drive cover previously opened — $200 upfront non-refundable fee included.
