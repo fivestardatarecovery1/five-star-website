@@ -635,7 +635,7 @@ const progressIndex = computed(() => {
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('ssd')">
             <div class="iqt-drive-imgs">
-              <img src="/service-ssd-new-nobg.webp" alt="2.5 inch SSD" class="iqt-drive-img" />
+              <img src="/ssd-25-sata-crucial.jpg" alt="2.5 inch SATA SSD" class="iqt-drive-img" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">2.5" SATA SSD</span>
@@ -644,7 +644,7 @@ const progressIndex = computed(() => {
           </button>
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('nvme')">
             <div class="iqt-drive-imgs">
-              <img src="/ssd-data-recovery-install.webp" alt="NVMe SSD" class="iqt-drive-img" />
+              <img src="/ssd-nvme-samsung.jpg" alt="NVMe M.2 SSD" class="iqt-drive-img" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">NVMe / M.2 Drive</span>
