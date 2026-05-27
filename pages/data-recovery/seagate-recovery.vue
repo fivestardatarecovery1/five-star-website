@@ -25,10 +25,10 @@ useHead({
             "review": [
               {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Jessica L." },
-                "datePublished": "2024-11-20",
-                "reviewBody": "I had a Seagate external hard drive that suddenly stopped working. It wasn't showing up on my computer at all. I called Five Star Data Recovery and Elen answered all my questions and made me feel at ease. Within a few days, they recovered 100% of my important files.",
-                "name": "Seagate Recovery Success",
+                "author": { "@type": "Person", "name": "Jason M." },
+                "datePublished": "2024-11-16",
+                "reviewBody": "They recovered my entire archive from a Seagate Expansion drive that stopped responding. Excellent service!",
+                "name": "Seagate Drive Recovery Success",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
               }
             ],
@@ -39,7 +39,7 @@ useHead({
             "name": "Seagate Data Recovery Services",
             "url": "https://www.fivestardatarecovery.com/data-recovery/seagate-data-recovery/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional Seagate data recovery for Barracuda, IronWolf, Expansion, Backup Plus, and all Seagate external and internal drives. Flat-rate pricing, free diagnostic, No Data No Charge. Serving Glendale, Los Angeles, and nationwide."
+            "description": "Professional Seagate Data Recovery services for HDDs, SSDs, external drives, and RAID arrays. Serving Glendale, Los Angeles, and offering nationwide mail-in service with flat-rate pricing and no hidden fees."
           },
           {
             "@type": "BreadcrumbList",
@@ -47,6 +47,20 @@ useHead({
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
               { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
               { "@type": "ListItem", "position": 3, "name": "Seagate Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/seagate-data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Do you recover data from all types of Seagate drives?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we recover data from all Seagate storage devices, including Seagate Barracuda, IronWolf, Expansion, Backup Plus, and portable external drives. Whether it's internal or external, HDD or SSD — we've got you covered." } },
+              { "@type": "Question", "name": "Can you recover data from Seagate drives that are no longer detected by the computer?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. If your Seagate hard drive is not showing up, the issue could be with the firmware, file system, USB controller, or internal damage. We perform thorough diagnostics to find the cause and recover your files." } },
+              { "@type": "Question", "name": "What causes the \'Seagate drive light is on but not working\' issue?", "acceptedAnswer": { "@type": "Answer", "text": "This is a common issue in Seagate external drives. The drive may receive power but fail to initialize due to PCB failure, firmware corruption, or a bad USB-to-SATA bridge. We have the tools and expertise to recover your data in these cases." } },
+              { "@type": "Question", "name": "How do you handle clicking Seagate hard drives?", "acceptedAnswer": { "@type": "Answer", "text": "A clicking Seagate drive typically means a mechanical failure, such as damaged read/write heads or motor issues. We recover these in a cleanroom using donor parts to safely extract your data without causing more harm." } },
+              { "@type": "Question", "name": "How much does Seagate Data Recovery cost?", "acceptedAnswer": { "@type": "Answer", "text": "At Five Star Data Recovery, our Seagate data recovery pricing is based on the drive's capacity, connection type, and condition. All pricing is flat-rate — no hourly billing or surprise charges. $300.00 for standard Seagate SATA drives up to 2TB. $500.00 for Seagate External Hard Drives and internal drives up to 6TB. $600.00 for Seagate external drives between 8TB and 12TB. $800.00 for very high-capacity Seagate drives over 12TB. $950.00 for Seagate drives with mechanical issues requiring clean room repair. We offer a free evaluation before starting any recovery." } },
+              { "@type": "Question", "name": "How long does Seagate Data Recovery take?", "acceptedAnswer": { "@type": "Answer", "text": "Most Seagate data recovery cases are completed within 3 to 5 business days. For clean room cases with mechanical failures, recovery can take a few extra days. We also offer Expedited and Expedited Plus options for priority turnaround." } },
+              { "@type": "Question", "name": "Can you recover data from a Seagate drive that was dropped?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, drops and shocks can lead to mechanical failure or head misalignment. We frequently perform physical data recovery from dropped Seagate drives and have high success rates in such scenarios." } },
+              { "@type": "Question", "name": "Do you provide Seagate data recovery for RAID arrays?", "acceptedAnswer": { "@type": "Answer", "text": "We specialize in Seagate RAID recovery for all configurations — including RAID 0, RAID 1, RAID 5, and hybrid setups. Whether it's a NAS using Seagate IronWolf drives or a server array, we clone the drives and recover the data without using the originals." } },
+              { "@type": "Question", "name": "Is it possible to recover data from a Seagate SSD?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We handle Seagate SSD data recovery as well, including cases of NAND failure, firmware issues, or damaged controllers. SSDs are complex, but our engineers are trained in both chip-level and software-level recovery techniques." } }
             ]
           }
         ]
