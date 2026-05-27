@@ -77,6 +77,37 @@ const reviews = [
   },
 ]
 
+const faqs = [
+  {
+    q: 'What should I do immediately after dropping my hard drive?',
+    a: "If your hard drive has been dropped, power it off immediately and avoid trying to turn it back on. Running a damaged drive can worsen internal damage, especially if the read/write heads are misaligned. Call us right away at Five Star Data Recovery so we can guide you through the safest next steps and help prevent permanent data loss.",
+  },
+  {
+    q: 'Can you recover data from a drive that is clicking after being dropped?',
+    a: "Yes. A clicking sound usually indicates internal damage to the read/write heads or actuator arm, which often occurs when a drive is dropped. Most of the time, we can recover the data using clean room tools and donor parts. The main deciding factor in whether the data is recoverable is the condition of the platters\u2014which depends on how many times the drive was powered on after the drop. The fewer attempts made to power it on, the higher the chances of a successful recovery.",
+  },
+  {
+    q: 'Is it safe to use data recovery software on a dropped hard drive?',
+    a: "No. Using DIY data recovery software on a physically damaged drive can lead to further data loss or permanent damage. If your drive has been dropped and is showing signs of failure (clicking, not spinning, or not recognized), it's best to consult a professional recovery service.",
+  },
+  {
+    q: 'How much does dropped hard drive recovery cost?',
+    a: "We offer flat-rate pricing for dropped hard drive recovery, with rates depending on the type and extent of physical damage. There are no hidden fees, and diagnostics are always free. You only pay if we successfully recover your data.",
+  },
+  {
+    q: 'Can data still be recovered if the drive was dropped while in use?',
+    a: "Yes. Drives that were dropped while powered on are more likely to suffer internal damage, such as head crashes or platter contact\u2014but recovery is often still possible. At Five Star Data Recovery, the process does not begin with imaging for mechanically damaged drives. Instead, we start with a clean room inspection to assess internal damage. If the read/write heads are physically damaged, they must be replaced using compatible donor parts before we can safely proceed. Once the new heads are installed, we begin carefully imaging or cloning the drive sector by sector to recover your data safely and effectively.",
+  },
+  {
+    q: 'How long does dropped hard drive data recovery take?',
+    a: "Most recoveries take 3\u20135 business days, depending on the severity of the damage. We also offer Expedited and Expedited Plus services for urgent situations, giving your case immediate priority\u2014even after hours or on weekends.",
+  },
+  {
+    q: 'Will I get a list of the recovered files before I pay?',
+    a: "Yes. Once we complete the recovery process, we'll provide you with a detailed file list showing exactly what was recovered. At that point, you can choose whether or not to move forward with the recovery. If you decide not to proceed, you pay nothing. However, once you approve the recovery and we deliver the data, payment is required in full.",
+  },
+]
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -306,6 +337,22 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
+            <button class="faq-trigger" @click="toggleFaq(i)">
+              <span>{{ faq.q }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '\u2212' : '+' }}</span>
+            </button>
+            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <FooterBar />
   </div>
 </template>
@@ -344,5 +391,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .example-item { padding: 24px 0; border-bottom: 1px solid #e2e6ee; }
 .example-item:last-child { border-bottom: none; }
 .example-item .s-body { margin: 0; }
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 @media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; } }
 </style>
