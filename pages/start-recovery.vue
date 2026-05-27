@@ -164,7 +164,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </ul>
         </div>
         <div class="sr-hero-right">
-          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Five Star Data Recovery Lab" class="sr-hero-img" />
+          <img src="/start-recovery-hero.webp" alt="Five Star Data Recovery Lab" class="sr-hero-img" />
         </div>
       </div>
     </section>
