@@ -744,7 +744,20 @@ const progressIndex = computed(() => {
       <!-- STEP: Capacity -->
       <div v-else-if="currentStep === 'capacity'">
         <h3 class="iqt-q">What is the storage capacity?</h3>
-        <div class="iqt-grid g4">
+        <!-- SSD capacity options (3 tiers) -->
+        <div v-if="['ssd-25','ssd-nvme','ssd-ext-wd','ssd-ext-other'].includes(sel.device)" class="iqt-grid g3">
+          <button
+            v-for="c in ssdCapacityOptions" :key="c.id"
+            class="iqt-card iqt-cap-card"
+            :class="{ selected: sel.capacity === c.id }"
+            @click="pickCapacity(c.id)"
+          >
+            <span class="iqt-icon">💾</span>
+            <span class="iqt-clabel">{{ c.label }}</span>
+          </button>
+        </div>
+        <!-- Standard HDD capacity options (4 tiers) -->
+        <div v-else class="iqt-grid g4">
           <button
             v-for="c in capacityOptions" :key="c.id"
             class="iqt-card iqt-cap-card"
