@@ -151,9 +151,15 @@ const quote = computed(() => {
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
     coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee, boardRepairFee, appleDeposit,
-    deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
+    deviceLabel: (() => {
+      if (sel.device === 'laptop-apple-old') return 'Apple MacBook (2015 or Earlier)'
+      if (sel.device === 'laptop-apple-new') return 'Apple MacBook (2016 or Newer)'
+      if (sel.device === 'win-laptop')       return 'Windows Laptop'
+      if (sel.device === 'desktop')          return 'Desktop Computer'
+      return deviceOptions.find(d => d.id === sel.device)?.label ?? sel.device
+    })(),
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
-    issueLabel:    issueOptions.find(i => i.id === sel.issue)?.label,
+    issueLabel: sel.issue ? issueOptions.find(i => i.id === sel.issue)?.label : null,
     urgencyLabel:  urg.label,
   }
 })
@@ -655,7 +661,7 @@ const progressIndex = computed(() => {
         <div class="iqt-summary">
           <div class="iqt-srow"><span>Device</span><span>{{ quote.deviceLabel }}</span></div>
           <div v-if="quote.capacityLabel" class="iqt-srow"><span>Capacity</span><span>{{ quote.capacityLabel }}</span></div>
-          <div class="iqt-srow"><span>Issue</span><span>{{ quote.issueLabel }}</span></div>
+          <div v-if="quote.issueLabel" class="iqt-srow"><span>Issue</span><span>{{ quote.issueLabel }}</span></div>
           <div class="iqt-srow"><span>Service</span><span>{{ quote.urgencyLabel }}</span></div>
         </div>
 
