@@ -419,18 +419,24 @@ const progressIndex = computed(() => {
         <h3 class="iqt-q">Does your iMac have a Fusion Drive or a single drive?</h3>
         <p class="iqt-hint">A Fusion Drive combines a traditional hard drive (HDD) and a solid-state drive (SSD) into one volume. Most iMacs from 2012–2019 offered this option. If unsure, select Single Drive.</p>
         <div class="iqt-grid g2">
-          <button class="iqt-card iqt-cover-card" @click="pickImacDriveType('single')">
-            <span class="iqt-icon">💽</span>
+          <button class="iqt-card iqt-drive-type-card" @click="pickImacDriveType('single')">
+            <div class="iqt-drive-imgs">
+              <img src="/service-hdd-new-nobg.webp" alt="Hard Drive" class="iqt-drive-img" />
+            </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Single Drive</span>
               <span class="iqt-csub">One HDD or one SSD (standard setup)</span>
             </div>
           </button>
-          <button class="iqt-card iqt-cover-card" @click="pickImacDriveType('fusion')">
-            <span class="iqt-icon">🔀</span>
+          <button class="iqt-card iqt-drive-type-card" @click="pickImacDriveType('fusion')">
+            <div class="iqt-drive-imgs">
+              <img src="/service-hdd-new-nobg.webp" alt="Hard Drive" class="iqt-drive-img" />
+              <span class="iqt-drive-plus">+</span>
+              <img src="/service-ssd-new-nobg.webp" alt="NVMe SSD" class="iqt-drive-img" />
+            </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Fusion Drive</span>
-              <span class="iqt-csub">Combined HDD + SSD — requires Fusion Drive rebuild</span>
+              <span class="iqt-csub">HDD + NVMe SSD combined — requires Fusion Drive rebuild</span>
             </div>
           </button>
         </div>
@@ -896,6 +902,10 @@ const progressIndex = computed(() => {
 }
 .iqt-cover-card { padding: 24px 18px; }
 .iqt-cap-card   { padding: 22px 12px; }
+.iqt-drive-type-card { flex-direction: column; gap: 14px; padding: 22px 18px; }
+.iqt-drive-imgs { display: flex; align-items: center; gap: 8px; justify-content: center; height: 64px; }
+.iqt-drive-img  { height: 56px; width: auto; object-fit: contain; }
+.iqt-drive-plus { font-size: 1.4rem; font-weight: 700; color: var(--color-gold, #F5C842); }
 
 .iqt-icon     { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
 .iqt-clabel   { font-size: 0.88rem; font-weight: 700; color: #fff; }
