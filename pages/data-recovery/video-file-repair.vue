@@ -1,60 +1,145 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Video File Repair & Recovery — Five Star Data Recovery',
-  description: 'When you need video file repair, it’s not just about fixing a single file—you’re trusting us with your entire storage device to ensure the highest chance of suc'
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Emily S." },
+                "datePublished": "2024-11-20",
+                "reviewBody": "I thought I had lost all the footage from my sister's wedding after the memory card got corrupted. Five Star Data Recovery not only recovered the files, but they repaired the video so it actually played without glitches. Total lifesavers!",
+                "name": "Video File Repair Success",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$300 - $950"
+          },
+          {
+            "@type": "Service",
+            "name": "Video File Repair Services",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Professional video file repair for corrupted, damaged, and unplayable video footage. Supports MP4, MOV, MXF, R3D, BRAW, ProRes, ARRI, RED, and more. Flat-rate pricing, No Data No Charge. Serving Glendale, Los Angeles, and nationwide."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "Video File Repair", "item": "https://www.fivestardatarecovery.com/data-recovery/video-file-repair/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "What causes video files to become damaged or corrupted?", "acceptedAnswer": { "@type": "Answer", "text": "Video files can be damaged due to sudden power loss, system crashes, incomplete transfers, storage failure, or issues with the recording device. File header corruption, missing metadata, and interrupted write processes are all common culprits." } },
+              { "@type": "Question", "name": "What should I do if my video files are corrupted?", "acceptedAnswer": { "@type": "Answer", "text": "The most important first step is to avoid working directly on the original device. Instead, perform a sector-level clone of the entire storage device where the damaged video files were stored. Once the cloning is complete, all repair or recovery attempts should be done on the cloned copy—not the original." } },
+              { "@type": "Question", "name": "Can my video files still be repaired if I've already used First Aid or CHKDSK?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in many cases we can still repair your video files even after First Aid or CHKDSK has been run. However, the outcome depends on what those utilities did to the file system. CHKDSK is more aggressive and can overwrite key file structures. If you've already run either tool, stop all further attempts and bring the drive to us for an evaluation." } },
+              { "@type": "Question", "name": "Can you recover and repair videos from a RAID or NAS system?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We first safely image each drive in the array, perform a virtual RAID reconstruction, scan the entire array at sector level, then repair the damaged video files using specialized tools. We support RAID 0, 5, 6, 10, and custom NAS setups." } },
+              { "@type": "Question", "name": "Can you repair professional camera video files like ARRI or RED footage?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We frequently repair high-bitrate professional footage from ARRI, RED, Canon C-series, Sony FS, and Blackmagic cameras. These formats often contain complex metadata that must be reconstructed accurately for successful playback." } },
+              { "@type": "Question", "name": "What types of video files can you repair?", "acceptedAnswer": { "@type": "Answer", "text": "We repair .mov, .mp4, .mxf, .avi, .mts, .m2ts, .r3d, and .braw, as well as professional video formats from ARRI, RED, Sony, Canon, and Blackmagic cameras." } },
+              { "@type": "Question", "name": "Can you recover deleted video files and repair them?", "acceptedAnswer": { "@type": "Answer", "text": "In some cases, yes. If the deleted video files are still intact on the drive and have not been overwritten, we may be able to recover them. However, deleted file recovery is not covered under our No Data, No Charge policy. Stop using the device immediately and contact us before attempting any DIY recovery." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
-const issues = [
-  { icon: '🔌', title: 'Power failures during recording or file transfer', text: '' },
-  { icon: '💾', title: 'Camera or device crashes', text: '' },
-  { icon: '💾', title: 'Improper ejection of external drives or SD cards', text: '' },
-  { icon: '⚙️', title: 'File system corruption on the storage device', text: '' },
+useSeoMeta({
+  title: 'Video File Repair Service - Corrupted & Damaged Video Repair',
+  ogTitle: 'Video File Repair Service - Corrupted & Damaged Video Repair',
+  description: 'Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.',
+  ogDescription: 'Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.',
+})
+
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
 
-const causesIntro = ''
-const causesOutro = ''
-const causes = [
-  'Power failures during recording or file transfer',
-  'Camera or device crashes',
-  'Improper ejection of external drives or SD cards',
-  'File system corruption on the storage device',
-  'Bad sectors or read errors on hard drives, SSDs, and external RAID systems',
-  'Incomplete file saving due to interrupted recording sessions',
+const reviews = [
+  {
+    text: "I thought I had lost all the footage from my sister's wedding after the memory card got corrupted. Five Star Data Recovery not only recovered the files, but they repaired the video so it actually played without glitches. Total lifesavers!",
+    name: 'Emily S.',
+    location: 'Los Angeles, CA',
+  },
+  {
+    text: "We needed to repair several security camera files that wouldn't open after a power outage. These guys knew exactly what to do. The turnaround time was fast and they kept everything private—very professional.",
+    name: 'Raj P.',
+    location: 'San Jose, CA',
+  },
+  {
+    text: "We had several .mxf video files from a Canon C300 that got corrupted after a drive failure during a commercial shoot. I was worried the entire project was lost. Five Star Data Recovery was able to repair every file, and the footage came back clean and usable. Highly recommended for anyone in the film or production world.",
+    name: 'Daniel K.',
+    location: 'Austin, TX',
+  },
 ]
 
-const processIntro = ''
-const steps: { num: string; title: string; text: string }[] = []
-
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes: string[] = []
-
-const tipIntro = ''
-const tipOutro = ''
-const tips: string[] = []
-
-const d2Texts: string[] = []
-const d3Texts: string[] = []
-const d4Texts: string[] = []
-
-const midBody = [
-  'Before attempting any repair, we require the entire storage device (not just individual files). This is critical for preserving data integrity and preventing further corruption. Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive—this ensures your source data remains untouched and safe throughout the entire recovery and repair process.',
-  'Once the structural issues are identified, we carefully rebuild and repair each video file while preserving original resolution, bitrate, frame rate, and codec specifications. Whether it\'s a .MP4, .MOV, .MXF, or RAW video format, our priority is to maintain original quality during the repair.',
-  'Before delivering your repaired files, we fully test and verify that each video plays back correctly from start to finish. We check both video and audio streams for integrity.',
-  'Finally, your repaired video files are saved to a new external drive (either provided by you or available for purchase from us). If needed, we can also provide a detailed list of repaired files for your review before delivery.',
-  'Whether it\'s surveillance footage, wedding videos, or professional film files, our team specializes in repairing damaged, unplayable, or corrupted video files—quickly and discreetly.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Video File Repair & Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional video file repair & recovery — and get back what matters most.'
-
-const reviews = []
 const faqs = [
+  {
+    q: 'What causes video files to become damaged or corrupted?',
+    a: 'Video files can be damaged due to <strong>sudden power loss, system crashes, incomplete transfers, storage failure</strong>, or issues with the recording device. File header corruption, missing metadata, and interrupted write processes are all common culprits.',
+  },
+  {
+    q: 'What should I do if my video files are corrupted?',
+    a: 'The most important first step is to <strong>avoid working directly on the original device</strong>. Instead, perform a <strong>sector-level clone</strong> of the entire storage device where the damaged video files were stored. This creates an exact bit-by-bit copy, preserving the original data. Once cloning is complete, all repair or recovery attempts should be done on the cloned copy—not the original. <strong>Clone first. Only work from the clone. Preserve the original device as-is.</strong>',
+  },
+  {
+    q: "Can my video files still be repaired if I've already used First Aid (Mac) or CHKDSK (Windows)?",
+    a: 'Yes, in many cases we can still repair your video files even after First Aid or CHKDSK has been run. However, <strong>CHKDSK is more aggressive</strong> — it can sometimes relocate, truncate, or zero out sectors, potentially overwriting key video data. If you\'ve already run either tool, <strong>stop all further attempts</strong> and bring the drive to us for an evaluation as soon as possible.',
+  },
+  {
+    q: 'Can you recover and repair videos from a RAID or NAS system?',
+    a: 'Yes. We first safely <strong>image (clone) each individual drive</strong> in the array, then perform a <strong>virtual RAID reconstruction</strong>, scan the entire array at sector level for fragmented video files, and then proceed with the actual video file repair. Whether you\'re dealing with <strong>RAID 0, 5, 6, 10</strong>, or a custom NAS setup, our engineers are equipped to handle the complexities involved.',
+  },
+  {
+    q: 'Video files on my RAID are starting to show 0MB capacity — what\'s going on?',
+    a: 'This is usually a sign of <strong>file system corruption, metadata damage, or RAID integrity issues</strong>. The actual video data may still exist, but the system can no longer locate or interpret the file correctly. <strong>Do not run CHKDSK, disk repair tools, or file recovery software</strong> that writes to the array. Contact us immediately — early action gives you the best chance of saving your footage.',
+  },
+  {
+    q: 'Can you repair professional camera video files like ARRI or RED footage?',
+    a: 'Absolutely. We frequently repair high-bitrate professional footage from <strong>ARRI, RED, Canon C-series, Sony FS, and Blackmagic</strong> cameras. These formats contain complex metadata that must be reconstructed accurately for successful playback.',
+  },
+  {
+    q: 'What types of video files can you repair?',
+    a: 'We repair a wide variety of formats including <strong>.mov, .mp4, .mxf, .avi, .mts, .m2ts, .r3d, and .braw</strong>, as well as professional video formats from ARRI, RED, Sony, Canon, and Blackmagic cameras.',
+  },
+  {
+    q: 'Do you offer repair services for partially recovered or fragmented video files?',
+    a: 'Yes. We specialize in repairing <strong>fragmented, incomplete, or partially recovered video files</strong> — especially those extracted during data recovery. However, for the best results, we strongly prefer to work with the <strong>original storage device</strong> rather than just the damaged file. Having access to the original media gives us the highest likelihood of a successful reconstruction.',
+  },
+  {
+    q: 'Can you recover deleted video files and repair them?',
+    a: 'In some cases, yes — if the deleted files are still intact and have not been overwritten. However, this is <strong>not covered under our No Data, No Charge policy</strong>. If TRIM is active (common on SSDs and modern systems), deleted sectors may be wiped instantly. Stop using the device immediately and contact us before attempting any DIY recovery.',
+  },
+  {
+    q: 'Can you combine multiple file fragments into a single working video?',
+    a: 'Yes. If your footage was split into multiple segments due to corruption or incomplete recording, we can often <strong>reconstruct the original video by stitching the fragments back together</strong>. This is especially common with professional codecs like <strong>ProRes, MXF, RED, and ARRI</strong>, which rely on internal structures like GOP sequences, metadata tables, and codec-specific headers that must be carefully reassembled.',
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -66,239 +151,217 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="Video File Repair & Recovery"
-      subtitle="Get Your Data Back In No Time."
-      description="When you need video file repair, it’s not just about fixing a single file—you’re trusting us with your entire storage device to ensure the highest chance of success."
-      bgImage="/clean-room-data-recovery-equipment-glendale-ca.jpg"
+      title="Video File Repair"
+      subtitle="Fix Corrupted & Damaged Video Files"
+      description="At Five Star Data Recovery, we specialize in <strong>video file repair</strong> for customers facing the nightmare of corrupted, damaged, or unplayable video footage.<br><br>Whether you're a video production company, content creator, or an individual with precious memories on a damaged file, our team has the tools, expertise, and industry-leading technology to <strong>repair damaged video files</strong> and help restore what seemed lost."
+      bgImage="/video-file-repair-hero.webp"
+      :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SECTION 1 — Why Files Get Corrupted + Formats -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Video File Repair & Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">Why Do Video Files Get Corrupted?</h2>
+            <p class="s-body">Video files can become damaged or corrupted for many reasons, including:</p>
+            <ul class="content-list">
+              <li>Power failures during recording or file transfer</li>
+              <li>Camera or device crashes</li>
+              <li>Improper ejection of external drives or SD cards</li>
+              <li>File system corruption on the storage device</li>
+              <li>Bad sectors or read errors on hard drives, SSDs, and external RAID systems</li>
+              <li>Incomplete file saving due to interrupted recording sessions</li>
+            </ul>
           </div>
-        </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
-
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes Video File Repair & Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/clean-room-data-recovery-equipment-glendale-ca.jpg" alt="Video File Repair & Recovery service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
+          <div class="section-img-wrap">
+            <img src="/video-file-repair-service.webp" alt="Video file repair service — corrupted footage recovery" class="section-img" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Why Choose Five Star Data Recovery for Video File Repair?</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Video File Repair & Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/clean-room-data-recovery-equipment-glendale-ca.jpg') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your Video File Repair & Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactVideoFi" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactVideoFi" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactVideoFi" value="text" /> TEXT</label>
-                </div>
-              </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
+    <!-- SECTION 2 — Formats & Cameras -->
     <section class="s-grey">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <div class="formats-grid">
+          <div>
+            <h2 class="s-heading">Common Video Formats We Repair</h2>
+            <ul class="content-list">
+              <li>.MP4</li>
+              <li>.MOV</li>
+              <li>.MXF</li>
+              <li>.AVI</li>
+              <li>.MTS / .M2TS</li>
+              <li>.R3D (RED RAW)</li>
+              <li>.BRAW (Blackmagic RAW)</li>
+              <li>.ProRes</li>
+              <li>.DNxHD / DNxHR</li>
+              <li>.XAVC-S / XAVC-I</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="s-heading">Professional Camera Files We Work With</h2>
+            <ul class="content-list">
+              <li>ARRI ALEXA Series</li>
+              <li>RED DSMC2 / KOMODO / V-RAPTOR</li>
+              <li>Blackmagic URSA Mini Pro / Pocket Cinema 6K/12K</li>
+              <li>Canon EOS C-Series (C200, C300, C500)</li>
+              <li>Sony FS5, FS7, FX3, FX6, FX9, Venice</li>
+              <li>Panasonic GH5 / EVA1 / Varicam</li>
+              <li>DJI Drones</li>
+              <li>GoPro Hero Series and more</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="s-heading">Video Codecs we Specialize in Repairing</h2>
+            <ul class="content-list">
+              <li>ARRIRAW, ProRes 4444 XQ</li>
+              <li>REDCODE RAW (R3D)</li>
+              <li>Blackmagic RAW (BRAW), ProRes</li>
+              <li>Canon XF-AVC, Cinema RAW Light</li>
+              <li>XAVC-I, XAVC-L, RAW via SDI</li>
+              <li>AVC-Intra, ProRes RAW</li>
+              <li>XDCAM DNxHD / DNxHR</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — Recovery Process -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Our Proven Video File Repair Process</h2>
+        <p class="s-body">When you need video file repair, it's not just about fixing a single file—you're trusting us with your entire storage device to ensure the highest chance of success.</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">Full Drive Imaging and Cloning</h3>
+              <p class="step-body">Before attempting any repair, we require the entire storage device (not just individual files). Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">Deep Scan for Damaged and Fragmented Files</h3>
+              <p class="step-body">Our engineers run specialized data scans across the entire clone to locate not just obvious files, but also hidden, lost, or fragmented video file segments. This step is especially critical for drives showing 0 KB files or corrupt folder structures.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">File Structure Analysis</h3>
+              <p class="step-body">We perform a deep internal analysis of each file's structure — inspecting and rebuilding file headers and footers, video frame indexes, metadata tables, codec information, and missing moov atoms or corrupted containers. We use proprietary software and manual hex-level editing to fix corruption at the binary level.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3 class="step-title">Video File Integrity Repair</h3>
+              <p class="step-body">We carefully rebuild and repair each video file while preserving original resolution, bitrate, frame rate, and codec specifications. Whether it's a .MP4, .MOV, .MXF, or RAW video format, our priority is to maintain original quality during the repair.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div>
+              <h3 class="step-title">Quality Validation</h3>
+              <p class="step-body">Before delivering your repaired files, we fully test and verify that each video plays back correctly from start to finish. We check both video and audio streams for integrity.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">6</div>
+            <div>
+              <h3 class="step-title">Secure Data Delivery</h3>
+              <p class="step-body">Your repaired video files are saved to a new external drive (either provided by you or available for purchase from us). We can also provide a detailed list of repaired files for your review before delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — Case Study -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Video File Repair Case Study: 72TB G-Shuttle Recovery</h2>
+        <p class="s-body"><strong>Introduction to Case:</strong> One of our most challenging and rewarding video file repair projects came from a large production company based in Los Angeles. The company had just finished a 5-day commercial shoot, capturing RAW footage from multiple RED and Blackmagic cameras onto a 72TB G-Shuttle RAID storage system.</p>
+        <p class="s-body"><strong>The Problem:</strong> When the production team attempted to access their footage, every video file displayed as 0 bytes, and none of the critical shoot footage could be played or opened. To make matters worse, additional files continued to drop to 0 bytes in real time, indicating an escalating issue with the RAID system.</p>
+        <p class="s-body"><strong>Our Solution:</strong> Our engineers performed a sector-level image of the entire 72TB storage system, then conducted an advanced forensic file carving process to locate and reconstruct the missing video files, even though the file system was completely corrupt. After recovering the fragmented RAW video files, we began the video file repair process, reconstructing each damaged video container, metadata block, and frame index manually.</p>
+        <p class="s-body"><strong>The Result:</strong> We successfully repaired all critical video files, maintaining their original quality, resolution, and file structure. Every clip was restored, allowing the production team to meet their delivery deadline without any delays or loss of footage.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — Why Choose Five Star -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Why Choose Five Star Data Recovery for Video File Repair?</h2>
+        <ul class="content-list">
+          <li>Industry-Leading Tools</li>
+          <li>In-House Engineering Team</li>
+          <li>Experience Across Multiple Codecs</li>
+          <li>Over 10+ Years Experience in Video File Repair</li>
+          <li>No Data, No Charge (Most Cases)</li>
+          <li>Expedited Plus Service available for Rush Cases</li>
+          <li>Dedicated Engineer for your case!</li>
+          <li>99% Success Rate</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- SECTION 6 — Secure & Confidential -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Corrupted Video Files? We'll Fix Them — Fast and Secure.</h2>
+        <p class="s-body">Whether it's surveillance footage, wedding videos, or professional film files, our team specializes in repairing damaged, unplayable, or corrupted video files — quickly and discreetly.</p>
+        <ul class="content-list">
+          <li>100% in-house video repair — no third-party labs</li>
+          <li>Recovered videos are securely stored and deleted after delivery</li>
+          <li>NDAs available for confidential or high-profile projects</li>
+          <li>Lab is secured with 24/7 surveillance and restricted access</li>
+        </ul>
+        <p class="s-body">No matter how critical the footage, we treat every recovery with the highest level of care and discretion. Contact us today to get your video files back.</p>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="From wedding footage on a corrupted SD card to 72TB RED RAW RAID arrays — we've repaired it all. Our engineers work at the binary level to reconstruct headers, frame indexes, and codec metadata so your footage plays back exactly as it was captured."
+      bullet1="MP4, MOV, MXF, R3D, BRAW, ProRes, ARRI, RED, and more"
+      bullet2="Sector-level clone first — your originals are never touched"
+      bullet3="No Data, No Charge (most cases)"
+      closing="Don't attempt DIY repairs on corrupted footage — one wrong move can destroy the file permanently. Fill out the form for a free evaluation."
+      bgImage="/video-file-repair-hero.webp"
+    />
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band contact-band-bg">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Start Your Professional Video File Repair Now!</h2>
+        </div>
+        <p class="contact-body-text">Don't risk losing irreplaceable footage by attempting risky DIY fixes. Let the professionals at Five Star Data Recovery provide you with a safe, reliable, and expert video file repair service.</p>
+        <ul class="contact-bullets">
+          <li>Call us at (818) 272-8866</li>
+          <li>Fill out our online quote request form</li>
+          <li>Visit our lab in Glendale, CA</li>
+          <li>Free nationwide shipping for all mail-in customers</li>
+        </ul>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
@@ -306,39 +369,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Video File Repair & Recovery</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -350,131 +380,39 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey { background: #f4f7fc; padding: 72px 0; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+.formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
+.process-step:last-child { border-bottom: none; }
+.step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/video-file-repair-service.webp') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
-}
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+@media (max-width: 900px) { .formats-grid { grid-template-columns: 1fr; } .two-col-layout { grid-template-columns: 1fr; } }
 </style>
