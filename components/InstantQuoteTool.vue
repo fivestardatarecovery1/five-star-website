@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'laptop-type' | 'desktop-os' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -14,6 +14,7 @@ const sel = reactive({
   coverOpened: null as boolean | null,
   aio: null as boolean | null,
   boardRepair: null as boolean | null,
+  fusionDrive: false,
   urgency: '',
 })
 
@@ -94,11 +95,20 @@ const urgencyOptions = [
 function getBasePrice(): number | null {
   const { device, capacity, issue } = sel
   const isAppleLaptop = device === 'laptop-apple-old' || device === 'laptop-apple-new'
-  if (!device || (!issue && !isAppleLaptop)) return null
+  const skipIssue = isAppleLaptop || sel.fusionDrive
+  if (!device || (!issue && !skipIssue)) return null
   if (CALL_DEVICES.includes(device)) return null
 
   const isMech = issue === 'mechanical'
 
+  // Fusion Drive iMac pricing
+  if (device === 'desktop-mac' && sel.fusionDrive) {
+    if (!capacity) return null
+    const hddFee = ['1tb', '2tb'].includes(capacity) ? 300 : 500
+    const ssdFee = 300   // SSD portion of fusion is always <2TB
+    const rebuildFee = 350
+    return hddFee + ssdFee + rebuildFee
+  }
   if (device === 'sata' || device === 'win-laptop' || device === 'desktop' || device === 'desktop-mac') {
     if (!capacity) return null
     if (isMech) return (capacity === '8to12' || capacity === '12plus') ? 1800 : 950
@@ -151,15 +161,16 @@ const quote = computed(() => {
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
     coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee, boardRepairFee, appleDeposit,
+    isFusion: sel.fusionDrive,
     deviceLabel: (() => {
       if (sel.device === 'laptop-apple-old') return 'Apple MacBook (2015 or Earlier)'
       if (sel.device === 'laptop-apple-new') return 'Apple MacBook (2016 or Newer)'
       if (sel.device === 'win-laptop')       return 'Windows Laptop'
       if (sel.device === 'desktop')          return 'Windows Desktop Computer'
-      if (sel.device === 'desktop-mac')      return 'Mac Desktop (iMac)'
+      if (sel.device === 'desktop-mac')      return sel.fusionDrive ? 'iMac (Fusion Drive)' : 'Mac Desktop (iMac)'
       return deviceOptions.find(d => d.id === sel.device)?.label ?? sel.device
     })(),
-    capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
+    capacityLabel: sel.fusionDrive ? sel.capacity?.toUpperCase().replace('TB',' TB') : capacityOptions.find(c => c.id === sel.capacity)?.label,
     issueLabel: sel.issue ? issueOptions.find(i => i.id === sel.issue)?.label : null,
     urgencyLabel:  urg.label,
   }
@@ -172,7 +183,7 @@ function goTo(s: Step, delay = 220) {
 }
 
 function pickDevice(id: string) {
-  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.urgency = ''
+  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.fusionDrive = false; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
   else if (id === 'laptop') goTo('laptop-type')
@@ -183,11 +194,21 @@ function pickLaptopType(type: string) {
   if (type === 'desktop') { sel.device = 'desktop'; goTo('desktop-os') }
   else { sel.device = 'laptop'; goTo('laptop-os') }
 }
+function pickImacDriveType(type: string) {
+  if (type === 'fusion') { sel.fusionDrive = true; goTo('fusion-size') }
+  else { sel.fusionDrive = false; goTo('capacity') }
+}
+function pickFusionSize(size: string) {
+  sel.capacity = size
+  sel.aio = true          // auto-apply $200 disassembly
+  sel.coverOpened = false // skip cover question
+  goTo('encrypt')
+}
 function pickDesktopOS(os: string) {
   // Both Windows and Mac desktops use the same capacity-based pricing.
   // iMac is always AIO — we can note this but let the AIO step confirm.
-  sel.device = os === 'mac' ? 'desktop-mac' : 'desktop'
-  goTo('capacity')
+  if (os === 'mac') { sel.device = 'desktop-mac'; goTo('imac-drive-type') }
+  else { sel.device = 'desktop'; goTo('capacity') }
 }
 function pickLaptopOS(os: string) {
   if (os === 'apple') { sel.device = 'laptop-apple-new'; goTo('apple-year') }
@@ -220,7 +241,9 @@ function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
   if (s === 'laptop-type') goTo('device', 0)
-  else if (s === 'desktop-os') goTo('laptop-type', 0)
+  else if (s === 'desktop-os')      goTo('laptop-type', 0)
+  else if (s === 'imac-drive-type') goTo('desktop-os', 0)
+  else if (s === 'fusion-size')     goTo('imac-drive-type', 0)
   else if (s === 'laptop-os')  goTo('laptop-type', 0)
   else if (s === 'apple-year')  goTo('laptop-os', 0)
   else if (s === 'board-repair') goTo('apple-year', 0)
@@ -231,7 +254,10 @@ function back() {
     const wasDesktop = sel.device === 'desktop' || sel.device === 'desktop-mac'
     if (wasExternal) goTo('brand', 0)
     else if (wasWinLaptop) goTo('laptop-os', 0)
-    else if (wasDesktop) goTo('desktop-os', 0)
+    else if (wasDesktop) {
+      if (sel.device === 'desktop-mac') goTo('imac-drive-type', 0)
+      else goTo('desktop-os', 0)
+    }
     else goTo('device', 0)
   }
   else if (s === 'issue') {
@@ -244,13 +270,15 @@ function back() {
     const isAppleNew = sel.device === 'laptop-apple-new'
     if (isAppleOld) goTo('apple-year', 0)
     else if (isAppleNew) goTo('board-repair', 0)
+    else if (sel.fusionDrive) goTo('fusion-size', 0)
     else goTo('issue', 0)
   }
   else if (s === 'cover')   goTo('encrypt', 0)
   else if (s === 'aio')     goTo('cover', 0)
   else if (s === 'urgency') {
     const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-    if (sel.device === 'desktop' || sel.device === 'desktop-mac') goTo('aio', 0)
+    if (sel.fusionDrive) goTo('encrypt', 0)
+    else if (sel.device === 'desktop' || sel.device === 'desktop-mac') goTo('aio', 0)
     else if (isApple) goTo('encrypt', 0)
     else goTo('cover', 0)
   }
@@ -261,7 +289,7 @@ function reset() {
   animating.value = true
   setTimeout(() => {
     currentStep.value = 'device'
-    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.urgency = ''
+    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.fusionDrive = false; sel.urgency = ''
     animating.value = false
   }, 180)
 }
@@ -384,6 +412,47 @@ const progressIndex = computed(() => {
         <button class="iqt-back" @click="back">← Back</button>
       </div>
 
+
+
+      <!-- STEP: iMac Drive Type -->
+      <div v-else-if="currentStep === 'imac-drive-type'">
+        <h3 class="iqt-q">Does your iMac have a Fusion Drive or a single drive?</h3>
+        <p class="iqt-hint">A Fusion Drive combines a traditional hard drive (HDD) and a solid-state drive (SSD) into one volume. Most iMacs from 2012–2019 offered this option. If unsure, select Single Drive.</p>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-cover-card" @click="pickImacDriveType('single')">
+            <span class="iqt-icon">💽</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Single Drive</span>
+              <span class="iqt-csub">One HDD or one SSD (standard setup)</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-cover-card" @click="pickImacDriveType('fusion')">
+            <span class="iqt-icon">🔀</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Fusion Drive</span>
+              <span class="iqt-csub">Combined HDD + SSD — requires Fusion Drive rebuild</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
+      <!-- STEP: Fusion Drive HDD Size -->
+      <div v-else-if="currentStep === 'fusion-size'">
+        <h3 class="iqt-q">What is the size of the hard drive in your Fusion Drive?</h3>
+        <p class="iqt-hint">This refers to the HDD (spinning drive) portion of the Fusion Drive, not the SSD. Common sizes are 1TB–3TB for most iMacs.</p>
+        <div class="iqt-grid g3">
+          <button v-for="size in ['1tb','2tb','3tb','4tb','5tb']" :key="size"
+            class="iqt-card iqt-cap-card"
+            :class="{ selected: sel.capacity === size }"
+            @click="pickFusionSize(size)"
+          >
+            <span class="iqt-icon">💾</span>
+            <span class="iqt-clabel">{{ size.replace('tb','TB').toUpperCase() }}</span>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
 
       <!-- STEP: Desktop OS -->
       <div v-else-if="currentStep === 'desktop-os'">
@@ -665,7 +734,7 @@ const progressIndex = computed(() => {
             <span class="iqt-bamount">${{ quote.coverFee.toLocaleString() }}</span>
           </div>
           <div v-if="quote.aioFee" class="iqt-brow upfront">
-            <span>All-in-One Removal Fee <em>(non-refundable)</em></span>
+            <span>{{ quote.isFusion ? 'iMac Disassembly Fee' : 'All-in-One Removal Fee' }} <em>(non-refundable)</em></span>
             <span class="iqt-bamount">${{ quote.aioFee.toLocaleString() }}</span>
           </div>
           <div v-if="quote.urgFee" class="iqt-brow upfront">
@@ -696,6 +765,9 @@ const progressIndex = computed(() => {
           <div class="iqt-srow"><span>Service</span><span>{{ quote.urgencyLabel }}</span></div>
         </div>
 
+        <div v-if="quote.isFusion" class="iqt-note warn" style="margin-bottom:14px;">
+          ⚠️ This quote assumes both drives (HDD + SSD) have <strong>logical issues only</strong> and no mechanical failure. If a mechanical issue is found during our free diagnostic, we will contact you with an updated quote before any work begins. You are never charged without your approval.
+        </div>
         <div class="iqt-guarantee">
           <template v-if="quote.upfront > 0 || quote.appleDeposit > 0">
             🛡 <strong>No Data, No Charge</strong> — You only pay the recovery balance if we successfully recover your data.<span v-if="quote.appleDeposit > 0"> Your ${{ quote.appleDeposit.toLocaleString() }} deposit is fully refundable if recovery is unsuccessful.</span><span v-if="quote.upfront > 0"> The ${{ quote.upfront.toLocaleString() }} in non-refundable fees is retained regardless of outcome.</span>
