@@ -740,7 +740,7 @@ const progressIndex = computed(() => {
             <span class="iqt-bamount">${{ quote.coverFee.toLocaleString() }}</span>
           </div>
           <div v-if="quote.aioFee" class="iqt-brow upfront">
-            <span>{{ quote.isFusion ? 'iMac Disassembly Fee' : 'All-in-One Removal Fee' }} <em>(non-refundable)</em></span>
+            <span>{{ quote.isFusion ? 'iMac Disassembly Fee' : 'Hard Drive Removal Fee' }} <em>(labor fee for drive removal — not a recovery fee, non-refundable)</em></span>
             <span class="iqt-bamount">${{ quote.aioFee.toLocaleString() }}</span>
           </div>
           <div v-if="quote.urgFee" class="iqt-brow upfront">
@@ -776,10 +776,10 @@ const progressIndex = computed(() => {
         </div>
         <div class="iqt-guarantee">
           <template v-if="quote.upfront > 0 || quote.appleDeposit > 0">
-            🛡 <strong>No Data, No Charge</strong> — You only pay the recovery balance if we successfully recover your data.<span v-if="quote.appleDeposit > 0"> Your ${{ quote.appleDeposit.toLocaleString() }} deposit is fully refundable if recovery is unsuccessful.</span><span v-if="quote.upfront > 0"> The ${{ quote.upfront.toLocaleString() }} in non-refundable fees is retained regardless of outcome.</span>
+            🛡 <strong>No Data, No Charge</strong> — You only pay the recovery fee if we successfully recover your data.<span v-if="quote.appleDeposit > 0"> Your ${{ quote.appleDeposit.toLocaleString() }} deposit is fully refundable if recovery is unsuccessful.</span><span v-if="quote.aioFee > 0"> The {{ quote.isFusion ? 'iMac disassembly' : 'hard drive removal' }} fee (${{ quote.aioFee }}) covers the labor to physically open and access the drive — this is a hardware labor fee, not a data recovery fee, and is non-refundable regardless of outcome.</span><span v-if="quote.upfront - (quote.aioFee || 0) > 0"> Other non-refundable fees totaling ${{ (quote.upfront - (quote.aioFee || 0)).toLocaleString() }} also apply at check-in.</span>
           </template>
           <template v-else>
-            🛡 <strong>No Data, No Charge</strong> — You only pay if we successfully recover your data. If recovery is unsuccessful, you owe nothing. Please note: cases with expedited service, a previously opened drive cover, or certain deposit requirements may include non-refundable upfront fees.
+            🛡 <strong>No Data, No Charge</strong> — You only pay if we successfully recover your data. If recovery is unsuccessful, you owe nothing for the recovery. Please note: disassembly/removal fees (where applicable) are hardware labor fees — not recovery fees — and are non-refundable. Expedited service fees, cover-open fees, and certain deposits are also non-refundable.
           </template>
         </div>
 
