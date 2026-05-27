@@ -119,7 +119,7 @@ const faqs = [
   },
   {
     q: 'Can you recover data from NAS drives with physical damage?',
-    a: '<strong>Yes</strong>, data can often be recovered from physically damaged NAS drives, depending on the severity of the issue. Common symptoms like clicking, beeping, or failure to spin indicate mechanical problems such as failed read/write heads or motor issues. In these cases, the drive must be handled in a <strong>clean room environment</strong>.<br><br>Powering off the NAS immediately is crucial — continuing to use the system can cause further damage. Once the damaged drive is repaired, we create a sector-by-sector clone, along with clones of all other drives in the array. Only then do we begin the logical RAID reconstruction process using the cloned images — <strong>never the original drives</strong>.',
+    a: 'Yes, data can often be recovered from physically damaged NAS drives, depending on the severity of the issue. Common symptoms like clicking, beeping, or failure to spin typically indicate mechanical problems such as failed read/write heads or motor issues. In these cases, the drive must be handled in a <strong>clean room environment by professionals</strong>.<br><br>Powering off the NAS immediately is crucial—continuing to use the system can cause further damage and reduce the chances of recovery. Once the damaged drive is successfully repaired, we create a sector-by-sector clone of it, along with clones of all other drives in the array. Only then do we begin the logical RAID reconstruction process using the cloned images—<strong>never the original drives</strong>. This ensures the safest and most accurate recovery of your data.'
   },
   {
     q: 'How long does NAS data recovery take?',
