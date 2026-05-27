@@ -57,7 +57,7 @@ const ssdIssueOptions = [
   {
     id: 'ssd-not-recognized',
     label: 'Not Recognized At All',
-    sub: 'Drive is completely undetected — does not show up on any computer',
+    sub: 'Drive is not detected by BIOS, Disk Utility, or any computer — completely dead',
     icon: '❌',
   },
   {
