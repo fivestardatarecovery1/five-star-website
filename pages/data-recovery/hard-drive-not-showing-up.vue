@@ -1,81 +1,138 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Hard Drive Not Showing Up Recovery — Five Star Data Recovery',
-  description: 'A hard drive that suddenly disappears from your computer is frustrating—and scary if you think you’ve lost important files. Whether it’s an internal or external'
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "priceRange": "$300 - $950"
+          },
+          {
+            "@type": "Service",
+            "name": "Hard Drive Not Showing Up Data Recovery",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/hard-drive-not-showing-up/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Professional data recovery for hard drives not showing up on Windows or Mac. Five Star Data Recovery diagnoses and recovers data from unrecognized, unallocated, and failed drives. Free diagnostic, flat-rate pricing."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "Hard Drive Not Showing Up", "item": "https://www.fivestardatarecovery.com/data-recovery/hard-drive-not-showing-up/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Can a failed hard drive PCB cause the drive to not show up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A failed printed circuit board (PCB) is a common cause of a hard drive not being recognized. PCB failures can result from power surges or electrical shorts and typically require component-level repair or replacement to restore functionality." } },
+              { "@type": "Question", "name": "Does firmware corruption cause hard drives to disappear from the system?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Firmware corruption can prevent the drive from initializing correctly, making it invisible to both the BIOS and the operating system. Specialized tools and professional recovery labs are required to fix firmware issues safely." } },
+              { "@type": "Question", "name": "Will a hard drive not showing up on one computer still work on another?", "acceptedAnswer": { "@type": "Answer", "text": "Possibly. Sometimes the issue lies with the original computer's USB port, SATA port, or power supply. Testing the drive on a different system can help rule out host-side problems—but if the drive still doesn't show up, it likely needs professional evaluation." } },
+              { "@type": "Question", "name": "Can file system corruption prevent my hard drive from showing up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Severe file system corruption can make the drive appear unallocated, raw, or invisible in the OS. In such cases, data recovery software or professional services may be required to extract the data without making things worse." } },
+              { "@type": "Question", "name": "Is it safe to run CHKDSK or Disk Utility First Aid on a drive that isn't showing up?", "acceptedAnswer": { "@type": "Answer", "text": "No. Running CHKDSK (on Windows) or First Aid (on Mac) on an unstable or failing drive can cause further corruption or permanent data loss. These tools attempt to repair file system errors, but in doing so, they can overwrite damaged sectors or delete critical file structures. This can make the data unrecoverable—even by professional data recovery labs. If your drive isn't showing up, it's best to avoid any repair utilities and contact a recovery expert first." } },
+              { "@type": "Question", "name": "Can a damaged USB enclosure prevent an external hard drive from being detected?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. In many external drives, the USB-to-SATA bridge board inside the enclosure can fail. Removing the drive from the enclosure and connecting it directly via SATA can help determine if the issue is with the enclosure or the drive itself. However, if your external drive is a Western Digital, SanDisk, or G-Drive, do not attempt to remove it from the enclosure yourself. Many of these drives have the USB 3.0 connector permanently soldered directly onto the drive's PCB, and they often include built-in hardware encryption that is tied to that specific board. Always consult a professional data recovery service first." } },
+              { "@type": "Question", "name": "How do I know if my hard drive not showing up is due to physical damage?", "acceptedAnswer": { "@type": "Answer", "text": "Common signs of physical damage include clicking, buzzing, grinding sounds, or the drive remaining completely silent. If your drive shows any of these symptoms, stop all DIY attempts and contact a professional data recovery lab." } },
+              { "@type": "Question", "name": "Can overheating cause a hard drive to stop showing up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Prolonged exposure to high temperatures can damage the internal components of a hard drive, leading to immediate failure or intermittent recognition issues." } },
+              { "@type": "Question", "name": "What's the difference between a hard drive not showing up in BIOS vs. not showing up in Windows?", "acceptedAnswer": { "@type": "Answer", "text": "If the drive doesn't show in BIOS, it suggests a hardware-level issue (such as PCB failure or firmware corruption). If the drive shows in BIOS but not in Windows, it's often a file system issue, driver problem, or logical failure." } },
+              { "@type": "Question", "name": "Can bad sectors prevent my hard drive from being recognized at all?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Severe bad sector damage can make the drive unresponsive or prevent it from mounting. In these cases, sector-by-sector imaging tools used by professional data recovery engineers are often the safest recovery option." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
-const issues = [
-  { icon: '💾', title: 'Loose or faulty USB port', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
-  { icon: '💥', title: 'A damaged file system', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
-  { icon: '🔌', title: 'Power issues or bad cables', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
-  { icon: '⚠️', title: 'Errors with the operating system', text: 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.' },
-]
+useSeoMeta({
+  title: 'Hard Drive Not Showing Up - Five Star Data Recovery',
+  ogTitle: 'Hard Drive Not Showing Up - Five Star Data Recovery',
+  description: 'Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.',
+  ogDescription: 'Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.',
+})
 
-const causesIntro = 'Several reasons exist why a hard drive might not appear on your computer. Sometimes it\'s a minor connection issue. Other times, it could point to physical damage or corruption inside the drive. Understanding what might be happening helps you know what to try—and what to leave alone.Common causes include:'
-const causesOutro = 'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.'
-const causes = [
-  'Loose or faulty USB port',
-  'A damaged file system',
-  'Power issues or bad cables',
-  'Errors with the operating system',
-  'Mechanical failure inside the drive',
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
-
-const processIntro = 'Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.'
-const steps = [
-  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
-  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
-  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
-  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
-  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
-]
-
-const driveTypesIntro = 'Here are a few real cases we’ve handled that started with a hard drive not being recognized:'
-const driveTypesOutro = 'Even with good habits, failure can still happen—but early detection and fast action can prevent permanent data loss.'
-const driveTypes = [
-  'A photographer dropped a portable external drive while traveling. It didn’t appear on their MacBook afterward. We diagnosed internal head damage and performed a cleanroom recovery to restore over 10,000 RAW image files.',
-  'A college student’s Windows laptop wouldn’t boot, and their external backup didn’t appear in File Explorer. We found file system corruption and safely recovered their documents and semester projects.',
-  'A business client brought in a flash-based external storage unit that failed after a system update. The device wouldn’t mount, but we imaged the drive and recovered customer records that we would have permanently lost.',
-]
-
-const tipIntro = 'You can rule out simple problems with a few safe checks:'
-const tipOutro = 'If your drive is there but shows up as “RAW” or unallocated, that indicates file system corruption.'
-const tips = [
-  'You can rule out simple problems with a few safe checks:1. Check the cables and portsTry a new USB cable and a different USB port. Cables fail more often than you might expect.2. Try a different computerSee if the drive shows up on another system to rule out device-specific issues.3. Restart and check settingsA reboot can reset system detection. Also, open your system settings to ensure the drive hasn’t been disabled.4. Look in system toolsOn Mac: Open Disk Utility',
-  'On Windows: Use Device Manager, Disk Management, or System Information',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'Several reasons exist why a hard drive might not appear on your computer. Sometimes it\'s a minor connection issue. Other times, it could point to physical damage or corruption inside the drive. Understanding what might be happening helps you know what to try—and what to leave alone.Common causes include:',
-  'Whether it’s a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn’t—but your system can’t detect it.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'The file system acts like a map—it tells your computer how to find and access your files. When the file system gets damaged, your files might still remain on the drive, but your computer no longer knows where to find them.',
-]
-
-const contactText = 'If you\'re experiencing issues with your Hard Drive Not Showing Up Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional hard drive not showing up recovery — and get back what matters most.'
 
 const reviews = [
-  { 'text': 'My external hard drive suddenly stopped showing up on my computer, and I couldn’t access any of my files. I contacted Five Star Data Recovery and spoke with Elen, who explained the process clearly and helped me get the drive checked in. Within a few days, they recovered all of my photos and business documents. Their service was fast, professional, and affordable.', 'name': 'Brian K.', 'location': 'Los Angeles, CA' },
-  { 'text': 'My hard drive wasn’t showing up in Disk Management, and I thought my data was gone for good. Five Star Data Recovery was able to diagnose the problem and recover', 'name': '99%', 'location': 'of my files. Their flat-rate pricing and No Data, No Charge policy gave me peace of mind. I’m so glad I found them!"' },
-  { 'text': 'I had a Seagate external hard drive that just stopped appearing on my Mac. Vahan personally reviewed my case and explained that the issue was with the drive’s internal firmware. They recovered everything within a week. The communication and updates were top-notch.', 'name': 'Henry T', 'location': 'Summerlin, NV' },
+  {
+    text: "My external hard drive suddenly stopped showing up on my computer, and I couldn't access any of my files. I contacted Five Star Data Recovery and spoke with Elen, who explained the process clearly and helped me get the drive checked in. Within a few days, they recovered all of my photos and business documents. Their service was fast, professional, and affordable.",
+    name: 'Brian K.',
+    location: 'Los Angeles, CA',
+  },
+  {
+    text: "My hard drive wasn't showing up in Disk Management, and I thought my data was gone for good. Five Star Data Recovery was able to diagnose the problem and recover 99% of my files. Their flat-rate pricing and No Data, No Charge policy gave me peace of mind. I'm so glad I found them!",
+    name: 'Melissa R.',
+    location: 'San Diego, CA',
+  },
+  {
+    text: "I had a Seagate external hard drive that just stopped appearing on my Mac. Vahan personally reviewed my case and explained that the issue was with the drive's internal firmware. They recovered everything within a week. The communication and updates were top-notch.",
+    name: 'Henry T',
+    location: 'Summerlin, NV',
+  },
 ]
+
 const faqs = [
+  {
+    q: 'Can a failed hard drive PCB cause the drive to not show up?',
+    a: 'Yes. A <strong>failed printed circuit board (PCB)</strong> is a common cause of a hard drive not being recognized. PCB failures can result from power surges or electrical shorts and typically require component-level repair or replacement to restore functionality.',
+  },
+  {
+    q: 'Does firmware corruption cause hard drives to disappear from the system?',
+    a: 'Yes. <strong>Firmware corruption</strong> can prevent the drive from initializing correctly, making it invisible to both the BIOS and the operating system. Specialized tools and professional recovery labs are required to fix firmware issues safely.',
+  },
+  {
+    q: 'Will a hard drive not showing up on one computer still work on another?',
+    a: 'Possibly. Sometimes the issue lies with the original computer\'s USB port, SATA port, or power supply. Testing the drive on a different system can help rule out host-side problems—but if the drive still doesn\'t show up, it likely needs professional evaluation.',
+  },
+  {
+    q: 'Can file system corruption prevent my hard drive from showing up?',
+    a: 'Yes. Severe <strong>file system corruption</strong> can make the drive appear unallocated, raw, or invisible in the OS. In such cases, data recovery software or professional services may be required to extract the data without making things worse.',
+  },
+  {
+    q: "Is it safe to run CHKDSK or Disk Utility First Aid on a drive that isn't showing up?",
+    a: '<strong>No.</strong> Running CHKDSK (on Windows) or First Aid (on Mac) on an unstable or failing drive can cause further corruption or permanent data loss. These tools attempt to repair file system errors, but in doing so, they can overwrite damaged sectors or delete critical file structures. This can make the data <strong>unrecoverable—even by professional data recovery labs</strong>. If your drive isn\'t showing up, it\'s best to avoid any repair utilities and contact a recovery expert first.',
+  },
+  {
+    q: 'Can a damaged USB enclosure prevent an external hard drive from being detected?',
+    a: 'Absolutely. In many external drives, the <strong>USB-to-SATA bridge board</strong> inside the enclosure can fail. Removing the drive from the enclosure and connecting it directly via SATA can help determine if the issue is with the enclosure or the drive itself. However, if your external drive is a <strong>Western Digital, SanDisk, or G-Drive</strong>, do not attempt to remove it from the enclosure yourself. Many of these drives have the USB 3.0 connector permanently soldered directly onto the drive\'s PCB, and they often include built-in hardware encryption that is tied to that specific board. Always consult a professional data recovery service first.',
+  },
+  {
+    q: 'How do I know if my hard drive not showing up is due to physical damage?',
+    a: 'Common signs of physical damage include <strong>clicking, buzzing, grinding sounds</strong>, or the drive remaining completely silent. If your drive shows any of these symptoms, stop all DIY attempts and contact a professional data recovery lab.',
+  },
+  {
+    q: 'Can overheating cause a hard drive to stop showing up?',
+    a: 'Yes. Prolonged exposure to <strong>high temperatures</strong> can damage the internal components of a hard drive, leading to immediate failure or intermittent recognition issues.',
+  },
+  {
+    q: "What's the difference between a hard drive not showing up in BIOS vs. not showing up in Windows?",
+    a: 'If the drive doesn\'t show in <strong>BIOS</strong>, it suggests a hardware-level issue (such as PCB failure or firmware corruption). If the drive shows in BIOS but <strong>not in Windows</strong>, it\'s often a file system issue, driver problem, or logical failure.',
+  },
+  {
+    q: 'Can bad sectors prevent my hard drive from being recognized at all?',
+    a: 'Yes. Severe <strong>bad sector damage</strong> can make the drive unresponsive or prevent it from mounting. In these cases, sector-by-sector imaging tools used by professional data recovery engineers are often the safest recovery option.',
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -87,239 +144,206 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="Hard Drive Not Showing Up Recovery"
+      title="Hard Drive Not Showing Up?"
       subtitle="Get Your Data Back In No Time."
-      description="Once you submit your quote request, our team will review the details you provide and respond with an accurate, initial price estimate based on your device type and symptoms. Once we receive your actual device, our engineers will perform a full diagnostic to confirm the issue and finalize your quote—always staying within the same pricing tier unless the issue turns out to be different than described."
-      bgImage="/hard-drive-not-showing-up-data-recovery.webp"
+      description="A hard drive that suddenly disappears from your computer is frustrating—and scary if you think you've lost important files. Whether it's an internal or external hard drive, the issue can happen on both Windows and macOS. If your hard drive is not showing up, don't panic. There are safe steps you can take—and some things you definitely should avoid."
+      bgImage="/hard-drive-not-showing-up-hero.webp"
+      :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SECTION 1 — Why -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Hard Drive Not Showing Up Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">Why Your Hard Drive Isn't Showing Up</h2>
+            <p class="s-body">Several reasons exist why a hard drive might not appear on your computer. Sometimes it's a minor connection issue. Other times, it could point to physical damage or corruption inside the drive. Understanding what might be happening helps you know what to try—and what to leave alone.</p>
+            <p class="s-body">Common causes include:</p>
+            <ul class="content-list">
+              <li>Loose or faulty USB port</li>
+              <li>A damaged file system</li>
+              <li>Power issues or bad cables</li>
+              <li>Errors with the operating system</li>
+              <li>Mechanical failure inside the drive</li>
+            </ul>
+            <p class="s-body">Whether it's a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn't—but your system can't detect it.</p>
           </div>
-        </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
-
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes Hard Drive Not Showing Up Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/hard-drive-not-showing-up-data-recovery.webp" alt="Hard Drive Not Showing Up Recovery service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
+          <div class="section-img-wrap">
+            <img src="/hard-drive-not-showing-up-section.webp" alt="Hard drive not showing up error on computer screen" class="section-img" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Real-World Recovery Examples</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Hard Drive Not Showing Up Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/hard-drive-not-showing-up-data-recovery.webp') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your Hard Drive Not Showing Up Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactHardDri" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactHardDri" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactHardDri" value="text" /> TEXT</label>
-                </div>
-              </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
+    <!-- SECTION 2 — Windows & Mac -->
     <section class="s-grey">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <h2 class="s-heading">Windows and macOS: Same Problem, Different Fixes</h2>
+        <p class="s-body">If your hard drive is not showing up on Mac, start by opening Disk Utility. The drive may appear there but not mount properly. Sometimes the Mac not recognizing the drive in Finder doesn't mean it's completely gone.</p>
+        <p class="s-body">On Windows, open Device Manager and look under disk drives. You can also check System Information and Disk Management. If your Windows device doesn't list the drive anywhere, it's likely a hardware failure or file system issue. It's a common situation—your hard drive does not show up, even though it worked yesterday.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — Safe Troubleshooting -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Safe Troubleshooting You Can Try</h2>
+        <p class="s-body">You can rule out simple problems with a few safe checks:</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">Check the cables and ports</h3>
+              <p class="step-body">Try a new USB cable and a different USB port. Cables fail more often than you might expect.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">Try a different computer</h3>
+              <p class="step-body">See if the drive shows up on another system to rule out device-specific issues.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">Restart and check settings</h3>
+              <p class="step-body">A reboot can reset system detection. Also, open your system settings to ensure the drive hasn't been disabled.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3 class="step-title">Look in system tools</h3>
+              <p class="step-body">On Mac: Open Disk Utility. On Windows: Use Device Manager, Disk Management, or System Information. If your drive is there but shows up as "RAW" or unallocated, that indicates file system corruption.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — What Not To Do -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">What You Should Not Do</h2>
+        <p class="s-body">Trying to fix things yourself can make the problem worse. We regularly see people permanently lose data after trying one of the following:</p>
+        <ul class="content-list">
+          <li>Clicking "format" or "erase" when prompted</li>
+          <li>Running recovery software without checking for physical issues</li>
+          <li>Constantly unplugging and replugging the drive into different ports</li>
+          <li>Attempting to rebuild a partition on an unstable drive</li>
+        </ul>
+        <p class="s-body">If your goal is fixing the hard drive and saving your files, these DIY steps can do the opposite. Drives with mechanical problems should only be opened in a cleanroom. Each time you power them on, you risk damaging your data more.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — First Aid & CHKDSK Warning -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Why First Aid and CHKDSK Can Make Things Worse</h2>
+        <p class="s-body">When your hard drive doesn't appear, it's tempting to use tools like First Aid on a Mac or CHKDSK on Windows. But they can cause permanent data loss if your drive is damaged.</p>
+        <h3 class="s-subheading">First Aid on Mac: Risky for Failing Drives</h3>
+        <p class="s-body">First Aid, found in Disk Utility, is made to fix basic file system issues. But when the drive is unstable or corrupted, First Aid might shift or rewrite data structures. That can cause files to vanish or prevent the drive from mounting at all. We've seen cases where running First Aid made some data completely inaccessible. This is especially true for older or dropped drives.</p>
+        <h3 class="s-subheading">CHKDSK on Windows: Can Delete Your Data</h3>
+        <p class="s-body">CHKDSK helps users find and fix errors on Windows computers, but it does not address failing hardware. It often deletes file pointers that it considers broken, which can wipe out your actual files. If your external storage device is failing, CHKDSK may overwrite valuable data while trying to mark bad sectors.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — What Makes a Drive Unrecognizable -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">What Makes a Drive "Unrecognizable"?</h2>
+        <p class="s-body">When a drive becomes unrecognizable, it means your computer can no longer communicate with it properly. This can happen due to two main types of failures: logical and physical.</p>
+        <ul class="content-list">
+          <li><strong>A logical failure</strong> occurs when the structure of your data is damaged. This might include corruption in the file system, missing partitions, or a drive that appears unallocated. In these cases, the computer might still "see" the drive, but it can't understand what's on it.</li>
+          <li><strong>A physical failure</strong> means something is wrong with the internal hardware. That might be a damaged read/write head, a failed motor, or an issue with the drive's circuit board. These problems often show up as clicking, grinding, or beeping sounds.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — File System Corruption -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Understanding File System Corruption</h2>
+        <p class="s-body">The file system acts like a map—it tells your computer how to find and access your files. When the file system gets damaged, your files might still remain on the drive, but your computer no longer knows where to find them.</p>
+        <p class="s-body">Corruption can happen for many reasons. It can occur if you remove the drive during a file transfer. Power surges, improper ejection, or failing hardware can also cause it. On Mac, this often appears as an unmounted drive in Disk Utility. On Windows, it might appear as "RAW" or "unallocated" in Disk Management.</p>
+        <p class="s-body">The good news? File system corruption can often be fixed. Just stop using the drive and do not run any repair tools. Instead, a professional can clone the drive and extract your data safely.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 8 — Real-World Examples -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Real-World Recovery Examples</h2>
+        <p class="s-body">Here are a few real cases we've handled that started with a hard drive not being recognized:</p>
+        <div class="examples-list">
+          <div class="example-item">
+            <p class="s-body">A photographer dropped a portable external drive while traveling. It didn't appear on their MacBook afterward. We diagnosed internal head damage and performed a cleanroom recovery to restore over 10,000 RAW image files.</p>
+          </div>
+          <div class="example-item">
+            <p class="s-body">A college student's Windows laptop wouldn't boot, and their external backup didn't appear in File Explorer. We found file system corruption and safely recovered their documents and semester projects.</p>
+          </div>
+          <div class="example-item">
+            <p class="s-body">A business client brought in a flash-based external storage unit that failed after a system update. The device wouldn't mount, but we imaged the drive and recovered customer records that we would have permanently lost.</p>
+          </div>
+        </div>
+        <p class="s-body">Even with good habits, failure can still happen—but early detection and fast action can prevent permanent data loss.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — When to Call -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">When to Call a Recovery Expert</h2>
+        <p class="s-body">If your hard drive not showing up on Mac or Windows continues after basic checks, it's time to contact a pro. Don't keep experimenting—especially if the drive makes noises or clicks. That's a sign of physical failure.</p>
+        <p class="s-body">At Five Star Data Recovery, we specialize in safe recoveries from:</p>
+        <ul class="content-list">
+          <li>Drives with corrupted or unreadable partitions</li>
+          <li>Damaged storage media devices (internal or external)</li>
+          <li>Accidentally formatted or deleted drives</li>
+          <li>Broken USB ports or failed connection issues</li>
+        </ul>
+        <p class="s-body">We recover data from HDDs, SSDs, and flash devices of all brands. We will return the recovered files on a new drive or through secure transfer.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- SECTION 10 — What to Expect -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">What to Expect From Us</h2>
+        <p class="s-body">Once you submit your quote request, our team will review the details you provide and respond with an accurate, initial price estimate based on your device type and symptoms. Once we receive your actual device, our engineers will perform a full diagnostic to confirm the issue and finalize your quote—always staying within the same pricing tier unless the issue turns out to be different than described.</p>
+        <p class="s-body">You'll also receive a clear turnaround estimate, so you know what to expect. For many standard cases, we're able to recover and return your data within just a few days. All recovery work is performed 100% in-house at our Glendale, CA lab, ensuring your data stays private, secure, and never outsourced.</p>
+        <p class="s-body">Whether you're dropping off locally or using our nationwide mail-in service, you'll receive fast communication and professional care.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band contact-band-bg">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Let's Recover Your Files</h2>
+        </div>
+        <p class="contact-body-text">If your hard drive is not showing up, stop troubleshooting on your own. One wrong click can make things worse. Let Five Star Data Recovery handle it with care.</p>
+        <ul class="contact-bullets">
+          <li>Visit us in person or mail in your drive</li>
+          <li>Call now for a free evaluation</li>
+          <li>Safe. Fast. Professional recovery every step of the way.</li>
+        </ul>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
@@ -327,39 +351,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Hard Drive Not Showing Up Recovery</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -371,131 +362,43 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey { background: #f4f7fc; padding: 72px 0; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
+.s-subheading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin: 24px 0 10px; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
+.process-step:last-child { border-bottom: none; }
+.step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
+.examples-list { display: flex; flex-direction: column; }
+.example-item { padding: 24px 0; border-bottom: 1px solid #e2e6ee; }
+.example-item:last-child { border-bottom: none; }
+.example-item .s-body { margin: 0; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/hard-drive-not-showing-up-section.webp') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
-}
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; } }
 </style>
