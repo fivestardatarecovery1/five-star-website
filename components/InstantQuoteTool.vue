@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'laptop-type' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -168,10 +168,13 @@ function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
-  else if (id === 'laptop') goTo('laptop-os')
-  else if (id === 'desktop') goTo('capacity')
+  else if (id === 'laptop-desktop') goTo('laptop-type')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
+}
+function pickLaptopType(type: string) {
+  if (type === 'desktop') { sel.device = 'desktop'; goTo('capacity') }
+  else { sel.device = 'laptop'; goTo('laptop-os') }
 }
 function pickLaptopOS(os: string) {
   if (os === 'apple') { sel.device = 'laptop-apple-new'; goTo('apple-year') }
@@ -203,15 +206,18 @@ function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
-  if (s === 'laptop-os')  goTo('device', 0)
+  if (s === 'laptop-type') goTo('device', 0)
+  else if (s === 'laptop-os')  goTo('laptop-type', 0)
   else if (s === 'apple-year')  goTo('laptop-os', 0)
   else if (s === 'board-repair') goTo('apple-year', 0)
   else if (s === 'brand')    goTo('device', 0)
   else if (s === 'capacity') {
     const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
     const wasWinLaptop = sel.device === 'win-laptop'
+    const wasDesktop = sel.device === 'desktop'
     if (wasExternal) goTo('brand', 0)
     else if (wasWinLaptop) goTo('laptop-os', 0)
+    else if (wasDesktop) goTo('laptop-type', 0)
     else goTo('device', 0)
   }
   else if (s === 'issue') {
@@ -252,10 +258,11 @@ const progressSteps = computed(() => {
   const list = ['Device']
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new' || currentStep.value === 'apple-year' || currentStep.value === 'board-repair'
-  const isLaptopFlow = currentStep.value === 'laptop-os' || sel.device === 'win-laptop' || isApple
+  const isLaptopFlow = currentStep.value === 'laptop-type' || currentStep.value === 'laptop-os' || sel.device === 'win-laptop' || sel.device === 'desktop' || isApple
   if (isExternal) list.push('Brand')
   if (isLaptopFlow) {
-    list.push('OS')
+    list.push('Type')
+    if (sel.device !== 'desktop' && currentStep.value !== 'laptop-type') list.push('OS')
     if (isApple) {
       list.push('Year')
       if (sel.device === 'laptop-apple-new' || currentStep.value === 'board-repair') list.push('Board Repair')
@@ -339,6 +346,29 @@ const progressIndex = computed(() => {
         </div>
       </div>
 
+
+
+      <!-- STEP: Laptop or Desktop -->
+      <div v-else-if="currentStep === 'laptop-type'">
+        <h3 class="iqt-q">Is it a laptop or desktop computer?</h3>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-cover-card" @click="pickLaptopType('laptop')">
+            <span class="iqt-icon">💻</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Laptop</span>
+              <span class="iqt-csub">MacBook, Dell, HP, Lenovo, ASUS, Surface, and more</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-cover-card" @click="pickLaptopType('desktop')">
+            <span class="iqt-icon">🖥️</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Desktop Computer</span>
+              <span class="iqt-csub">Tower PC, iMac, AIO, custom build</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
 
       <!-- STEP: Laptop OS -->
       <div v-else-if="currentStep === 'laptop-os'">
