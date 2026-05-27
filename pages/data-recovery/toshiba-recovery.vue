@@ -80,7 +80,7 @@ const trustBadges = [
 ]
 
 const reviews: { text: string; name: string; location: string }[] = [
-  { text: "My Toshiba external hard drive stopped spinning and wasn't being detected by my computer at all. I contacted Five Star Data Recovery and spoke with Elen, who guided me through the entire process. They were able to recover 100% of my files, including irreplaceable family photos. Their communication and professionalism were outstanding.", name: 'Mark S.', location: 'San Diego, CA' },
+  { text: "My Toshiba drive failed suddenly. Five Star recovered everything quickly and with excellent customer service.", name: 'Mark S.', location: 'San Diego, CA' },
   { text: "I had over 2TB of business files on my Toshiba drive that suddenly failed. The drive wasn't making any noise but simply wouldn't show up on my PC. Five Star Data Recovery diagnosed the issue quickly and recovered nearly 98% of my data. They were honest, fast, and the flat-rate pricing made the whole process stress-free.", name: 'Rachel K.', location: 'Portland, OR' },
   { text: "My Toshiba laptop crashed and wouldn't boot, leaving me locked out of all my work files. Alex handled my recovery and explained every step they were taking. Within a few days, I had all my documents and client data back. Highly recommend Five Star if you're dealing with a Toshiba data loss situation.", name: 'Anthony L.', location: 'Glendale, CA' },
 ]
