@@ -8,6 +8,7 @@ useHead({
         "@graph": [
           {
             "@type": "LocalBusiness",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery",
             "name": "Five Star Data Recovery",
             "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
             "telephone": "+1-818-272-8866",
@@ -22,14 +23,24 @@ useHead({
             "areaServed": [{ "@type": "Country", "name": "United States" }],
             "url": "https://www.fivestardatarecovery.com/",
             "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Mark T." },
+                "datePublished": "2024-12-15",
+                "reviewBody": "They were able to recover my files even after my drive showed hundreds of bad sectors. Super knowledgeable team.",
+                "name": "Saved My Data",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
             "priceRange": "$300 - $950"
           },
           {
             "@type": "Service",
-            "name": "Bad Sectors Data Recovery",
+            "name": "Bad Sector Data Recovery Services",
             "url": "https://www.fivestardatarecovery.com/data-recovery/bad-sectors/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional data recovery from hard drives with bad sectors. Five Star Data Recovery uses sector-by-sector imaging and advanced tools to safely recover your data. Free diagnostic, flat-rate pricing, No Data No Charge."
+            "description": "Professional Bad Sector Data Recovery services for HDDs and SSDs with sector damage. Serving Glendale, Los Angeles, and nationwide with flat-rate pricing and free mail-in service."
           },
           {
             "@type": "BreadcrumbList",
@@ -131,7 +142,7 @@ const faqs = [
   },
   {
     q: 'Do you offer bad sector recovery for external hard drives too?',
-    a: 'Absolutely. We recover data from <strong>external hard drives with bad sectors</strong>, including popular brands like Seagate, Western Digital, Toshiba, and LaCie.',
+    a: 'Absolutely. We recover data from <strong>external hard drives with bad sectors</strong>, including popular brands like Seagate, Western Digital, Toshiba, and others. Whether internal or external, our recovery approach is the same\u2014safe, transparent, and effective.',
   },
 ]
 
