@@ -156,6 +156,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       description="Ready to get your data back? Starting your recovery with Five Star Data Recovery is fast and hassle-free. You can drop off your device, ship it in with our free prepaid label, or schedule a free local pickup.<br><br>For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround. From hard drives and SSDs to phones and RAID arrays, our expert engineers are ready to help you recover your important files."
       bgImage="/start-recovery-hero.webp"
       :trustBadges="trustBadges"
+      :showForm="false"
+      :overlayOpacity="0.72"
     />
 
     <StatsBar />
