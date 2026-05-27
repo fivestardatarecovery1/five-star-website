@@ -618,7 +618,7 @@ const progressIndex = computed(() => {
           </button>
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdLocation('external')">
             <div class="iqt-drive-imgs">
-              <img src="/external-hard-drive-on-desk.jpg" alt="External SSD" class="iqt-drive-img" />
+              <img src="/sandisk-extreme-pro-external-ssd.png" alt="SanDisk Extreme Pro External SSD" class="iqt-drive-img" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">External SSD</span>
