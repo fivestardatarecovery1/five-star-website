@@ -1,87 +1,154 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'NAS Data Recovery Services — Five Star Data Recovery',
-  description: 'At Five Star Data Recovery, we focus on advanced NAS data recovery. We work with all types of NAS devices, setups, and RAID volumes.'
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Laura S." },
+                "datePublished": "2024-11-20",
+                "reviewBody": "I was in a panic when my QNAP NAS crashed and none of my devices could connect to it. A friend recommended Five Star Data Recovery, and I'm so glad I called them. They recovered all my photos and important work documents within a few days. Super helpful team and great customer service.",
+                "name": "NAS Recovery Success",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$300 - $950"
+          },
+          {
+            "@type": "Service",
+            "name": "NAS Data Recovery Services",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/nas-data-recovery/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Professional NAS data recovery for Synology, QNAP, Drobo, Buffalo, WD My Cloud, and all major NAS devices. RAID reconstruction, clean room repairs, free diagnostic. Flat-rate pricing, No Data No Charge. Serving Glendale, Los Angeles, and nationwide."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "NAS Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/nas-data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Can you recover data from a NAS that shows as 'Degraded' or 'Failed'?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Whether your NAS is showing a Degraded, Failed, or Volume Offline status, we specialize in recovering data from partially failed or fully failed RAID arrays within NAS systems." } },
+              { "@type": "Question", "name": "Do you work on all NAS brands and models?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide NAS data recovery for all major brands including Synology, QNAP, Drobo, Buffalo, Netgear ReadyNAS, WD My Cloud, and others." } },
+              { "@type": "Question", "name": "Can you recover data if my NAS was accidentally reformatted?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, data recovery is often possible even after a reformat or volume deletion — but only if the system is powered down immediately. Power off the NAS right away and avoid any further writes to the drives." } },
+              { "@type": "Question", "name": "How long does NAS data recovery take?", "acceptedAnswer": { "@type": "Answer", "text": "For a standard NAS case with 4 to 8 drives up to 20TB, typical turnaround is 5 to 7 business days. Complex cases or physical damage may take longer. Expedited and Expedited Plus options are available for urgent cases." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
-const issues = [
-  { icon: '🖥️', title: 'Multiple drive failures in RAID-based NAS systems', text: '' },
-  { icon: '🔌', title: 'Power surges or electrical damage', text: '' },
-  { icon: '💧', title: 'Overheating and cooling fan failure', text: '' },
-  { icon: '🖥️', title: 'NAS volumes not mounting or becoming inaccessible', text: '' },
+useSeoMeta({
+  title: 'NAS Data Recovery - Five Star Data Recovery',
+  ogTitle: 'NAS Data Recovery - Five Star Data Recovery',
+  description: 'We specialize in NAS Server Data Recovery. Our engineers offer a fast and reliable turn around for all NAS units. Give us a call today.',
+  ogDescription: 'We specialize in NAS Server Data Recovery. Our engineers offer a fast and reliable turn around for all NAS units. Give us a call today.',
+})
+
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
 
-const causesIntro = ''
-const causesOutro = ''
-const causes = [
-  'Multiple drive failures in RAID-based NAS systems',
-  'Power surges or electrical damage',
-  'Overheating and cooling fan failure',
-  'NAS volumes not mounting or becoming inaccessible',
-  'Software or firmware corruption',
-  'File system corruption after firmware updates',
-  'Human error, such as accidental reformatting or file deletion',
-  'Failed RAID rebuilds or incorrect RAID configuration',
+const reviews = [
+  {
+    text: "I was in a panic when my QNAP NAS crashed and none of my devices could connect to it. A friend recommended Five Star Data Recovery, and I&#39;m so glad I called them. They recovered all my photos and important work documents within a few days. Super helpful team and great customer service.",
+    name: 'Laura S.',
+    location: 'New York, NY',
+  },
+  {
+    text: "My Synology NAS suddenly stopped working, and I couldn&#39;t access any of my business documents. The engineer I spoke with explained everything in plain language and walked me through the recovery process. Within a few days, I had all my important files back. Very professional and easy to work with.",
+    name: 'Mark D.',
+    location: 'Los Angeles, CA',
+  },
+  {
+    text: "My QNAP NAS had multiple issues, and I was preparing for the worst. Thankfully, the recovery team was able to save nearly all my files. Communication was clear, pricing was fair, and the entire experience was much smoother than I expected. Highly recommend for NAS recovery needs.",
+    name: 'James T.',
+    location: 'North Hollywood, CA',
+  },
 ]
 
-const processIntro = 'Every NAS data recovery begins with safety and structure. Our lab follows a six-step process to recover data from NAS drives and RAID arrays:'
-const steps = [
-  { num: '1', title: 'Drive Removal', text: 'We begin by safely removing each drive from your NAS system.' },
-  { num: '2', title: 'Sector-by-Sector Imaging', text: 'Each disk is imaged sector-by-sector to create exact working copies. We never operate on the original drives.' },
-  { num: '3', title: 'RAID Analysis', text: 'We analyze each clone to locate RAID metadata, parity information, and file system structures.' },
-  { num: '4', title: 'Virtual RAID Reconstruction', text: 'Our engineers use this data to reconstruct the original NAS RAID array virtually.' },
-  { num: '5', title: 'File System Verification', text: 'We verify file system integrity and validate recovered data with directory structure and file previews.' },
-  { num: '6', title: 'Data Delivery', text: 'Recovered data is copied to a new storage device and tested for integrity before being returned to you.' },
-]
-
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes = [
-  'Western Digital (WD My Cloud)',
-  'Seagate BlackArmor',
-  'Netgear ReadyNAS',
-  'TerraMaster',
-  'LaCie and more',
-]
-
-const tipIntro = 'Before bringing your device to us, here are a few basic checks:'
-const tipOutro = 'If your device still does not work or makes unusual noises, stop using it immediately to prevent permanent data loss.'
-const tips = [
-  'Power off the device immediately if it makes unusual sounds',
-  'Do not attempt to open the device or use DIY recovery software',
-  'Contact our lab for a free evaluation before attempting any repairs',
-  'Keep the device in a safe, dry location until you bring it to us',
-]
-
-const d2Texts = [
-  'Many people assume that a manufacturer warranty covers data recovery. Unfortunately, this isn\'t true. Warranties typically cover hardware replacement—not data recovery services.',
-  'In most cases, if you return the device to the manufacturer, they will wipe or destroy your data. Contact a professional data recovery lab before making any warranty claims.',
-]
-const d3Texts = [
-  'NAS Data Recovery devices can fail due to a variety of causes including physical damage, firmware corruption, electrical issues, and normal wear over time.',
-  'Even routine use can lead to data loss over time. That\'s why it\'s critical to address early signs of failure immediately and avoid DIY recovery attempts that can make recovery more difficult.',
-]
-const d4Texts = [
-  'Once we complete the recovery process, we transfer your verified files to a clean, functioning drive. You can supply your own replacement drive or purchase one directly from us.',
-  'We strongly recommend backing up your recovered files in at least two locations moving forward. That way, you\'ll never have to go through another data recovery process again.',
-]
-
-const midBody = [
-  'Not always—and doing so could make things worse.',
-  'Rebuilding a NAS RAID array after a failure might seem like the right move, especially if your NAS system (like Synology, QNAP, or TrueNAS) prompts you to do it. But in many cases, initiating a rebuild without verifying drive health and array integrity can lead to permanent data loss. Network Attached Storage (NAS) systems are often relied on for centralizing and protecting data—but that doesn’t mean they’re immune to failure or missteps during recovery.',
-  'Why rebuilding your NAS RAID can be dangerous:',
-]
-
-const contactText = 'If you\'re experiencing issues with your NAS Data Recovery, don\'t wait. Acting early gives you the best chance of recovering your data safely and completely.'
-const contactList = [
-  'Visit our lab in Glendale, CA',
-  'Mail your drive to us from anywhere in the U.S.',
-  'Call us today for a free evaluation',
-]
-const contactOutro = 'Trust our experts for fast, secure, and professional nas data recovery services — and get back what matters most.'
-
-const reviews = []
 const faqs = [
+  {
+    q: 'Can you recover data from a NAS that shows as "Degraded" or "Failed" in the management software?',
+    a: 'Yes. Whether your NAS is showing a <strong>Degraded, Failed, or Volume Offline</strong> status in the control panel, we specialize in recovering data from partially failed or fully failed RAID arrays within NAS systems.',
+  },
+  {
+    q: 'Do you work on all NAS brands and models?',
+    a: 'Yes. We provide NAS data recovery services for all major brands, including <strong>Synology, QNAP, Drobo, Buffalo, Netgear ReadyNAS, WD My Cloud</strong>, and others. No matter the make or model, we have the tools and expertise to handle your recovery.',
+  },
+  {
+    q: 'Can you recover data if my NAS was accidentally reformatted or the volume was deleted?',
+    a: '<strong>Yes</strong>, data recovery is often possible even after a reformat or volume deletion — but only if the system is <strong>powered down immediately</strong>. The longer the NAS stays on, the higher the chance that new data (system logs, indexing, or background tasks) will overwrite the deleted volume. To maximize recovery success, power off the NAS right away and avoid any further writes to the drives.',
+  },
+  {
+    q: 'Is it safe to rebuild my NAS RAID array after a failure?',
+    a: '<strong>Not always</strong> — and doing so could make things worse. Rebuilding a NAS RAID array after a failure might seem like the right move, especially if your NAS system prompts you to do it. But in many cases, initiating a rebuild without verifying drive health and array integrity can lead to <strong>permanent data loss</strong>.<br><br><strong>Why rebuilding your NAS RAID can be dangerous:</strong><br>\u2022 <strong>Your NAS assumes the drives are healthy</strong> — If a second drive is unstable or degrading, the rebuild process can destroy what&#39;s left of your good data.<br>\u2022 <strong>A rebuild is a write operation</strong> — You&#39;re writing new parity based on the current state of the remaining disks. If those disks have damage, you may overwrite valid data with corrupted parity.<br>\u2022 <strong>NAS systems often mask warning signs</strong> — Many NAS platforms maintain uptime even when drives are degraded. What looks like a single-disk failure might involve deeper RAID degradation.<br><br><strong>When is it safe to rebuild your NAS RAID?</strong> Only if you&#39;re using RAID 1 with one failed drive, or RAID 5/6 with one offline drive that&#39;s confirmed fully healthy, and you&#39;ve already cloned all remaining NAS drives before proceeding.<br><br>If your NAS shows multiple drive errors, degraded performance, or you&#39;ve heard clicking or beeping, stop immediately. The safer option: <strong>clone and analyze before rebuilding</strong>. Shut down the NAS, clone all drives using forensic imaging tools, and recreate the RAID structure virtually without modifying the originals.',
+  },
+  {
+    q: 'Do you need the entire NAS unit, or just the hard drives?',
+    a: 'We <strong>never recover data using the NAS enclosure itself</strong>. To ensure the safest and most effective recovery, we remove each drive from the NAS, <strong>clone them individually</strong>, and then use a virtual RAID controller to reconstruct the array. This approach prevents further damage and allows us full control over the recovery process.',
+  },
+  {
+    q: 'Can you recover data from NAS drives with physical damage?',
+    a: '<strong>Yes</strong>, data can often be recovered from physically damaged NAS drives, depending on the severity of the issue. Common symptoms like clicking, beeping, or failure to spin indicate mechanical problems such as failed read/write heads or motor issues. In these cases, the drive must be handled in a <strong>clean room environment</strong>.<br><br>Powering off the NAS immediately is crucial — continuing to use the system can cause further damage. Once the damaged drive is repaired, we create a sector-by-sector clone, along with clones of all other drives in the array. Only then do we begin the logical RAID reconstruction process using the cloned images — <strong>never the original drives</strong>.',
+  },
+  {
+    q: 'How long does NAS data recovery take?',
+    a: 'For a standard NAS data recovery case involving 4 to 8 drives and up to 20TB of data, the typical turnaround time is <strong>5 to 7 business days</strong> with our regular service. This assumes the drives are in good physical condition and the failure is logical.<br><br>The recovery timeframe can increase depending on: a larger number of drives, larger overall capacity, more complex RAID configurations, or physical damage requiring clean room work and donor parts.<br><br>If your NAS failure is time-sensitive, we offer <strong>Expedited Service</strong> and <strong>Expedited Plus Service</strong>. In urgent cases, we can also work with you to identify and recover critical files first, so you can access what&#39;s most important while the rest of the recovery continues in parallel.',
+  },
+  {
+    q: 'Is my data safe and confidential during NAS recovery?',
+    a: 'Yes, your data is handled with the highest level of security and confidentiality. We follow strict internal protocols to ensure your files remain private and protected at all times.<br><br>For customers who require added protection, we also offer <strong>Non-Disclosure Agreements (NDAs)</strong>. With an NDA in place, your NAS data remains fully confidential under a legally binding agreement. Please note: recovery reports cannot be emailed under NDA terms — you&#39;ll need to review results in person or provide written consent.<br><br>We <strong>do not retain any recovery images after the case is complete</strong>. Unlike standard cases where we hold a cloned image for 7 days as a safety backup, NDA cases are handled differently — the cloned images are <strong>permanently deleted immediately upon pickup or return shipping</strong>.',
+  },
+  {
+    q: 'Can you recover data from a NAS that failed during a firmware update or has corrupted system files?',
+    a: 'Yes, we can often recover data from NAS systems affected by <strong>failed firmware updates, corrupted system partitions, or OS-level file system damage</strong>. These issues typically prevent the NAS from booting or accessing shared volumes, but the data on the drives may still be fully intact.<br><br>We remove the drives from the NAS enclosure and analyze them individually, then reconstruct the original RAID layout using specialized recovery tools to bypass the failed NAS operating system and access the underlying data directly. As long as the drives themselves are physically healthy, recovery success rates are typically very high.',
+  },
+  {
+    q: 'What happens if multiple drives in my NAS fail at the same time?',
+    a: 'If multiple drives in your NAS fail simultaneously, the situation becomes more complex — but <strong>recovery may still be possible</strong>. The most important thing is to <strong>power down the NAS immediately</strong> to prevent further damage.<br><br>We remove all drives and perform a sector-by-sector clone of each one. Using those clones, we analyze the array structure and attempt to virtually rebuild the RAID in a controlled environment — without risking the original drives. Even when multiple drives have failed, recovery is sometimes still achievable, especially if one or more of the drives are only partially degraded or intermittently accessible. <strong>Never attempt to force a rebuild or reinitialize the volume</strong>, as this can make recovery much more difficult or even impossible.',
+  },
+  {
+    q: 'Can you recover data from a NAS that failed during a RAID rebuild?',
+    a: 'Yes. RAID rebuild failures are a common cause of NAS data loss. Attempting a rebuild on failing drives can make recovery more difficult, but we specialize in <strong>post-rebuild failure recoveries</strong>. We work from cloned images and use manual RAID reconstruction tools to safely recover your data.',
+  },
+  {
+    q: 'My NAS volume is showing as RAW or unformatted. Can you recover the data?',
+    a: 'Yes. If your NAS volume shows as <strong>RAW, unformatted, or inaccessible</strong>, it often indicates file system corruption or RAID metadata loss. We can perform deep-level scans and manually rebuild the RAID structure to recover your files safely.',
+  },
+  {
+    q: 'Can you recover data from NAS drives with bad sectors?',
+    a: 'Absolutely. We handle NAS recovery cases where one or more drives have <strong>bad sectors or are starting to fail</strong>. Our imaging tools allow us to bypass bad sectors and recover as much data as possible before the array is virtually reconstructed for file extraction.',
+  },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -93,239 +160,165 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="NAS Data Recovery Services"
+      title="NAS Data Recovery"
       subtitle="Get Your Data Back In No Time."
-      description="At Five Star Data Recovery, we focus on advanced NAS data recovery. We work with all types of NAS devices, setups, and RAID volumes. It doesn't matter if you use your NAS system at home, in a small office, or a large corporate environment. We are here to help."
-      bgImage="/nas-network-attached-storage-data-recovery-glendale-ca.jpg"
+      description="At Five Star Data Recovery, we focus on advanced NAS data recovery. We work with all types of NAS devices, setups, and RAID volumes. It doesn&#39;t matter if you use your NAS system at home, in a small office, or a large corporate environment. We are here to help.<br><br>We will recover your data safely, quickly, and professionally. We handle everything from accidental deletions to complete system failures. Whether your NAS is a single-drive unit or a multi-bay RAID array, we have the tools and experience to recover your data."
+      bgImage="/nas-data-recovery-hero.webp"
+      :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SECTION 1 — Common Issues -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common NAS Data Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
-          </div>
-        </div>
-        <p  class="s-outro"></p>
+        <h2 class="s-heading">Common Issues That Cause NAS Failures</h2>
+        <p class="s-body">NAS devices are designed for reliability, but they&#39;re still vulnerable to failure. Some of the most common reasons for NAS recovery include:</p>
+        <ul class="content-list">
+          <li>Multiple drive failures in RAID-based NAS systems</li>
+          <li>Power surges or electrical damage</li>
+          <li>Overheating and cooling fan failure</li>
+          <li>NAS volumes not mounting or becoming inaccessible</li>
+          <li>Software or firmware corruption</li>
+          <li>File system corruption after firmware updates</li>
+          <li>Human error, such as accidental reformatting or file deletion</li>
+          <li>Failed RAID rebuilds or incorrect RAID configuration</li>
+        </ul>
+        <p class="s-body">If your NAS device shows error messages, does not mount correctly, or makes strange noises, turn it off right away. This will help prevent more damage.</p>
       </div>
     </section>
 
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes NAS Data Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/nas-network-attached-storage-data-recovery-glendale-ca.jpg" alt="NAS Data Recovery Services service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Supported NAS Manufacturers</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why NAS Data Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/nas-network-attached-storage-data-recovery-glendale-ca.jpg') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your NAS Data Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactNASData" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactNASData" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactNASData" value="text" /> TEXT</label>
-                </div>
-              </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
+    <!-- SECTION 2 — Supported Manufacturers -->
     <section class="s-grey">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <h2 class="s-heading">Supported NAS Manufacturers</h2>
+        <p class="s-body">We provide NAS drive data recovery from nearly all major NAS device manufacturers, including:</p>
+        <ul class="content-list">
+          <li>Synology</li>
+          <li>QNAP</li>
+          <li>Western Digital (WD My Cloud)</li>
+          <li>Buffalo</li>
+          <li>Drobo</li>
+          <li>Seagate BlackArmor</li>
+          <li>Netgear ReadyNAS</li>
+          <li>Asustor</li>
+          <li>TerraMaster</li>
+          <li>LaCie and more</li>
+        </ul>
+        <p class="s-body">If your NAS uses custom hardware, proprietary RAID levels, or encryption, we can still help. Our engineers are experienced in working with even the most complex NAS recovery cases.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — What Not to Do -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">What Not to Do If Your NAS Fails</h2>
+        <ul class="content-list">
+          <li>Do not attempt to rebuild the RAID.</li>
+          <li>Do not attempt file recovery using consumer-level software — it may corrupt your NAS volumes.</li>
+          <li>Do not remove or reinsert drives into a different order.</li>
+          <li>Do not continue using the NAS if you suspect one or more drives are failing.</li>
+        </ul>
+        <p class="s-body">These steps may cause permanent data loss or overwrite critical RAID metadata. If your data is important, power down the NAS and contact a professional data recovery team immediately.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — Recovery Process -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Our NAS Data Recovery Process</h2>
+        <p class="s-body">Every NAS data recovery begins with safety and structure. Our lab follows a six-step process to recover data from NAS drives and RAID arrays:</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">Remove Drives from Enclosure</h3>
+              <p class="step-body">We begin by safely removing each drive from your NAS system.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">Clone Each Drive Individually</h3>
+              <p class="step-body">Each disk is imaged sector-by-sector to create exact working copies. We never operate on the original drives.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">Scan Each Drive for Metadata</h3>
+              <p class="step-body">We analyze each clone to locate RAID metadata, parity information, and file system structures.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3 class="step-title">Use Metadata to Rebuild RAID</h3>
+              <p class="step-body">Our engineers use this data to reconstruct the original NAS RAID array virtually.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div>
+              <h3 class="step-title">File System Verification</h3>
+              <p class="step-body">We verify file system integrity and validate recovered data with directory structure and file previews.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">6</div>
+            <div>
+              <h3 class="step-title">Save and Deliver Files</h3>
+              <p class="step-body">Recovered data is copied to a new storage device and tested for integrity before being returned to you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- SECTION 5 — Nationwide -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Free Nationwide Service with Round-Trip Shipping</h2>
+        <p class="s-body">Although we&#39;re based in Los Angeles, our NAS recovery services are available across the U.S. We provide free round-trip shipping for all approved recovery cases. Just create a recovery ticket on our site, and we&#39;ll email you a prepaid shipping label with instructions. Once recovery is complete, we&#39;ll return your data on a new drive securely and at no extra cost.</p>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="From a 2-bay home Synology to a 24-drive enterprise QNAP RAID — our engineers clone every drive first, then virtually reconstruct the NAS array without ever touching your originals. We recover data that other labs give up on."
+      bullet1="Synology, QNAP, Drobo, Buffalo, WD My Cloud, and more"
+      bullet2="Physical damage, bad sectors, failed rebuilds, firmware failures"
+      bullet3="No Data, No Charge — free diagnostic included"
+      closing="Power down your NAS now and don&#39;t attempt a rebuild. Fill out the form and our NAS engineers will evaluate your case for free."
+      bgImage="/nas-data-recovery-hero.webp"
+    />
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band contact-band-bg">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Contact Us for Expert NAS Recovery</h2>
+        </div>
+        <p class="contact-body-text">If your NAS system has failed, don&#39;t panic — and don&#39;t risk your data with unproven methods. Our team has recovered data from thousands of NAS devices and RAID configurations. Whether you need basic file recovery or advanced NAS RAID data recovery, we&#39;re here to help.</p>
+        <ul class="contact-bullets">
+          <li>Call us today for a free diagnostic</li>
+          <li>Start your case online now</li>
+          <li>No Data, No Charge (most cases)</li>
+          <li>Free round-trip shipping nationwide</li>
+        </ul>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
@@ -333,39 +326,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for NAS Data Recovery Services</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -377,131 +337,34 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey { background: #f4f7fc; padding: 72px 0; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
+.process-step:last-child { border-bottom: none; }
+.step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/nas-data-recovery-hero.webp') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
-}
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 </style>
