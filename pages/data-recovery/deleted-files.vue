@@ -1,9 +1,80 @@
 <script setup lang="ts">
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Gina L." },
+                "datePublished": "2024-11-26",
+                "reviewBody": "I thought my deleted work files were gone forever, but they recovered them quickly. Definitely recommend!",
+                "name": "Saved Deleted Files",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ],
+            "priceRange": "$200 flat rate"
+          },
+          {
+            "@type": "Service",
+            "name": "Deleted File Recovery",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/deleted-file-recovery/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Professional deleted file recovery services by Five Star Data Recovery. We recover accidentally deleted files from hard drives, SSDs, USB flash drives, and external storage devices. Serving Glendale, Los Angeles, and nationwide via mail-in."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "Deleted File Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/deleted-file-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Can you recover files that I accidentally deleted?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our deleted file recovery service is designed specifically to recover data that was accidentally deleted—whether from a hard drive, SSD, external drive, or USB. Acting quickly gives you the best chance of recovery before files are overwritten." } },
+              { "@type": "Question", "name": "How long does deleted file recovery take?", "acceptedAnswer": { "@type": "Answer", "text": "Typical deleted file recovery cases take 1–3 business days. For critical situations, our Expedited Plus service provides 24/7, around-the-clock processing until your case is complete." } },
+              { "@type": "Question", "name": "How much does deleted file recovery cost and what does it include?", "acceptedAnswer": { "@type": "Answer", "text": "Our flat rate for deleted file recovery is $200, which covers the full scan, file analysis, and recovery process for all supported device types. This fee is non-refundable and is collected upfront when your case is checked in." } },
+              { "@type": "Question", "name": "Is there an upfront fee for deleted file recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, the $200 flat rate is due at the time of drop-off or mailing in your device. This covers all labor involved in the deep scanning and recovery of your deleted files." } },
+              { "@type": "Question", "name": "Can you recover deleted files from external hard drives, USB flash drives, and SSDs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We recover deleted files from a wide range of devices including external hard drives, USB flash drives, SSDs, and SD cards. Each storage device type requires different tools, and we're fully equipped for all scenarios." } },
+              { "@type": "Question", "name": "Can you recover data from a formatted drive?", "acceptedAnswer": { "@type": "Answer", "text": "Often, yes. If your drive was accidentally formatted and new data hasn't heavily overwritten it, we can perform a forensic scan to locate and recover previously deleted files." } },
+              { "@type": "Question", "name": "Why isn't deleted file recovery covered by your No Data, No Charge policy?", "acceptedAnswer": { "@type": "Answer", "text": "Deleted file recovery requires a deep forensic scan with no guaranteed results. Since the chance of success depends on overwrite levels and drive condition, the $200 fee remains non-refundable even if the data is unrecoverable." } },
+              { "@type": "Question", "name": "Can I see a file list before committing to full recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. After we complete the deleted file recovery process, we'll provide you with a detailed file list showing all recoverable files. If the recovery is less than 99% successful, you'll have the option to decline the recovery and owe nothing further—other than the $200 labor fee already paid. This way, you stay fully informed and in control before making any final decision." } },
+              { "@type": "Question", "name": "What's the difference between Expedited and Expedited Plus service for deleted file recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Expedited Service prioritizes your job during business hours, while Expedited Plus gives you 24/7 nonstop engineer attention until the recovery is complete—even on weekends and holidays." } },
+              { "@type": "Question", "name": "How can I increase my chances of recovering deleted files?", "acceptedAnswer": { "@type": "Answer", "text": "Stop using the affected drive immediately. Continued use can overwrite deleted sectors and make recovery impossible. Power down the device and bring it to Five Star Data Recovery as soon as possible." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
+})
+
 useSeoMeta({
   title: 'Deleted File Recovery - Five Star Data Recovery',
-  ogTitle: 'Deleted File Recovery',
-  description: 'Did you loose your important data? We recover deleted files from hard drives and all types of devices. Contact us today!',
-  ogDescription: 'Did you loose your important data? We recover deleted files from hard drives and all types of devices. Contact us today!',
+  ogTitle: 'Deleted File Recovery - Five Star Data Recovery',
+  description: 'Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.',
+  ogDescription: 'Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.',
 })
 
 const trustBadges = [
@@ -25,40 +96,52 @@ const reviews = [
     location: 'Denver, CO',
   },
   {
-    text: "I emptied my trash and realized I'd deleted my entire freelance portfolio — two years of work. Five Star ran their forensic recovery process and retrieved 95% of my files within 2 days. They kept me informed every step of the way. I'm so grateful.",
-    name: 'Sofia L.',
-    location: 'Glendale, CA',
+    text: "I thought my deleted work files were gone forever, but they recovered them quickly. Definitely recommend!",
+    name: 'Gina L.',
+    location: '',
   },
 ]
 
 const faqs = [
   {
-    q: 'Can you recover files that were permanently deleted?',
-    a: "Yes — in many cases we can recover files that have been permanently deleted, even after emptying the Recycle Bin or Trash. When you delete a file, the data is not immediately erased from the storage media. Our forensic-level deep scan can locate and reconstruct deleted files as long as the space hasn't been overwritten. Stop using the device immediately to maximize recovery chances.",
-  },
-  {
-    q: 'What is the flat-rate pricing for deleted file recovery?',
-    a: "Deleted file recovery is a flat rate of $200, paid upfront. This fee is non-refundable as it covers the forensic imaging and deep scan process regardless of outcome. Unlike standard data recovery cases, deleted file recovery does not qualify for No Data, No Charge (most cases) because the engineering work is performed regardless of how much is recovered.",
-  },
-  {
-    q: 'What should I do immediately after accidentally deleting files?',
-    a: 'Stop using the device immediately. Every write operation to the storage media after deletion increases the risk of overwriting the deleted data and making it unrecoverable. Do not install recovery software, save new files, or allow the operating system to write to the drive. Power it down and contact us right away.',
-  },
-  {
-    q: 'What types of devices can you recover deleted files from?',
-    a: 'We recover deleted files from hard drives (HDDs), solid state drives (SSDs), external hard drives, USB flash drives, SD cards, and mobile devices. Recovery success rates vary depending on the device type — SSDs are more complex due to TRIM and wear-leveling technologies, while HDDs typically yield higher recovery rates.',
+    q: 'Can you recover files that I accidentally deleted?',
+    a: 'Yes. Our deleted file recovery service is designed specifically to recover data that was accidentally deleted—whether from a hard drive, SSD, external drive, or USB. Acting quickly gives you the best chance of recovery before files are overwritten.',
   },
   {
     q: 'How long does deleted file recovery take?',
-    a: 'Most deleted file recovery cases are completed within 1–3 business days. The forensic clone and deep scan process is thorough but efficient. We also offer expedited options if you need your files back urgently.',
+    a: 'Typical deleted file recovery cases take 1–3 business days. For critical situations, our Expedited Plus service provides 24/7, around-the-clock processing until your case is complete.',
   },
   {
-    q: 'Does the type of storage device affect recovery success?',
-    a: "Yes, it does. Hard drives (HDDs) typically have the highest recovery rates for deleted files because data persists until overwritten. USB flash drives have moderate recovery rates depending on usage. SSDs are the most challenging due to TRIM commands and wear-leveling, which can overwrite deleted data automatically. Regardless of device type, acting quickly gives you the best chance.",
+    q: 'How much does deleted file recovery cost and what does it include?',
+    a: 'Our flat rate for deleted file recovery is $200, which covers the full scan, file analysis, and recovery process for all supported device types. This fee is non-refundable and is collected upfront when your case is checked in.',
   },
   {
-    q: 'What if you can only recover some of my files?',
-    a: "We will provide you with a detailed file list of everything we were able to recover before you commit to the delivery. You review the list and confirm whether the important files are there. The $200 forensic fee is non-refundable, but you'll have full visibility into what was recovered before any additional charges are discussed.",
+    q: 'Is there an upfront fee for deleted file recovery?',
+    a: 'Yes, the $200 flat rate is due at the time of drop-off or mailing in your device. This covers all labor involved in the deep scanning and recovery of your deleted files.',
+  },
+  {
+    q: 'Can you recover deleted files from external hard drives, USB flash drives, and SSDs?',
+    a: "Yes. We recover deleted files from a wide range of devices including external hard drives, USB flash drives, SSDs, and SD cards. Each storage device type requires different tools, and we're fully equipped for all scenarios.",
+  },
+  {
+    q: 'Can you recover data from a formatted drive?',
+    a: "Often, yes. If your drive was accidentally formatted and new data hasn't heavily overwritten it, we can perform a forensic scan to locate and recover previously deleted files.",
+  },
+  {
+    q: "Why isn't deleted file recovery covered by your No Data, No Charge policy?",
+    a: 'Deleted file recovery requires a deep forensic scan with no guaranteed results. Since the chance of success depends on overwrite levels and drive condition, the $200 fee remains non-refundable even if the data is unrecoverable.',
+  },
+  {
+    q: 'Can I see a file list before committing to full recovery?',
+    a: "Yes. After we complete the deleted file recovery process, we'll provide you with a detailed file list showing all recoverable files. If the recovery is less than 99% successful, you'll have the option to decline the recovery and owe nothing further—other than the $200 labor fee already paid. This way, you stay fully informed and in control before making any final decision.",
+  },
+  {
+    q: "What's the difference between Expedited and Expedited Plus service for deleted file recovery?",
+    a: "Expedited Service prioritizes your job during business hours, while Expedited Plus gives you 24/7 nonstop engineer attention until the recovery is complete—even on weekends and holidays.",
+  },
+  {
+    q: 'How can I increase my chances of recovering deleted files?',
+    a: 'Stop using the affected drive immediately. Continued use can overwrite deleted sectors and make recovery impossible. Power down the device and bring it to Five Star Data Recovery as soon as possible.',
   },
 ]
 
@@ -74,71 +157,89 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       title="Deleted File Recovery"
       subtitle="Get Your Data Back In No Time."
       description="Accidentally deleted an important document, video, or entire folder? You're not alone. Every day, users lose valuable data because of accidental deletion, formatting errors, or corrupt storage devices. At Five Star Data Recovery, we help people and businesses recover deleted files. We do this quickly, safely, and professionally."
-      bgImage="/deleted-file-recovery-service-glendale-ca.jpg"
+      bgImage="/deleted-file-recovery-hero.webp"
       :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- SECTION 1 — s-white -->
+    <!-- SECTION 1 — Devices -->
     <section class="s-white">
       <div class="container">
-        <h2 class="s-heading">Devices We Offer Deleted File Recovery From</h2>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">Devices We Offer Deleted File Recovery From</h2>
+            <p class="s-body">We offer professional deleted file recovery from nearly all types of local storage devices, including:</p>
+            <ul class="content-list">
+              <li>External and internal hard drives (HDD/SSD)</li>
+              <li>USB flash drives</li>
+              <li>SD cards (including microSD)</li>
+              <li>CompactFlash cards</li>
+              <li>RAID arrays</li>
+              <li>NAS devices</li>
+              <li>Desktop and laptop computers</li>
+            </ul>
+            <p class="s-body"><strong>Please Note:</strong> We do not offer deleted file recovery services for smartphones (iPhones or Androids). Smartphones use encrypted NAND flash storage with TRIM enabled. This means that deleted data is usually unrecoverable right away.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/deleted-file-recovery-devices.webp" alt="Storage devices for deleted file recovery — HDD, SSD, external drive" class="section-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — Device Type Differences -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">How Device Type Affects Recovery</h2>
+        <p class="s-body">Each type of device stores data differently. Understanding these technical differences is crucial to developing the right recovery process.</p>
         <ul class="content-list">
-          <li><NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">Hard Drives (HDDs)</NuxtLink> — Internal and external drives, highest recovery success rates</li>
-          <li><NuxtLink to="/data-recovery/ssd-recovery" class="inline-link">Solid State Drives (SSDs)</NuxtLink> — Complex recovery due to TRIM, handled by specialized engineers</li>
-          <li><NuxtLink to="/data-recovery/external-hard-drive" class="inline-link">External Hard Drives</NuxtLink> — Dropped, corrupted, or accidentally formatted externals</li>
-          <li><NuxtLink to="/data-recovery/usb-recovery" class="inline-link">USB Flash Drives</NuxtLink> — Deleted files from thumb drives and portable storage</li>
-          <li><NuxtLink to="/data-recovery/sd-card-recovery" class="inline-link">SD Cards &amp; Memory Cards</NuxtLink> — Camera cards, drone footage, and mobile media</li>
-          <li><NuxtLink to="/data-recovery/iphone-recovery" class="inline-link">iPhones &amp; Mobile Devices</NuxtLink> — Component-level deleted file recovery from iOS devices</li>
-        </ul>
-        <p class="s-body"><strong>Please Note:</strong> Not all storage devices are equal when it comes to deleted file recovery. Recovery success depends heavily on device type, how much activity has occurred since deletion, and whether TRIM has been activated on SSDs.</p>
-        <ul class="content-list">
-          <li><strong>Hard Drives (HDDs)</strong> — Deleted data persists until overwritten. Highest recovery success rates when the device is stopped immediately after deletion.</li>
-          <li><strong>Solid State Drives (SSDs)</strong> — TRIM and wear-leveling can permanently erase data shortly after deletion. Act immediately for the best chance of recovery.</li>
-          <li><strong>USB Flash Drives &amp; SD Cards</strong> — Moderate recovery rates. Avoid all write operations to the device after deletion.</li>
+          <li><strong>Traditional hard drives (HDDs)</strong> — may retain deleted file data in unallocated space until it is overwritten. Highest recovery success rates when the device is stopped immediately after deletion.</li>
+          <li><strong>Solid state drives (SSDs)</strong> — typically have TRIM enabled, which tells the device to erase deleted blocks instantly, reducing recovery chances. Act immediately for the best chance of recovery.</li>
+          <li><strong>USB Flash Drives &amp; SD Cards</strong> — store data linearly. Moderate recovery rates. Avoid all write operations to the device after deletion.</li>
         </ul>
       </div>
     </section>
 
-    <!-- SECTION 2 — s-grey: Our Deleted File Recovery Process -->
-    <section class="s-grey">
+    <!-- SECTION 3 — Process -->
+    <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Our Deleted File Recovery Process</h2>
+        <p class="s-body">We approach deleted file recovery with forensic-level precision to ensure we don't further damage the data or lose potential recovery chances.</p>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
-              <h3 class="step-title">Forensic Clone</h3>
-              <p class="step-body">We create a forensic sector-by-sector clone of your storage device before performing any analysis. This preserves the original state and ensures we never work directly on your source media.</p>
+              <h3 class="step-title">Forensic Clone of the Device</h3>
+              <p class="step-body">We begin by creating a 1-to-1 sector-level image of your device using specialized hardware. This ensures we never work directly on the original device, preserving its current state.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
-              <h3 class="step-title">Deep Scan</h3>
-              <p class="step-body">Using professional forensic tools, we perform a deep scan of the cloned image — searching far beyond what the file system reports. This allows us to locate deleted, orphaned, and fragmented file structures.</p>
+              <h3 class="step-title">Deep Scan of the Clone</h3>
+              <p class="step-body">Once the clone is created, we scan it thoroughly using commercial-grade recovery tools. We search for unallocated space, file tables, and fragments. This helps us locate traces of deleted files, even if someone partially overwrote them.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">3</div>
             <div>
-              <h3 class="step-title">File Reconstruction</h3>
-              <p class="step-body">Our engineers reconstruct recoverable files using file carving techniques, rebuilding data from raw disk signatures and metadata fragments wherever possible.</p>
+              <h3 class="step-title">Attempt to Recover Lost Files</h3>
+              <p class="step-body">We extract as many deleted files as possible. This can include documents, photos, videos, email databases, and other file types.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">4</div>
             <div>
-              <h3 class="step-title">File List Review</h3>
-              <p class="step-body">You receive a detailed list of all recovered files before we finalize anything. Review the list and confirm that the important files are there before approving delivery.</p>
+              <h3 class="step-title">File Repair (If Needed)</h3>
+              <p class="step-body">If files—especially videos—are corrupted or partially damaged, we attempt to rebuild them. This includes header repair, data stitching, and restoring file structures when possible.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">5</div>
             <div>
-              <h3 class="step-title">Delivery</h3>
-              <p class="step-body">Once approved, we transfer your recovered files to a new drive and return it to you via pickup or insured shipping — ready for immediate use.</p>
+              <h3 class="step-title">File List Review &amp; Delivery</h3>
+              <p class="step-body">You receive a detailed list of all recovered files before we finalize anything. Review and confirm, then we transfer your files to a new drive and return it via pickup or insured shipping.</p>
             </div>
           </div>
         </div>
@@ -148,20 +249,39 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- SECTION 4 — Why DIY Makes Things Worse -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Why DIY Tools Can Make Things Worse</h2>
+        <p class="s-body">Many people try to recover lost data using free or low-cost software. Unfortunately, these tools often scan the drive directly and can overwrite deleted data during installation or operation.</p>
+        <p class="s-body">If your device has TRIM enabled, which most modern SSDs and Macs do, the system may erase deleted files quickly. This happens at the system level before any tool can recover them. TRIM is a background process. It cleans up deleted data blocks to improve efficiency. However, it makes data recovery much harder.</p>
+        <p class="s-body">Also, failed recovery attempts may corrupt the file system or destroy file fragments. If your data is valuable, we strongly recommend contacting us before attempting DIY recovery.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — Nationwide Service -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Nationwide Service with Free Round-Trip Shipping</h2>
+        <p class="s-body">Located in Los Angeles, we proudly serve customers across the United States. Our deleted file recovery services are available nationwide with free round-trip shipping. We'll email you a prepaid shipping label and packing instructions. Once we get your device, we start the recovery process. We will return your recovered files on an external drive (which you can provide or purchase from us) when we finish.</p>
+      </div>
+    </section>
+
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />
 
     <!-- CONTACT BAND -->
-    <section class="s-contact-band">
+    <section class="s-contact-band contact-band-bg">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Deleted File Recovery</h2>
+          <h2 class="contact-banner-heading">Recover Your Deleted Files Today</h2>
         </div>
+        <p class="contact-body-text">Stop using the device immediately — every second counts. Contact Five Star Data Recovery now for a free consultation and let our engineers get to work.</p>
         <ul class="contact-bullets">
-          <li>Stop using the device immediately</li>
-          <li>$200 flat rate — paid upfront</li>
-          <li>Forensic-level deep scan</li>
+          <li>$200 flat rate — paid upfront, no surprises</li>
+          <li>Free nationwide shipping both ways</li>
           <li>1–3 business day turnaround</li>
+          <li>File list review before final delivery</li>
         </ul>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
@@ -195,10 +315,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-grey { background: #f4f7fc; padding: 72px 0; }
 .s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
 .s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.inline-link { color: #C9A84C; font-weight: 600; text-decoration: underline; }
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
 .content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
 .content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
 .process-steps { display: flex; flex-direction: column; }
 .process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
 .process-step:last-child { border-bottom: none; }
@@ -207,9 +329,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
 .pricing-note { background: #fff8e8; border: 1px solid rgba(201,168,76,0.4); border-radius: 8px; padding: 20px 24px; margin-top: 32px; font-size: 0.93rem; color: #4a5568; line-height: 1.75; }
 .pricing-note strong { color: #1a1a2e; }
-.s-contact-band { background: #0f1623; padding: 72px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
-.contact-banner-card { border: 1px solid rgba(201,168,76,0.3); border-radius: 8px; padding: 28px 32px; margin-bottom: 28px; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/deleted-file-recovery-devices.webp') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
 .contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
 .contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
 .contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
 .contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
@@ -222,5 +346,5 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+@media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; } }
 </style>
