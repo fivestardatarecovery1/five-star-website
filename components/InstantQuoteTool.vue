@@ -19,7 +19,7 @@ const NEEDS_BRAND    = ['external']
 const NEEDS_CAPACITY = ['sata', 'other-ext']
 
 const deviceOptions = [
-  { id: 'sata',     label: 'Hard Drive (HDD)',       sub: 'Internal laptop or desktop hard drive',    icon: '🖴'  },
+  { id: 'sata',     label: 'Hard Drive (HDD)',       sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
   { id: 'external', label: 'External Hard Drive',    sub: 'WD, Seagate, Toshiba, LaCie, and more',   icon: '📦' },
   { id: 'ssd',      label: 'SSD / NVMe',             sub: 'Solid state drive, internal or external', icon: '⚡'  },
   { id: 'raid',     label: 'RAID / NAS',             sub: 'Multi-drive array or server storage',     icon: '🗄️' },
