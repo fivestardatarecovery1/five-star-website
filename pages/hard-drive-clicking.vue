@@ -319,6 +319,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="A clicking hard drive is a medical emergency for your data. Our ISO 5 cleanroom engineers use donor parts and precision head-swap procedures to stabilize and image your drive before the platters sustain further damage."
+      bullet1="ISO 5 Certified Cleanroom"
+      bullet2="$950 flat rate — all parts included"
+      bullet3="No Data, No Charge (most cases)"
+      closing="Power off your drive now and do not plug it back in. Fill out the form and we'll reach out with a free evaluation."
+      bgImage="/hard-drive-clicking-sound-data-recovery.webp"
+    />
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
       <div class="container">

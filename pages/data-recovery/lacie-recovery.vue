@@ -403,6 +403,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="LaCie drives are built for creative professionals — and we know exactly how to recover them. From Rugged SSDs to 6big RAID arrays and Thunderbolt-encrypted models, we handle every LaCie configuration."
+      bullet1="Specialists in LaCie Rugged, d2, and RAID systems"
+      bullet2="Encrypted and Thunderbolt drive recovery"
+      bullet3="No Data, No Charge (most cases)"
+      closing="Don't reformat or run Disk Utility. Fill out the form and we'll get back to you with a free assessment and quote."
+      bgImage="/lacie-data-recovery-hero.webp"
+    />
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
       <div class="container">

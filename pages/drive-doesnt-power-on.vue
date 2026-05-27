@@ -314,6 +314,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />
 
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="A drive with no power doesn't mean your data is gone. PCB failures, power surge damage, and internal shorts are all recoverable with the right tools — and we have them."
+      bullet1="Free diagnostic — PCB, firmware, and internal inspection"
+      bullet2="Donor parts sourced at no extra charge"
+      bullet3="No Data, No Charge (most cases)"
+      closing="Don't keep plugging it in. Each attempt risks further damage. Fill out the form and let our engineers take it from here."
+      bgImage="/drive-no-power-hero.webp"
+    />
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
       <div class="container">

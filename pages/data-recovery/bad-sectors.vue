@@ -355,6 +355,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />
 
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="Bad sectors don't have to mean permanent data loss. Our PC-3000 imaging hardware bypasses unstable sectors and clones your drive safely — so we work from a copy, never the original."
+      bullet1="Sector-by-sector imaging — your original drive is never touched"
+      bullet2="Logical and physical bad sector recovery"
+      bullet3="No Data, No Charge (most cases)"
+      closing="Stop using the drive immediately. Every read attempt on a degrading drive increases the risk. Fill out the form for a free evaluation."
+      bgImage="/bad-sectors-hard-drive-recovery.webp"
+    />
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
       <div class="container">

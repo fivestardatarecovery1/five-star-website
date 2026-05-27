@@ -334,6 +334,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="When deleted files seem gone forever, our forensic engineers dig deeper. We perform sector-level scans to locate and reconstruct files before they're permanently overwritten."
+      bullet1="Flat $200 rate — paid upfront, no surprises"
+      bullet2="File list review before final delivery"
+      bullet3="No Data, No Fee (beyond the $200 forensic fee)"
+      closing="Don't install new software or save files to the affected drive. Every second counts. Fill out the form and let us evaluate your case for free."
+      bgImage="/deleted-file-recovery-hero.webp"
+    />
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
       <div class="container">

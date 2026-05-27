@@ -322,6 +322,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <!-- QUOTE FORM -->
+    <QuoteFormSection
+      description="Whether your drive shows as RAW, unallocated, or completely invisible — our engineers diagnose the exact cause and recover your data without risky repair tools that can make things worse."
+      bullet1="Free diagnostic — logical and physical assessment"
+      bullet2="Safe cloning before any recovery attempt"
+      bullet3="No Data, No Charge (most cases)"
+      closing="Do not run CHKDSK, First Aid, or format the drive. Fill out the form and let us evaluate it safely."
+      bgImage="/hard-drive-not-showing-up-hero.webp"
+    />
+
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
       <div class="container">
