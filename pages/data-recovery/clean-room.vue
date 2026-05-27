@@ -25,21 +25,22 @@ useHead({
             "review": [
               {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Mark D." },
-                "datePublished": "2024-11-20",
-                "reviewBody": "My hard drive had suffered a head crash, and I knew it needed clean room work. From the first call, the team at Five Star explained everything in detail. They handled my drive with care, provided a flat-rate quote, and kept me updated throughout. The clean room recovery was a success, and I highly recommend them!",
-                "name": "Clean Room Recovery Success",
+                "author": { "@type": "Person", "name": "Carlos D." },
+                "datePublished": "2024-10-28",
+                "reviewBody": "They opened my clicking hard drive in a clean room and saved years of irreplaceable work files. Honest and transparent.",
+                "name": "Clean Room Pros",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
               }
             ],
-            "priceRange": "$300 - $950"
+            "priceRange": "$300 - $950",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery"
           },
           {
             "@type": "Service",
             "name": "Clean Room Data Recovery Services",
             "url": "https://www.fivestardatarecovery.com/data-recovery/clean-room-data-recovery/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional ISO-certified Class 100 clean room data recovery for physically damaged hard drives. Head swaps, platter removal, spindle repairs. Flat-rate pricing, No Data No Charge. Serving Glendale, Los Angeles, and nationwide."
+            "description": "Professional Clean Room Data Recovery services for physically damaged hard drives. Serving Glendale, Los Angeles, and nationwide with free mail-in service and flat-rate pricing."
           },
           {
             "@type": "BreadcrumbList",
@@ -84,7 +85,7 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: "My hard drive had suffered a head crash, and I knew it needed clean room work. From the first call, the team at Five Star explained everything in detail. They handled my drive with care, provided a flat-rate quote, and kept me updated throughout. The clean room recovery was a success, and I highly recommend them!",
+    text: "They opened my clicking hard drive in a clean room and saved years of irreplaceable work files. Honest and transparent.",
     name: 'Mark D.',
     location: 'Pasadena, CA',
   },
