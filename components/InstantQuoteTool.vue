@@ -1,178 +1,392 @@
 <script setup lang="ts">
-const step = ref(1)
-const selections = reactive({ device: '', issue: '', urgency: '' })
+type Step = 'device' | 'capacity' | 'issue' | 'cover' | 'urgency' | 'result' | 'call'
+
+const currentStep = ref<Step>('device')
 const animating = ref(false)
 
-const devices = [
-  { id: 'hdd',      label: 'Hard Drive (HDD)',  icon: '🖴',  base: 350  },
-  { id: 'ssd',      label: 'SSD',               icon: '⚡',  base: 450  },
-  { id: 'external', label: 'External Drive',     icon: '📦',  base: 350  },
-  { id: 'raid',     label: 'RAID / NAS',         icon: '🗄️', base: 800  },
-  { id: 'usb',      label: 'USB / SD Card',      icon: '💾',  base: 250  },
-  { id: 'phone',    label: 'Phone / Tablet',     icon: '📱',  base: 400  },
+const sel = reactive({
+  device: '',
+  capacity: '',
+  issue: '',
+  coverOpened: null as boolean | null,
+  urgency: '',
+})
+
+const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb']
+const NEEDS_CAPACITY = ['sata', 'other-ext']
+
+const deviceOptions = [
+  { id: 'sata',        label: 'Internal SATA Drive',      sub: 'Laptop or desktop hard drive',          icon: '🖴'  },
+  { id: 'wd-ext',      label: 'WD / SanDisk / G-Drive',   sub: 'WD My Passport, SanDisk, G-Drive, etc.', icon: '📦' },
+  { id: 'toshiba-ext', label: 'Toshiba External',         sub: 'Toshiba Canvio, etc.',                  icon: '📦' },
+  { id: 'other-ext',   label: 'Other External Drive',     sub: 'Seagate, LaCie, Samsung, etc.',         icon: '📦' },
+  { id: 'ssd',         label: 'SSD / NVMe',               sub: 'Internal or external solid state',      icon: '⚡'  },
+  { id: 'raid',        label: 'RAID / NAS',               sub: 'Multi-drive array or server',           icon: '🗄️' },
+  { id: 'phone',       label: 'Phone / Tablet',           sub: 'iPhone, Android, iPad',                 icon: '📱' },
+  { id: 'usb',         label: 'USB / SD Card',            sub: 'Flash drive or memory card',            icon: '💾' },
 ]
 
-const issues = [
-  { id: 'not-detected', label: 'Not Detected / Not Showing Up', icon: '🔌', add: 0   },
-  { id: 'clicking',     label: 'Clicking or Grinding Noise',    icon: '🔊', add: 200 },
-  { id: 'water',        label: 'Water Damage',                  icon: '💧', add: 250 },
-  { id: 'corrupted',    label: 'Corrupted / Unreadable Files',  icon: '⚠️', add: 0   },
-  { id: 'deleted',      label: 'Accidental Deletion',           icon: '🗑️', add: 50  },
-  { id: 'physical',     label: 'Physical Damage',               icon: '💥', add: 200 },
-  { id: 'no-power',     label: 'Not Powering On',               icon: '🔋', add: 100 },
+const capacityOptions = [
+  { id: 'under2', label: 'Under 2TB'      },
+  { id: '2to7',   label: '2TB – 7TB'      },
+  { id: '8to12',  label: '8TB – 12TB'     },
+  { id: '12plus', label: '12TB or Larger' },
 ]
 
-const urgencies = [
-  { id: 'standard',       label: 'Standard',       sub: '3–5 Business Days',             icon: '📅', add: 0   },
-  { id: 'expedited',      label: 'Expedited',      sub: '1–2 Business Days',             icon: '🚀', add: 200 },
-  { id: 'expedited-plus', label: 'Expedited Plus', sub: '24/7 Rush · Priority Engineer', icon: '⚡', add: 400 },
+const issueOptions = [
+  {
+    id: 'logical',
+    label: 'No Unusual Sounds',
+    sub: 'Not detected, corrupted files, unreadable, or accidentally formatted',
+    icon: '🔌',
+  },
+  {
+    id: 'mechanical',
+    label: 'Clicking, Beeping, or Grinding',
+    sub: 'Mechanical failure — cleanroom recovery required',
+    icon: '🔊',
+  },
+  {
+    id: 'deleted',
+    label: 'Deleted Files',
+    sub: 'Files were accidentally deleted from the drive',
+    icon: '🗑️',
+  },
 ]
+
+const urgencyOptions = [
+  {
+    id: 'standard',
+    label: 'Standard',
+    sub: 'Regular business hours',
+    icon: '📅',
+    fee: 0,
+  },
+  {
+    id: 'expedited',
+    label: 'Expedited',
+    sub: '+$200 upfront non-refundable · Business hours priority',
+    icon: '🚀',
+    fee: 200,
+  },
+  {
+    id: 'expedited-plus',
+    label: 'Expedited Plus',
+    sub: '+$500 upfront · 24/7/365 — never stops until complete',
+    icon: '⚡',
+    fee: 500,
+  },
+]
+
+function getBasePrice(): number | null {
+  const { device, capacity, issue } = sel
+  if (!device || !issue) return null
+  if (CALL_DEVICES.includes(device)) return null
+
+  const isMech = issue === 'mechanical'
+
+  if (device === 'sata') {
+    if (!capacity) return null
+    if (isMech) return (capacity === '8to12' || capacity === '12plus') ? 1800 : 950
+    if (capacity === 'under2') return 300
+    if (capacity === '2to7')   return 500
+    if (capacity === '8to12')  return 600
+    return 800 // 12TB+
+  }
+
+  if (device === 'wd-ext') return isMech ? 950 : 600
+  if (device === 'toshiba-ext') return isMech ? 950 : 500
+
+  // other-ext
+  if (isMech) return 950
+  if (!capacity) return null
+  if (capacity === 'under2' || capacity === '2to7') return 500
+  if (capacity === '8to12') return 600
+  return 800 // 12+
+}
+
+const isHelium = computed(() =>
+  sel.device === 'sata' &&
+  (sel.capacity === '8to12' || sel.capacity === '12plus') &&
+  sel.issue === 'mechanical'
+)
 
 const quote = computed(() => {
-  const d = devices.find(x => x.id === selections.device)
-  const i = issues.find(x => x.id === selections.issue)
-  const u = urgencies.find(x => x.id === selections.urgency)
-  if (!d || !i || !u) return null
+  const base = getBasePrice()
+  if (base === null) return null
+  const urg = urgencyOptions.find(u => u.id === sel.urgency)
+  if (!urg) return null
+
+  const coverFee       = sel.coverOpened ? 200 : 0
+  const urgFee         = urg.fee
+  const heliumDeposit  = isHelium.value ? 300 : 0
+  const deletedUpfront = sel.issue === 'deleted' ? 200 : 0
+
+  const total        = base + urgFee + coverFee
+  const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
+  const dueOnSuccess = base - heliumDeposit - deletedUpfront
+
   return {
-    price: d.base + i.add + u.add,
-    deviceLabel:  d.label,
-    issueLabel:   i.label,
-    urgencyLabel: u.label,
+    total, base, upfront, dueOnSuccess,
+    coverFee, urgFee, heliumDeposit, deletedUpfront,
+    deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
+    capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
+    issueLabel:    issueOptions.find(i => i.id === sel.issue)?.label,
+    urgencyLabel:  urg.label,
   }
 })
 
-const stepLabels = ['Device Type', 'Issue', 'Urgency', 'Your Quote']
-
-function pick(field: 'device' | 'issue' | 'urgency', val: string) {
-  selections[field] = val
+// ── Navigation ──────────────────────────────────────────────────────────────
+function goTo(s: Step, delay = 220) {
   animating.value = true
-  setTimeout(() => {
-    step.value++
-    animating.value = false
-  }, 220)
+  setTimeout(() => { currentStep.value = s; animating.value = false }, delay)
 }
 
-function goBack() {
-  if (step.value > 1) step.value--
+function pickDevice(id: string) {
+  sel.device = id; sel.capacity = ''; sel.issue = ''; sel.coverOpened = null; sel.urgency = ''
+  if (CALL_DEVICES.includes(id)) goTo('call')
+  else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
+  else goTo('issue')
 }
-
+function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
+function pickIssue(id: string)    { sel.issue = id;    goTo('cover') }
+function pickCover(v: boolean)    { sel.coverOpened = v; goTo('urgency') }
+function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
+function back() {
+  const s = currentStep.value
+  if (s === 'capacity') goTo('device', 0)
+  else if (s === 'issue') goTo(NEEDS_CAPACITY.includes(sel.device) ? 'capacity' : 'device', 0)
+  else if (s === 'cover') goTo('issue', 0)
+  else if (s === 'urgency') goTo('cover', 0)
+  else if (s === 'result') goTo('urgency', 0)
+  else if (s === 'call') goTo('device', 0)
+}
 function reset() {
   animating.value = true
   setTimeout(() => {
-    step.value = 1
-    selections.device = ''
-    selections.issue = ''
-    selections.urgency = ''
+    currentStep.value = 'device'
+    sel.device = ''; sel.capacity = ''; sel.issue = ''; sel.coverOpened = null; sel.urgency = ''
     animating.value = false
   }, 180)
 }
+
+// ── Progress ─────────────────────────────────────────────────────────────────
+const progressSteps = computed(() => {
+  if (CALL_DEVICES.includes(sel.device)) return ['Device', 'Quote']
+  const list = ['Device']
+  if (NEEDS_CAPACITY.includes(sel.device)) list.push('Capacity')
+  list.push('Issue', 'Cover', 'Urgency', 'Quote')
+  return list
+})
+
+const progressIndex = computed(() => {
+  const map: Partial<Record<Step, number>> = { device: 0, call: 1 }
+  if (NEEDS_CAPACITY.includes(sel.device)) {
+    Object.assign(map, { capacity: 1, issue: 2, cover: 3, urgency: 4, result: 5 })
+  } else {
+    Object.assign(map, { issue: 1, cover: 2, urgency: 3, result: 4 })
+  }
+  return map[currentStep.value] ?? 0
+})
 </script>
 
 <template>
   <div class="iqt-wrap">
-    <!-- Progress bar -->
+
+    <!-- Progress -->
     <div class="iqt-progress">
       <div
-        v-for="(label, idx) in stepLabels"
+        v-for="(label, idx) in progressSteps"
         :key="label"
-        class="iqt-step-dot"
-        :class="{
-          active: step === idx + 1,
-          done: step > idx + 1,
-        }"
+        class="iqt-pdot"
+        :class="{ active: progressIndex === idx, done: progressIndex > idx }"
       >
-        <div class="iqt-dot-circle">
-          <span v-if="step > idx + 1">✓</span>
+        <div class="iqt-pcircle">
+          <span v-if="progressIndex > idx">✓</span>
           <span v-else>{{ idx + 1 }}</span>
         </div>
-        <span class="iqt-dot-label">{{ label }}</span>
+        <span class="iqt-plabel">{{ label }}</span>
       </div>
-      <div class="iqt-progress-track">
-        <div class="iqt-progress-fill" :style="{ width: ((step - 1) / 3 * 100) + '%' }" />
+      <div class="iqt-ptrack">
+        <div
+          class="iqt-pfill"
+          :style="{ width: progressSteps.length > 1 ? (progressIndex / (progressSteps.length - 1) * 100) + '%' : '0%' }"
+        />
       </div>
     </div>
 
-    <!-- Step content -->
+    <!-- Body -->
     <div class="iqt-body" :class="{ 'iqt-fade': animating }">
 
-      <!-- Step 1: Device -->
-      <div v-if="step === 1">
-        <h3 class="iqt-question">What type of device needs recovery?</h3>
-        <div class="iqt-grid iqt-grid-3">
+      <!-- STEP: Device -->
+      <div v-if="currentStep === 'device'">
+        <h3 class="iqt-q">What type of device needs recovery?</h3>
+        <div class="iqt-grid g4">
           <button
-            v-for="d in devices"
-            :key="d.id"
+            v-for="d in deviceOptions" :key="d.id"
             class="iqt-card"
-            :class="{ selected: selections.device === d.id }"
-            @click="pick('device', d.id)"
+            :class="{ selected: sel.device === d.id }"
+            @click="pickDevice(d.id)"
           >
-            <span class="iqt-card-icon">{{ d.icon }}</span>
-            <span class="iqt-card-label">{{ d.label }}</span>
+            <span class="iqt-icon">{{ d.icon }}</span>
+            <span class="iqt-clabel">{{ d.label }}</span>
+            <span class="iqt-csub">{{ d.sub }}</span>
           </button>
         </div>
       </div>
 
-      <!-- Step 2: Issue -->
-      <div v-else-if="step === 2">
-        <h3 class="iqt-question">What's happening with your device?</h3>
-        <div class="iqt-grid iqt-grid-2">
+      <!-- STEP: Capacity -->
+      <div v-else-if="currentStep === 'capacity'">
+        <h3 class="iqt-q">What is the storage capacity?</h3>
+        <div class="iqt-grid g4">
           <button
-            v-for="i in issues"
-            :key="i.id"
-            class="iqt-card iqt-card-wide"
-            :class="{ selected: selections.issue === i.id }"
-            @click="pick('issue', i.id)"
+            v-for="c in capacityOptions" :key="c.id"
+            class="iqt-card iqt-cap-card"
+            :class="{ selected: sel.capacity === c.id }"
+            @click="pickCapacity(c.id)"
           >
-            <span class="iqt-card-icon">{{ i.icon }}</span>
-            <span class="iqt-card-label">{{ i.label }}</span>
+            <span class="iqt-icon">💾</span>
+            <span class="iqt-clabel">{{ c.label }}</span>
           </button>
         </div>
-        <button class="iqt-back" @click="goBack">← Back</button>
+        <button class="iqt-back" @click="back">← Back</button>
       </div>
 
-      <!-- Step 3: Urgency -->
-      <div v-else-if="step === 3">
-        <h3 class="iqt-question">How quickly do you need your data?</h3>
-        <div class="iqt-grid iqt-grid-3">
+      <!-- STEP: Issue -->
+      <div v-else-if="currentStep === 'issue'">
+        <h3 class="iqt-q">What is happening with your drive?</h3>
+        <div class="iqt-grid g1">
           <button
-            v-for="u in urgencies"
-            :key="u.id"
-            class="iqt-card iqt-card-urgency"
-            :class="{ selected: selections.urgency === u.id, 'iqt-card-featured': u.id === 'expedited-plus' }"
-            @click="pick('urgency', u.id)"
+            v-for="i in issueOptions" :key="i.id"
+            class="iqt-card iqt-issue-card"
+            :class="{ selected: sel.issue === i.id }"
+            @click="pickIssue(i.id)"
           >
-            <span class="iqt-card-icon">{{ u.icon }}</span>
-            <span class="iqt-card-label">{{ u.label }}</span>
-            <span class="iqt-card-sub">{{ u.sub }}</span>
+            <span class="iqt-icon">{{ i.icon }}</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">{{ i.label }}</span>
+              <span class="iqt-csub">{{ i.sub }}</span>
+            </div>
           </button>
         </div>
-        <button class="iqt-back" @click="goBack">← Back</button>
+        <button class="iqt-back" @click="back">← Back</button>
       </div>
 
-      <!-- Step 4: Result -->
-      <div v-else-if="step === 4 && quote" class="iqt-result">
-        <div class="iqt-result-badge">Free Estimate</div>
-        <div class="iqt-price-range">
-          ${{ quote.price.toLocaleString() }}
+      <!-- STEP: Cover Opened -->
+      <div v-else-if="currentStep === 'cover'">
+        <h3 class="iqt-q">Has the hard drive's metal cover been opened?</h3>
+        <p class="iqt-hint">This refers to the actual metal enclosure where the platters are stored — <em>not</em> the plastic casing of an external drive.</p>
+        <div class="iqt-grid g2">
+          <button
+            class="iqt-card iqt-cover-card"
+            :class="{ selected: sel.coverOpened === false }"
+            @click="pickCover(false)"
+          >
+            <span class="iqt-icon">✅</span>
+            <span class="iqt-clabel">No — Cover is Intact</span>
+            <span class="iqt-csub">The metal cover has not been opened</span>
+          </button>
+          <button
+            class="iqt-card iqt-cover-card"
+            :class="{ selected: sel.coverOpened === true }"
+            @click="pickCover(true)"
+          >
+            <span class="iqt-icon">⚠️</span>
+            <span class="iqt-clabel">Yes — Cover Was Opened</span>
+            <span class="iqt-csub">Additional $200 upfront non-refundable fee applies</span>
+          </button>
         </div>
-        <p class="iqt-price-label">Flat-Rate Recovery Price</p>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
 
+      <!-- STEP: Urgency -->
+      <div v-else-if="currentStep === 'urgency'">
+        <h3 class="iqt-q">How quickly do you need your data back?</h3>
+        <div class="iqt-grid g1">
+          <button
+            v-for="u in urgencyOptions" :key="u.id"
+            class="iqt-card iqt-urg-card"
+            :class="{ selected: sel.urgency === u.id }"
+            @click="pickUrgency(u.id)"
+          >
+            <span class="iqt-icon">{{ u.icon }}</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">{{ u.label }}</span>
+              <span class="iqt-csub">{{ u.sub }}</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
+      <!-- STEP: Result -->
+      <div v-else-if="currentStep === 'result' && quote" class="iqt-result">
+        <div class="iqt-rbadge">Your Flat-Rate Quote</div>
+
+        <div class="iqt-price">${{ quote.total.toLocaleString() }}</div>
+        <p class="iqt-price-lbl">Total Recovery Cost</p>
+
+        <!-- Payment breakdown -->
+        <div class="iqt-breakdown">
+          <div v-if="quote.upfront > 0" class="iqt-brow upfront">
+            <span>Due at Check-In <em>(non-refundable)</em></span>
+            <span class="iqt-bamount">${{ quote.upfront.toLocaleString() }}</span>
+          </div>
+          <div class="iqt-brow success">
+            <span>Due on Successful Recovery</span>
+            <span class="iqt-bamount">${{ quote.dueOnSuccess.toLocaleString() }}</span>
+          </div>
+        </div>
+
+        <!-- Line-item notes -->
+        <div class="iqt-notes">
+          <div v-if="quote.heliumDeposit" class="iqt-note warn">
+            ⚠️ Helium-filled drive (8TB+) — $300 non-refundable deposit included above. Additional cleanroom work may be required.
+          </div>
+          <div v-if="quote.deletedUpfront" class="iqt-note">
+            🗑️ Deleted file recovery requires a $200 upfront non-refundable fee, which applies toward your total.
+          </div>
+          <div v-if="quote.coverFee" class="iqt-note warn">
+            ⚠️ Drive cover previously opened — $200 upfront non-refundable fee included.
+          </div>
+          <div v-if="sel.urgency === 'expedited-plus'" class="iqt-note">
+            ⚡ Expedited Plus runs 24/7/365. A modified quote with any additional fees will be provided within a few hours of check-in.
+          </div>
+        </div>
+
+        <!-- Summary -->
         <div class="iqt-summary">
-          <div class="iqt-summary-row"><span class="iqt-summary-key">Device</span><span class="iqt-summary-val">{{ quote.deviceLabel }}</span></div>
-          <div class="iqt-summary-row"><span class="iqt-summary-key">Issue</span><span class="iqt-summary-val">{{ quote.issueLabel }}</span></div>
-          <div class="iqt-summary-row"><span class="iqt-summary-key">Service</span><span class="iqt-summary-val">{{ quote.urgencyLabel }}</span></div>
+          <div class="iqt-srow"><span>Device</span><span>{{ quote.deviceLabel }}</span></div>
+          <div v-if="quote.capacityLabel" class="iqt-srow"><span>Capacity</span><span>{{ quote.capacityLabel }}</span></div>
+          <div class="iqt-srow"><span>Issue</span><span>{{ quote.issueLabel }}</span></div>
+          <div class="iqt-srow"><span>Service</span><span>{{ quote.urgencyLabel }}</span></div>
         </div>
 
         <div class="iqt-guarantee">
-          🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you pay nothing.
+          🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you owe nothing for the recovery.
         </div>
 
         <div class="iqt-cta-row">
-          <a href="/start-recovery" class="iqt-cta-btn">Start My Recovery →</a>
-          <a href="tel:+18182728866" class="iqt-cta-call">📞 Call 818-272-8866</a>
+          <a href="/start-recovery" class="iqt-cta-primary">Start My Recovery →</a>
+          <a href="tel:+18182728866" class="iqt-cta-call">📞 818-272-8866</a>
         </div>
-
         <button class="iqt-restart" @click="reset">← Start Over</button>
+      </div>
+
+      <!-- STEP: Call for Quote -->
+      <div v-else-if="currentStep === 'call'" class="iqt-call">
+        <div class="iqt-call-icon">📞</div>
+        <h3 class="iqt-q">Call Us for a Custom Quote</h3>
+        <p class="iqt-call-body">
+          Pricing for <strong>{{ deviceOptions.find(d => d.id === sel.device)?.label }}</strong> cases
+          is customized based on your specific device and situation.
+          Give us a call — we'll give you a free quote in minutes.
+        </p>
+        <div class="iqt-call-actions">
+          <a href="tel:+18182728866" class="iqt-cta-primary">📞 Call 818-272-8866</a>
+          <a href="/start-recovery" class="iqt-cta-call">Fill Out Recovery Form</a>
+        </div>
+        <button class="iqt-restart" @click="back">← Change Device</button>
       </div>
 
     </div>
@@ -185,32 +399,32 @@ function reset() {
   border: 1px solid var(--color-border, #1E2233);
   border-radius: 16px;
   padding: 40px 36px 36px;
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
 }
 
-/* Progress */
+/* ── Progress ─────────────────────────────────── */
 .iqt-progress {
   display: flex;
   justify-content: space-between;
   position: relative;
   margin-bottom: 40px;
 }
-.iqt-progress-track {
+.iqt-ptrack {
   position: absolute;
-  top: 18px;
+  top: 17px;
   left: 28px;
   right: 28px;
   height: 2px;
   background: var(--color-border, #1E2233);
   z-index: 0;
 }
-.iqt-progress-fill {
+.iqt-pfill {
   height: 100%;
   background: var(--color-gold, #F5C842);
   transition: width 0.4s ease;
 }
-.iqt-step-dot {
+.iqt-pdot {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -218,74 +432,37 @@ function reset() {
   z-index: 1;
   flex: 1;
 }
-.iqt-dot-circle {
-  width: 36px;
-  height: 36px;
+.iqt-pcircle {
+  width: 36px; height: 36px;
   border-radius: 50%;
   background: var(--color-bg, #0A0C14);
   border: 2px solid var(--color-border, #1E2233);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
   color: var(--color-muted, #A0A8B8);
   transition: all 0.3s ease;
 }
-.iqt-step-dot.active .iqt-dot-circle {
-  border-color: var(--color-gold, #F5C842);
-  color: var(--color-gold, #F5C842);
-  background: rgba(245, 200, 66, 0.08);
-}
-.iqt-step-dot.done .iqt-dot-circle {
-  background: var(--color-gold, #F5C842);
-  border-color: var(--color-gold, #F5C842);
-  color: #000;
-}
-.iqt-dot-label {
-  font-size: 11px;
-  color: var(--color-muted, #A0A8B8);
-  text-align: center;
-  white-space: nowrap;
-}
-.iqt-step-dot.active .iqt-dot-label {
-  color: var(--color-gold, #F5C842);
-}
+.iqt-pdot.active .iqt-pcircle { border-color: var(--color-gold, #F5C842); color: var(--color-gold, #F5C842); background: rgba(245,200,66,0.08); }
+.iqt-pdot.done  .iqt-pcircle  { background: var(--color-gold, #F5C842); border-color: var(--color-gold, #F5C842); color: #000; }
+.iqt-plabel { font-size: 11px; color: var(--color-muted, #A0A8B8); text-align: center; white-space: nowrap; }
+.iqt-pdot.active .iqt-plabel { color: var(--color-gold, #F5C842); }
 
-/* Body */
-.iqt-body {
-  transition: opacity 0.2s ease;
-}
-.iqt-fade {
-  opacity: 0;
-}
-.iqt-question {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 24px;
-  text-align: center;
-}
+/* ── Body ─────────────────────────────────────── */
+.iqt-body { transition: opacity 0.2s ease; min-height: 200px; }
+.iqt-fade { opacity: 0; }
+.iqt-q { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 8px; text-align: center; }
+.iqt-hint { font-size: 0.83rem; color: var(--color-muted, #A0A8B8); text-align: center; margin-bottom: 20px; line-height: 1.5; }
 
-/* Grids */
-.iqt-grid {
-  display: grid;
-  gap: 12px;
-}
-.iqt-grid-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-.iqt-grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
+/* ── Grids ────────────────────────────────────── */
+.iqt-grid { display: grid; gap: 12px; }
+.g4 { grid-template-columns: repeat(4, 1fr); }
+.g2 { grid-template-columns: repeat(2, 1fr); }
+.g1 { grid-template-columns: 1fr; }
 
-/* Cards */
+/* ── Cards ────────────────────────────────────── */
 .iqt-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  padding: 20px 14px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 18px 12px;
   background: var(--color-bg, #0A0C14);
   border: 1.5px solid var(--color-border, #1E2233);
   border-radius: 12px;
@@ -293,173 +470,128 @@ function reset() {
   transition: all 0.2s ease;
   text-align: center;
 }
-.iqt-card:hover {
-  border-color: var(--color-gold, #F5C842);
-  background: rgba(245, 200, 66, 0.06);
-  transform: translateY(-2px);
-}
-.iqt-card.selected {
-  border-color: var(--color-gold, #F5C842);
-  background: rgba(245, 200, 66, 0.1);
-}
-.iqt-card-wide {
-  flex-direction: row;
-  justify-content: flex-start;
-  padding: 16px 20px;
-  text-align: left;
-  gap: 14px;
-}
-.iqt-card-urgency {
-  padding: 24px 14px;
-}
-.iqt-card-featured {
-  border-color: rgba(245, 200, 66, 0.4);
-}
-.iqt-card-icon {
-  font-size: 1.6rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-.iqt-card-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #fff;
-}
-.iqt-card-sub {
-  font-size: 0.75rem;
-  color: var(--color-muted, #A0A8B8);
-  margin-top: 2px;
-}
+.iqt-card:hover { border-color: var(--color-gold, #F5C842); background: rgba(245,200,66,0.05); transform: translateY(-2px); }
+.iqt-card.selected { border-color: var(--color-gold, #F5C842); background: rgba(245,200,66,0.1); }
 
-/* Back button */
+.iqt-issue-card,
+.iqt-urg-card {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px 22px;
+  text-align: left;
+  gap: 16px;
+}
+.iqt-cover-card { padding: 24px 18px; }
+.iqt-cap-card   { padding: 22px 12px; }
+
+.iqt-icon     { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.iqt-clabel   { font-size: 0.88rem; font-weight: 700; color: #fff; }
+.iqt-csub     { font-size: 0.75rem; color: var(--color-muted, #A0A8B8); margin-top: 3px; line-height: 1.4; }
+.iqt-issue-text { display: flex; flex-direction: column; gap: 3px; }
+
+/* ── Back ─────────────────────────────────────── */
 .iqt-back {
-  margin-top: 20px;
-  background: none;
-  border: none;
-  color: var(--color-muted, #A0A8B8);
-  cursor: pointer;
-  font-size: 0.875rem;
-  padding: 4px 0;
-  transition: color 0.2s;
+  margin-top: 18px; background: none; border: none;
+  color: var(--color-muted, #A0A8B8); cursor: pointer;
+  font-size: 0.85rem; padding: 4px 0; transition: color 0.2s;
 }
 .iqt-back:hover { color: #fff; }
 
-/* Result */
-.iqt-result {
-  text-align: center;
-  padding: 8px 0;
-}
-.iqt-result-badge {
+/* ── Result ───────────────────────────────────── */
+.iqt-result { text-align: center; }
+.iqt-rbadge {
   display: inline-block;
-  background: rgba(245, 200, 66, 0.12);
-  color: var(--color-gold, #F5C842);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 14px;
-  border-radius: 20px;
-  border: 1px solid rgba(245, 200, 66, 0.3);
-  margin-bottom: 16px;
+  background: rgba(245,200,66,0.12); color: var(--color-gold, #F5C842);
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 4px 14px; border-radius: 20px; border: 1px solid rgba(245,200,66,0.3);
+  margin-bottom: 14px;
 }
-.iqt-price-range {
-  font-size: 3rem;
-  font-weight: 800;
-  color: var(--color-gold, #F5C842);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-.iqt-price-label {
-  color: var(--color-muted, #A0A8B8);
-  font-size: 0.9rem;
-  margin-top: 6px;
-  margin-bottom: 28px;
-}
-.iqt-summary {
+.iqt-price { font-size: 3.2rem; font-weight: 800; color: var(--color-gold, #F5C842); letter-spacing: -0.02em; line-height: 1.1; }
+.iqt-price-lbl { color: var(--color-muted, #A0A8B8); font-size: 0.85rem; margin-bottom: 24px; }
+
+.iqt-breakdown {
   background: var(--color-bg, #0A0C14);
   border: 1px solid var(--color-border, #1E2233);
   border-radius: 10px;
-  padding: 16px 20px;
-  margin-bottom: 20px;
+  overflow: hidden;
+  margin-bottom: 14px;
   text-align: left;
 }
-.iqt-summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6px 0;
-  font-size: 0.875rem;
+.iqt-brow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 18px; font-size: 0.875rem; color: #d0d8e8;
 }
-.iqt-summary-row + .iqt-summary-row {
-  border-top: 1px solid var(--color-border, #1E2233);
+.iqt-brow + .iqt-brow { border-top: 1px solid var(--color-border, #1E2233); }
+.iqt-brow.upfront { background: rgba(245,200,66,0.05); }
+.iqt-brow em { font-size: 0.75rem; color: var(--color-muted, #A0A8B8); }
+.iqt-bamount { font-weight: 700; color: #fff; font-size: 0.95rem; }
+
+.iqt-notes { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; text-align: left; }
+.iqt-note {
+  font-size: 0.8rem; color: var(--color-muted, #A0A8B8);
+  background: var(--color-bg, #0A0C14);
+  border: 1px solid var(--color-border, #1E2233);
+  border-radius: 8px; padding: 10px 14px; line-height: 1.5;
 }
-.iqt-summary-key {
-  color: var(--color-muted, #A0A8B8);
+.iqt-note.warn { border-color: rgba(245,160,50,0.35); color: #e8b96a; }
+
+.iqt-summary {
+  background: var(--color-bg, #0A0C14);
+  border: 1px solid var(--color-border, #1E2233);
+  border-radius: 10px; padding: 14px 18px;
+  margin-bottom: 16px; text-align: left;
 }
-.iqt-summary-val {
-  color: #fff;
-  font-weight: 600;
+.iqt-srow {
+  display: flex; justify-content: space-between;
+  font-size: 0.82rem; padding: 5px 0;
 }
+.iqt-srow + .iqt-srow { border-top: 1px solid var(--color-border, #1E2233); }
+.iqt-srow span:first-child { color: var(--color-muted, #A0A8B8); }
+.iqt-srow span:last-child  { color: #fff; font-weight: 600; }
+
 .iqt-guarantee {
-  background: rgba(245, 200, 66, 0.06);
-  border: 1px solid rgba(245, 200, 66, 0.2);
-  border-radius: 8px;
-  padding: 12px 16px;
-  font-size: 0.875rem;
-  color: #fff;
-  margin-bottom: 24px;
+  background: rgba(245,200,66,0.06); border: 1px solid rgba(245,200,66,0.2);
+  border-radius: 8px; padding: 12px 16px;
+  font-size: 0.85rem; color: #fff; margin-bottom: 22px;
 }
-.iqt-cta-row {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+.iqt-cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px; }
+.iqt-cta-primary {
+  background: var(--color-gold, #F5C842); color: #000;
+  font-weight: 700; font-size: 0.92rem;
+  padding: 13px 26px; border-radius: 8px;
+  text-decoration: none; transition: background 0.2s;
 }
-.iqt-cta-btn {
-  background: var(--color-gold, #F5C842);
-  color: #000;
-  font-weight: 700;
-  font-size: 0.95rem;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.iqt-cta-btn:hover { background: var(--color-gold-dark, #E8A020); }
+.iqt-cta-primary:hover { background: var(--color-gold-dark, #E8A020); }
 .iqt-cta-call {
-  background: transparent;
-  border: 1.5px solid var(--color-border, #1E2233);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: border-color 0.2s;
+  background: transparent; border: 1.5px solid var(--color-border, #1E2233);
+  color: #fff; font-weight: 600; font-size: 0.92rem;
+  padding: 13px 26px; border-radius: 8px;
+  text-decoration: none; transition: border-color 0.2s;
 }
 .iqt-cta-call:hover { border-color: var(--color-gold, #F5C842); }
 .iqt-restart {
-  background: none;
-  border: none;
-  color: var(--color-muted, #A0A8B8);
-  cursor: pointer;
-  font-size: 0.8rem;
-  padding: 4px 0;
-  transition: color 0.2s;
+  background: none; border: none; color: var(--color-muted, #A0A8B8);
+  cursor: pointer; font-size: 0.8rem; transition: color 0.2s;
 }
 .iqt-restart:hover { color: #fff; }
 
-/* Responsive */
-@media (max-width: 640px) {
+/* ── Call page ────────────────────────────────── */
+.iqt-call { text-align: center; padding: 16px 0; }
+.iqt-call-icon { font-size: 3rem; margin-bottom: 12px; }
+.iqt-call-body { color: var(--color-muted, #A0A8B8); font-size: 0.95rem; line-height: 1.65; margin: 12px 0 28px; }
+.iqt-call-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+
+/* ── Responsive ───────────────────────────────── */
+@media (max-width: 720px) {
   .iqt-wrap { padding: 28px 18px 24px; }
-  .iqt-grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .iqt-grid-2 { grid-template-columns: 1fr; }
-  .iqt-price-range { font-size: 2.2rem; }
-  .iqt-dot-label { display: none; }
-  .iqt-progress-track { top: 17px; }
+  .g4 { grid-template-columns: repeat(2, 1fr); }
+  .g2 { grid-template-columns: 1fr; }
+  .iqt-price { font-size: 2.4rem; }
+  .iqt-plabel { display: none; }
+  .iqt-ptrack { top: 17px; }
 }
-@media (max-width: 400px) {
-  .iqt-grid-3 { grid-template-columns: 1fr; }
+@media (max-width: 420px) {
+  .g4 { grid-template-columns: 1fr; }
 }
 </style>
