@@ -59,24 +59,6 @@ const trustBadges = [
   { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
 
-const reviews = [
-  {
-    text: "A client dropped their 2TB WD external hard drive down a flight of stairs. It began making a clicking hard drive noise and wasn't recognized by their Mac. We replaced the damaged head stack in our cleanroom and successfully recovered 98% of the data.",
-    name: 'Real-World Case',
-    location: 'Five Star Data Recovery',
-  },
-  {
-    text: "A wedding photographer brought in a dropped external hard drive containing all footage from a recent event. Despite internal damage, we were able to recover all photo and video files within 48 hours using expedited recovery service.",
-    name: 'Real-World Case',
-    location: 'Five Star Data Recovery',
-  },
-  {
-    text: "A university researcher lost 4 years of data after the drive fell off their desk. We imaged the failing disk and recovered data even from areas affected by bad sectors.",
-    name: 'Real-World Case',
-    location: 'Five Star Data Recovery',
-  },
-]
-
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -202,7 +184,22 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- SECTION 6 — Real-World Examples -->
-    <ReviewsSection :reviews="reviews" />
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Real-World Examples</h2>
+        <div class="examples-list">
+          <div class="example-item">
+            <p class="s-body">A client dropped their 2TB WD external hard drive down a flight of stairs. It began making a clicking hard drive noise and wasn't recognized by their Mac. We replaced the damaged head stack in our cleanroom and successfully recovered 98% of the data.</p>
+          </div>
+          <div class="example-item">
+            <p class="s-body">A wedding photographer brought in a dropped external hard drive containing all footage from a recent event. Despite internal damage, we were able to recover all photo and video files within 48 hours using expedited recovery service.</p>
+          </div>
+          <div class="example-item">
+            <p class="s-body">A university researcher lost 4 years of data after the drive fell off their desk. We imaged the failing disk and recovered data even from areas affected by bad sectors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 7 — How to Avoid Future Data Loss -->
     <section class="s-white">
@@ -322,5 +319,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
 .btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
+.examples-list { display: flex; flex-direction: column; gap: 0; }
+.example-item { padding: 24px 0; border-bottom: 1px solid #e2e6ee; }
+.example-item:last-child { border-bottom: none; }
+.example-item .s-body { margin: 0; }
 @media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; } }
 </style>
