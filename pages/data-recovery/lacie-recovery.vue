@@ -1,52 +1,140 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'LaCie Data Recovery Services — Five Star Data Recovery',
-  description: 'Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. We recover data from LaCie devices used in film sets, music studios, animation workstations, and commercial photography sessions.'
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "LocalBusiness",
+            "name": "Five Star Data Recovery",
+            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
+            "telephone": "+1-818-272-8866",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1731 S Brand Blvd.",
+              "addressLocality": "Glendale",
+              "addressRegion": "CA",
+              "postalCode": "91204",
+              "addressCountry": "US"
+            },
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "url": "https://www.fivestardatarecovery.com/",
+            "priceRange": "$300 - $950",
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
+            "review": [
+              {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Tom B." },
+                "datePublished": "2024-11-05",
+                "reviewBody": "They recovered my design projects from a LaCie Rugged drive that suddenly failed. Impressive speed and care!",
+                "name": "Creative Lifesaver",
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "name": "LaCie Data Recovery Services",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/lacie-data-recovery/",
+            "areaServed": [{ "@type": "Country", "name": "United States" }],
+            "description": "Expert LaCie Data Recovery services for external drives, RAID arrays, and SSDs. Serving Glendale, Los Angeles, and nationwide with flat-rate pricing and free mail-in service."
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
+              { "@type": "ListItem", "position": 3, "name": "LaCie Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/lacie-data-recovery/" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              { "@type": "Question", "name": "Can you recover data from a LaCie external drive that's not showing up?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we specialize in LaCie data recovery from drives that don't mount, aren't recognized by the system, or show errors. Whether it's a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files." } },
+              { "@type": "Question", "name": "Do you recover data from LaCie RAID and Rugged drives?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We offer LaCie RAID recovery for models like the 2big, 5big, and Rugged RAID Pro. Whether your RAID is degraded, failed, or reformatted, we can rebuild and extract your valuable data safely." } },
+              { "@type": "Question", "name": "What are common failure symptoms with LaCie drives?", "acceptedAnswer": { "@type": "Answer", "text": "Frequent issues with LaCie drives include clicking noises, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery." } },
+              { "@type": "Question", "name": "Can you recover files from a LaCie drive that was accidentally formatted?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your LaCie drive was accidentally formatted or partitioned, we use advanced recovery tools to perform deep scans and recover deleted files, directories, and folder structures—provided no significant data was overwritten." } },
+              { "@type": "Question", "name": "What should I do if my LaCie drive starts making unusual noises?", "acceptedAnswer": { "@type": "Answer", "text": "Immediately power it down. Clicking, buzzing, or grinding noises often indicate mechanical failure. Continued use can cause permanent damage. Bring or send it in for a safe LaCie hard drive recovery evaluation." } },
+              { "@type": "Question", "name": "Do you support recovery from encrypted LaCie drives?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we can recover data from encrypted LaCie drives—provided you supply the correct password or encryption key. Without it, data decryption is not possible due to security protocols." } },
+              { "@type": "Question", "name": "Can you recover data from older LaCie drives with FireWire or legacy ports?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We maintain legacy hardware and connectors to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old." } },
+              { "@type": "Question", "name": "Is there a difference in recovery methods for LaCie SSDs vs. HDDs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. LaCie SSD recovery requires different techniques than traditional hard drives due to TRIM commands, chip-level storage, and wear-leveling. Our engineers are trained in both technologies to ensure optimal results." } }
+            ]
+          }
+        ]
+      })
+    }
+  ]
 })
 
-const issues: { icon: string; title: string; text: string }[] = [
-  { icon: '🔊', title: 'Clicking noises from the drive', text: '' },
-  { icon: '🌡️', title: 'Overheating during use', text: '' },
-  { icon: '🐌', title: 'Slow access times or freezing', text: '' },
-  { icon: '⚠️', title: 'File system corruption or errors', text: '' },
-  { icon: '🔍', title: 'Drive fails to mount or be recognized', text: '' },
+useSeoMeta({
+  title: 'Lacie Data Recovery - Five Star Data Recovery',
+  ogTitle: 'Lacie Data Recovery - Five Star Data Recovery',
+  description: 'Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.',
+  ogDescription: 'Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.',
+})
+
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
-const causesIntro = 'Frequent issues with LaCie drives include clicking noises, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.'
-const causesOutro = ''
-const causes: string[] = []
-const processIntro = ''
-const steps: { num: string; title: string; text: string }[] = []
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes: string[] = []
-const tipIntro = ''
-const tipOutro = ''
-const tips: string[] = []
-const d2Texts: string[] = []
-const d3Texts = [
-  "Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage.",
-  "We've recovered data from Lacie devices used in film sets, music studios, animation workstations, and commercial photography sessions. Whether you formatted your Lacie hard disk, dropped it on location, or it became unreadable mid-edit, we're here to help. Our lab handles not just recovery, but also the specialized file types used in creative workflows.",
+
+const reviews = [
+  {
+    text: "We lost an entire wedding video project after formatting our Lacie Rugged SSD. Five Star Data Recovery recovered all the footage in less than 72 hours. Total lifesavers.",
+    name: 'Jenna M',
+    location: 'Santa Monica, CA',
+  },
+  {
+    text: "I had 4TB of files on my Lacie d2 drive that suddenly stopped mounting. Other places said it was hopeless. Five Star was able to recover 99% of my data.",
+    name: 'Alex R',
+    location: 'Austin, TX',
+  },
+  {
+    text: "My team uses a 4big RAID for media production. One drive failed, then another. We thought we lost the whole project. Five Star not only recovered the files—they kept the folder structure completely intact.",
+    name: 'Brandon H',
+    location: 'New York, NY',
+  },
 ]
-const d4Texts: string[] = []
-const midBody: string[] = []
-const contactText = ''
-const contactList: string[] = []
-const contactOutro = ''
-const reviews: { text: string; name: string; location: string }[] = [
-  { text: "We lost an entire wedding video project after formatting our Lacie Rugged SSD. Five Star Data Recovery recovered all the footage in less than 72 hours. Total lifesavers.", name: 'Jenna M.', location: 'Santa Monica, CA' },
-  { text: "I had 4TB of files on my Lacie d2 drive that suddenly stopped mounting. Other places said it was hopeless. Five Star was able to recover 99% of my data.", name: 'Alex R.', location: 'Austin, TX' },
-  { text: "My team uses a 4big RAID for media production. One drive failed, then another. We thought we lost the whole project. Five Star not only recovered the files—they kept the folder structure completely intact.", name: 'Brandon H.', location: 'New York, NY' },
-]
+
 const faqs = [
-  { q: "Can you recover data from a LaCie external drive that's not showing up?", a: "Yes, we specialize in LaCie data recovery from drives that don't mount, aren't recognized by the system, or show errors. Whether it's a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files." },
-  { q: 'Do you recover data from LaCie RAID and Rugged drives?', a: 'Absolutely. We offer LaCie RAID recovery for models like the 2big, 5big, and Rugged RAID Pro. Whether your RAID is degraded, failed, or reformatted, we can rebuild and extract your valuable data safely.' },
-  { q: 'What are common failure symptoms with LaCie drives?', a: 'Frequent issues with LaCie drives include clicking noises, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.' },
-  { q: 'Can you recover files from a LaCie drive that was accidentally formatted?', a: 'Yes. If your LaCie drive was accidentally formatted or partitioned, we use advanced recovery tools to perform deep scans and recover deleted files, directories, and folder structures — provided no significant data was overwritten.' },
-  { q: 'What should I do if my LaCie drive starts making unusual noises?', a: 'Immediately power it down. Clicking, buzzing, or grinding noises often indicate mechanical failure. Continued use can cause permanent damage. Bring or send it in for a safe LaCie hard drive recovery evaluation.' },
-  { q: 'Do you support recovery from encrypted LaCie drives?', a: 'Yes, we can recover data from encrypted LaCie drives — provided you supply the correct password or encryption key. Without it, data decryption is not possible due to security protocols.' },
-  { q: 'Can you recover data from older LaCie drives with FireWire or legacy ports?', a: "Yes. We maintain legacy hardware and connectors to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old." },
-  { q: 'Is there a difference in recovery methods for LaCie SSDs vs. HDDs?', a: 'Yes. LaCie SSD recovery requires different techniques than traditional hard drives due to TRIM commands, chip-level storage, and wear-leveling. Our engineers are trained in both technologies to ensure optimal results.' },
+  {
+    q: "Can you recover data from a LaCie external drive that's not showing up?",
+    a: "Yes, we specialize in LaCie data recovery from drives that <strong>don't mount, aren't recognized by the system</strong>, or show errors. Whether it's a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files.",
+  },
+  {
+    q: 'Do you recover data from LaCie RAID and Rugged drives?',
+    a: "Absolutely. We offer <strong>LaCie RAID recovery</strong> for models like the 2big, 5big, and Rugged RAID Pro. Whether your RAID is degraded, failed, or reformatted, we can rebuild and extract your valuable data safely.",
+  },
+  {
+    q: 'What are common failure symptoms with LaCie drives?',
+    a: "Frequent issues with LaCie drives include <strong>clicking noises</strong>, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.",
+  },
+  {
+    q: 'Can you recover files from a LaCie drive that was accidentally formatted?',
+    a: "Yes. If your LaCie drive was <strong>accidentally formatted or partitioned</strong>, we use advanced recovery tools to perform deep scans and recover deleted files, directories, and folder structures—provided no significant data was overwritten.",
+  },
+  {
+    q: 'What should I do if my LaCie drive starts making unusual noises?',
+    a: "<strong>Immediately power it down.</strong> Clicking, buzzing, or grinding noises often indicate mechanical failure. Continued use can cause permanent damage. Bring or send it in for a safe LaCie hard drive recovery evaluation.",
+  },
+  {
+    q: 'Do you support recovery from encrypted LaCie drives?',
+    a: "Yes, we can recover data from <strong>encrypted LaCie drives</strong>—provided you supply the correct password or encryption key. Without it, data decryption is not possible due to security protocols.",
+  },
+  {
+    q: 'Can you recover data from older LaCie drives with FireWire or legacy ports?',
+    a: "Yes. We maintain <strong>legacy hardware and connectors</strong> to perform data recovery on older LaCie drives, including FireWire 400/800 models. We've successfully restored data from LaCie devices over a decade old.",
+  },
+  {
+    q: 'Is there a difference in recovery methods for LaCie SSDs vs. HDDs?',
+    a: "Yes. <strong>LaCie SSD recovery</strong> requires different techniques than traditional hard drives due to TRIM commands, chip-level storage, and wear-leveling. Our engineers are trained in both technologies to ensure optimal results.",
+  },
 ]
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -56,239 +144,288 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="LaCie Data Recovery Services"
+      title="Lacie Data Recovery Services You Can Trust"
       subtitle="Get Your Data Back In No Time."
-      description="Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage."
-      bgImage="/lacie-data-recovery-service-los-angeles.jpg"
+      description="At Five Star Data Recovery, we specialize in comprehensive Lacie data recovery services. If you have lost files, we can help. This can happen because of accidental deletion, problems with the file system, physical damage, or sudden drive failure. We will recover your lost files quickly and safely."
+      bgImage="/lacie-data-recovery-hero.webp"
+      :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
+    <!-- SECTION 1 — Drive Types -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common LaCie Data Recovery Issues</h2>
-        <p  class="s-intro"></p>
+        <div class="two-col-layout">
+          <div>
+            <h2 class="s-heading">Types of Lacie Drives We Recover From</h2>
+            <p class="s-body">We provide recovery for a wide range of Lacie external hard drives and RAID systems, including:</p>
+            <ul class="content-list">
+              <li>Lacie Rugged Drives (HDD and SSD)</li>
+              <li>Lacie d2 Professional Desktop Drives</li>
+              <li>Lacie 2big, 4big, and 6big RAID arrays</li>
+              <li>Lacie Mobile SSDs</li>
+              <li>Lacie Porsche Design Drives</li>
+              <li>USB-C and Thunderbolt-connected models</li>
+              <li>Formatted or encrypted drives</li>
+            </ul>
+            <p class="s-body">No matter if you use a portable USB-C drive or a multi-disk Thunderbolt RAID array, our lab can help. We have the tools and knowledge to recover data from a Lacie device in any setup or condition.</p>
+          </div>
+          <div class="section-img-wrap">
+            <img src="/lacie-rugged-drive-recovery.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — Common Issues -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Common Issues with Lacie Drives</h2>
+        <p class="s-body">Despite their reputation for quality, Lacie drives can still fail or lose data because of a variety of issues. Below are some common causes of data loss that we see in our lab:</p>
         <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
+          <div class="issue-card">
+            <h3 class="issue-title">Accidental Deletion or Formatting</h3>
+            <p class="s-body">One of the most common scenarios involves users accidentally deleting files or formatting a drive. In many cases, the data still exists on the drive but has been marked as "free space." Acting quickly increases the chances of successful recovery.</p>
           </div>
-        </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
-
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes LaCie Data Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/lacie-data-recovery-service-los-angeles.jpg" alt="LaCie Data Recovery Services service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
+          <div class="issue-card">
+            <h3 class="issue-title">File System Corruption</h3>
+            <p class="s-body">Corruption in the file system can occur after improper disconnection, system crashes, or software bugs. A corrupted drive might appear blank, unmounted, or prompt you to format it when you connect your Lacie external hard drive.</p>
+          </div>
+          <div class="issue-card">
+            <h3 class="issue-title">Physical Damage</h3>
+            <p class="s-body">Although Lacie drives withstand impact like the Rugged series, they're not indestructible. Drops, water exposure, and electrical surges can cause mechanical failure or damage internal components.</p>
+          </div>
+          <div class="issue-card">
+            <h3 class="issue-title">Disk Utility Errors</h3>
+            <p class="s-body">Mac users often encounter issues when using Disk Utility. Clicking Erase or running First Aid incorrectly can result in losing data or triggering a drive reformat.</p>
+          </div>
+          <div class="issue-card">
+            <h3 class="issue-title">Connection Problems</h3>
+            <p class="s-body">Sometimes your computer might not recognize the drive. Faulty USB ports, bad cables, or issues with the bridge board inside the drive enclosure can cause this.</p>
+          </div>
+          <div class="issue-card">
+            <h3 class="issue-title">Bad Sectors and Drive Degradation</h3>
+            <p class="s-body">Over time, hard drives develop bad sectors—areas of the disk that can no longer be read. If not caught early, this can lead to permanent file loss.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESS — white -->
+    <!-- SECTION 3 — RAID Recovery -->
     <section class="s-white">
       <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
+        <h2 class="s-heading">Advanced Lacie RAID Drive Recovery</h2>
+        <p class="s-body">Many professionals use Lacie RAID drives like the 2big, 4big, and 6big models for speed and redundancy. These systems often use RAID 0, RAID 1, RAID 5, or RAID 10 configurations. When one or more drives in a RAID array fail, recovery gets more complicated. This can also happen if the RAID is misconfigured or corrupted.</p>
+        <p class="s-body">Here's how we handle Lacie RAID data recovery:</p>
+        <ul class="content-list">
+          <li>We never work on the original disks directly.</li>
+          <li>Our engineers clone each drive to create exact disk images.</li>
+          <li>We identify the RAID parameters, including block size, disk order, parity rotation, and stripe configuration.</li>
+          <li>We virtually rebuild the RAID array using specialized software.</li>
+          <li>We recover files from the rebuilt structure, even from partially degraded arrays.</li>
+          <li>If we find damaged files, we attempt reconstruction using header repair and file stitching.</li>
+        </ul>
+        <p class="s-body">If you have lost data from a Lacie RAID system, we can help. Whether it was because of failure, formatting, or disk removal, we can rebuild the array and recover your data.</p>
       </div>
     </section>
 
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Types of Lacie Drives We Recover From</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why LaCie Data Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/lacie-data-recovery-service-los-angeles.jpg') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your LaCie Data Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
-              </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
-                </div>
-              </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactLaCieDa" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactLaCieDa" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactLaCieDa" value="text" /> TEXT</label>
-                </div>
-              </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
-              </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ — grey -->
+    <!-- SECTION 4 — Recovery Process -->
     <section class="s-grey">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
+        <h2 class="s-heading">Our Lacie Drive Data Recovery Process</h2>
+        <p class="s-body">We follow a safe, transparent recovery process:</p>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">1</div>
+            <div>
+              <h3 class="step-title">Diagnostic</h3>
+              <p class="step-body">We examine your device to determine the type of issue: logical, physical, or file system failure.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">2</div>
+            <div>
+              <h3 class="step-title">Imaging</h3>
+              <p class="step-body">We create a read-only image of your drive to avoid further data loss.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">3</div>
+            <div>
+              <h3 class="step-title">Scanning</h3>
+              <p class="step-body">We scan the image to locate deleted files, damaged partitions, or corrupted directories.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">4</div>
+            <div>
+              <h3 class="step-title">Recovery</h3>
+              <p class="step-body">We extract and verify recovered files, checking their integrity.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-num">5</div>
+            <div>
+              <h3 class="step-title">Delivery</h3>
+              <p class="step-body">We return your recovered data on a new storage device or one you provide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 — File Types -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">File Types and Use Cases for Lacie Drives</h2>
+        <p class="s-body">Lacie hard drives are trusted by professionals and creatives for their ability to store large amounts of data securely. Many users store:</p>
+        <ul class="content-list">
+          <li>High-resolution videos and photography</li>
+          <li>RAW footage for film editing</li>
+          <li>Adobe and Final Cut project files</li>
+          <li>Audio and music production sessions</li>
+          <li>CAD files and creative design assets</li>
+          <li>Large client databases or backups</li>
+        </ul>
+        <p class="s-body">These file types are often critical and not easily recreated. When you experience losing data from a Lacie, especially project files or client deliverables, it's essential to work with a recovery team that understands the importance of fast and accurate file recovery.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 6 — How LaCie Differs -->
+    <section class="s-grey">
+      <div class="container">
+        <div class="two-col-layout reverse">
+          <div class="section-img-wrap">
+            <img src="/lacie-creative-professional-recovery.webp" alt="Creative professional using LaCie drive on set" class="section-img" />
+          </div>
+          <div>
+            <h2 class="s-heading">How Lacie Drives Differ from Other Storage Devices</h2>
+            <p class="s-body">Lacie drives are built with performance in mind. They often have faster connections like Thunderbolt or USB-C. These are popular with Mac users and those who use creative software. These high-speed drives are great for video editing or accessing files quickly. However, their design can make recovery more complex.</p>
+            <p class="s-body">Lacie external hard drives may also have embedded encryption, which makes DIY recovery risky. If someone uses the wrong tool, they could overwrite the encryption header or corrupt the file system entirely. That's why we always start with a forensic image. This keeps your original device safe during the recovery process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 — What to Avoid -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">What You Should Avoid After Losing Data</h2>
+        <p class="s-body">Many clients unintentionally make recovery more difficult by trying to fix the problem themselves. Here's what not to do if you're dealing with a failed or deleted Lacie drive:</p>
+        <ul class="content-list">
+          <li>Don't run Disk Utility's First Aid or CHKDSK</li>
+          <li>Don't format the drive again</li>
+          <li>Don't install recovery software directly on the same drive</li>
+          <li>Don't keep connecting and disconnecting the drive</li>
+        </ul>
+        <p class="s-body">Each of these actions can reduce your chance of recovery. They may overwrite important areas or harm the file system further. If your Lacie external hard drive shows signs of failure, stop using it. Send it to a professional recovery service.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <ReviewsSection :reviews="reviews" />
+
+    <!-- SECTION 8 — File Systems -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">File Systems We Work With</h2>
+        <p class="s-body">Lacie drives may use different file systems depending on whether they're used on Mac or PC:</p>
+        <ul class="content-list">
+          <li><strong>exFAT or FAT32</strong> – Common for cross-platform usage, but prone to corruption</li>
+          <li><strong>HFS+ and APFS</strong> – Used by macOS, especially on Time Machine and media storage</li>
+          <li><strong>NTFS</strong> – Common for Windows users</li>
+          <li><strong>EXT4</strong> – Used in Linux-based environments or NAS systems</li>
+        </ul>
+        <p class="s-body">Each file system stores and deletes data differently. Our tools allow us to recover lost files from a Lacie drive regardless of format. We also recover from drives showing as RAW or unallocated.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 9 — Creative Professionals -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Our Experience with Creative and Production Professionals</h2>
+        <p class="s-body">Five Star Data Recovery has worked with countless production houses, creative agencies, and media professionals. Industries consider Lacie external hard drives a staple because they handle large files and support fast workflows. We understand how devastating it is to lose a wedding shoot, a commercial project, or hours of edited footage.</p>
+        <p class="s-body">We've recovered data from Lacie devices used in film sets, music studios, animation workstations, and commercial photography sessions. Whether you formatted your Lacie hard disk, dropped it on location, or it became unreadable mid-edit, we're here to help. Our lab handles not just recovery, but also the specialized file types used in creative workflows.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 10 — Expedited -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Expedited Recovery Services</h2>
+        <p class="s-body">If you're facing a deadline or business interruption, we offer expedited data recovery services:</p>
+        <ul class="content-list">
+          <li><strong>Expedited Service ($200 per device):</strong> Prioritized during business hours.</li>
+          <li><strong>Expedited Plus Service ($500 per device):</strong> 24/7 emergency recovery with non-stop work on your case.</li>
+        </ul>
+        <p class="s-body">These expedited fees are non-refundable and are in addition to standard recovery charges.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 11 — Why Choose -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>
+        <ul class="content-list">
+          <li>Specializing in Lacie external hard drives and RAID systems</li>
+          <li>In-house cleanroom for physically damaged drives</li>
+          <li>Industry-leading success rates</li>
+          <li>Flat-rate pricing and free diagnostics</li>
+          <li>"No data, no charge" guarantee (except expedited services)</li>
+          <li>Forensic-grade tools and certified engineers</li>
+          <li>Friendly support team with real-time updates</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 12 — Prevention Tips -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading">Tips to Prevent Future Data Loss</h2>
+        <p class="s-body">Once your data is recovered, we always recommend a few key steps to prevent future issues:</p>
+        <ul class="content-list">
+          <li>Use cloud backups or local mirroring tools to keep multiple copies of your files</li>
+          <li>Avoid ejecting Lacie drives while files are still transferring</li>
+          <li>Keep drives in dry, temperature-controlled spaces</li>
+          <li>Replace older drives every few years as performance degrades</li>
+        </ul>
+        <p class="s-body">Even the best storage devices wear out over time. With proactive care and proper backup systems in place, you can avoid the stress of losing important files again.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 13 — Final Thoughts -->
+    <section class="s-grey">
+      <div class="container">
+        <h2 class="s-heading">Final Thoughts: When in Doubt, Reach Out</h2>
+        <p class="s-body">Lacie drives are built tough, but recovery requires expertise. If you have a single corrupted file or a whole RAID array that won't mount, we can help. We have the tools and experience to recover your data safely.</p>
+        <p class="s-body">If you're ever unsure about what to do next, don't risk it. Reach out to our team for guidance. We'll walk you through the next steps, offer a free diagnostic, and help you get your files back with clarity and confidence.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT BAND -->
+    <section class="s-contact-band contact-band-bg">
+      <div class="container">
+        <div class="contact-banner-card">
+          <h2 class="contact-banner-heading">Start Your Lacie Data Recovery Today</h2>
+        </div>
+        <p class="contact-body-text">If you're dealing with accidental deletion, physical damage, or corruption, don't wait. The longer you delay, the greater risk you take with your data.</p>
+        <ul class="contact-bullets">
+          <li>Free diagnostic — no obligation</li>
+          <li>Flat-rate pricing — no hidden fees</li>
+          <li>No Data, No Charge (most cases)</li>
+          <li>Free nationwide shipping both ways</li>
+        </ul>
+        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-white">
+      <div class="container">
+        <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
@@ -296,39 +433,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-        </div>
-      </div>
-    </section>
-
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
-      <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for LaCie Data Recovery Services</h2>
-        </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -340,131 +444,43 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
-.s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
+.s-white { background: #fff; padding: 72px 0; }
+.s-grey { background: #f4f7fc; padding: 72px 0; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
+.s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
+.content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
+.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.two-col-layout.reverse { direction: rtl; }
+.two-col-layout.reverse > * { direction: ltr; }
+.section-img-wrap { border-radius: 12px; overflow: hidden; }
+.section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }
+.issues-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 8px; }
+.issue-card { background: #fff; border: 1px solid #e2e6ee; border-radius: 10px; padding: 24px; }
+.issue-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 10px; }
+.process-steps { display: flex; flex-direction: column; }
+.process-step { display: flex; align-items: flex-start; gap: 24px; padding: 28px 0; border-bottom: 1px solid #e2e6ee; }
+.process-step:last-child { border-bottom: none; }
+.step-num { width: 48px; height: 48px; background: #1a1a2e; color: #C9A84C; font-size: 1.2rem; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-title { font-size: 1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; }
+.step-body { font-size: 0.93rem; color: #4a5568; line-height: 1.7; margin: 0; }
+.s-contact-band { background: #0f1623; padding: 44px 0; border-top: 3px solid #C9A84C; border-bottom: 3px solid #C9A84C; }
+.contact-band-bg { background: linear-gradient(to right, rgba(15,22,35,0.92) 0%, rgba(15,22,35,0.75) 60%, rgba(15,22,35,0.5) 100%), url('/lacie-rugged-drive-recovery.webp') center center / cover no-repeat !important; }
+.contact-banner-card { border: none; border-radius: 0; padding: 0; margin-bottom: 16px; }
+.contact-banner-heading { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 900; color: #fff; margin: 0; }
+.contact-body-text { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 20px; }
+.contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
+.contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
+.contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
+.btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
-@media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
-}
+.faq-wrap { display: flex; flex-direction: column; border: 1.5px solid #e2e6ee; border-radius: 12px; overflow: hidden; }
+.faq-row { border-bottom: 1px solid #e2e6ee; }
+.faq-row:last-child { border-bottom: none; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
+.faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+@media (max-width: 768px) { .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } .issues-grid { grid-template-columns: 1fr; } }
 </style>
