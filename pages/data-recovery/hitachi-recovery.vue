@@ -25,7 +25,7 @@ useHead({
             "review": [
               {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Elaine T." },
+                "author": { "@type": "Person", "name": "Sarah T." },
                 "datePublished": "2024-11-18",
                 "reviewBody": "Five Star recovered my business files from a failed Hitachi hard drive. Very professional team and transparent pricing.",
                 "name": "Hitachi Recovery Success",
