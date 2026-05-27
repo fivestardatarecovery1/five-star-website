@@ -144,6 +144,7 @@ watch(() => route.path, closeAll)
             </Transition>
           </li>
 
+          <li><NuxtLink to="/instant-quote" active-class="active" class="nav-quote-link">Instant Quote</NuxtLink></li>
           <li><NuxtLink to="/pricing" active-class="active">Pricing</NuxtLink></li>
           <li><NuxtLink to="/blog" active-class="active">Blog</NuxtLink></li>
           <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
@@ -176,6 +177,7 @@ watch(() => route.path, closeAll)
           <div class="mobile-section-label">Special Services</div>
           <NuxtLink v-for="s in special" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
         </div>
+        <NuxtLink to="/instant-quote" @click="closeAll">Instant Quote</NuxtLink>
         <NuxtLink to="/pricing" @click="closeAll">Pricing</NuxtLink>
         <NuxtLink to="/blog" @click="closeAll">Blog</NuxtLink>
         <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
@@ -388,6 +390,15 @@ nav {
 .dropdown-leave-to {
   opacity: 0;
   transform: translateX(-50%) translateY(-6px);
+}
+
+/* ── Instant Quote nav highlight ── */
+.nav-quote-link {
+  color: var(--color-gold, #F5C842) !important;
+  font-weight: 700 !important;
+}
+.nav-quote-link:hover, .nav-quote-link.active {
+  color: #fff !important;
 }
 
 /* ── Right CTAs ── */
