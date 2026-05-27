@@ -146,7 +146,7 @@ const faqs = [
   },
   {
     q: 'How much does RAID Data Recovery cost?',
-    a: 'Pricing is <strong>flat-rate per drive</strong> based on drive size:<br><strong>$300</strong> – Drives up to 2TB<br><strong>$500</strong> – Drives up to 6TB<br><strong>$600</strong> – Drives between 8TB–12TB<br><strong>$950</strong> – Drives requiring clean room repair<br><br>Example: A 4-drive RAID array with 2TB drives = <strong>$1,200 total</strong> ($300 × 4). Includes full diagnostics, recovery, and data return.',
+    a: 'We use the same flat-rate data recovery pricing for RAID drives as we do for standard hard drive recoveries. Pricing is based on the <strong>size of each individual drive</strong> in the array—not the total number of drives or total capacity. Here&#39;s a breakdown of our standard flat-rate pricing per drive:<br><br><strong>$300 per drive</strong> – Drives up to 2TB<br><strong>$500 per drive</strong> – Drives up to 6TB<br><strong>$600 per drive</strong> – Drives between 8TB–12TB<br><strong>$950 per drive</strong> – Drives requiring clean room repair<br><br>All RAID recoveries follow this flat rate model. For example, if you have a 4-drive RAID array made up of 2TB drives (no physical damage), the total recovery cost would be <strong>$1,200 ($300 × 4)</strong>. This includes full diagnostics, recovery, and return of your data. We also offer Expedited and Expedited Plus services if your RAID recovery is time-sensitive.',
   },
 ]
 
