@@ -133,7 +133,8 @@ const quote = computed(() => {
   const urg = urgencyOptions.find(u => u.id === sel.urgency)
   if (!urg) return null
 
-  const boardRepairFee = sel.boardRepair ? 200 : 0
+  const appleDeposit   = sel.device === 'laptop-apple-new' ? 200 : 0  // refundable
+  const boardRepairFee = sel.boardRepair ? 200 : 0  // non-refundable
   const encryptFee     = sel.encrypted ? 200 : 0
   const aioFee         = sel.aio ? 200 : 0
   const coverFee       = sel.coverOpened ? 200 : 0
@@ -145,11 +146,11 @@ const quote = computed(() => {
 
   const total        = effectiveBase + urgFee + coverFee + encryptFee + aioFee + boardRepairFee
   const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
-  const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront
+  const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront - appleDeposit
 
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
-    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee, boardRepairFee,
+    coverFee, urgFee, heliumDeposit, deletedUpfront, encryptFee, aioFee, boardRepairFee, appleDeposit,
     deviceLabel:   deviceOptions.find(d => d.id === sel.device)?.label,
     capacityLabel: capacityOptions.find(c => c.id === sel.capacity)?.label,
     issueLabel:    issueOptions.find(i => i.id === sel.issue)?.label,
@@ -576,8 +577,12 @@ const progressIndex = computed(() => {
 
         <!-- Payment breakdown -->
         <div class="iqt-breakdown">
+          <div v-if="quote.appleDeposit > 0" class="iqt-brow deposit">
+            <span>Refundable Deposit at Check-In <em>(returned if unrecoverable)</em></span>
+            <span class="iqt-bamount">${{ quote.appleDeposit.toLocaleString() }}</span>
+          </div>
           <div v-if="quote.upfront > 0" class="iqt-brow upfront">
-            <span>Due at Check-In <em>(non-refundable)</em></span>
+            <span>Non-Refundable Fees at Check-In</span>
             <span class="iqt-bamount">${{ quote.upfront.toLocaleString() }}</span>
           </div>
           <div class="iqt-brow success">
@@ -595,7 +600,7 @@ const progressIndex = computed(() => {
             🗑️ Deleted file recovery requires a $200 upfront non-refundable fee, which applies toward your total.
           </div>
           <div v-if="quote.boardRepairFee" class="iqt-note warn">
-            ⚠️ Previous board-level repair attempt — an additional $200 fee applies due to prior work by another shop.
+            ⚠️ Previous board-level repair attempt — an additional $200 non-refundable fee applies due to prior work by another shop.
           </div>
           <div v-if="quote.aioFee" class="iqt-note warn">
             🖥️ All-in-One design — a $200 Hard Drive Removal Fee applies for full disassembly required to access the drive.
@@ -620,8 +625,8 @@ const progressIndex = computed(() => {
         </div>
 
         <div class="iqt-guarantee">
-          <template v-if="quote.upfront > 0">
-            🛡 <strong>No Data, No Charge</strong> — You only pay the recovery fee if we successfully recover your data. The ${{ quote.upfront.toLocaleString() }} upfront fee is non-refundable regardless of outcome.
+          <template v-if="quote.upfront > 0 || quote.appleDeposit > 0">
+            🛡 <strong>No Data, No Charge</strong> — You only pay the recovery balance if we successfully recover your data.<span v-if="quote.appleDeposit > 0"> Your ${{ quote.appleDeposit.toLocaleString() }} deposit is fully refundable if recovery is unsuccessful.</span><span v-if="quote.upfront > 0"> The ${{ quote.upfront.toLocaleString() }} in non-refundable fees is retained regardless of outcome.</span>
           </template>
           <template v-else>
             🛡 <strong>No Data, No Charge</strong> — You only pay if we successfully recover your data. If recovery is unsuccessful, you owe nothing. Please note: cases with expedited service, a previously opened drive cover, or certain deposit requirements may include non-refundable upfront fees.
@@ -786,6 +791,7 @@ const progressIndex = computed(() => {
   padding: 12px 18px; font-size: 0.875rem; color: #d0d8e8;
 }
 .iqt-brow + .iqt-brow { border-top: 1px solid var(--color-border, #1E2233); }
+.iqt-brow.deposit { background: rgba(80,200,120,0.06); }
 .iqt-brow.upfront { background: rgba(245,200,66,0.05); }
 .iqt-brow em { font-size: 0.75rem; color: var(--color-muted, #A0A8B8); }
 .iqt-bamount { font-weight: 700; color: #fff; font-size: 0.95rem; }
@@ -886,6 +892,7 @@ const progressIndex = computed(() => {
 .iqt-light .iqt-breakdown   { background: #f8fafc; border-color: #e2e8f0; }
 .iqt-light .iqt-brow        { color: #2d3748; }
 .iqt-light .iqt-brow + .iqt-brow { border-color: #e2e8f0; }
+.iqt-light .iqt-brow.deposit { background: rgba(60,180,100,0.05); }
 .iqt-light .iqt-brow.upfront { background: rgba(212,160,23,0.05); }
 .iqt-light .iqt-brow em     { color: #718096; }
 .iqt-light .iqt-bamount     { color: #1a202c; }
