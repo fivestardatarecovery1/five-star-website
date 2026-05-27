@@ -59,7 +59,7 @@ useHead({
               { "@type": "Question", "name": "Do you offer desktop data recovery for Mac and Windows systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our services support both Windows desktop recovery and macOS desktop recovery, including iMacs, Mac Minis, custom-built PCs, and branded desktops from Dell, HP, Lenovo, and more." } },
               { "@type": "Question", "name": "What's the turnaround time for desktop data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Most desktop data recovery cases are completed within 3–5 business days. For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround options." } },
               { "@type": "Question", "name": "Can you recover data from a desktop RAID setup?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we recover data from RAID-enabled desktop workstations, including RAID 0, 1, 5, or custom arrays commonly used in content creation or server-grade towers." } },
-              { "@type": "Question", "name": "Do you offer pickup or mail-in options for desktop data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide free local pickup in the Los Angeles area. We also offer nationwide data recovery mail-in service for desktop drives. Just fill out the form and we'll provide a prepaid shipping label." } }
+              { "@type": "Question", "name": "Do you offer pickup or mail-in options for desktop data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We offer free local pickup in the Los Angeles area and nationwide mail-in service for desktop data recovery. Just fill out the form and we'll provide a prepaid shipping label." } }
             ]
           }
         ]
