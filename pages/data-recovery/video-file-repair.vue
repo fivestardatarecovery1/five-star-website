@@ -142,19 +142,19 @@ const faqs = [
   },
   {
     q: 'How long does video file repair usually take?',
-    a: 'Video file repair timelines vary based on <strong>file size, codec complexity, and the extent of corruption</strong>. For smaller drives up to 2TB, repairs are often completed within <strong>3 to 5 business days</strong>. Larger systems such as multi-drive RAID arrays require considerably more time due to cloning, RAID rebuilding, and deep file analysis. If you're on a tight production schedule, our <strong>Expedited Plus</strong> service gives your case top priority, runs 24/7/365, and assigns a dedicated engineer to your project.',
+    a: 'Video file repair timelines vary based on <strong>file size, codec complexity, and the extent of corruption</strong>. For smaller drives up to 2TB, repairs are often completed within <strong>3 to 5 business days</strong>. Larger systems such as multi-drive RAID arrays require considerably more time due to cloning, RAID rebuilding, and deep file analysis. If you&#39;re on a tight production schedule, our <strong>Expedited Plus</strong> service gives your case top priority, runs 24/7/365, and assigns a dedicated engineer to your project.',
   },
   {
     q: 'How much does video file repair cost?',
-    a: 'Video file repair pricing varies depending on the <strong>number of files, their length, codec type, and severity of corruption</strong>. Our quoting process: We begin by repairing one sample file, use that to estimate the full effort, then provide a detailed quote. If you approve, you pay a <strong>refundable deposit</strong> and the <strong>full balance is only due after successful repair</strong>.<br><br>The only exceptions where an upfront non-refundable fee applies: (1) <strong>Deleted file recovery</strong> required before repair, and (2) <strong>Expedited Plus Service</strong>. Outside of these, you won't pay anything unless we successfully repair your files.',
+    a: 'Video file repair pricing varies depending on the <strong>number of files, their length, codec type, and severity of corruption</strong>. Our quoting process: We begin by repairing one sample file, use that to estimate the full effort, then provide a detailed quote. If you approve, you pay a <strong>refundable deposit</strong> and the <strong>full balance is only due after successful repair</strong>.<br><br>The only exceptions where an upfront non-refundable fee applies: (1) <strong>Deleted file recovery</strong> required before repair, and (2) <strong>Expedited Plus Service</strong>. Outside of these, you won&#39;t pay anything unless we successfully repair your files.',
   },
   {
     q: 'Do you charge a fee if the video files cannot be repaired?',
-    a: '<strong>No</strong> — we do not charge anything for video file repair unless we're successful. Our evaluation is completely free. If the files are beyond repair, you owe nothing for the repair portion. Upfront fees only apply for: (1) deleted file recovery before repair, and (2) Expedited Plus service. <strong>You will never pay unless we repair your video files.</strong>',
+    a: '<strong>No</strong> — we do not charge anything for video file repair unless we&#39;re successful. Our evaluation is completely free. If the files are beyond repair, you owe nothing for the repair portion. Upfront fees only apply for: (1) deleted file recovery before repair, and (2) Expedited Plus service. <strong>You will never pay unless we repair your video files.</strong>',
   },
   {
     q: 'Will I be able to preview the repaired video files before final delivery?',
-    a: '<strong>Yes, absolutely.</strong> Once we've completed the repair process, you'll have the opportunity to review the repaired video files before finalizing your case — either <strong>in person at our office or remotely</strong>, whichever is more convenient. You're welcome to test the files and ensure everything meets your expectations before completing payment or delivery arrangements.',
+    a: '<strong>Yes, absolutely.</strong> Once we&#39;ve completed the repair process, you&#39;ll have the opportunity to review the repaired video files before finalizing your case — either <strong>in person at our office or remotely</strong>, whichever is more convenient. You&#39;re welcome to test the files and ensure everything meets your expectations before completing payment or delivery arrangements.',
   },
 ]
 
