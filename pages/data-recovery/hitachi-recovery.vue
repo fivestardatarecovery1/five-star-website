@@ -141,7 +141,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Hitachi Data Recovery Services"
       subtitle="Get Your Data Back In No Time."
-      description="If your Hitachi hard drive has stopped working, is making clicking noises, or simply isn't being detected, don't panic—there's still hope. At Five Star Data Recovery, we specialize in professional Hitachi Data Recovery for individuals and businesses who need to get their important files back quickly and securely. Whether you're dealing with accidental deletion, hardware failure, or file system corruption, our team has the tools and expertise to handle even the most complex recovery jobs."
+      description="If your Hitachi hard drive has stopped working, is <strong>making clicking noises</strong>, or simply isn't being detected, don't panic—there's still hope. At Five Star Data Recovery, we specialize in professional <strong>Hitachi Data Recovery</strong> for individuals and businesses who need to get their important files back quickly and securely.<br><br>Whether you're dealing with <strong>accidental deletion</strong>, <strong>hardware failure</strong>, or <strong>file system corruption</strong>, our team has the tools and expertise to handle even the most complex recovery jobs. We're here to help <strong>recover data from Hitachi drives</strong>, no matter the cause of the issue."
       bgImage="/hitachi-data-recovery-hero.webp"
       :trustBadges="trustBadges"
     />
