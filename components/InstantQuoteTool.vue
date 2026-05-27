@@ -423,10 +423,10 @@ const progressIndex = computed(() => {
 
         <div class="iqt-guarantee">
           <template v-if="quote.upfront > 0">
-            🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you owe nothing beyond the upfront fees already paid. Upfront fees are non-refundable regardless of outcome.
+            🛡 <strong>No Data, No Charge</strong> — You only pay the recovery fee if we successfully recover your data. The ${{ quote.upfront.toLocaleString() }} upfront fee is non-refundable regardless of outcome.
           </template>
           <template v-else>
-            🛡 <strong>No Data, No Charge</strong> — If we can't recover your data, you owe nothing. No charge, no risk.
+            🛡 <strong>No Data, No Charge</strong> — You only pay if we successfully recover your data. If recovery is unsuccessful, you owe nothing. Please note: cases with expedited service, a previously opened drive cover, or certain deposit requirements may include non-refundable upfront fees.
           </template>
         </div>
 
