@@ -146,7 +146,7 @@ const quote = computed(() => {
 
   const total        = effectiveBase + urgFee + coverFee + encryptFee + aioFee + boardRepairFee
   const upfront      = urgFee + coverFee + heliumDeposit + deletedUpfront
-  const dueOnSuccess = effectiveBase - heliumDeposit - deletedUpfront - appleDeposit
+  const dueOnSuccess = effectiveBase + encryptFee - heliumDeposit - deletedUpfront - appleDeposit
 
   return {
     total, base: effectiveBase, upfront, dueOnSuccess,
@@ -627,10 +627,6 @@ const progressIndex = computed(() => {
             <span>Drive Cover Opened Fee <em>(non-refundable)</em></span>
             <span class="iqt-bamount">${{ quote.coverFee.toLocaleString() }}</span>
           </div>
-          <div v-if="quote.encryptFee" class="iqt-brow upfront">
-            <span>Encryption Handling Fee <em>(non-refundable)</em></span>
-            <span class="iqt-bamount">${{ quote.encryptFee.toLocaleString() }}</span>
-          </div>
           <div v-if="quote.aioFee" class="iqt-brow upfront">
             <span>All-in-One Removal Fee <em>(non-refundable)</em></span>
             <span class="iqt-bamount">${{ quote.aioFee.toLocaleString() }}</span>
@@ -640,7 +636,7 @@ const progressIndex = computed(() => {
             <span class="iqt-bamount">${{ quote.urgFee.toLocaleString() }}</span>
           </div>
           <div class="iqt-brow success">
-            <span>Due on Successful Recovery</span>
+            <span>Due on Successful Recovery<em v-if="quote.encryptFee"> (includes ${{ quote.encryptFee }} encryption fee)</em></span>
             <span class="iqt-bamount">${{ quote.dueOnSuccess.toLocaleString() }}</span>
           </div>
         </div>
