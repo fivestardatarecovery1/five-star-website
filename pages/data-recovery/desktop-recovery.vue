@@ -25,10 +25,10 @@ useHead({
             "review": [
               {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Lauren M." },
-                "datePublished": "2024-11-20",
-                "reviewBody": "My desktop PC suddenly stopped booting, and I couldn't access years of important files. Five Star Data Recovery quickly diagnosed the issue and recovered everything from my internal hard drive. Elen kept me updated throughout the process, and the turnaround time was better than I expected. Highly recommend them for desktop data recovery!",
-                "name": "Desktop Recovery Success",
+                "author": { "@type": "Person", "name": "Olivia W." },
+                "datePublished": "2024-11-19",
+                "reviewBody": "Five Star recovered my entire photo archive from a dead desktop drive. Truly amazing work!",
+                "name": "Desktop Drive Recovery",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
               }
             ],
@@ -39,7 +39,7 @@ useHead({
             "name": "Desktop Data Recovery Services",
             "url": "https://www.fivestardatarecovery.com/data-recovery/desktop-data-recovery/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Professional desktop computer data recovery for Windows, Mac, and Linux systems. HDD, SSD, RAID, internal and external drives. Flat-rate pricing, No Data No Charge. Serving Glendale, Los Angeles, and nationwide."
+            "description": "Professional Desktop Data Recovery services for both HDD and SSD storage devices from Windows, Mac, and custom-built PCs. Offering cleanroom services, logical recovery, and nationwide mail-in service."
           },
           {
             "@type": "BreadcrumbList",
@@ -53,8 +53,13 @@ useHead({
             "@type": "FAQPage",
             "mainEntity": [
               { "@type": "Question", "name": "Can you recover data from a desktop that no longer powers on?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. If your desktop PC won't turn on, we can safely extract the internal hard drive or SSD and attempt a full data recovery. Common causes include motherboard failure, PSU issues, or drive-level faults." } },
+              { "@type": "Question", "name": "Do you offer desktop data recovery for both HDDs and SSDs?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Whether your desktop has a traditional hard drive or a solid-state drive, we have the tools and expertise to recover data from all major desktop storage types." } },
               { "@type": "Question", "name": "What if my desktop hard drive is making clicking or grinding noises?", "acceptedAnswer": { "@type": "Answer", "text": "A clicking desktop hard drive often indicates a mechanical failure. Do not continue powering it on. We offer cleanroom-based recovery solutions to salvage data from physically damaged drives." } },
-              { "@type": "Question", "name": "What's the turnaround time for desktop data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Most desktop data recovery cases are completed within 3–5 business days. For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround options." } }
+              { "@type": "Question", "name": "Can you recover deleted files from a desktop computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we provide deleted file recovery from desktop hard drives, as long as the data hasn't been overwritten. This includes accidental deletion, formatted partitions, or emptied recycle bins." } },
+              { "@type": "Question", "name": "Do you offer desktop data recovery for Mac and Windows systems?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our services support both Windows desktop recovery and macOS desktop recovery, including iMacs, Mac Minis, custom-built PCs, and branded desktops from Dell, HP, Lenovo, and more." } },
+              { "@type": "Question", "name": "What's the turnaround time for desktop data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Most desktop data recovery cases are completed within 3–5 business days. For urgent cases, we offer Expedited and Expedited Plus services with priority turnaround options." } },
+              { "@type": "Question", "name": "Can you recover data from a desktop RAID setup?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we recover data from RAID-enabled desktop workstations, including RAID 0, 1, 5, or custom arrays commonly used in content creation or server-grade towers." } },
+              { "@type": "Question", "name": "Do you offer pickup or mail-in options for desktop data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide free local pickup in the Los Angeles area. We also offer nationwide data recovery mail-in service for desktop drives. Just fill out the form and we'll provide a prepaid shipping label." } }
             ]
           }
         ]
@@ -79,8 +84,8 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: "My desktop PC suddenly stopped booting, and I couldn&#39;t access years of important files. Five Star Data Recovery quickly diagnosed the issue and recovered everything from my internal hard drive. Elen kept me updated throughout the process, and the turnaround time was better than I expected. Highly recommend them for desktop data recovery!",
-    name: 'Lauren M.',
+    text: "Five Star recovered my entire photo archive from a dead desktop drive. Truly amazing work!",
+    name: 'Olivia W.',
     location: 'Glendale, CA',
   },
   {
