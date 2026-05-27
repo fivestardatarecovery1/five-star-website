@@ -80,31 +80,31 @@ const reviews = [
 const faqs = [
   {
     q: 'What should I do immediately after dropping my hard drive?',
-    a: "If your hard drive has been dropped, power it off immediately and avoid trying to turn it back on. Running a damaged drive can worsen internal damage, especially if the read/write heads are misaligned. Call us right away at Five Star Data Recovery so we can guide you through the safest next steps and help prevent permanent data loss.",
+    a: 'If your hard drive has been dropped, <strong>power it off immediately</strong> and avoid trying to turn it back on. Running a damaged drive can worsen internal damage, especially if the read/write heads are misaligned. Call us right away at Five Star Data Recovery so we can guide you through the safest next steps and help prevent permanent data loss.',
   },
   {
     q: 'Can you recover data from a drive that is clicking after being dropped?',
-    a: "Yes. A clicking sound usually indicates internal damage to the read/write heads or actuator arm, which often occurs when a drive is dropped. Most of the time, we can recover the data using clean room tools and donor parts. The main deciding factor in whether the data is recoverable is the condition of the platters\u2014which depends on how many times the drive was powered on after the drop. The fewer attempts made to power it on, the higher the chances of a successful recovery.",
+    a: 'Yes. A clicking sound usually indicates <strong>internal damage to the read/write heads or actuator arm</strong>, which often occurs when a drive is dropped. Most of the time, we can recover the data using clean room tools and donor parts. The main deciding factor in whether the data is recoverable is the <strong>condition of the platters</strong>—which depends on how many times the drive was powered on after the drop. The fewer attempts made to power it on, the higher the chances of a successful recovery.',
   },
   {
     q: 'Is it safe to use data recovery software on a dropped hard drive?',
-    a: "No. Using DIY data recovery software on a physically damaged drive can lead to further data loss or permanent damage. If your drive has been dropped and is showing signs of failure (clicking, not spinning, or not recognized), it's best to consult a professional recovery service.",
+    a: '<strong>No.</strong> Using DIY data recovery software on a physically damaged drive can lead to further data loss or permanent damage. If your drive has been dropped and is showing signs of failure (clicking, not spinning, or not recognized), it’s best to consult a professional recovery service.',
   },
   {
     q: 'How much does dropped hard drive recovery cost?',
-    a: "We offer flat-rate pricing for dropped hard drive recovery, with rates depending on the type and extent of physical damage. There are no hidden fees, and diagnostics are always free. You only pay if we successfully recover your data.",
+    a: 'We offer <strong>flat-rate pricing</strong> for dropped hard drive recovery, with rates depending on the type and extent of physical damage. There are <strong>no hidden fees</strong>, and diagnostics are always free. You only pay if we successfully recover your data.',
   },
   {
     q: 'Can data still be recovered if the drive was dropped while in use?',
-    a: "Yes. Drives that were dropped while powered on are more likely to suffer internal damage, such as head crashes or platter contact\u2014but recovery is often still possible. At Five Star Data Recovery, the process does not begin with imaging for mechanically damaged drives. Instead, we start with a clean room inspection to assess internal damage. If the read/write heads are physically damaged, they must be replaced using compatible donor parts before we can safely proceed. Once the new heads are installed, we begin carefully imaging or cloning the drive sector by sector to recover your data safely and effectively.",
+    a: 'Yes. Drives that were dropped while powered on are more likely to suffer internal damage, such as head crashes or platter contact—but recovery is often still possible. At Five Star Data Recovery, the process does not begin with imaging for mechanically damaged drives. Instead, we start with a <strong>clean room inspection</strong> to assess internal damage. If the read/write heads are physically damaged, they must be replaced using <strong>compatible donor parts</strong> before we can safely proceed. Once the new heads are installed, we begin carefully <strong>imaging or cloning the drive sector by sector</strong> to recover your data safely and effectively.',
   },
   {
     q: 'How long does dropped hard drive data recovery take?',
-    a: "Most recoveries take 3\u20135 business days, depending on the severity of the damage. We also offer Expedited and Expedited Plus services for urgent situations, giving your case immediate priority\u2014even after hours or on weekends.",
+    a: 'Most recoveries take <strong>3–5 business days</strong>, depending on the severity of the damage. We also offer <strong>Expedited</strong> and <strong>Expedited Plus</strong> services for urgent situations, giving your case immediate priority—even after hours or on weekends.',
   },
   {
     q: 'Will I get a list of the recovered files before I pay?',
-    a: "Yes. Once we complete the recovery process, we'll provide you with a detailed file list showing exactly what was recovered. At that point, you can choose whether or not to move forward with the recovery. If you decide not to proceed, you pay nothing. However, once you approve the recovery and we deliver the data, payment is required in full.",
+    a: 'Yes. Once we complete the recovery process, we’ll provide you with a <strong>detailed file list</strong> showing exactly what was recovered. At that point, you can choose whether or not to move forward with the recovery. If you decide not to proceed, <strong>you pay nothing</strong>. However, once you approve the recovery and we deliver the data, payment is required in full.',
   },
 ]
 
