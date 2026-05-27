@@ -157,6 +157,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       bgImage="/start-recovery-hero.webp"
       :trustBadges="trustBadges"
       :showForm="false"
+      :showButtons="false"
       :overlayOpacity="0.72"
     />
 
