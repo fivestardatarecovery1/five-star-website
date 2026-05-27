@@ -651,10 +651,6 @@ const progressIndex = computed(() => {
             ⚠️ Helium-filled drive (8TB+) — additional cleanroom complexity may require further evaluation.
           </div>
           <div v-if="sel.urgency === 'expedited-plus'" class="iqt-note">
-          <div v-if="quote.coverFee" class="iqt-note warn">
-            ⚠️ Drive cover previously opened — $200 upfront non-refundable fee included.
-          </div>
-          <div v-if="sel.urgency === 'expedited-plus'" class="iqt-note">
             ⚡ Expedited Plus runs 24/7/365. A modified quote with any additional fees will be provided within a few hours of check-in.
           </div>
         </div>
