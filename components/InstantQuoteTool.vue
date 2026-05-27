@@ -168,7 +168,7 @@ function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
-  else if (id === 'laptop-desktop') goTo('laptop-type')
+  else if (id === 'laptop') goTo('laptop-type')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
