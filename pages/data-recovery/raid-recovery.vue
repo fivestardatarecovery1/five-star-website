@@ -308,6 +308,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>Critical documents and user files from failed RAID drives</li>
           <li>Enterprise datasets, spreadsheets, ProRes video, CAD files, and more</li>
         </ul>
+        <p class="s-body">Our recovery process handles high-volume data structures, foreign file systems, and partially overwritten drives. This allows us to reconstruct folders, restore file names, and retrieve file trees whenever possible.</p>
       </div>
     </section>
 
@@ -367,12 +368,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <h2 class="s-heading">Why Choose Five Star for RAID Recovery</h2>
         <ul class="content-list">
-          <li>We never recover from original drives — every case begins with exact 1-to-1 clones</li>
-          <li><strong>"No-Recovery, No-Charge"</strong> policy — you only pay if we successfully retrieve your files</li>
-          <li>Every quote is clear, honest, and upfront — no hidden charges</li>
-          <li>Physically damaged drives handled in our certified Class 100 Clean Room</li>
-          <li>Highly trained engineers in advanced RAID configurations, including complex hybrid setups</li>
-          <li>Standard and emergency turnaround options available</li>
+          <li>We never recover from original drives — every case begins by creating exact 1-to-1 clones to preserve the integrity of your data.</li>
+          <li>Our "No-Recovery, No-Charge" policy ensures you only pay if we&#39;re able to successfully retrieve your files.</li>
+          <li>Every quote we provide is clear, honest, and upfront — with no hidden charges or surprise fees during the recovery process.</li>
+          <li>Physically damaged drives are handled in our certified Class 100 Clean Room to protect sensitive internal components during repair.</li>
+          <li>Our engineers are highly trained in advanced RAID configurations, including complex hybrid and custom setups.</li>
+          <li>We offer both standard and emergency turnaround options, so you get your critical data back exactly when you need it.</li>
         </ul>
       </div>
     </section>
