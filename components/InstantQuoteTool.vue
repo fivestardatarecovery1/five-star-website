@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'ssd-ext-brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -20,7 +20,7 @@ const sel = reactive({
 
 const CALL_DEVICES = ['ssd-external', 'raid', 'phone', 'usb', 'nvr', 'cfast']
 const NEEDS_BRAND    = ['external']
-const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext', 'ssd-25', 'ssd-nvme']
+const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext', 'ssd-25', 'ssd-nvme', 'ssd-ext-wd']
 
 const deviceOptions = [
   { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
@@ -145,7 +145,13 @@ function getBasePrice(): number | null {
     return 800 // 12TB+
   }
 
-  // SSD / NVMe pricing
+  // External SSD pricing (WD/SanDisk/G-Drive)
+  if (device === 'ssd-ext-wd') {
+    if (issue === 'ssd-not-recognized') return 950
+    // logical/deleted — $600 up to 8TB (8TB+ routes to call)
+    return 600
+  }
+  // Internal SSD / NVMe pricing
   if (device === 'ssd-25' || device === 'ssd-nvme') {
     if (issue === 'ssd-not-recognized') return 950
     if (!capacity) return null
@@ -205,6 +211,7 @@ const quote = computed(() => {
       if (sel.device === 'desktop-mac')      return sel.fusionDrive ? 'iMac (Fusion Drive)' : 'Mac Desktop (iMac)'
       if (sel.device === 'ssd-25')            return 'Internal 2.5\" SSD'
       if (sel.device === 'ssd-nvme')          return 'Internal NVMe Drive'
+      if (sel.device === 'ssd-ext-wd')        return 'WD / SanDisk / G-Drive External SSD'
       return deviceOptions.find(d => d.id === sel.device)?.label ?? sel.device
     })(),
     capacityLabel: sel.fusionDrive ? sel.capacity?.toUpperCase().replace('TB',' TB') : capacityOptions.find(c => c.id === sel.capacity)?.label,
@@ -232,8 +239,12 @@ function pickLaptopType(type: string) {
   if (type === 'desktop') { sel.device = 'desktop'; goTo('desktop-os') }
   else { sel.device = 'laptop'; goTo('laptop-os') }
 }
+function pickSsdExtBrand(brand: string) {
+  if (brand === 'wd') { sel.device = 'ssd-ext-wd'; goTo('capacity') }
+  else { sel.device = 'ssd-external'; goTo('call') }
+}
 function pickSsdLocation(loc: string) {
-  if (loc === 'external') { sel.device = 'ssd-external'; goTo('call') }
+  if (loc === 'external') { goTo('ssd-ext-brand') }
   else { goTo('ssd-type') }
 }
 function pickSsdType(type: string) {
@@ -272,13 +283,17 @@ function pickBrand(id: string) {
   if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
 }
-function pickCapacity(id: string) { sel.capacity = id; goTo('issue') }
+function pickCapacity(id: string) {
+  sel.capacity = id
+  if (sel.device === 'ssd-ext-wd' && id === '8plus') goTo('call')
+  else goTo('issue')
+}
 function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
 // After encryption: Apple → urgency, Windows/others → cover
 function pickEncrypt(v: boolean)  {
   sel.encrypted = v
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-  const isSsd   = sel.device === 'ssd-25' || sel.device === 'ssd-nvme'
+  const isSsd   = sel.device === 'ssd-25' || sel.device === 'ssd-nvme' || sel.device === 'ssd-ext-wd'
   goTo((isApple || isSsd) ? 'urgency' : 'cover')
 }
 function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
@@ -291,6 +306,7 @@ function back() {
   else if (s === 'desktop-os')      goTo('laptop-type', 0)
   else if (s === 'ssd-location')    goTo('device', 0)
   else if (s === 'ssd-type')        goTo('ssd-location', 0)
+  else if (s === 'ssd-ext-brand')   goTo('ssd-location', 0)
   else if (s === 'imac-drive-type') goTo('desktop-os', 0)
   else if (s === 'fusion-size')     goTo('imac-drive-type', 0)
   else if (s === 'laptop-os')  goTo('laptop-type', 0)
@@ -302,7 +318,9 @@ function back() {
     const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
     const wasWinLaptop = sel.device === 'win-laptop'
     const wasDesktop = sel.device === 'desktop' || sel.device === 'desktop-mac'
-    if (wasSsd) goTo('ssd-type', 0)
+    const wasExtSsd = sel.device === 'ssd-ext-wd'
+    if (wasExtSsd) goTo('ssd-ext-brand', 0)
+    else if (wasSsd) goTo('ssd-type', 0)
     else if (wasExternal) goTo('brand', 0)
     else if (wasWinLaptop) goTo('laptop-os', 0)
     else if (wasDesktop) {
@@ -328,7 +346,7 @@ function back() {
   else if (s === 'aio')     goTo('cover', 0)
   else if (s === 'urgency') {
     const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-    const isSsd = sel.device === 'ssd-25' || sel.device === 'ssd-nvme'
+    const isSsd = sel.device === 'ssd-25' || sel.device === 'ssd-nvme' || sel.device === 'ssd-ext-wd'
     if (sel.fusionDrive || isSsd) goTo('encrypt', 0)
     else if (sel.device === 'desktop') goTo('aio', 0)
     else if (isApple) goTo('encrypt', 0)
@@ -602,6 +620,31 @@ const progressIndex = computed(() => {
         <button class="iqt-back" @click="back">← Back</button>
       </div>
 
+
+
+      <!-- STEP: External SSD Brand -->
+      <div v-else-if="currentStep === 'ssd-ext-brand'">
+        <h3 class="iqt-q">What brand is the external SSD?</h3>
+        <div class="iqt-grid g1">
+          <button class="iqt-card iqt-issue-card" @click="pickSsdExtBrand('wd')">
+            <div class="iqt-drive-imgs" style="height:48px;">
+              <img src="/sandisk-extreme-pro-external-ssd.png" alt="WD/SanDisk/G-Drive" style="height:44px;width:auto;object-fit:contain;" />
+            </div>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">WD / SanDisk / G-Drive</span>
+              <span class="iqt-csub">WD My Passport SSD, SanDisk Extreme, G-Drive SSD</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-issue-card" @click="pickSsdExtBrand('other')">
+            <span class="iqt-icon">📦</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Other Brand</span>
+              <span class="iqt-csub">Samsung T7, Seagate Fast SSD, LaCie Rugged SSD, etc.</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
 
       <!-- STEP: SSD Location -->
       <div v-else-if="currentStep === 'ssd-location'">
