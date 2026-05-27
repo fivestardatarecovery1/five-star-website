@@ -207,7 +207,7 @@ function pickFusionSize(size: string) {
 function pickDesktopOS(os: string) {
   // Both Windows and Mac desktops use the same capacity-based pricing.
   // iMac is always AIO — we can note this but let the AIO step confirm.
-  if (os === 'mac') { sel.device = 'desktop-mac'; goTo('imac-drive-type') }
+  if (os === 'mac') { sel.device = 'desktop-mac'; sel.aio = true; goTo('imac-drive-type') }
   else { sel.device = 'desktop'; goTo('capacity') }
 }
 function pickLaptopOS(os: string) {
@@ -234,7 +234,7 @@ function pickEncrypt(v: boolean)  {
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
   goTo(isApple ? 'urgency' : 'cover')
 }
-function pickCover(v: boolean)    { sel.coverOpened = v; (sel.device === 'desktop' || sel.device === 'desktop-mac') ? goTo('aio') : goTo('urgency') }
+function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
 
 function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
@@ -278,7 +278,7 @@ function back() {
   else if (s === 'urgency') {
     const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
     if (sel.fusionDrive) goTo('encrypt', 0)
-    else if (sel.device === 'desktop' || sel.device === 'desktop-mac') goTo('aio', 0)
+    else if (sel.device === 'desktop') goTo('aio', 0)
     else if (isApple) goTo('encrypt', 0)
     else goTo('cover', 0)
   }
@@ -314,7 +314,7 @@ const progressSteps = computed(() => {
   if (!isApple) list.push('Issue')
   list.push('Encryption')
   if (!isApple) list.push('Cover')
-  if (sel.device === 'desktop' || sel.device === 'desktop-mac') list.push('AIO')
+  if (sel.device === 'desktop') list.push('AIO')
   list.push('Urgency', 'Quote')
   return list
 })
@@ -332,7 +332,7 @@ const progressIndex = computed(() => {
     return m[s] ?? 0
   }
   if (hasCap) {
-    const isLaptop = sel.device === 'desktop' || sel.device === 'desktop-mac'
+    const isLaptop = sel.device === 'desktop'
     const m: Partial<Record<Step, number>> = { capacity: 1, issue: 2, encrypt: 3, cover: 4 }
     if (isLaptop) Object.assign(m, { aio: 5, urgency: 6, result: 7 })
     else Object.assign(m, { urgency: 5, result: 6 })
