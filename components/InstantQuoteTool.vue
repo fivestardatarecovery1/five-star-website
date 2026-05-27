@@ -20,7 +20,7 @@ const sel = reactive({
 
 const CALL_DEVICES = ['ssd-external', 'raid', 'phone', 'usb', 'nvr', 'cfast']
 const NEEDS_BRAND    = ['external']
-const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext', 'ssd-25', 'ssd-nvme', 'ssd-ext-wd']
+const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext', 'ssd-25', 'ssd-nvme', 'ssd-ext-wd', 'ssd-ext-other']
 
 const deviceOptions = [
   { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
@@ -148,7 +148,19 @@ function getBasePrice(): number | null {
   // External SSD pricing (WD/SanDisk/G-Drive)
   if (device === 'ssd-ext-wd') {
     if (issue === 'ssd-not-recognized') return 950
-    // logical/deleted — $600 up to 8TB (8TB+ routes to call)
+    return 600
+  }
+  // External SSD pricing (Seagate / LaCie) — flat rate
+  if (device === 'ssd-ext-seagate') {
+    if (issue === 'ssd-not-recognized') return 950
+    return 500
+  }
+  // External SSD pricing (Other brands) — same tiers as regular HDD
+  if (device === 'ssd-ext-other') {
+    if (issue === 'ssd-not-recognized') return 950
+    if (!capacity) return null
+    if (capacity === 'under2') return 300
+    if (capacity === '2to8')   return 500
     return 600
   }
   // Internal SSD / NVMe pricing
@@ -212,6 +224,8 @@ const quote = computed(() => {
       if (sel.device === 'ssd-25')            return 'Internal 2.5\" SSD'
       if (sel.device === 'ssd-nvme')          return 'Internal NVMe Drive'
       if (sel.device === 'ssd-ext-wd')        return 'WD / SanDisk / G-Drive External SSD'
+      if (sel.device === 'ssd-ext-seagate')    return 'Seagate / LaCie External SSD'
+      if (sel.device === 'ssd-ext-other')      return 'External SSD'
       return deviceOptions.find(d => d.id === sel.device)?.label ?? sel.device
     })(),
     capacityLabel: sel.fusionDrive ? sel.capacity?.toUpperCase().replace('TB',' TB') : capacityOptions.find(c => c.id === sel.capacity)?.label,
@@ -240,8 +254,9 @@ function pickLaptopType(type: string) {
   else { sel.device = 'laptop'; goTo('laptop-os') }
 }
 function pickSsdExtBrand(brand: string) {
-  if (brand === 'wd') { sel.device = 'ssd-ext-wd'; goTo('capacity') }
-  else { sel.device = 'ssd-external'; goTo('call') }
+  if (brand === 'wd')       { sel.device = 'ssd-ext-wd';      goTo('capacity') }
+  else if (brand === 'seagate') { sel.device = 'ssd-ext-seagate'; goTo('issue') }
+  else                      { sel.device = 'ssd-ext-other';   goTo('capacity') }
 }
 function pickSsdLocation(loc: string) {
   if (loc === 'external') { goTo('ssd-ext-brand') }
@@ -293,7 +308,7 @@ function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
 function pickEncrypt(v: boolean)  {
   sel.encrypted = v
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-  const isSsd   = sel.device === 'ssd-25' || sel.device === 'ssd-nvme' || sel.device === 'ssd-ext-wd'
+  const isSsd   = ['ssd-25','ssd-nvme','ssd-ext-wd','ssd-ext-seagate','ssd-ext-other'].includes(sel.device)
   goTo((isApple || isSsd) ? 'urgency' : 'cover')
 }
 function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
@@ -318,7 +333,7 @@ function back() {
     const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
     const wasWinLaptop = sel.device === 'win-laptop'
     const wasDesktop = sel.device === 'desktop' || sel.device === 'desktop-mac'
-    const wasExtSsd = sel.device === 'ssd-ext-wd'
+    const wasExtSsd = ['ssd-ext-wd','ssd-ext-other'].includes(sel.device)
     if (wasExtSsd) goTo('ssd-ext-brand', 0)
     else if (wasSsd) goTo('ssd-type', 0)
     else if (wasExternal) goTo('brand', 0)
@@ -339,6 +354,7 @@ function back() {
     const isAppleNew = sel.device === 'laptop-apple-new'
     if (isAppleOld) goTo('apple-year', 0)
     else if (isAppleNew) goTo('board-repair', 0)
+    else if (sel.device === 'ssd-ext-seagate') goTo('ssd-ext-brand', 0)
     else if (sel.fusionDrive) goTo('fusion-size', 0)
     else goTo('issue', 0)
   }
@@ -346,7 +362,7 @@ function back() {
   else if (s === 'aio')     goTo('cover', 0)
   else if (s === 'urgency') {
     const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-    const isSsd = sel.device === 'ssd-25' || sel.device === 'ssd-nvme' || sel.device === 'ssd-ext-wd'
+    const isSsd = ['ssd-25','ssd-nvme','ssd-ext-wd','ssd-ext-seagate','ssd-ext-other'].includes(sel.device)
     if (sel.fusionDrive || isSsd) goTo('encrypt', 0)
     else if (sel.device === 'desktop') goTo('aio', 0)
     else if (isApple) goTo('encrypt', 0)
@@ -635,11 +651,18 @@ const progressIndex = computed(() => {
               <span class="iqt-csub">WD My Passport SSD, SanDisk Extreme, G-Drive SSD</span>
             </div>
           </button>
+          <button class="iqt-card iqt-issue-card" @click="pickSsdExtBrand('seagate')">
+            <span class="iqt-icon">🔶</span>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Seagate / LaCie</span>
+              <span class="iqt-csub">Seagate Fast SSD, LaCie Rugged SSD, LaCie Portable SSD</span>
+            </div>
+          </button>
           <button class="iqt-card iqt-issue-card" @click="pickSsdExtBrand('other')">
             <span class="iqt-icon">📦</span>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Other Brand</span>
-              <span class="iqt-csub">Samsung T7, Seagate Fast SSD, LaCie Rugged SSD, etc.</span>
+              <span class="iqt-csub">Samsung T7, Kingston, Crucial, Transcend, etc.</span>
             </div>
           </button>
         </div>
