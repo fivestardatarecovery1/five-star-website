@@ -25,10 +25,10 @@ useHead({
             "review": [
               {
                 "@type": "Review",
-                "author": { "@type": "Person", "name": "Carlos D." },
-                "datePublished": "2024-10-28",
-                "reviewBody": "They opened my clicking hard drive in a clean room and saved years of irreplaceable work files. Honest and transparent.",
-                "name": "Clean Room Pros",
+                "author": { "@type": "Person", "name": "Mark D." },
+                "datePublished": "2024-11-20",
+                "reviewBody": "My hard drive had suffered a head crash, and I knew it needed clean room work. From the first call, the team at Five Star explained everything in detail. They handled my drive with care, provided a flat-rate quote, and kept me updated throughout. The clean room recovery was a success, and I highly recommend them!",
+                "name": "Clean Room Recovery Success",
                 "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5", "worstRating": "1" }
               }
             ],
@@ -85,7 +85,7 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: "They opened my clicking hard drive in a clean room and saved years of irreplaceable work files. Honest and transparent.",
+    text: "My hard drive had suffered a head crash, and I knew it needed clean room work. From the first call, the team at Five Star explained everything in detail. They handled my drive with care, provided a flat-rate quote, and kept me updated throughout. The clean room recovery was a success, and I highly recommend them!",
     name: 'Mark D.',
     location: 'Pasadena, CA',
   },
