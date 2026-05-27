@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     q: 'Can you combine multiple file fragments into a single working video?',
-    a: 'Yes. If your footage was split into multiple segments due to corruption or incomplete recording, we can often <strong>reconstruct the original video by stitching the fragments back together</strong>. This is especially common with professional codecs like <strong>ProRes, MXF, RED, and ARRI</strong>, which rely on internal structures like GOP sequences, metadata tables, and codec-specific headers that must be carefully reassembled. Our repair process includes deep analysis of each segment's frame structure and timing, allowing us to manually re-link sequences and generate a functional video file.',
+    a: 'Yes. If your footage was split into multiple segments due to corruption or incomplete recording, we can often <strong>reconstruct the original video by stitching the fragments back together</strong>. This is especially common with professional codecs like <strong>ProRes, MXF, RED, and ARRI</strong>, which rely on internal structures like GOP sequences, metadata tables, and codec-specific headers that must be carefully reassembled. Our repair process includes deep analysis of each segment&#39;s frame structure and timing, allowing us to manually re-link sequences and generate a functional video file.',
   },
   {
     q: 'How long does video file repair usually take?',
