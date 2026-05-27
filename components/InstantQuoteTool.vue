@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean }>()
 
-type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('device')
 const animating = ref(false)
@@ -18,9 +18,9 @@ const sel = reactive({
   urgency: '',
 })
 
-const CALL_DEVICES = ['ssd', 'raid', 'phone', 'usb', 'nvr', 'cfast']
+const CALL_DEVICES = ['ssd-external', 'raid', 'phone', 'usb', 'nvr', 'cfast']
 const NEEDS_BRAND    = ['external']
-const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext']
+const NEEDS_CAPACITY = ['sata', 'win-laptop', 'desktop', 'other-ext', 'ssd-25', 'ssd-nvme']
 
 const deviceOptions = [
   { id: 'sata',     label: 'Hard Drive (HDD)',          sub: 'Internal laptop or desktop hard drive',    icon: '💽'  },
@@ -45,6 +45,33 @@ const capacityOptions = [
   { id: '2to7',   label: '2TB – 7TB'      },
   { id: '8to12',  label: '8TB – 12TB'     },
   { id: '12plus', label: '12TB or Larger' },
+]
+
+const ssdCapacityOptions = [
+  { id: 'under2', label: 'Under 2TB' },
+  { id: '2to8',   label: '2TB – 8TB' },
+  { id: '8plus',  label: '8TB or Larger' },
+]
+
+const ssdIssueOptions = [
+  {
+    id: 'ssd-not-recognized',
+    label: 'Not Recognized At All',
+    sub: 'Drive is completely undetected — does not show up on any computer',
+    icon: '❌',
+  },
+  {
+    id: 'ssd-corrupted',
+    label: 'Recognized but Slow / Corrupted Files',
+    sub: 'Drive shows up but files are missing, slow to open, or inaccessible',
+    icon: '⚠️',
+  },
+  {
+    id: 'deleted',
+    label: 'Deleted Files',
+    sub: 'Files were accidentally deleted or drive was formatted',
+    icon: '🗑️',
+  },
 ]
 
 const issueOptions = [
@@ -118,6 +145,14 @@ function getBasePrice(): number | null {
     return 800 // 12TB+
   }
 
+  // SSD / NVMe pricing
+  if (device === 'ssd-25' || device === 'ssd-nvme') {
+    if (issue === 'ssd-not-recognized') return 950
+    if (!capacity) return null
+    if (capacity === 'under2') return 300
+    if (capacity === '2to8')   return 500
+    return 600 // 8plus
+  }
   if (device === 'laptop-apple-old') return 650
   if (device === 'laptop-apple-new') return 950
   if (device === 'wd-ext') return isMech ? 950 : 600
@@ -168,10 +203,12 @@ const quote = computed(() => {
       if (sel.device === 'win-laptop')       return 'Windows Laptop'
       if (sel.device === 'desktop')          return 'Windows Desktop Computer'
       if (sel.device === 'desktop-mac')      return sel.fusionDrive ? 'iMac (Fusion Drive)' : 'Mac Desktop (iMac)'
+      if (sel.device === 'ssd-25')            return 'Internal 2.5\" SSD'
+      if (sel.device === 'ssd-nvme')          return 'Internal NVMe Drive'
       return deviceOptions.find(d => d.id === sel.device)?.label ?? sel.device
     })(),
     capacityLabel: sel.fusionDrive ? sel.capacity?.toUpperCase().replace('TB',' TB') : capacityOptions.find(c => c.id === sel.capacity)?.label,
-    issueLabel: sel.issue ? issueOptions.find(i => i.id === sel.issue)?.label : null,
+    issueLabel: sel.issue ? ([...issueOptions, ...ssdIssueOptions].find(i => i.id === sel.issue)?.label ?? null) : null,
     urgencyLabel:  urg.label,
   }
 })
@@ -186,6 +223,7 @@ function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.fusionDrive = false; sel.urgency = ''
   if (CALL_DEVICES.includes(id)) goTo('call')
   else if (id === 'external') goTo('brand')
+  else if (id === 'ssd') goTo('ssd-location')
   else if (id === 'laptop') goTo('laptop-type')
   else if (NEEDS_CAPACITY.includes(id)) goTo('capacity')
   else goTo('issue')
@@ -193,6 +231,14 @@ function pickDevice(id: string) {
 function pickLaptopType(type: string) {
   if (type === 'desktop') { sel.device = 'desktop'; goTo('desktop-os') }
   else { sel.device = 'laptop'; goTo('laptop-os') }
+}
+function pickSsdLocation(loc: string) {
+  if (loc === 'external') { sel.device = 'ssd-external'; goTo('call') }
+  else { goTo('ssd-type') }
+}
+function pickSsdType(type: string) {
+  sel.device = type === 'nvme' ? 'ssd-nvme' : 'ssd-25'
+  goTo('capacity')
 }
 function pickImacDriveType(type: string) {
   if (type === 'fusion') { sel.fusionDrive = true; goTo('fusion-size') }
@@ -232,7 +278,8 @@ function pickIssue(id: string)    { sel.issue = id;    goTo('encrypt') }
 function pickEncrypt(v: boolean)  {
   sel.encrypted = v
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-  goTo(isApple ? 'urgency' : 'cover')
+  const isSsd   = sel.device === 'ssd-25' || sel.device === 'ssd-nvme'
+  goTo((isApple || isSsd) ? 'urgency' : 'cover')
 }
 function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
 
@@ -242,6 +289,8 @@ function back() {
   const s = currentStep.value
   if (s === 'laptop-type') goTo('device', 0)
   else if (s === 'desktop-os')      goTo('laptop-type', 0)
+  else if (s === 'ssd-location')    goTo('device', 0)
+  else if (s === 'ssd-type')        goTo('ssd-location', 0)
   else if (s === 'imac-drive-type') goTo('desktop-os', 0)
   else if (s === 'fusion-size')     goTo('imac-drive-type', 0)
   else if (s === 'laptop-os')  goTo('laptop-type', 0)
@@ -249,10 +298,12 @@ function back() {
   else if (s === 'board-repair') goTo('apple-year', 0)
   else if (s === 'brand')    goTo('device', 0)
   else if (s === 'capacity') {
+    const wasSsd = sel.device === 'ssd-25' || sel.device === 'ssd-nvme'
     const wasExternal = ['wd-ext','toshiba-ext','other-ext'].includes(sel.device)
     const wasWinLaptop = sel.device === 'win-laptop'
     const wasDesktop = sel.device === 'desktop' || sel.device === 'desktop-mac'
-    if (wasExternal) goTo('brand', 0)
+    if (wasSsd) goTo('ssd-type', 0)
+    else if (wasExternal) goTo('brand', 0)
     else if (wasWinLaptop) goTo('laptop-os', 0)
     else if (wasDesktop) {
       if (sel.device === 'desktop-mac') goTo('imac-drive-type', 0)
@@ -277,7 +328,8 @@ function back() {
   else if (s === 'aio')     goTo('cover', 0)
   else if (s === 'urgency') {
     const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new'
-    if (sel.fusionDrive) goTo('encrypt', 0)
+    const isSsd = sel.device === 'ssd-25' || sel.device === 'ssd-nvme'
+    if (sel.fusionDrive || isSsd) goTo('encrypt', 0)
     else if (sel.device === 'desktop') goTo('aio', 0)
     else if (isApple) goTo('encrypt', 0)
     else goTo('cover', 0)
@@ -550,6 +602,59 @@ const progressIndex = computed(() => {
         <button class="iqt-back" @click="back">← Back</button>
       </div>
 
+
+      <!-- STEP: SSD Location -->
+      <div v-else-if="currentStep === 'ssd-location'">
+        <h3 class="iqt-q">Is the SSD internal or external?</h3>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-drive-type-card" @click="pickSsdLocation('internal')">
+            <div class="iqt-drive-imgs">
+              <img src="/service-ssd-new-nobg.webp" alt="Internal SSD" class="iqt-drive-img" />
+            </div>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">Internal SSD</span>
+              <span class="iqt-csub">Bare drive — installed inside a computer</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-drive-type-card" @click="pickSsdLocation('external')">
+            <div class="iqt-drive-imgs">
+              <img src="/external-hard-drive-on-desk.jpg" alt="External SSD" class="iqt-drive-img" />
+            </div>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">External SSD</span>
+              <span class="iqt-csub">Drive in an enclosure with USB or Thunderbolt cable</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
+      <!-- STEP: SSD Type -->
+      <div v-else-if="currentStep === 'ssd-type'">
+        <h3 class="iqt-q">What type of internal SSD is it?</h3>
+        <div class="iqt-grid g2">
+          <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('ssd')">
+            <div class="iqt-drive-imgs">
+              <img src="/service-ssd-new-nobg.webp" alt="2.5 inch SSD" class="iqt-drive-img" />
+            </div>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">2.5" SATA SSD</span>
+              <span class="iqt-csub">Flat rectangular drive — same size as a laptop hard drive</span>
+            </div>
+          </button>
+          <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('nvme')">
+            <div class="iqt-drive-imgs">
+              <img src="/ssd-data-recovery-install.webp" alt="NVMe SSD" class="iqt-drive-img" />
+            </div>
+            <div class="iqt-issue-text">
+              <span class="iqt-clabel">NVMe / M.2 Drive</span>
+              <span class="iqt-csub">Small stick-shaped drive — plugs directly into the motherboard</span>
+            </div>
+          </button>
+        </div>
+        <button class="iqt-back" @click="back">← Back</button>
+      </div>
+
       <!-- STEP: Brand -->
       <div v-else-if="currentStep === 'brand'">
         <h3 class="iqt-q">What brand is the external drive?</h3>
@@ -592,7 +697,7 @@ const progressIndex = computed(() => {
         <h3 class="iqt-q">What is happening with your drive?</h3>
         <div class="iqt-grid g1">
           <button
-            v-for="i in issueOptions" :key="i.id"
+            v-for="i in (sel.device === 'ssd-25' || sel.device === 'ssd-nvme' ? ssdIssueOptions : issueOptions)" :key="i.id"
             class="iqt-card iqt-issue-card"
             :class="{ selected: sel.issue === i.id }"
             @click="pickIssue(i.id)"
