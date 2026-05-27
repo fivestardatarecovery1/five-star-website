@@ -93,7 +93,8 @@ const urgencyOptions = [
 
 function getBasePrice(): number | null {
   const { device, capacity, issue } = sel
-  if (!device || !issue) return null
+  const isAppleLaptop = device === 'laptop-apple-old' || device === 'laptop-apple-new'
+  if (!device || (!issue && !isAppleLaptop)) return null
   if (CALL_DEVICES.includes(device)) return null
 
   const isMech = issue === 'mechanical'
