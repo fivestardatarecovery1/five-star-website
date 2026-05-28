@@ -1261,11 +1261,11 @@ const progressIndex = computed(() => {
 
 /* ── Light theme ──────────────────────────────── */
 /* Contact Step */
-.iqt-contact-step { display: flex; flex-direction: column; gap: 0; }
+.iqt-contact-step { display: flex; flex-direction: column; gap: 0; height: 100%; }
 .iqt-contact-step .iqt-q { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 4px; }
 .iqt-contact-step .iqt-hint { font-size: 0.82rem; color: #6b7280; margin-bottom: 18px; }
-.iqt-contact-fields { display: flex; flex-direction: column; gap: 13px; }
-.iqt-field { display: flex; flex-direction: column; gap: 5px; }
+.iqt-contact-fields { display: flex; flex-direction: column; gap: 14px; width: 100%; flex: 1; }
+.iqt-field { display: flex; flex-direction: column; gap: 5px; width: 100%; }
 .iqt-label {
   font-size: 0.7rem;
   font-weight: 700;
@@ -1337,15 +1337,21 @@ const progressIndex = computed(() => {
   background: #fff;
   border: none;
   border-radius: 0;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box;
 }
 .iqt-compact .iqt-body {
   flex: 1;
   overflow-y: auto;
   min-height: 0;
-  padding: 18px 16px 14px;
+  padding: 20px;
   scrollbar-width: thin;
   scrollbar-color: #e2e8f0 transparent;
   background: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 .iqt-compact .iqt-q {
   font-size: 0.97rem;
