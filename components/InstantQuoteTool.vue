@@ -1,6 +1,18 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean, compact?: boolean }>()
 
+// Generate a stable session ID for this quote session (persists across steps)
+const sessionId = ref('')
+if (import.meta.client) {
+  sessionId.value = crypto.randomUUID()
+  // Track page view
+  fetch('/api/quote-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type: 'view' }),
+  }).catch(() => {})
+}
+
 type Step = 'contact' | 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'ssd-ext-brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
 const currentStep = ref<Step>('contact')
@@ -19,12 +31,12 @@ async function submitContact() {
   if (!contact.name.trim()) { contactError.value = 'Please enter your name.'; return }
   if (!contact.email.trim() || !contact.email.includes('@')) { contactError.value = 'Please enter a valid email.'; return }
   if (!contact.phone.trim()) { contactError.value = 'Please enter your phone number.'; return }
-  // Fire lead capture email (non-blocking)
+  // Fire lead capture to MC + email (non-blocking)
   if (import.meta.client) {
     fetch('/api/quote-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: 'lead', ...contact }),
+      body: JSON.stringify({ type: 'lead', session_id: sessionId.value, ...contact }),
     }).catch(() => {})
   }
   goTo('device')
@@ -266,7 +278,28 @@ function goTo(s: Step, delay = 220) {
 
 function pickDevice(id: string) {
   sel.device = id; sel.capacity = ''; sel.issue = ''; sel.encrypted = null; sel.coverOpened = null; sel.aio = null; sel.boardRepair = null; sel.fusionDrive = false; sel.urgency = ''
-  if (CALL_DEVICES.includes(id)) goTo('call')
+  if (CALL_DEVICES.includes(id)) {
+    // Fire call-required lead to MC
+    if (import.meta.client && contact.name) {
+      const callLabel = deviceOptions.find(d => d.id === id)?.label || id
+      fetch('/api/quote-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'call',
+          session_id: sessionId.value,
+          name: contact.name,
+          email: contact.email,
+          phone: contact.phone,
+          preferredContact: contact.preferredContact,
+          device: id,
+          device_label: callLabel,
+          call_required: true,
+        }),
+      }).catch(() => {})
+    }
+    goTo('call')
+  }
   else if (id === 'external') goTo('brand')
   else if (id === 'ssd') goTo('ssd-location')
   else if (id === 'laptop') goTo('laptop-type')
@@ -341,7 +374,7 @@ function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string) {
   sel.urgency = id
   goTo('result')
-  // Fire full quote result email (non-blocking)
+  // Fire full quote result to MC + email (non-blocking)
   if (import.meta.client) {
     nextTick(() => {
       if (!quote.value) return
@@ -350,11 +383,13 @@ function pickUrgency(id: string) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           type: 'result',
+          session_id: sessionId.value,
           name: contact.name,
           email: contact.email,
           phone: contact.phone,
           preferredContact: contact.preferredContact,
-          device: quote.value.deviceLabel,
+          device: sel.device,
+          device_label: quote.value.deviceLabel,
           capacity: quote.value.capacityLabel,
           issue: quote.value.issueLabel,
           urgency: quote.value.urgencyLabel,
@@ -1387,46 +1422,107 @@ const progressIndex = computed(() => {
   box-sizing: border-box;
 }
 .iqt-compact .iqt-q {
-  font-size: 0.97rem;
-  margin-bottom: 12px;
+  font-size: 1rem;
+  margin-bottom: 8px;
   color: #1a1a2e;
+  font-weight: 800;
 }
-.iqt-compact .iqt-hint { color: #6b7280; font-size: 0.8rem; }
-.iqt-compact .iqt-grid {
-  gap: 7px;
-}
+.iqt-compact .iqt-hint { color: #6b7280; font-size: 0.78rem; margin-bottom: 10px; }
+
+/* Grid overrides in compact mode */
+.iqt-compact .iqt-grid { gap: 8px; }
+.iqt-compact .g4 { grid-template-columns: 1fr 1fr; } /* 2×2 big squares */
+.iqt-compact .g3 { grid-template-columns: repeat(3, 1fr); }
+.iqt-compact .g2 { grid-template-columns: 1fr 1fr; }
+.iqt-compact .g1 { grid-template-columns: 1fr; }
+
+/* Base card style for compact */
 .iqt-compact .iqt-card {
-  padding: 10px 8px;
-  gap: 6px;
+  padding: 14px 10px;
+  gap: 7px;
   background: #f9fafb;
-  border-color: #e5e7eb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
   color: #1a1a2e;
+  transition: all 0.15s;
 }
-.iqt-compact .iqt-card:hover { border-color: #F5C842; background: #fffbeb; }
-.iqt-compact .iqt-card.selected { border-color: #F5C842; background: #fffbeb; }
-.iqt-compact .iqt-card-icon { font-size: 1.25rem; }
-.iqt-compact .iqt-card-label { font-size: 0.75rem; color: #1a1a2e; }
-.iqt-compact .iqt-card-sub { font-size: 0.65rem; color: #6b7280; }
-.iqt-compact .iqt-nav { margin-top: 14px; gap: 8px; }
+.iqt-compact .iqt-card:hover { border-color: #F5C842; background: #fffbeb; transform: translateY(-1px); }
+.iqt-compact .iqt-card.selected { border-color: #F5C842; background: #fffbeb; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
+.iqt-compact .iqt-card-icon { font-size: 1.3rem; }
+.iqt-compact .iqt-card-label { font-size: 0.76rem; color: #1a1a2e; font-weight: 700; line-height: 1.3; }
+.iqt-compact .iqt-card-sub { font-size: 0.64rem; color: #6b7280; line-height: 1.3; }
+
+/* Big 2-col cards (capacity, yes/no steps) — taller, more square */
+.iqt-compact .g4 .iqt-card,
+.iqt-compact .g2 .iqt-card:not(.iqt-issue-card):not(.iqt-urg-card) {
+  padding: 20px 12px;
+  min-height: 90px;
+  justify-content: center;
+  gap: 8px;
+}
+.iqt-compact .g4 .iqt-card .iqt-icon,
+.iqt-compact .g2 .iqt-card .iqt-icon { font-size: 1.6rem; }
+.iqt-compact .g4 .iqt-clabel { font-size: 0.85rem; font-weight: 800; color: #1a1a2e; }
+
+/* Issue cards (list style) */
+.iqt-compact .iqt-issue-card {
+  flex-direction: row;
+  padding: 12px 14px;
+  text-align: left;
+  justify-content: flex-start;
+  min-height: unset;
+}
+.iqt-compact .iqt-issue-card .iqt-issue-icon { font-size: 1.1rem; }
+.iqt-compact .iqt-issue-card .iqt-issue-label { font-size: 0.82rem; font-weight: 700; }
+.iqt-compact .iqt-issue-card .iqt-issue-sub { font-size: 0.7rem; color: #6b7280; }
+
+/* Urgency cards */
+.iqt-compact .iqt-urg-card {
+  padding: 12px 14px;
+  text-align: left;
+}
+
+/* Nav buttons */
+.iqt-compact .iqt-nav { margin-top: 12px; gap: 8px; }
 .iqt-compact .iqt-btn-back {
   padding: 9px 16px;
   font-size: 0.85rem;
-  border-color: #e5e7eb;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  border-radius: 7px;
   color: #6b7280;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
 }
 .iqt-compact .iqt-btn-next {
-  padding: 9px 20px;
-  font-size: 0.88rem;
+  padding: 10px 22px;
+  font-size: 0.9rem;
   background: #F5C842;
   color: #1a1a1a;
   border: none;
   border-radius: 7px;
-  font-weight: 800;
+  font-weight: 900;
   cursor: pointer;
   font-family: inherit;
   transition: background 0.2s;
 }
 .iqt-compact .iqt-btn-next:hover { background: #e0b43a; }
+.iqt-compact .iqt-back {
+  display: block;
+  margin-top: 10px;
+  background: none;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 7px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  color: #6b7280;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  transition: border-color 0.15s;
+}
+.iqt-compact .iqt-back:hover { border-color: #9ca3af; }
 
 .iqt-light {
   background: #ffffff;
