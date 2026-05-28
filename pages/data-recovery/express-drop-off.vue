@@ -330,30 +330,42 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <!-- PAGE HEADER STRIP — minimal, just branding -->
-    <section class="page-strip">
-      <div class="page-strip-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
-      <div class="page-strip-overlay"></div>
-      <div class="container page-strip-inner">
-        <div class="ps-left">
-          <div class="ps-proof"><span class="ps-stars">★★★★★</span><span class="ps-rating">4.9 · 498 Online Reviews</span></div>
-          <h1 class="ps-title">Express Drop-Off <span class="ps-gold">— Schedule Your Arrival</span></h1>
-        </div>
-        <div class="ps-badges">
-          <span class="ps-badge">🕐 Select Drop-Off Time</span>
-          <span class="ps-sep"></span>
-          <span class="ps-badge">⚡ Same-Day Available</span>
-          <span class="ps-sep"></span>
-          <span class="ps-badge">🗓️ 30-Min Window</span>
-          <span class="ps-sep"></span>
-          <span class="ps-badge">🛡️ No Data = No Charge</span>
-        </div>
-      </div>
-    </section>
+    <!-- ══ FULL-SCREEN LANDING HERO WITH EMBEDDED FORM ══ -->
+    <section class="landing">
+      <div class="landing-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
+      <div class="landing-overlay"></div>
 
-    <!-- MULTI-STEP FORM -->
-    <section class="form-section">
-      <div class="container">
-        <div class="form-wrap">
+      <div class="container landing-layout">
+
+        <!-- LEFT: Brand Authority -->
+        <div class="landing-brand">
+          <p class="lb-eyebrow">🏆 Glendale's #1 Data Recovery Lab</p>
+          <h1 class="lb-headline">Same-Day<br>Express<br><span class="lb-gold">Drop-Off</span></h1>
+          <p class="lb-sub">Fill out the quick form — our team will be fully ready when you arrive. No waiting, no paperwork at the door.</p>
+
+          <div class="lb-benefits">
+            <div class="lb-benefit"><span class="lb-icon">⚡</span><span>Same-day appointments available</span></div>
+            <div class="lb-benefit"><span class="lb-icon">🗓️</span><span>Pick your 30-minute arrival window</span></div>
+            <div class="lb-benefit"><span class="lb-icon">🛡️</span><span>No data recovered — no charge</span></div>
+            <div class="lb-benefit"><span class="lb-icon">🧪</span><span>ISO Class 5 certified clean room</span></div>
+            <div class="lb-benefit"><span class="lb-icon">🔒</span><span>100% confidential — always</span></div>
+          </div>
+
+          <div class="lb-social">
+            <span class="lb-stars">★★★★★</span>
+            <span class="lb-review-text">4.9 out of 5 · 498 verified reviews</span>
+          </div>
+
+          <div class="lb-stats">
+            <div class="lb-stat"><span class="lb-stat-num">26,000+</span><span class="lb-stat-label">Drives Recovered</span></div>
+            <div class="lb-stat"><span class="lb-stat-num">10+</span><span class="lb-stat-label">Years Experience</span></div>
+            <div class="lb-stat"><span class="lb-stat-num">100%</span><span class="lb-stat-label">Confidential</span></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Embedded Form Panel -->
+        <div class="landing-panel">
+          <div class="form-wrap">
 
           <!-- Success / Confirmation screen -->
           <div v-if="submitted" class="confirm-wrap">
@@ -700,9 +712,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
             </form>
           </template>
-        </div>
-      </div>
-    </section>
+          </div><!-- /.form-wrap -->
+        </div><!-- /.landing-panel -->
+
+      </div><!-- /.landing-layout -->
+    </section><!-- /.landing -->
 
     <!-- PROCESS SECTION -->
     <section class="process-section">
@@ -763,19 +777,36 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* ── FORM SECTION ── */
 /* ── Compact Form Hero ── */
 /* ── Page header strip — super compact ── */
-.page-strip { position: relative; overflow: hidden; }
-.page-strip-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
-.page-strip-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.9) 60%, rgba(10,12,20,0.75) 100%); pointer-events: none; }
-.page-strip-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap; }
-.ps-left { display: flex; flex-direction: column; gap: 4px; }
-.ps-proof { display: flex; align-items: center; gap: 8px; }
-.ps-stars { color: #F5C842; font-size: 13px; letter-spacing: 1px; }
-.ps-rating { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); }
-.ps-title { font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 2.4vw, 28px); font-weight: 800; color: #fff; line-height: 1.2; margin: 0; }
-.ps-gold { color: #F5C842; }
-.ps-badges { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
-.ps-badge { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.78); padding: 0 14px 0 0; white-space: nowrap; }
-.ps-sep { width: 1px; height: 12px; background: rgba(255,255,255,0.2); margin-right: 14px; flex-shrink: 0; }
+/* ═══ LANDING HERO ═══ */
+.landing { position: relative; min-height: calc(100vh - 86px); display: flex; align-items: center; overflow: hidden; }
+.landing-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.landing-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.96) 0%, rgba(10,12,20,0.88) 45%, rgba(10,12,20,0.70) 100%); pointer-events: none; }
+.landing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 460px; gap: 56px; align-items: center; padding-top: 40px; padding-bottom: 40px; width: 100%; }
+/* LEFT brand */
+.landing-brand { color: #fff; }
+.lb-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F5C842; margin-bottom: 16px; }
+.lb-headline { font-family: 'Montserrat', sans-serif; font-size: clamp(40px, 5.5vw, 72px); font-weight: 900; line-height: 1.0; color: #fff; margin-bottom: 20px; }
+.lb-gold { color: #F5C842; }
+.lb-sub { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 28px; max-width: 420px; }
+.lb-benefits { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+.lb-benefit { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); }
+.lb-icon { font-size: 18px; flex-shrink: 0; width: 24px; text-align: center; }
+.lb-social { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.lb-stars { color: #F5C842; font-size: 18px; letter-spacing: 2px; }
+.lb-review-text { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 600; }
+.lb-stats { display: flex; gap: 28px; }
+.lb-stat { display: flex; flex-direction: column; gap: 2px; }
+.lb-stat-num { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: #F5C842; }
+.lb-stat-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
+/* RIGHT form panel */
+.landing-panel { }
+.landing-panel .form-wrap { border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.4); max-height: calc(100vh - 130px); overflow-y: auto; scrollbar-width: thin; }
+@media (max-width: 960px) {
+  .landing { min-height: auto; }
+  .landing-layout { grid-template-columns: 1fr; gap: 28px; }
+  .landing-brand { display: none; }
+  .landing-panel .form-wrap { max-height: none; }
+}
 /* Keep old classes for backward compat */
 .form-hero-title {
   font-family: 'Montserrat', sans-serif;
