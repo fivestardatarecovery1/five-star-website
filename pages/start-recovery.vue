@@ -302,9 +302,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- TESTIMONIALS -->
-    <section class="s-grey">
+    <section class="s-grey" style="padding-top:0">
       <div class="container">
-        <ReviewsSection :reviews="reviews" :showHeader="false" />
+        <ReviewsSection :reviews="reviews" />
       </div>
     </section>
 
