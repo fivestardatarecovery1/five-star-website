@@ -164,13 +164,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <StatsBar />
 
     <!-- 5-STEP PROCESS -->
-    <section class="s-white">
+    <section class="sr-steps-section">
       <div class="container">
-        <div class="sr-steps">
-          <div class="sr-step" v-for="(step, i) in steps" :key="i">
-            <img :src="step.img" :alt="step.alt" class="sr-step-img" />
-            <div class="sr-step-label">Step {{ i + 1 }}:</div>
-            <div class="sr-step-text">{{ step.text }}</div>
+        <div class="sr-steps-grid">
+          <div class="sr-step-card" v-for="(step, i) in steps" :key="i">
+            <img :src="step.img" :alt="step.alt" class="sr-step-card-img" />
+            <div v-if="i < steps.length - 1" class="sr-step-arrow">›</div>
           </div>
         </div>
       </div>
@@ -251,28 +250,41 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-heading.center { text-align: center; }
 
 /* 5-STEP PROCESS */
-.sr-steps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  text-align: center;
+.sr-steps-section {
+  background: #f8f9fc;
+  padding: 60px 0;
 }
-.sr-step-img {
-  width: 80px;
+.sr-steps-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.sr-step-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 220px;
+}
+.sr-step-card-img {
+  width: 100%;
   height: auto;
-  margin: 0 auto 12px;
   display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  object-fit: contain;
 }
-.sr-step-label {
-  font-size: 0.9rem;
-  font-weight: 800;
-  color: #1a1a2e;
-  margin-bottom: 6px;
-}
-.sr-step-text {
-  font-size: 0.82rem;
-  color: #4a5568;
-  line-height: 1.5;
+.sr-step-arrow {
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #F5C842;
+  font-weight: 900;
+  z-index: 2;
+  line-height: 1;
 }
 
 /* LOCAL / NOT LOCAL */
@@ -351,18 +363,20 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
 
 @media (max-width: 900px) {
-  .sr-steps { grid-template-columns: repeat(3, 1fr); }
-  .sr-step:nth-child(4), .sr-step:nth-child(5) { grid-column: auto; }
+  .sr-steps-grid { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .sr-step-card { max-width: 160px; }
+  .sr-step-arrow { display: none; }
 }
 @media (max-width: 768px) {
   .sr-hero-content { grid-template-columns: 1fr; }
   .sr-hero-right { display: none; }
   .sr-hero-badges { grid-template-columns: 1fr; }
-  .sr-steps { grid-template-columns: repeat(2, 1fr); }
+  .sr-steps-grid { gap: 6px; }
+  .sr-step-card { max-width: 140px; }
   .sr-options { grid-template-columns: 1fr; }
   .sr-video-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .sr-steps { grid-template-columns: 1fr 1fr; }
+  .sr-step-card { max-width: 120px; }
 }
 </style>
