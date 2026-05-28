@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'vercel'
   },
+  runtimeConfig: {
+    resendApiKey: process.env.RESEND_API_KEY || '',
+  },
   modules: ['@nuxt/content'],
   content: {
     highlight: {

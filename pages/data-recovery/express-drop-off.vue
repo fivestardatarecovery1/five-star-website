@@ -59,10 +59,34 @@ const step = ref(1)
 const totalSteps = 5
 const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Service Options', 'Schedule & Submit']
 const submitted = ref(false)
+const submitting = ref(false)
+const submitError = ref('')
+
+// Form data
+const form = reactive({
+  firstName: '', lastName: '', email: '', phone: '',
+  manufacturer: '', modelNo: '', driveType: '', driveFormat: '', driveSize: '',
+  issue: '', dataTypes: [] as string[], recoveryAttempted: '', additionalInfo: '',
+  conditionalRates: [] as string[], expeditedService: '', transferDrive: '',
+  dropOffDate: '', dropOffTime: '', todayDate: '',
+  termsAgreed: false,
+})
 
 function nextStep() { if (step.value < totalSteps) step.value++ }
 function prevStep() { if (step.value > 1) step.value-- }
-function submitForm() { submitted.value = true }
+
+async function submitForm() {
+  submitting.value = true
+  submitError.value = ''
+  try {
+    await $fetch('/api/submit-dropoff', { method: 'POST', body: form })
+    submitted.value = true
+  } catch (e) {
+    submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
+  } finally {
+    submitting.value = false
+  }
+}
 
 const steps = [
   { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
@@ -340,7 +364,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div style="flex:1"></div>
                 <span class="step-count">Step {{ step }} of {{ totalSteps }}</span>
                 <button v-if="step < totalSteps" type="button" class="btn-next" @click="nextStep">Continue →</button>
-                <button v-if="step === totalSteps" type="submit" class="btn-next">Submit Form</button>
+                <button v-if="step === totalSteps" type="submit" class="btn-next" :disabled="submitting">{{ submitting ? 'Sending...' : 'Submit Form' }}</button>
               </div>
 
             </form>
