@@ -444,8 +444,32 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   text-align: center;
   border: 1.5px solid #e2e8f0;
 }
-.sr-option-local { background: #fff; }
-.sr-option-mail { background: #1a2035; border-color: #2a3050; }
+.sr-option-local {
+  background: #fff url('/sr-local-bg.jpg') center/cover no-repeat;
+  position: relative;
+}
+.sr-option-local::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.82);
+  border-radius: inherit;
+  z-index: 0;
+}
+.sr-option-mail {
+  background: #1a2035 url('/sr-mail-bg.jpg') center/cover no-repeat;
+  border-color: #2a3050;
+  position: relative;
+}
+.sr-option-mail::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(26,32,53,0.78);
+  border-radius: inherit;
+  z-index: 0;
+}
+.sr-option-card > * { position: relative; z-index: 1; }
 .sr-option-tag {
   font-size: 0.75rem;
   font-weight: 800;
