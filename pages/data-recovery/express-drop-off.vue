@@ -72,8 +72,14 @@ const form = reactive({
   termsAgreed: false,
 })
 
-function nextStep() { if (step.value < totalSteps) step.value++ }
-function prevStep() { if (step.value > 1) step.value-- }
+function scrollToForm() {
+  if (import.meta.client) {
+    const el = document.querySelector('.form-wrap')
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+function nextStep() { if (step.value < totalSteps) { step.value++; scrollToForm() } }
+function prevStep() { if (step.value > 1) { step.value--; scrollToForm() } }
 
 async function submitForm() {
   if (!form.termsAgreed) {
