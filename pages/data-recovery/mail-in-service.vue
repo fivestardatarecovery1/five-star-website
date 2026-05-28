@@ -75,6 +75,7 @@ const submitError = ref('')
 const stepError = ref('')
 const labelBase64 = ref('')
 const serviceLabel = ref('')
+const labelError = ref('')
 
 const form = reactive({
   firstName: '', lastName: '', email: '', phone: '',
@@ -136,9 +137,11 @@ async function submitForm() {
   submitting.value = true
   submitError.value = ''
   try {
-    const res = await $fetch<{ success: boolean, labelBase64: string, serviceLabel: string }>('/api/submit-mailin', { method: 'POST', body: form })
+    const res = await $fetch<{ success: boolean, labelBase64: string, serviceLabel: string, labelError: string }>('/api/submit-mailin', { method: 'POST', body: form })
+    console.log('API response keys:', Object.keys(res), 'labelLength:', res.labelBase64?.length, 'error:', res.labelError)
     labelBase64.value = res.labelBase64 || ''
     serviceLabel.value = res.serviceLabel || ''
+    labelError.value = res.labelError || ''
     submitted.value = true
   } catch (e) {
     submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
@@ -199,6 +202,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <h2 class="success-heading">You're all set!</h2>
             <p class="success-text">Your mail-in request is confirmed. Your prepaid <strong>{{ serviceLabel }}</strong> label has been emailed to you and is ready to download below.</p>
 
+            <!-- debug -->
+            <p style="font-size:11px;color:#999;margin:4px 0 16px;">label chars: {{ labelBase64.length }} | error: {{ labelError }}</p>
             <div v-if="labelBase64" class="label-download-box">
               <div class="label-icon">📦</div>
               <div class="label-info">
