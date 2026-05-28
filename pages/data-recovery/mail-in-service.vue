@@ -73,6 +73,8 @@ const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
 const stepError = ref('')
+const labelBase64 = ref('')
+const serviceLabel = ref('')
 
 const form = reactive({
   firstName: '', lastName: '', email: '', phone: '',
@@ -134,7 +136,9 @@ async function submitForm() {
   submitting.value = true
   submitError.value = ''
   try {
-    await $fetch('/api/submit-mailin', { method: 'POST', body: form })
+    const res = await $fetch<{ success: boolean, labelBase64: string, serviceLabel: string }>('/api/submit-mailin', { method: 'POST', body: form })
+    labelBase64.value = res.labelBase64 || ''
+    serviceLabel.value = res.serviceLabel || ''
     submitted.value = true
   } catch (e) {
     submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
@@ -192,8 +196,33 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <!-- Success state -->
           <div v-if="submitted" class="form-success">
             <div class="success-icon">✓</div>
-            <h2 class="success-heading">Form Submitted!</h2>
-            <p class="success-text">Thank you — we've received your mail-in request. We'll send your prepaid shipping label shortly. Check your email for confirmation and next steps.</p>
+            <h2 class="success-heading">You're all set!</h2>
+            <p class="success-text">Your mail-in request is confirmed. Your prepaid <strong>{{ serviceLabel }}</strong> label has been emailed to you and is ready to download below.</p>
+
+            <div v-if="labelBase64" class="label-download-box">
+              <div class="label-icon">📦</div>
+              <div class="label-info">
+                <strong>Your Prepaid Shipping Label</strong>
+                <span>{{ serviceLabel }} · Print and attach to your package</span>
+              </div>
+              <a
+                :href="'data:application/pdf;base64,' + labelBase64"
+                download="five-star-shipping-label.pdf"
+                class="btn-download"
+              >⬇ Download Label</a>
+            </div>
+
+            <div class="success-steps">
+              <p class="steps-heading">Packing instructions:</p>
+              <ol class="steps-list">
+                <li>Wrap your drive in bubble wrap or anti-static bag</li>
+                <li>Place in a sturdy box with padding on all sides (no envelopes)</li>
+                <li>Print and attach your shipping label to the outside</li>
+                <li>Drop off at any FedEx location</li>
+              </ol>
+            </div>
+
+            <p class="success-note">Questions? Call <a href="tel:8182728866" class="gold-link">818-272-8866</a></p>
             <NuxtLink to="/" class="btn-gold">Back to Home</NuxtLink>
           </div>
 
@@ -512,11 +541,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .btn-next { background: #F5C842; color: #1a1a1a; border: none; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.2s; }
 .btn-next:hover { background: #e0b43a; }
 .btn-next:disabled { opacity: 0.6; cursor: not-allowed; }
-.form-success { padding: 72px 40px; text-align: center; }
+.form-success { padding: 56px 40px; text-align: center; }
 .success-icon { width: 64px; height: 64px; border-radius: 50%; background: #22c55e; color: #fff; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
 .success-heading { font-size: 1.6rem; font-weight: 900; color: #1a1a2e; margin-bottom: 12px; }
 .success-text { font-size: 1rem; color: #6b7280; max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
 .btn-gold { display: inline-block; background: #F5C842; color: #1a1a1a; padding: 13px 32px; border-radius: 8px; font-weight: 800; text-decoration: none; }
+.label-download-box { display: flex; align-items: center; gap: 16px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 18px 20px; margin: 24px 0; text-align: left; }
+.label-icon { font-size: 2rem; flex-shrink: 0; }
+.label-info { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.label-info strong { font-size: 0.95rem; color: #1a1a2e; }
+.label-info span { font-size: 0.82rem; color: #6b7280; }
+.btn-download { background: #22c55e; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 800; font-size: 0.9rem; text-decoration: none; white-space: nowrap; cursor: pointer; }
+.btn-download:hover { background: #16a34a; }
+.success-steps { background: #f4f7fc; border-radius: 10px; padding: 18px 24px; margin: 20px 0; text-align: left; }
+.steps-heading { font-size: 0.88rem; font-weight: 700; color: #374151; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+.steps-list { margin: 0; padding-left: 20px; font-size: 0.9rem; color: #374151; line-height: 1.8; }
+.success-note { font-size: 0.9rem; color: #6b7280; margin: 0 0 20px; }
+.gold-link { color: #F5C842; font-weight: 700; }
 
 /* PROCESS */
 .process-section { background: #0f1623; padding: 80px 0 90px; }

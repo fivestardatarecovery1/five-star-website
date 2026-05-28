@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
+    fedexClientId: process.env.FEDEX_CLIENT_ID || '',
+    fedexClientSecret: process.env.FEDEX_CLIENT_SECRET || '',
+    fedexAccountNumber: process.env.FEDEX_ACCOUNT_NUMBER || '',
   },
   modules: ['@nuxt/content'],
   content: {
