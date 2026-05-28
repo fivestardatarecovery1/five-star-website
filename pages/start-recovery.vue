@@ -243,24 +243,32 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- LOCAL / NOT LOCAL -->
-    <section class="s-grey">
+    <section class="sr-options-section">
       <div class="container">
         <div class="sr-options">
           <!-- LOCAL -->
           <div class="sr-option-card sr-option-local">
-            <div class="sr-option-tag">LOCAL?</div>
-            <img src="/start-recovery-local-icon.png" alt="Express Drop Off" class="sr-option-icon" />
-            <h2 class="sr-option-title">EXPRESS DROP OFF</h2>
-            <p class="sr-option-desc">We offer a faster way to start your recovery! Fill out the form to get started!</p>
-            <NuxtLink to="/data-recovery/express-drop-off" class="btn-sr">Express Drop Off Form</NuxtLink>
+            <div class="sr-option-bg" style="background-image: url('/sr-local-bg.jpg')"></div>
+            <div class="sr-option-overlay"></div>
+            <div class="sr-option-content">
+              <img src="/start-recovery-local-icon.png" alt="Express Drop Off" class="sr-option-icon" />
+              <h2 class="sr-option-tag">LOCAL?</h2>
+              <h3 class="sr-option-title">EXPRESS DROP OFF</h3>
+              <p class="sr-option-desc">We offer a faster way to start your recovery! Fill out the form to get started!</p>
+              <NuxtLink to="/data-recovery/express-drop-off" class="btn-option">Express Drop Off Form</NuxtLink>
+            </div>
           </div>
           <!-- NOT LOCAL -->
           <div class="sr-option-card sr-option-mail">
-            <div class="sr-option-tag">NOT LOCAL?</div>
-            <img src="/start-recovery-mail-icon.png" alt="Mail-In Service" class="sr-option-icon" />
-            <h2 class="sr-option-title">MAIL-IN SERVICE</h2>
-            <p class="sr-option-desc">Not local? Not a problem! Fill out our Mail-In form to experience our FIVE STAR service!</p>
-            <NuxtLink to="/data-recovery/mail-in-service" class="btn-sr btn-sr-dark">Start Your Recovery</NuxtLink>
+            <div class="sr-option-bg" style="background-image: url('/sr-mail-bg.jpg')"></div>
+            <div class="sr-option-overlay"></div>
+            <div class="sr-option-content">
+              <img src="/start-recovery-mail-icon.png" alt="Mail-In Service" class="sr-option-icon" />
+              <h2 class="sr-option-tag">NOT LOCAL?</h2>
+              <h3 class="sr-option-title">MAIL-IN SERVICE</h3>
+              <p class="sr-option-desc">Not local? Not a problem! Fill out our Mail-In form to experience our FIVE STAR service!</p>
+              <NuxtLink to="/data-recovery/mail-in-service" class="btn-option">Start Your Recovery</NuxtLink>
+            </div>
           </div>
         </div>
       </div>
@@ -432,87 +440,88 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 
 /* LOCAL / NOT LOCAL */
+.sr-options-section {
+  background: #f4f7fc;
+  padding: 80px 0;
+}
 .sr-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .sr-option-card {
-  border-radius: 16px;
-  padding: 48px 36px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  border: 1px solid #e8edf4;
+}
+.sr-option-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+.sr-option-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.88);
+  z-index: 1;
+}
+.sr-option-content {
+  position: relative;
+  z-index: 2;
+  padding: 48px 40px 44px;
   text-align: center;
-  border: 1.5px solid #e2e8f0;
-}
-.sr-option-local {
-  background: #fff url('/sr-local-bg.jpg') center/cover no-repeat;
-  position: relative;
-}
-.sr-option-local::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.82);
-  border-radius: inherit;
-  z-index: 0;
-}
-.sr-option-mail {
-  background: #1a2035 url('/sr-mail-bg.jpg') center/cover no-repeat;
-  border-color: #2a3050;
-  position: relative;
-}
-.sr-option-mail::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(26,32,53,0.78);
-  border-radius: inherit;
-  z-index: 0;
-}
-.sr-option-card > * { position: relative; z-index: 1; }
-.sr-option-tag {
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #F5C842;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .sr-option-icon {
-  width: 80px;
-  height: 80px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
-  margin: 0 auto 20px;
+  margin-bottom: 18px;
   display: block;
 }
-.sr-option-title {
-  font-size: 1.4rem;
+.sr-option-tag {
+  font-size: clamp(1.6rem, 3vw, 2rem);
   font-weight: 900;
-  margin-bottom: 14px;
+  color: #1a1a2e;
+  margin: 0 0 8px;
+  line-height: 1.1;
 }
-.sr-option-local .sr-option-title { color: #1a1a2e; }
-.sr-option-mail .sr-option-title { color: #fff; }
+.sr-option-title {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
 .sr-option-desc {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  color: #4a5568;
   line-height: 1.7;
   margin-bottom: 28px;
+  max-width: 320px;
 }
-.sr-option-local .sr-option-desc { color: #4a5568; }
-.sr-option-mail .sr-option-desc { color: #a0aec0; }
-.btn-sr {
+.btn-option {
   display: inline-block;
   background: #F5C842;
   color: #1a1a1a;
-  padding: 14px 28px;
+  padding: 13px 30px;
   border-radius: 8px;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   text-decoration: none;
-  letter-spacing: 0.02em;
   transition: background 0.2s;
 }
-.btn-sr:hover { background: #e0b43a; }
-.btn-sr-dark { background: #fff; color: #1a1a2e; }
-.btn-sr-dark:hover { background: #f0f0f0; }
+.btn-option:hover { background: #e0b43a; }
 
 /* VIDEO */
 .sr-video-section { background: #1a2035; padding: 72px 0; }
@@ -546,7 +555,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .sr-step-icon-wrap { width: 100px; flex-shrink: 0; border-bottom: none; border-right: 1px solid #2a3050; padding: 20px 12px; border-radius: 12px 0 0 12px; }
   .sr-step-icon { width: 52px; height: 52px; }
   .sr-step-body { display: flex; flex-direction: column; justify-content: center; padding: 14px 16px; }
-  .sr-options { grid-template-columns: 1fr; }
+  .sr-options { grid-template-columns: 1fr; max-width: 440px; }
   .sr-video-inner { grid-template-columns: 1fr; }
 }
 </style>
