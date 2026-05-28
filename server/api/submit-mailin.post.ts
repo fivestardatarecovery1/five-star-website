@@ -295,9 +295,10 @@ export default defineEventHandler(async (event) => {
   const packingSlipBase64 = Buffer.from(packingSlipHtml).toString('base64')
 
   // Save to Mission Control (fire & forget)
+  // Route through the Nuxt proxy on the local machine (fivestar.ngrok.app → localhost:3456 → localhost:3001)
   const mcUrl = process.env.MC_API_URL
   if (mcUrl) {
-    fetch(`${mcUrl}/api/fs-leads/mailin-submission`, {
+    fetch(`${mcUrl}/api/mc-leads/mailin-submission`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...body }),
