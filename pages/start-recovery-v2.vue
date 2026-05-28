@@ -38,14 +38,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
         <!-- LEFT: Brand + trust -->
         <div class="srh-left">
-          <p class="srh-eyebrow">Data Recovery Specialists · Glendale, CA</p>
+          <!-- Social proof bar -->
+          <div class="srh-social-proof">
+            <span class="srh-stars">★★★★★</span>
+            <span class="srh-rating-text">4.9 · 498 Google Reviews</span>
+          </div>
           <h1 class="srh-title">Get Your Data Back<br><span class="srh-title-gold">Fast &amp; Risk-Free</span></h1>
-          <p class="srh-sub">Free diagnosis. Flat-rate pricing. No data recovered = no charge.</p>
+          <p class="srh-sub">Free diagnosis. No upfront cost. If we don't recover your data, you don't pay.</p>
           <div class="srh-badges">
-            <span>✓ No Data = No Charge</span>
-            <span>✓ Free Nationwide Shipping</span>
-            <span>✓ Available 24/7</span>
-            <span>✓ 10+ Years Experience</span>
+            <div class="srh-badge"><span class="srh-badge-icon">🛡️</span> No Data = No Charge</div>
+            <div class="srh-badge"><span class="srh-badge-icon">🚚</span> Free Nationwide Shipping</div>
+            <div class="srh-badge"><span class="srh-badge-icon">⏰</span> Available 24/7/365</div>
+            <div class="srh-badge"><span class="srh-badge-icon">🏆</span> 10+ Years in Business</div>
           </div>
           <a href="tel:8182728866" class="srh-phone">📞 818-272-8866</a>
         </div>
@@ -173,7 +177,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 ══════════════════════════════════════════ */
 .srh {
   position: relative;
-  min-height: 520px;
+  min-height: 540px;
   display: flex;
   align-items: center;
 }
@@ -181,65 +185,87 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
 }
 .srh-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(105deg, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.90) 50%, rgba(10,12,20,0.75) 100%);
+  /* Darker on left (text readable), fades to reveal image on right */
+  background: linear-gradient(105deg,
+    rgba(10,12,20,0.93) 0%,
+    rgba(10,12,20,0.85) 45%,
+    rgba(10,12,20,0.60) 100%
+  );
 }
 .srh-inner {
   position: relative;
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 48px;
+  gap: 56px;
   align-items: center;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 52px;
+  padding-bottom: 52px;
 }
 
 /* LEFT */
-.srh-eyebrow {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
+.srh-social-proof {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.srh-stars {
+  color: #F5C842;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+.srh-rating-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
 }
 .srh-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(30px, 3.8vw, 48px);
   font-weight: 800;
   color: #fff;
-  line-height: 1.15;
-  margin-bottom: 14px;
+  line-height: 1.12;
+  margin-bottom: 16px;
 }
 .srh-title-gold { color: var(--gold); }
 .srh-sub {
   font-size: 16px;
-  color: rgba(255,255,255,0.72);
-  margin-bottom: 24px;
-  max-width: 440px;
-  line-height: 1.6;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 28px;
+  max-width: 420px;
+  line-height: 1.65;
 }
 .srh-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  margin-bottom: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 32px;
+  max-width: 420px;
 }
-.srh-badges span {
+.srh-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 10px 14px;
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.88);
 }
+.srh-badge-icon { font-size: 15px; line-height: 1; }
 .srh-phone {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--gold);
   text-decoration: none;
