@@ -169,8 +169,8 @@ export function useFormTracking(formName: 'mail-in' | 'express-drop-off', stepTi
     sessionId.value = stored || generateSessionId()
     sessionStorage.setItem(`fivestar_tracking_${formName}`, sessionId.value)
 
-    // Fire form_viewed immediately — captures page loads before any interaction
-    sendEvent('form_viewed')
+    // form_viewed is handled server-side (server/middleware/form-view-tracker.ts)
+    // This ensures reliable tracking before any JS runs
 
     window.addEventListener('beforeunload', fireAbandonment)
 

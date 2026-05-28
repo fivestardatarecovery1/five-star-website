@@ -76,6 +76,34 @@ const form = reactive({
   termsAgreed: false,
 })
 
+// ── Schedule availability ──────────────────────────────────────────────────
+const availableHours = ref<string[]>([])
+const scheduleLoading = ref(false)
+const dateBlocked = ref(false)
+const dateBlockedMsg = ref('')
+
+watch(() => form.dropOffDate, async (date) => {
+  if (!date) { availableHours.value = []; form.dropOffTime = ''; return }
+  scheduleLoading.value = true
+  dateBlocked.value = false
+  form.dropOffTime = ''
+  try {
+    const res = await $fetch<any>(`/api/express-availability?date=${date}`)
+    if (!res.available) {
+      dateBlocked.value = true
+      dateBlockedMsg.value = res.message || 'Not available this day — please choose another date.'
+      availableHours.value = []
+    } else {
+      availableHours.value = res.availableHours || []
+      dateBlocked.value = false
+    }
+  } catch {
+    availableHours.value = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM']
+  } finally {
+    scheduleLoading.value = false
+  }
+})
+
 function scrollToForm() {
   if (import.meta.client) {
     const el = document.querySelector('.form-wrap')
@@ -106,6 +134,12 @@ function validateStep(): boolean {
   if (step.value === 4) {
     if (!form.expeditedService) return err('Please select a service level.')
     if (!form.transferDrive) return err('Please select a transfer drive option.')
+  }
+  if (step.value === 5) {
+    if (!form.dropOffDate) return err('Please select a preferred drop-off date.')
+    if (dateBlocked.value) return err('That date is not available. Please choose another date.')
+    if (!form.dropOffTime) return err('Please select a drop-off time.')
+    if (!form.todayDate) return err('Please enter today\u2019s date.')
   }
   return true
 }
@@ -419,19 +453,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <!-- STEP 5: Schedule -->
               <div v-show="step === 5" class="form-step">
                 <h3 class="step-title">Almost done — schedule your drop-off</h3>
-                <p class="step-desc">Our Glendale lab is open Mon–Fri 10am–6pm, Saturday 10am–2pm.</p>
+                <p class="step-desc">Our Glendale lab is open Mon–Fri 9am–5pm. Select a date to see available times.</p>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Preferred Drop Off Date <span class="req">*</span></label>
-                    <input type="date" class="fi" v-model="form.dropOffDate" />
+                    <input type="date" class="fi" v-model="form.dropOffDate"
+                      :min="new Date().toISOString().split('T')[0]" />
+                    <p v-if="dateBlocked" style="color:#ef4444;font-size:0.85rem;margin-top:4px;">⚠ {{ dateBlockedMsg }}</p>
                   </div>
                   <div class="fg">
                     <label class="fl">Preferred Drop Off Time <span class="req">*</span></label>
-                    <select class="fi">
-                      <option value="">Select AM or PM</option>
-                      <option>AM (10am – 12pm)</option>
-                      <option>PM (12pm – 6pm)</option>
+                    <select class="fi" v-model="form.dropOffTime" :disabled="!form.dropOffDate || scheduleLoading || dateBlocked">
+                      <option value="">{{ scheduleLoading ? 'Checking availability...' : form.dropOffDate ? (dateBlocked ? 'Not available' : 'Select a time') : 'Select a date first' }}</option>
+                      <option v-for="h in availableHours" :key="h" :value="h">{{ h }}</option>
                     </select>
+                    <p v-if="form.dropOffDate && !scheduleLoading && !dateBlocked && availableHours.length === 0" style="color:#ef4444;font-size:0.85rem;margin-top:4px;">No times available for this date.</p>
                   </div>
                 </div>
                 <div class="fg">

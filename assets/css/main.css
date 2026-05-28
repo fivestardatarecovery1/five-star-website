@@ -77,7 +77,10 @@
 .section-bg-1 h3, .section-bg-2 h3, .section-bg-3 h3 { color: #0d1520; }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior is intentionally omitted here — applying it globally
+     causes Nuxt page navigation to animate-scroll the entire page to the top,
+     which feels jarring. Smooth scrolling for anchor links is handled via
+     the Nuxt router scrollBehavior config in nuxt.config.ts instead. */
   height: 100%;
 }
 

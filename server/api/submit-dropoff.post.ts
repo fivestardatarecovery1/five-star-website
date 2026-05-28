@@ -114,5 +114,16 @@ export default defineEventHandler(async (event) => {
     `,
   })
 
+  // Save to Mission Control (fire & forget)
+  const mcUrl = process.env.MC_API_URL
+  if (mcUrl) {
+    fetch(`${mcUrl}/api/fs-leads/express-submission`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...body }),
+      signal: AbortSignal.timeout(4000),
+    }).catch(() => {})
+  }
+
   return { success: true }
 })
