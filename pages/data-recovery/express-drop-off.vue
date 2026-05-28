@@ -229,10 +229,7 @@ function prevStep() {
 }
 
 async function submitForm() {
-  if (!form.termsAgreed) {
-    submitError.value = 'Please agree to the terms and conditions.'
-    return
-  }
+  form.termsAgreed = true // Implied by clicking Submit
   submitting.value = true
   submitError.value = ''
   try {
@@ -595,23 +592,25 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   <span class="leg-item"><span class="leg-dot leg-book"></span> Booked</span>
                 </div>
 
-                <div class="fg" style="margin-top:20px;">
-                  <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" />
-                    Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
-                  </label>
-                </div>
               </div>
 
               <!-- Step error -->
               <p v-if="stepError" class="step-error">⚠ {{ stepError }}</p>
 
               <!-- Navigation -->
-              <div class="form-nav">
+              <!-- Final step: agreement buttons; other steps: normal nav -->
+              <div v-if="step === totalSteps" class="form-nav-final">
+                <p class="terms-notice">By submitting, you agree to our <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a></p>
+                <div class="final-btns">
+                  <button type="button" class="btn-cancel" @click="prevStep">← Go Back</button>
+                  <button type="submit" class="btn-submit-agree" :disabled="submitting">{{ submitting ? 'Submitting...' : '✓ Submit &amp; Agree to Terms' }}</button>
+                </div>
+              </div>
+              <div v-else class="form-nav">
                 <button v-if="step > 1" type="button" class="btn-back" @click="prevStep">← Back</button>
                 <div style="flex:1"></div>
                 <span class="step-count">Step {{ step }} of {{ totalSteps }}</span>
-                <button v-if="step < totalSteps" type="button" class="btn-next" @click="nextStep">Continue →</button>
-                <button v-if="step === totalSteps" type="submit" class="btn-next" :disabled="submitting">{{ submitting ? 'Sending...' : 'Submit Form' }}</button>
+                <button type="button" class="btn-next" @click="nextStep">Continue →</button>
               </div>
 
             </form>
@@ -956,6 +955,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   transition: background 0.2s;
 }
 .btn-next:hover { background: #e0b43a; }
+.form-nav-final { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8edf4; }
+.terms-notice { font-size: 12px; color: #94a3b8; margin-bottom: 14px; text-align: center; }
+.terms-notice .terms-link { color: #64748b; }
+.final-btns { display: flex; gap: 12px; }
+.btn-cancel { flex: 0 0 auto; background: #f1f5f9; color: #64748b; border: 1.5px solid #e2e8f0; padding: 14px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+.btn-cancel:hover { background: #e2e8f0; color: #1a2030; }
+.btn-submit-agree { flex: 1; background: #16a34a; color: #fff; border: none; padding: 15px 24px; border-radius: 8px; font-size: 1rem; font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.2s; letter-spacing: 0.2px; }
+.btn-submit-agree:hover { background: #15803d; }
+.btn-submit-agree:disabled { opacity: 0.6; cursor: not-allowed; }
 
 /* PREFILL BANNER */
 .prefill-banner {
