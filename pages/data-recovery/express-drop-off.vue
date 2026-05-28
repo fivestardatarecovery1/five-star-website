@@ -43,8 +43,8 @@ useHead({
 useSeoMeta({
   title: 'Data Recovery Express Drop Off Form - Five Star Data Recovery',
   ogTitle: 'Data Recovery Express Drop Off Form - Five Star Data Recovery',
-  description: 'Skip the wait! Fill out our Express Drop-Off Form online and drop off your device quickly at our Glendale, CA lab. Fast, easy, no appointment needed.',
-  ogDescription: 'Skip the wait! Fill out our Express Drop-Off Form online and drop off your device quickly at our Glendale, CA lab. Fast, easy, no appointment needed.',
+  description: 'Need Data Recovery and would like to expedite the drop off process? Fill out our express drop off form to get your recovery started.',
+  ogDescription: 'Need Data Recovery and would like to expedite the drop off process? Fill out our express drop off form to get your recovery started.',
 })
 
 const trustBadges = [
