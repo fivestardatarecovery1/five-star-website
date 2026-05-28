@@ -61,6 +61,17 @@ const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Servic
 
 // Form abandonment & funnel tracking
 const { onFieldFocus, onFieldBlur, onStepComplete, onStepBack, onFormSubmitted } = useFormTracking('express-drop-off', stepTitles)
+
+function formatPhone(e: Event) {
+  const input = e.target as HTMLInputElement
+  const digits = input.value.replace(/\D/g, '').slice(0, 10)
+  let formatted = digits
+  if (digits.length > 6) formatted = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6)
+  else if (digits.length > 3) formatted = digits.slice(0, 3) + '-' + digits.slice(3)
+  form.phone = formatted
+  input.value = formatted
+}
+
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
@@ -316,7 +327,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Phone <span class="req">*</span></label>
-                    <input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" />
+                    <input type="tel" class="fi" v-model="form.phone" @input="formatPhone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" />
                   </div>
                 </div>
               </div>

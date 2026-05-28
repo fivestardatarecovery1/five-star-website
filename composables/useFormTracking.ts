@@ -164,22 +164,22 @@ export function useFormTracking(formName: 'mail-in' | 'express-drop-off', stepTi
   }
 
   onMounted(() => {
-    // Generate or reuse session ID from sessionStorage
-    const stored = sessionStorage.getItem(`fivestar_tracking_${formName}`)
-    sessionId.value = stored || generateSessionId()
-    sessionStorage.setItem(`fivestar_tracking_${formName}`, sessionId.value)
-
-    // form_viewed is handled server-side (server/middleware/form-view-tracker.ts)
-    // This ensures reliable tracking before any JS runs
-
-    window.addEventListener('beforeunload', fireAbandonment)
-
-    // visibilitychange covers tab switching / mobile backgrounding
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') {
-        fireAbandonment()
-      }
-    })
+    // Wrap in try/catch — tracking must NEVER break the form
+    try {
+      const stored = sessionStorage.getItem(`fivestar_tracking_${formName}`)
+      sessionId.value = stored || generateSessionId()
+      sessionStorage.setItem(`fivestar_tracking_${formName}`, sessionId.value)
+    } catch {
+      sessionId.value = generateSessionId() // fallback if sessionStorage blocked
+    }
+    try {
+      window.addEventListener('beforeunload', fireAbandonment)
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') fireAbandonment()
+      })
+    } catch {
+      // Silently fail — tracking must never break the form
+    }
   })
 
   onUnmounted(() => {
