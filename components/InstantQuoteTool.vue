@@ -14,11 +14,19 @@ const contact = reactive({
 })
 const contactError = ref('')
 
-function submitContact() {
+async function submitContact() {
   contactError.value = ''
   if (!contact.name.trim()) { contactError.value = 'Please enter your name.'; return }
   if (!contact.email.trim() || !contact.email.includes('@')) { contactError.value = 'Please enter a valid email.'; return }
   if (!contact.phone.trim()) { contactError.value = 'Please enter your phone number.'; return }
+  // Fire lead capture email (non-blocking)
+  if (import.meta.client) {
+    fetch('/api/quote-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'lead', ...contact }),
+    }).catch(() => {})
+  }
   goTo('device')
 }
 
@@ -330,7 +338,32 @@ function pickEncrypt(v: boolean)  {
 function pickCover(v: boolean)    { sel.coverOpened = v; sel.device === 'desktop' ? goTo('aio') : goTo('urgency') }
 
 function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
-function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
+function pickUrgency(id: string) {
+  sel.urgency = id
+  goTo('result')
+  // Fire full quote result email (non-blocking)
+  if (import.meta.client) {
+    nextTick(() => {
+      if (!quote.value) return
+      fetch('/api/quote-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'result',
+          name: contact.name,
+          email: contact.email,
+          phone: contact.phone,
+          preferredContact: contact.preferredContact,
+          device: quote.value.deviceLabel,
+          capacity: quote.value.capacityLabel,
+          issue: quote.value.issueLabel,
+          urgency: quote.value.urgencyLabel,
+          price: quote.value.total,
+        }),
+      }).catch(() => {})
+    })
+  }
+}
 function back() {
   const s = currentStep.value
   if (s === 'device') goTo('contact', 0)
