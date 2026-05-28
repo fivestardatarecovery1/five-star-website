@@ -86,111 +86,12 @@ function handleSubmit() {
         <slot />
       </div>
 
-      <!-- RIGHT: Consultation Form -->
+      <!-- RIGHT: Instant Quote Tool -->
       <div v-if="props.showForm" class="hero-form-wrap">
-        <div v-if="!submitted" class="hero-form-card">
-          <p class="form-title">Request a Free Consultation</p>
+        <div class="hero-form-card">
+          <p class="form-title">Get an Instant Quote</p>
 
-          <form @submit.prevent="handleSubmit" class="consult-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label>NAME <span class="req">*</span></label>
-                <input v-model="form.name" type="text" placeholder="Name / Required" required />
-              </div>
-              <div class="form-group">
-                <label>EMAIL <span class="req">*</span></label>
-                <input v-model="form.email" type="email" placeholder="Email Address / Required" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label>SELECT YOUR DEVICE TYPE</label>
-                <div class="select-wrap">
-                  <select v-model="form.deviceType">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option>
-                    <option>SSD</option>
-                    <option>RAID/Server</option>
-                    <option>Laptop</option>
-                    <option>External HDD</option>
-                    <option>Mac/iMac</option>
-                    <option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option>
-                    <option>SD Card</option>
-                    <option>NAS Device</option>
-                    <option>Other</option>
-                  </select>
-                  <svg class="select-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>PHONE</label>
-                <input v-model="form.phone" type="tel" placeholder="Phone Number / Required" />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label>SELECT ISSUE WITH DEVICE</label>
-                <div class="select-wrap">
-                  <select v-model="form.issue">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option>
-                    <option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option>
-                    <option>Corrupted Files</option>
-                    <option>Accidental Deletion</option>
-                    <option>Physical Damage</option>
-                    <option>Not Spinning</option>
-                    <option>Other</option>
-                  </select>
-                  <svg class="select-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Preferred Contact Method</label>
-                <div class="radio-group">
-                  <label class="radio-label">
-                    <input v-model="form.contact" type="radio" value="call" /> CALL
-                  </label>
-                  <label class="radio-label">
-                    <input v-model="form.contact" type="radio" value="email" /> EMAIL
-                  </label>
-                  <label class="radio-label">
-                    <input v-model="form.contact" type="radio" value="text" /> TEXT
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group full-width">
-                <label>PREFERRED RESPONSE TIME</label>
-                <div class="select-wrap">
-                  <select v-model="form.responseTime">
-                    <option value="">Select Preferred Time</option>
-                    <option value="immediately">Immediately (24/7)</option>
-                    <option value="business">During Business Hours</option>
-                    <option value="morning">Morning (8am – 12pm)</option>
-                    <option value="afternoon">Afternoon (12pm – 5pm)</option>
-                    <option value="evening">Evening (5pm – 8pm)</option>
-                  </select>
-                  <svg class="select-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="#666" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-                </div>
-              </div>
-            </div>
-
-            <button type="submit" class="btn-submit">Request a Consultation</button>
-          </form>
-        </div>
-
-        <!-- Success state -->
-        <div v-else class="form-success">
-          <div class="success-icon">✓</div>
-          <h3>We'll be in touch within 1 hour!</h3>
-          <p>Our team is standing by. You can also call us directly:</p>
-          <a href="tel:8182728866" class="success-phone">818-272-8866</a>
+          <InstantQuoteTool :light="true" />
         </div>
       </div>
 
@@ -209,7 +110,7 @@ function handleSubmit() {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 480px;
+  grid-template-columns: 1fr 520px;
   gap: 60px;
   align-items: center;
 }
@@ -317,9 +218,10 @@ function handleSubmit() {
 
 .hero-form-card {
   background: #ffffff;
-  border-radius: 8px;
-  padding: 32px 32px 28px;
+  border-radius: 12px;
+  padding: 0;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
 }
 
 .form-title {
