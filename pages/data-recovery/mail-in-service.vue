@@ -137,8 +137,13 @@ async function submitForm() {
   submitting.value = true
   submitError.value = ''
   try {
-    const res = await $fetch<{ success: boolean, labelBase64: string, serviceLabel: string, labelError: string }>('/api/submit-mailin', { method: 'POST', body: form })
-    console.log('API response keys:', Object.keys(res), 'labelLength:', res.labelBase64?.length, 'error:', res.labelError)
+    const rawRes = await fetch('/api/submit-mailin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...form }),
+    })
+    const res = await rawRes.json()
+    console.log('label length:', res.labelBase64?.length, 'error:', res.labelError)
     labelBase64.value = res.labelBase64 || ''
     serviceLabel.value = res.serviceLabel || ''
     labelError.value = res.labelError || ''
