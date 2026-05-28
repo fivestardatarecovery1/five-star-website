@@ -154,6 +154,14 @@ function prevStep() {
   }
 }
 
+function handleEnterKey(e: KeyboardEvent) {
+  const tag = (e.target as HTMLElement).tagName
+  if (tag === 'TEXTAREA' || tag === 'BUTTON' || tag === 'A') return
+  e.preventDefault()
+  if (step.value < totalSteps) nextStep()
+  else submitForm()
+}
+
 async function submitForm() {
   if (!form.streetAddress.trim()) { submitError.value = 'Please enter your street address.'; return }
   if (!form.city.trim()) { submitError.value = 'Please enter your city.'; return }
@@ -331,7 +339,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               ✅ We've pre-filled your info from your instant quote. Just review and submit!
             </div>
 
-            <form class="edo-form" @submit.prevent="submitForm" novalidate>
+            <form class="edo-form" @submit.prevent="submitForm" @keydown.enter="handleEnterKey" novalidate>
 
               <!-- STEP 1: Contact Info -->
               <div v-show="step === 1" class="form-step">
