@@ -536,65 +536,73 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <h3 class="step-title">Schedule your drop-off</h3>
                 <p class="step-desc">Select an available date and 30-minute arrival window. Mon–Fri, 9am–5:30pm.</p>
 
-                <!-- CALENDAR -->
-                <div class="cal-wrap" v-if="calReady">
-                  <div class="cal-header">
-                    <button type="button" class="cal-nav" @click="prevMonth">&#8249;</button>
-                    <span class="cal-month-label">{{ monthLabel }}</span>
-                    <button type="button" class="cal-nav" @click="nextMonth">&#8250;</button>
-                  </div>
-                  <div class="cal-grid">
-                    <div class="cal-dow" v-for="d in DOW_LABELS" :key="d">{{ d }}</div>
-                    <div class="cal-empty" v-for="_ in calendarOffset" :key="'e'+_"></div>
-                    <button
-                      v-for="day in calendarDays" :key="day.date"
-                      type="button"
-                      class="cal-day"
-                      :class="{
-                        'cal-selected': form.dropOffDate === day.date,
-                        'cal-past': day.isPast,
-                        'cal-weekend': day.isWeekend,
-                        'cal-today': day.isToday,
-                      }"
-                      :disabled="day.isPast || day.isWeekend"
-                      @click="selectDate(day.date)"
-                    >{{ day.num }}</button>
-                  </div>
-                </div>
+                <!-- CALENDAR + TIME SLOTS SIDE BY SIDE -->
+                <div class="sched-layout" v-if="calReady">
 
-                <!-- TIME SLOTS -->
-                <div v-if="form.dropOffDate" class="slots-wrap">
-                  <div class="slots-header">
-                    <span class="slots-date-label">🗓 {{ formattedSelectedDate }}</span>
-                    <span v-if="scheduleLoading" class="slots-loading">Checking availability…</span>
-                    <span v-else-if="dateBlocked" class="slots-blocked">⚠ {{ dateBlockedMsg }}</span>
+                  <!-- LEFT: Calendar -->
+                  <div class="cal-wrap">
+                    <div class="cal-header">
+                      <button type="button" class="cal-nav" @click="prevMonth">&#8249;</button>
+                      <span class="cal-month-label">{{ monthLabel }}</span>
+                      <button type="button" class="cal-nav" @click="nextMonth">&#8250;</button>
+                    </div>
+                    <div class="cal-grid">
+                      <div class="cal-dow" v-for="d in DOW_LABELS" :key="d">{{ d }}</div>
+                      <div class="cal-empty" v-for="_ in calendarOffset" :key="'e'+_"></div>
+                      <button
+                        v-for="day in calendarDays" :key="day.date"
+                        type="button"
+                        class="cal-day"
+                        :class="{
+                          'cal-selected': form.dropOffDate === day.date,
+                          'cal-past': day.isPast,
+                          'cal-weekend': day.isWeekend,
+                          'cal-today': day.isToday,
+                        }"
+                        :disabled="day.isPast || day.isWeekend"
+                        @click="selectDate(day.date)"
+                      >{{ day.num }}</button>
+                    </div>
+                    <!-- Legend -->
+                    <div class="cal-legend">
+                      <span class="leg-item"><span class="leg-dot leg-avail"></span> Available</span>
+                      <span class="leg-item"><span class="leg-dot leg-sel"></span> Selected</span>
+                      <span class="leg-item"><span class="leg-dot leg-book"></span> Booked</span>
+                    </div>
                   </div>
-                  <div v-if="!scheduleLoading && !dateBlocked" class="slots-grid">
-                    <button
-                      v-for="slot in ALL_SLOTS" :key="slot"
-                      type="button"
-                      class="slot-btn"
-                      :class="{
-                        'slot-available': availableHours.includes(slot) && form.dropOffTime !== slot,
-                        'slot-selected': form.dropOffTime === slot,
-                        'slot-booked': !availableHours.includes(slot),
-                      }"
-                      :disabled="!availableHours.includes(slot)"
-                      @click="selectTime(slot)"
-                    >
-                      {{ slot }}
-                      <span class="slot-status">{{ form.dropOffTime === slot ? '✓ Selected' : availableHours.includes(slot) ? 'Available' : 'Booked' }}</span>
-                    </button>
-                  </div>
-                  <p v-if="!scheduleLoading && !dateBlocked && availableHours.length === 0" class="slots-none">⚠ No times available for this date. Please select another day.</p>
-                </div>
-                <p v-else-if="!form.dropOffDate" class="slots-prompt">↑ Select a date above to see available times</p>
 
-                <!-- LEGEND -->
-                <div v-if="form.dropOffDate && !scheduleLoading" class="slots-legend">
-                  <span class="leg-item"><span class="leg-dot leg-avail"></span> Available</span>
-                  <span class="leg-item"><span class="leg-dot leg-sel"></span> Selected</span>
-                  <span class="leg-item"><span class="leg-dot leg-book"></span> Booked</span>
+                  <!-- RIGHT: Time slots -->
+                  <div class="slots-panel">
+                    <div v-if="!form.dropOffDate" class="slots-empty-state">
+                      <span class="slots-empty-icon">🗓️</span>
+                      <p class="slots-empty-text">← Select a date to see available times</p>
+                    </div>
+                    <template v-else>
+                      <div class="slots-panel-header">
+                        <p class="slots-date-label">{{ formattedSelectedDate }}</p>
+                        <span v-if="scheduleLoading" class="slots-loading">Checking availability…</span>
+                        <span v-else-if="dateBlocked" class="slots-blocked">⚠ {{ dateBlockedMsg }}</span>
+                        <p v-else class="slots-subtitle">30-minute arrival windows</p>
+                      </div>
+                      <div v-if="!scheduleLoading && !dateBlocked" class="slots-grid">
+                        <button
+                          v-for="slot in ALL_SLOTS" :key="slot"
+                          type="button"
+                          class="slot-btn"
+                          :class="{
+                            'slot-available': availableHours.includes(slot) && form.dropOffTime !== slot,
+                            'slot-selected': form.dropOffTime === slot,
+                            'slot-booked': !availableHours.includes(slot),
+                          }"
+                          :disabled="!availableHours.includes(slot)"
+                          @click="selectTime(slot)"
+                        >{{ slot }}</button>
+                      </div>
+                      <p v-if="!scheduleLoading && !dateBlocked && availableHours.length === 0" class="slots-none">⚠ No times available. Please choose another day.</p>
+                      <p v-if="form.dropOffTime" class="slots-confirmed">✓ {{ form.dropOffTime }} confirmed</p>
+                    </template>
+                  </div>
+
                 </div>
 
               </div>
@@ -844,44 +852,49 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .fi:focus { outline: none; border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
 .fi:disabled { background: #f4f7fc; color: #6b7280; }
 .fi-textarea { min-height: 110px; resize: vertical; }
-/* ── Calendar ── */
-.cal-wrap { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px; margin-bottom: 24px; max-width: 380px; }
-.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-.cal-month-label { font-size: 16px; font-weight: 700; color: #0d1520; }
-.cal-nav { background: none; border: 1px solid #e2e8f0; border-radius: 8px; width: 32px; height: 32px; font-size: 20px; cursor: pointer; color: #4a5568; display: flex; align-items: center; justify-content: center; transition: background .15s; }
-.cal-nav:hover { background: #f7f7f7; }
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
-.cal-dow { font-size: 11px; font-weight: 700; color: #94a3b8; text-align: center; padding: 4px 0; text-transform: uppercase; }
-.cal-empty { } 
-.cal-day { background: none; border: 1px solid transparent; border-radius: 8px; padding: 8px 4px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a2030; text-align: center; transition: all .15s; }
-.cal-day:hover:not(:disabled) { background: #fef9e7; border-color: #F5C842; }
-.cal-day.cal-today { border-color: #F5C842; color: #92400e; }
-.cal-day.cal-selected { background: #F5C842; border-color: #F5C842; color: #0a0c14; font-weight: 800; }
-.cal-day.cal-past, .cal-day.cal-weekend { color: #cbd5e1; cursor: not-allowed; }
-.cal-day:disabled { cursor: not-allowed; }
+/* ── Schedule Layout: side-by-side ── */
+.sched-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px; align-items: start; }
 
-/* ── Time Slots ── */
-.slots-wrap { margin-bottom: 20px; }
-.slots-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
-.slots-date-label { font-size: 15px; font-weight: 700; color: #0d1520; }
-.slots-loading { font-size: 13px; color: #94a3b8; }
-.slots-blocked { font-size: 13px; color: #ef4444; font-weight: 600; }
-.slots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.slot-btn { border-radius: 10px; padding: 10px 8px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all .15s; }
-.slot-btn .slot-status { font-size: 10px; font-weight: 500; opacity: 0.75; }
-.slot-available { background: #f0fdf4; border-color: #86efac; color: #166534; }
-.slot-available:hover { background: #dcfce7; border-color: #4ade80; }
-.slot-selected { background: #F5C842; border-color: #F5C842; color: #0a0c14; }
-.slot-selected .slot-status { opacity: 1; font-weight: 700; }
-.slot-booked { background: #f8fafc; border-color: #e2e8f0; color: #94a3b8; cursor: not-allowed; }
-.slots-none { font-size: 13px; color: #ef4444; font-weight: 600; margin-top: 8px; }
-.slots-prompt { font-size: 13px; color: #94a3b8; font-style: italic; margin-bottom: 16px; }
-.slots-legend { display: flex; gap: 16px; margin-top: 14px; margin-bottom: 8px; }
-.leg-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #4a5568; }
-.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+/* ── Calendar ── */
+.cal-wrap { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px; }
+.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.cal-month-label { font-size: 15px; font-weight: 700; color: #0d1520; }
+.cal-nav { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; width: 30px; height: 30px; font-size: 20px; cursor: pointer; color: #4a5568; display: flex; align-items: center; justify-content: center; transition: background .15s; line-height: 1; }
+.cal-nav:hover { background: #f0f4f8; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+.cal-dow { font-size: 10px; font-weight: 700; color: #94a3b8; text-align: center; padding: 3px 0 6px; text-transform: uppercase; }
+.cal-empty { }
+.cal-day { background: #fff; border: 1px solid transparent; border-radius: 7px; padding: 7px 2px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a2030; text-align: center; transition: all .15s; width: 100%; }
+.cal-day:hover:not(:disabled) { background: #fef9e7; border-color: #F5C842; }
+.cal-day.cal-today { border-color: #F5C842; color: #92400e; background: #fffbeb; }
+.cal-day.cal-selected { background: #F5C842; border-color: #e5b73e; color: #0a0c14; font-weight: 800; }
+.cal-day.cal-past, .cal-day.cal-weekend { background: transparent; color: #d1d5db; cursor: not-allowed; }
+.cal-legend { display: flex; gap: 12px; margin-top: 14px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+.leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #64748b; }
+.leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .leg-avail { background: #86efac; }
 .leg-sel { background: #F5C842; }
 .leg-book { background: #e2e8f0; }
+
+/* ── Slots Panel ── */
+.slots-panel { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px; min-height: 280px; display: flex; flex-direction: column; }
+.slots-empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; gap: 12px; }
+.slots-empty-icon { font-size: 36px; opacity: 0.4; }
+.slots-empty-text { font-size: 13px; color: #94a3b8; text-align: center; }
+.slots-panel-header { margin-bottom: 14px; }
+.slots-date-label { font-size: 14px; font-weight: 700; color: #0d1520; margin-bottom: 2px; }
+.slots-subtitle { font-size: 11px; color: #94a3b8; }
+.slots-loading { font-size: 12px; color: #94a3b8; }
+.slots-blocked { font-size: 12px; color: #ef4444; font-weight: 600; }
+.slots-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; }
+.slot-btn { border-radius: 8px; padding: 9px 6px; font-size: 12px; font-weight: 700; cursor: pointer; border: 1.5px solid; text-align: center; transition: all .15s; width: 100%; }
+.slot-available { background: #f0fdf4; border-color: #86efac; color: #166534; }
+.slot-available:hover { background: #dcfce7; border-color: #4ade80; }
+.slot-selected { background: #F5C842; border-color: #e5b73e; color: #0a0c14; }
+.slot-booked { background: #f8fafc; border-color: #e2e8f0; color: #cbd5e1; cursor: not-allowed; }
+.slots-none { font-size: 12px; color: #ef4444; font-weight: 600; margin-top: 8px; }
+.slots-confirmed { font-size: 13px; color: #16a34a; font-weight: 700; margin-top: 12px; }
+@media (max-width: 640px) { .sched-layout { grid-template-columns: 1fr; } }
 
 .date-field-wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .date-fi { flex: 1; min-width: 160px; }
