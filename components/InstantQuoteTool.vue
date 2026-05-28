@@ -1261,74 +1261,133 @@ const progressIndex = computed(() => {
 
 /* ── Light theme ──────────────────────────────── */
 /* Contact Step */
-.iqt-contact-step { display: flex; flex-direction: column; }
-.iqt-contact-fields { display: flex; flex-direction: column; gap: 12px; }
+.iqt-contact-step { display: flex; flex-direction: column; gap: 0; }
+.iqt-contact-step .iqt-q { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 4px; }
+.iqt-contact-step .iqt-hint { font-size: 0.82rem; color: #6b7280; margin-bottom: 18px; }
+.iqt-contact-fields { display: flex; flex-direction: column; gap: 13px; }
 .iqt-field { display: flex; flex-direction: column; gap: 5px; }
-.iqt-label { font-size: 0.72rem; font-weight: 700; color: #4a5568; text-transform: uppercase; letter-spacing: 0.06em; }
-.iqt-req { color: #e53e3e; }
+.iqt-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+.iqt-req { color: #ef4444; }
 .iqt-input {
-  border: 1.5px solid #d1d9e6;
-  border-radius: 7px;
-  padding: 10px 12px;
-  font-size: 0.9rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 0.92rem;
   color: #1a1a2e;
   font-family: inherit;
   width: 100%;
-  transition: border-color 0.2s;
-  background: #fff;
+  background: #f9fafb;
+  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
 }
-.iqt-input:focus { outline: none; border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.12); }
-.iqt-contact-methods { display: flex; gap: 8px; }
+.iqt-input:focus { outline: none; border-color: #F5C842; background: #fff; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
+.iqt-input::placeholder { color: #9ca3af; }
+.iqt-contact-methods { display: flex; gap: 6px; }
 .iqt-method {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  border: 1.5px solid #d1d9e6;
-  border-radius: 7px;
-  padding: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #4a5568;
+  gap: 5px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 9px 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #6b7280;
+  background: #f9fafb;
   cursor: pointer;
   transition: all 0.15s;
   white-space: nowrap;
+  user-select: none;
 }
 .iqt-method input { display: none; }
-.iqt-method.active { border-color: #F5C842; background: rgba(245,200,66,0.1); color: #1a1a2e; }
-.iqt-contact-error { color: #e53e3e; font-size: 0.82rem; font-weight: 600; margin-top: 8px; }
+.iqt-method:hover { border-color: #d1d5db; background: #f3f4f6; color: #374151; }
+.iqt-method.active { border-color: #F5C842; background: #fffbeb; color: #1a1a2e; font-weight: 800; }
+.iqt-contact-error { color: #ef4444; font-size: 0.82rem; font-weight: 600; margin-top: 10px; padding: 8px 12px; background: #fef2f2; border-radius: 6px; border: 1px solid #fecaca; }
+
+/* Get My Quote button in contact step */
+.iqt-contact-step .iqt-btn-next {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 900;
+  background: #F5C842;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.15s;
+  margin-top: 4px;
+}
+.iqt-contact-step .iqt-btn-next:hover { background: #e0b43a; transform: translateY(-1px); }
 
 .iqt-compact {
-  padding: 20px 20px 16px;
+  padding: 0;
   height: 540px;
   display: flex;
   flex-direction: column;
+  background: #fff;
+  border: none;
+  border-radius: 0;
 }
 .iqt-compact .iqt-body {
   flex: 1;
   overflow-y: auto;
   min-height: 0;
+  padding: 20px 22px 16px;
   scrollbar-width: thin;
   scrollbar-color: #e2e8f0 transparent;
+  background: #fff;
 }
 .iqt-compact .iqt-q {
-  font-size: 1rem;
+  font-size: 0.97rem;
   margin-bottom: 12px;
+  color: #1a1a2e;
 }
+.iqt-compact .iqt-hint { color: #6b7280; font-size: 0.8rem; }
 .iqt-compact .iqt-grid {
-  gap: 8px;
+  gap: 7px;
 }
 .iqt-compact .iqt-card {
-  padding: 10px 12px;
-  gap: 8px;
+  padding: 10px 8px;
+  gap: 6px;
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #1a1a2e;
 }
-.iqt-compact .iqt-card-icon { font-size: 1.3rem; }
-.iqt-compact .iqt-card-label { font-size: 0.78rem; }
-.iqt-compact .iqt-card-sub { font-size: 0.68rem; }
-.iqt-compact .iqt-nav { margin-top: 12px; gap: 8px; }
-.iqt-compact .iqt-btn-back,
-.iqt-compact .iqt-btn-next { padding: 9px 18px; font-size: 0.85rem; }
+.iqt-compact .iqt-card:hover { border-color: #F5C842; background: #fffbeb; }
+.iqt-compact .iqt-card.selected { border-color: #F5C842; background: #fffbeb; }
+.iqt-compact .iqt-card-icon { font-size: 1.25rem; }
+.iqt-compact .iqt-card-label { font-size: 0.75rem; color: #1a1a2e; }
+.iqt-compact .iqt-card-sub { font-size: 0.65rem; color: #6b7280; }
+.iqt-compact .iqt-nav { margin-top: 14px; gap: 8px; }
+.iqt-compact .iqt-btn-back {
+  padding: 9px 16px;
+  font-size: 0.85rem;
+  border-color: #e5e7eb;
+  color: #6b7280;
+}
+.iqt-compact .iqt-btn-next {
+  padding: 9px 20px;
+  font-size: 0.88rem;
+  background: #F5C842;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 7px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.iqt-compact .iqt-btn-next:hover { background: #e0b43a; }
 
 .iqt-light {
   background: #ffffff;
