@@ -447,16 +447,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .sr-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 24px;
 }
 .sr-option-card {
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
   position: relative;
   background: #fff;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
   border: 1px solid #e8edf4;
 }
 .sr-option-bg {
@@ -465,59 +463,56 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   background-size: cover;
   background-position: center;
   z-index: 0;
+  opacity: 0.1;
 }
-.sr-option-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.88);
-  z-index: 1;
-}
+.sr-option-overlay { display: none; }
 .sr-option-content {
   position: relative;
   z-index: 2;
-  padding: 48px 40px 44px;
+  padding: 52px 48px 48px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .sr-option-icon {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   display: block;
 }
 .sr-option-tag {
-  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
   font-weight: 900;
-  color: #1a1a2e;
-  margin: 0 0 8px;
+  color: #111827;
+  margin: 0 0 10px;
   line-height: 1.1;
+  text-transform: uppercase;
 }
 .sr-option-title {
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 800;
-  color: #1a1a2e;
-  margin: 0 0 16px;
+  color: #111827;
+  margin: 0 0 18px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 .sr-option-desc {
-  font-size: 0.95rem;
-  color: #4a5568;
-  line-height: 1.7;
-  margin-bottom: 28px;
-  max-width: 320px;
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.65;
+  margin-bottom: 32px;
+  max-width: 340px;
 }
 .btn-option {
   display: inline-block;
   background: #F5C842;
   color: #1a1a1a;
-  padding: 13px 30px;
-  border-radius: 8px;
-  font-weight: 800;
-  font-size: 0.92rem;
+  padding: 13px 32px;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: background 0.2s;
 }
@@ -555,7 +550,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .sr-step-icon-wrap { width: 100px; flex-shrink: 0; border-bottom: none; border-right: 1px solid #2a3050; padding: 20px 12px; border-radius: 12px 0 0 12px; }
   .sr-step-icon { width: 52px; height: 52px; }
   .sr-step-body { display: flex; flex-direction: column; justify-content: center; padding: 14px 16px; }
-  .sr-options { grid-template-columns: 1fr; max-width: 440px; }
+  .sr-options { grid-template-columns: 1fr; }
+  .sr-option-content { padding: 40px 32px 36px; }
   .sr-video-inner { grid-template-columns: 1fr; }
 }
 </style>
