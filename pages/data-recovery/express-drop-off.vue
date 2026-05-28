@@ -329,26 +329,23 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-content">
     <NavBar />
 
-    <!-- COMPACT FORM HERO -->
-    <section class="form-hero">
-      <div class="form-hero-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
-      <div class="form-hero-overlay"></div>
-      <div class="container form-hero-inner">
-        <!-- Stars + headline full width -->
-        <div class="fh-proof">
-          <span class="fh-stars">★★★★★</span>
-          <span class="fh-rating">4.9 · 498 Online Reviews</span>
+    <!-- PAGE HEADER STRIP — minimal, just branding -->
+    <section class="page-strip">
+      <div class="page-strip-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
+      <div class="page-strip-overlay"></div>
+      <div class="container page-strip-inner">
+        <div class="ps-left">
+          <div class="ps-proof"><span class="ps-stars">★★★★★</span><span class="ps-rating">4.9 · 498 Online Reviews</span></div>
+          <h1 class="ps-title">Express Drop-Off <span class="ps-gold">— Schedule Your Arrival</span></h1>
         </div>
-        <h1 class="fh-title">Express Drop-Off <span class="fh-gold">— Schedule Your Arrival</span></h1>
-        <!-- Badges in one row -->
-        <div class="fh-badges">
-          <span class="fh-badge">🕐 Select Your Drop-Off Time</span>
-          <span class="fh-sep"></span>
-          <span class="fh-badge">⚡ Same-Day Available</span>
-          <span class="fh-sep"></span>
-          <span class="fh-badge">🗓️ 30-Min Arrival Window</span>
-          <span class="fh-sep"></span>
-          <span class="fh-badge">🛡️ No Data = No Charge</span>
+        <div class="ps-badges">
+          <span class="ps-badge">🕐 Select Drop-Off Time</span>
+          <span class="ps-sep"></span>
+          <span class="ps-badge">⚡ Same-Day Available</span>
+          <span class="ps-sep"></span>
+          <span class="ps-badge">🗓️ 30-Min Window</span>
+          <span class="ps-sep"></span>
+          <span class="ps-badge">🛡️ No Data = No Charge</span>
         </div>
       </div>
     </section>
@@ -441,8 +438,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
               <!-- STEP 1: Contact Info -->
               <div v-show="step === 1" class="form-step">
-                <h3 class="step-title">Let's start with your contact info</h3>
-                <p class="step-desc">We'll use this to follow up with your free diagnosis and recovery options.</p>
+                <h3 class="step-title">Your Contact Info</h3>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">First Name <span class="req">*</span></label>
@@ -766,45 +762,20 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 /* ── FORM SECTION ── */
 /* ── Compact Form Hero ── */
-.form-hero {
-  position: relative;
-  overflow: hidden;
-}
-.form-hero-bg {
-  position: absolute; inset: 0;
-  background-size: cover;
-  background-position: center center;
-  pointer-events: none;
-}
-.form-hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(105deg, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.90) 60%, rgba(10,12,20,0.75) 100%);
-  pointer-events: none;
-}
-.form-hero-inner {
-  position: relative; z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding-top: 28px;
-  padding-bottom: 28px;
-}
-/* V3-style flat layout */
-.fh-proof { display: flex; align-items: center; gap: 8px; }
-.fh-stars { color: #F5C842; font-size: 14px; letter-spacing: 1px; }
-.fh-rating { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.55); }
-.fh-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(22px, 3.2vw, 38px);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.15;
-  margin: 0;
-}
-.fh-gold { color: #F5C842; }
-.fh-badges { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
-.fh-badge { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.82); padding: 0 18px 0 0; }
-.fh-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.2); margin-right: 18px; flex-shrink: 0; }
+/* ── Page header strip — super compact ── */
+.page-strip { position: relative; overflow: hidden; }
+.page-strip-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.page-strip-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.9) 60%, rgba(10,12,20,0.75) 100%); pointer-events: none; }
+.page-strip-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 16px; padding-bottom: 16px; flex-wrap: wrap; }
+.ps-left { display: flex; flex-direction: column; gap: 4px; }
+.ps-proof { display: flex; align-items: center; gap: 8px; }
+.ps-stars { color: #F5C842; font-size: 13px; letter-spacing: 1px; }
+.ps-rating { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); }
+.ps-title { font-family: 'Montserrat', sans-serif; font-size: clamp(18px, 2.4vw, 28px); font-weight: 800; color: #fff; line-height: 1.2; margin: 0; }
+.ps-gold { color: #F5C842; }
+.ps-badges { display: flex; align-items: center; flex-wrap: wrap; gap: 0; }
+.ps-badge { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.78); padding: 0 14px 0 0; white-space: nowrap; }
+.ps-sep { width: 1px; height: 12px; background: rgba(255,255,255,0.2); margin-right: 14px; flex-shrink: 0; }
 /* Keep old classes for backward compat */
 .form-hero-title {
   font-family: 'Montserrat', sans-serif;
@@ -833,7 +804,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   margin-right: 20px;
   flex-shrink: 0;
 }
-.form-section { background: #f4f7fc; padding: 20px 0 80px; }
+.form-section { background: #f4f7fc; padding: 12px 0 80px; }
 .form-wrap {
   max-width: 780px;
   margin: 0 auto;
@@ -849,7 +820,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 36px 40px 28px;
+  padding: 18px 40px 14px;
   background: #fff;
   border-bottom: 1px solid #e8edf4;
 }
