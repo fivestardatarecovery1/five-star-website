@@ -33,12 +33,12 @@ async function createFedexLabel(opts: {
     accountNumber: { value: opts.accountNumber },
     requestedShipment: {
       shipper: {
-        contact: { personName: 'Five Star Data Recovery', phoneNumber: '8182728866', companyName: 'Five Star Data Recovery' },
-        address: { streetLines: ['1731 S Brand Blvd'], city: 'Glendale', stateOrProvinceCode: 'CA', postalCode: '91204', countryCode: 'US' },
-      },
-      recipients: [{
         contact: { personName: opts.recipientName, phoneNumber: opts.recipientPhone.replace(/\D/g, '') || '0000000000' },
         address: { streetLines: [opts.street], city: opts.city, stateOrProvinceCode: opts.state, postalCode: opts.zip, countryCode: opts.countryCode },
+      },
+      recipients: [{
+        contact: { personName: 'Five Star Data Recovery', phoneNumber: '8182728866', companyName: 'Five Star Data Recovery' },
+        address: { streetLines: ['1731 S Brand Blvd'], city: 'Glendale', stateOrProvinceCode: 'CA', postalCode: '91204', countryCode: 'US' },
       }],
       shipDatestamp: today,
       serviceType: opts.serviceType,
