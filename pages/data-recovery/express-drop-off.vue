@@ -329,7 +329,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="fg">
                   <label class="ci terms-line"><input type="checkbox" required />
-                    Yes, I agree with the <NuxtLink to="/terms-and-conditions" class="terms-link">terms and conditions.</NuxtLink>
+                    Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
                   </label>
                 </div>
               </div>
