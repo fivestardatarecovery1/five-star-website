@@ -30,7 +30,6 @@ const contactError = ref('')
 
 function formatPhone(e: Event) {
   const input = e.target as HTMLInputElement
-  // Strip everything except digits
   const digits = input.value.replace(/\D/g, '').slice(0, 10)
   let formatted = digits
   if (digits.length > 6) {
@@ -39,6 +38,8 @@ function formatPhone(e: Event) {
     formatted = digits.slice(0, 3) + '-' + digits.slice(3)
   }
   contact.phone = formatted
+  // Directly update DOM value — Vue won't re-render if the reactive value didn't change
+  input.value = formatted
 }
 
 function saveAndGoToRecovery() {
