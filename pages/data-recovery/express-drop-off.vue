@@ -292,6 +292,33 @@ onMounted(() => {
 
 const prefillActive = ref(false)
 
+// Confirmation screen computed helpers
+const confirmEmailLink = computed(() => {
+  const subject = encodeURIComponent('My Five Star Data Recovery Drop-Off Appointment')
+  const body = encodeURIComponent(
+    `Five Star Data Recovery — Express Drop-Off Appointment\n\n` +
+    `Name: ${form.firstName} ${form.lastName}\n` +
+    `Date: ${formattedSelectedDate.value}\n` +
+    `Arrival Window: ${form.dropOffTime}\n` +
+    `Location: 1731 S Brand Blvd., Glendale, CA 91204\n\n` +
+    `No printout needed — just arrive at your scheduled time.\n` +
+    `Questions? Call us: 818-272-8866`
+  )
+  return `mailto:${form.email}?subject=${subject}&body=${body}`
+})
+const confirmSmsLink = computed(() => {
+  const body = encodeURIComponent(
+    `Five Star Data Recovery Drop-Off:\n` +
+    `${formattedSelectedDate.value} at ${form.dropOffTime}\n` +
+    `1731 S Brand Blvd., Glendale CA\n` +
+    `No printout needed. Questions: 818-272-8866`
+  )
+  return `sms:?body=${body}`
+})
+function printSummary() {
+  if (import.meta.client) window.print()
+}
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -329,12 +356,59 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="form-wrap">
 
-          <!-- Success state -->
-          <div v-if="submitted" class="form-success">
-            <div class="success-icon">✓</div>
-            <h2 class="success-heading">Form Submitted!</h2>
-            <p class="success-text">Thank you — we've received your drop-off request. Our team will reach out shortly to confirm your appointment and provide next steps.</p>
-            <NuxtLink to="/" class="btn-gold">Back to Home</NuxtLink>
+          <!-- Success / Confirmation screen -->
+          <div v-if="submitted" class="confirm-wrap">
+
+            <div class="confirm-header">
+              <div class="confirm-check">✓</div>
+              <h2 class="confirm-heading">Congratulations — Your Drop-Off Request Has Been Received!</h2>
+              <p class="confirm-intro">We are now waiting for your case to arrive at our lab. Here's a summary of your appointment.</p>
+            </div>
+
+            <!-- Appointment Summary Card -->
+            <div class="confirm-card">
+              <div class="confirm-row">
+                <span class="confirm-lbl">Name</span>
+                <span class="confirm-val">{{ form.firstName }} {{ form.lastName }}</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-lbl">Email</span>
+                <span class="confirm-val">{{ form.email }}</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-lbl">Phone</span>
+                <span class="confirm-val">{{ form.phone }}</span>
+              </div>
+              <div class="confirm-row confirm-row-highlight">
+                <span class="confirm-lbl">Drop-Off Date</span>
+                <span class="confirm-val confirm-gold">🗓️ {{ formattedSelectedDate }}</span>
+              </div>
+              <div class="confirm-row confirm-row-highlight">
+                <span class="confirm-lbl">Arrival Window</span>
+                <span class="confirm-val confirm-gold">⏰ {{ form.dropOffTime }}</span>
+              </div>
+              <div class="confirm-row">
+                <span class="confirm-lbl">Drop-Off Location</span>
+                <span class="confirm-val">1731 S Brand Blvd., Glendale, CA 91204</span>
+              </div>
+            </div>
+
+            <p class="confirm-waiting">
+              Our team will be ready for your arrival on <strong>{{ formattedSelectedDate }}</strong> at <strong>{{ form.dropOffTime }}</strong>. Your case has been logged and our engineers will begin diagnostics as soon as your device is checked in.
+            </p>
+
+            <!-- Share / Print Actions -->
+            <div class="confirm-actions">
+              <a :href="confirmEmailLink" class="confirm-btn confirm-btn-email">✉️ Send Details to My Email</a>
+              <a :href="confirmSmsLink" class="confirm-btn confirm-btn-sms">💬 Send via Text</a>
+              <button type="button" class="confirm-btn confirm-btn-print" @click="printSummary">🖨️ Print Summary</button>
+            </div>
+
+            <p class="confirm-note">
+              📌 <strong>No printout required.</strong> Just show up at your scheduled time — our team will have your case ready in the system.
+            </p>
+
+            <NuxtLink to="/" class="confirm-home">← Back to Home</NuxtLink>
           </div>
 
           <template v-else>
@@ -1008,9 +1082,36 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 
 /* SUCCESS */
-.form-success { padding: 72px 40px; text-align: center; }
-.success-icon { width: 64px; height: 64px; border-radius: 50%; background: #22c55e; color: #fff; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-.success-heading { font-size: 1.6rem; font-weight: 900; color: #1a1a2e; margin-bottom: 12px; }
+/* ── Confirmation Screen ── */
+.confirm-wrap { padding: 40px 36px; }
+.confirm-header { text-align: center; margin-bottom: 28px; }
+.confirm-check { width: 68px; height: 68px; border-radius: 50%; background: #22c55e; color: #fff; font-size: 2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+.confirm-heading { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 800; color: #0d1520; margin-bottom: 8px; line-height: 1.3; }
+.confirm-intro { font-size: 15px; color: #64748b; }
+.confirm-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; margin-bottom: 20px; }
+.confirm-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 13px 20px; border-bottom: 1px solid #e2e8f0; }
+.confirm-row:last-child { border-bottom: none; }
+.confirm-row-highlight { background: #fffbeb; }
+.confirm-lbl { font-size: 12px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0; }
+.confirm-val { font-size: 14px; font-weight: 600; color: #1a2030; text-align: right; }
+.confirm-gold { color: #b45309; font-size: 15px; font-weight: 800; }
+.confirm-waiting { font-size: 14px; color: #4a5568; line-height: 1.7; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; margin-bottom: 24px; }
+.confirm-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+.confirm-btn { display: inline-flex; align-items: center; gap: 7px; padding: 12px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; font-family: inherit; transition: all 0.2s; flex: 1; justify-content: center; white-space: nowrap; }
+.confirm-btn-email { background: #0d1520; color: #fff; }
+.confirm-btn-email:hover { background: #1a2a40; }
+.confirm-btn-sms { background: #2563eb; color: #fff; }
+.confirm-btn-sms:hover { background: #1d4ed8; }
+.confirm-btn-print { background: #f1f5f9; color: #475569; border: 1.5px solid #e2e8f0 !important; }
+.confirm-btn-print:hover { background: #e2e8f0; }
+.confirm-note { font-size: 12px; color: #64748b; background: #f8fafc; border-radius: 8px; padding: 10px 14px; margin-bottom: 20px; line-height: 1.6; }
+.confirm-home { display: inline-block; font-size: 13px; color: #94a3b8; text-decoration: none; }
+.confirm-home:hover { color: #475569; }
+@media print {
+  .form-hero, .stepper, .form-actions, .confirm-actions, .confirm-home, nav, footer { display: none !important; }
+  .confirm-wrap { padding: 0; }
+  .confirm-card { border: 1px solid #ccc; }
+}
 .success-text { font-size: 1rem; color: #6b7280; max-width: 440px; margin: 0 auto 28px; line-height: 1.7; }
 .btn-gold { display: inline-block; background: #F5C842; color: #1a1a1a; padding: 13px 32px; border-radius: 8px; font-weight: 800; text-decoration: none; }
 
