@@ -170,7 +170,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="sr-steps-heading">How It Works</h2>
         <p class="sr-steps-sub">Five simple steps to get your data back — fast, secure, and stress-free.</p>
         <div class="sr-steps-timeline">
-          <div class="sr-steps-line"></div>
           <div
             class="sr-step"
             v-for="(step, i) in steps"
@@ -179,14 +178,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             @mouseenter="activeStep = i"
             @mouseleave="activeStep = null"
           >
-            <div class="sr-step-num-wrap">
-              <div class="sr-step-num">{{ i + 1 }}</div>
-            </div>
             <div class="sr-step-card">
               <div class="sr-step-img-wrap">
                 <img :src="step.img" :alt="step.alt" class="sr-step-img" />
+                <div class="sr-step-overlay"></div>
+                <div class="sr-step-badge">{{ i + 1 }}</div>
               </div>
-              <p class="sr-step-label">{{ step.text }}</p>
+              <div class="sr-step-body">
+                <p class="sr-step-label">{{ step.text }}</p>
+              </div>
+            </div>
+            <div v-if="i < steps.length - 1" class="sr-step-connector">
+              <span class="sr-step-arrow-icon">›</span>
             </div>
           </div>
         </div>
@@ -283,81 +286,40 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   text-align: center;
   font-size: 1rem;
   color: #8a9bb8;
-  margin-bottom: 60px;
+  margin-bottom: 52px;
 }
 .sr-steps-timeline {
-  position: relative;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-.sr-steps-line {
-  position: absolute;
-  top: 28px;
-  left: calc(10% + 28px);
-  right: calc(10% + 28px);
-  height: 3px;
-  background: linear-gradient(to right, #F5C842, #e0b43a);
-  z-index: 0;
-  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
 .sr-step {
   flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  cursor: default;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.2s ease;
-}
-.sr-step:hover {
-  transform: translateY(-4px);
-}
-.sr-step-num-wrap {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #F5C842;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  box-shadow: 0 0 0 4px #0f1623, 0 0 0 7px rgba(245,200,66,0.25);
-  transition: box-shadow 0.25s ease, background 0.25s ease;
-  flex-shrink: 0;
-}
-.sr-step:hover .sr-step-num-wrap,
-.sr-step.active .sr-step-num-wrap {
-  background: #fff;
-  box-shadow: 0 0 0 4px #0f1623, 0 0 0 7px rgba(245,200,66,0.5), 0 8px 24px rgba(245,200,66,0.3);
-}
-.sr-step-num {
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: #1a1a2e;
-  line-height: 1;
+  min-width: 0;
 }
 .sr-step-card {
+  flex: 1;
   background: #1a2035;
   border-radius: 14px;
   overflow: hidden;
   border: 1.5px solid #2a3050;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-  width: 100%;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+  cursor: default;
 }
-.sr-step:hover .sr-step-card,
-.sr-step.active .sr-step-card {
+.sr-step:hover .sr-step-card {
   border-color: #F5C842;
-  box-shadow: 0 8px 32px rgba(245,200,66,0.15);
+  box-shadow: 0 8px 32px rgba(245,200,66,0.18);
+  transform: translateY(-5px);
 }
 .sr-step-img-wrap {
   width: 100%;
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;
   overflow: hidden;
   background: #0f1623;
+  position: relative;
 }
 .sr-step-img {
   width: 100%;
@@ -367,17 +329,57 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   transition: transform 0.35s ease;
 }
 .sr-step:hover .sr-step-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
+}
+.sr-step-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, rgba(10,12,20,0.7) 100%);
+  pointer-events: none;
+}
+.sr-step-badge {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #F5C842;
+  color: #1a1a2e;
+  font-size: 1rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  line-height: 1;
+}
+.sr-step-body {
+  padding: 14px 14px 16px;
 }
 .sr-step-label {
-  padding: 14px 12px 16px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #c8d4e8;
-  line-height: 1.4;
+  line-height: 1.45;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 0;
+}
+.sr-step-connector {
+  flex-shrink: 0;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 48px;
+}
+.sr-step-arrow-icon {
+  font-size: 1.6rem;
+  color: #F5C842;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.7;
 }
 
 /* LOCAL / NOT LOCAL */
@@ -456,19 +458,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
 
 @media (max-width: 900px) {
-  .sr-steps-line { display: none; }
-  .sr-steps-timeline { flex-wrap: wrap; gap: 20px; justify-content: center; }
-  .sr-step { flex: 0 0 calc(33% - 20px); min-width: 140px; }
+  .sr-steps-timeline { flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .sr-step { flex: 0 0 calc(33% - 12px); min-width: 140px; }
+  .sr-step-connector { display: none; }
 }
 @media (max-width: 768px) {
   .sr-hero-content { grid-template-columns: 1fr; }
   .sr-hero-right { display: none; }
   .sr-hero-badges { grid-template-columns: 1fr; }
-  .sr-steps-timeline { flex-direction: column; align-items: center; gap: 16px; }
-  .sr-step { flex: 0 0 auto; width: 100%; max-width: 340px; }
-  .sr-step-card { display: flex; flex-direction: row; align-items: center; }
-  .sr-step-img-wrap { width: 100px; flex-shrink: 0; aspect-ratio: 1; }
-  .sr-step-label { padding: 12px 16px; text-align: left; font-size: 0.85rem; }
+  .sr-steps-timeline { flex-direction: column; align-items: stretch; gap: 12px; }
+  .sr-step { flex: 0 0 auto; width: 100%; }
+  .sr-step-connector { display: none; }
+  .sr-step-card { display: flex; flex-direction: row; align-items: stretch; border-radius: 12px; }
+  .sr-step-img-wrap { width: 110px; flex-shrink: 0; aspect-ratio: 1; border-radius: 12px 0 0 12px; }
+  .sr-step-body { display: flex; align-items: center; padding: 12px 16px; }
+  .sr-step-label { font-size: 0.82rem; text-transform: uppercase; }
   .sr-options { grid-template-columns: 1fr; }
   .sr-video-inner { grid-template-columns: 1fr; }
 }
