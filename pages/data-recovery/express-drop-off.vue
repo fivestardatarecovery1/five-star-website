@@ -330,42 +330,31 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <!-- PAGE HEADER STRIP — minimal, just branding -->
-    <!-- ══ FULL-SCREEN LANDING HERO WITH EMBEDDED FORM ══ -->
-    <section class="landing">
-      <div class="landing-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
-      <div class="landing-overlay"></div>
-
-      <div class="container landing-layout">
-
-        <!-- LEFT: Brand Authority -->
-        <div class="landing-brand">
-          <p class="lb-eyebrow">🏆 Glendale's #1 Data Recovery Lab</p>
-          <h1 class="lb-headline">Same-Day<br>Express<br><span class="lb-gold">Drop-Off</span></h1>
-          <p class="lb-sub">Fill out the quick form — our team will be fully ready when you arrive. No waiting, no paperwork at the door.</p>
-
-          <div class="lb-benefits">
-            <div class="lb-benefit"><span class="lb-icon">⚡</span><span>Same-day appointments available</span></div>
-            <div class="lb-benefit"><span class="lb-icon">🗓️</span><span>Pick your 30-minute arrival window</span></div>
-            <div class="lb-benefit"><span class="lb-icon">🛡️</span><span>No data recovered — no charge</span></div>
-            <div class="lb-benefit"><span class="lb-icon">🧪</span><span>ISO Class 5 certified clean room</span></div>
-            <div class="lb-benefit"><span class="lb-icon">🔒</span><span>100% confidential — always</span></div>
-          </div>
-
-          <div class="lb-social">
-            <span class="lb-stars">★★★★★</span>
-            <span class="lb-review-text">4.9 out of 5 · 498 verified reviews</span>
-          </div>
-
-          <div class="lb-stats">
-            <div class="lb-stat"><span class="lb-stat-num">26,000+</span><span class="lb-stat-label">Drives Recovered</span></div>
-            <div class="lb-stat"><span class="lb-stat-num">10+</span><span class="lb-stat-label">Years Experience</span></div>
-            <div class="lb-stat"><span class="lb-stat-num">100%</span><span class="lb-stat-label">Confidential</span></div>
-          </div>
+    <!-- COMPACT HEADER: title + bullets on 2-3 lines -->
+    <section class="edo-header">
+      <div class="edo-header-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
+      <div class="edo-header-overlay"></div>
+      <div class="container edo-header-inner">
+        <div class="edo-header-top">
+          <div class="edo-header-proof"><span class="edo-stars">★★★★★</span><span class="edo-rating">4.9 · 498 Online Reviews</span></div>
+          <h1 class="edo-header-title">Same-Day Express Drop-Off — <span class="edo-title-gold">Schedule Your Arrival</span></h1>
         </div>
+        <div class="edo-header-bullets">
+          <span class="edo-bullet">⚡ Same-day appointments available</span>
+          <span class="edo-sep">·</span>
+          <span class="edo-bullet">🗓️ Pick your 30-min arrival window</span>
+          <span class="edo-sep">·</span>
+          <span class="edo-bullet">🛡️ No data recovered = no charge</span>
+          <span class="edo-sep">·</span>
+          <span class="edo-bullet">🧪 ISO Class 5 clean room on-site</span>
+        </div>
+      </div>
+    </section>
 
-        <!-- RIGHT: Embedded Form Panel -->
-        <div class="landing-panel">
-          <div class="form-wrap">
+    <!-- FULL-WIDTH FORM -->
+    <section class="edo-form-section">
+      <div class="container">
+        <div class="form-wrap">
 
           <!-- Success / Confirmation screen -->
           <div v-if="submitted" class="confirm-wrap">
@@ -712,11 +701,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
             </form>
           </template>
-          </div><!-- /.form-wrap -->
-        </div><!-- /.landing-panel -->
-
-      </div><!-- /.landing-layout -->
-    </section><!-- /.landing -->
+        </div><!-- /.form-wrap -->
+      </div>
+    </section><!-- /.edo-form-section -->
 
     <!-- PROCESS SECTION -->
     <section class="process-section">
@@ -777,40 +764,22 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* ── FORM SECTION ── */
 /* ── Compact Form Hero ── */
 /* ── Page header strip — super compact ── */
-/* ═══ LANDING HERO ═══ */
-.landing { position: relative; min-height: calc(100vh - 86px); display: flex; align-items: center; overflow: hidden; }
-.landing-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
-.landing-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.96) 0%, rgba(10,12,20,0.88) 45%, rgba(10,12,20,0.70) 100%); pointer-events: none; }
-.landing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 560px; gap: 48px; align-items: stretch; padding-top: 40px; padding-bottom: 40px; width: 100%; }
-/* LEFT brand */
-.landing-brand { color: #fff; }
-.lb-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F5C842; margin-bottom: 16px; }
-.lb-headline { font-family: 'Montserrat', sans-serif; font-size: clamp(40px, 5.5vw, 72px); font-weight: 900; line-height: 1.0; color: #fff; margin-bottom: 20px; }
-.lb-gold { color: #F5C842; }
-.lb-sub { font-size: 16px; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 28px; max-width: 420px; }
-.lb-benefits { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
-.lb-benefit { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.85); }
-.lb-icon { font-size: 18px; flex-shrink: 0; width: 24px; text-align: center; }
-.lb-social { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
-.lb-stars { color: #F5C842; font-size: 18px; letter-spacing: 2px; }
-.lb-review-text { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 600; }
-.lb-stats { display: flex; gap: 28px; }
-.lb-stat { display: flex; flex-direction: column; gap: 2px; }
-.lb-stat-num { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: #F5C842; }
-.lb-stat-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
-/* RIGHT form panel */
-.landing-panel { display: flex; flex-direction: column; }
-.landing-panel .form-wrap { border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.45); overflow-y: auto; scrollbar-width: thin; flex: 1; display: flex; flex-direction: column; }
-.landing-panel .form-wrap .confirm-wrap,
-.landing-panel .form-wrap > template,
-.landing-panel .form-wrap .stepper { flex-shrink: 0; }
-.landing-panel .form-wrap .edo-form { flex: 1; }
-@media (max-width: 960px) {
-  .landing { min-height: auto; }
-  .landing-layout { grid-template-columns: 1fr; gap: 28px; }
-  .landing-brand { display: none; }
-  .landing-panel .form-wrap { max-height: none; }
-}
+/* ═══ COMPACT HEADER ═══ */
+.edo-header { position: relative; overflow: hidden; }
+.edo-header-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.edo-header-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.92) 60%, rgba(10,12,20,0.78) 100%); pointer-events: none; }
+.edo-header-inner { position: relative; z-index: 1; padding-top: 22px; padding-bottom: 22px; display: flex; flex-direction: column; gap: 12px; }
+.edo-header-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.edo-header-proof { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
+.edo-stars { color: #F5C842; font-size: 13px; }
+.edo-rating { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); white-space: nowrap; }
+.edo-header-title { font-family: "Montserrat", sans-serif; font-size: clamp(18px, 2.5vw, 30px); font-weight: 800; color: #fff; line-height: 1.2; margin: 0; }
+.edo-title-gold { color: #F5C842; }
+.edo-header-bullets { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 0; }
+.edo-bullet { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
+.edo-sep { font-size: 13px; color: rgba(255,255,255,0.25); margin: 0 12px; }
+/* ═══ FULL-WIDTH FORM ═══ */
+.edo-form-section { background: #f4f7fc; padding: 24px 0 80px; }
 /* Keep old classes for backward compat */
 .form-hero-title {
   font-family: 'Montserrat', sans-serif;
@@ -841,11 +810,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 .form-section { background: #f4f7fc; padding: 12px 0 80px; }
 .form-wrap {
-  max-width: 780px;
+  max-width: 100%;
   margin: 0 auto;
   background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.09);
   overflow: hidden;
 }
 
