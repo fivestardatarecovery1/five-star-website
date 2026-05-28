@@ -28,6 +28,19 @@ const contact = reactive({
 })
 const contactError = ref('')
 
+function formatPhone(e: Event) {
+  const input = e.target as HTMLInputElement
+  // Strip everything except digits
+  const digits = input.value.replace(/\D/g, '').slice(0, 10)
+  let formatted = digits
+  if (digits.length > 6) {
+    formatted = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6)
+  } else if (digits.length > 3) {
+    formatted = digits.slice(0, 3) + '-' + digits.slice(3)
+  }
+  contact.phone = formatted
+}
+
 function saveAndGoToRecovery() {
   if (!import.meta.client) return
   const nameParts = contact.name.trim().split(' ')
@@ -591,7 +604,7 @@ const progressIndex = computed(() => {
           </div>
           <div class="iqt-field">
             <label class="iqt-label">Phone Number <span class="iqt-req">*</span></label>
-            <input v-model="contact.phone" type="tel" class="iqt-input" placeholder="(555) 000-0000" />
+            <input :value="contact.phone" @input="formatPhone" type="tel" class="iqt-input" placeholder="555-000-0000" inputmode="numeric" maxlength="12" />
           </div>
           <div class="iqt-field">
             <label class="iqt-label">Preferred Contact Method</label>
