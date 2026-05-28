@@ -17,7 +17,7 @@ const faqs = [
   { q: 'Do I need to schedule an appointment before dropping off my device?', a: "No appointment is necessary. You're welcome to walk in during our business hours. However, submitting the Start Recovery Form in advance helps us prepare for your device and minimize your wait time." },
   { q: 'What happens after I submit the Start Recovery Form?', a: "After you submit the form, we'll review your case details and reach out to you by phone or email to confirm receipt. From there, you can proceed with either dropping off your device in person or shipping it to our lab." },
   { q: 'Is there a fee just for submitting the form?', a: "No, there's no fee to submit the form. Any applicable fees will only be discussed and charged after diagnostics and your approval." },
-  { q: 'Can I submit the form if I'm mailing my device?', a: "Yes! In fact, submitting the form is highly recommended for mail-in clients. It helps us match your incoming shipment to your case file, reducing delays." },
+  { q: "Can I submit the form if I'm mailing my device?", a: "Yes! In fact, submitting the form is highly recommended for mail-in clients. It helps us match your incoming shipment to your case file, reducing delays." },
 ]
 
 const openFaq = ref<number | null>(null)
