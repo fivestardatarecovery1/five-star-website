@@ -201,7 +201,7 @@ function validateStep(): boolean {
     if (!form.dropOffDate) return err('Please select a preferred drop-off date.')
     if (dateBlocked.value) return err('That date is not available. Please choose another date.')
     if (!form.dropOffTime) return err('Please select a drop-off time.')
-    if (!form.todayDate) return err('Please enter today\u2019s date.')
+    // todayDate auto-set on submit — no user input needed
   }
   return true
 }
@@ -275,7 +275,7 @@ onMounted(() => {
   calYear.value = now.getFullYear()
   calMonth.value = now.getMonth()
   calReady.value = true
-  if (!form.todayDate) form.todayDate = todayStr
+  form.todayDate = new Date().toISOString().split('T')[0] // Auto-set, no user input needed
   const raw = localStorage.getItem('fivestar_quote_prefill')
   if (!raw) return
   try {
