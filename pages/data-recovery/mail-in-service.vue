@@ -343,7 +343,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="form-grid-2">
                   <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" class="fi" v-model="form.email" placeholder="john@example.com" @focus="onFieldFocus('email')" @blur="onFieldBlur('email', form.email)" /></div>
-                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" @input="formatPhone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
+                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" :value="form.phone" @input="formatPhone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" autocomplete="tel" autocorrect="off" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
                 </div>
               </div>
 

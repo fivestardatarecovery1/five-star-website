@@ -327,7 +327,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Phone <span class="req">*</span></label>
-                    <input type="tel" class="fi" v-model="form.phone" @input="formatPhone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" />
+                    <input type="tel" class="fi" :value="form.phone" @input="formatPhone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" autocomplete="tel" autocorrect="off" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" />
                   </div>
                 </div>
               </div>
