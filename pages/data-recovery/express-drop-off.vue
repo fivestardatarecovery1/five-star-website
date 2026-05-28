@@ -584,10 +584,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   position: absolute; inset: 0;
   background-size: cover;
   background-position: center center;
+  pointer-events: none;
 }
 .form-hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(105deg, rgba(10,12,20,0.95) 0%, rgba(10,12,20,0.85) 55%, rgba(10,12,20,0.65) 100%);
+  pointer-events: none;
 }
 .form-hero-inner {
   position: relative; z-index: 1;

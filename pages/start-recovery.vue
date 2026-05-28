@@ -190,10 +190,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   inset: 0;
   background-size: cover;
   background-position: center center;
+  pointer-events: none;
 }
 .v3-hero-overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: linear-gradient(
     to right,
     rgba(10,12,20,0.97) 0%,
