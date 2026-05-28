@@ -76,6 +76,10 @@ function nextStep() { if (step.value < totalSteps) step.value++ }
 function prevStep() { if (step.value > 1) step.value-- }
 
 async function submitForm() {
+  if (!form.termsAgreed) {
+    submitError.value = 'Please agree to the terms and conditions.'
+    return
+  }
   submitting.value = true
   submitError.value = ''
   try {
@@ -159,7 +163,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               </div>
             </div>
 
-            <form class="edo-form" @submit.prevent="submitForm">
+            <form class="edo-form" @submit.prevent="submitForm" novalidate>
 
               <!-- STEP 1: Contact Info -->
               <div v-show="step === 1" class="form-step">
@@ -168,21 +172,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">First Name <span class="req">*</span></label>
-                    <input type="text" class="fi" v-model="form.firstName" placeholder="John" required />
+                    <input type="text" class="fi" v-model="form.firstName" placeholder="John" />
                   </div>
                   <div class="fg">
                     <label class="fl">Last Name <span class="req">*</span></label>
-                    <input type="text" class="fi" v-model="form.lastName" placeholder="Smith" required />
+                    <input type="text" class="fi" v-model="form.lastName" placeholder="Smith" />
                   </div>
                 </div>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Email Address <span class="req">*</span></label>
-                    <input type="email" class="fi" v-model="form.email" placeholder="john@example.com" required />
+                    <input type="email" class="fi" v-model="form.email" placeholder="john@example.com" />
                   </div>
                   <div class="fg">
                     <label class="fl">Phone <span class="req">*</span></label>
-                    <input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" required />
+                    <input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" />
                   </div>
                 </div>
               </div>
@@ -194,7 +198,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Drive Manufacturer <span class="req">*</span></label>
-                    <select class="fi" v-model="form.manufacturer" required>
+                    <select class="fi" v-model="form.manufacturer">
                       <option value="">Select manufacturer</option>
                       <option>Western Digital</option>
                       <option>Toshiba</option>
@@ -210,13 +214,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Model No <span class="req">*</span></label>
-                    <input type="text" class="fi" v-model="form.modelNo" placeholder="e.g. WD10EZEX" required />
+                    <input type="text" class="fi" v-model="form.modelNo" placeholder="e.g. WD10EZEX" />
                   </div>
                 </div>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Type of Drive <span class="req">*</span></label>
-                    <select class="fi" v-model="form.driveType" required>
+                    <select class="fi" v-model="form.driveType">
                       <option value="">Select type</option>
                       <option>Laptop Drive</option>
                       <option>External Hard Drive</option>
@@ -227,7 +231,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Drive Format <span class="req">*</span></label>
-                    <select class="fi" v-model="form.driveFormat" required>
+                    <select class="fi" v-model="form.driveFormat">
                       <option value="">Select format</option>
                       <option>Macintosh</option>
                       <option>Windows</option>
@@ -240,7 +244,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Drive Size <span class="req">*</span></label>
-                    <input type="text" class="fi" v-model="form.driveSize" placeholder="e.g. 1TB, 500GB" required />
+                    <input type="text" class="fi" v-model="form.driveSize" placeholder="e.g. 1TB, 500GB" />
                   </div>
                   <div class="fg">
                     <label class="fl">Drop Off Location <span class="req">*</span></label>
@@ -255,7 +259,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <p class="step-desc">The more detail you share, the faster we can diagnose your device.</p>
                 <div class="fg">
                   <label class="fl">Describe the Issue <span class="req">*</span></label>
-                  <textarea class="fi fi-textarea" v-model="form.issue" placeholder="e.g. Drive is clicking, not recognized, dropped, won't power on..." required></textarea>
+                  <textarea class="fi fi-textarea" v-model="form.issue" placeholder="e.g. Drive is clicking, not recognized, dropped, won't power on..."></textarea>
                 </div>
                 <div class="fg">
                   <label class="fl">Type of data to recover <span class="req">*</span></label>
@@ -336,11 +340,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Preferred Drop Off Date <span class="req">*</span></label>
-                    <input type="date" class="fi" v-model="form.dropOffDate" required />
+                    <input type="date" class="fi" v-model="form.dropOffDate" />
                   </div>
                   <div class="fg">
                     <label class="fl">Preferred Drop Off Time <span class="req">*</span></label>
-                    <select class="fi" required>
+                    <select class="fi">
                       <option value="">Select AM or PM</option>
                       <option>AM (10am – 12pm)</option>
                       <option>PM (12pm – 6pm)</option>
@@ -349,10 +353,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="fg">
                   <label class="fl">Today's Date <span class="req">*</span></label>
-                  <input type="date" class="fi" v-model="form.todayDate" required />
+                  <input type="date" class="fi" v-model="form.todayDate" />
                 </div>
                 <div class="fg">
-                  <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" required />
+                  <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" />
                     Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
                   </label>
                 </div>
