@@ -72,6 +72,15 @@ const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Servic
 
 // Form abandonment & funnel tracking
 const { onFieldFocus, onFieldBlur, onStepComplete, onStepBack, onFormSubmitted } = useFormTracking('mail-in', stepTitles)
+
+function formatPhone(e: Event) {
+  const digits = form.phone.replace(/\D/g, '').slice(0, 10)
+  let formatted = digits
+  if (digits.length > 6) formatted = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6)
+  else if (digits.length > 3) formatted = digits.slice(0, 3) + '-' + digits.slice(3)
+  form.phone = formatted
+  ;(e.target as HTMLInputElement).value = formatted
+}
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
@@ -80,6 +89,8 @@ const labelBase64 = ref('')
 const serviceLabel = ref('')
 const labelError = ref('')
 const packingSlipBase64 = ref('')
+
+const todayStr = new Date().toISOString().split('T')[0]
 
 const form = reactive({
   firstName: '', lastName: '', email: '', phone: '',
@@ -196,6 +207,8 @@ const faqs = [
 // Pre-fill from quote tool
 onMounted(() => {
   if (!import.meta.client) return
+  // Auto-fill today's date — no need for customer to pick it manually
+  if (!form.date) form.date = todayStr
   const raw = localStorage.getItem('fivestar_quote_prefill')
   if (!raw) return
   try {
@@ -318,7 +331,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="form-grid-2">
                   <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" class="fi" v-model="form.email" placeholder="john@example.com" @focus="onFieldFocus('email')" @blur="onFieldBlur('email', form.email)" /></div>
-                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
+                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" @input="formatPhone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
                 </div>
               </div>
 
@@ -474,7 +487,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                     <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="No preference" /> I don't have a preference</label>
                   </div>
                 </div>
-                <div class="fg"><label class="fl">Date <span class="req">*</span></label><input type="date" class="fi" v-model="form.date" /></div>
+                <div class="fg">
+                  <label class="fl">Today's Date <span class="req">*</span></label>
+                  <div class="date-field-wrap">
+                    <input type="date" class="fi date-fi" v-model="form.date" />
+                    <button type="button" class="today-pill" @click="form.date = todayStr">📅 Today</button>
+                  </div>
+                  <p v-if="form.date" class="date-confirm">✓ {{ new Date(form.date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }) }}</p>
+                </div>
                 <div class="fg">
                   <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" />
                     Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
@@ -582,6 +602,19 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .fi { border: 1.5px solid #d1d9e6; border-radius: 8px; padding: 11px 14px; font-size: 0.95rem; color: #1a1a2e; background: #fff; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
 .fi:focus { outline: none; border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
 .fi-textarea { min-height: 110px; resize: vertical; }
+.date-field-wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.date-fi { flex: 1; min-width: 160px; }
+.today-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 9px 16px; border-radius: 999px;
+  background: #FEF9E7; border: 1.5px solid #F5C842;
+  color: #92400e; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: background 0.15s, transform 0.1s;
+  flex-shrink: 0;
+}
+.today-pill:hover { background: #FDE68A; transform: scale(1.03); }
+.today-pill:active { transform: scale(0.97); }
+.date-confirm { font-size: 0.85rem; color: #15803d; font-weight: 600; margin: 4px 0 0; }
 .check-group, .radio-group { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
 .ci { display: flex; align-items: flex-start; gap: 10px; font-size: 0.91rem; color: #374151; line-height: 1.55; cursor: pointer; }
 .ci input { margin-top: 3px; flex-shrink: 0; accent-color: #F5C842; cursor: pointer; }
