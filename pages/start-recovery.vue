@@ -298,7 +298,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- TESTIMONIALS -->
     <section class="s-grey">
       <div class="container">
-        <h2 class="s-heading center" style="margin-bottom:36px;">Testimonials from Satisfied Clients</h2>
         <ReviewsSection :reviews="reviews" />
       </div>
     </section>
