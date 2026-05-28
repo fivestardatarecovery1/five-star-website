@@ -46,12 +46,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h1 class="srh-title">Get Your Data Back<br><span class="srh-title-gold">Fast &amp; Risk-Free</span></h1>
           <p class="srh-sub">Free diagnosis. No upfront cost. If we don't recover your data, you don't pay.</p>
           <div class="srh-badges">
-            <div class="srh-badge"><span class="srh-badge-icon">🛡️</span> No Data = No Charge</div>
+            <div class="srh-badge"><span class="srh-badge-icon">🧪</span> Clean Room On-Site</div>
             <div class="srh-badge"><span class="srh-badge-icon">🚚</span> Free Nationwide Shipping</div>
             <div class="srh-badge"><span class="srh-badge-icon">⏰</span> Available 24/7/365</div>
             <div class="srh-badge"><span class="srh-badge-icon">🏆</span> 10+ Years in Business</div>
           </div>
-          <a href="tel:8182728866" class="srh-phone">📞 818-272-8866</a>
+          <a href="tel:8182728866" class="srh-phone">
+            <span class="srh-phone-icon">📞</span>
+            <span class="srh-phone-text">
+              <span class="srh-phone-label">Call Us Anytime, 24/7</span>
+              <span class="srh-phone-number">818-272-8866</span>
+            </span>
+          </a>
         </div>
 
         <!-- RIGHT: CTA cards immediately visible -->
@@ -202,10 +208,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 56px;
+  gap: 64px;
   align-items: center;
-  padding-top: 52px;
-  padding-bottom: 52px;
+  padding-top: 64px;
+  padding-bottom: 64px;
 }
 
 /* LEFT */
@@ -213,17 +219,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 22px;
 }
 .srh-stars {
   color: #F5C842;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 17px;
+  letter-spacing: 2px;
 }
 .srh-rating-text {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.65);
 }
 .srh-title {
   font-family: 'Montserrat', sans-serif;
@@ -231,47 +237,73 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   font-weight: 800;
   color: #fff;
   line-height: 1.12;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 .srh-title-gold { color: var(--gold); }
 .srh-sub {
   font-size: 16px;
   color: rgba(255,255,255,0.65);
-  margin-bottom: 28px;
+  margin-bottom: 32px;
   max-width: 420px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 .srh-badges {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 32px;
-  max-width: 420px;
+  gap: 12px;
+  margin-bottom: 36px;
+  max-width: 440px;
 }
 .srh-badge {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
-  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 10px;
+  padding: 13px 16px;
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255,255,255,0.9);
 }
-.srh-badge-icon { font-size: 15px; line-height: 1; }
+.srh-badge-icon { font-size: 16px; line-height: 1; flex-shrink: 0; }
+/* Phone CTA — styled like a call button */
 .srh-phone {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--gold);
+  gap: 14px;
+  background: rgba(245,200,66,0.12);
+  border: 1.5px solid rgba(245,200,66,0.45);
+  border-radius: 12px;
+  padding: 14px 22px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
+  max-width: 260px;
 }
-.srh-phone:hover { opacity: 0.8; }
+.srh-phone:hover {
+  background: rgba(245,200,66,0.2);
+  border-color: var(--gold);
+}
+.srh-phone-icon { font-size: 22px; line-height: 1; }
+.srh-phone-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.srh-phone-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+}
+.srh-phone-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  font-family: 'Montserrat', sans-serif;
+}
 
 /* RIGHT — CTA cards */
 .srh-right {
