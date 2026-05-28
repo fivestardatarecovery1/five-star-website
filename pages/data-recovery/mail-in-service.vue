@@ -154,10 +154,7 @@ function prevStep() {
   }
 }
 
-function handleEnterKey(e: KeyboardEvent) {
-  const tag = (e.target as HTMLElement).tagName
-  if (tag === 'TEXTAREA' || tag === 'BUTTON' || tag === 'A') return
-  e.preventDefault()
+function handleFormSubmit() {
   if (step.value < totalSteps) nextStep()
   else submitForm()
 }
@@ -339,7 +336,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               ✅ We've pre-filled your info from your instant quote. Just review and submit!
             </div>
 
-            <form class="edo-form" @submit.prevent="submitForm" @keydown.enter="handleEnterKey" novalidate>
+            <form class="edo-form" @submit.prevent="handleFormSubmit" novalidate>
 
               <!-- STEP 1: Contact Info -->
               <div v-show="step === 1" class="form-step">
@@ -535,7 +532,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <button v-if="step > 1" type="button" class="btn-back" @click="prevStep">← Back</button>
                 <div style="flex:1"></div>
                 <span class="step-count">Step {{ step }} of {{ totalSteps }}</span>
-                <button type="button" class="btn-next" @click="nextStep">Continue →</button>
+                <button type="submit" class="btn-next">Continue →</button>
               </div>
               <p v-if="submitError" class="step-error">{{ submitError }}</p>
 
