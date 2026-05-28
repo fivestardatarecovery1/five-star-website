@@ -232,17 +232,29 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-content">
     <NavBar />
 
-    <HeroSection
-      title="Data Recovery Express Drop Off Form"
-      subtitle="In a rush? Fill out our quick online form ahead of time, then stop by for a fast and easy Express Drop-Off."
-      description="No need to wait — just drop off your device and go. We'll handle the rest and follow up with your free diagnostic and recovery options."
-      bgImage="/express-drop-off-data-recovery-glendale-ca.jpg"
-      :trustBadges="trustBadges"
-      :showForm="false"
-      :showButtons="false"
-    />
-
-    <StatsBar />
+    <!-- COMPACT FORM HERO -->
+    <section class="form-hero">
+      <div class="form-hero-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
+      <div class="form-hero-overlay"></div>
+      <div class="container form-hero-inner">
+        <div class="form-hero-left">
+          <div class="form-hero-proof">
+            <span class="form-hero-stars">★★★★★</span>
+            <span class="form-hero-rating">4.9 · 498 Online Reviews</span>
+          </div>
+          <h1 class="form-hero-title">Express Drop-Off <span class="form-hero-gold">— Schedule Your Visit</span></h1>
+        </div>
+        <div class="form-hero-badges">
+          <span class="form-hero-badge">🕐 Select Your Drop-Off Time</span>
+          <span class="form-hero-sep"></span>
+          <span class="form-hero-badge">⚡ Same-Day Appointments Available</span>
+          <span class="form-hero-sep"></span>
+          <span class="form-hero-badge">🗓️ 30-Minute Arrival Window</span>
+          <span class="form-hero-sep"></span>
+          <span class="form-hero-badge">🛡️ No Data = No Charge</span>
+        </div>
+      </div>
+    </section>
 
     <!-- MULTI-STEP FORM -->
     <section class="form-section">
@@ -561,7 +573,63 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-heading.center { text-align: center; }
 
 /* ── FORM SECTION ── */
-.form-section { background: #f4f7fc; padding: 72px 0 80px; }
+/* ── Compact Form Hero ── */
+.form-hero {
+  position: relative;
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+}
+.form-hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center center;
+}
+.form-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(10,12,20,0.95) 0%, rgba(10,12,20,0.85) 55%, rgba(10,12,20,0.65) 100%);
+}
+.form-hero-inner {
+  position: relative; z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.form-hero-proof {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.form-hero-stars { color: #F5C842; font-size: 14px; letter-spacing: 1px; }
+.form-hero-rating { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.55); }
+.form-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+.form-hero-gold { color: #F5C842; }
+.form-hero-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.form-hero-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
+  padding: 0 20px 0 0;
+}
+.form-hero-sep {
+  width: 1px; height: 14px;
+  background: rgba(255,255,255,0.2);
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+.form-section { background: #f4f7fc; padding: 36px 0 80px; }
 .form-wrap {
   max-width: 780px;
   margin: 0 auto;

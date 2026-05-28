@@ -223,17 +223,29 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   <div class="page-content">
     <NavBar />
 
-    <HeroSection
-      title="Data Recovery Mail In Form"
-      subtitle="Can't visit us in person? No problem."
-      description="Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S. Ship your device to us, and it will arrive at our lab in less than 2 days. Once received, we'll begin diagnostics and keep you updated every step of the way — all backed by our No Data, No Charge policy."
-      bgImage="/data-recovery-mail-in-service-los-angeles.jpg"
-      :trustBadges="trustBadges"
-      :showForm="false"
-      :showButtons="false"
-    />
-
-    <StatsBar />
+    <!-- COMPACT FORM HERO -->
+    <section class="form-hero">
+      <div class="form-hero-bg" style="background-image: url('/data-recovery-mail-in-service-los-angeles.jpg')"></div>
+      <div class="form-hero-overlay"></div>
+      <div class="container form-hero-inner">
+        <div class="form-hero-left">
+          <div class="form-hero-proof">
+            <span class="form-hero-stars">★★★★★</span>
+            <span class="form-hero-rating">4.9 · 498 Online Reviews</span>
+          </div>
+          <h1 class="form-hero-title">Mail-In Data Recovery <span class="form-hero-gold">— Free Nationwide Shipping</span></h1>
+        </div>
+        <div class="form-hero-badges">
+          <span class="form-hero-badge">🚚 Free Round-Trip Shipping</span>
+          <span class="form-hero-sep"></span>
+          <span class="form-hero-badge">🛡️ No Data = No Charge</span>
+          <span class="form-hero-sep"></span>
+          <span class="form-hero-badge">📋 Prepaid Label Provided Immediately</span>
+          <span class="form-hero-sep"></span>
+          <span class="form-hero-badge">⚡ Expedited Service Available</span>
+        </div>
+      </div>
+    </section>
 
     <!-- MULTI-STEP FORM -->
     <section class="form-section">
@@ -567,7 +579,63 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-heading.center { text-align: center; }
 
 /* FORM */
-.form-section { background: #f4f7fc; padding: 72px 0 80px; }
+/* ── Compact Form Hero ── */
+.form-hero {
+  position: relative;
+  min-height: 210px;
+  display: flex;
+  align-items: center;
+}
+.form-hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center center;
+}
+.form-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(10,12,20,0.95) 0%, rgba(10,12,20,0.85) 55%, rgba(10,12,20,0.65) 100%);
+}
+.form-hero-inner {
+  position: relative; z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.form-hero-proof {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.form-hero-stars { color: #F5C842; font-size: 14px; letter-spacing: 1px; }
+.form-hero-rating { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.55); }
+.form-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(20px, 2.8vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0;
+}
+.form-hero-gold { color: #F5C842; }
+.form-hero-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.form-hero-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
+  padding: 0 20px 0 0;
+}
+.form-hero-sep {
+  width: 1px; height: 14px;
+  background: rgba(255,255,255,0.2);
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+.form-section { background: #f4f7fc; padding: 36px 0 80px; }
 .form-wrap { max-width: 780px; margin: 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.08); overflow: hidden; }
 .stepper { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 36px 40px 28px; background: #fff; border-bottom: 1px solid #e8edf4; }
 .stepper-track { position: absolute; top: 54px; left: calc(40px + 20px); right: calc(40px + 20px); height: 3px; background: #e8edf4; border-radius: 2px; z-index: 0; }
