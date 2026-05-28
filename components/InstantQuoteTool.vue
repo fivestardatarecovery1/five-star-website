@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{ light?: boolean }>()
+const props = defineProps<{ light?: boolean, compact?: boolean }>()
 
 type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'ssd-ext-brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
@@ -430,10 +430,10 @@ const progressIndex = computed(() => {
 </script>
 
 <template>
-  <div class="iqt-wrap" :class="{ 'iqt-light': props.light }">
+  <div class="iqt-wrap" :class="{ 'iqt-light': props.light, 'iqt-compact': props.compact }">
 
     <!-- Progress -->
-    <div class="iqt-progress">
+    <div class="iqt-progress" v-if="!props.compact">
       <div
         v-for="(label, idx) in progressSteps"
         :key="label"
@@ -1204,6 +1204,27 @@ const progressIndex = computed(() => {
 }
 
 /* ── Light theme ──────────────────────────────── */
+.iqt-compact {
+  padding: 20px 20px 16px;
+}
+.iqt-compact .iqt-q {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+.iqt-compact .iqt-grid {
+  gap: 8px;
+}
+.iqt-compact .iqt-card {
+  padding: 10px 12px;
+  gap: 8px;
+}
+.iqt-compact .iqt-card-icon { font-size: 1.3rem; }
+.iqt-compact .iqt-card-label { font-size: 0.78rem; }
+.iqt-compact .iqt-card-sub { font-size: 0.68rem; }
+.iqt-compact .iqt-nav { margin-top: 12px; gap: 8px; }
+.iqt-compact .iqt-btn-back,
+.iqt-compact .iqt-btn-next { padding: 9px 18px; font-size: 0.85rem; }
+
 .iqt-light {
   background: #ffffff;
   border-color: #e2e8f0;

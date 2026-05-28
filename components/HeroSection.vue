@@ -91,7 +91,7 @@ function handleSubmit() {
         <div class="hero-form-card">
           <p class="form-title">Get an Instant Quote</p>
 
-          <InstantQuoteTool :light="true" />
+          <InstantQuoteTool :light="true" :compact="true" />
         </div>
       </div>
 
@@ -110,7 +110,7 @@ function handleSubmit() {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 520px;
+  grid-template-columns: 1fr 480px;
   gap: 60px;
   align-items: center;
 }
@@ -226,12 +226,22 @@ function handleSubmit() {
 
 .form-title {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
-  color: #1a1a2e;
-  margin-bottom: 20px;
-  padding-bottom: 14px;
-  border-bottom: 2px solid #f0f0f0;
+  color: #fff;
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f1623 100%);
+  margin: 0;
+  padding: 14px 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #F5C842;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.form-title::before {
+  content: '⚡';
+  font-size: 14px;
 }
 
 .consult-form { display: flex; flex-direction: column; gap: 14px; }
