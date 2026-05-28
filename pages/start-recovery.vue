@@ -251,7 +251,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="sr-option-bg" style="background-image: url('/sr-local-bg.jpg')"></div>
             <div class="sr-option-overlay"></div>
             <div class="sr-option-content">
-              <img src="/start-recovery-local-icon.png" alt="Express Drop Off" class="sr-option-icon" />
               <h2 class="sr-option-tag">LOCAL?</h2>
               <h3 class="sr-option-title">EXPRESS DROP OFF</h3>
               <p class="sr-option-desc">We offer a faster way to start your recovery! Fill out the form to get started!</p>
@@ -263,7 +262,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="sr-option-bg" style="background-image: url('/sr-mail-bg.jpg')"></div>
             <div class="sr-option-overlay"></div>
             <div class="sr-option-content">
-              <img src="/start-recovery-mail-icon.png" alt="Mail-In Service" class="sr-option-icon" />
               <h2 class="sr-option-tag">NOT LOCAL?</h2>
               <h3 class="sr-option-title">MAIL-IN SERVICE</h3>
               <p class="sr-option-desc">Not local? Not a problem! Fill out our Mail-In form to experience our FIVE STAR service!</p>
