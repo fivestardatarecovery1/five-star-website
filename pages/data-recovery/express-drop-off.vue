@@ -93,27 +93,78 @@ const scheduleLoading = ref(false)
 const dateBlocked = ref(false)
 const dateBlockedMsg = ref('')
 
-watch(() => form.dropOffDate, async (date) => {
-  if (!date) { availableHours.value = []; form.dropOffTime = ''; return }
-  scheduleLoading.value = true
-  dateBlocked.value = false
+// All 30-min slots Mon–Fri 9am–5:30pm
+const ALL_SLOTS = [
+  '9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM',
+  '12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM',
+  '3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM',
+]
+
+// Calendar state — set in onMounted to avoid SSR mismatch
+const calYear = ref(0)
+const calMonth = ref(0)
+const calReady = ref(false)
+const DOW_LABELS = ['Su','Mo','Tu','We','Th','Fr','Sa']
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December']
+
+const monthLabel = computed(() => calReady.value ? `${MONTH_NAMES[calMonth.value]} ${calYear.value}` : '')
+const calendarOffset = computed(() => {
+  if (!calReady.value) return 0
+  return new Date(calYear.value, calMonth.value, 1).getDay()
+})
+const calendarDays = computed(() => {
+  if (!calReady.value) return []
+  const today = new Date(); today.setHours(0,0,0,0)
+  const daysInMonth = new Date(calYear.value, calMonth.value + 1, 0).getDate()
+  return Array.from({ length: daysInMonth }, (_, i) => {
+    const d = i + 1
+    const date = new Date(calYear.value, calMonth.value, d)
+    return {
+      num: d,
+      date: `${calYear.value}-${String(calMonth.value+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`,
+      isPast: date < today,
+      isWeekend: date.getDay() === 0 || date.getDay() === 6,
+      isToday: date.getTime() === today.getTime(),
+    }
+  })
+})
+const formattedSelectedDate = computed(() => {
+  if (!form.dropOffDate) return ''
+  const [y,m,d] = form.dropOffDate.split('-').map(Number)
+  return new Date(y, m-1, d).toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric' })
+})
+
+function prevMonth() {
+  if (calMonth.value === 0) { calMonth.value = 11; calYear.value-- }
+  else calMonth.value--
+}
+function nextMonth() {
+  if (calMonth.value === 11) { calMonth.value = 0; calYear.value++ }
+  else calMonth.value++
+}
+async function selectDate(date: string) {
+  form.dropOffDate = date
   form.dropOffTime = ''
+  availableHours.value = []
+  dateBlocked.value = false
+  scheduleLoading.value = true
   try {
     const res = await $fetch<any>(`/api/express-availability?date=${date}`)
     if (!res.available) {
       dateBlocked.value = true
       dateBlockedMsg.value = res.message || 'Not available this day — please choose another date.'
-      availableHours.value = []
     } else {
-      availableHours.value = res.availableHours || []
-      dateBlocked.value = false
+      availableHours.value = res.availableHours || ALL_SLOTS
     }
   } catch {
-    availableHours.value = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM']
+    availableHours.value = [...ALL_SLOTS]
   } finally {
     scheduleLoading.value = false
   }
-})
+}
+function selectTime(slot: string) {
+  if (availableHours.value.includes(slot)) form.dropOffTime = slot
+}
 
 function scrollToForm() {
   if (import.meta.client) {
@@ -216,6 +267,10 @@ const faqs = [
 // Pre-fill from quote tool
 onMounted(() => {
   if (!import.meta.client) return
+  const now = new Date()
+  calYear.value = now.getFullYear()
+  calMonth.value = now.getMonth()
+  calReady.value = true
   if (!form.todayDate) form.todayDate = todayStr
   const raw = localStorage.getItem('fivestar_quote_prefill')
   if (!raw) return
@@ -474,35 +529,73 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
               </div>
 
-              <!-- STEP 5: Schedule -->
+              <!-- STEP 5: Schedule — Visual Calendar + Time Slots -->
               <div v-show="step === 5" class="form-step">
-                <h3 class="step-title">Almost done — schedule your drop-off</h3>
-                <p class="step-desc">Our Glendale lab is open Mon–Fri 9am–5pm. Select a date to see available times.</p>
-                <div class="form-grid-2">
-                  <div class="fg">
-                    <label class="fl">Preferred Drop Off Date <span class="req">*</span></label>
-                    <input type="date" class="fi" v-model="form.dropOffDate"
-                      :min="new Date().toISOString().split('T')[0]" />
-                    <p v-if="dateBlocked" style="color:#ef4444;font-size:0.85rem;margin-top:4px;">⚠ {{ dateBlockedMsg }}</p>
+                <h3 class="step-title">Schedule your drop-off</h3>
+                <p class="step-desc">Select an available date and 30-minute arrival window. Mon–Fri, 9am–5:30pm.</p>
+
+                <!-- CALENDAR -->
+                <div class="cal-wrap" v-if="calReady">
+                  <div class="cal-header">
+                    <button type="button" class="cal-nav" @click="prevMonth">&#8249;</button>
+                    <span class="cal-month-label">{{ monthLabel }}</span>
+                    <button type="button" class="cal-nav" @click="nextMonth">&#8250;</button>
                   </div>
-                  <div class="fg">
-                    <label class="fl">Preferred Drop Off Time <span class="req">*</span></label>
-                    <select class="fi" v-model="form.dropOffTime" :disabled="!form.dropOffDate || scheduleLoading || dateBlocked">
-                      <option value="">{{ scheduleLoading ? 'Checking availability...' : form.dropOffDate ? (dateBlocked ? 'Not available' : 'Select a time') : 'Select a date first' }}</option>
-                      <option v-for="h in availableHours" :key="h" :value="h">{{ h }}</option>
-                    </select>
-                    <p v-if="form.dropOffDate && !scheduleLoading && !dateBlocked && availableHours.length === 0" style="color:#ef4444;font-size:0.85rem;margin-top:4px;">No times available for this date.</p>
+                  <div class="cal-grid">
+                    <div class="cal-dow" v-for="d in DOW_LABELS" :key="d">{{ d }}</div>
+                    <div class="cal-empty" v-for="_ in calendarOffset" :key="'e'+_"></div>
+                    <button
+                      v-for="day in calendarDays" :key="day.date"
+                      type="button"
+                      class="cal-day"
+                      :class="{
+                        'cal-selected': form.dropOffDate === day.date,
+                        'cal-past': day.isPast,
+                        'cal-weekend': day.isWeekend,
+                        'cal-today': day.isToday,
+                      }"
+                      :disabled="day.isPast || day.isWeekend"
+                      @click="selectDate(day.date)"
+                    >{{ day.num }}</button>
                   </div>
                 </div>
-                <div class="fg">
-                  <label class="fl">Today's Date <span class="req">*</span></label>
-                  <div class="date-field-wrap">
-                    <input type="date" class="fi date-fi" v-model="form.todayDate" />
-                    <button type="button" class="today-pill" @click="form.todayDate = todayStr">📅 Today</button>
+
+                <!-- TIME SLOTS -->
+                <div v-if="form.dropOffDate" class="slots-wrap">
+                  <div class="slots-header">
+                    <span class="slots-date-label">🗓 {{ formattedSelectedDate }}</span>
+                    <span v-if="scheduleLoading" class="slots-loading">Checking availability…</span>
+                    <span v-else-if="dateBlocked" class="slots-blocked">⚠ {{ dateBlockedMsg }}</span>
                   </div>
-                  <p v-if="form.todayDate" class="date-confirm">✓ {{ new Date(form.todayDate + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }) }}</p>
+                  <div v-if="!scheduleLoading && !dateBlocked" class="slots-grid">
+                    <button
+                      v-for="slot in ALL_SLOTS" :key="slot"
+                      type="button"
+                      class="slot-btn"
+                      :class="{
+                        'slot-available': availableHours.includes(slot) && form.dropOffTime !== slot,
+                        'slot-selected': form.dropOffTime === slot,
+                        'slot-booked': !availableHours.includes(slot),
+                      }"
+                      :disabled="!availableHours.includes(slot)"
+                      @click="selectTime(slot)"
+                    >
+                      {{ slot }}
+                      <span class="slot-status">{{ form.dropOffTime === slot ? '✓ Selected' : availableHours.includes(slot) ? 'Available' : 'Booked' }}</span>
+                    </button>
+                  </div>
+                  <p v-if="!scheduleLoading && !dateBlocked && availableHours.length === 0" class="slots-none">⚠ No times available for this date. Please select another day.</p>
                 </div>
-                <div class="fg">
+                <p v-else-if="!form.dropOffDate" class="slots-prompt">↑ Select a date above to see available times</p>
+
+                <!-- LEGEND -->
+                <div v-if="form.dropOffDate && !scheduleLoading" class="slots-legend">
+                  <span class="leg-item"><span class="leg-dot leg-avail"></span> Available</span>
+                  <span class="leg-item"><span class="leg-dot leg-sel"></span> Selected</span>
+                  <span class="leg-item"><span class="leg-dot leg-book"></span> Booked</span>
+                </div>
+
+                <div class="fg" style="margin-top:20px;">
                   <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" />
                     Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
                   </label>
@@ -747,6 +840,45 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .fi:focus { outline: none; border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
 .fi:disabled { background: #f4f7fc; color: #6b7280; }
 .fi-textarea { min-height: 110px; resize: vertical; }
+/* ── Calendar ── */
+.cal-wrap { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px; margin-bottom: 24px; max-width: 380px; }
+.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.cal-month-label { font-size: 16px; font-weight: 700; color: #0d1520; }
+.cal-nav { background: none; border: 1px solid #e2e8f0; border-radius: 8px; width: 32px; height: 32px; font-size: 20px; cursor: pointer; color: #4a5568; display: flex; align-items: center; justify-content: center; transition: background .15s; }
+.cal-nav:hover { background: #f7f7f7; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.cal-dow { font-size: 11px; font-weight: 700; color: #94a3b8; text-align: center; padding: 4px 0; text-transform: uppercase; }
+.cal-empty { } 
+.cal-day { background: none; border: 1px solid transparent; border-radius: 8px; padding: 8px 4px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a2030; text-align: center; transition: all .15s; }
+.cal-day:hover:not(:disabled) { background: #fef9e7; border-color: #F5C842; }
+.cal-day.cal-today { border-color: #F5C842; color: #92400e; }
+.cal-day.cal-selected { background: #F5C842; border-color: #F5C842; color: #0a0c14; font-weight: 800; }
+.cal-day.cal-past, .cal-day.cal-weekend { color: #cbd5e1; cursor: not-allowed; }
+.cal-day:disabled { cursor: not-allowed; }
+
+/* ── Time Slots ── */
+.slots-wrap { margin-bottom: 20px; }
+.slots-header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.slots-date-label { font-size: 15px; font-weight: 700; color: #0d1520; }
+.slots-loading { font-size: 13px; color: #94a3b8; }
+.slots-blocked { font-size: 13px; color: #ef4444; font-weight: 600; }
+.slots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.slot-btn { border-radius: 10px; padding: 10px 8px; font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid; display: flex; flex-direction: column; align-items: center; gap: 2px; transition: all .15s; }
+.slot-btn .slot-status { font-size: 10px; font-weight: 500; opacity: 0.75; }
+.slot-available { background: #f0fdf4; border-color: #86efac; color: #166534; }
+.slot-available:hover { background: #dcfce7; border-color: #4ade80; }
+.slot-selected { background: #F5C842; border-color: #F5C842; color: #0a0c14; }
+.slot-selected .slot-status { opacity: 1; font-weight: 700; }
+.slot-booked { background: #f8fafc; border-color: #e2e8f0; color: #94a3b8; cursor: not-allowed; }
+.slots-none { font-size: 13px; color: #ef4444; font-weight: 600; margin-top: 8px; }
+.slots-prompt { font-size: 13px; color: #94a3b8; font-style: italic; margin-bottom: 16px; }
+.slots-legend { display: flex; gap: 16px; margin-top: 14px; margin-bottom: 8px; }
+.leg-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #4a5568; }
+.leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.leg-avail { background: #86efac; }
+.leg-sel { background: #F5C842; }
+.leg-book { background: #e2e8f0; }
+
 .date-field-wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .date-fi { flex: 1; min-width: 160px; }
 .today-pill { display: inline-flex; align-items: center; gap: 5px; padding: 9px 16px; border-radius: 999px; background: #FEF9E7; border: 1.5px solid #F5C842; color: #92400e; font-size: .85rem; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background .15s; }
