@@ -781,7 +781,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .landing { position: relative; min-height: calc(100vh - 86px); display: flex; align-items: center; overflow: hidden; }
 .landing-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
 .landing-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.96) 0%, rgba(10,12,20,0.88) 45%, rgba(10,12,20,0.70) 100%); pointer-events: none; }
-.landing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 460px; gap: 56px; align-items: center; padding-top: 40px; padding-bottom: 40px; width: 100%; }
+.landing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 560px; gap: 48px; align-items: center; padding-top: 32px; padding-bottom: 32px; width: 100%; }
 /* LEFT brand */
 .landing-brand { color: #fff; }
 .lb-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F5C842; margin-bottom: 16px; }
@@ -800,7 +800,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .lb-stat-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
 /* RIGHT form panel */
 .landing-panel { }
-.landing-panel .form-wrap { border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.4); max-height: calc(100vh - 130px); overflow-y: auto; scrollbar-width: thin; }
+.landing-panel .form-wrap { border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.45); max-height: calc(100vh - 110px); overflow-y: auto; scrollbar-width: thin; }
 @media (max-width: 960px) {
   .landing { min-height: auto; }
   .landing-layout { grid-template-columns: 1fr; gap: 28px; }
@@ -851,7 +851,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 18px 40px 14px;
+  padding: 24px 40px 20px;
   background: #fff;
   border-bottom: 1px solid #e8edf4;
 }
@@ -918,7 +918,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .stepper-item.done .stepper-label { color: #22c55e; }
 
 /* FORM BODY */
-.edo-form { padding: 40px 40px 32px; display: flex; flex-direction: column; gap: 0; }
+.edo-form { padding: 36px 44px 32px; display: flex; flex-direction: column; gap: 0; }
 .form-step { display: flex; flex-direction: column; gap: 22px; }
 .step-title { font-size: 1.35rem; font-weight: 900; color: #1a1a2e; margin: 0 0 4px; }
 .step-desc { font-size: 0.93rem; color: #6b7280; margin: 0 0 8px; line-height: 1.6; }
