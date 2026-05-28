@@ -5,6 +5,7 @@
  * Events are sent to /api/track-form which forwards them to a configured webhook.
  *
  * Events fired:
+ *  - form_viewed       : page loaded (fires automatically, no interaction needed)
  *  - form_started      : first field interaction
  *  - step_completed    : user advances to the next step
  *  - form_abandoned    : user leaves the page mid-form (beforeunload / visibility)
@@ -12,6 +13,7 @@
  */
 
 export type FormTrackingEvent =
+  | 'form_viewed'
   | 'form_started'
   | 'step_completed'
   | 'form_abandoned'
@@ -166,6 +168,9 @@ export function useFormTracking(formName: 'mail-in' | 'express-drop-off', stepTi
     const stored = sessionStorage.getItem(`fivestar_tracking_${formName}`)
     sessionId.value = stored || generateSessionId()
     sessionStorage.setItem(`fivestar_tracking_${formName}`, sessionId.value)
+
+    // Fire form_viewed immediately — captures page loads before any interaction
+    sendEvent('form_viewed')
 
     window.addEventListener('beforeunload', fireAbandonment)
 
