@@ -330,30 +330,31 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <!-- PAGE HEADER STRIP — minimal, just branding -->
-    <!-- COMPACT HEADER: title + bullets on 2-3 lines -->
-    <section class="edo-header">
-      <div class="edo-header-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
-      <div class="edo-header-overlay"></div>
-      <div class="container edo-header-inner">
-        <div class="edo-header-top">
-          <div class="edo-header-proof"><span class="edo-stars">★★★★★</span><span class="edo-rating">4.9 · 498 Online Reviews</span></div>
-          <h1 class="edo-header-title">Same-Day Express Drop-Off — <span class="edo-title-gold">Schedule Your Arrival</span></h1>
-        </div>
-        <div class="edo-header-bullets">
-          <span class="edo-bullet">⚡ Same-day appointments available</span>
-          <span class="edo-sep">·</span>
-          <span class="edo-bullet">🗓️ Pick your 30-min arrival window</span>
-          <span class="edo-sep">·</span>
-          <span class="edo-bullet">🛡️ No data recovered = no charge</span>
-          <span class="edo-sep">·</span>
-          <span class="edo-bullet">🧪 ISO Class 5 clean room on-site</span>
-        </div>
-      </div>
-    </section>
+    <!-- HERO — headline + badges + form, all inside the dark section -->
+    <section class="edo-hero">
+      <div class="edo-hero-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
+      <div class="edo-hero-overlay"></div>
+      <div class="container edo-hero-inner">
 
-    <!-- FULL-WIDTH FORM -->
-    <section class="edo-form-section">
-      <div class="container">
+        <!-- Stars + big headline -->
+        <div class="edo-proof-row">
+          <span class="edo-stars">★★★★★</span>
+          <span class="edo-rating">4.9 · 498 Online Reviews</span>
+        </div>
+        <h1 class="edo-title">Same-Day Express Drop-Off — <span class="edo-gold">Schedule Your Arrival</span></h1>
+
+        <!-- Badges in one row with separators -->
+        <div class="edo-badges-row">
+          <span class="edo-bdg">⚡ Same-day appointments available</span>
+          <span class="edo-bsep"></span>
+          <span class="edo-bdg">🗓️ 30-minute arrival window</span>
+          <span class="edo-bsep"></span>
+          <span class="edo-bdg">🛡️ No data recovered = no charge</span>
+          <span class="edo-bsep"></span>
+          <span class="edo-bdg">🧪 ISO Class 5 clean room</span>
+        </div>
+
+        <!-- Form card — inside the hero -->
         <div class="form-wrap">
 
           <!-- Success / Confirmation screen -->
@@ -702,8 +703,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </form>
           </template>
         </div><!-- /.form-wrap -->
+
       </div>
-    </section><!-- /.edo-form-section -->
+    </section><!-- /.edo-hero -->
 
     <!-- PROCESS SECTION -->
     <section class="process-section">
@@ -764,22 +766,22 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* ── FORM SECTION ── */
 /* ── Compact Form Hero ── */
 /* ── Page header strip — super compact ── */
-/* ═══ COMPACT HEADER ═══ */
-.edo-header { position: relative; overflow: hidden; }
-.edo-header-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
-.edo-header-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.92) 60%, rgba(10,12,20,0.78) 100%); pointer-events: none; }
-.edo-header-inner { position: relative; z-index: 1; padding-top: 22px; padding-bottom: 22px; display: flex; flex-direction: column; gap: 12px; }
-.edo-header-top { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
-.edo-header-proof { display: flex; align-items: center; gap: 7px; flex-shrink: 0; }
-.edo-stars { color: #F5C842; font-size: 13px; }
-.edo-rating { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); white-space: nowrap; }
-.edo-header-title { font-family: "Montserrat", sans-serif; font-size: clamp(18px, 2.5vw, 30px); font-weight: 800; color: #fff; line-height: 1.2; margin: 0; }
-.edo-title-gold { color: #F5C842; }
-.edo-header-bullets { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 0; }
-.edo-bullet { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.8); }
-.edo-sep { font-size: 13px; color: rgba(255,255,255,0.25); margin: 0 12px; }
-/* ═══ FULL-WIDTH FORM ═══ */
-.edo-form-section { background: #f4f7fc; padding: 24px 0 80px; }
+/* ═══ HERO — V3 style ═══ */
+.edo-hero { position: relative; overflow: hidden; }
+.edo-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.edo-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.93) 55%, rgba(10,12,20,0.80) 100%); pointer-events: none; }
+.edo-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 18px; padding-top: 40px; padding-bottom: 40px; }
+/* Stars + rating */
+.edo-proof-row { display: flex; align-items: center; gap: 10px; }
+.edo-stars { color: #F5C842; font-size: 17px; letter-spacing: 2px; }
+.edo-rating { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); }
+/* Big headline — same scale as Start Recovery V3 */
+.edo-title { font-family: "Montserrat", sans-serif; font-size: clamp(28px, 4vw, 52px); font-weight: 800; color: #fff; line-height: 1.1; max-width: 900px; }
+.edo-gold { color: #F5C842; }
+/* Badges row */
+.edo-badges-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 8px; }
+.edo-bdg { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.82); padding: 0 20px 0 0; }
+.edo-bsep { width: 1px; height: 16px; background: rgba(255,255,255,0.2); margin-right: 20px; flex-shrink: 0; }
 /* Keep old classes for backward compat */
 .form-hero-title {
   font-family: 'Montserrat', sans-serif;
@@ -814,7 +816,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   margin: 0 auto;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.09);
+  box-shadow: 0 20px 64px rgba(0,0,0,0.35);
   overflow: hidden;
 }
 
