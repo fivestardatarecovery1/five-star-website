@@ -69,6 +69,9 @@ const trustBadges = [
 const step = ref(1)
 const totalSteps = 5
 const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Service Options', 'Shipping & Submit']
+
+// Form abandonment & funnel tracking
+const { onFieldFocus, onFieldBlur, onStepComplete, onStepBack, onFormSubmitted } = useFormTracking('mail-in', stepTitles)
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
@@ -124,9 +127,20 @@ function err(msg: string): false { stepError.value = msg; return false }
 
 function nextStep() {
   if (!validateStep()) return
-  if (step.value < totalSteps) { step.value++; scrollToForm() }
+  if (step.value < totalSteps) {
+    onStepComplete(step.value)
+    step.value++
+    scrollToForm()
+  }
 }
-function prevStep() { if (step.value > 1) { step.value--; stepError.value = ''; scrollToForm() } }
+function prevStep() {
+  if (step.value > 1) {
+    step.value--
+    onStepBack(step.value)
+    stepError.value = ''
+    scrollToForm()
+  }
+}
 
 async function submitForm() {
   if (!form.streetAddress.trim()) { submitError.value = 'Please enter your street address.'; return }
@@ -150,6 +164,7 @@ async function submitForm() {
     labelError.value = res.labelError || ''
     packingSlipBase64.value = res.packingSlipBase64 || ''
     submitted.value = true
+    onFormSubmitted()
   } catch (e) {
     submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
   } finally {
@@ -298,12 +313,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <h3 class="step-title">Let's start with your contact info</h3>
                 <p class="step-desc">We'll send your prepaid shipping label to this email address.</p>
                 <div class="form-grid-2">
-                  <div class="fg"><label class="fl">First Name <span class="req">*</span></label><input type="text" class="fi" v-model="form.firstName" placeholder="John" /></div>
-                  <div class="fg"><label class="fl">Last Name <span class="req">*</span></label><input type="text" class="fi" v-model="form.lastName" placeholder="Smith" /></div>
+                  <div class="fg"><label class="fl">First Name <span class="req">*</span></label><input type="text" class="fi" v-model="form.firstName" placeholder="John" @focus="onFieldFocus('firstName')" @blur="onFieldBlur('firstName', form.firstName)" /></div>
+                  <div class="fg"><label class="fl">Last Name <span class="req">*</span></label><input type="text" class="fi" v-model="form.lastName" placeholder="Smith" @focus="onFieldFocus('lastName')" @blur="onFieldBlur('lastName', form.lastName)" /></div>
                 </div>
                 <div class="form-grid-2">
-                  <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" class="fi" v-model="form.email" placeholder="john@example.com" /></div>
-                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" /></div>
+                  <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" class="fi" v-model="form.email" placeholder="john@example.com" @focus="onFieldFocus('email')" @blur="onFieldBlur('email', form.email)" /></div>
+                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
                 </div>
               </div>
 
@@ -314,7 +329,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Drive Manufacturer <span class="req">*</span></label>
-                    <select class="fi" v-model="form.manufacturer">
+                    <select class="fi" v-model="form.manufacturer" @focus="onFieldFocus('manufacturer')" @blur="onFieldBlur('manufacturer', form.manufacturer)">
                       <option value="">Select manufacturer</option>
                       <option>Western Digital</option><option>Toshiba</option><option>Hitachi</option>
                       <option>Samsung</option><option>Seagate</option><option>Maxtor</option>
@@ -323,7 +338,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Type of Drive <span class="req">*</span></label>
-                    <select class="fi" v-model="form.driveType">
+                    <select class="fi" v-model="form.driveType" @focus="onFieldFocus('driveType')" @blur="onFieldBlur('driveType', form.driveType)">
                       <option value="">Select type</option>
                       <option>Laptop Drive</option><option>External Hard Drive</option>
                       <option>Solid State Drive</option><option>Other</option><option>I'm Not Sure</option>
@@ -333,17 +348,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Drive Format <span class="req">*</span></label>
-                    <select class="fi" v-model="form.driveFormat">
+                    <select class="fi" v-model="form.driveFormat" @focus="onFieldFocus('driveFormat')" @blur="onFieldBlur('driveFormat', form.driveFormat)">
                       <option value="">Select format</option>
                       <option>Macintosh</option><option>Windows</option><option>Mac &amp; Windows</option>
                       <option>Linux</option><option>I'm Not Sure</option>
                     </select>
                   </div>
-                  <div class="fg"><label class="fl">Drive Size <span class="req">*</span></label><input type="text" class="fi" v-model="form.driveSize" placeholder="e.g. 1TB, 500GB" /></div>
+                  <div class="fg"><label class="fl">Drive Size <span class="req">*</span></label><input type="text" class="fi" v-model="form.driveSize" placeholder="e.g. 1TB, 500GB" @focus="onFieldFocus('driveSize')" @blur="onFieldBlur('driveSize', form.driveSize)" /></div>
                 </div>
                 <div class="fg">
                   <label class="fl">Issue <span class="req">*</span></label>
-                  <select class="fi" v-model="form.issue">
+                  <select class="fi" v-model="form.issue" @focus="onFieldFocus('issue')" @blur="onFieldBlur('issue', form.issue)">
                     <option value="">Select issue</option>
                     <option>Bad Sectors</option>
                     <option>Deleted Files (Surcharge $200.00 Non Refundable).</option>
@@ -383,7 +398,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="fg">
                   <label class="fl">Additional Information</label>
-                  <textarea class="fi fi-textarea" v-model="form.additionalInfo" placeholder="Please provide any additional information about the issue with the drive."></textarea>
+                  <textarea class="fi fi-textarea" v-model="form.additionalInfo" placeholder="Please provide any additional information about the issue with the drive." @focus="onFieldFocus('additionalInfo')" @blur="onFieldBlur('additionalInfo', form.additionalInfo)"></textarea>
                 </div>
               </div>
 

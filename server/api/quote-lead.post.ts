@@ -20,11 +20,11 @@ export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const resend = new Resend(process.env.RESEND_API_KEY || '')
 
-  const { session_id, name, email, phone, preferredContact, type, device, device_label, issue, price, urgency, capacity, add_ons, call_required } = body
+  const { session_id, name, email, phone, preferredContact, type, device, device_label, issue, price, urgency, capacity, add_ons, call_required, source_page } = body
 
   // ── Post to MC (non-blocking, fire and forget) ──────────────────────────
   if (type === 'view') {
-    await postToMC('view', {})
+    await postToMC('view', { source_page: source_page || null })
     return { success: true }
   }
 
@@ -33,6 +33,7 @@ export default defineEventHandler(async (event) => {
       session_id: session_id || email || name,
       name, email, phone,
       preferred_contact: preferredContact,
+      source_page: source_page || null,
     })
     // Don't send email for lead-start — only send email on completion
     return { success: true }
@@ -51,6 +52,7 @@ export default defineEventHandler(async (event) => {
       price: price || null,
       add_ons: add_ons || null,
       call_required: call_required || type === 'call',
+      source_page: source_page || null,
     })
   }
 

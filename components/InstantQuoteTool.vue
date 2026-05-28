@@ -3,13 +3,15 @@ const props = defineProps<{ light?: boolean, compact?: boolean }>()
 
 // Generate a stable session ID for this quote session (persists across steps)
 const sessionId = ref('')
+const sourcePage = ref('')
 if (import.meta.client) {
   sessionId.value = crypto.randomUUID()
+  sourcePage.value = window.location.pathname
   // Track page view
   fetch('/api/quote-lead', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type: 'view' }),
+    body: JSON.stringify({ type: 'view', source_page: window.location.pathname }),
   }).catch(() => {})
 }
 
@@ -65,7 +67,7 @@ async function submitContact() {
     fetch('/api/quote-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: 'lead', session_id: sessionId.value, ...contact }),
+      body: JSON.stringify({ type: 'lead', session_id: sessionId.value, source_page: sourcePage.value, ...contact }),
     }).catch(() => {})
   }
   goTo('device')
@@ -324,6 +326,7 @@ function pickDevice(id: string) {
           device: id,
           device_label: callLabel,
           call_required: true,
+          source_page: sourcePage.value,
         }),
       }).catch(() => {})
     }
@@ -423,6 +426,7 @@ function pickUrgency(id: string) {
           issue: quote.value.issueLabel,
           urgency: quote.value.urgencyLabel,
           price: quote.value.total,
+          source_page: sourcePage.value,
         }),
       }).catch(() => {})
     })
