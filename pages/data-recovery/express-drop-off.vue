@@ -168,21 +168,21 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">First Name <span class="req">*</span></label>
-                    <input type="text" class="fi" placeholder="John" required />
+                    <input type="text" class="fi" v-model="form.firstName" placeholder="John" required />
                   </div>
                   <div class="fg">
                     <label class="fl">Last Name <span class="req">*</span></label>
-                    <input type="text" class="fi" placeholder="Smith" required />
+                    <input type="text" class="fi" v-model="form.lastName" placeholder="Smith" required />
                   </div>
                 </div>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Email Address <span class="req">*</span></label>
-                    <input type="email" class="fi" placeholder="john@example.com" required />
+                    <input type="email" class="fi" v-model="form.email" placeholder="john@example.com" required />
                   </div>
                   <div class="fg">
                     <label class="fl">Phone <span class="req">*</span></label>
-                    <input type="tel" class="fi" placeholder="(555) 000-0000" required />
+                    <input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" required />
                   </div>
                 </div>
               </div>
@@ -194,7 +194,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Drive Manufacturer <span class="req">*</span></label>
-                    <select class="fi" required>
+                    <select class="fi" v-model="form.manufacturer" required>
                       <option value="">Select manufacturer</option>
                       <option>Western Digital</option>
                       <option>Toshiba</option>
@@ -210,13 +210,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Model No <span class="req">*</span></label>
-                    <input type="text" class="fi" placeholder="e.g. WD10EZEX" required />
+                    <input type="text" class="fi" v-model="form.modelNo" placeholder="e.g. WD10EZEX" required />
                   </div>
                 </div>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Type of Drive <span class="req">*</span></label>
-                    <select class="fi" required>
+                    <select class="fi" v-model="form.driveType" required>
                       <option value="">Select type</option>
                       <option>Laptop Drive</option>
                       <option>External Hard Drive</option>
@@ -227,7 +227,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Drive Format <span class="req">*</span></label>
-                    <select class="fi" required>
+                    <select class="fi" v-model="form.driveFormat" required>
                       <option value="">Select format</option>
                       <option>Macintosh</option>
                       <option>Windows</option>
@@ -240,7 +240,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Drive Size <span class="req">*</span></label>
-                    <input type="text" class="fi" placeholder="e.g. 1TB, 500GB" required />
+                    <input type="text" class="fi" v-model="form.driveSize" placeholder="e.g. 1TB, 500GB" required />
                   </div>
                   <div class="fg">
                     <label class="fl">Drop Off Location <span class="req">*</span></label>
@@ -255,29 +255,29 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <p class="step-desc">The more detail you share, the faster we can diagnose your device.</p>
                 <div class="fg">
                   <label class="fl">Describe the Issue <span class="req">*</span></label>
-                  <textarea class="fi fi-textarea" placeholder="e.g. Drive is clicking, not recognized, dropped, won't power on..." required></textarea>
+                  <textarea class="fi fi-textarea" v-model="form.issue" placeholder="e.g. Drive is clicking, not recognized, dropped, won't power on..." required></textarea>
                 </div>
                 <div class="fg">
                   <label class="fl">Type of data to recover <span class="req">*</span></label>
                   <div class="check-group">
-                    <label class="ci"><input type="checkbox" /> Photos, Documents, Music, Movies, Downloads, Desktop</label>
-                    <label class="ci"><input type="checkbox" /> All files on the hard drive (this process may take an extra 24-72 hours to recover).</label>
-                    <label class="ci"><input type="checkbox" /> Other, please contact me.</label>
+                    <label class="ci"><input type="checkbox" v-model="form.dataTypes" value="Photos, Documents, Music, Movies, Downloads, Desktop" /> Photos, Documents, Music, Movies, Downloads, Desktop</label>
+                    <label class="ci"><input type="checkbox" v-model="form.dataTypes" value="All files on the hard drive (extra 24-72 hours)." /> All files on the hard drive (this process may take an extra 24-72 hours to recover).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.dataTypes" value="Other, please contact me." /> Other, please contact me.</label>
                   </div>
                 </div>
                 <div class="fg">
                   <label class="fl">Has recovery been attempted before? <span class="req">*</span></label>
                   <div class="radio-group">
-                    <label class="ci"><input type="radio" name="attempted" /> No, this is our first attempt to recover the data.</label>
-                    <label class="ci"><input type="radio" name="attempted" /> Yes, another company attempted and was unsuccessful.</label>
-                    <label class="ci"><input type="radio" name="attempted" /> Yes, another company attempted and recommended a clean room repair.</label>
-                    <label class="ci"><input type="radio" name="attempted" /> Yes, drive cover has been opened ($200.00 fee Non Refundable).</label>
-                    <label class="ci"><input type="radio" name="attempted" /> Other</label>
+                    <label class="ci"><input type="radio" name="attempted" v-model="form.recoveryAttempted" value="No, this is our first attempt." /> No, this is our first attempt to recover the data.</label>
+                    <label class="ci"><input type="radio" name="attempted" v-model="form.recoveryAttempted" value="Yes, another company attempted and was unsuccessful." /> Yes, another company attempted and was unsuccessful.</label>
+                    <label class="ci"><input type="radio" name="attempted" v-model="form.recoveryAttempted" value="Yes, another company attempted and recommended a clean room repair." /> Yes, another company attempted and recommended a clean room repair.</label>
+                    <label class="ci"><input type="radio" name="attempted" v-model="form.recoveryAttempted" value="Yes, drive cover has been opened ($200 fee)." /> Yes, drive cover has been opened ($200.00 fee Non Refundable).</label>
+                    <label class="ci"><input type="radio" name="attempted" v-model="form.recoveryAttempted" value="Other" /> Other</label>
                   </div>
                 </div>
                 <div class="fg">
                   <label class="fl">Additional Information</label>
-                  <textarea class="fi fi-textarea" placeholder="Please provide any additional information about the issue with the drive."></textarea>
+                  <textarea class="fi fi-textarea" v-model="form.additionalInfo" placeholder="Please provide any additional information about the issue with the drive."></textarea>
                 </div>
               </div>
 
@@ -290,14 +290,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   <label class="fl">Expedited Service <span class="req">*</span></label>
                   <div class="service-cards">
                     <label class="service-card">
-                      <input type="radio" name="expedited" />
+                      <input type="radio" name="expedited" v-model="form.expeditedService" value="Standard Service" />
                       <div class="sc-body">
                         <strong>Standard Service</strong>
                         <span>Turnaround time is 3–5 business days.</span>
                       </div>
                     </label>
                     <label class="service-card">
-                      <input type="radio" name="expedited" />
+                      <input type="radio" name="expedited" v-model="form.expeditedService" value="Expedited Service" />
                       <div class="sc-body">
                         <div class="sc-top"><strong>Expedited Service</strong> <span class="sc-badge">$200 upfront</span></div>
                         <span>We start immediately and won't stop until data is recovered.</span>
@@ -309,8 +309,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="fg">
                   <label class="fl">Transfer Drive <span class="req">*</span></label>
                   <div class="radio-group">
-                    <label class="ci"><input type="radio" name="transfer" /> I will provide my own transfer drive (please make sure drive is formatted and there is no other data on it).</label>
-                    <label class="ci"><input type="radio" name="transfer" /> I will purchase a transfer drive from Five Star Data Recovery.</label>
+                    <label class="ci"><input type="radio" name="transfer" v-model="form.transferDrive" value="I will provide my own transfer drive." /> I will provide my own transfer drive (please make sure drive is formatted and there is no other data on it).</label>
+                    <label class="ci"><input type="radio" name="transfer" v-model="form.transferDrive" value="I will purchase a transfer drive from Five Star Data Recovery." /> I will purchase a transfer drive from Five Star Data Recovery.</label>
                   </div>
                 </div>
 
@@ -319,7 +319,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   <p class="field-note">These fees are rare and typically apply to a very small number of drives. If you are unsure of anything, don't worry — we will inspect the drive and let you know before proceeding.</p>
                   <div class="check-group">
                     <label class="ci"><input type="checkbox" /> My hard drive is still inside a computer (may be a $200.00 removal fee).</label>
-                    <label class="ci"><input type="checkbox" /> My hard drive is encrypted ($200.00 fee only if recovery is successful).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Encrypted ($200 fee if recovery successful)." /> My hard drive is encrypted ($200.00 fee only if recovery is successful).</label>
                     <label class="ci"><input type="checkbox" /> My hard drive is part of a RAID (Flat Rate Recovery fee of $300.00 per drive)</label>
                     <label class="ci"><input type="checkbox" /> My hard drive is larger than 2TB ($200.00 additional fee if recovery is successful).</label>
                     <label class="ci"><input type="checkbox" /> My hard drive is larger than 8TB ($200.00 additional fee if recovery is successful).</label>
@@ -336,7 +336,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">Preferred Drop Off Date <span class="req">*</span></label>
-                    <input type="date" class="fi" required />
+                    <input type="date" class="fi" v-model="form.dropOffDate" required />
                   </div>
                   <div class="fg">
                     <label class="fl">Preferred Drop Off Time <span class="req">*</span></label>
@@ -349,10 +349,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="fg">
                   <label class="fl">Today's Date <span class="req">*</span></label>
-                  <input type="date" class="fi" required />
+                  <input type="date" class="fi" v-model="form.todayDate" required />
                 </div>
                 <div class="fg">
-                  <label class="ci terms-line"><input type="checkbox" required />
+                  <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" required />
                     Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
                   </label>
                 </div>
