@@ -73,9 +73,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
             <p class="v3-card-desc">Fill out our quick form ahead of time, drop off your device, and go. We handle everything from there — same-day diagnostic report included.</p>
             <div class="v3-card-perks">
-              <span>⚡ Fastest option</span>
-              <span>🕐 Same-day diagnosis</span>
-              <span>📋 No appointment needed</span>
+              <span>⚡ Same-day appointments available</span>
+              <span>📋 Form required — selects your date &amp; 30-min window</span>
+              <span>🕐 Appointment-only drop-off via this form</span>
             </div>
             <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-gold">
               Express Drop-Off Form →
@@ -93,9 +93,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
             <p class="v3-card-desc">We send you a free prepaid shipping label — your device arrives at our lab in 1–2 days and we get straight to work.</p>
             <div class="v3-card-perks">
-              <span>🚚 Free round-trip shipping</span>
-              <span>📋 Prepaid label provided</span>
-              <span>🌎 All 50 states</span>
+              <span>🚚 Free round-trip shipping — all 50 states</span>
+              <span>📋 Prepaid label provided immediately</span>
+              <span>⚡ Expedited service available upon request</span>
             </div>
             <NuxtLink to="/data-recovery/mail-in-service" class="v3-btn v3-btn-outline">
               Start Mail-In Recovery →
@@ -209,8 +209,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 32px;
+  padding-bottom: 40px;
 }
 
 /* ROW 1: headline */
