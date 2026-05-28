@@ -698,7 +698,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 /* FAQ */
 .faq-section { background: #f4f7fc; padding: 80px 0; }
-.faq-wrap { max-width: 760px; margin: 0 auto; }
+.faq-wrap { max-width: 100%; }
 .faq-row { border-bottom: 1px solid #e2e8f0; }
 .faq-row:first-child { border-top: 1px solid #e2e8f0; }
 .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; background: none; border: none; font-family: inherit; font-size: 0.97rem; font-weight: 700; color: #1a1a2e; text-align: left; cursor: pointer; }
