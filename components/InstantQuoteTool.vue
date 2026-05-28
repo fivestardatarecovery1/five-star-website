@@ -1342,7 +1342,7 @@ const progressIndex = computed(() => {
   flex: 1;
   overflow-y: auto;
   min-height: 0;
-  padding: 20px 22px 16px;
+  padding: 18px 16px 14px;
   scrollbar-width: thin;
   scrollbar-color: #e2e8f0 transparent;
   background: #fff;
