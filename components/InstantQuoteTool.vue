@@ -26,6 +26,35 @@ const contact = reactive({
 })
 const contactError = ref('')
 
+function saveAndGoToRecovery() {
+  if (!import.meta.client) return
+  const nameParts = contact.name.trim().split(' ')
+  const firstName = nameParts[0] || ''
+  const lastName = nameParts.slice(1).join(' ') || ''
+  const q = quote.value
+  const payload = {
+    firstName,
+    lastName,
+    email: contact.email,
+    phone: contact.phone,
+    preferredContact: contact.preferredContact,
+    // Drive details from quote
+    driveType: q?.deviceLabel || '',
+    issue: q?.issueLabel || '',
+    driveSize: q?.capacityLabel || '',
+    expeditedService: sel.urgency === 'expedited' || sel.urgency === 'expedited-plus'
+      ? 'Yes, please sign me up for Expedited Service ($200.00 to be paid upfront and non-refundable)'
+      : 'Standard Service is okay. Turnaround time for standard service is 3-5 business days.',
+    // Quote summary
+    quoteTotal: q?.total,
+    quoteDevice: q?.deviceLabel,
+    quoteIssue: q?.issueLabel,
+    quoteUrgency: q?.urgencyLabel,
+  }
+  localStorage.setItem('fivestar_quote_prefill', JSON.stringify(payload))
+  window.location.href = '/start-recovery'
+}
+
 async function submitContact() {
   contactError.value = ''
   if (!contact.name.trim()) { contactError.value = 'Please enter your name.'; return }
@@ -1092,7 +1121,7 @@ const progressIndex = computed(() => {
         </div>
 
         <div class="iqt-cta-row">
-          <a href="/start-recovery" class="iqt-cta-primary">Start My Recovery →</a>
+          <a href="/start-recovery" class="iqt-cta-primary" @click.prevent="saveAndGoToRecovery">Start My Recovery →</a>
           <a href="tel:+18182728866" class="iqt-cta-call">📞 818-272-8866</a>
         </div>
         <button class="iqt-restart" @click="reset">← Start Over</button>

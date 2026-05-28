@@ -153,6 +153,27 @@ const faqs = [
   { q: 'Where can I access the Express Drop-Off Form?', a: 'You can access and complete the form directly on our Express Drop-Off page. Once submitted, our team will be ready to assist you when you arrive during normal business hours.' },
 ]
 
+// Pre-fill from quote tool
+onMounted(() => {
+  if (!import.meta.client) return
+  const raw = localStorage.getItem('fivestar_quote_prefill')
+  if (!raw) return
+  try {
+    const p = JSON.parse(raw)
+    if (p.firstName) form.firstName = p.firstName
+    if (p.lastName) form.lastName = p.lastName
+    if (p.email) form.email = p.email
+    if (p.phone) form.phone = p.phone
+    if (p.driveSize) form.driveSize = p.driveSize
+    if (p.expeditedService) form.expeditedService = p.expeditedService
+    // Show a prefill banner
+    prefillActive.value = true
+    localStorage.removeItem('fivestar_quote_prefill')
+  } catch {}
+})
+
+const prefillActive = ref(false)
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -204,6 +225,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <div class="stepper-track">
                 <div class="stepper-fill" :style="{ width: ((step - 1) / (totalSteps - 1) * 100) + '%' }"></div>
               </div>
+            </div>
+
+            <div v-if="prefillActive" class="prefill-banner">
+              ✅ We've pre-filled your info from your instant quote. Just review and submit!
             </div>
 
             <form class="edo-form" @submit.prevent="submitForm" novalidate>
@@ -657,6 +682,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   transition: background 0.2s;
 }
 .btn-next:hover { background: #e0b43a; }
+
+/* PREFILL BANNER */
+.prefill-banner {
+  background: #f0fdf4;
+  border: 1.5px solid #22c55e;
+  color: #15803d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
 
 /* STEP ERROR */
 .step-error {

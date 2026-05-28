@@ -178,6 +178,26 @@ const faqs = [
   { q: 'Where can I find the Mail-In Recovery Form?', a: "You can access and complete the form directly on our Mail-In Form page. Make sure to print a copy and include it in your package for fast intake and identification." },
 ]
 
+// Pre-fill from quote tool
+onMounted(() => {
+  if (!import.meta.client) return
+  const raw = localStorage.getItem('fivestar_quote_prefill')
+  if (!raw) return
+  try {
+    const p = JSON.parse(raw)
+    if (p.firstName) form.firstName = p.firstName
+    if (p.lastName) form.lastName = p.lastName
+    if (p.email) form.email = p.email
+    if (p.phone) form.phone = p.phone
+    if (p.driveSize) form.driveSize = p.driveSize
+    if (p.expeditedService) form.expeditedService = p.expeditedService
+    prefillActive.value = true
+    localStorage.removeItem('fivestar_quote_prefill')
+  } catch {}
+})
+
+const prefillActive = ref(false)
+
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -265,6 +285,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <div class="stepper-track">
                 <div class="stepper-fill" :style="{ width: ((step - 1) / (totalSteps - 1) * 100) + '%' }"></div>
               </div>
+            </div>
+
+            <div v-if="prefillActive" class="prefill-banner">
+              ✅ We've pre-filled your info from your instant quote. Just review and submit!
             </div>
 
             <form class="edo-form" @submit.prevent="submitForm" novalidate>
@@ -559,6 +583,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .sc-body span { font-size: 0.85rem; color: #6b7280; line-height: 1.5; }
 .sc-top { display: flex; align-items: center; gap: 10px; }
 .sc-badge { background: #F5C842; color: #1a1a2e; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 20px; }
+.prefill-banner {
+  background: #f0fdf4;
+  border: 1.5px solid #22c55e;
+  color: #15803d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
 .step-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; font-weight: 600; margin-top: 20px; }
 .form-nav { display: flex; align-items: center; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8edf4; }
 .step-count { font-size: 0.82rem; color: #9ca3af; font-weight: 600; }

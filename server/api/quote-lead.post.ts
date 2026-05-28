@@ -24,12 +24,12 @@ export default defineEventHandler(async (event) => {
 
   // ── Post to MC (non-blocking, fire and forget) ──────────────────────────
   if (type === 'view') {
-    postToMC('view', {})
+    await postToMC('view', {})
     return { success: true }
   }
 
   if (type === 'lead') {
-    postToMC('lead', {
+    await postToMC('lead', {
       session_id: session_id || email || name,
       name, email, phone,
       preferred_contact: preferredContact,
@@ -39,7 +39,7 @@ export default defineEventHandler(async (event) => {
   }
 
   if (type === 'result' || type === 'call') {
-    postToMC('complete', {
+    await postToMC('complete', {
       session_id: session_id || email || name,
       name, email, phone,
       preferred_contact: preferredContact,
