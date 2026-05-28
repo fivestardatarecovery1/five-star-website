@@ -9,11 +9,13 @@ interface Review {
 interface Props {
   reviews: Review[]
   bgClass?: string
+  showHeader?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   bgClass: 'section-bg-2',
-  reviews: () => []
+  reviews: () => [],
+  showHeader: true
 })
 
 const index = ref(0)
@@ -31,7 +33,7 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
 <template>
   <section :class="['reviews-section-shared', bgClass]">
     <div class="container">
-      <div class="section-header">
+      <div v-if="props.showHeader" class="section-header">
         <h2 class="reviews-main-title">Reviews from Satisfied Clients</h2>
         <p class="reviews-sub">Don't take our word for it. Here's what our clients have to say about their experience with Five Star Data Recovery.</p>
       </div>
