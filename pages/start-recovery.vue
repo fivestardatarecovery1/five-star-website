@@ -461,7 +461,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   background-size: cover;
   background-position: center;
   z-index: 0;
-  opacity: 0.1;
+  opacity: 0.35;
 }
 .sr-option-overlay { display: none; }
 .sr-option-content {
