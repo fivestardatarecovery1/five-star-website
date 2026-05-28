@@ -1301,7 +1301,7 @@ const progressIndex = computed(() => {
 
 .iqt-compact {
   padding: 20px 20px 16px;
-  height: 440px;
+  height: 540px;
   display: flex;
   flex-direction: column;
 }
