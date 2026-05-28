@@ -39,69 +39,70 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
       <div class="container v3-hero-inner">
 
-        <!-- LEFT: compact brand -->
-        <div class="v3-brand">
+        <!-- ROW 1: Stars + Full-width headline -->
+        <div class="v3-header">
           <div class="v3-social-proof">
             <span class="v3-stars">★★★★★</span>
-            <span class="v3-rating">4.9 · 498 Reviews</span>
+            <span class="v3-rating">4.9 · 498 Google Reviews</span>
           </div>
-          <h1 class="v3-title">Get Your Data Back<br><span class="v3-gold">Fast &amp; Risk-Free</span></h1>
-          <p class="v3-sub">Free diagnosis. No upfront cost.<br>No recovery = no charge.</p>
-          <div class="v3-badges">
-            <div class="v3-badge">🧪 Clean Room On-Site</div>
-            <div class="v3-badge">🚚 Free Nationwide Shipping</div>
-            <div class="v3-badge">⏰ Available 24/7/365</div>
-            <div class="v3-badge">🏆 10+ Years in Business</div>
-          </div>
-          <a href="tel:8182728866" class="v3-phone">
-            <span class="v3-phone-icon">📞</span>
-            <span class="v3-phone-text">
-              <span class="v3-phone-label">Call Us Anytime, 24/7</span>
-              <span class="v3-phone-number">818-272-8866</span>
-            </span>
-          </a>
+          <h1 class="v3-title">Get Your Data Back <span class="v3-gold">Fast &amp; Risk-Free</span></h1>
         </div>
 
-        <!-- CARD 1: Express Drop-Off -->
-        <div class="v3-card v3-card-local">
-          <div class="v3-card-top">
-            <span class="v3-card-emoji">🏪</span>
-            <div>
-              <p class="v3-card-tag">LOCAL — GLENDALE, CA</p>
-              <h3 class="v3-card-title">Express Drop-Off</h3>
+        <!-- ROW 2: Badges in one horizontal line -->
+        <div class="v3-badges">
+          <div class="v3-badge">🧪 Clean Room On-Site</div>
+          <div class="v3-badge-sep"></div>
+          <div class="v3-badge">🚚 Free Nationwide Shipping</div>
+          <div class="v3-badge-sep"></div>
+          <div class="v3-badge">⏰ Available 24/7/365</div>
+          <div class="v3-badge-sep"></div>
+          <div class="v3-badge">🏆 10+ Years in Business</div>
+        </div>
+
+        <!-- ROW 3: Two big cards side by side -->
+        <div class="v3-cards">
+
+          <!-- Card 1: Express Drop-Off -->
+          <div class="v3-card v3-card-local">
+            <div class="v3-card-top">
+              <span class="v3-card-emoji">🏪</span>
+              <div>
+                <p class="v3-card-tag">LOCAL — GLENDALE, CA</p>
+                <h3 class="v3-card-title">Express Drop-Off</h3>
+              </div>
             </div>
-          </div>
-          <p class="v3-card-desc">Fill out our quick form ahead of time, drop off your device, and go. Same-day diagnostic report included.</p>
-          <div class="v3-card-perks">
-            <span>⚡ Fastest option</span>
-            <span>🕐 Same-day diagnosis</span>
-            <span>📋 No appointment needed</span>
-          </div>
-          <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-gold">
-            Express Drop-Off Form →
-          </NuxtLink>
-        </div>
-
-        <!-- CARD 2: Mail-In -->
-        <div class="v3-card v3-card-mail">
-          <div class="v3-card-top">
-            <span class="v3-card-emoji">📦</span>
-            <div>
-              <p class="v3-card-tag">ANYWHERE IN THE US</p>
-              <h3 class="v3-card-title">Mail-In Service</h3>
+            <p class="v3-card-desc">Fill out our quick form ahead of time, drop off your device, and go. We handle everything from there — same-day diagnostic report included.</p>
+            <div class="v3-card-perks">
+              <span>⚡ Fastest option</span>
+              <span>🕐 Same-day diagnosis</span>
+              <span>📋 No appointment needed</span>
             </div>
+            <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-gold">
+              Express Drop-Off Form →
+            </NuxtLink>
           </div>
-          <p class="v3-card-desc">We send you a free prepaid shipping label — your device arrives in 1–2 days and we get straight to work.</p>
-          <div class="v3-card-perks">
-            <span>🚚 Free round-trip shipping</span>
-            <span>📋 Prepaid label provided</span>
-            <span>🌎 All 50 states</span>
-          </div>
-          <NuxtLink to="/data-recovery/mail-in-service" class="v3-btn v3-btn-outline">
-            Start Mail-In Recovery →
-          </NuxtLink>
-        </div>
 
+          <!-- Card 2: Mail-In -->
+          <div class="v3-card v3-card-mail">
+            <div class="v3-card-top">
+              <span class="v3-card-emoji">📦</span>
+              <div>
+                <p class="v3-card-tag">ANYWHERE IN THE US</p>
+                <h3 class="v3-card-title">Mail-In Service</h3>
+              </div>
+            </div>
+            <p class="v3-card-desc">We send you a free prepaid shipping label — your device arrives at our lab in 1–2 days and we get straight to work.</p>
+            <div class="v3-card-perks">
+              <span>🚚 Free round-trip shipping</span>
+              <span>📋 Prepaid label provided</span>
+              <span>🌎 All 50 states</span>
+            </div>
+            <NuxtLink to="/data-recovery/mail-in-service" class="v3-btn v3-btn-outline">
+              Start Mail-In Recovery →
+            </NuxtLink>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -201,86 +202,71 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     rgba(10,12,20,0.55) 100%
   );
 }
-/* 3-COLUMN FLAT GRID: brand | card1 | card2 — everything above the fold */
+/* STACKED LAYOUT: headline → badges → two cards */
 .v3-hero-inner {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 280px 1fr 1fr;
-  gap: 28px;
-  align-items: stretch;
-  padding-top: 44px;
-  padding-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
-/* Brand column */
+/* ROW 1: headline */
+.v3-header { width: 100%; }
 .v3-social-proof {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
-.v3-stars { color: #F5C842; font-size: 15px; letter-spacing: 1px; }
-.v3-rating { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); }
-
+.v3-stars { color: #F5C842; font-size: 16px; letter-spacing: 2px; }
+.v3-rating { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); }
 .v3-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(22px, 2.5vw, 34px);
+  font-size: clamp(34px, 5vw, 58px);
   font-weight: 800;
   color: #fff;
-  line-height: 1.15;
-  margin-bottom: 12px;
+  line-height: 1.1;
+  max-width: 820px;
 }
 .v3-gold { color: #F5C842; }
 
-.v3-sub {
-  font-size: 13px;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
+/* ROW 2: badges — single horizontal line */
 .v3-badges {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 22px;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
 }
 .v3-badge {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
-  color: rgba(255,255,255,0.8);
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
+  color: rgba(255,255,255,0.82);
+  padding: 0 24px 0 0;
+}
+.v3-badge-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.2);
+  margin-right: 24px;
 }
 
-/* Phone */
-.v3-phone {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(245,200,66,0.12);
-  border: 1.5px solid rgba(245,200,66,0.4);
-  border-radius: 10px;
-  padding: 11px 16px;
-  text-decoration: none;
-  transition: all 0.2s;
+/* ROW 3: cards side by side */
+.v3-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
-.v3-phone:hover { background: rgba(245,200,66,0.2); border-color: #F5C842; }
-.v3-phone-icon { font-size: 18px; }
-.v3-phone-text { display: flex; flex-direction: column; gap: 1px; }
-.v3-phone-label { font-size: 10px; font-weight: 600; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); text-transform: uppercase; }
-.v3-phone-number { font-size: 18px; font-weight: 800; color: #F5C842; font-family: 'Montserrat', sans-serif; }
-
-/* Cards */
 .v3-card {
   background: rgba(12,18,30,0.82);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 18px;
-  padding: 28px 28px;
+  padding: 32px 32px;
   backdrop-filter: blur(14px);
   transition: border-color 0.2s, transform 0.2s;
   display: flex;
@@ -295,39 +281,39 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .v3-card-top {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
-.v3-card-emoji { font-size: 34px; line-height: 1; }
+.v3-card-emoji { font-size: 38px; line-height: 1; }
 .v3-card-tag {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: #F5C842;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .v3-card-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
 }
 .v3-card-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255,255,255,0.58);
-  line-height: 1.6;
-  margin-bottom: 16px;
+  line-height: 1.65;
+  margin-bottom: 18px;
   flex: 1;
 }
 .v3-card-perks {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 20px;
+  gap: 7px;
+  margin-bottom: 24px;
 }
 .v3-card-perks span {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: rgba(255,255,255,0.6);
 }
