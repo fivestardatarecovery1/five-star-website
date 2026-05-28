@@ -1206,6 +1206,16 @@ const progressIndex = computed(() => {
 /* ── Light theme ──────────────────────────────── */
 .iqt-compact {
   padding: 20px 20px 16px;
+  height: 440px;
+  display: flex;
+  flex-direction: column;
+}
+.iqt-compact .iqt-body {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #e2e8f0 transparent;
 }
 .iqt-compact .iqt-q {
   font-size: 1rem;

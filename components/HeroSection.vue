@@ -222,6 +222,8 @@ function handleSubmit() {
   padding: 0;
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-title {
