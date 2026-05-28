@@ -43,7 +43,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="v3-header">
           <div class="v3-social-proof">
             <span class="v3-stars">★★★★★</span>
-            <span class="v3-rating">4.9 · 498 Google Reviews</span>
+            <span class="v3-rating">4.9 · 498 Online Reviews</span>
           </div>
           <h1 class="v3-title">Get Your Data Back <span class="v3-gold">Fast &amp; Risk-Free</span></h1>
         </div>
@@ -73,9 +73,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
             <p class="v3-card-desc">Fill out our quick form ahead of time, drop off your device, and go. We handle everything from there — same-day diagnostic report included.</p>
             <div class="v3-card-perks">
+              <span>🕐 Select your desired drop-off time</span>
               <span>⚡ Same-day appointments available</span>
-              <span>🗓️ Choose your drop-off date &amp; 30-minute arrival window</span>
-              <span>📋 Complete the form to reserve your spot</span>
+              <span>📋 Complete the form for a quick drop-off</span>
             </div>
             <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-gold">
               Express Drop-Off Form →
