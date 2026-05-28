@@ -781,7 +781,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .landing { position: relative; min-height: calc(100vh - 86px); display: flex; align-items: center; overflow: hidden; }
 .landing-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
 .landing-overlay { position: absolute; inset: 0; background: linear-gradient(105deg, rgba(10,12,20,0.96) 0%, rgba(10,12,20,0.88) 45%, rgba(10,12,20,0.70) 100%); pointer-events: none; }
-.landing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 560px; gap: 48px; align-items: center; padding-top: 32px; padding-bottom: 32px; width: 100%; }
+.landing-layout { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 560px; gap: 48px; align-items: stretch; padding-top: 40px; padding-bottom: 40px; width: 100%; }
 /* LEFT brand */
 .landing-brand { color: #fff; }
 .lb-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F5C842; margin-bottom: 16px; }
@@ -799,8 +799,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .lb-stat-num { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: #F5C842; }
 .lb-stat-label { font-size: 11px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; }
 /* RIGHT form panel */
-.landing-panel { }
-.landing-panel .form-wrap { border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.45); max-height: calc(100vh - 110px); overflow-y: auto; scrollbar-width: thin; }
+.landing-panel { display: flex; flex-direction: column; }
+.landing-panel .form-wrap { border-radius: 16px; box-shadow: 0 24px 80px rgba(0,0,0,0.45); overflow-y: auto; scrollbar-width: thin; flex: 1; display: flex; flex-direction: column; }
+.landing-panel .form-wrap .confirm-wrap,
+.landing-panel .form-wrap > template,
+.landing-panel .form-wrap .stepper { flex-shrink: 0; }
+.landing-panel .form-wrap .edo-form { flex: 1; }
 @media (max-width: 960px) {
   .landing { min-height: auto; }
   .landing-layout { grid-template-columns: 1fr; gap: 28px; }
@@ -918,8 +922,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .stepper-item.done .stepper-label { color: #22c55e; }
 
 /* FORM BODY */
-.edo-form { padding: 36px 44px 32px; display: flex; flex-direction: column; gap: 0; }
-.form-step { display: flex; flex-direction: column; gap: 22px; }
+.edo-form { padding: 32px 44px 28px; display: flex; flex-direction: column; gap: 0; flex: 1; }
+.form-step { display: flex; flex-direction: column; gap: 20px; flex: 1; }
 .step-title { font-size: 1.35rem; font-weight: 900; color: #1a1a2e; margin: 0 0 4px; }
 .step-desc { font-size: 0.93rem; color: #6b7280; margin: 0 0 8px; line-height: 1.6; }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -928,9 +932,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .req { color: #ef4444; }
 .fi {
   border: 1.5px solid #d1d9e6;
-  border-radius: 8px;
-  padding: 11px 14px;
-  font-size: 0.95rem;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 1rem;
   color: #1a1a2e;
   background: #fff;
   font-family: inherit;
