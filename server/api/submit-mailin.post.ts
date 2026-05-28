@@ -186,5 +186,113 @@ export default defineEventHandler(async (event) => {
       </div>`,
   })
 
-  return { success: true, labelBase64, serviceLabel, labelError }
+  // ── Generate packing slip HTML ──────────────────────────────
+  const packingSlipHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Packing Slip — Five Star Data Recovery</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; font-size: 13px; color: #111; background: #fff; padding: 32px; max-width: 680px; margin: 0 auto; }
+  .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid #1a1a2e; padding-bottom: 16px; margin-bottom: 24px; }
+  .logo { font-size: 20px; font-weight: 900; color: #1a1a2e; }
+  .logo span { color: #F5C842; }
+  .header-right { text-align: right; font-size: 12px; color: #555; }
+  .title { font-size: 18px; font-weight: 900; text-align: center; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.08em; color: #1a1a2e; }
+  .section { margin-bottom: 20px; }
+  .section-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 5px 8px 5px 0; vertical-align: top; }
+  td:first-child { color: #555; width: 45%; font-size: 12px; }
+  td:last-child { font-weight: 600; }
+  .highlight { background: #f9f5e7; border: 1.5px solid #F5C842; border-radius: 6px; padding: 12px 14px; margin-bottom: 20px; }
+  .highlight strong { font-size: 14px; display: block; margin-bottom: 4px; }
+  .highlight p { font-size: 12px; color: #555; line-height: 1.5; }
+  .footer { border-top: 1px solid #eee; padding-top: 14px; margin-top: 24px; text-align: center; font-size: 11px; color: #888; }
+  .print-note { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 6px; padding: 10px 14px; font-size: 12px; color: #0369a1; margin-bottom: 20px; }
+  @media print { .print-note { display: none; } }
+</style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <div class="logo">FIVE<span>★</span>STAR</div>
+      <div style="font-size:11px;color:#555;margin-top:3px;">Data Recovery</div>
+      <div style="font-size:11px;color:#555;">1731 S Brand Blvd, Glendale, CA 91204</div>
+      <div style="font-size:11px;color:#555;">818-272-8866</div>
+    </div>
+    <div class="header-right">
+      <div style="font-weight:700;font-size:13px;">PACKING SLIP</div>
+      <div>Date: ${new Date().toLocaleDateString('en-US')}</div>
+      <div>Service: ${serviceLabel}</div>
+    </div>
+  </div>
+
+  <div class="print-note">📄 Print this page and place it inside your package before sealing. Use Ctrl+P (or Cmd+P on Mac) to print.</div>
+
+  <div class="highlight">
+    <strong>IMPORTANT: Please include this slip inside your package</strong>
+    <p>This helps our team identify your device immediately upon arrival and begin processing without delay.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Customer Information</div>
+    <table>
+      <tr><td>Name</td><td>${fullName}</td></tr>
+      <tr><td>Email</td><td>${email}</td></tr>
+      <tr><td>Phone</td><td>${phone}</td></tr>
+      <tr><td>Ship From</td><td>${streetAddress}, ${city}, ${state} ${zip}</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Device Information</div>
+    <table>
+      <tr><td>Manufacturer</td><td>${manufacturer}</td></tr>
+      <tr><td>Drive Type</td><td>${driveType}</td></tr>
+      <tr><td>Drive Format</td><td>${driveFormat}</td></tr>
+      <tr><td>Drive Size</td><td>${driveSize}</td></tr>
+      <tr><td>Issue</td><td>${issue}</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Recovery Details</div>
+    <table>
+      <tr><td>Data to Recover</td><td>${Array.isArray(dataTypes) ? dataTypes.join('; ') : dataTypes}</td></tr>
+      <tr><td>Prior Attempts</td><td>${recoveryAttempted}</td></tr>
+      ${additionalInfo ? `<tr><td>Additional Notes</td><td>${additionalInfo}</td></tr>` : ''}
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Service Selection</div>
+    <table>
+      <tr><td>Service Level</td><td style="color:${expeditedService?.includes('Expedited') ? '#b45309' : '#1a1a2e'};font-weight:700;">${expeditedService} — ${serviceLabel}</td></tr>
+      <tr><td>Transfer Drive</td><td>${transferDrive}</td></tr>
+      ${conditionalRates?.length ? `<tr><td>Conditional Rates</td><td>${(Array.isArray(conditionalRates) ? conditionalRates : [conditionalRates]).join('; ')}</td></tr>` : ''}
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-label">Ship To</div>
+    <table>
+      <tr><td>Company</td><td style="font-weight:900;">Five Star Data Recovery</td></tr>
+      <tr><td>Address</td><td>1731 S Brand Blvd</td></tr>
+      <tr><td>City/State/ZIP</td><td>Glendale, CA 91204</td></tr>
+      <tr><td>Phone</td><td>818-272-8866</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>No Data, No Charge &nbsp;·&nbsp; fivestardatarecovery.com &nbsp;·&nbsp; 818-272-8866</p>
+    <p style="margin-top:4px;">Mon–Fri 10am–6pm &nbsp;·&nbsp; Sat 10am–2pm</p>
+  </div>
+</body>
+</html>`
+
+  const packingSlipBase64 = Buffer.from(packingSlipHtml).toString('base64')
+
+  return { success: true, labelBase64, serviceLabel, labelError, packingSlipBase64 }
 })

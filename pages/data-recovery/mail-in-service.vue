@@ -76,6 +76,7 @@ const stepError = ref('')
 const labelBase64 = ref('')
 const serviceLabel = ref('')
 const labelError = ref('')
+const packingSlipBase64 = ref('')
 
 const form = reactive({
   firstName: '', lastName: '', email: '', phone: '',
@@ -147,6 +148,7 @@ async function submitForm() {
     labelBase64.value = res.labelBase64 || ''
     serviceLabel.value = res.serviceLabel || ''
     labelError.value = res.labelError || ''
+    packingSlipBase64.value = res.packingSlipBase64 || ''
     submitted.value = true
   } catch (e) {
     submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
@@ -220,6 +222,20 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 download="five-star-shipping-label.pdf"
                 class="btn-download"
               >⬇ Download Label</a>
+            </div>
+
+            <div v-if="packingSlipBase64" class="label-download-box" style="border-color:#6366f1;background:#f5f3ff;">
+              <div class="label-icon">📋</div>
+              <div class="label-info">
+                <strong>Your Packing Slip</strong>
+                <span>Print and place inside your package</span>
+              </div>
+              <a
+                :href="'data:text/html;base64,' + packingSlipBase64"
+                download="packing-slip.html"
+                class="btn-download"
+                style="background:#6366f1;"
+              >⬇ Download Slip</a>
             </div>
 
             <div class="success-steps">
