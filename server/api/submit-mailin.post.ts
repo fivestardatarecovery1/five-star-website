@@ -75,7 +75,10 @@ async function createFedexLabel(opts: {
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-  const config = useRuntimeConfig()
+  const fedexClientId = process.env.FEDEX_CLIENT_ID || ''
+  const fedexClientSecret = process.env.FEDEX_CLIENT_SECRET || ''
+  const fedexAccountNumber = process.env.FEDEX_ACCOUNT_NUMBER || ''
+  const resendApiKey = process.env.RESEND_API_KEY || ''
 
   const {
     firstName, lastName, email, phone, manufacturer, driveType, driveFormat, driveSize,
@@ -92,9 +95,9 @@ export default defineEventHandler(async (event) => {
   let labelBase64 = ''
   let labelError = ''
   try {
-    const token = await getFedexToken(config.fedexClientId, config.fedexClientSecret)
+    const token = await getFedexToken(fedexClientId, fedexClientSecret)
     labelBase64 = await createFedexLabel({
-      token, accountNumber: config.fedexAccountNumber,
+      token, accountNumber: fedexAccountNumber,
       recipientName: fullName, recipientPhone: phone,
       street: streetAddress, city, state, zip, countryCode, serviceType,
     })
@@ -103,7 +106,7 @@ export default defineEventHandler(async (event) => {
     labelError = e.message
   }
 
-  const resend = new Resend(config.resendApiKey)
+  const resend = new Resend(resendApiKey)
   const attachments = labelBase64 ? [{ filename: 'shipping-label.pdf', content: labelBase64 }] : []
 
   // ── Email to business ─────────────────────────────────────────
