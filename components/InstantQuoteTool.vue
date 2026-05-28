@@ -29,8 +29,8 @@ const contact = reactive({
 const contactError = ref('')
 
 function formatPhone(e: Event) {
-  const input = e.target as HTMLInputElement
-  const digits = input.value.replace(/\D/g, '').slice(0, 10)
+  // contact.phone already has the raw value from v-model before this fires
+  const digits = contact.phone.replace(/\D/g, '').slice(0, 10)
   let formatted = digits
   if (digits.length > 6) {
     formatted = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6)
@@ -38,8 +38,8 @@ function formatPhone(e: Event) {
     formatted = digits.slice(0, 3) + '-' + digits.slice(3)
   }
   contact.phone = formatted
-  // Directly update DOM value — Vue won't re-render if the reactive value didn't change
-  input.value = formatted
+  // Force the DOM to show the formatted value even if Vue skips re-render (same value)
+  ;(e.target as HTMLInputElement).value = formatted
 }
 
 function saveAndGoToRecovery() {
@@ -605,7 +605,7 @@ const progressIndex = computed(() => {
           </div>
           <div class="iqt-field">
             <label class="iqt-label">Phone Number <span class="iqt-req">*</span></label>
-            <input :value="contact.phone" @input="formatPhone" type="tel" class="iqt-input" placeholder="555-000-0000" inputmode="numeric" maxlength="12" />
+            <input v-model="contact.phone" @input="formatPhone" type="tel" class="iqt-input" placeholder="555-000-0000" inputmode="numeric" maxlength="12" />
           </div>
           <div class="iqt-field">
             <label class="iqt-label">Preferred Contact Method</label>
