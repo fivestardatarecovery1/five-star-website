@@ -8,9 +8,8 @@ useHead({
         "@graph": [
           {
             "@type": "LocalBusiness",
-            "@id": "https://www.fivestardatarecovery.com/#localbusiness",
+            "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery",
             "name": "Five Star Data Recovery",
-            "image": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png",
             "telephone": "+1-818-272-8866",
             "address": {
               "@type": "PostalAddress",
@@ -20,161 +19,30 @@ useHead({
               "postalCode": "91204",
               "addressCountry": "US"
             },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 34.1341,
-              "longitude": -118.2551
-            },
-            "url": "https://www.fivestardatarecovery.com/",
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-                "opens": "10:00",
-                "closes": "18:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Saturday"],
-                "opens": "10:00",
-                "closes": "14:00"
-              }
-            ],
-            "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "498",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
+            "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "498" },
             "priceRange": "$300 - $950"
           },
           {
             "@type": "Service",
-            "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#service",
-            "name": "Data Recovery Mail-In Service",
-            "url": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/",
-            "provider": { "@id": "https://www.fivestardatarecovery.com/#localbusiness" },
-            "areaServed": [{ "@type": "Country", "name": "United States" }],
-            "description": "Nationwide mail-in data recovery service. Ship your hard drive, SSD, external drive, USB, RAID, or mobile device to our Glendale, CA lab using a free prepaid shipping label. Free diagnostic, flat-rate pricing, and No Data No Charge guarantee.",
-            "serviceType": "Mail-In Data Recovery",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "USD",
-              "priceRange": "$300-$950",
-              "description": "Free prepaid round-trip shipping. No Data, No Charge. Free evaluation with no obligation to proceed."
-            }
-          },
-          {
-            "@type": "WebPage",
-            "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#webpage",
-            "url": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/",
-            "name": "Data Recovery Mail-in Services - Five Star Data Recovery",
-            "description": "Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.",
-            "isPartOf": { "@id": "https://www.fivestardatarecovery.com/#website" },
-            "about": { "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#service" },
-            "breadcrumb": { "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#breadcrumb" }
-          },
-          {
-            "@type": "BreadcrumbList",
-            "@id": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/#breadcrumb",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
-              { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
-              { "@type": "ListItem", "position": 3, "name": "Mail-In Service", "item": "https://www.fivestardatarecovery.com/data-recovery/mail-in-service/" }
-            ]
-          },
-          {
-            "@type": "HowTo",
-            "name": "How Our Mail-In Data Recovery Process Works",
-            "description": "Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage.",
-            "step": [
-              {
-                "@type": "HowToStep",
-                "position": 1,
-                "name": "Drop Off or Mail In Your Drive",
-                "text": "You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 2,
-                "name": "Receive a Free Diagnosis",
-                "text": "Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 3,
-                "name": "Our Engineers Work on Recovering Your Data",
-                "text": "We carefully begin the recovery process using advanced tools and cleanroom procedures."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 4,
-                "name": "Review & Approve the Recovered Data",
-                "text": "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered."
-              },
-              {
-                "@type": "HowToStep",
-                "position": 5,
-                "name": "Receive Your Recovered Data",
-                "text": "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use."
-              }
-            ]
+            "name": "Mail-In Data Recovery Service",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service/",
+            "provider": { "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery" },
+            "areaServed": { "@type": "Country", "name": "United States" },
+            "description": "Five Star Data Recovery offers free nationwide mail-in data recovery service with prepaid round-trip shipping. No upfront cost for most cases."
           },
           {
             "@type": "FAQPage",
             "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is the Mail-In Data Recovery Form?",
-                "acceptedAnswer": { "@type": "Answer", "text": "The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival." }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I send in my device for mail-in data recovery?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Simply fill out our Mail-In Data Recovery Form online and we'll send you a prepaid shipping label at no cost. Package your device securely — use the original box if available, or wrap it in bubble wrap inside a sturdy box. Drop it off at your nearest FedEx or UPS location, and it will arrive at our Glendale lab within 1–2 business days." }
-              },
-              {
-                "@type": "Question",
-                "name": "What devices can I send in for data recovery?",
-                "acceptedAnswer": { "@type": "Answer", "text": "We accept all types of storage devices including hard drives (HDD and SSD), external hard drives, USB flash drives, SD cards, RAID arrays, NAS devices, iPhones, Android phones, and more. If you're unsure whether we can recover your specific device, contact us for a quick consultation." }
-              },
-              {
-                "@type": "Question",
-                "name": "Do I need to pay anything upfront when mailing in a device?",
-                "acceptedAnswer": { "@type": "Answer", "text": "No. Our diagnostic evaluation is completely free, and you're under no obligation to proceed after receiving your quote. You only pay if we successfully recover your data — that's our No Data, No Charge guarantee. The only exceptions are Expedited Plus service and cases requiring deleted file recovery." }
-              },
-              {
-                "@type": "Question",
-                "name": "How long does the mail-in recovery process take?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Once your device arrives at our lab, standard recovery typically takes 3–5 business days from the time of diagnosis. For urgent situations, our Expedited service offers faster turnaround, and our Expedited Plus service provides 24/7 priority handling with a dedicated engineer." }
-              },
-              {
-                "@type": "Question",
-                "name": "Is shipping covered by your company?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide a free prepaid shipping label so you can ship your device to us at no cost. Once your data is recovered, we also cover the return shipping for your recovered data on a new drive — completely free, both ways." }
-              },
-              {
-                "@type": "Question",
-                "name": "Is my data safe during the mail-in process?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Your device is tracked from the moment it ships and logged into our secure system upon arrival. All recovered data is handled under strict confidentiality protocols. We never share or access your data beyond what is required for the recovery process." }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I know when you've received my package?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Once your device arrives at our Glendale lab, you'll receive an email or phone notification confirming receipt and check-in. We'll keep you updated at every stage — from diagnosis to recovery completion — so you're never left wondering about the status of your case." }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I track the progress of my recovery case?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once your device is checked in, we'll provide updates at key milestones: when diagnosis is complete, when recovery begins, and when your data is ready for review. You can also contact us anytime at 818-272-8866 for a status update." }
-              },
-              {
-                "@type": "Question",
-                "name": "Where can I find the Mail-In Recovery Form?",
-                "acceptedAnswer": { "@type": "Answer", "text": "You can access the Mail-In Data Recovery Form directly on this page or by visiting fivestardatarecovery.com/start-recovery. Fill it out and we'll send you a prepaid shipping label right away." }
-              }
+              { "@type": "Question", "name": "What is the Mail-In Data Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival." } },
+              { "@type": "Question", "name": "How do I send in my device for mail-in data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Simply complete the Mail-In Recovery Form, and we'll send you a prepaid shipping label for your convenience. Once you receive it, securely package your device, include the completed form inside the box, and drop it off at your nearest shipping location. Our preferred carriers are FedEx and USPS." } },
+              { "@type": "Question", "name": "What devices can I send in for data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "We accept hard drives, SSDs, iPhones, USB flash drives, RAID arrays, SD cards, and other common storage media. If you're unsure whether we can recover your specific device, feel free to contact us first for a free consultation." } },
+              { "@type": "Question", "name": "Do I need to pay anything upfront when mailing in a device?", "acceptedAnswer": { "@type": "Answer", "text": "Most standard data recovery cases require no upfront payment. However, certain services like iPhone component-level recovery or deleted file recovery may require a refundable deposit. Details will be provided during your initial phone consultation." } },
+              { "@type": "Question", "name": "How long does the mail-in recovery process take?", "acceptedAnswer": { "@type": "Answer", "text": "Once we receive your device, you'll get a same-day diagnostic report (by midnight). Standard recoveries take 3–5 business days, depending on the issue. For urgent cases, we offer Expedited and Expedited Plus Services with top priority handling." } },
+              { "@type": "Question", "name": "Is shipping covered by your company?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We cover all shipping costs for our mail-in data recovery service. Once you complete the Mail-In Recovery Form, we'll provide a prepaid shipping label so you can securely send your device to us at no charge. We also cover the return shipping of your recovered data." } },
+              { "@type": "Question", "name": "Is my data safe during the mail-in process?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We use strict protocols to secure and track every device we receive. Once the recovery is complete, your data is transferred to a secure return drive and shipped back safely. We never access, share, or store your data beyond the recovery process." } },
+              { "@type": "Question", "name": "How do I know when you've received my package?", "acceptedAnswer": { "@type": "Answer", "text": "We'll notify you by phone or email as soon as your device arrives and is logged into our system. Diagnostics begin right away, and you'll receive your evaluation report the same day before midnight." } },
+              { "@type": "Question", "name": "Can I track the progress of my recovery case?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Once your device is in our system, our team provides regular updates through our ticketing system. You can also reach out to us for a status update." } },
+              { "@type": "Question", "name": "Where can I find the Mail-In Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "You can access and complete the form directly on our Mail-In Form page. Make sure to print a copy and include it in your package for fast intake and identification." } }
             ]
           }
         ]
@@ -185,50 +53,115 @@ useHead({
 
 useSeoMeta({
   title: 'Data Recovery Mail-in Services - Five Star Data Recovery',
-  description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.'
+  ogTitle: 'Data Recovery Mail-in Services - Five Star Data Recovery',
+  description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
+  ogDescription: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
 })
 
-const issues = [
-  { icon: '📦', title: 'Nationwide Mail-In Service', text: 'Ship your drive from anywhere in the US using our prepaid shipping label. Our secure packaging ensures your device arrives safely at our Glendale, CA lab for professional recovery.' },
-  { icon: '🔍', title: 'Free Diagnostic on Arrival', text: 'Once received, our engineers perform a thorough diagnosis at no charge. You\'ll receive a full report and quote before any recovery work begins — no obligation to proceed.' },
-  { icon: '🔒', title: 'Secure Chain of Custody', text: 'Every mail-in recovery follows strict handling protocols. Your device and data are kept confidential and secure throughout the entire recovery process.' },
-  { icon: '🚀', title: 'Fast Turnaround Times', text: 'Standard recovery typically completes within 3–5 business days after diagnosis. Expedited options are available for urgent cases that need faster turnaround.' },
+const trustBadges = [
+  { icon: 'clock', text: 'Available 24/7/365' },
+  { icon: 'check', text: 'No Data = No Charge' },
+  { icon: 'shield', text: '10+ Years in Business' },
+  { icon: 'star', text: 'Free Nationwide Shipping' },
 ]
 
-const causesIntro = ''
-const causesOutro = ''
-const causes = []
+// Multi-step form
+const step = ref(1)
+const totalSteps = 5
+const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Service Options', 'Shipping & Submit']
+const submitted = ref(false)
+const submitting = ref(false)
+const submitError = ref('')
+const stepError = ref('')
 
-const processIntro = ''
-const steps: { num: string; title: string; text: string }[] = []
+const form = reactive({
+  firstName: '', lastName: '', email: '', phone: '',
+  manufacturer: '', driveType: '', driveFormat: '', driveSize: '',
+  issue: '', dataTypes: [] as string[], recoveryAttempted: '', additionalInfo: '',
+  conditionalRates: [] as string[], expeditedService: '', transferDrive: '',
+  streetAddress: '', city: '', state: '', zip: '', country: 'United States of America (USA)',
+  shippingCarrier: '', date: '', termsAgreed: false,
+})
 
-const driveTypesIntro = ''
-const driveTypesOutro = ''
-const driveTypes = []
+function scrollToForm() {
+  if (import.meta.client) {
+    const el = document.querySelector('.form-wrap')
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
 
-const tipIntro = ''
-const tipOutro = ''
-const tips: string[] = []
+function validateStep(): boolean {
+  stepError.value = ''
+  if (step.value === 1) {
+    if (!form.firstName.trim()) return err('Please enter your first name.')
+    if (!form.lastName.trim()) return err('Please enter your last name.')
+    if (!form.email.trim() || !form.email.includes('@')) return err('Please enter a valid email address.')
+    if (!form.phone.trim()) return err('Please enter your phone number.')
+  }
+  if (step.value === 2) {
+    if (!form.manufacturer) return err('Please select a drive manufacturer.')
+    if (!form.driveType) return err('Please select a drive type.')
+    if (!form.driveFormat) return err('Please select a drive format.')
+    if (!form.driveSize.trim()) return err('Please enter the drive size.')
+    if (!form.issue) return err('Please select the issue with your drive.')
+  }
+  if (step.value === 3) {
+    if (!form.dataTypes.length) return err('Please select at least one data type to recover.')
+    if (!form.recoveryAttempted) return err('Please indicate if recovery has been attempted before.')
+  }
+  if (step.value === 4) {
+    if (!form.expeditedService) return err('Please select a service level.')
+    if (!form.transferDrive) return err('Please select a transfer drive option.')
+  }
+  return true
+}
 
-const d2Texts: string[] = []
-const d3Texts: string[] = []
-const d4Texts: string[] = []
+function err(msg: string): false { stepError.value = msg; return false }
 
-const midBody = [
-  "Can't visit us in person? No problem. Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S.",
-  "Ship your device to us, and it will arrive at our lab in less than 2 days. Once received, we'll begin diagnostics and keep you updated every step of the way — all backed by our No Data, No Charge policy.",
+function nextStep() {
+  if (!validateStep()) return
+  if (step.value < totalSteps) { step.value++; scrollToForm() }
+}
+function prevStep() { if (step.value > 1) { step.value--; stepError.value = ''; scrollToForm() } }
+
+async function submitForm() {
+  if (!form.streetAddress.trim()) { submitError.value = 'Please enter your street address.'; return }
+  if (!form.city.trim()) { submitError.value = 'Please enter your city.'; return }
+  if (!form.state.trim()) { submitError.value = 'Please enter your state.'; return }
+  if (!form.zip.trim()) { submitError.value = 'Please enter your ZIP code.'; return }
+  if (!form.date) { submitError.value = 'Please enter today\'s date.'; return }
+  if (!form.termsAgreed) { submitError.value = 'Please agree to the terms and conditions.'; return }
+  submitting.value = true
+  submitError.value = ''
+  try {
+    await $fetch('/api/submit-mailin', { method: 'POST', body: form })
+    submitted.value = true
+  } catch (e) {
+    submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
+  } finally {
+    submitting.value = false
+  }
+}
+
+const processSteps = [
+  { num: '1', title: 'Drop off or Mail in Your Drive', text: 'You can visit our Glendale lab for a quick drop-off, or securely mail your device using our prepaid shipping label — whichever is more convenient for you.' },
+  { num: '2', title: 'Receive a Free Diagnosis', text: 'Our team will evaluate your device and provide a detailed diagnosis along with an initial quote — completely free of charge and with no obligation to proceed.' },
+  { num: '3', title: 'Our Engineers work on Recovering your Data', text: 'We carefully begin the recovery process using advanced tools and cleanroom procedures.' },
+  { num: '4', title: 'Review & Approve the Recovered', text: "After recovery is complete, you'll receive a detailed file list to review so you can confirm everything important has been successfully recovered." },
+  { num: '5', title: 'Receive your recovered data', text: "Once approved, we'll securely transfer your data to a new drive and return it to you via pickup or insured shipping — ready for immediate use." },
 ]
 
-const contactText = "Not local? No problem. We offer free round-trip shipping for all mail-in data recovery cases. Ship your device to our Glendale, CA lab and we'll take it from there."
-const contactList = [
-  'Fill out the Mail-In form to get a prepaid shipping label',
-  'Ship your device to us — it arrives in less than 2 days',
-  'We diagnose, recover, and ship your data back to you',
-]
-const contactOutro = ''
-
-const reviews = []
 const faqs = [
+  { q: 'What is the Mail-In Data Recovery Form?', a: "The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival." },
+  { q: 'How do I send in my device for mail-in data recovery?', a: "Simply complete the Mail-In Recovery Form, and we'll send you a prepaid shipping label for your convenience. Once you receive it, securely package your device, include the completed form inside the box, and drop it off at your nearest shipping location. Our preferred carriers are FedEx and USPS." },
+  { q: 'What devices can I send in for data recovery?', a: "We accept hard drives, SSDs, iPhones, USB flash drives, RAID arrays, SD cards, and other common storage media. If you're unsure whether we can recover your specific device, feel free to contact us first for a free consultation." },
+  { q: 'Do I need to pay anything upfront when mailing in a device?', a: "Most standard data recovery cases require no upfront payment. However, certain services like iPhone component-level recovery or deleted file recovery may require a refundable deposit. Details will be provided during your initial phone consultation." },
+  { q: 'How long does the mail-in recovery process take?', a: "Once we receive your device, you'll get a same-day diagnostic report (by midnight). Standard recoveries take 3–5 business days, depending on the issue. For urgent cases, we offer Expedited and Expedited Plus Services with top priority handling." },
+  { q: 'Is shipping covered by your company?', a: "Yes! We cover all shipping costs for our mail-in data recovery service. Once you complete the Mail-In Recovery Form, we'll provide a prepaid shipping label so you can securely send your device to us at no charge. We also cover the return shipping of your recovered data." },
+  { q: 'Is my data safe during the mail-in process?', a: "Yes. We use strict protocols to secure and track every device we receive. Once the recovery is complete, your data is transferred to a secure return drive and shipped back safely. We never access, share, or store your data beyond the recovery process." },
+  { q: "How do I know when you've received my package?", a: "We'll notify you by phone or email as soon as your device arrives and is logged into our system. Diagnostics begin right away, and you'll receive your evaluation report the same day before midnight." },
+  { q: 'Can I track the progress of my recovery case?', a: "Absolutely. Once your device is in our system, our team provides regular updates through our ticketing system. You can also reach out to us for a status update." },
+  { q: 'Where can I find the Mail-In Recovery Form?', a: "You can access and complete the form directly on our Mail-In Form page. Make sure to print a copy and include it in your package for fast intake and identification." },
 ]
 
 const openFaq = ref<number | null>(null)
@@ -240,279 +173,282 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <HeroSection
-      title="Mail-In Data Recovery Service"
-      subtitle="Get Your Data Back In No Time."
-      description="Can't visit us in person? No problem. Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S. Ship your device to us, and it will arrive at our lab in less than 2 days."
+      title="Data Recovery Mail In Form"
+      subtitle="Can't visit us in person? No problem."
+      description="Just fill out our Mail-In Data Recovery Form to receive a prepaid shipping label — we cover free round-trip shipping anywhere in the U.S. Ship your device to us, and it will arrive at our lab in less than 2 days. Once received, we'll begin diagnostics and keep you updated every step of the way — all backed by our No Data, No Charge policy."
       bgImage="/data-recovery-mail-in-service-los-angeles.jpg"
+      :trustBadges="trustBadges"
+      :showForm="false"
+      :showButtons="false"
     />
 
     <StatsBar />
 
-    <!-- ISSUES — white -->
-    <section class="s-white">
+    <!-- MULTI-STEP FORM -->
+    <section class="form-section">
       <div class="container">
-        <div class="section-label">Common Problems</div>
-        <h2 class="s-heading">Common Mail-In Data Recovery Issues</h2>
-        <p  class="s-intro"></p>
-        <div class="issues-grid">
-          <div v-for="issue in issues" :key="issue.title" class="issue-card">
-            <div class="issue-icon">{{ issue.icon }}</div>
-            <h3 class="issue-title">{{ issue.title }}</h3>
-            <p class="issue-body">{{ issue.text }}</p>
+        <div class="form-wrap">
+
+          <!-- Success state -->
+          <div v-if="submitted" class="form-success">
+            <div class="success-icon">✓</div>
+            <h2 class="success-heading">Form Submitted!</h2>
+            <p class="success-text">Thank you — we've received your mail-in request. We'll send your prepaid shipping label shortly. Check your email for confirmation and next steps.</p>
+            <NuxtLink to="/" class="btn-gold">Back to Home</NuxtLink>
           </div>
-        </div>
-        <p  class="s-outro"></p>
-      </div>
-    </section>
 
-    <!-- CAUSES — grey -->
-    <section class="s-grey">
-      <div class="container asym-layout">
-        <div class="asym-minor">
-          <div class="section-label">Root Causes</div>
-          <h2 class="s-heading">What Causes Mail-In Data Recovery Failures?</h2>
-          <p class="s-body">{{ causesIntro }}</p>
-          <ul class="check-list">
-            <li v-for="c in causes" :key="c">{{ c }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ causesOutro }}</p>
-        </div>
-        <div class="asym-major">
-          <img src="/data-recovery-mail-in-service-los-angeles.jpg" alt="Mail-In Data Recovery Service service Glendale CA" class="rounded-img" />
-          <div class="img-stat-badge">
-            <span class="stat-num">21,000+</span>
-            <span class="stat-label">Successful Recoveries</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS — white -->
-    <section class="s-white">
-      <div class="container">
-        <div class="section-label center">Our Process</div>
-        <h2 class="s-heading center">How Our Recovery Process Works</h2>
-        <p class="s-intro center">{{ processIntro }}</p>
-        <div class="process-track">
-          <div v-for="(step, i) in steps" :key="step.num" class="process-node">
-            <div class="process-circle">{{ step.num }}</div>
-            <div v-if="i < steps.length - 1" class="process-connector" />
-            <h3 class="process-title">{{ step.title }}</h3>
-            <p class="process-body">{{ step.text }}</p>
-          </div>
-        </div>
-        <div class="guarantee-strip">
-          <span class="guarantee-icon">🛡</span>
-          <p><strong>No Data, No Charge Guarantee</strong> — If we can't recover your data, you owe nothing. <em>(most cases)</em></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DRIVE TYPES — grey -->
-    <section class="s-grey">
-      <div class="container split-40-60">
-        <div class="split-side">
-          <img src="/data-recovery-clean-room-technician-glendale-ca.jpg" alt="Clean room data recovery technician" class="rounded-img" />
-        </div>
-        <div class="split-main">
-          <div class="section-label">Supported Devices</div>
-          <h2 class="s-heading">Supported Devices</h2>
-          <p class="s-body">{{ driveTypesIntro }}</p>
-          <table class="drives-table">
-            <tbody>
-              <tr v-for="(_, i) in Array.from({length: Math.ceil(driveTypes.length / 2)})" :key="i">
-                <td class="drive-cell"><span class="drive-check">✓</span> {{ driveTypes[i * 2] }}</td>
-                <td class="drive-cell" v-if="driveTypes[i * 2 + 1]"><span class="drive-check">✓</span> {{ driveTypes[i * 2 + 1] }}</td>
-                <td v-else />
-              </tr>
-            </tbody>
-          </table>
-          <p  class="s-body s-mt">{{ driveTypesOutro }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FULL-WIDTH BANNER -->
-    <section class="fullwidth-banner">
-      <div class="banner-overlay" />
-      <div class="container banner-inner">
-        <h2 class="banner-heading">See Why Thousands Trust Us With Their Important Data</h2>
-        <p class="banner-sub">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
-        <div class="banner-stats">
-          <div class="bstat"><span class="bstat-num">99%</span><span class="bstat-lbl">Recovery Success Rate</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">3–5</span><span class="bstat-lbl">Day Standard Turnaround</span></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">$0</span><span class="bstat-lbl">If We Can't Recover</span><em class="bstat-note">(Most Cases)</em></div>
-          <div class="bstat-div" />
-          <div class="bstat"><span class="bstat-num">24/7</span><span class="bstat-lbl">Available Support</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 1 — white -->
-    <section class="s-white">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">🔧</div>
-          <h3 class="dual-heading">Troubleshooting Tips</h3>
-          <p class="s-body">{{ tipIntro }}</p>
-          <ul class="arrow-list">
-            <li v-for="tip in tips" :key="tip">{{ tip }}</li>
-          </ul>
-          <p  class="s-body s-mt">{{ tipOutro }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">📋</div>
-          <h3 class="dual-heading">Warranty & Manufacturer Limitations</h3>
-          <p v-for="t in d2Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- DUAL INFO 2 — grey -->
-    <section class="s-grey">
-      <div class="container dual-col">
-        <div class="dual-box">
-          <div class="dual-icon">⚠️</div>
-          <h3 class="dual-heading">Why Mail-In Data Recovery Devices Are Prone to Issues</h3>
-          <p v-for="t in d3Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-        <div class="dual-box">
-          <div class="dual-icon">✅</div>
-          <h3 class="dual-heading">What Happens After Recovery?</h3>
-          <p v-for="t in d4Texts" :key="t" class="s-body">{{ t }}</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MID-PAGE FORM -->
-    <section class="mid-form-section" style="background: linear-gradient(to right, rgba(50,52,58,0.92) 0%, rgba(50,52,58,0.72) 50%, rgba(30,32,38,0.2) 100%), url('/data-recovery-mail-in-service-los-angeles.jpg') right center / cover no-repeat;">
-      <div class="container mid-form-inner">
-        <div class="mid-form-text">
-          <div class="section-label light">Get Started</div>
-          <h2 class="dark-heading">Need Help With Your Mail-In Data Recovery?</h2>
-          <p v-for="t in midBody" :key="t" class="dark-body">{{ t }}</p>
-          <div class="dark-features">
-            <div class="df"><span class="df-check">✓</span> Free same-day evaluation</div>
-            <div class="df"><span class="df-check">✓</span> Flat-rate pricing, no surprises</div>
-            <div class="df"><span class="df-check">✓</span> No data recovered = no charge <em class="df-note">(most cases)</em></div>
-          </div>
-        </div>
-        <div class="mid-form-card">
-          <h3 class="mid-form-title">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent class="mid-consult-form">
-            <div class="mf-row">
-              <div class="mf-group">
-                <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Name / Required" class="mf-input" />
+          <template v-else>
+            <!-- Stepper -->
+            <div class="stepper">
+              <div v-for="(title, i) in stepTitles" :key="i" class="stepper-item" :class="{ active: step === i + 1, done: step > i + 1 }">
+                <div class="stepper-circle">
+                  <span v-if="step > i + 1" class="check-mark">✓</span>
+                  <span v-else>{{ i + 1 }}</span>
+                </div>
+                <span class="stepper-label">{{ title }}</span>
               </div>
-              <div class="mf-group">
-                <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Email Address / Required" class="mf-input" />
+              <div class="stepper-track">
+                <div class="stepper-fill" :style="{ width: ((step - 1) / (totalSteps - 1) * 100) + '%' }"></div>
               </div>
             </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-type">SELECT YOUR DEVICE TYPE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-type" class="mf-input">
-                    <option value="">— Select (Optional) —</option>
-                    <option>Hard Drive</option><option>SSD</option><option>RAID/Server</option>
-                    <option>External HDD</option><option>Mac/iMac</option><option>iPhone/Mobile</option>
-                    <option>USB Flash Drive</option><option>SD Card</option><option>NAS Device</option><option>Other</option>
+
+            <form class="edo-form" @submit.prevent="submitForm" novalidate>
+
+              <!-- STEP 1: Contact Info -->
+              <div v-show="step === 1" class="form-step">
+                <h3 class="step-title">Let's start with your contact info</h3>
+                <p class="step-desc">We'll send your prepaid shipping label to this email address.</p>
+                <div class="form-grid-2">
+                  <div class="fg"><label class="fl">First Name <span class="req">*</span></label><input type="text" class="fi" v-model="form.firstName" placeholder="John" /></div>
+                  <div class="fg"><label class="fl">Last Name <span class="req">*</span></label><input type="text" class="fi" v-model="form.lastName" placeholder="Smith" /></div>
+                </div>
+                <div class="form-grid-2">
+                  <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" class="fi" v-model="form.email" placeholder="john@example.com" /></div>
+                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" /></div>
+                </div>
+              </div>
+
+              <!-- STEP 2: Drive Details -->
+              <div v-show="step === 2" class="form-step">
+                <h3 class="step-title">Tell us about your drive</h3>
+                <p class="step-desc">This helps our engineers prepare before your device arrives.</p>
+                <div class="form-grid-2">
+                  <div class="fg">
+                    <label class="fl">Drive Manufacturer <span class="req">*</span></label>
+                    <select class="fi" v-model="form.manufacturer">
+                      <option value="">Select manufacturer</option>
+                      <option>Western Digital</option><option>Toshiba</option><option>Hitachi</option>
+                      <option>Samsung</option><option>Seagate</option><option>Maxtor</option>
+                      <option>Fujitsu</option><option>G-Drive</option><option>Lacie</option><option>Other</option>
+                    </select>
+                  </div>
+                  <div class="fg">
+                    <label class="fl">Type of Drive <span class="req">*</span></label>
+                    <select class="fi" v-model="form.driveType">
+                      <option value="">Select type</option>
+                      <option>Laptop Drive</option><option>External Hard Drive</option>
+                      <option>Solid State Drive</option><option>Other</option><option>I'm Not Sure</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-grid-2">
+                  <div class="fg">
+                    <label class="fl">Drive Format <span class="req">*</span></label>
+                    <select class="fi" v-model="form.driveFormat">
+                      <option value="">Select format</option>
+                      <option>Macintosh</option><option>Windows</option><option>Mac &amp; Windows</option>
+                      <option>Linux</option><option>I'm Not Sure</option>
+                    </select>
+                  </div>
+                  <div class="fg"><label class="fl">Drive Size <span class="req">*</span></label><input type="text" class="fi" v-model="form.driveSize" placeholder="e.g. 1TB, 500GB" /></div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Issue <span class="req">*</span></label>
+                  <select class="fi" v-model="form.issue">
+                    <option value="">Select issue</option>
+                    <option>Bad Sectors</option>
+                    <option>Deleted Files (Surcharge $200.00 Non Refundable).</option>
+                    <option>Power Shortage</option>
+                    <option>Dropped Hard Drive</option>
+                    <option>Formatted Partition</option>
+                    <option>Drive Doesn't Power On</option>
+                    <option>Drive Makes Clicking Sounds</option>
+                    <option>Drive Makes a Beeping Sound</option>
+                    <option>Drive Spins But Not Recognized by the Computer</option>
+                    <option>I'm Not Sure</option>
                   </select>
                 </div>
               </div>
-              <div class="mf-group">
-                <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
-              </div>
-            </div>
-            <div class="mf-row">
-              <div class="mf-group">
-                <label for="mf-device-issue">SELECT ISSUE WITH DEVICE</label>
-                <div class="mf-select-wrap">
-                  <select id="mf-device-issue" class="mf-input">
-                    <option value="">Select Issue</option>
-                    <option>Not Detected / Not Showing Up</option><option>Clicking / Grinding Noise</option>
-                    <option>Water Damage</option><option>Corrupted Files</option><option>Accidental Deletion</option>
-                    <option>Physical Damage</option><option>Not Spinning</option><option>Other</option>
-                  </select>
+
+              <!-- STEP 3: Recovery Details -->
+              <div v-show="step === 3" class="form-step">
+                <h3 class="step-title">Recovery details</h3>
+                <p class="step-desc">Help us understand what happened and what data matters most.</p>
+                <div class="fg">
+                  <label class="fl">Type of data to recover <span class="req">*</span></label>
+                  <div class="check-group">
+                    <label class="ci"><input type="checkbox" v-model="form.dataTypes" value="Photos, Documents, Music, Movies, Downloads, Desktop" /> Photos, Documents, Music, Movies, Downloads, Desktop</label>
+                    <label class="ci"><input type="checkbox" v-model="form.dataTypes" value="All files on the hard drive (this process may take an extra 24-72 hours to recover)." /> All files on the hard drive (this process may take an extra 24-72 hours to recover).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.dataTypes" value="Other, please contact me." /> Other, please contact me.</label>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Has recovery been attempted before? <span class="req">*</span></label>
+                  <div class="radio-group">
+                    <label class="ci"><input type="radio" v-model="form.recoveryAttempted" name="attempted" value="No, this is our first attempt to recover the data." /> No, this is our first attempt to recover the data.</label>
+                    <label class="ci"><input type="radio" v-model="form.recoveryAttempted" name="attempted" value="Yes, another company attempted and was unsuccessful." /> Yes, another company attempted and was unsuccessful.</label>
+                    <label class="ci"><input type="radio" v-model="form.recoveryAttempted" name="attempted" value="Yes, another company attempted and recommended a clean room repair." /> Yes, another company attempted and recommended a clean room repair.</label>
+                    <label class="ci"><input type="radio" v-model="form.recoveryAttempted" name="attempted" value="Yes, drive cover has been opened ($200.00 fee Non Refundable)." /> Yes, drive cover has been opened ($200.00 fee Non Refundable).</label>
+                    <label class="ci"><input type="radio" v-model="form.recoveryAttempted" name="attempted" value="Other" /> Other</label>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Additional Information</label>
+                  <textarea class="fi fi-textarea" v-model="form.additionalInfo" placeholder="Please provide any additional information about the issue with the drive."></textarea>
                 </div>
               </div>
-              <div class="mf-group">
-                <label>Preferred Contact Method</label>
-                <div class="mf-radio-group">
-                  <label class="mf-radio"><input type="radio" name="contactMailIn" value="call" checked /> CALL</label>
-                  <label class="mf-radio"><input type="radio" name="contactMailIn" value="email" /> EMAIL</label>
-                  <label class="mf-radio"><input type="radio" name="contactMailIn" value="text" /> TEXT</label>
+
+              <!-- STEP 4: Service Options -->
+              <div v-show="step === 4" class="form-step">
+                <h3 class="step-title">Service &amp; pricing options</h3>
+                <p class="step-desc">These fees are rare — we'll always confirm before charging anything.</p>
+                <div class="fg">
+                  <label class="fl">Expedited Service <span class="req">*</span></label>
+                  <div class="service-cards">
+                    <label class="service-card">
+                      <input type="radio" v-model="form.expeditedService" name="expedited" value="Standard Service" />
+                      <div class="sc-body"><strong>Standard Service</strong><span>Turnaround time is 3–5 business days.</span></div>
+                    </label>
+                    <label class="service-card">
+                      <input type="radio" v-model="form.expeditedService" name="expedited" value="Expedited Service" />
+                      <div class="sc-body">
+                        <div class="sc-top"><strong>Expedited Service</strong> <span class="sc-badge">$200 upfront</span></div>
+                        <span>We start immediately and won't stop until data is recovered. Turnaround 6–24 hours.</span>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Transfer Drive <span class="req">*</span></label>
+                  <div class="radio-group">
+                    <label class="ci"><input type="radio" v-model="form.transferDrive" name="transfer" value="I will provide my own transfer drive." /> I will provide my own transfer drive (please make sure drive is formatted and there is no other data on it).</label>
+                    <label class="ci"><input type="radio" v-model="form.transferDrive" name="transfer" value="I will purchase a transfer drive from Five Star Data Recovery." /> I will purchase a transfer drive from Five Star Data Recovery.</label>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Conditional Rates <span class="note-inline">(select any that apply)</span></label>
+                  <p class="field-note">These fees are rare and typically apply to a very small number of drives. If you are unsure of anything, don't worry — we will inspect the drive and let you know before proceeding.</p>
+                  <div class="check-group">
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Still inside a computer ($100.00 removal fee may apply)." /> My hard drive is still inside a computer (depending on the type of computer, there may be a $100.00 removal fee).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Encrypted ($200.00 fee if recovery is successful)." /> My hard drive is encrypted ($200.00 fee only if recovery is successful).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Part of a RAID ($300.00 flat rate per drive)." /> My hard drive is part of a RAID (Flat Rate Recovery fee of $300.00 per drive)</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Larger than 2TB ($200.00 additional fee if successful)." /> My hard drive is larger than 2TB ($200.00 additional fee if recovery is successful).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Larger than 8TB ($300.00 additional fee if successful)." /> My hard drive is larger than 8TB ($300.00 additional fee if recovery is successful).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="USB 3.0 or USB-C Port ($200.00 additional fee if successful)." /> My hard drive has the USB 3.0 or USB-C Port ($200.00 additional fee if recovery is successful).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.conditionalRates" value="Deleted data ($200.00 upfront, non-refundable)." /> The data on my hard drive was deleted ($200.00 Paid upfront and non refundable).</label>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="mf-group mf-full">
-              <label for="mf-response-time">PREFERRED RESPONSE TIME</label>
-              <div class="mf-select-wrap">
-                <select id="mf-response-time" class="mf-input">
-                  <option value="">Select Preferred Time</option>
-                  <option>Immediately (24/7)</option><option>During Business Hours</option>
-                  <option>Morning (8am – 12pm)</option><option>Afternoon (12pm – 5pm)</option><option>Evening (5pm – 8pm)</option>
-                </select>
+
+              <!-- STEP 5: Shipping & Submit -->
+              <div v-show="step === 5" class="form-step">
+                <h3 class="step-title">Shipping address &amp; submit</h3>
+                <p class="step-desc">We'll send your free prepaid label to this address. Shipping is on us — both ways.</p>
+                <div class="fg"><label class="fl">Street Address <span class="req">*</span></label><input type="text" class="fi" v-model="form.streetAddress" placeholder="123 Main St" /></div>
+                <div class="form-grid-2">
+                  <div class="fg"><label class="fl">City <span class="req">*</span></label><input type="text" class="fi" v-model="form.city" placeholder="Los Angeles" /></div>
+                  <div class="fg"><label class="fl">State / Province <span class="req">*</span></label><input type="text" class="fi" v-model="form.state" placeholder="CA" /></div>
+                </div>
+                <div class="form-grid-2">
+                  <div class="fg"><label class="fl">ZIP / Postal Code <span class="req">*</span></label><input type="text" class="fi" v-model="form.zip" placeholder="90001" /></div>
+                  <div class="fg">
+                    <label class="fl">Country <span class="req">*</span></label>
+                    <select class="fi" v-model="form.country">
+                      <option>United States of America (USA)</option><option>Canada</option><option>United Kingdom</option>
+                      <option>Australia</option><option>Germany</option><option>France</option><option>Spain</option>
+                      <option>Italy</option><option>Japan</option><option>Mexico</option><option>Brazil</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="fg">
+                  <label class="fl">Preferred Shipping Carrier</label>
+                  <p class="field-note">Shipping is on us. But if you have a preference, please feel free to let us know.</p>
+                  <div class="radio-group">
+                    <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="USPS" /> USPS</label>
+                    <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="FedEx" /> FedEx</label>
+                    <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="No preference" /> I don't have a preference</label>
+                  </div>
+                </div>
+                <div class="fg"><label class="fl">Date <span class="req">*</span></label><input type="date" class="fi" v-model="form.date" /></div>
+                <div class="fg">
+                  <label class="ci terms-line"><input type="checkbox" v-model="form.termsAgreed" />
+                    Yes, I agree with the <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a>
+                  </label>
+                </div>
               </div>
-            </div>
-            <button type="submit" class="mf-submit">Request a Consultation</button>
-          </form>
+
+              <!-- Step error -->
+              <p v-if="stepError" class="step-error">⚠ {{ stepError }}</p>
+
+              <!-- Navigation -->
+              <div class="form-nav">
+                <button v-if="step > 1" type="button" class="btn-back" @click="prevStep">← Back</button>
+                <div style="flex:1"></div>
+                <span class="step-count">Step {{ step }} of {{ totalSteps }}</span>
+                <button v-if="step < totalSteps" type="button" class="btn-next" @click="nextStep">Continue →</button>
+                <button v-if="step === totalSteps" type="submit" class="btn-next" :disabled="submitting">{{ submitting ? 'Sending...' : 'Submit Form' }}</button>
+              </div>
+              <p v-if="submitError" class="step-error">{{ submitError }}</p>
+
+            </form>
+          </template>
         </div>
       </div>
     </section>
 
-    <!-- FAQ — grey -->
-    <section class="s-grey">
+    <!-- PROCESS SECTION -->
+    <section class="process-section">
       <div class="container">
-        <div class="section-label center">Got Questions?</div>
-        <h2 class="s-heading center">Frequently Asked Questions</h2>
-        <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
-            <button class="faq-trigger" @click="toggleFaq(i)">
-              <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
-            </button>
-            <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+        <h2 class="process-heading">Data Recovery Process</h2>
+        <p class="process-intro">Our data recovery process is built around security, transparency, and peace of mind. From start to finish, we keep you informed with clear updates at every stage. With a commitment to honest service and no hidden fees, we follow through on every promise — ensuring a smooth and stress-free experience.</p>
+        <div class="process-timeline">
+          <div class="process-line"></div>
+          <div class="process-step" v-for="(s, i) in processSteps" :key="i">
+            <div class="process-num">{{ s.num }}</div>
+            <h3 class="process-title">{{ s.title }}</h3>
+            <p class="process-body">{{ s.text }}</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- VIDEO SECTION -->
-    <section class="page-video-section">
-      <div class="container page-video-inner">
-        <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
-          <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
+    <section class="video-section">
+      <div class="container video-inner">
+        <div class="video-text">
+          <h2 class="video-heading">See Why Thousands Trust Us<br>With Their Important Data</h2>
+          <p class="video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
-        <div class="page-video-embed">
+        <div class="video-embed">
           <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
         </div>
       </div>
     </section>
 
-    <!-- REVIEWS — white -->
-    <ReviewsSection :reviews="reviews" />
-
-    <!-- CONTACT BAND -->
-    <section class="s-contact-band">
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
       <div class="container">
-        <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Contact Us for Mail-In Data Recovery Service</h2>
+        <h2 class="s-heading center" style="margin-bottom:36px;">Frequently Asked Questions</h2>
+        <div class="faq-wrap">
+          <div v-for="(faq, i) in faqs" :key="i" class="faq-row" :class="{ active: openFaq === i }">
+            <button class="faq-trigger" @click="toggleFaq(i)">
+              <span>{{ i + 1 }}. {{ faq.q }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+            </button>
+            <div v-if="openFaq === i" class="faq-answer">{{ faq.a }}</div>
+          </div>
         </div>
-        <div class="contact-body">
-          <p class="contact-body-text">{{ contactText }}</p>
-          <ul class="contact-bullets">
-            <li v-for="item in contactList" :key="item">{{ item }}</li>
-          </ul>
-          <p v-if="contactOutro" class="contact-outro">{{ contactOutro }}</p>
-        </div>
-        <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
       </div>
     </section>
 
@@ -524,131 +460,104 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 *, *::before, *::after { box-sizing: border-box; }
 .page-content { font-family: 'Inter', sans-serif; color: #1a1a2e; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.s-white { background: #fff; padding: 88px 0; }
-.s-grey  { background: #f4f7fc; padding: 88px 0; }
-.section-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5900; margin-bottom: 10px; }
-.section-label.center { text-align: center; }
-.section-label.light { color: #C9A84C; }
-.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 14px; }
+.s-heading { font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; }
 .s-heading.center { text-align: center; }
-.s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 40px; }
-.s-intro.center { text-align: center; max-width: 680px; margin-left: auto; margin-right: auto; }
-.s-body { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
-.s-outro { font-size: 0.94rem; color: #4a5568; line-height: 1.8; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8ecf2; }
-.s-mt { margin-top: 16px; }
-.issues-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.issue-card { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
-.issue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #C9A84C; }
-.issue-icon { font-size: 1.8rem; margin-bottom: 14px; line-height: 1; }
-.issue-title { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; line-height: 1.3; }
-.issue-body { font-size: 0.91rem; color: #4a5568; line-height: 1.75; }
-.asym-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.asym-major { position: relative; }
-.rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 420px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
-.check-list { list-style: none; padding: 0; margin: 16px 0 0; }
-.check-list li { padding: 9px 0 9px 26px; position: relative; font-size: 0.91rem; color: #4a5568; border-bottom: 1px solid #e8ecf2; }
-.check-list li::before { content: '✓'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.process-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin: 8px 0 36px; }
-.process-node { position: relative; padding: 0 16px; text-align: center; }
-.process-circle { width: 56px; height: 56px; border-radius: 50%; background: #1a1a2e; color: #C9A84C; font-size: 1.1rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; border: 2px solid #C9A84C; }
-.process-connector { position: absolute; top: 27px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3)); }
-.process-title { font-size: 0.85rem; font-weight: 700; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
-.process-body { font-size: 0.83rem; color: #4a5568; line-height: 1.65; }
-.guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
-.guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
-.guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #C9A84C; }
-.split-40-60 { display: grid; grid-template-columns: 2fr 3fr; gap: 64px; align-items: center; }
-.drives-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
-.drive-cell { padding: 10px 12px; font-size: 0.9rem; color: #2d3748; border-bottom: 1px solid #e8ecf2; vertical-align: top; width: 50%; }
-.drive-check { color: #C9A84C; font-weight: 700; margin-right: 6px; }
-.fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }
-.banner-overlay { position: absolute; inset: 0; background: url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') center/cover no-repeat; opacity: 0.12; }
-.banner-inner { position: relative; text-align: center; }
-.banner-heading { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 14px; }
-.banner-sub { font-size: 1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 48px; line-height: 1.7; }
-.banner-stats { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; }
-.bstat { text-align: center; padding: 0 40px; }
-.bstat-num { display: block; font-size: 2.2rem; font-weight: 900; color: #C9A84C; line-height: 1; margin-bottom: 6px; }
-.bstat-lbl { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
-.bstat-note { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.4); font-style: italic; margin-top: 3px; }
-.bstat-div { width: 1px; height: 48px; background: rgba(255,255,255,0.15); }
-.dual-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.dual-box { background: #fff; border: 1px solid #e8ecf2; border-radius: 14px; padding: 36px; }
-.s-grey .dual-box { background: #fff; }
-.dual-icon { font-size: 2rem; margin-bottom: 14px; }
-.dual-heading { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 14px; }
-.arrow-list { list-style: none; padding: 0; margin: 12px 0 0; }
-.arrow-list li { padding: 8px 0 8px 22px; position: relative; font-size: 0.88rem; color: #4a5568; }
-.arrow-list li::before { content: '→'; position: absolute; left: 0; color: #C9A84C; font-weight: 700; }
-.mid-form-section { position: relative; padding: 72px 0; overflow: hidden; }
-.mid-form-inner { position: relative; display: grid; grid-template-columns: 1fr 480px; gap: 60px; align-items: center; }
-.mid-form-card { background: #fff; border-radius: 8px; padding: 32px 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-.mid-form-title { font-size: 20px; font-weight: 800; color: #1a1a2e; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid #f0f0f0; }
-.mid-consult-form { display: flex; flex-direction: column; gap: 14px; }
-.mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.mf-group { display: flex; flex-direction: column; gap: 5px; }
-.mf-group label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #555; }
-.mf-req { color: #e53935; }
-.mf-full { grid-column: 1 / -1; }
-.mf-input { height: 52px; border: 1px solid #ddd; border-radius: 6px; padding: 0 16px; font-size: 15px; color: #333; background: #fff; width: 100%; box-sizing: border-box; font-family: inherit; appearance: none; }
-.mf-input:focus { outline: none; border-color: #C9A84C; }
-.mf-select-wrap { position: relative; }
-.mf-select-wrap .mf-input { padding-right: 36px; cursor: pointer; }
-.mf-radio-group { display: flex; gap: 14px; align-items: center; height: 40px; }
-.mf-radio { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #444; cursor: pointer; }
-.mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
-.mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
-.mf-submit:hover { background: #b8923e; }
-.dark-heading { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 900; color: #fff; margin-bottom: 18px; line-height: 1.25; }
-.dark-body { font-size: 0.94rem; color: rgba(255,255,255,0.72); line-height: 1.8; margin-bottom: 14px; }
-.dark-features { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
-.df { font-size: 0.9rem; color: rgba(255,255,255,0.85); display: flex; align-items: center; gap: 10px; }
-.df-check { color: #C9A84C; font-weight: 700; }
-.df-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
-.page-video-section { background: #2a2d38; padding: 70px 0; }
-.page-video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.page-video-copy { display: flex; flex-direction: column; gap: 20px; }
-.page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
-.page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
-.page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.s-contact-band { background: #fff; padding: 64px 0; }
-.contact-banner-card { background: linear-gradient(to right, #1a1a2e 55%, rgba(26,26,46,0.75) 100%), url('/hard-drive-data-recovery-specialist-glendale-ca.jpg') right center / cover no-repeat; border-radius: 12px; padding: 40px 48px; margin-bottom: 28px; min-height: 120px; display: flex; align-items: center; overflow: hidden; }
-.contact-banner-heading { font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 900; color: #fff; line-height: 1.25; max-width: 560px; margin: 0; }
-.contact-body { margin-bottom: 28px; }
-.contact-body-text { font-size: 0.95rem; color: #2d3748; line-height: 1.75; margin-bottom: 14px; }
-.contact-bullets { list-style: disc; padding-left: 20px; margin: 0 0 12px; }
-.contact-bullets li { font-size: 0.9rem; color: #4a5568; padding: 3px 0; }
-.contact-outro { font-size: 0.9rem; color: #4a5568; }
-.btn-start-recovery { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
-.btn-start-recovery:hover { background: #b8923e; }
-.faq-wrap { margin: 40px 0 0; display: flex; flex-direction: column; gap: 8px; }
-.faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
-.faq-row.active { border-color: #C9A84C; }
-.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
-.faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
-.faq-answer :deep(.faq-link:hover) { color: #b8923e; }
-@media (max-width: 1024px) {
-  .asym-layout { grid-template-columns: 1fr 1fr; }
-  .process-track { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .process-connector { display: none; }
-  .mid-form-inner { grid-template-columns: 1fr 440px; gap: 40px; }
-}
+
+/* FORM */
+.form-section { background: #f4f7fc; padding: 72px 0 80px; }
+.form-wrap { max-width: 780px; margin: 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.08); overflow: hidden; }
+.stepper { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 36px 40px 28px; background: #fff; border-bottom: 1px solid #e8edf4; }
+.stepper-track { position: absolute; top: 54px; left: calc(40px + 20px); right: calc(40px + 20px); height: 3px; background: #e8edf4; border-radius: 2px; z-index: 0; }
+.stepper-fill { height: 100%; background: #F5C842; border-radius: 2px; transition: width 0.4s ease; }
+.stepper-item { display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1; flex: 1; }
+.stepper-circle { width: 40px; height: 40px; border-radius: 50%; background: #e8edf4; color: #8a9bb8; font-size: 0.95rem; font-weight: 800; display: flex; align-items: center; justify-content: center; transition: background 0.3s, color 0.3s; border: 3px solid #fff; box-shadow: 0 0 0 2px #e8edf4; }
+.stepper-item.active .stepper-circle { background: #F5C842; color: #1a1a2e; box-shadow: 0 0 0 2px #F5C842; }
+.stepper-item.done .stepper-circle { background: #22c55e; color: #fff; box-shadow: 0 0 0 2px #22c55e; }
+.check-mark { font-size: 1rem; }
+.stepper-label { font-size: 0.7rem; font-weight: 700; color: #8a9bb8; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; white-space: nowrap; }
+.stepper-item.active .stepper-label { color: #1a1a2e; }
+.stepper-item.done .stepper-label { color: #22c55e; }
+.edo-form { padding: 40px 40px 32px; display: flex; flex-direction: column; gap: 0; }
+.form-step { display: flex; flex-direction: column; gap: 22px; }
+.step-title { font-size: 1.35rem; font-weight: 900; color: #1a1a2e; margin: 0 0 4px; }
+.step-desc { font-size: 0.93rem; color: #6b7280; margin: 0 0 8px; line-height: 1.6; }
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.fg { display: flex; flex-direction: column; gap: 6px; }
+.fl { font-size: 0.75rem; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.06em; }
+.req { color: #ef4444; }
+.fi { border: 1.5px solid #d1d9e6; border-radius: 8px; padding: 11px 14px; font-size: 0.95rem; color: #1a1a2e; background: #fff; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s; width: 100%; }
+.fi:focus { outline: none; border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
+.fi-textarea { min-height: 110px; resize: vertical; }
+.check-group, .radio-group { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
+.ci { display: flex; align-items: flex-start; gap: 10px; font-size: 0.91rem; color: #374151; line-height: 1.55; cursor: pointer; }
+.ci input { margin-top: 3px; flex-shrink: 0; accent-color: #F5C842; cursor: pointer; }
+.note-inline { font-size: 0.75rem; font-weight: 400; color: #9ca3af; text-transform: none; letter-spacing: 0; margin-left: 4px; }
+.field-note { font-size: 0.83rem; color: #6b7280; line-height: 1.6; margin: 0 0 10px; }
+.terms-link { color: #F5C842; text-decoration: underline; }
+.terms-line { font-size: 0.93rem; margin-top: 4px; }
+.service-cards { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+.service-card { display: flex; align-items: flex-start; gap: 14px; border: 1.5px solid #e8edf4; border-radius: 10px; padding: 16px 18px; cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s; }
+.service-card:has(input:checked) { border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.12); }
+.service-card input { margin-top: 3px; flex-shrink: 0; accent-color: #F5C842; }
+.sc-body { display: flex; flex-direction: column; gap: 4px; }
+.sc-body strong { font-size: 0.95rem; color: #1a1a2e; }
+.sc-body span { font-size: 0.85rem; color: #6b7280; line-height: 1.5; }
+.sc-top { display: flex; align-items: center; gap: 10px; }
+.sc-badge { background: #F5C842; color: #1a1a2e; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 20px; }
+.step-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; font-weight: 600; margin-top: 20px; }
+.form-nav { display: flex; align-items: center; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8edf4; }
+.step-count { font-size: 0.82rem; color: #9ca3af; font-weight: 600; }
+.btn-back { background: none; border: 1.5px solid #d1d9e6; color: #4b5563; padding: 11px 22px; border-radius: 8px; font-size: 0.92rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: border-color 0.2s; }
+.btn-back:hover { border-color: #9ca3af; }
+.btn-next { background: #F5C842; color: #1a1a1a; border: none; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+.btn-next:hover { background: #e0b43a; }
+.btn-next:disabled { opacity: 0.6; cursor: not-allowed; }
+.form-success { padding: 72px 40px; text-align: center; }
+.success-icon { width: 64px; height: 64px; border-radius: 50%; background: #22c55e; color: #fff; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.success-heading { font-size: 1.6rem; font-weight: 900; color: #1a1a2e; margin-bottom: 12px; }
+.success-text { font-size: 1rem; color: #6b7280; max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+.btn-gold { display: inline-block; background: #F5C842; color: #1a1a1a; padding: 13px 32px; border-radius: 8px; font-weight: 800; text-decoration: none; }
+
+/* PROCESS */
+.process-section { background: #0f1623; padding: 80px 0 90px; }
+.process-heading { text-align: center; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
+.process-intro { text-align: center; font-size: 1rem; color: #8a9bb8; max-width: 760px; margin: 0 auto 56px; line-height: 1.7; }
+.process-timeline { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.process-line { position: absolute; top: 27px; left: calc(10% + 27px); right: calc(10% + 27px); height: 3px; background: linear-gradient(to right, #F5C842, #e0b43a); border-radius: 2px; }
+.process-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
+.process-num { width: 54px; height: 54px; border-radius: 50%; background: #F5C842; color: #1a1a2e; font-size: 1.3rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 0 0 4px #0f1623, 0 0 0 7px rgba(245,200,66,0.25); flex-shrink: 0; }
+.process-title { font-size: 0.88rem; font-weight: 800; color: #fff; margin: 0 0 10px; line-height: 1.35; }
+.process-body { font-size: 0.78rem; color: #8a9bb8; line-height: 1.6; margin: 0; }
+
+/* VIDEO */
+.video-section { background: #1a2035; padding: 72px 0; }
+.video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 16px; }
+.video-desc { font-size: 0.95rem; color: #8a9bb8; line-height: 1.8; }
+.video-embed { border-radius: 12px; overflow: hidden; }
+.video-embed iframe { width: 100%; aspect-ratio: 16/9; display: block; }
+
+/* FAQ */
+.faq-section { background: #f4f7fc; padding: 80px 0; }
+.faq-wrap { max-width: 760px; margin: 0 auto; }
+.faq-row { border-bottom: 1px solid #e2e8f0; }
+.faq-row:first-child { border-top: 1px solid #e2e8f0; }
+.faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; background: none; border: none; font-family: inherit; font-size: 0.97rem; font-weight: 700; color: #1a1a2e; text-align: left; cursor: pointer; }
+.faq-toggle { font-size: 1.4rem; color: #F5C842; flex-shrink: 0; }
+.faq-answer { padding: 0 0 20px; font-size: 0.93rem; color: #4a5568; line-height: 1.75; }
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .asym-layout, .split-40-60, .mid-form-inner, .dual-col { grid-template-columns: 1fr; gap: 36px; }
-  .page-video-inner { grid-template-columns: 1fr; }
-  .issues-grid { grid-template-columns: 1fr; }
-  .bstat-div { display: none; }
-  .img-stat-badge { bottom: 12px; }
-  .mf-row { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .process-track { grid-template-columns: 1fr; }
+  .form-wrap { border-radius: 0; }
+  .stepper { padding: 24px 20px 20px; }
+  .stepper-label { display: none; }
+  .stepper-track { left: 30px; right: 30px; top: 44px; }
+  .edo-form { padding: 28px 20px 24px; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .process-line { display: none; }
+  .process-timeline { flex-direction: column; align-items: flex-start; gap: 28px; }
+  .process-step { flex-direction: row; text-align: left; gap: 16px; }
+  .process-num { margin-bottom: 0; }
+  .video-inner { grid-template-columns: 1fr; }
 }
 </style>
