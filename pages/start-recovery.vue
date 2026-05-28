@@ -135,11 +135,57 @@ const trustBadges = [
 ]
 
 const steps = [
-  { img: '/start-recovery-step-1.jpg', alt: 'Shipping Process: Step 1', text: 'Drop off or Mail in your drive' },
-  { img: '/start-recovery-step-2.jpg', alt: 'Shipping Process: Step 2', text: 'Receive a free diagnosis' },
-  { img: '/start-recovery-step-3.jpg', alt: 'Shipping Process: Step 3', text: 'Our engineers work on recovering your data' },
-  { img: '/start-recovery-step-4.jpg', alt: 'Shipping Process: Step 4', text: 'Review & approve the recovered data' },
-  { img: '/start-recovery-step-5.jpg', alt: 'Shipping Process: Step 5', text: 'Receive your recovered data' },
+  {
+    title: 'Drop Off or Ship Your Drive',
+    text: 'Bring your device to our Glendale lab or ship it free with our prepaid label — no appointment needed.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+      <rect x="8" y="22" width="48" height="32" rx="4" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M8 30h48" stroke="currentColor" stroke-width="3"/>
+      <path d="M24 22V14a8 8 0 0116 0v8" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="32" cy="42" r="5" stroke="currentColor" stroke-width="3"/>
+      <path d="M20 10l-6 6M44 10l6 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    title: 'Free Diagnosis',
+    text: 'Our certified engineers evaluate your device at no charge and identify the exact cause of data loss.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+      <circle cx="28" cy="28" r="16" stroke="currentColor" stroke-width="3"/>
+      <path d="M40 40l12 12" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M22 28h12M28 22v12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    title: 'Data Recovery in Progress',
+    text: 'Our engineers work in a certified cleanroom lab using advanced tools to safely recover your files.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+      <rect x="10" y="18" width="44" height="28" rx="4" stroke="currentColor" stroke-width="3"/>
+      <path d="M10 26h44" stroke="currentColor" stroke-width="2.5"/>
+      <circle cx="18" cy="22" r="2" fill="currentColor"/>
+      <circle cx="26" cy="22" r="2" fill="currentColor"/>
+      <path d="M20 36l6-6 6 6 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M22 50h20M32 46v4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    title: 'Review & Approve',
+    text: 'We send you a full file listing before recovery is complete. You only pay when you approve the results.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+      <rect x="12" y="10" width="40" height="44" rx="4" stroke="currentColor" stroke-width="3"/>
+      <path d="M20 24h24M20 32h24M20 40h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="46" cy="46" r="10" fill="#0f1623" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M41 46l3 3 6-6" stroke="#F5C842" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`,
+  },
+  {
+    title: 'Receive Your Data',
+    text: 'Recovered files are delivered on a new drive or via secure cloud transfer — fast and fully guaranteed.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+      <path d="M32 10v28M32 38l-10-10M32 38l10-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 44v4a4 4 0 004 4h28a4 4 0 004-4v-4" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="32" cy="52" r="2" fill="currentColor"/>
+    </svg>`,
+  },
 ]
 
 const activeStep = ref<number | null>(null)
@@ -179,13 +225,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             @mouseleave="activeStep = null"
           >
             <div class="sr-step-card">
-              <div class="sr-step-img-wrap">
-                <img :src="step.img" :alt="step.alt" class="sr-step-img" />
-                <div class="sr-step-overlay"></div>
+              <div class="sr-step-icon-wrap">
                 <div class="sr-step-badge">{{ i + 1 }}</div>
+                <div class="sr-step-icon" v-html="step.icon"></div>
               </div>
               <div class="sr-step-body">
-                <p class="sr-step-label">{{ step.text }}</p>
+                <h3 class="sr-step-title">{{ step.title }}</h3>
+                <p class="sr-step-text">{{ step.text }}</p>
               </div>
             </div>
             <div v-if="i < steps.length - 1" class="sr-step-connector">
@@ -314,39 +360,25 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   box-shadow: 0 8px 32px rgba(245,200,66,0.18);
   transform: translateY(-5px);
 }
-.sr-step-img-wrap {
-  width: 100%;
-  aspect-ratio: 16/10;
-  overflow: hidden;
-  background: #0f1623;
+.sr-step-icon-wrap {
   position: relative;
-}
-.sr-step-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease;
-}
-.sr-step:hover .sr-step-img {
-  transform: scale(1.05);
-}
-.sr-step-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 40%, rgba(10,12,20,0.7) 100%);
-  pointer-events: none;
+  background: linear-gradient(135deg, #1a2540 0%, #0f1a30 100%);
+  padding: 32px 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #2a3050;
 }
 .sr-step-badge {
   position: absolute;
   top: 10px;
   left: 12px;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: #F5C842;
   color: #1a1a2e;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 900;
   display: flex;
   align-items: center;
@@ -354,16 +386,34 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
   line-height: 1;
 }
-.sr-step-body {
-  padding: 14px 14px 16px;
+.sr-step-icon {
+  width: 72px;
+  height: 72px;
+  color: #F5C842;
+  transition: transform 0.3s ease, color 0.25s ease;
 }
-.sr-step-label {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #c8d4e8;
-  line-height: 1.45;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+.sr-step-icon :deep(svg) {
+  width: 100%;
+  height: 100%;
+}
+.sr-step:hover .sr-step-icon {
+  transform: scale(1.1);
+  color: #fff;
+}
+.sr-step-body {
+  padding: 18px 16px 20px;
+}
+.sr-step-title {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.sr-step-text {
+  font-size: 0.78rem;
+  color: #8a9bb8;
+  line-height: 1.55;
   margin: 0;
 }
 .sr-step-connector {
@@ -470,9 +520,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .sr-step { flex: 0 0 auto; width: 100%; }
   .sr-step-connector { display: none; }
   .sr-step-card { display: flex; flex-direction: row; align-items: stretch; border-radius: 12px; }
-  .sr-step-img-wrap { width: 110px; flex-shrink: 0; aspect-ratio: 1; border-radius: 12px 0 0 12px; }
-  .sr-step-body { display: flex; align-items: center; padding: 12px 16px; }
-  .sr-step-label { font-size: 0.82rem; text-transform: uppercase; }
+  .sr-step-icon-wrap { width: 100px; flex-shrink: 0; border-bottom: none; border-right: 1px solid #2a3050; padding: 20px 12px; border-radius: 12px 0 0 12px; }
+  .sr-step-icon { width: 52px; height: 52px; }
+  .sr-step-body { display: flex; flex-direction: column; justify-content: center; padding: 14px 16px; }
   .sr-options { grid-template-columns: 1fr; }
   .sr-video-inner { grid-template-columns: 1fr; }
 }
