@@ -1429,14 +1429,27 @@ const progressIndex = computed(() => {
 }
 .iqt-compact .iqt-hint { color: #6b7280; font-size: 0.78rem; margin-bottom: 10px; }
 
-/* Grid overrides in compact mode */
-.iqt-compact .iqt-grid { gap: 8px; }
-.iqt-compact .g4 { grid-template-columns: 1fr 1fr; } /* 2×2 big squares */
+/* Each step fills full height */
+.iqt-compact .iqt-body > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Grid fills remaining space and rows stretch */
+.iqt-compact .iqt-grid {
+  gap: 8px;
+  flex: 1;
+  align-content: stretch;
+  align-items: stretch;
+  height: 100%;
+}
+.iqt-compact .g4 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
 .iqt-compact .g3 { grid-template-columns: repeat(3, 1fr); }
-.iqt-compact .g2 { grid-template-columns: 1fr 1fr; }
+.iqt-compact .g2 { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
 .iqt-compact .g1 { grid-template-columns: 1fr; }
 
-/* Base card style for compact */
+/* Base card style for compact — stretch to fill grid cell */
 .iqt-compact .iqt-card {
   padding: 14px 10px;
   gap: 7px;
@@ -1445,6 +1458,8 @@ const progressIndex = computed(() => {
   border-radius: 10px;
   color: #1a1a2e;
   transition: all 0.15s;
+  height: 100%;
+  min-height: 0;
 }
 .iqt-compact .iqt-card:hover { border-color: #F5C842; background: #fffbeb; transform: translateY(-1px); }
 .iqt-compact .iqt-card.selected { border-color: #F5C842; background: #fffbeb; box-shadow: 0 0 0 3px rgba(245,200,66,0.15); }
@@ -1452,11 +1467,10 @@ const progressIndex = computed(() => {
 .iqt-compact .iqt-card-label { font-size: 0.76rem; color: #1a1a2e; font-weight: 700; line-height: 1.3; }
 .iqt-compact .iqt-card-sub { font-size: 0.64rem; color: #6b7280; line-height: 1.3; }
 
-/* Big 2-col cards (capacity, yes/no steps) — taller, more square */
+/* Big 2-col cards (capacity, yes/no steps) — stretch, centered content */
 .iqt-compact .g4 .iqt-card,
 .iqt-compact .g2 .iqt-card:not(.iqt-issue-card):not(.iqt-urg-card) {
-  padding: 20px 12px;
-  min-height: 90px;
+  padding: 16px 12px;
   justify-content: center;
   gap: 8px;
 }
@@ -1482,8 +1496,9 @@ const progressIndex = computed(() => {
   text-align: left;
 }
 
-/* Nav buttons */
-.iqt-compact .iqt-nav { margin-top: 12px; gap: 8px; }
+/* Nav buttons — shrink, don’t take grid space */
+.iqt-compact .iqt-nav { margin-top: 10px; gap: 8px; flex-shrink: 0; }
+.iqt-compact .iqt-back { flex-shrink: 0; }
 .iqt-compact .iqt-btn-back {
   padding: 9px 16px;
   font-size: 0.85rem;
