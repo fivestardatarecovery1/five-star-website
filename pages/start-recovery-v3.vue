@@ -74,8 +74,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="v3-card-desc">Fill out our quick form ahead of time, drop off your device, and go. We handle everything from there — same-day diagnostic report included.</p>
             <div class="v3-card-perks">
               <span>⚡ Same-day appointments available</span>
-              <span>📋 Form required — selects your date &amp; 30-min window</span>
-              <span>🕐 Appointment-only drop-off via this form</span>
+              <span>🗓️ Choose your drop-off date &amp; 30-minute arrival window</span>
+              <span>📋 Complete the form to reserve your spot</span>
             </div>
             <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-gold">
               Express Drop-Off Form →

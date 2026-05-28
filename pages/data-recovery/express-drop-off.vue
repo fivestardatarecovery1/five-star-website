@@ -1,5 +1,4 @@
 <script setup lang="ts">
-definePageMeta({ ssr: false })
 useHead({
   script: [
     {
@@ -62,15 +61,6 @@ const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Servic
 
 // Form abandonment & funnel tracking
 const { onFieldFocus, onFieldBlur, onStepComplete, onStepBack, onFormSubmitted } = useFormTracking('express-drop-off', stepTitles)
-
-// Phone formatter — use watch instead of @input to avoid conflicting with v-model
-watch(() => form.phone, (val) => {
-  const digits = val.replace(/\D/g, '').slice(0, 10)
-  let formatted = digits
-  if (digits.length > 6) formatted = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6)
-  else if (digits.length > 3) formatted = digits.slice(0, 3) + '-' + digits.slice(3)
-  if (formatted !== val) form.phone = formatted
-})
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
@@ -87,75 +77,32 @@ const form = reactive({
 })
 
 // ── Schedule availability ──────────────────────────────────────────────────
-const ALL_SLOTS = [
-  '9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM',
-  '12:00 PM','12:30 PM','1:00 PM','1:30 PM','2:00 PM','2:30 PM',
-  '3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM',
-]
 const availableHours = ref<string[]>([])
-const blockedHours   = ref<string[]>([])
 const scheduleLoading = ref(false)
 const dateBlocked = ref(false)
 const dateBlockedMsg = ref('')
 
 watch(() => form.dropOffDate, async (date) => {
-  if (!date) { availableHours.value = []; blockedHours.value = []; form.dropOffTime = ''; return }
+  if (!date) { availableHours.value = []; form.dropOffTime = ''; return }
   scheduleLoading.value = true
   dateBlocked.value = false
   form.dropOffTime = ''
   try {
     const res = await $fetch<any>(`/api/express-availability?date=${date}`)
-    if (!res.available && !res.availableHours?.length) {
+    if (!res.available) {
       dateBlocked.value = true
       dateBlockedMsg.value = res.message || 'Not available this day — please choose another date.'
       availableHours.value = []
-      blockedHours.value = ALL_SLOTS
     } else {
       availableHours.value = res.availableHours || []
-      blockedHours.value = res.blockedHours || []
       dateBlocked.value = false
     }
   } catch {
-    availableHours.value = [...ALL_SLOTS]
-    blockedHours.value = []
+    availableHours.value = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM']
   } finally {
     scheduleLoading.value = false
   }
 })
-
-// ── Mini calendar ──────────────────────────────────────────────────
-const CAL_MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December']
-const today = new Date(); today.setHours(0,0,0,0)
-const todayStr = today.toISOString().split('T')[0]
-
-const calYear  = ref(today.getFullYear())
-const calMonth = ref(today.getMonth())
-
-const calCells = computed(() => {
-  const first = new Date(calYear.value, calMonth.value, 1).getDay()
-  const days  = new Date(calYear.value, calMonth.value + 1, 0).getDate()
-  const cells: (number | null)[] = []
-  for (let i = 0; i < first; i++) cells.push(null)
-  for (let d = 1; d <= days; d++) cells.push(d)
-  return cells
-})
-
-function calDateStr(d: number) {
-  return `${calYear.value}-${String(calMonth.value + 1).padStart(2,'0')}-${String(d).padStart(2,'0')}`
-}
-
-function calPrev() {
-  if (calMonth.value === 0) { calYear.value--; calMonth.value = 11 } else { calMonth.value-- }
-}
-function calNext() {
-  if (calMonth.value === 11) { calYear.value++; calMonth.value = 0 } else { calMonth.value++ }
-}
-function calSelect(d: number) {
-  const ds = calDateStr(d)
-  const date = new Date(ds + 'T12:00:00')
-  if (date < today) return
-  form.dropOffDate = form.dropOffDate === ds ? '' : ds
-}
 
 function scrollToForm() {
   if (import.meta.client) {
@@ -258,7 +205,6 @@ const faqs = [
 // Pre-fill from quote tool
 onMounted(() => {
   if (!import.meta.client) return
-  // Auto-fill today's date — no need for customer to pick it manually
   if (!form.todayDate) form.todayDate = todayStr
   const raw = localStorage.getItem('fivestar_quote_prefill')
   if (!raw) return
@@ -358,7 +304,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   </div>
                   <div class="fg">
                     <label class="fl">Phone <span class="req">*</span></label>
-                    <input type="tel" class="fi" v-model="form.phone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" />
+                    <input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" />
                   </div>
                 </div>
               </div>
@@ -508,70 +454,24 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <!-- STEP 5: Schedule -->
               <div v-show="step === 5" class="form-step">
                 <h3 class="step-title">Almost done — schedule your drop-off</h3>
-                <p class="step-desc">Pick a date, then select your preferred drop-off time.</p>
-
-                <div class="schedule-wrap">
-                  <!-- Calendar -->
-                  <div class="cal-panel">
-                    <div class="cal-header">
-                      <button type="button" class="cal-nav" @click="calPrev">‹</button>
-                      <span class="cal-title">{{ CAL_MONTHS[calMonth] }} {{ calYear }}</span>
-                      <button type="button" class="cal-nav" @click="calNext">›</button>
-                    </div>
-                    <div class="cal-grid">
-                      <div v-for="d in ['Su','Mo','Tu','We','Th','Fr','Sa']" :key="d" class="cal-dow">{{ d }}</div>
-                      <template v-for="(cell, i) in calCells" :key="i">
-                        <div v-if="cell === null" />
-                        <button
-                          v-else
-                          type="button"
-                          class="cal-day"
-                          :class="{
-                            'cal-past':     new Date(calDateStr(cell) + 'T12:00:00') < today,
-                            'cal-selected': form.dropOffDate === calDateStr(cell),
-                            'cal-today':    calDateStr(cell) === todayStr,
-                          }"
-                          :disabled="new Date(calDateStr(cell) + 'T12:00:00') < today"
-                          @click="calSelect(cell)"
-                        >{{ cell }}</button>
-                      </template>
-                    </div>
-                    <p v-if="form.dropOffDate" class="cal-selected-label">
-                      ✓ {{ new Date(form.dropOffDate + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }) }}
-                    </p>
-                    <p v-if="dateBlocked" class="cal-blocked-msg">⚠ {{ dateBlockedMsg }}</p>
+                <p class="step-desc">Our Glendale lab is open Mon–Fri 9am–5pm. Select a date to see available times.</p>
+                <div class="form-grid-2">
+                  <div class="fg">
+                    <label class="fl">Preferred Drop Off Date <span class="req">*</span></label>
+                    <input type="date" class="fi" v-model="form.dropOffDate"
+                      :min="new Date().toISOString().split('T')[0]" />
+                    <p v-if="dateBlocked" style="color:#ef4444;font-size:0.85rem;margin-top:4px;">⚠ {{ dateBlockedMsg }}</p>
                   </div>
-
-                  <!-- Time slots -->
-                  <div class="slots-panel">
-                    <p class="slots-label">
-                      <template v-if="!form.dropOffDate">Select a date to see times</template>
-                      <template v-else-if="scheduleLoading">Checking availability…</template>
-                      <template v-else-if="dateBlocked">No availability on this date</template>
-                      <template v-else>Select a drop-off time <span class="req">*</span></template>
-                    </p>
-                    <div v-if="form.dropOffDate && !scheduleLoading" class="slots-grid">
-                      <button
-                        v-for="slot in ALL_SLOTS" :key="slot"
-                        type="button"
-                        class="slot-btn"
-                        :class="{
-                          'slot-available': availableHours.includes(slot) && !dateBlocked,
-                          'slot-selected':  form.dropOffTime === slot,
-                          'slot-blocked':   blockedHours.includes(slot) || dateBlocked,
-                        }"
-                        :disabled="blockedHours.includes(slot) || dateBlocked"
-                        @click="form.dropOffTime = (form.dropOffTime === slot ? '' : slot)"
-                      >
-                        {{ slot }}
-                        <span v-if="blockedHours.includes(slot) || dateBlocked" class="slot-unavail-badge">Unavailable</span>
-                      </button>
-                    </div>
-                    <p v-if="form.dropOffTime" class="slot-selected-label">✓ {{ form.dropOffTime }} selected</p>
+                  <div class="fg">
+                    <label class="fl">Preferred Drop Off Time <span class="req">*</span></label>
+                    <select class="fi" v-model="form.dropOffTime" :disabled="!form.dropOffDate || scheduleLoading || dateBlocked">
+                      <option value="">{{ scheduleLoading ? 'Checking availability...' : form.dropOffDate ? (dateBlocked ? 'Not available' : 'Select a time') : 'Select a date first' }}</option>
+                      <option v-for="h in availableHours" :key="h" :value="h">{{ h }}</option>
+                    </select>
+                    <p v-if="form.dropOffDate && !scheduleLoading && !dateBlocked && availableHours.length === 0" style="color:#ef4444;font-size:0.85rem;margin-top:4px;">No times available for this date.</p>
                   </div>
                 </div>
-
-                <div class="fg" style="margin-top:1.25rem;">
+                <div class="fg">
                   <label class="fl">Today's Date <span class="req">*</span></label>
                   <div class="date-field-wrap">
                     <input type="date" class="fi date-fi" v-model="form.todayDate" />
@@ -768,17 +668,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .fi-textarea { min-height: 110px; resize: vertical; }
 .date-field-wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .date-fi { flex: 1; min-width: 160px; }
-.today-pill {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 9px 16px; border-radius: 999px;
-  background: #FEF9E7; border: 1.5px solid #F5C842;
-  color: #92400e; font-size: 0.85rem; font-weight: 700;
-  cursor: pointer; white-space: nowrap; transition: background 0.15s, transform 0.1s;
-  flex-shrink: 0;
-}
-.today-pill:hover { background: #FDE68A; transform: scale(1.03); }
-.today-pill:active { transform: scale(0.97); }
-.date-confirm { font-size: 0.85rem; color: #15803d; font-weight: 600; margin: 4px 0 0; }
+.today-pill { display: inline-flex; align-items: center; gap: 5px; padding: 9px 16px; border-radius: 999px; background: #FEF9E7; border: 1.5px solid #F5C842; color: #92400e; font-size: .85rem; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background .15s; }
+.today-pill:hover { background: #FDE68A; }
+.date-confirm { font-size: .85rem; color: #15803d; font-weight: 600; margin: 4px 0 0; }
 .check-group, .radio-group { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
 .ci {
   display: flex;
@@ -910,42 +802,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; background: none; border: none; font-family: inherit; font-size: 0.97rem; font-weight: 700; color: #1a1a2e; text-align: left; cursor: pointer; }
 .faq-toggle { font-size: 1.4rem; color: #F5C842; flex-shrink: 0; }
 .faq-answer { padding: 0 0 20px; font-size: 0.93rem; color: #4a5568; line-height: 1.75; }
-
-/* ── Schedule picker ─────────────────────────────── */
-.schedule-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 4px; }
-
-/* Calendar */
-.cal-panel { background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 16px; }
-.cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-.cal-nav { background: none; border: 1px solid #e2e8f0; border-radius: 8px; width: 32px; height: 32px; font-size: 1.2rem; cursor: pointer; color: #374151; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
-.cal-nav:hover { background: #F5C842; border-color: #F5C842; color: #1a1a2e; }
-.cal-title { font-size: 0.92rem; font-weight: 800; color: #1a1a2e; }
-.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
-.cal-dow { text-align: center; font-size: 0.68rem; font-weight: 700; color: #9ca3af; padding: 4px 0; text-transform: uppercase; }
-.cal-day { aspect-ratio: 1; width: 100%; border: none; border-radius: 8px; font-size: 0.8rem; font-weight: 600; cursor: pointer; background: #fff; color: #374151; transition: all 0.12s; }
-.cal-day:hover:not(.cal-past):not(.cal-selected) { background: #fef9e7; color: #1a1a2e; }
-.cal-day.cal-today { border: 1.5px solid #F5C842; color: #b45309; }
-.cal-day.cal-selected { background: #F5C842; color: #1a1a2e; font-weight: 900; }
-.cal-day.cal-past { color: #d1d5db; cursor: not-allowed; background: transparent; }
-.cal-selected-label { margin-top: 10px; font-size: 0.8rem; font-weight: 700; color: #16a34a; text-align: center; }
-.cal-blocked-msg { margin-top: 8px; font-size: 0.8rem; color: #ef4444; text-align: center; }
-
-/* Time slots */
-.slots-panel { display: flex; flex-direction: column; gap: 10px; }
-.slots-label { font-size: 0.75rem; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.06em; }
-.slots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
-.slot-btn { padding: 8px 4px; border-radius: 9px; border: 1.5px solid #e2e8f0; background: #fff; font-size: 0.78rem; font-weight: 600; color: #374151; cursor: pointer; transition: all 0.12s; position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.slot-btn.slot-available:hover { border-color: #F5C842; background: #fef9e7; color: #1a1a2e; }
-.slot-btn.slot-selected { background: #F5C842; border-color: #F5C842; color: #1a1a2e; font-weight: 900; }
-.slot-btn.slot-blocked { background: #f9fafb; color: #c0c9d4; border-color: #edf0f3; cursor: not-allowed; }
-.slot-unavail-badge { font-size: 0.6rem; font-weight: 700; color: #d1d5db; text-transform: uppercase; letter-spacing: 0.04em; }
-.slot-selected-label { font-size: 0.82rem; font-weight: 700; color: #16a34a; }
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .schedule-wrap { grid-template-columns: 1fr; }
-  .slots-grid { grid-template-columns: repeat(3, 1fr); }
-}
 
 /* MOBILE */
 @media (max-width: 768px) {

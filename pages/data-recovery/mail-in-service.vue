@@ -1,5 +1,4 @@
 <script setup lang="ts">
-definePageMeta({ ssr: false })
 useHead({
   script: [
     {
@@ -67,21 +66,13 @@ const trustBadges = [
 ]
 
 // Multi-step form
+const todayStr = new Date().toISOString().split('T')[0]
 const step = ref(1)
 const totalSteps = 5
 const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Service Options', 'Shipping & Submit']
 
 // Form abandonment & funnel tracking
 const { onFieldFocus, onFieldBlur, onStepComplete, onStepBack, onFormSubmitted } = useFormTracking('mail-in', stepTitles)
-
-// Phone formatter — use watch instead of @input to avoid conflicting with v-model
-watch(() => form.phone, (val) => {
-  const digits = val.replace(/\D/g, '').slice(0, 10)
-  let formatted = digits
-  if (digits.length > 6) formatted = digits.slice(0, 3) + '-' + digits.slice(3, 6) + '-' + digits.slice(6)
-  else if (digits.length > 3) formatted = digits.slice(0, 3) + '-' + digits.slice(3)
-  if (formatted !== val) form.phone = formatted
-})
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
@@ -90,8 +81,6 @@ const labelBase64 = ref('')
 const serviceLabel = ref('')
 const labelError = ref('')
 const packingSlipBase64 = ref('')
-
-const todayStr = new Date().toISOString().split('T')[0]
 
 const form = reactive({
   firstName: '', lastName: '', email: '', phone: '',
@@ -208,7 +197,6 @@ const faqs = [
 // Pre-fill from quote tool
 onMounted(() => {
   if (!import.meta.client) return
-  // Auto-fill today's date — no need for customer to pick it manually
   if (!form.date) form.date = todayStr
   const raw = localStorage.getItem('fivestar_quote_prefill')
   if (!raw) return
@@ -332,7 +320,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
                 <div class="form-grid-2">
                   <div class="fg"><label class="fl">Email Address <span class="req">*</span></label><input type="email" class="fi" v-model="form.email" placeholder="john@example.com" @focus="onFieldFocus('email')" @blur="onFieldBlur('email', form.email)" /></div>
-                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" placeholder="555-000-0000" inputmode="numeric" maxlength="12" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
+                  <div class="fg"><label class="fl">Phone <span class="req">*</span></label><input type="tel" class="fi" v-model="form.phone" placeholder="(555) 000-0000" @focus="onFieldFocus('phone')" @blur="onFieldBlur('phone', form.phone)" /></div>
                 </div>
               </div>
 
@@ -605,17 +593,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .fi-textarea { min-height: 110px; resize: vertical; }
 .date-field-wrap { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 .date-fi { flex: 1; min-width: 160px; }
-.today-pill {
-  display: inline-flex; align-items: center; gap: 5px;
-  padding: 9px 16px; border-radius: 999px;
-  background: #FEF9E7; border: 1.5px solid #F5C842;
-  color: #92400e; font-size: 0.85rem; font-weight: 700;
-  cursor: pointer; white-space: nowrap; transition: background 0.15s, transform 0.1s;
-  flex-shrink: 0;
-}
-.today-pill:hover { background: #FDE68A; transform: scale(1.03); }
-.today-pill:active { transform: scale(0.97); }
-.date-confirm { font-size: 0.85rem; color: #15803d; font-weight: 600; margin: 4px 0 0; }
+.today-pill { display: inline-flex; align-items: center; gap: 5px; padding: 9px 16px; border-radius: 999px; background: #FEF9E7; border: 1.5px solid #F5C842; color: #92400e; font-size: .85rem; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0; transition: background .15s; }
+.today-pill:hover { background: #FDE68A; }
+.date-confirm { font-size: .85rem; color: #15803d; font-weight: 600; margin: 4px 0 0; }
 .check-group, .radio-group { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
 .ci { display: flex; align-items: flex-start; gap: 10px; font-size: 0.91rem; color: #374151; line-height: 1.55; cursor: pointer; }
 .ci input { margin-top: 3px; flex-shrink: 0; accent-color: #F5C842; cursor: pointer; }
