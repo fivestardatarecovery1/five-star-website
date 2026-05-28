@@ -1,10 +1,26 @@
 <script setup lang="ts">
 const props = defineProps<{ light?: boolean, compact?: boolean }>()
 
-type Step = 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'ssd-ext-brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
+type Step = 'contact' | 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'ssd-ext-brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
 
-const currentStep = ref<Step>('device')
+const currentStep = ref<Step>('contact')
 const animating = ref(false)
+
+const contact = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  preferredContact: 'call' as 'call' | 'email' | 'text',
+})
+const contactError = ref('')
+
+function submitContact() {
+  contactError.value = ''
+  if (!contact.name.trim()) { contactError.value = 'Please enter your name.'; return }
+  if (!contact.email.trim() || !contact.email.includes('@')) { contactError.value = 'Please enter a valid email.'; return }
+  if (!contact.phone.trim()) { contactError.value = 'Please enter your phone number.'; return }
+  goTo('device')
+}
 
 const sel = reactive({
   device: '',
@@ -317,7 +333,8 @@ function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string)  { sel.urgency = id;  goTo('result') }
 function back() {
   const s = currentStep.value
-  if (s === 'laptop-type') goTo('device', 0)
+  if (s === 'device') goTo('contact', 0)
+  else if (s === 'laptop-type') goTo('device', 0)
   else if (s === 'desktop-os')      goTo('laptop-type', 0)
   else if (s === 'ssd-location')    goTo('device', 0)
   else if (s === 'ssd-type')        goTo('ssd-location', 0)
@@ -382,8 +399,8 @@ function reset() {
 
 // ── Progress ─────────────────────────────────────────────────────────────────
 const progressSteps = computed(() => {
-  if (CALL_DEVICES.includes(sel.device) || currentStep.value === 'call') return ['Device', 'Quote']
-  const list = ['Device']
+  if (CALL_DEVICES.includes(sel.device) || currentStep.value === 'call') return ['Info', 'Device', 'Quote']
+  const list = ['Info', 'Device']
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
   const isApple = sel.device === 'laptop-apple-old' || sel.device === 'laptop-apple-new' || currentStep.value === 'apple-year' || currentStep.value === 'board-repair'
   const isLaptopFlow = currentStep.value === 'laptop-type' || currentStep.value === 'desktop-os' || currentStep.value === 'laptop-os' || sel.device === 'win-laptop' || sel.device === 'desktop' || sel.device === 'desktop-mac' || isApple
@@ -409,8 +426,9 @@ const progressIndex = computed(() => {
   const s = currentStep.value
   const isExternal = ['wd-ext','toshiba-ext','other-ext','external'].includes(sel.device)
   const hasCap = NEEDS_CAPACITY.includes(sel.device)
-  if (s === 'device') return 0
-  if (s === 'call') return 1
+  if (s === 'contact') return 0
+  if (s === 'device') return 1
+  if (s === 'call') return 2
   if (isExternal) {
     const m: Partial<Record<Step, number>> = { brand: 1 }
     if (hasCap) Object.assign(m, { capacity: 2, issue: 3, encrypt: 4, cover: 5, urgency: 6, result: 7 })
@@ -456,6 +474,44 @@ const progressIndex = computed(() => {
 
     <!-- Body -->
     <div class="iqt-body" :class="{ 'iqt-fade': animating }">
+
+      <!-- STEP: Contact Info -->
+      <div v-if="currentStep === 'contact'" class="iqt-contact-step">
+        <h3 class="iqt-q">Let's get you an instant quote</h3>
+        <p class="iqt-hint" style="margin-bottom:16px;">We'll also use this to follow up with your results.</p>
+        <div class="iqt-contact-fields">
+          <div class="iqt-field">
+            <label class="iqt-label">Full Name <span class="iqt-req">*</span></label>
+            <input v-model="contact.name" type="text" class="iqt-input" placeholder="John Smith" />
+          </div>
+          <div class="iqt-field">
+            <label class="iqt-label">Email Address <span class="iqt-req">*</span></label>
+            <input v-model="contact.email" type="email" class="iqt-input" placeholder="john@example.com" />
+          </div>
+          <div class="iqt-field">
+            <label class="iqt-label">Phone Number <span class="iqt-req">*</span></label>
+            <input v-model="contact.phone" type="tel" class="iqt-input" placeholder="(555) 000-0000" />
+          </div>
+          <div class="iqt-field">
+            <label class="iqt-label">Preferred Contact Method</label>
+            <div class="iqt-contact-methods">
+              <label class="iqt-method" :class="{ active: contact.preferredContact === 'call' }">
+                <input type="radio" v-model="contact.preferredContact" value="call" /> 📞 Call
+              </label>
+              <label class="iqt-method" :class="{ active: contact.preferredContact === 'email' }">
+                <input type="radio" v-model="contact.preferredContact" value="email" /> ✉ Email
+              </label>
+              <label class="iqt-method" :class="{ active: contact.preferredContact === 'text' }">
+                <input type="radio" v-model="contact.preferredContact" value="text" /> 💬 Text
+              </label>
+            </div>
+          </div>
+        </div>
+        <p v-if="contactError" class="iqt-contact-error">{{ contactError }}</p>
+        <div class="iqt-nav" style="justify-content:flex-end;margin-top:16px;">
+          <button class="iqt-btn-next" @click="submitContact">Get My Quote →</button>
+        </div>
+      </div>
 
       <!-- STEP: Device -->
       <div v-if="currentStep === 'device'">
@@ -1204,6 +1260,45 @@ const progressIndex = computed(() => {
 }
 
 /* ── Light theme ──────────────────────────────── */
+/* Contact Step */
+.iqt-contact-step { display: flex; flex-direction: column; }
+.iqt-contact-fields { display: flex; flex-direction: column; gap: 12px; }
+.iqt-field { display: flex; flex-direction: column; gap: 5px; }
+.iqt-label { font-size: 0.72rem; font-weight: 700; color: #4a5568; text-transform: uppercase; letter-spacing: 0.06em; }
+.iqt-req { color: #e53e3e; }
+.iqt-input {
+  border: 1.5px solid #d1d9e6;
+  border-radius: 7px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+  font-family: inherit;
+  width: 100%;
+  transition: border-color 0.2s;
+  background: #fff;
+}
+.iqt-input:focus { outline: none; border-color: #F5C842; box-shadow: 0 0 0 3px rgba(245,200,66,0.12); }
+.iqt-contact-methods { display: flex; gap: 8px; }
+.iqt-method {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 7px;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.iqt-method input { display: none; }
+.iqt-method.active { border-color: #F5C842; background: rgba(245,200,66,0.1); color: #1a1a2e; }
+.iqt-contact-error { color: #e53e3e; font-size: 0.82rem; font-weight: 600; margin-top: 8px; }
+
 .iqt-compact {
   padding: 20px 20px 16px;
   height: 440px;
