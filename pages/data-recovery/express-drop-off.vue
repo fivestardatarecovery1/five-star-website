@@ -61,6 +61,7 @@ const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Servic
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref('')
+const stepError = ref('')
 
 // Form data
 const form = reactive({
@@ -78,8 +79,44 @@ function scrollToForm() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 }
-function nextStep() { if (step.value < totalSteps) { step.value++; scrollToForm() } }
-function prevStep() { if (step.value > 1) { step.value--; scrollToForm() } }
+
+function validateStep(): boolean {
+  stepError.value = ''
+  if (step.value === 1) {
+    if (!form.firstName.trim()) return err('Please enter your first name.')
+    if (!form.lastName.trim()) return err('Please enter your last name.')
+    if (!form.email.trim() || !form.email.includes('@')) return err('Please enter a valid email address.')
+    if (!form.phone.trim()) return err('Please enter your phone number.')
+  }
+  if (step.value === 2) {
+    if (!form.manufacturer) return err('Please select a drive manufacturer.')
+    if (!form.modelNo.trim()) return err('Please enter the model number.')
+    if (!form.driveType) return err('Please select a drive type.')
+    if (!form.driveFormat) return err('Please select a drive format.')
+    if (!form.driveSize.trim()) return err('Please enter the drive size.')
+  }
+  if (step.value === 3) {
+    if (!form.issue.trim()) return err('Please describe the issue with your drive.')
+    if (!form.dataTypes.length) return err('Please select at least one data type to recover.')
+    if (!form.recoveryAttempted) return err('Please indicate if recovery has been attempted before.')
+  }
+  if (step.value === 4) {
+    if (!form.expeditedService) return err('Please select a service level.')
+    if (!form.transferDrive) return err('Please select a transfer drive option.')
+  }
+  return true
+}
+
+function err(msg: string): false {
+  stepError.value = msg
+  return false
+}
+
+function nextStep() {
+  if (!validateStep()) return
+  if (step.value < totalSteps) { step.value++; scrollToForm() }
+}
+function prevStep() { if (step.value > 1) { step.value--; stepError.value = ''; scrollToForm() } }
 
 async function submitForm() {
   if (!form.termsAgreed) {
@@ -368,6 +405,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
               </div>
 
+              <!-- Step error -->
+              <p v-if="stepError" class="step-error">⚠ {{ stepError }}</p>
+
               <!-- Navigation -->
               <div class="form-nav">
                 <button v-if="step > 1" type="button" class="btn-back" @click="prevStep">← Back</button>
@@ -617,6 +657,18 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   transition: background 0.2s;
 }
 .btn-next:hover { background: #e0b43a; }
+
+/* STEP ERROR */
+.step-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
 
 /* SUCCESS */
 .form-success { padding: 72px 40px; text-align: center; }
