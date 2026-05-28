@@ -234,6 +234,8 @@ function handleFormSubmit() {
 }
 
 async function submitForm() {
+  // Run step 5 validation before submitting
+  if (!validateStep()) return
   form.termsAgreed = true // Implied by clicking Submit
   submitting.value = true
   submitError.value = ''
