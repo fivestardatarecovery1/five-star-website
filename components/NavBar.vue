@@ -151,10 +151,10 @@ watch(() => route.path, closeAll)
           <li><NuxtLink to="/blog" active-class="active">Blog</NuxtLink></li>
           <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
           <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
-          <li><NuxtLink to="/appointments" active-class="active" class="nav-appt-btn">📅 Schedule Appointment</NuxtLink></li>
         </ul>
 
-
+        <!-- Standalone CTA -->
+        <NuxtLink to="/appointments" class="nav-appt-cta" @click="closeAll">Schedule Appointment</NuxtLink>
 
         <!-- Mobile hamburger -->
         <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
@@ -405,17 +405,23 @@ nav {
 .nav-quote-link:hover, .nav-quote-link.active {
   color: #fff !important;
 }
-.nav-appt-btn {
-  background: #F5C842 !important;
-  color: #0a0c14 !important;
-  font-weight: 700 !important;
-  padding: 7px 14px !important;
-  border-radius: 8px !important;
-  font-size: 13px !important;
+.nav-appt-cta {
+  display: inline-flex;
+  align-items: center;
+  background: #F5C842;
+  color: #0a0c14;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: 8px;
+  text-decoration: none;
   white-space: nowrap;
-  transition: background 0.2s !important;
+  transition: background 0.18s, transform 0.15s;
+  flex-shrink: 0;
+  margin-left: 16px;
 }
-.nav-appt-btn:hover { background: #e0a800 !important; }
+.nav-appt-cta:hover { background: #e0a800; transform: translateY(-1px); }
+@media (max-width: 900px) { .nav-appt-cta { display: none; } }
 .mobile-appt-btn {
   background: #F5C842 !important;
   color: #0a0c14 !important;
