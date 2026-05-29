@@ -37,6 +37,7 @@
       <div class="footer-col">
         <h3 class="footer-heading">Helpful Links</h3>
         <ul>
+          <li><NuxtLink to="/appointments">Schedule Appointment</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/express-drop-off">Express Drop Off</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/mail-in-service">Mail in Service</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/free-quote">Request a Quote</NuxtLink></li>

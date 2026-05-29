@@ -151,6 +151,7 @@ watch(() => route.path, closeAll)
           <li><NuxtLink to="/blog" active-class="active">Blog</NuxtLink></li>
           <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
           <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
+          <li><NuxtLink to="/appointments" active-class="active" class="nav-appt-btn">📅 Schedule Appointment</NuxtLink></li>
         </ul>
 
 
@@ -184,6 +185,7 @@ watch(() => route.path, closeAll)
         <NuxtLink to="/blog" @click="closeAll">Blog</NuxtLink>
         <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
         <NuxtLink to="/contact" @click="closeAll">Contact</NuxtLink>
+        <NuxtLink to="/appointments" @click="closeAll" class="mobile-appt-btn">📅 Schedule Appointment</NuxtLink>
         <a href="tel:8182728866" class="mobile-phone">📞 818-272-8866</a>
       </div>
     </Transition>
@@ -402,6 +404,24 @@ nav {
 }
 .nav-quote-link:hover, .nav-quote-link.active {
   color: #fff !important;
+}
+.nav-appt-btn {
+  background: #F5C842 !important;
+  color: #0a0c14 !important;
+  font-weight: 700 !important;
+  padding: 7px 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  white-space: nowrap;
+  transition: background 0.2s !important;
+}
+.nav-appt-btn:hover { background: #e0a800 !important; }
+.mobile-appt-btn {
+  background: #F5C842 !important;
+  color: #0a0c14 !important;
+  font-weight: 800 !important;
+  border-radius: 8px !important;
+  text-align: center;
 }
 
 /* ── Right CTAs ── */
