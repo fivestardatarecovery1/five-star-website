@@ -83,7 +83,7 @@ useSeoMeta({
               <li>📦 Transfer drive drop-off</li>
               <li>✅ Completed recovery pickup</li>
               <li>📅 Choose your appointment time</li>
-              <li>🔒 Secure chain of custody</li>
+              <li>⚡ In &amp; out in minutes</li>
             </ul>
             <NuxtLink to="/appointments/transfer-pickup" class="appt-btn appt-btn-outline">
               Schedule Appointment →
