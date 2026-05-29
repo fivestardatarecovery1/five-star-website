@@ -23,7 +23,18 @@ function dismiss() {
           <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Schedule Your Drop-Off →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
-        <!-- duplicate for seamless loop -->
+        <span class="ann-item" aria-hidden="true">
+          <span class="ann-dot"></span>
+          <strong>Attention Local Customers:</strong>&nbsp; Express Drop-Off Form is now required for all in-lab device drop-offs — select your arrival time before coming in.&nbsp;&nbsp;&nbsp;
+          <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Schedule Your Drop-Off →</NuxtLink>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="ann-item" aria-hidden="true">
+          <span class="ann-dot"></span>
+          <strong>Attention Local Customers:</strong>&nbsp; Express Drop-Off Form is now required for all in-lab device drop-offs — select your arrival time before coming in.&nbsp;&nbsp;&nbsp;
+          <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Schedule Your Drop-Off →</NuxtLink>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
         <span class="ann-item" aria-hidden="true">
           <span class="ann-dot"></span>
           <strong>Attention Local Customers:</strong>&nbsp; Express Drop-Off Form is now required for all in-lab device drop-offs — select your arrival time before coming in.&nbsp;&nbsp;&nbsp;
@@ -108,7 +119,7 @@ function dismiss() {
 
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-25%); }
 }
 
 @keyframes blink {
