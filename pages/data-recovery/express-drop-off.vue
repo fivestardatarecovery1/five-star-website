@@ -168,8 +168,8 @@ function selectTime(slot: string) {
 
 function scrollToForm() {
   if (import.meta.client) {
-    const el = document.querySelector('.form-wrap')
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Scroll to top of page so the full hero + form stays in view
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }
 
