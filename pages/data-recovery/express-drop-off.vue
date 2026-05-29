@@ -345,13 +345,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
         <!-- Badges in one row with separators -->
         <div class="edo-badges-row">
-          <span class="edo-bdg">⚡ Same-day appointments available</span>
+          <span class="edo-bdg">🗓️ Schedule a Drop-Off Time &amp; Date</span>
           <span class="edo-bsep"></span>
-          <span class="edo-bdg">🗓️ 30-minute arrival window</span>
+          <span class="edo-bdg">🏛️ Drop Off at Our Lab in Glendale</span>
           <span class="edo-bsep"></span>
-          <span class="edo-bdg">🛡️ No data recovered = no charge</span>
-          <span class="edo-bsep"></span>
-          <span class="edo-bdg">🧪 ISO Class 5 clean room</span>
+          <span class="edo-bdg">💡 Receive a Diagnosis Same Day by Midnight</span>
         </div>
 
         <!-- Form card — inside the hero -->
