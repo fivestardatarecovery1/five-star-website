@@ -75,7 +75,7 @@ useSeoMeta({
               <div class="appt-card-icon">🔄</div>
               <div>
                 <p class="appt-card-tag">EXISTING CASE</p>
-                <h3 class="appt-card-title">Drop Off Transfer Drive or Pick Up Your Data</h3>
+                <h3 class="appt-card-title">Transfer Drive Drop-Off or Case Pickup</h3>
               </div>
             </div>
             <p class="appt-card-desc">Have an open case with us? Schedule an appointment to drop off a transfer drive or pick up your fully recovered data.</p>
