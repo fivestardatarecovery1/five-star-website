@@ -626,6 +626,7 @@ const progressIndex = computed(() => {
         <div class="iqt-nav" style="justify-content:flex-end;margin-top:16px;">
           <button class="iqt-btn-next" @click="submitContact">Get My Quote →</button>
         </div>
+        <p class="iqt-powered"><a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a></p>
       </div>
 
       <!-- STEP: Device -->
@@ -1570,6 +1571,9 @@ const progressIndex = computed(() => {
   transition: background 0.2s;
 }
 .iqt-compact .iqt-btn-next:hover { background: #e0b43a; }
+.iqt-powered { text-align: center; font-size: 10px; color: #b0b8cc; margin: 8px 0 0; }
+.iqt-powered a { color: #b0b8cc; text-decoration: none; transition: color 0.2s; }
+.iqt-powered a:hover { color: #F5C842; }
 .iqt-compact .iqt-back {
   display: block;
   margin-top: 10px;

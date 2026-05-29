@@ -528,6 +528,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <button type="submit" class="btn-next">Continue →</button>
               </div>
               <p v-if="submitError" class="step-error">{{ submitError }}</p>
+              <p class="form-powered"><a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a></p>
 
             </form>
           </template>
@@ -674,6 +675,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .form-nav-final { padding: 20px 44px 24px; border-top: 1px solid #e8edf4; flex-shrink: 0; background: #fff; }
 .terms-notice { font-size: 12px; color: #94a3b8; margin-bottom: 14px; text-align: center; }
 .terms-notice .terms-link { color: #64748b; }
+.form-powered { text-align: center; font-size: 10px; color: #b0b8cc; margin: 6px 0 0; }
+.form-powered a { color: #b0b8cc; text-decoration: none; transition: color 0.2s; }
+.form-powered a:hover { color: #F5C842; }
 .final-btns { display: flex; gap: 12px; }
 .btn-cancel { flex: 0 0 auto; background: #f1f5f9; color: #64748b; border: 1.5px solid #e2e8f0; padding: 14px 22px; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: all 0.2s; }
 .btn-cancel:hover { background: #e2e8f0; color: #1a2030; }

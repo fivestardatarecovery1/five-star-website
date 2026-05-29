@@ -82,6 +82,9 @@
           <NuxtLink to="/terms">Terms of Service</NuxtLink>
         </div>
       </div>
+      <div class="footer-powered">
+        <a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a>
+      </div>
     </div>
   </footer>
 </template>
@@ -188,6 +191,9 @@
   transition: color 0.2s;
 }
 .footer-legal-links a:hover { color: var(--gold); }
+.footer-powered { text-align: center; padding: 8px 0 4px; }
+.footer-powered a { font-size: 11px; color: #5a6275; text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+.footer-powered a:hover { color: var(--gold); }
 
 @media (max-width: 1100px) {
   .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
