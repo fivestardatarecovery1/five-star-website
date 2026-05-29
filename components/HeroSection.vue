@@ -161,7 +161,7 @@ function handleSubmit() {
 .btn-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 2px;
 }
 .btn-main-text {
