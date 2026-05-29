@@ -63,20 +63,20 @@ function handleSubmit() {
         <p v-if="description" class="hero-desc" v-html="description"></p>
 
         <div v-if="showButtons" class="hero-buttons">
-          <div class="hero-btn-wrap">
-            <NuxtLink to="/appointments" class="btn-start">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-              Schedule an Appointment
-            </NuxtLink>
-            <span class="btn-sublabel">For Local Customers</span>
-          </div>
-          <div class="hero-btn-wrap">
-            <NuxtLink to="/start-recovery" class="btn-quote">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              Start Recovery
-            </NuxtLink>
-            <span class="btn-sublabel">Local &amp; Nationwide</span>
-          </div>
+          <NuxtLink to="/start-recovery" class="btn-start">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span class="btn-inner">
+              <span class="btn-main-text">Start Recovery</span>
+              <em class="btn-sub">(Local &amp; Nationwide)</em>
+            </span>
+          </NuxtLink>
+          <NuxtLink to="/appointments" class="btn-quote">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span class="btn-inner">
+              <span class="btn-main-text">Schedule an Appointment</span>
+              <em class="btn-sub">(For Local Customers)</em>
+            </span>
+          </NuxtLink>
         </div>
 
         <div v-if="showTrustBadges" class="trust-box">
@@ -153,23 +153,28 @@ function handleSubmit() {
 /* ── CTA Buttons ── */
 .hero-buttons {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 32px;
-  align-items: flex-start;
+  align-items: stretch;
 }
-.hero-btn-wrap {
+.btn-inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  align-items: flex-start;
+  gap: 2px;
 }
-.btn-sublabel {
+.btn-main-text {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.btn-sub {
   font-size: 11px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.03em;
-  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.72;
+  line-height: 1;
 }
 
 .btn-start {
@@ -444,8 +449,8 @@ function handleSubmit() {
   .trust-bar { flex-direction: column; gap: 12px; }
   .trust-divider { display: none; }
   .hero-buttons { flex-direction: column; width: 100%; }
-  .hero-btn-wrap { width: 100%; }
   .btn-start, .btn-quote { justify-content: center; width: 100%; box-sizing: border-box; }
+  .btn-inner { align-items: center; }
   .hero-form-card { padding: 20px 16px; }
   .trust-box {
     max-width: 100%;
