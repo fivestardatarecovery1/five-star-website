@@ -341,7 +341,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <span class="edo-stars">★★★★★</span>
           <span class="edo-rating">4.9 · 498 Online Reviews</span>
         </div>
-        <h1 class="edo-title">Same-Day Express Drop-Off</h1>
+        <h1 class="edo-title">Same-Day <span class="edo-gold">Express Drop-Off</span></h1>
 
         <!-- Badges in one row with separators -->
         <div class="edo-badges-row">
