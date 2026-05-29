@@ -9,60 +9,83 @@ useSeoMeta({
   <div class="page-content">
     <NavBar />
 
-    <!-- ═══════════════════════════════════════════════
-         HERO — dark gradient + two CTA cards
-    ════════════════════════════════════════════════ -->
-    <section class="v3-hero">
-      <div class="v3-hero-overlay"></div>
+    <section class="appt-hero">
+      <div class="appt-bg" style="background-image: url('/start-recovery-hero.webp')"></div>
+      <div class="appt-overlay"></div>
 
-      <div class="container v3-hero-inner">
+      <div class="container appt-inner">
 
-        <!-- ROW 1: Headline -->
-        <div class="v3-header">
-          <div class="v3-notice-pill">📅 Effective June 1, 2026 — Appointments Required</div>
-          <h1 class="v3-title">Schedule Your <span class="v3-gold">Appointment</span></h1>
-          <p class="v3-subtext">Starting June 1, 2026, all drop-offs and pickups require a scheduled appointment. Select the reason for your visit below.</p>
+        <!-- Row 1: Social proof pill + title + subtext -->
+        <div class="appt-header">
+          <div class="appt-proof">
+            <span class="appt-stars">★★★★★</span>
+            <span class="appt-rating">4.9 · 498 Reviews</span>
+            <span class="appt-sep">|</span>
+            <span class="appt-notice">📅 Appointments Required Starting June 1, 2026</span>
+          </div>
+          <h1 class="appt-title">Schedule Your <span class="appt-gold">Appointment</span></h1>
+          <p class="appt-sub">Select the reason for your visit and we'll get you booked in minutes.</p>
         </div>
 
-        <!-- ROW 2: Two big cards side by side -->
-        <div class="v3-cards">
+        <!-- Row 2: Badges -->
+        <div class="appt-badges">
+          <div class="appt-badge">⚡ Same-Day Available</div>
+          <div class="appt-badge-sep"></div>
+          <div class="appt-badge">📍 Glendale, CA Lab</div>
+          <div class="appt-badge-sep"></div>
+          <div class="appt-badge">⏰ Mon–Fri 10am–6pm · Sat 10am–2pm</div>
+          <div class="appt-badge-sep"></div>
+          <div class="appt-badge">📞 (818) 272-8866</div>
+        </div>
 
-          <!-- Card 1: Drop Off a New Case -->
-          <div class="v3-card v3-card-primary">
-            <div class="v3-card-top">
-              <span class="v3-card-emoji">🆕</span>
+        <!-- Row 3: Cards -->
+        <div class="appt-cards">
+
+          <!-- Card 1: New Case -->
+          <div class="appt-card appt-card-primary">
+            <div class="appt-card-header">
+              <div class="appt-card-icon">🆕</div>
               <div>
-                <p class="v3-card-tag">NEW RECOVERY CASE</p>
-                <h3 class="v3-card-title">Drop Off a New Case</h3>
+                <p class="appt-card-tag">NEW RECOVERY CASE</p>
+                <h3 class="appt-card-title">Drop Off a New Case</h3>
               </div>
             </div>
-            <p class="v3-card-desc">Fill out our Express Drop-Off Form to schedule your arrival time. Required for all new data recovery cases starting June 1, 2026.</p>
-            <div class="v3-card-perks">
-              <span>⚡ Same-day appointments available</span>
-              <span>📋 Quick 5-minute form</span>
-              <span>🕐 Select your drop-off time</span>
-            </div>
-            <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-gold">
+            <p class="appt-card-desc">Starting a new data recovery? Fill out our Express Drop-Off Form to schedule your arrival time — required for all new cases.</p>
+            <ul class="appt-card-perks">
+              <li>⚡ Same-day appointments available</li>
+              <li>📋 Quick 5-minute form</li>
+              <li>🕐 Select your exact drop-off time</li>
+              <li>🧪 Same-day diagnostic report</li>
+            </ul>
+            <NuxtLink to="/data-recovery/express-drop-off" class="appt-btn appt-btn-gold">
               Express Drop-Off Form →
             </NuxtLink>
           </div>
 
-          <!-- Card 2: Transfer Drive / Pickup -->
-          <div class="v3-card v3-card-secondary">
-            <div class="v3-card-top">
-              <span class="v3-card-emoji">🔄</span>
+          <!-- Divider -->
+          <div class="appt-or">
+            <div class="appt-or-line"></div>
+            <span>OR</span>
+            <div class="appt-or-line"></div>
+          </div>
+
+          <!-- Card 2: Existing Case -->
+          <div class="appt-card appt-card-secondary">
+            <div class="appt-card-header">
+              <div class="appt-card-icon">🔄</div>
               <div>
-                <p class="v3-card-tag">EXISTING CASE</p>
-                <h3 class="v3-card-title">Drop Off a Transfer Drive or Pick Up a Completed Recovery</h3>
+                <p class="appt-card-tag">EXISTING CASE</p>
+                <h3 class="appt-card-title">Drop Off Transfer Drive or Pick Up Your Data</h3>
               </div>
             </div>
-            <p class="v3-card-desc">Already have a case with us? Schedule an appointment to drop off your transfer drive or pick up your recovered data.</p>
-            <div class="v3-card-perks">
-              <span>📦 Transfer drive drop-off</span>
-              <span>✅ Completed recovery pickup</span>
-              <span>📅 Choose your appointment time</span>
-            </div>
-            <NuxtLink to="/appointments/transfer-pickup" class="v3-btn v3-btn-outline">
+            <p class="appt-card-desc">Have an open case with us? Schedule an appointment to drop off a transfer drive or pick up your fully recovered data.</p>
+            <ul class="appt-card-perks">
+              <li>📦 Transfer drive drop-off</li>
+              <li>✅ Completed recovery pickup</li>
+              <li>📅 Choose your appointment time</li>
+              <li>🔒 Secure chain of custody</li>
+            </ul>
+            <NuxtLink to="/appointments/transfer-pickup" class="appt-btn appt-btn-outline">
               Schedule Appointment →
             </NuxtLink>
           </div>
@@ -71,17 +94,14 @@ useSeoMeta({
       </div>
     </section>
 
-    <!-- BOTTOM CTA BAND -->
-    <section class="v3-bottom-cta">
-      <div class="container v3-bottom-inner">
+    <!-- Bottom CTA -->
+    <section class="appt-cta">
+      <div class="container appt-cta-inner">
         <div>
-          <h2 class="v3-bottom-title">Questions? We're Here to Help.</h2>
-          <p class="v3-bottom-sub">Call us at (818) 272-8866 · Mon–Fri 9am–6pm · Glendale, CA</p>
+          <h2 class="appt-cta-title">Need Help Choosing?</h2>
+          <p class="appt-cta-sub">Call us and we'll point you in the right direction — no hold music, real people.</p>
         </div>
-        <div class="v3-bottom-btns">
-          <a href="tel:+18182728866" class="v3-btn v3-btn-dark">📞 Call Us Now</a>
-          <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-outline-dark">Express Drop-Off →</NuxtLink>
-        </div>
+        <a href="tel:+18182728866" class="appt-btn appt-btn-dark">📞 (818) 272-8866</a>
       </div>
     </section>
 
@@ -90,184 +110,270 @@ useSeoMeta({
 </template>
 
 <style scoped>
-/* ════════════════════════════════════════
-   HERO
-════════════════════════════════════════ */
-.v3-hero {
+/* ═══════════════════════════ HERO ═══════════════════════════ */
+.appt-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #0a0c14 0%, #0d1520 50%, #111827 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
-.v3-hero-overlay {
+.appt-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  pointer-events: none;
+}
+.appt-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 70% 50%, rgba(245,200,66,0.06) 0%, transparent 60%);
+  background: linear-gradient(
+    to right,
+    rgba(10,12,20,0.97) 0%,
+    rgba(10,12,20,0.90) 45%,
+    rgba(10,12,20,0.75) 75%,
+    rgba(10,12,20,0.60) 100%
+  );
 }
-.v3-hero-inner {
+.appt-inner {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding-top: 52px;
-  padding-bottom: 56px;
+  gap: 22px;
+  padding-top: 36px;
+  padding-bottom: 48px;
 }
 
-/* Header */
-.v3-header { max-width: 760px; }
-.v3-notice-pill {
-  display: inline-flex;
+/* ── Header ── */
+.appt-header { max-width: 100%; }
+.appt-proof {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(245,200,66,0.12);
-  border: 1px solid rgba(245,200,66,0.3);
-  color: #F5C842;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.appt-stars { color: #F5C842; font-size: 15px; letter-spacing: 2px; }
+.appt-rating { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.55); }
+.appt-sep { color: rgba(255,255,255,0.2); font-size: 13px; }
+.appt-notice {
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 6px 14px;
+  color: #F5C842;
+  background: rgba(245,200,66,0.1);
+  border: 1px solid rgba(245,200,66,0.25);
+  padding: 4px 12px;
   border-radius: 999px;
-  margin-bottom: 18px;
-  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
-.v3-title {
+.appt-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(32px, 4.5vw, 54px);
+  font-size: clamp(38px, 5.5vw, 64px);
   font-weight: 800;
   color: #fff;
-  line-height: 1.1;
-  margin-bottom: 16px;
+  line-height: 1.05;
+  white-space: nowrap;
+  margin-bottom: 12px;
 }
-.v3-gold { color: #F5C842; }
-.v3-subtext {
+.appt-gold { color: #F5C842; }
+.appt-sub {
   font-size: 16px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.65;
-  max-width: 600px;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.6;
 }
 
-/* Cards */
-.v3-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 960px;
+/* ── Badges ── */
+.appt-badges {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
 }
-.v3-card {
-  background: rgba(12,18,30,0.82);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 18px;
-  padding: 32px;
-  backdrop-filter: blur(14px);
-  transition: border-color 0.2s, transform 0.2s;
+.appt-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  padding: 0 20px 0 0;
+}
+.appt-badge-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,0.18);
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+/* ── Cards ── */
+.appt-cards {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+.appt-card {
+  background: rgba(10,14,24,0.80);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 20px;
+  padding: 36px 36px 32px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
+  transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
 }
-.v3-card:hover {
-  transform: translateY(-2px);
+.appt-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
-.v3-card-primary { border-color: rgba(245,200,66,0.35); }
-.v3-card-primary:hover { border-color: rgba(245,200,66,0.6); }
-.v3-card-secondary:hover { border-color: rgba(255,255,255,0.3); }
+.appt-card-primary {
+  border-color: rgba(245,200,66,0.35);
+}
+.appt-card-primary:hover {
+  border-color: rgba(245,200,66,0.65);
+  box-shadow: 0 20px 40px rgba(245,200,66,0.08);
+}
+.appt-card-secondary:hover {
+  border-color: rgba(255,255,255,0.28);
+}
 
-.v3-card-top {
+.appt-card-header {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 18px;
+  margin-bottom: 18px;
 }
-.v3-card-emoji { font-size: 36px; line-height: 1; flex-shrink: 0; }
-.v3-card-tag {
+.appt-card-icon {
+  font-size: 42px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.appt-card-tag {
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
   color: #F5C842;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
-.v3-card-title {
+.appt-card-title {
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   font-weight: 800;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.25;
+  line-height: 1.2;
 }
-.v3-card-desc {
+.appt-card-desc {
   font-size: 14px;
-  color: rgba(255,255,255,0.55);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+  margin-bottom: 22px;
   flex: 1;
 }
-.v3-card-perks {
+.appt-card-perks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 9px;
 }
-.v3-card-perks span {
+.appt-card-perks li {
   font-size: 13px;
   font-weight: 600;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.62);
 }
 
-/* Buttons */
-.v3-btn {
+/* ── OR divider ── */
+.appt-or {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 28px;
+  color: rgba(255,255,255,0.25);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  flex-shrink: 0;
+}
+.appt-or-line {
+  width: 1px;
+  flex: 1;
+  background: rgba(255,255,255,0.1);
+  min-height: 40px;
+}
+
+/* ── Buttons ── */
+.appt-btn {
   display: block;
-  padding: 15px 24px;
-  border-radius: 10px;
+  padding: 16px 24px;
+  border-radius: 12px;
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
   text-align: center;
   transition: all 0.2s;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
 }
-.v3-btn-gold { background: #F5C842; color: #0a0c14; }
-.v3-btn-gold:hover { background: #e5b73e; }
-.v3-btn-outline {
+.appt-btn-gold { background: #F5C842; color: #0a0c14; }
+.appt-btn-gold:hover { background: #e8b93c; transform: translateY(-1px); }
+.appt-btn-outline {
   background: transparent;
   color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.3);
+  border: 1.5px solid rgba(255,255,255,0.28);
 }
-.v3-btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.6); }
+.appt-btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.55); }
+.appt-btn-dark { background: #0a0c14; color: #F5C842; display: inline-block; }
+.appt-btn-dark:hover { background: #1a2030; }
 
-/* ════════════════════════════════════════
-   BOTTOM CTA
-════════════════════════════════════════ */
-.v3-bottom-cta { background: #F5C842; padding: 52px 0; }
-.v3-bottom-inner {
+/* ═══════════════════════════ BOTTOM CTA ═══════════════════════════ */
+.appt-cta { background: #F5C842; padding: 44px 0; }
+.appt-cta-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
 }
-.v3-bottom-title {
+.appt-cta-title {
   font-family: 'Montserrat', sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 800;
   color: #0a0c14;
   margin-bottom: 4px;
 }
-.v3-bottom-sub { font-size: 14px; color: rgba(10,12,20,0.6); }
-.v3-bottom-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-.v3-btn-dark { background: #0a0c14; color: #F5C842; }
-.v3-btn-dark:hover { background: #1a2030; }
-.v3-btn-outline-dark {
-  background: transparent;
-  color: #0a0c14;
-  border: 2px solid rgba(10,12,20,0.3);
-}
-.v3-btn-outline-dark:hover { background: rgba(10,12,20,0.08); }
+.appt-cta-sub { font-size: 14px; color: rgba(10,12,20,0.6); }
 
-/* ════════════════════════════════════════
-   MOBILE
-════════════════════════════════════════ */
-@media (max-width: 768px) {
-  .v3-cards { grid-template-columns: 1fr; gap: 16px; }
-  .v3-card { padding: 24px 20px; }
-  .v3-hero-inner { padding-top: 32px; padding-bottom: 40px; }
-  .v3-bottom-inner { flex-direction: column; align-items: flex-start; }
+/* ═══════════════════════════ MOBILE ═══════════════════════════ */
+@media (max-width: 900px) {
+  .appt-title { white-space: normal; }
+  .appt-cards {
+    grid-template-columns: 1fr;
+  }
+  .appt-or {
+    flex-direction: row;
+    padding: 16px 0;
+    gap: 16px;
+  }
+  .appt-or-line {
+    width: auto;
+    flex: 1;
+    height: 1px;
+    min-height: unset;
+  }
+  .appt-card { padding: 24px 20px; }
+  .appt-hero { min-height: unset; }
+  .appt-cta-inner { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 600px) {
+  .appt-badges { gap: 8px; flex-direction: column; align-items: flex-start; }
+  .appt-badge-sep { display: none; }
+  .appt-badge { padding: 0; }
 }
 </style>
