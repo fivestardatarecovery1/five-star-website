@@ -341,7 +341,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <span class="edo-stars">★★★★★</span>
           <span class="edo-rating">4.9 · 498 Online Reviews</span>
         </div>
-        <h1 class="edo-title">Same-Day Express Drop-Off — <span class="edo-gold">Schedule Your Arrival</span></h1>
+        <h1 class="edo-title">Same-Day Express Drop-Off</h1>
 
         <!-- Badges in one row with separators -->
         <div class="edo-badges-row">
@@ -770,7 +770,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .edo-hero { position: relative; overflow: hidden; }
 .edo-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
 .edo-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.93) 55%, rgba(10,12,20,0.80) 100%); pointer-events: none; }
-.edo-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 18px; padding-top: 40px; padding-bottom: 40px; }
+.edo-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; padding-bottom: 32px; }
 /* Stars + rating */
 .edo-proof-row { display: flex; align-items: center; gap: 10px; }
 .edo-stars { color: #F5C842; font-size: 17px; letter-spacing: 2px; }
@@ -813,7 +813,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .form-section { background: #f4f7fc; padding: 12px 0 80px; }
 .form-wrap {
   max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 20px 64px rgba(0,0,0,0.35);
