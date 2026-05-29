@@ -167,9 +167,19 @@ function selectTime(slot: string) {
 }
 
 function scrollToForm() {
-  if (import.meta.client) {
-    // Scroll to top of page so the full hero + form stays in view
+  if (!import.meta.client) return
+  if (step.value === 1) {
+    // Step 1: show the full hero (headline visible)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  } else {
+    // Steps 2+: snap form to just below the navbar — maximizes form space
+    const el = document.querySelector('.form-wrap')
+    const nav = document.querySelector('nav')
+    if (el) {
+      const navH = nav ? nav.offsetHeight : 86
+      const top = el.getBoundingClientRect().top + window.scrollY - navH - 4
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 }
 
@@ -817,8 +827,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   border-radius: 16px;
   box-shadow: 0 20px 64px rgba(0,0,0,0.35);
   overflow: hidden;
-  /* Constrain to viewport so form never goes below fold */
-  max-height: calc(100vh - 280px);
+  /* When snapped to nav, form gets nearly full viewport height */
+  max-height: calc(100vh - 96px);
   display: flex;
   flex-direction: column;
 }
