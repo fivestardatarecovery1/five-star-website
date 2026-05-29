@@ -63,14 +63,20 @@ function handleSubmit() {
         <p v-if="description" class="hero-desc" v-html="description"></p>
 
         <div v-if="showButtons" class="hero-buttons">
-          <NuxtLink to="/start-recovery" class="btn-start">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Start Recovery
-          </NuxtLink>
-          <NuxtLink to="/data-recovery/free-quote" class="btn-quote">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
-            Request a Quote
-          </NuxtLink>
+          <div class="hero-btn-wrap">
+            <NuxtLink to="/appointments" class="btn-start">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              Schedule an Appointment
+            </NuxtLink>
+            <span class="btn-sublabel">For Local Customers</span>
+          </div>
+          <div class="hero-btn-wrap">
+            <NuxtLink to="/start-recovery" class="btn-quote">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Start Recovery
+            </NuxtLink>
+            <span class="btn-sublabel">Local &amp; Nationwide</span>
+          </div>
         </div>
 
         <div v-if="showTrustBadges" class="trust-box">
@@ -147,9 +153,23 @@ function handleSubmit() {
 /* ── CTA Buttons ── */
 .hero-buttons {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 32px;
+  align-items: flex-start;
+}
+.hero-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.btn-sublabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.03em;
+  text-align: center;
 }
 
 .btn-start {
@@ -424,6 +444,7 @@ function handleSubmit() {
   .trust-bar { flex-direction: column; gap: 12px; }
   .trust-divider { display: none; }
   .hero-buttons { flex-direction: column; width: 100%; }
+  .hero-btn-wrap { width: 100%; }
   .btn-start, .btn-quote { justify-content: center; width: 100%; box-sizing: border-box; }
   .hero-form-card { padding: 20px 16px; }
   .trust-box {

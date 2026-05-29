@@ -153,9 +153,6 @@ watch(() => route.path, closeAll)
           <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
         </ul>
 
-        <!-- Standalone CTA -->
-        <NuxtLink to="/appointments" class="nav-appt-cta" @click="closeAll">Schedule Appointment</NuxtLink>
-
         <!-- Mobile hamburger -->
         <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
           <span /><span /><span />
