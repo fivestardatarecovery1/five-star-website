@@ -20,8 +20,8 @@ function dismiss() {
         <!-- Set 1 -->
         <span class="ann-item">
           <span class="ann-dot"></span>
-          <strong>Attention Local Customers:</strong>&nbsp; Express Drop-Off Form is now required for all in-lab device drop-offs — select your arrival time before coming in.&nbsp;&nbsp;
-          <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Schedule Your Drop-Off →</NuxtLink>
+          <strong>Starting June 1, 2026:</strong>&nbsp; An Express Drop-Off Form is required for all new cases — and all drop-offs &amp; pickups require a scheduled appointment.&nbsp;&nbsp;
+          <NuxtLink to="/appointments" class="ann-link">Schedule an Appointment →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
         <span class="ann-item">
@@ -32,14 +32,14 @@ function dismiss() {
         <span class="ann-item">
           <span class="ann-dot"></span>
           <strong>Same Day Appointments Available</strong>&nbsp;—&nbsp;
-          <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Book Now →</NuxtLink>
+          <NuxtLink to="/appointments" class="ann-link">Book Now →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
         <!-- Set 2 (duplicate for seamless loop) -->
         <span class="ann-item" aria-hidden="true">
           <span class="ann-dot"></span>
-          <strong>Attention Local Customers:</strong>&nbsp; Express Drop-Off Form is now required for all in-lab device drop-offs — select your arrival time before coming in.&nbsp;&nbsp;
-          <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Schedule Your Drop-Off →</NuxtLink>
+          <strong>Starting June 1, 2026:</strong>&nbsp; An Express Drop-Off Form is required for all new cases — and all drop-offs &amp; pickups require a scheduled appointment.&nbsp;&nbsp;
+          <NuxtLink to="/appointments" class="ann-link">Schedule an Appointment →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
         <span class="ann-item" aria-hidden="true">
@@ -50,7 +50,7 @@ function dismiss() {
         <span class="ann-item" aria-hidden="true">
           <span class="ann-dot"></span>
           <strong>Same Day Appointments Available</strong>&nbsp;—&nbsp;
-          <NuxtLink to="/data-recovery/express-drop-off" class="ann-link">Book Now →</NuxtLink>
+          <NuxtLink to="/appointments" class="ann-link">Book Now →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
       </div>
