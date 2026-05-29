@@ -366,7 +366,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
 
         <!-- Form card — inside the hero -->
-        <div class="form-wrap">
+        <div class="form-wrap" :class="{ 'is-submitted': submitted }">
 
           <!-- Success / Confirmation screen -->
           <div v-if="submitted" class="confirm-wrap">
@@ -835,6 +835,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   display: flex;
   flex-direction: column;
 }
+/* On success screen: remove height cap so all content + share buttons are visible */
+.form-wrap.is-submitted { max-height: none; overflow-y: auto; }
 
 /* STEPPER */
 .stepper {

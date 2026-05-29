@@ -259,7 +259,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <span class="mi-bdg">🚚 Free Round-Trip Shipping — All 50 States</span>
         </div>
 
-        <div class="form-wrap">
+        <div class="form-wrap" :class="{ 'is-submitted': submitted }">
 
           <!-- Success state -->
           <div v-if="submitted" class="form-success">
@@ -609,6 +609,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .mi-bsep { width: 1px; height: 16px; background: rgba(255,255,255,0.2); margin-right: 20px; flex-shrink: 0; }
 /* form is now inside .mi-hero */
 .form-wrap { max-width: 100%; width: 100%; margin: 0; background: #fff; border-radius: 16px; box-shadow: 0 20px 64px rgba(0,0,0,0.35); overflow: hidden; max-height: calc(100vh - 96px); display: flex; flex-direction: column; }
+.form-wrap.is-submitted { max-height: none; overflow-y: auto; }
 .stepper { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 24px 40px 20px; background: #fff; border-bottom: 1px solid #e8edf4; }
 .stepper-track { position: absolute; top: 54px; left: calc(40px + 20px); right: calc(40px + 20px); height: 3px; background: #e8edf4; border-radius: 2px; z-index: 0; }
 .stepper-fill { height: 100%; background: #F5C842; border-radius: 2px; transition: width 0.4s ease; }
