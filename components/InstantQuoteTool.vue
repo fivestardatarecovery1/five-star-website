@@ -1571,7 +1571,7 @@ const progressIndex = computed(() => {
   transition: background 0.2s;
 }
 .iqt-compact .iqt-btn-next:hover { background: #e0b43a; }
-.iqt-powered { text-align: center; font-size: 10px; color: #b0b8cc; margin: 8px 0 0; }
+.iqt-powered { text-align: right; font-size: 10px; color: #b0b8cc; margin: 8px 0 0; }
 .iqt-powered a { color: #b0b8cc; text-decoration: none; transition: color 0.2s; }
 .iqt-powered a:hover { color: #F5C842; }
 .iqt-compact .iqt-back {

@@ -188,7 +188,7 @@ const submitted = ref(false)
 .mf-radio input { width: 14px; height: 14px; accent-color: #C9A84C; cursor: pointer; }
 .mf-submit { width: 100%; height: 62px; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; margin-top: 4px; transition: background 0.2s; }
 .mf-submit:hover { background: #b8923e; }
-.form-powered { text-align: center; font-size: 10px; color: #b0b8cc; margin: 8px 0 0; }
+.form-powered { text-align: right; font-size: 10px; color: #b0b8cc; margin: 8px 0 0; }
 .form-powered a { color: #b0b8cc; text-decoration: none; transition: color 0.2s; }
 .form-powered a:hover { color: #C9A84C; }
 .btn-gold-full { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
