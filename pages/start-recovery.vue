@@ -421,6 +421,19 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   .v3-hero-inner { grid-template-columns: 1fr 1fr; }
   .v3-brand { grid-column: 1 / -1; }
 }
+@media (max-width: 768px) {
+  /* Stack the two CTA cards vertically */
+  .v3-cards { grid-template-columns: 1fr; gap: 16px; }
+  /* Tighten hero padding */
+  .v3-hero-inner { padding-top: 20px; padding-bottom: 28px; gap: 18px; }
+  /* Badges wrap gracefully */
+  .v3-badges { gap: 6px 0; }
+  .v3-badge { font-size: 13px; padding: 0 16px 0 0; }
+  .v3-badge-sep { margin-right: 16px; }
+  /* Card padding tighter on mobile */
+  .v3-card { padding: 24px 20px; }
+  .v3-card-cta { font-size: 1rem; padding: 14px 20px; }
+}
 @media (max-width: 680px) {
   .v3-hero-inner { grid-template-columns: 1fr; }
   .v3-steps-row { grid-template-columns: 1fr 1fr; gap: 32px; }
