@@ -240,32 +240,25 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <NavBar />
 
     <!-- COMPACT FORM HERO -->
-    <section class="form-hero">
-      <div class="form-hero-bg" style="background-image: url('/data-recovery-mail-in-service-los-angeles.jpg')"></div>
-      <div class="form-hero-overlay"></div>
-      <div class="container form-hero-inner">
-        <div class="form-hero-left">
-          <div class="form-hero-proof">
-            <span class="form-hero-stars">★★★★★</span>
-            <span class="form-hero-rating">4.9 · 498 Online Reviews</span>
-          </div>
-          <h1 class="form-hero-title">Mail-In Data Recovery <span class="form-hero-gold">— Free Nationwide Shipping</span></h1>
-        </div>
-        <div class="form-hero-badges">
-          <span class="form-hero-badge">🚚 Free Round-Trip Shipping</span>
-          <span class="form-hero-sep"></span>
-          <span class="form-hero-badge">🛡️ No Data = No Charge</span>
-          <span class="form-hero-sep"></span>
-          <span class="form-hero-badge">📋 Prepaid Label Provided Immediately</span>
-          <span class="form-hero-sep"></span>
-          <span class="form-hero-badge">⚡ Expedited Service Available</span>
-        </div>
-      </div>
-    </section>
+    <!-- HERO — same design as Express Drop-Off -->
+    <section class="mi-hero">
+      <div class="mi-hero-bg" style="background-image: url('/data-recovery-mail-in-service-los-angeles.jpg')"></div>
+      <div class="mi-hero-overlay"></div>
+      <div class="container mi-hero-inner">
 
-    <!-- MULTI-STEP FORM -->
-    <section class="form-section">
-      <div class="container">
+        <div class="mi-proof-row">
+          <span class="mi-stars">★★★★★</span>
+          <span class="mi-rating">4.9 · 498 Online Reviews</span>
+        </div>
+        <h1 class="mi-title">Mail-In Data <span class="mi-gold">Recovery</span></h1>
+        <div class="mi-badges-row">
+          <span class="mi-bdg">📦 Mail In Your Device — Free Prepaid Label Provided</span>
+          <span class="mi-bsep"></span>
+          <span class="mi-bdg">🔬 Free Diagnosis — Same Day by Midnight</span>
+          <span class="mi-bsep"></span>
+          <span class="mi-bdg">🚚 Free Round-Trip Shipping — All 50 States</span>
+        </div>
+
         <div class="form-wrap">
 
           <!-- Success state -->
@@ -538,9 +531,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
             </form>
           </template>
-        </div>
-      </div>
-    </section>
+        </div><!-- /.form-wrap -->
+
+      </div><!-- /.mi-hero-inner -->
+    </section><!-- /.mi-hero -->
 
     <!-- PROCESS SECTION -->
     <section class="process-section">
@@ -599,67 +593,22 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-heading.center { text-align: center; }
 
 /* FORM */
-/* ── Compact Form Hero ── */
-.form-hero {
-  position: relative;
-  min-height: 210px;
-  display: flex;
-  align-items: center;
-}
-.form-hero-bg {
-  position: absolute; inset: 0;
-  background-size: cover;
-  background-position: center center;
-  pointer-events: none;
-}
-.form-hero-overlay {
-  position: absolute; inset: 0;
-  pointer-events: none;
-  background: linear-gradient(105deg, rgba(10,12,20,0.95) 0%, rgba(10,12,20,0.85) 55%, rgba(10,12,20,0.65) 100%);
-}
-.form-hero-inner {
-  position: relative; z-index: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-.form-hero-proof {
-  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
-}
-.form-hero-stars { color: #F5C842; font-size: 14px; letter-spacing: 1px; }
-.form-hero-rating { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.55); }
-.form-hero-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(20px, 2.8vw, 32px);
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.2;
-  margin: 0;
-}
-.form-hero-gold { color: #F5C842; }
-.form-hero-badges {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0;
-}
-.form-hero-badge {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.82);
-  padding: 0 20px 0 0;
-}
-.form-hero-sep {
-  width: 1px; height: 14px;
-  background: rgba(255,255,255,0.2);
-  margin-right: 20px;
-  flex-shrink: 0;
-}
-.form-section { background: #f4f7fc; padding: 36px 0 80px; }
-.form-wrap { max-width: 780px; margin: 0 auto; background: #fff; border-radius: 20px; box-shadow: 0 8px 40px rgba(0,0,0,0.08); overflow: hidden; }
-.stepper { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 36px 40px 28px; background: #fff; border-bottom: 1px solid #e8edf4; }
+/* ═══ HERO — same design as Express Drop-Off ═══ */
+.mi-hero { position: relative; overflow: hidden; }
+.mi-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.mi-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.93) 55%, rgba(10,12,20,0.80) 100%); pointer-events: none; }
+.mi-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; padding-bottom: 40px; }
+.mi-proof-row { display: flex; align-items: center; gap: 10px; }
+.mi-stars { color: #F5C842; font-size: 17px; letter-spacing: 2px; }
+.mi-rating { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); }
+.mi-title { font-family: "Montserrat", sans-serif; font-size: clamp(28px, 4vw, 52px); font-weight: 800; color: #fff; line-height: 1.1; max-width: 900px; margin: 0; }
+.mi-gold { color: #F5C842; }
+.mi-badges-row { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-bottom: 8px; }
+.mi-bdg { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.82); padding: 0 20px 0 0; }
+.mi-bsep { width: 1px; height: 16px; background: rgba(255,255,255,0.2); margin-right: 20px; flex-shrink: 0; }
+/* form is now inside .mi-hero */
+.form-wrap { max-width: 100%; width: 100%; margin: 0; background: #fff; border-radius: 16px; box-shadow: 0 20px 64px rgba(0,0,0,0.35); overflow: hidden; max-height: calc(100vh - 96px); display: flex; flex-direction: column; }
+.stepper { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 24px 40px 20px; background: #fff; border-bottom: 1px solid #e8edf4; }
 .stepper-track { position: absolute; top: 54px; left: calc(40px + 20px); right: calc(40px + 20px); height: 3px; background: #e8edf4; border-radius: 2px; z-index: 0; }
 .stepper-fill { height: 100%; background: #F5C842; border-radius: 2px; transition: width 0.4s ease; }
 .stepper-item { display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1; flex: 1; }
@@ -670,8 +619,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .stepper-label { font-size: 0.7rem; font-weight: 700; color: #8a9bb8; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; white-space: nowrap; }
 .stepper-item.active .stepper-label { color: #1a1a2e; }
 .stepper-item.done .stepper-label { color: #22c55e; }
-.edo-form { padding: 40px 40px 32px; display: flex; flex-direction: column; gap: 0; }
-.form-step { display: flex; flex-direction: column; gap: 22px; }
+.edo-form { padding: 32px 44px 0; display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; overflow: hidden; }
+.form-step { display: flex; flex-direction: column; gap: 20px; flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 20px; scrollbar-width: thin; }
 .step-title { font-size: 1.35rem; font-weight: 900; color: #1a1a2e; margin: 0 0 4px; }
 .step-desc { font-size: 0.93rem; color: #6b7280; margin: 0 0 8px; line-height: 1.6; }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -714,13 +663,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 
 .step-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; border-radius: 8px; padding: 12px 16px; font-size: 0.88rem; font-weight: 600; margin-top: 20px; }
-.form-nav { display: flex; align-items: center; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8edf4; }
+.form-nav { display: flex; align-items: center; gap: 12px; padding: 20px 44px 24px; border-top: 1px solid #e8edf4; flex-shrink: 0; background: #fff; }
 .step-count { font-size: 0.82rem; color: #9ca3af; font-weight: 600; }
 .btn-back { background: none; border: 1.5px solid #d1d9e6; color: #4b5563; padding: 11px 22px; border-radius: 8px; font-size: 0.92rem; font-weight: 700; cursor: pointer; font-family: inherit; transition: border-color 0.2s; }
 .btn-back:hover { border-color: #9ca3af; }
 .btn-next { background: #F5C842; color: #1a1a1a; border: none; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 800; cursor: pointer; font-family: inherit; transition: background 0.2s; }
 .btn-next:hover { background: #e0b43a; }
-.form-nav-final { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8edf4; }
+.form-nav-final { padding: 20px 44px 24px; border-top: 1px solid #e8edf4; flex-shrink: 0; background: #fff; }
 .terms-notice { font-size: 12px; color: #94a3b8; margin-bottom: 14px; text-align: center; }
 .terms-notice .terms-link { color: #64748b; }
 .final-btns { display: flex; gap: 12px; }
