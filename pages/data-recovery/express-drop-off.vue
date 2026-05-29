@@ -817,6 +817,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   border-radius: 16px;
   box-shadow: 0 20px 64px rgba(0,0,0,0.35);
   overflow: hidden;
+  /* Constrain to viewport so form never goes below fold */
+  max-height: calc(100vh - 280px);
+  display: flex;
+  flex-direction: column;
 }
 
 /* STEPPER */
@@ -892,8 +896,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .stepper-item.done .stepper-label { color: #22c55e; }
 
 /* FORM BODY */
-.edo-form { padding: 32px 44px 28px; display: flex; flex-direction: column; gap: 0; flex: 1; }
-.form-step { display: flex; flex-direction: column; gap: 20px; flex: 1; }
+.edo-form { padding: 32px 44px 0; display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; overflow: hidden; }
+.form-step { display: flex; flex-direction: column; gap: 20px; flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 20px; scrollbar-width: thin; }
 .step-title { font-size: 1.35rem; font-weight: 900; color: #1a1a2e; margin: 0 0 4px; }
 .step-desc { font-size: 0.93rem; color: #6b7280; margin: 0 0 8px; line-height: 1.6; }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -1004,9 +1008,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 32px;
-  padding-top: 24px;
+  padding: 20px 44px 24px;
   border-top: 1px solid #e8edf4;
+  flex-shrink: 0;
+  background: #fff;
 }
 .step-count { font-size: 0.82rem; color: #9ca3af; font-weight: 600; }
 .btn-back {
@@ -1035,7 +1040,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   transition: background 0.2s;
 }
 .btn-next:hover { background: #e0b43a; }
-.form-nav-final { margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8edf4; }
+.form-nav-final { padding: 20px 44px 24px; border-top: 1px solid #e8edf4; flex-shrink: 0; background: #fff; }
 .terms-notice { font-size: 12px; color: #94a3b8; margin-bottom: 14px; text-align: center; }
 .terms-notice .terms-link { color: #64748b; }
 .final-btns { display: flex; gap: 12px; }
