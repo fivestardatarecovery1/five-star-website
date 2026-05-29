@@ -597,7 +597,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .mi-hero { position: relative; overflow: hidden; }
 .mi-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
 .mi-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.93) 55%, rgba(10,12,20,0.80) 100%); pointer-events: none; }
-.mi-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; padding-bottom: 40px; }
+.mi-hero { min-height: 100vh; }
+.mi-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; padding-bottom: 60px; }
 .mi-proof-row { display: flex; align-items: center; gap: 10px; }
 .mi-stars { color: #F5C842; font-size: 17px; letter-spacing: 2px; }
 .mi-rating { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.6); }
