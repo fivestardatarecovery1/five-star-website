@@ -169,18 +169,21 @@ function selectTime(slot: string) {
 function scrollToForm() {
   if (!import.meta.client) return
   if (step.value === 1) {
-    // Step 1: show the full hero (headline visible)
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  } else {
-    // Steps 2+: snap form to just below the navbar — maximizes form space
-    const el = document.querySelector('.form-wrap')
-    const nav = document.querySelector('nav')
-    if (el) {
-      const navH = nav ? nav.offsetHeight : 86
-      const top = el.getBoundingClientRect().top + window.scrollY - navH - 4
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+    return
   }
+  // Steps 2+: vertically center the form card in the viewport
+  const el = document.querySelector('.form-wrap')
+  const nav = document.querySelector('nav')
+  if (!el) return
+  const navH = nav ? nav.offsetHeight : 86
+  const viewportH = window.innerHeight
+  const formH = el.offsetHeight
+  const available = viewportH - navH
+  const topInViewport = navH + Math.max(0, (available - formH) / 2)
+  const formPageTop = el.getBoundingClientRect().top + window.scrollY
+  const scrollTo = formPageTop - topInViewport
+  window.scrollTo({ top: Math.max(0, scrollTo), behavior: 'smooth' })
 }
 
 function validateStep(): boolean {
