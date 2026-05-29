@@ -71,6 +71,8 @@ watch(() => route.path, closeAll)
 </script>
 
 <template>
+  <div class="navbar-root">
+  <AnnouncementBar />
   <nav class="navbar">
     <!-- Top bar -->
     <div class="topbar">
@@ -186,6 +188,7 @@ watch(() => route.path, closeAll)
       </div>
     </Transition>
   </nav>
+  </div><!-- /.navbar-root -->
 </template>
 
 <style scoped>
