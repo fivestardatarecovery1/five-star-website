@@ -7,7 +7,7 @@
 import { defineEventHandler, getHeader, getRequestURL } from 'h3'
 
 const TRACKED_ROUTES: Record<string, 'mail-in' | 'express-drop-off'> = {
-  '/data-recovery/mail-in-service': 'mail-in',
+  '/data-recovery/data-recovery-mail-in-service': 'mail-in',
   '/data-recovery/express-drop-off': 'express-drop-off',
 }
 

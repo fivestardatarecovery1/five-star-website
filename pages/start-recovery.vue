@@ -97,7 +97,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <span>📋 Prepaid label provided immediately</span>
               <span>⚡ Expedited service available upon request</span>
             </div>
-            <NuxtLink to="/data-recovery/mail-in-service" class="v3-btn v3-btn-outline">
+            <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="v3-btn v3-btn-outline">
               Start Mail-In Recovery →
             </NuxtLink>
           </div>
@@ -168,7 +168,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="v3-bottom-btns">
           <NuxtLink to="/data-recovery/express-drop-off" class="v3-btn v3-btn-dark">Express Drop-Off →</NuxtLink>
-          <NuxtLink to="/data-recovery/mail-in-service" class="v3-btn v3-btn-outline-dark">Mail-In Service →</NuxtLink>
+          <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="v3-btn v3-btn-outline-dark">Mail-In Service →</NuxtLink>
         </div>
       </div>
     </section>

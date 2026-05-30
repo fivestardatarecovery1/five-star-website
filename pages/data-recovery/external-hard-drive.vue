@@ -364,7 +364,7 @@ useSeoMeta({
         <p class="s-body">We accept hard drive recoveries from anywhere in the U.S. Our mail-in program is simple and secure. You can send your device to us for a free evaluation.</p>
         <p class="s-body">Here's how it works:</p>
         <ul class="content-list">
-          <li>Fill out our <NuxtLink to="/data-recovery/mail-in-service" class="inline-link"><strong>recovery form online</strong></NuxtLink> and package your drive securely.</li>
+          <li>Fill out our <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="inline-link"><strong>recovery form online</strong></NuxtLink> and package your drive securely.</li>
           <li>Using our pre-paid shipping label, ship it to our <NuxtLink to="/data-recovery-services-glendale-ca" class="inline-link">Glendale</NuxtLink> location using the courier of your choice.</li>
           <li>We evaluate your device and provide a quote (usually same day by midnight).</li>
           <li>We recover and verify your files—then send them back via a new drive you provide or purchase from us.</li>

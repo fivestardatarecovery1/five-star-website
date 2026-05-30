@@ -39,7 +39,7 @@
         <ul>
           <li><NuxtLink to="/appointments">Schedule Appointment</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/express-drop-off">Express Drop Off</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/mail-in-service">Mail in Service</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/data-recovery-mail-in-service">Mail in Service</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/free-quote">Request a Quote</NuxtLink></li>
           <li><NuxtLink to="/payment-plan">Payment Plan</NuxtLink></li>
           <li><NuxtLink to="/faq">FAQ's</NuxtLink></li>

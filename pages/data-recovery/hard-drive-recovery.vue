@@ -336,7 +336,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="contact-body-text">If you're dealing with lost data, clicking drives, or a failed system, don't wait—reach out today. The sooner you call, the better the chances of full recovery.</p>
           <ul class="contact-bullets">
             <li>Visit our lab in Glendale, CA</li>
-            <li><NuxtLink to="/data-recovery/mail-in-service" class="contact-link">Mail in your drive</NuxtLink> from anywhere in the U.S.</li>
+            <li><NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="contact-link">Mail in your drive</NuxtLink> from anywhere in the U.S.</li>
             <li>Call us now for your free diagnostic</li>
           </ul>
           <p class="contact-body-text">The drive may be broken, but your files aren't gone forever. Let us help you recover lost data today.</p>

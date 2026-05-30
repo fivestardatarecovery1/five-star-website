@@ -2,6 +2,10 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'vercel'
   },
+  routeRules: {
+    '/data-recovery/mail-in-service': { redirect: { to: '/data-recovery/data-recovery-mail-in-service', statusCode: 301 } },
+    '/data-recovery/mail-in-service/': { redirect: { to: '/data-recovery/data-recovery-mail-in-service', statusCode: 301 } },
+  },
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
     fedexClientId: process.env.FEDEX_CLIENT_ID || '',

@@ -41,7 +41,7 @@ const byProblem = [
 const special = [
   { label: 'Clean Room Recovery', href: '/data-recovery/clean-room' },
   { label: 'Video File Repair', href: '/data-recovery/video-file-repair' },
-  { label: 'Mail-In Service', href: '/data-recovery/mail-in-service' },
+  { label: 'Mail-In Service', href: '/data-recovery/data-recovery-mail-in-service' },
   { label: 'Expedited Service', href: '/expedited-service' },
   { label: 'Expedited Service Plus', href: '/expedited-service-plus' },
 ]

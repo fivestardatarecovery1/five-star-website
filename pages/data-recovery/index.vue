@@ -178,7 +178,7 @@ const problems = [
 
 const special = [
   { label: 'Clean Room Recovery', href: '/data-recovery/clean-room' },
-  { label: 'Mail-In Service', href: '/data-recovery/mail-in-service' },
+  { label: 'Mail-In Service', href: '/data-recovery/data-recovery-mail-in-service' },
   { label: 'Express Drop-Off', href: '/data-recovery/express-drop-off' },
   { label: 'Free Quote', href: '/data-recovery/free-quote' },
   { label: 'Expedited Service', href: '/expedited-service' },
@@ -220,7 +220,7 @@ const faqs = [
   },
   {
     q: '3. I’m not near your location. Can I still use your services?',
-    a: 'Absolutely. We offer a <a href="/data-recovery/mail-in-service" class="faq-link"><strong>mail-in recovery option with free round-trip shipping anywhere in the United States</strong></a>. Just fill out our form and we’ll send you a prepaid label to ship your device to us securely.'
+    a: 'Absolutely. We offer a <a href="/data-recovery/data-recovery-mail-in-service" class="faq-link"><strong>mail-in recovery option with free round-trip shipping anywhere in the United States</strong></a>. Just fill out our form and we’ll send you a prepaid label to ship your device to us securely.'
   },
   {
     q: '4. How does your fastest recovery option work for emergencies?',

@@ -104,7 +104,7 @@ export default defineEventHandler(async (event) => {
               </tr>
               <tr>
                 <td style="padding:0;">
-                  <a href="https://www.fivestardatarecovery.com/data-recovery/mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
                     Start Mail-In Recovery<br><em style="font-weight:400;font-size:12px;opacity:.85;">(Free Shipping Nationwide)</em>
                   </a>
                 </td>
