@@ -97,19 +97,19 @@ export default defineEventHandler(async (event) => {
             <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
               <tr>
                 <td style="padding:0 8px 0 0;width:50%;">
-                  <a href="https://www.fivestardatarecovery.com/appointments" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:14px;text-align:center;line-height:1.3;">
-                    📅 Schedule Express Drop-Off<br><span style="font-weight:400;font-size:12px;opacity:.85;">For Local Customers</span>
+                  <a href="https://www.fivestardatarecovery.com/appointments" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.3;">
+                    📅 Schedule Express Drop-Off<br><em style="font-weight:400;font-size:12px;opacity:.85;">(For Local Customers)</em>
                   </a>
                 </td>
                 <td style="padding:0 0 0 8px;width:50%;">
-                  <a href="https://www.fivestardatarecovery.com/data-recovery/mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:14px;text-align:center;line-height:1.3;">
-                    📦 Start Mail-In Recovery<br><span style="font-weight:400;font-size:12px;opacity:.85;">Free Shipping Nationwide</span>
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.3;">
+                    📦 Start Mail-In Recovery<br><em style="font-weight:400;font-size:12px;opacity:.85;">(Free Shipping Nationwide)</em>
                   </a>
                 </td>
               </tr>
             </table>
 
-            <p style="font-size:13px;color:#374151;margin:0;">Questions? Call us at <a href="tel:8182728866" style="color:#c62828;font-weight:700;">818-272-8866</a> or reply to this email.</p>
+            <p style="font-size:13px;color:#374151;margin:0;">Questions? Call us at <a href="tel:8182728866" style="color:#c62828;font-weight:700;">818-272-8866</a>.</p>
           </div>
           <div style="background:#f4f7fc;padding:14px 32px;border-radius:0 0 12px 12px;border:1px solid #e8edf4;border-top:none;text-align:center;">
             <p style="margin:0;font-size:11px;color:#9ca3af;">&copy; 2025 Five Star Data Recovery &middot; 818-272-8866 &middot; Glendale, CA</p>
