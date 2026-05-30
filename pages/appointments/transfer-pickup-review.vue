@@ -183,7 +183,7 @@ async function submitForm() {
         appointmentDate: form.appointmentDate,
         appointmentTime: form.appointmentTime,
       }
-    }).catch(() => ({ ok: true })) // Graceful fallback — mock success if endpoint not yet live
+)
     if (res && res.ok === false && res.error) throw new Error(res.error)
     submitted.value = true
   } catch (e: any) {
