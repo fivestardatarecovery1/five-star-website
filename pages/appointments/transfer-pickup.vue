@@ -15,7 +15,7 @@ const submitError = ref('')
 const stepError = ref('')
 
 const form = reactive({
-  reason: '' as 'drop_off_transfer' | 'pickup_recovery' | '',
+  reason: '' as 'drop_off_transfer' | 'pickup_recovery' | 'review_data' | '',
   firstName: '', lastName: '', email: '', phone: '', caseNumber: '',
   appointmentDate: '', appointmentTime: '',
 })
@@ -197,6 +197,7 @@ async function submitForm() {
 const reasonLabel = computed(() => {
   if (form.reason === 'drop_off_transfer') return 'Drop Off a Transfer Drive'
   if (form.reason === 'pickup_recovery') return 'Pick Up My Recovered Data'
+  if (form.reason === 'review_data') return 'Review Recovered Data In Person'
   return ''
 })
 
@@ -323,6 +324,16 @@ onMounted(() => {
                       <div>
                         <strong class="rc-title">Pick Up My Recovered Data</strong>
                         <p class="rc-desc">My recovery is complete and I'd like to pick it up</p>
+                      </div>
+                    </div>
+                  </label>
+                  <label class="reason-card" :class="{ selected: form.reason === 'review_data' }">
+                    <input type="radio" name="reason" v-model="form.reason" value="review_data" />
+                    <div class="rc-body">
+                      <span class="rc-emoji">🔍</span>
+                      <div>
+                        <strong class="rc-title">Review Recovered Data In Person</strong>
+                        <p class="rc-desc">Some cases require the customer to review the results in person before approving &mdash; this appointment is for that purpose</p>
                       </div>
                     </div>
                   </label>
