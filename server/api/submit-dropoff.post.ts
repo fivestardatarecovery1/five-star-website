@@ -100,7 +100,6 @@ export default defineEventHandler(async (event) => {
               <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Service</td><td style="padding:8px 0;font-size:14px;font-weight:600;">${expeditedService?.includes('Expedited') ? 'Expedited Service' : 'Standard Service'}</td></tr>
             </table>
           </div>
-          <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 8px;">📌 <strong>No printout required.</strong> Just bring your device and we'll take care of the rest.</p>
           <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 24px;">Questions? Call us at <a href="tel:8182728866" style="color:#c62828;font-weight:700;">818-272-8866</a>.</p>
           <div style="text-align:center;">
             <a href="https://www.fivestardatarecovery.com" style="display:inline-block;background:#F5C842;color:#1a1a1a;padding:13px 32px;border-radius:8px;font-weight:800;text-decoration:none;font-size:15px;">Visit Our Website</a>

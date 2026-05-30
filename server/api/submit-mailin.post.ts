@@ -107,7 +107,31 @@ export default defineEventHandler(async (event) => {
   }
 
   const resend = new Resend(resendApiKey)
-  const attachments = labelBase64 ? [{ filename: 'shipping-label.pdf', content: labelBase64 }] : []
+
+  // Generate a system case reference number
+  const caseRef = `FS-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${Math.random().toString(36).slice(2,7).toUpperCase()}`
+  const safeName = `${firstName} ${lastName}`.replace(/[^a-zA-Z0-9 ]/g, '').trim()
+  const labelFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Prepaid Shipping Label.pdf`
+
+  // ── Generate packing slip (before emails so we can attach it) ──
+  const packingSlipHtmlEarly = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Packing Slip</title>
+<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;font-size:13px;color:#111;background:#fff;padding:32px;max-width:680px;margin:0 auto}.header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #1a1a2e;padding-bottom:16px;margin-bottom:24px}.logo{font-size:20px;font-weight:900;color:#1a1a2e}.logo span{color:#F5C842}.header-right{text-align:right;font-size:12px;color:#555}.section{margin-bottom:20px}.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#888;margin-bottom:8px;border-bottom:1px solid #eee;padding-bottom:4px}table{width:100%;border-collapse:collapse}td{padding:5px 8px 5px 0;vertical-align:top}td:first-child{color:#555;width:45%;font-size:12px}td:last-child{font-weight:600}.highlight{background:#f9f5e7;border:1.5px solid #F5C842;border-radius:6px;padding:12px 14px;margin-bottom:20px}.footer{border-top:1px solid #eee;padding-top:14px;margin-top:24px;text-align:center;font-size:11px;color:#888}</style>
+</head><body>
+<div class="header"><div><div class="logo">FIVE<span>★</span>STAR</div><div style="font-size:11px;color:#555;margin-top:3px;">Data Recovery &middot; 1731 S Brand Blvd, Glendale, CA 91204 &middot; 818-272-8866</div></div><div class="header-right"><div style="font-weight:700;font-size:13px;">PACKING SLIP</div><div>Ref: ${caseRef}</div><div>Date: ${new Date().toLocaleDateString('en-US')}</div><div>Service: ${serviceLabel}</div></div></div>
+<div class="highlight"><strong style="font-size:14px;display:block;margin-bottom:4px;">Please include this slip inside your package</strong><p style="font-size:12px;color:#555;line-height:1.5;">This helps our team identify your device immediately upon arrival.</p></div>
+<div class="section"><div class="section-label">Customer</div><table><tr><td>Name</td><td>${fullName}</td></tr><tr><td>Email</td><td>${email}</td></tr><tr><td>Phone</td><td>${phone}</td></tr><tr><td>Ship From</td><td>${streetAddress}, ${city}, ${state} ${zip}</td></tr></table></div>
+<div class="section"><div class="section-label">Device</div><table><tr><td>Manufacturer</td><td>${manufacturer}</td></tr><tr><td>Drive Type</td><td>${driveType}</td></tr><tr><td>Drive Format</td><td>${driveFormat}</td></tr><tr><td>Drive Size</td><td>${driveSize}</td></tr><tr><td>Issue</td><td>${issue}</td></tr></table></div>
+<div class="section"><div class="section-label">Recovery Details</div><table><tr><td>Data to Recover</td><td>${Array.isArray(dataTypes) ? dataTypes.join('; ') : dataTypes}</td></tr><tr><td>Prior Attempts</td><td>${recoveryAttempted}</td></tr>${additionalInfo ? `<tr><td>Notes</td><td>${additionalInfo}</td></tr>` : ''}</table></div>
+<div class="section"><div class="section-label">Service</div><table><tr><td>Level</td><td style="font-weight:700;">${expeditedService}</td></tr><tr><td>Transfer Drive</td><td>${transferDrive}</td></tr></table></div>
+<div class="section"><div class="section-label">Ship To</div><table><tr><td>Company</td><td style="font-weight:900;">Five Star Data Recovery</td></tr><tr><td>Address</td><td>1731 S Brand Blvd, Glendale, CA 91204</td></tr><tr><td>Phone</td><td>818-272-8866</td></tr></table></div>
+<div class="footer"><p>No Data, No Charge &middot; fivestardatarecovery.com &middot; Mon–Fri 10am–6pm &middot; Sat 10am–2pm</p></div>
+</body></html>`
+  const packingSlipBase64Early = Buffer.from(packingSlipHtmlEarly).toString('base64')
+  const slipFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Packing Slip.pdf`
+
+  const attachments: { filename: string; content: string }[] = []
+  if (labelBase64) attachments.push({ filename: labelFilename, content: labelBase64 })
+  attachments.push({ filename: slipFilename, content: packingSlipBase64Early })
 
   // ── Email to business ─────────────────────────────────────────
   await resend.emails.send({
@@ -292,7 +316,7 @@ export default defineEventHandler(async (event) => {
 </body>
 </html>`
 
-  const packingSlipBase64 = Buffer.from(packingSlipHtml).toString('base64')
+  const packingSlipBase64 = packingSlipBase64Early // used for browser display
 
   // Save to Mission Control (fire & forget)
   // Route through the Nuxt proxy on the local machine (fivestar.ngrok.app → localhost:3456 → localhost:3001)
