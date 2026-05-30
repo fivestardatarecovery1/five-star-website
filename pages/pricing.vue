@@ -194,7 +194,7 @@ const faqs = [
   },
   {
     q: 'Are there any upfront fees for data recovery services?',
-    a: 'No. We offer a completely free evaluation on every case. You will not be charged anything until we confirm we can recover your data and you approve the quoted price.',
+    a: 'In most cases, no — we offer a completely free evaluation and you only pay once we confirm recovery and you approve the price. However, certain situations do require a non-refundable upfront fee: if your drive cover has been previously opened ($200), if your case involves deleted or formatted file recovery ($200), or if you select an Expedited Service option ($200–$500). Our team will always disclose any applicable fees before any work begins.',
   },
   {
     q: 'I need my data recovery, but I can\'t afford it. Do you offer payment plans for data recovery?',
@@ -310,7 +310,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="section-label center">RAID &amp; NAS</div>
         <h2 class="s-heading center">RAID/NAS Data Recovery Pricing</h2>
         <p class="raid-intro">
-          Our RAID Data Recovery prices are flat-rate per drive. We don't charge any premiums to rebuild the RAID in order to recover the data. Our flat rate Data Recovery fees are the same as our single drive Data Recovery prices, $300.00 or $400.00 per drive, depending on the size of the drive. If any of the drives have mechanical issues, then the fee for that drive will be $650.00 or $950.00 (this is not very common for RAID systems, especially for RAIDs that are set up as a RAID 5).
+          Our RAID Data Recovery prices are flat-rate per drive. We don't charge any premiums to rebuild the RAID in order to recover the data. Our flat rate Data Recovery fees are the same as our single drive Data Recovery prices, $300.00, $500.00, or $600.00 per drive, depending on the size of the drive. If any of the drives have mechanical issues, then the fee for that drive will be $950.00 (this is not very common for RAID systems, especially for RAIDs that are set up as a RAID 5).
         </p>
         <div class="raid-examples">
           <div v-for="ex in raidExamples" :key="ex.label" class="raid-box">
