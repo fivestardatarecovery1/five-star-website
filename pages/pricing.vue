@@ -146,12 +146,12 @@ const raidExamples = [
     title: 'RAID 5 — 4 Hard Drives, each 6TB',
     total: '$2,000.00',
     drives: [
-      'Drive 1 – $500.00 (Logical Data Recovery +)',
-      'Drive 2 – $500.00 (Logical Data Recovery +)',
-      'Drive 3 – $500.00 (Logical Data Recovery +)',
-      'Drive 4 – $500.00 (Logical Data Recovery +)',
+      'Drive 1 – $500.00 Flat Rate',
+      'Drive 2 – $500.00 Flat Rate',
+      'Drive 3 – $500.00 Flat Rate',
+      'Drive 4 – $500.00 Flat Rate',
     ],
-    note: '$300.00 + $100.00 Surcharge for Drives Larger than 2TB',
+    note: '',
   },
   {
     label: 'Example C',
