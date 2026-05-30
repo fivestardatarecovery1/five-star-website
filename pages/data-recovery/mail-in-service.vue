@@ -89,6 +89,7 @@ const submitting = ref(false)
 const submitError = ref('')
 const stepError = ref('')
 const labelBase64 = ref('')
+const caseRef = ref('')
 const serviceLabel = ref('')
 const labelError = ref('')
 const packingSlipBase64 = ref('')
@@ -99,7 +100,7 @@ const form = reactive({
   issue: '', dataTypes: [] as string[], recoveryAttempted: '', additionalInfo: '',
   conditionalRates: [] as string[], expeditedService: '', transferDrive: '',
   streetAddress: '', city: '', state: '', zip: '', country: 'United States of America (USA)',
-  shippingCarrier: '', date: '', termsAgreed: false,
+  shippingCarrier: 'FedEx', date: '', termsAgreed: false,
 })
 
 function scrollToForm() {
@@ -180,6 +181,7 @@ async function submitForm() {
     serviceLabel.value = res.serviceLabel || ''
     labelError.value = res.labelError || ''
     packingSlipBase64.value = res.packingSlipBase64 || ''
+    caseRef.value = res.caseRef || ''
     submitted.value = true
     onFormSubmitted()
   } catch (e) {
@@ -277,7 +279,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               </div>
               <a
                 :href="'data:application/pdf;base64,' + labelBase64"
-                download="five-star-shipping-label.pdf"
+                :download="`${form.firstName} ${form.lastName} - ${caseRef} - Five Star Data Recovery - Prepaid Shipping Label.pdf`"
                 class="btn-download"
               >⬇ Download Label</a>
             </div>
@@ -290,7 +292,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               </div>
               <a
                 :href="'data:text/html;base64,' + packingSlipBase64"
-                download="packing-slip.html"
+                :download="`${form.firstName} ${form.lastName} - ${caseRef} - Five Star Data Recovery - Packing Slip.html`"
                 class="btn-download"
                 style="background:#6366f1;"
               >⬇ Download Slip</a>
@@ -488,15 +490,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                     </select>
                   </div>
                 </div>
-                <div class="fg">
-                  <label class="fl">Preferred Shipping Carrier</label>
-                  <p class="field-note">Shipping is on us. But if you have a preference, please feel free to let us know.</p>
-                  <div class="radio-group">
-                    <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="USPS" /> USPS</label>
-                    <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="FedEx" /> FedEx</label>
-                    <label class="ci"><input type="radio" v-model="form.shippingCarrier" name="carrier" value="No preference" /> I don't have a preference</label>
-                  </div>
-                </div>
+
                 <div class="fg">
                   <label class="fl">Today's Date <span class="req">*</span></label>
                   <div class="date-field-wrap">

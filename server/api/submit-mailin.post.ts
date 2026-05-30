@@ -339,5 +339,5 @@ export default defineEventHandler(async (event) => {
     }).catch(() => {})
   }
 
-  return { success: true, labelBase64, serviceLabel, labelError, packingSlipBase64 }
+  return { success: true, labelBase64, serviceLabel, labelError, packingSlipBase64, caseRef }
 })
