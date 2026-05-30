@@ -108,8 +108,17 @@ export default defineEventHandler(async (event) => {
 
   const resend = new Resend(resendApiKey)
 
-  // Generate a system case reference number
-  const caseRef = `FS-${new Date().toISOString().slice(0,10).replace(/-/g,'')}-${Math.random().toString(36).slice(2,7).toUpperCase()}`
+  // Get sequential case number from MC backend
+  let caseRef = `FS-${13710 + Math.floor(Math.random() * 10)}` // fallback
+  try {
+    const isVercel = !!process.env.VERCEL
+    const cnUrl = isVercel
+      ? 'https://fivestar.ngrok.app/api/mc-leads/next-case-number'
+      : 'http://localhost:3001/api/fs-leads/next-case-number'
+    const cnRes = await fetch(cnUrl, { method: 'POST', signal: AbortSignal.timeout(4000) })
+    const cnData = await cnRes.json() as any
+    if (cnData?.caseNumber) caseRef = cnData.caseNumber
+  } catch {}
   const safeName = `${firstName} ${lastName}`.replace(/[^a-zA-Z0-9 ]/g, '').trim()
   const labelFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Prepaid Shipping Label.pdf`
 
