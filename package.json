@@ -13,6 +13,7 @@
     "nuxt": "^3.14.0"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^8.0.15",
     "resend": "^6.12.4"
   }
 }
