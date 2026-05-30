@@ -1,7 +1,68 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Service Pricing — Five Star Data Recovery',
-  description: 'View our flat-rate data recovery pricing for hard drives, SSDs, USB drives, RAID systems and more. No hidden fees. No data, no charge. Free evaluation on every case.'
+  title: 'Data Recovery Service Pricing - Five Star Data Recovery',
+  description: 'Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.'
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'LocalBusiness',
+          '@id': 'https://www.fivestardatarecovery.com/#fivestardatarecovery',
+          name: 'Five Star Data Recovery',
+          image: 'https://www.fivestardatarecovery.com/wp-content/uploads/logo.png',
+          telephone: '+1-818-272-8866',
+          address: {
+            '@type': 'PostalAddress',
+            streetAddress: '1731 S Brand Blvd.',
+            addressLocality: 'Glendale',
+            addressRegion: 'CA',
+            postalCode: '91204',
+            addressCountry: 'US',
+          },
+          areaServed: [{ '@type': 'Country', name: 'United States' }],
+          url: 'https://www.fivestardatarecovery.com/',
+          priceRange: '$300 - $950',
+          aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '498' },
+          review: [{
+            '@type': 'Review',
+            author: { '@type': 'Person', name: 'Michael S.' },
+            datePublished: '2024-10-21',
+            reviewBody: 'Their transparent pricing made it easy to move forward. No hidden fees, and they recovered all my lost photos!',
+            name: 'Honest and Affordable',
+            reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5', worstRating: '1' },
+          }],
+        },
+        {
+          '@type': 'Service',
+          name: 'Data Recovery Pricing',
+          url: 'https://www.fivestardatarecovery.com/data-recovery-service-pricing/',
+          areaServed: [{ '@type': 'Country', name: 'United States' }],
+          description: 'Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.',
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.fivestardatarecovery.com/' },
+            { '@type': 'ListItem', position: 2, name: 'Pricing', item: 'https://www.fivestardatarecovery.com/data-recovery-service-pricing/' },
+          ],
+        },
+        {
+          '@type': 'FAQPage',
+          mainEntity: [
+            { '@type': 'Question', name: 'How much does data recovery typically cost?', acceptedAnswer: { '@type': 'Answer', text: 'Our pricing ranges from $300 to $950 depending on the type of device and failure. This includes labor, parts, and secure data return.' } },
+            { '@type': 'Question', name: 'Is there a fee if you can\'t recover the data?', acceptedAnswer: { '@type': 'Answer', text: 'No. Our standard policy is No Data, No Charge. You only pay if you\'re satisfied with the recovery results.' } },
+            { '@type': 'Question', name: 'Are diagnostics really free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Diagnostics are always free and typically completed the same day you drop off or mail in your device.' } },
+            { '@type': 'Question', name: 'Is there a rush service option available?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. We offer an expedited service during business hours for $200/drive and an Expedited Plus option for after-hours and weekend cases at $500/drive.' } },
+          ],
+        },
+      ],
+    }),
+  }],
 })
 
 const reviews = [
