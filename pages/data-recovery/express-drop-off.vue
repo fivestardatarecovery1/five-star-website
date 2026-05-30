@@ -373,8 +373,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
             <div class="confirm-header">
               <div class="confirm-check">✓</div>
-              <h2 class="confirm-heading">Congratulations — Your Drop-Off Request Has Been Received!</h2>
-              <p class="confirm-intro">We are now waiting for your case to arrive at our lab. Here's a summary of your appointment.</p>
+              <h2 class="confirm-heading">You're All Set! 🎉</h2>
+              <p class="confirm-intro">Your drop-off appointment is confirmed. Just show up at your scheduled time — no printout needed. We'll have everything ready for you.</p>
             </div>
 
             <!-- Appointment Summary Card -->
@@ -406,7 +406,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
 
             <p class="confirm-waiting">
-              Our team will be ready for your arrival on <strong>{{ formattedSelectedDate }}</strong> at <strong>{{ form.dropOffTime }}</strong>. Your case has been logged and our engineers will begin diagnostics as soon as your device is checked in.
+              📌 <strong>No printout required.</strong> Our team will be ready for your arrival on <strong>{{ formattedSelectedDate }}</strong> at <strong>{{ form.dropOffTime }}</strong>. Just bring your device and we'll take it from there.
             </p>
 
             <!-- Share / Print Actions -->

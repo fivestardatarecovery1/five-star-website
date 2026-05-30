@@ -78,7 +78,7 @@ export default defineEventHandler(async (event) => {
   await resend.emails.send({
     from: 'Five Star Data Recovery <noreply@fivestardatarecovery.com>',
     to: [email],
-    subject: 'We received your drop-off request — Five Star Data Recovery',
+    subject: `Drop-Off Appointment Confirmed — ${dropOffDate} at ${dropOffTime}`,
     html: `
       <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e;">
         <div style="background:#0f1623;padding:32px;border-radius:12px 12px 0 0;text-align:center;">
@@ -86,23 +86,22 @@ export default defineEventHandler(async (event) => {
           <p style="color:#8a9bb8;margin:8px 0 0;font-size:14px;">1731 S Brand Blvd, Glendale, CA 91204</p>
         </div>
         <div style="background:#fff;padding:36px 32px;border:1px solid #e8edf4;border-top:none;">
-          <h2 style="margin:0 0 12px;font-size:20px;">Hi ${firstName},</h2>
-          <p style="font-size:15px;line-height:1.7;color:#374151;margin:0 0 20px;">
-            Thank you for submitting your Express Drop-Off request. We've received all your information and our team will be in touch shortly to confirm your appointment.
+          <h2 style="margin:0 0 8px;font-size:22px;">Hi ${firstName}, you're all set! ✅</h2>
+          <p style="font-size:15px;line-height:1.7;color:#374151;margin:0 0 24px;">
+            Your drop-off appointment is confirmed. Just show up at our office at your scheduled time — no printout needed. We'll have everything ready for you.
           </p>
           <div style="background:#f4f7fc;border-radius:10px;padding:20px 24px;margin-bottom:24px;">
-            <p style="margin:0 0 8px;font-size:13px;color:#6b7280;text-transform:uppercase;letter-spacing:.07em;font-weight:700;">Your Drop-Off Summary</p>
+            <p style="margin:0 0 12px;font-size:13px;color:#6b7280;text-transform:uppercase;letter-spacing:.07em;font-weight:700;">Your Confirmed Appointment</p>
             <table style="width:100%;border-collapse:collapse;">
-              <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;width:45%;">Drive</td><td style="padding:6px 0;font-size:14px;font-weight:600;">${manufacturer} — ${driveType}</td></tr>
-              <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Service</td><td style="padding:6px 0;font-size:14px;font-weight:600;">${expeditedService?.includes('Expedited') ? 'Expedited Service' : 'Standard Service'}</td></tr>
-              <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Preferred Date</td><td style="padding:6px 0;font-size:14px;font-weight:600;">${dropOffDate} ${dropOffTime}</td></tr>
-              <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Location</td><td style="padding:6px 0;font-size:14px;font-weight:600;">Glendale, CA</td></tr>
+              <tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;color:#6b7280;font-size:14px;width:45%;">Date</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:15px;font-weight:800;color:#F5C842;">📅 ${dropOffDate}</td></tr>
+              <tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;color:#6b7280;font-size:14px;">Arrival Time</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:15px;font-weight:800;color:#F5C842;">⏰ ${dropOffTime}</td></tr>
+              <tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;color:#6b7280;font-size:14px;">Location</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:14px;font-weight:600;">1731 S Brand Blvd., Glendale, CA 91204</td></tr>
+              <tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;color:#6b7280;font-size:14px;">Drive</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:14px;font-weight:600;">${manufacturer} — ${driveType}</td></tr>
+              <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Service</td><td style="padding:8px 0;font-size:14px;font-weight:600;">${expeditedService?.includes('Expedited') ? 'Expedited Service' : 'Standard Service'}</td></tr>
             </table>
           </div>
-          <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 24px;">
-            <strong>What happens next?</strong><br>
-            Our team will review your case and reach out to confirm your drop-off appointment. If you have any questions in the meantime, call us at <a href="tel:8182728866" style="color:#F5C842;font-weight:700;">818-272-8866</a>.
-          </p>
+          <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 8px;">📌 <strong>No printout required.</strong> Just bring your device and we'll take care of the rest.</p>
+          <p style="font-size:14px;line-height:1.7;color:#374151;margin:0 0 24px;">Questions? Call us at <a href="tel:8182728866" style="color:#c62828;font-weight:700;">818-272-8866</a>.</p>
           <div style="text-align:center;">
             <a href="https://www.fivestardatarecovery.com" style="display:inline-block;background:#F5C842;color:#1a1a1a;padding:13px 32px;border-radius:8px;font-weight:800;text-decoration:none;font-size:15px;">Visit Our Website</a>
           </div>
