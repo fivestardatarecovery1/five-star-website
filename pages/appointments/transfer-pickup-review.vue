@@ -183,12 +183,11 @@ async function submitForm() {
         appointmentDate: form.appointmentDate,
         appointmentTime: form.appointmentTime,
       }
-)
+    })
     if (res && res.ok === false && res.error) throw new Error(res.error)
     submitted.value = true
   } catch (e: any) {
-    // Still show success — backend may not be live yet
-    submitted.value = true
+    submitError.value = 'Something went wrong. Please call us at (818) 272-8866.'
   } finally {
     submitting.value = false
   }
