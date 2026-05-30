@@ -97,7 +97,7 @@ export default defineEventHandler(async (event) => {
             <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
               <tr>
                 <td style="padding:0 0 10px 0;">
-                  <a href="https://www.fivestardatarecovery.com/appointments" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/express-drop-off" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
                     Schedule Express Drop-Off<br><em style="font-weight:400;font-size:12px;opacity:.85;">(For Local Customers)</em>
                   </a>
                 </td>
