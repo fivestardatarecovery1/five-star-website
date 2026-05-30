@@ -85,7 +85,7 @@ useSeoMeta({
               <li>📅 Choose your appointment time</li>
               <li>⚡ In &amp; out in minutes</li>
             </ul>
-            <NuxtLink to="/appointments/transfer-pickup" class="appt-btn appt-btn-outline">
+            <NuxtLink to="/appointments/transfer-pickup-review" class="appt-btn appt-btn-outline">
               Schedule Appointment →
             </NuxtLink>
           </div>
