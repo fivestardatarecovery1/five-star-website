@@ -63,6 +63,62 @@ export default defineEventHandler(async (event) => {
     ? `📞 Call Required: ${name} — ${device_label || device}`
     : `💰 Quote Completed: ${name} — ${device_label || device} — $${price?.toLocaleString()}`
 
+  // ── Customer confirmation email (result only, not call-required) ──
+  if (isResult && !isCall && email) {
+    const firstName = (name || '').split(' ')[0] || 'there'
+    await resend.emails.send({
+      from: 'Five Star Data Recovery <noreply@fivestardatarecovery.com>',
+      to: [email],
+      subject: `Your Instant Quote — $${price?.toLocaleString()} for ${device_label || device}`,
+      html: `
+        <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto;color:#1a1a2e;">
+          <div style="background:#0f1623;padding:28px 32px;border-radius:12px 12px 0 0;">
+            <h1 style="color:#F5C842;margin:0;font-size:22px;">Five Star Data Recovery</h1>
+            <p style="color:#8a9bb8;margin:6px 0 0;font-size:13px;">1731 S Brand Blvd, Glendale, CA 91204 &middot; (818) 272-8866</p>
+          </div>
+          <div style="background:#fff;padding:32px;border:1px solid #e8edf4;border-top:none;">
+            <h2 style="margin:0 0 8px;font-size:20px;color:#111;">Hi ${firstName}, here&rsquo;s your quote!</h2>
+            <p style="font-size:15px;color:#374151;line-height:1.7;margin:0 0 24px;">Based on what you&rsquo;ve told us, here&rsquo;s our estimated price for your data recovery case.</p>
+
+            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:24px;margin-bottom:24px;">
+              <p style="margin:0 0 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#9ca3af;">Your Quote Summary</p>
+              <table style="width:100%;border-collapse:collapse;">
+                ${device_label ? `<tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:13px;color:#6b7280;width:40%;">Device</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:14px;font-weight:600;color:#111;">${device_label}</td></tr>` : ''}
+                ${capacity ? `<tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:13px;color:#6b7280;">Capacity</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:14px;color:#111;">${capacity}</td></tr>` : ''}
+                ${issue ? `<tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:13px;color:#6b7280;">Issue</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:14px;color:#111;">${issue}</td></tr>` : ''}
+                ${urgency ? `<tr><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:13px;color:#6b7280;">Service</td><td style="padding:8px 0;border-bottom:1px solid #e8edf4;font-size:14px;color:#111;">${urgency}</td></tr>` : ''}
+                <tr><td style="padding:12px 0 0;font-size:13px;color:#6b7280;font-weight:700;">Estimated Price</td><td style="padding:12px 0 0;font-size:28px;font-weight:900;color:#F5C842;">$${price?.toLocaleString()}</td></tr>
+              </table>
+            </div>
+
+            <p style="font-size:13px;color:#6b7280;line-height:1.6;margin:0 0 28px;">This is an estimate based on the information provided. Final pricing is confirmed after our free diagnostic. <strong>No data, no charge.</strong></p>
+
+            <p style="font-size:15px;font-weight:700;color:#111;margin:0 0 14px;">Ready to get started?</p>
+            <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
+              <tr>
+                <td style="padding:0 8px 0 0;width:50%;">
+                  <a href="https://www.fivestardatarecovery.com/appointments" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:14px;text-align:center;line-height:1.3;">
+                    📅 Schedule Express Drop-Off<br><span style="font-weight:400;font-size:12px;opacity:.85;">For Local Customers</span>
+                  </a>
+                </td>
+                <td style="padding:0 0 0 8px;width:50%;">
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:14px;text-align:center;line-height:1.3;">
+                    📦 Start Mail-In Recovery<br><span style="font-weight:400;font-size:12px;opacity:.85;">Free Shipping Nationwide</span>
+                  </a>
+                </td>
+              </tr>
+            </table>
+
+            <p style="font-size:13px;color:#374151;margin:0;">Questions? Call us at <a href="tel:8182728866" style="color:#c62828;font-weight:700;">818-272-8866</a> or reply to this email.</p>
+          </div>
+          <div style="background:#f4f7fc;padding:14px 32px;border-radius:0 0 12px 12px;border:1px solid #e8edf4;border-top:none;text-align:center;">
+            <p style="margin:0;font-size:11px;color:#9ca3af;">&copy; 2025 Five Star Data Recovery &middot; 818-272-8866 &middot; Glendale, CA</p>
+          </div>
+        </div>`,
+    }).catch(() => {})
+  }
+
+  // ── Internal notification to staff ──
   await resend.emails.send({
     from: 'Five Star Quote Tool <noreply@fivestardatarecovery.com>',
     to: ['info@fivestardatarecovery.com'],
