@@ -96,14 +96,16 @@ export default defineEventHandler(async (event) => {
             <p style="font-size:15px;font-weight:700;color:#111;margin:0 0 14px;">Ready to get started?</p>
             <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
               <tr>
-                <td style="padding:0 8px 0 0;width:50%;">
-                  <a href="https://www.fivestardatarecovery.com/appointments" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.3;">
-                    📅 Schedule Express Drop-Off<br><em style="font-weight:400;font-size:12px;opacity:.85;">(For Local Customers)</em>
+                <td style="padding:0 0 10px 0;">
+                  <a href="https://www.fivestardatarecovery.com/appointments" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
+                    Schedule Express Drop-Off<br><em style="font-weight:400;font-size:12px;opacity:.85;">(For Local Customers)</em>
                   </a>
                 </td>
-                <td style="padding:0 0 0 8px;width:50%;">
-                  <a href="https://www.fivestardatarecovery.com/data-recovery/mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:14px 16px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.3;">
-                    📦 Start Mail-In Recovery<br><em style="font-weight:400;font-size:12px;opacity:.85;">(Free Shipping Nationwide)</em>
+              </tr>
+              <tr>
+                <td style="padding:0;">
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
+                    Start Mail-In Recovery<br><em style="font-weight:400;font-size:12px;opacity:.85;">(Free Shipping Nationwide)</em>
                   </a>
                 </td>
               </tr>
