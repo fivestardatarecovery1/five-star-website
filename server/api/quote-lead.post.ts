@@ -97,15 +97,15 @@ export default defineEventHandler(async (event) => {
             <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
               <tr>
                 <td style="padding:0 0 10px 0;">
-                  <a href="https://www.fivestardatarecovery.com/data-recovery/express-drop-off" style="display:block;background:#c62828;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
-                    Schedule Express Drop-Off<br><em style="font-weight:400;font-size:12px;opacity:.85;">(For Local Customers)</em>
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/express-drop-off" style="display:block;background:#F5C842;color:#0A0C14;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
+                    Schedule Express Drop-Off<br><em style="font-weight:400;font-size:12px;opacity:.75;">(For Local Customers)</em>
                   </a>
                 </td>
               </tr>
               <tr>
                 <td style="padding:0;">
-                  <a href="https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service" style="display:block;background:#1e40af;color:#fff;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
-                    Start Mail-In Recovery<br><em style="font-weight:400;font-size:12px;opacity:.85;">(Free Shipping Nationwide)</em>
+                  <a href="https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service" style="display:block;background:#0A0C14;color:#F5C842;text-decoration:none;padding:16px 20px;border-radius:10px;font-weight:800;font-size:16px;text-align:center;line-height:1.4;">
+                    Start Mail-In Recovery<br><em style="font-weight:400;font-size:12px;opacity:.75;color:#fff;">(Free Shipping Nationwide)</em>
                   </a>
                 </td>
               </tr>
