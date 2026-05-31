@@ -22,15 +22,15 @@
             </div>
             <ul>
               <li><NuxtLink to="/">Home</NuxtLink></li>
-              <li><NuxtLink to="/about">About Us</NuxtLink></li>
+              <li><NuxtLink to="/about-us">About Us</NuxtLink></li>
               <li><NuxtLink to="/reviews">Reviews</NuxtLink></li>
               <li><NuxtLink to="/faq">FAQ</NuxtLink></li>
-              <li><NuxtLink to="/contact">Contact Us</NuxtLink></li>
+              <li><NuxtLink to="/contact-us">Contact Us</NuxtLink></li>
               <li><NuxtLink to="/blog">Blog</NuxtLink></li>
-              <li><NuxtLink to="/pricing">Pricing</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery-service-pricing">Pricing</NuxtLink></li>
               <li><NuxtLink to="/payment-plan">Payment Plan</NuxtLink></li>
               <li><NuxtLink to="/privacy-policy">Privacy Policy</NuxtLink></li>
-              <li><NuxtLink to="/terms">Terms &amp; Conditions</NuxtLink></li>
+              <li><NuxtLink to="/terms-and-conditions">Terms &amp; Conditions</NuxtLink></li>
             </ul>
           </div>
 
@@ -42,9 +42,9 @@
             </div>
             <ul>
               <li><NuxtLink to="/start-recovery">Start Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/free-quote">Free Data Recovery Quote</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/free-data-recovery-quote">Free Data Recovery Quote</NuxtLink></li>
               <li><NuxtLink to="/instant-quote">Instant Quote Tool</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/express-drop-off">Express Drop-Off</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/express-drop-off-form">Express Drop-Off</NuxtLink></li>
               <li><NuxtLink to="/data-recovery/data-recovery-mail-in-service">Mail-In Service</NuxtLink></li>
               <li><NuxtLink to="/expedited-service">Expedited Service</NuxtLink></li>
               <li><NuxtLink to="/expedited-service-plus">Expedited Service Plus</NuxtLink></li>
@@ -60,19 +60,19 @@
             <ul>
               <li><NuxtLink to="/data-recovery">All Services</NuxtLink></li>
               <li><NuxtLink to="/data-recovery/hard-drive-recovery">Hard Drive Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/external-hard-drive">External Hard Drive Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/ssd-recovery">SSD Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/raid-recovery">RAID Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/nas-recovery">NAS Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/laptop-recovery">Laptop Data Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/mac-recovery">Mac Data Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/desktop-recovery">Desktop Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/iphone-recovery">iPhone Data Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/usb-recovery">USB Flash Drive Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/sd-card-recovery">SD Card Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/cfast-recovery">CFast Card Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/external-hard-drive-data-recovery">External Hard Drive Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/ssd-data-recovery">SSD Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/raid-data-recovery">RAID Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/nas-data-recovery">NAS Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/laptop-data-recovery">Laptop Data Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/mac-data-recovery">Mac Data Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/desktop-data-recovery">Desktop Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/iphone-data-recovery">iPhone Data Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/usb-data-recovery">USB Flash Drive Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/sd-card-data-recovery">SD Card Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/cfast-card-data-recovery">CFast Card Recovery</NuxtLink></li>
               <li><NuxtLink to="/data-recovery/video-file-repair">Video File Repair</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/clean-room">Clean Room Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/clean-room-data-recovery">Clean Room Recovery</NuxtLink></li>
             </ul>
           </div>
 
@@ -99,12 +99,12 @@
               <h2>Recovery by Brand</h2>
             </div>
             <ul>
-              <li><NuxtLink to="/data-recovery/western-digital-recovery">Western Digital Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/seagate-recovery">Seagate Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/toshiba-recovery">Toshiba Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/samsung-recovery">Samsung Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/hitachi-recovery">Hitachi Recovery</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery/lacie-recovery">LaCie Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/western-digital-data-recovery">Western Digital Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/seagate-data-recovery">Seagate Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/toshiba-data-recovery">Toshiba Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/samsung-data-recovery">Samsung Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/hitachi-data-recovery">Hitachi Recovery</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery/lacie-data-recovery">LaCie Recovery</NuxtLink></li>
             </ul>
           </div>
 
@@ -117,10 +117,10 @@
             <ul>
               <li><NuxtLink to="/data-recovery-services-glendale-ca">Data Recovery Glendale, CA</NuxtLink></li>
               <li><NuxtLink to="/data-recovery-los-angeles">Data Recovery Los Angeles</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery-burbank">Data Recovery Burbank</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery-burbank-ca">Data Recovery Burbank</NuxtLink></li>
               <li><NuxtLink to="/data-recovery-beverly-hills">Data Recovery Beverly Hills</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery-hollywood">Data Recovery Hollywood</NuxtLink></li>
-              <li><NuxtLink to="/data-recovery-pasadena">Data Recovery Pasadena</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery-hollywood-ca">Data Recovery Hollywood</NuxtLink></li>
+              <li><NuxtLink to="/data-recovery-pasadena-ca">Data Recovery Pasadena</NuxtLink></li>
             </ul>
           </div>
 

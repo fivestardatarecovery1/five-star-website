@@ -162,8 +162,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div>
           <h2 class="s-heading">What Is Hard Drive Data Recovery?</h2>
           <p class="s-body">The process of hard drive data recovery involves retrieving files that someone has lost, deleted, or damaged. This applies to hard drives that have failed or are not working properly. This may include fixing hardware, extracting data from software, or making a full disk image. This helps examine and recover files from the drive without causing more damage.</p>
-          <p class="s-body">The <NuxtLink to="/pricing" class="inline-link">cost of recovery</NuxtLink> depends on the type of failure, but we always provide a flat-rate quote with no hidden fees before any work begins.</p>
-          <p class="s-body">Our recovery process applies to both internal and <NuxtLink to="/data-recovery/external-hard-drive" class="inline-link">external hard drives</NuxtLink>, including <NuxtLink to="/data-recovery/desktop-recovery" class="inline-link">desktop computers</NuxtLink>, laptops, <NuxtLink to="/data-recovery/raid-recovery" class="inline-link">servers</NuxtLink>, and portable enclosures.</p>
+          <p class="s-body">The <NuxtLink to="/data-recovery-service-pricing" class="inline-link">cost of recovery</NuxtLink> depends on the type of failure, but we always provide a flat-rate quote with no hidden fees before any work begins.</p>
+          <p class="s-body">Our recovery process applies to both internal and <NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">external hard drives</NuxtLink>, including <NuxtLink to="/data-recovery/desktop-data-recovery" class="inline-link">desktop computers</NuxtLink>, laptops, <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">servers</NuxtLink>, and portable enclosures.</p>
         </div>
         <div>
           <h2 class="s-heading">Common Reasons Hard Drives Fail</h2>
@@ -207,7 +207,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">3</div>
             <div>
               <h3 class="step-title">Recovery</h3>
-              <p class="step-body">Our engineers fix problems or replace parts in our <NuxtLink to="/data-recovery/clean-room" class="inline-link">cleanroom</NuxtLink>. They work to recover lost data from your device.</p>
+              <p class="step-body">Our engineers fix problems or replace parts in our <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">cleanroom</NuxtLink>. They work to recover lost data from your device.</p>
             </div>
           </div>
           <div class="process-step">

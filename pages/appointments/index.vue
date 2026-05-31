@@ -57,7 +57,7 @@ useSeoMeta({
               <li>🕐 Select your exact drop-off time</li>
               <li>🧪 Same-day diagnostic report</li>
             </ul>
-            <NuxtLink to="/data-recovery/express-drop-off" class="appt-btn appt-btn-gold">
+            <NuxtLink to="/data-recovery/express-drop-off-form" class="appt-btn appt-btn-gold">
               Express Drop-Off Form →
             </NuxtLink>
           </div>

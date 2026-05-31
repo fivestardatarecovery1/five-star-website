@@ -264,7 +264,7 @@ const reviews = [
         <p class="s-intro center">Our team is available 24/7 to answer your questions and guide you through the recovery process.</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
           <NuxtLink to="/start-recovery" class="btn-gold-full" style="max-width:280px;">Start Your Recovery</NuxtLink>
-          <NuxtLink to="/contact" style="display:inline-block;max-width:280px;width:100%;text-align:center;border:2px solid #C9A84C;color:#C9A84C;padding:16px 36px;border-radius:8px;font-weight:800;font-size:1rem;text-decoration:none;">Contact Us</NuxtLink>
+          <NuxtLink to="/contact-us" style="display:inline-block;max-width:280px;width:100%;text-align:center;border:2px solid #C9A84C;color:#C9A84C;padding:16px 36px;border-radius:8px;font-weight:800;font-size:1rem;text-decoration:none;">Contact Us</NuxtLink>
         </div>
       </div>
     </section>

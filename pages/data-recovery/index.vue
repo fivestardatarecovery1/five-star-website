@@ -94,61 +94,61 @@ const services = [
     icon: '⚡',
     title: 'SSD Recovery',
     text: 'Specialized tools for SATA, NVMe, and mSATA solid-state drives — including controller failures and NAND damage.',
-    href: '/data-recovery/ssd-recovery',
+    href: '/data-recovery/ssd-data-recovery',
   },
   {
     icon: '🖥️',
     title: 'RAID Recovery',
     text: 'We rebuild and recover from all RAID configurations (RAID 0, 1, 5, 6, 10) and NAS/server arrays.',
-    href: '/data-recovery/raid-recovery',
+    href: '/data-recovery/raid-data-recovery',
   },
   {
     icon: '💻',
     title: 'Laptop Recovery',
     text: 'Crashed, dropped, or water-damaged laptop? We recover data from all laptop drive types.',
-    href: '/data-recovery/laptop-recovery',
+    href: '/data-recovery/laptop-data-recovery',
   },
   {
     icon: '🖥️',
     title: 'Desktop Recovery',
     text: 'From accidental deletion to complete drive failure — we recover files from desktop HDDs and SSDs.',
-    href: '/data-recovery/desktop-recovery',
+    href: '/data-recovery/desktop-data-recovery',
   },
   {
     icon: '📦',
     title: 'External HDD Recovery',
     text: 'WD My Passport, Seagate Backup Plus, LaCie, G-Drive — we specialize in external hard drive recovery.',
-    href: '/data-recovery/external-hard-drive',
+    href: '/data-recovery/external-hard-drive-data-recovery',
   },
   {
     icon: '🍎',
     title: 'Mac / iMac Recovery',
     text: 'Recovery for all Apple machines — MacBook Pro, MacBook Air, iMac, Mac Mini, and Mac Pro.',
-    href: '/data-recovery/mac-recovery',
+    href: '/data-recovery/mac-data-recovery',
   },
   {
     icon: '📱',
     title: 'iPhone Recovery',
     text: 'Component-level iPhone data recovery for devices with water damage, screen damage, or boot failures.',
-    href: '/data-recovery/iphone-recovery',
+    href: '/data-recovery/iphone-data-recovery',
   },
   {
     icon: '🔌',
     title: 'USB Flash Drive',
     text: 'Chip-off and logical recovery for USB flash drives of all brands and capacities.',
-    href: '/data-recovery/usb-recovery',
+    href: '/data-recovery/usb-data-recovery',
   },
   {
     icon: '📷',
     title: 'SD Card Recovery',
     text: 'Camera, drone, GoPro, or phone SD cards — we recover photos, videos, and all file types.',
-    href: '/data-recovery/sd-card-recovery',
+    href: '/data-recovery/sd-card-data-recovery',
   },
   {
     icon: '🌐',
     title: 'NAS Recovery',
     text: 'Synology, QNAP, Drobo, and custom NAS arrays — multi-drive recovery handled with precision.',
-    href: '/data-recovery/nas-recovery',
+    href: '/data-recovery/nas-data-recovery',
   },
   {
     icon: '🎥',
@@ -159,12 +159,12 @@ const services = [
 ]
 
 const brands = [
-  { label: 'Western Digital', href: '/data-recovery/western-digital-recovery' },
-  { label: 'Seagate', href: '/data-recovery/seagate-recovery' },
-  { label: 'Samsung', href: '/data-recovery/samsung-recovery' },
-  { label: 'LaCie', href: '/data-recovery/lacie-recovery' },
-  { label: 'Toshiba', href: '/data-recovery/toshiba-recovery' },
-  { label: 'Hitachi', href: '/data-recovery/hitachi-recovery' },
+  { label: 'Western Digital', href: '/data-recovery/western-digital-data-recovery' },
+  { label: 'Seagate', href: '/data-recovery/seagate-data-recovery' },
+  { label: 'Samsung', href: '/data-recovery/samsung-data-recovery' },
+  { label: 'LaCie', href: '/data-recovery/lacie-data-recovery' },
+  { label: 'Toshiba', href: '/data-recovery/toshiba-data-recovery' },
+  { label: 'Hitachi', href: '/data-recovery/hitachi-data-recovery' },
 ]
 
 const problems = [
@@ -177,10 +177,10 @@ const problems = [
 ]
 
 const special = [
-  { label: 'Clean Room Recovery', href: '/data-recovery/clean-room' },
+  { label: 'Clean Room Recovery', href: '/data-recovery/clean-room-data-recovery' },
   { label: 'Mail-In Service', href: '/data-recovery/data-recovery-mail-in-service' },
-  { label: 'Express Drop-Off', href: '/data-recovery/express-drop-off' },
-  { label: 'Free Quote', href: '/data-recovery/free-quote' },
+  { label: 'Express Drop-Off', href: '/data-recovery/express-drop-off-form' },
+  { label: 'Free Quote', href: '/data-recovery/free-data-recovery-quote' },
   { label: 'Expedited Service', href: '/expedited-service' },
   { label: 'Expedited Service Plus', href: '/expedited-service-plus' },
 ]
@@ -196,7 +196,7 @@ const steps = [
 const faqs = [
   {
     q: '1. How much does Data Recovery Cost?',
-    a: `The cost of data recovery depends on several factors, including the <strong>type of device</strong>, the <strong>nature of the failure</strong>, and the <strong>complexity of the recovery process</strong>. For example, recovering data from a hard drive with logical issues is generally less expensive than performing a chip-off recovery on a physically damaged SD card or USB drive.<br><br><em>Five Star Data Recovery</em>, our pricing is <strong>flat-rate and transparent</strong>, with no hidden fees. We also offer a <strong>free evaluation</strong> in most cases, so you’ll know exactly what to expect before moving forward. For certain recovery types—like deleted file recovery or expedited services—there may be an upfront labor fee, which will be explained before any work begins.<br><br>To see a full breakdown of our rates by device type and service level, please visit our <a href="/pricing" class="faq-link"><strong>Data Recovery Pricing Page</strong></a>.<br><br>
+    a: `The cost of data recovery depends on several factors, including the <strong>type of device</strong>, the <strong>nature of the failure</strong>, and the <strong>complexity of the recovery process</strong>. For example, recovering data from a hard drive with logical issues is generally less expensive than performing a chip-off recovery on a physically damaged SD card or USB drive.<br><br><em>Five Star Data Recovery</em>, our pricing is <strong>flat-rate and transparent</strong>, with no hidden fees. We also offer a <strong>free evaluation</strong> in most cases, so you’ll know exactly what to expect before moving forward. For certain recovery types—like deleted file recovery or expedited services—there may be an upfront labor fee, which will be explained before any work begins.<br><br>To see a full breakdown of our rates by device type and service level, please visit our <a href="/data-recovery-service-pricing" class="faq-link"><strong>Data Recovery Pricing Page</strong></a>.<br><br>
 <table class="faq-table">
 <thead><tr><th>Device / Service</th><th>Flat Rate Price</th></tr></thead>
 <tbody>

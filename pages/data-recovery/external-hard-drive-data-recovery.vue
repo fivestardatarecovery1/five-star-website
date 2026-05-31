@@ -26,7 +26,7 @@ useHead({
           {
             "@type": "Product",
             "name": "External Hard Drive Data Recovery",
-            "url": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery/",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery-data-recovery/",
             "description": "Professional External Hard Drive Data Recovery services for all brands and failure types. Recover data from non-detected drives, damaged devices, clicking drives, and formatted external hard drives. Free diagnostics and flat-rate pricing.",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -62,7 +62,7 @@ useHead({
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
               { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
-              { "@type": "ListItem", "position": 3, "name": "External Hard Drive Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery/" }
+              { "@type": "ListItem", "position": 3, "name": "External Hard Drive Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/external-hard-drive-data-recovery-data-recovery/" }
             ]
           },
           {
@@ -145,7 +145,7 @@ const faqs = [
 If your recovery is urgent, we also offer:<br>
 <a href="/expedited-service" class="faq-link"><strong>Expedited Service</strong></a>: $200/drive (during business hours)<br>
 <a href="/expedited-service-plus" class="faq-link"><strong>Expedited Plus</strong></a>: $500/drive (24/7 priority)<br><br>
-Visit our full <a href="/pricing" class="faq-link">Data Recovery Pricing</a> page for more details and examples.`
+Visit our full <a href="/data-recovery-service-pricing" class="faq-link">Data Recovery Pricing</a> page for more details and examples.`
   },
   {
     q: '12. Why is Western Digital, SanDisk, and G-Drive external hard drive recovery more expensive?',
@@ -208,14 +208,14 @@ useSeoMeta({
         <h2 class="s-heading">What Types of Drives Do We Recover?</h2>
         <p class="s-body">We work with all makes and models of external hard drives, including but not limited to:</p>
         <ul class="content-list">
-          <li><NuxtLink to="/data-recovery/seagate-recovery" class="inline-link">Seagate</NuxtLink> Backup Plus / Expansion</li>
-          <li><NuxtLink to="/data-recovery/western-digital-recovery" class="inline-link">Western Digital</NuxtLink> My Passport / Elements</li>
-          <li><NuxtLink to="/data-recovery/lacie-recovery" class="inline-link">LaCie Rugged</NuxtLink> / d2 Professional</li>
-          <li><NuxtLink to="/data-recovery/toshiba-recovery" class="inline-link">Toshiba</NuxtLink> Canvio</li>
-          <li><NuxtLink to="/data-recovery/samsung-recovery" class="inline-link">Samsung</NuxtLink> Portable SSDs</li>
+          <li><NuxtLink to="/data-recovery/seagate-data-recovery" class="inline-link">Seagate</NuxtLink> Backup Plus / Expansion</li>
+          <li><NuxtLink to="/data-recovery/western-digital-data-recovery" class="inline-link">Western Digital</NuxtLink> My Passport / Elements</li>
+          <li><NuxtLink to="/data-recovery/lacie-data-recovery" class="inline-link">LaCie Rugged</NuxtLink> / d2 Professional</li>
+          <li><NuxtLink to="/data-recovery/toshiba-data-recovery" class="inline-link">Toshiba</NuxtLink> Canvio</li>
+          <li><NuxtLink to="/data-recovery/samsung-data-recovery" class="inline-link">Samsung</NuxtLink> Portable SSDs</li>
           <li>G-Technology G-Drive</li>
         </ul>
-        <p class="s-body" style="margin-top: 24px;">No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we'll provide you with a clear explanation of the issue before proceeding. To learn more about what data recovery might cost for your specific drive type, visit our <NuxtLink to="/pricing" class="inline-link"><strong>Data Recovery Pricing</strong></NuxtLink> page.</p>
+        <p class="s-body" style="margin-top: 24px;">No matter if your drive is USB 2.0, 3.0, USB-C, Thunderbolt, or network-attached, we can help recover your data. Our engineers handle everything from simple file system corruption to complex mechanical failures requiring clean room work. We understand that every case is unique, and we'll provide you with a clear explanation of the issue before proceeding. To learn more about what data recovery might cost for your specific drive type, visit our <NuxtLink to="/data-recovery-service-pricing" class="inline-link"><strong>Data Recovery Pricing</strong></NuxtLink> page.</p>
       </div>
     </section>
 
@@ -300,8 +300,8 @@ useSeoMeta({
       <div class="container">
         <h2 class="s-heading">Real-World Scenarios We Handle</h2>
         <ul class="scenarios-list">
-          <li>A photographer drops a 2TB <NuxtLink to="/data-recovery/lacie-recovery" class="inline-link">LaCie</NuxtLink> drive containing a wedding shoot. The drive clicks and won't mount. We recovered 98% of files within 48 hours with our <NuxtLink to="/expedited-service-plus" class="inline-link">Expedite Plus service</NuxtLink>.</li>
-          <li>A business loses access to an encrypted <NuxtLink to="/data-recovery/western-digital-recovery" class="inline-link">Western Digital</NuxtLink> My Passport with payroll files. We bypassed the failed USB controller and decrypted data successfully (WD Self-Encrypting Drive).</li>
+          <li>A photographer drops a 2TB <NuxtLink to="/data-recovery/lacie-data-recovery" class="inline-link">LaCie</NuxtLink> drive containing a wedding shoot. The drive clicks and won't mount. We recovered 98% of files within 48 hours with our <NuxtLink to="/expedited-service-plus" class="inline-link">Expedite Plus service</NuxtLink>.</li>
+          <li>A business loses access to an encrypted <NuxtLink to="/data-recovery/western-digital-data-recovery" class="inline-link">Western Digital</NuxtLink> My Passport with payroll files. We bypassed the failed USB controller and decrypted data successfully (WD Self-Encrypting Drive).</li>
           <li>A student spills water on a Toshiba drive with thesis and class materials. Despite circuit corrosion, we restored the files completely.</li>
           <li>A YouTuber loses raw video footage from an SSD drive that suddenly showed as "unallocated." Our team completed the recovery the same day using expedited service.</li>
           <li>A graphic designer's G-Technology drive was accidentally reformatted during a macOS update. We recovered all critical project files and delivered them within 3 days.</li>
@@ -334,7 +334,7 @@ useSeoMeta({
           <li><NuxtLink to="/hard-drive-clicking" class="inline-link"><strong>Clicking Noises</strong></NuxtLink>: Usually means the read/write heads are failing or have crashed.</li>
           <li><strong>Beeping or Whining</strong>: This could indicate spindle motor failure or stuck platters (often caused by drops).</li>
           <li><strong>Drive Detected but Not Accessible</strong>: Often the result of corrupted partition tables or failing firmware.</li>
-          <li><NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link"><strong>External Hard Drive Does Not Show Up</strong></NuxtLink>: This is another very common problem. This can happen because of <NuxtLink to="/data-recovery/usb-recovery" class="inline-link">USB</NuxtLink> port issues, faulty cables, or damaged firmware.</li>
+          <li><NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link"><strong>External Hard Drive Does Not Show Up</strong></NuxtLink>: This is another very common problem. This can happen because of <NuxtLink to="/data-recovery/usb-data-recovery" class="inline-link">USB</NuxtLink> port issues, faulty cables, or damaged firmware.</li>
           <li><NuxtLink to="/drive-doesnt-power-on" class="inline-link"><strong>No Power</strong></NuxtLink>: May be a bad USB bridge board, shorted PCB, or internal electronic failure.</li>
         </ul>
         <p class="s-body" style="margin-top: 16px;">If your external hard drive exhibits any of these behaviors, power it down and bring it to us. Continued use may worsen the damage.</p>
@@ -380,7 +380,7 @@ useSeoMeta({
         <h2 class="s-heading">Understanding how data storage works and why drives fail.</h2>
         <p class="s-body">To understand why external hard drives fail, it helps to understand how they store data in the first place. A traditional external disk drive (HDD) stores data magnetically on spinning platters.</p>
         <p class="s-body">A tiny read/write head floats above the surface, writing 0s and 1s to the disk—just microns away from physical contact. Because of this design, any bump or jolt can make the head hit the platter. This can damage data forever.</p>
-        <p class="s-body">In <NuxtLink to="/data-recovery/ssd-recovery" class="inline-link">SSDs</NuxtLink> (Solid State Drives), there are no moving parts. They store data on flash memory chips instead. This lowers the chance of physical crashes. However, SSDs have a limited number of write cycles. They can also fail suddenly because of electronic or firmware issues. Both technologies, while reliable under normal use, are still vulnerable to power surges, heat, age, and accidental damage.</p>
+        <p class="s-body">In <NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link">SSDs</NuxtLink> (Solid State Drives), there are no moving parts. They store data on flash memory chips instead. This lowers the chance of physical crashes. However, SSDs have a limited number of write cycles. They can also fail suddenly because of electronic or firmware issues. Both technologies, while reliable under normal use, are still vulnerable to power surges, heat, age, and accidental damage.</p>
         <p class="s-body">Understanding the technology behind storage helps our clients make better choices. It also shows why professional recovery is often the safest solution when problems occur.</p>
       </div>
     </section>

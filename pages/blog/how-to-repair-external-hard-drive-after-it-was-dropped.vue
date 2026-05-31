@@ -78,7 +78,7 @@ useSeoMeta({
         <p class="cta-sub">Free evaluation. Flat-rate pricing. No charge if we can't recover.</p>
         <div class="cta-buttons">
           <NuxtLink to="/start-recovery" class="btn-primary">Start Recovery</NuxtLink>
-          <NuxtLink to="/data-recovery/free-quote" class="btn-outline">Get a Free Quote</NuxtLink>
+          <NuxtLink to="/data-recovery/free-data-recovery-quote" class="btn-outline">Get a Free Quote</NuxtLink>
         </div>
       </div>
     </section>

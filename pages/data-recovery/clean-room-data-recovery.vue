@@ -38,7 +38,7 @@ useHead({
           {
             "@type": "Service",
             "name": "Clean Room Data Recovery Services",
-            "url": "https://www.fivestardatarecovery.com/data-recovery/clean-room-data-recovery/",
+            "url": "https://www.fivestardatarecovery.com/data-recovery/clean-room-data-recovery-data-recovery/",
             "areaServed": [{ "@type": "Country", "name": "United States" }],
             "description": "Professional Clean Room Data Recovery services for physically damaged hard drives. Serving Glendale, Los Angeles, and nationwide with free mail-in service and flat-rate pricing."
           },
@@ -47,7 +47,7 @@ useHead({
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fivestardatarecovery.com/" },
               { "@type": "ListItem", "position": 2, "name": "Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/" },
-              { "@type": "ListItem", "position": 3, "name": "Clean Room Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/clean-room-data-recovery/" }
+              { "@type": "ListItem", "position": 3, "name": "Clean Room Data Recovery", "item": "https://www.fivestardatarecovery.com/data-recovery/clean-room-data-recovery-data-recovery/" }
             ]
           },
           {

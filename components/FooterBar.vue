@@ -38,9 +38,9 @@
         <h3 class="footer-heading">Helpful Links</h3>
         <ul>
           <li><NuxtLink to="/appointments">Schedule Appointment</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/express-drop-off">Express Drop Off</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/express-drop-off-form">Express Drop Off</NuxtLink></li>
           <li><NuxtLink to="/data-recovery/data-recovery-mail-in-service">Mail in Service</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/free-quote">Request a Quote</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/free-data-recovery-quote">Request a Quote</NuxtLink></li>
           <li><NuxtLink to="/payment-plan">Payment Plan</NuxtLink></li>
           <li><NuxtLink to="/faq">FAQ's</NuxtLink></li>
           <li><NuxtLink to="/reviews">Reviews</NuxtLink></li>
@@ -51,10 +51,10 @@
       <div class="footer-col">
         <h3 class="footer-heading">Service Areas</h3>
         <ul>
-          <li><NuxtLink to="/data-recovery-burbank">Burbank</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-burbank-ca">Burbank</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-los-angeles">Los Angeles</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery-pasadena">Pasadena</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery-hollywood">Hollywood</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-pasadena-ca">Pasadena</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-hollywood-ca">Hollywood</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-services-glendale-ca">Glendale</NuxtLink></li>
           <li><NuxtLink to="/data-recovery-beverly-hills">Beverly Hills</NuxtLink></li>
         </ul>
@@ -64,12 +64,12 @@
       <div class="footer-col">
         <h3 class="footer-heading">Common Drives:</h3>
         <ul>
-          <li><NuxtLink to="/data-recovery/lacie-recovery">LaCie</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/hitachi-recovery">Hitachi</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/seagate-recovery">Seagate</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/western-digital-recovery">Western Digital</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/toshiba-recovery">Toshiba</NuxtLink></li>
-          <li><NuxtLink to="/data-recovery/samsung-recovery">Samsung</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/lacie-data-recovery">LaCie</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/hitachi-data-recovery">Hitachi</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/seagate-data-recovery">Seagate</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/western-digital-data-recovery">Western Digital</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/toshiba-data-recovery">Toshiba</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery/samsung-data-recovery">Samsung</NuxtLink></li>
         </ul>
       </div>
 
@@ -80,7 +80,7 @@
         <p>© {{ new Date().getFullYear() }} Five Star Data Recovery Services. All rights reserved.</p>
         <div class="footer-legal-links">
           <NuxtLink to="/privacy-policy">Privacy and Policy</NuxtLink>
-          <NuxtLink to="/terms">Terms of Service</NuxtLink>
+          <NuxtLink to="/terms-and-conditions">Terms of Service</NuxtLink>
         </div>
       </div>
       <div class="footer-powered">

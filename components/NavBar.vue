@@ -7,26 +7,26 @@ let closeTimer: ReturnType<typeof setTimeout> | null = null
 
 const byDevice = [
   { label: 'Hard Drive Recovery', href: '/data-recovery/hard-drive-recovery' },
-  { label: 'SSD Recovery', href: '/data-recovery/ssd-recovery' },
-  { label: 'RAID Recovery', href: '/data-recovery/raid-recovery' },
-  { label: 'Laptop Recovery', href: '/data-recovery/laptop-recovery' },
-  { label: 'Desktop Recovery', href: '/data-recovery/desktop-recovery' },
-  { label: 'External HDD Recovery', href: '/data-recovery/external-hard-drive' },
-  { label: 'Mac / iMac Recovery', href: '/data-recovery/mac-recovery' },
-  { label: 'iPhone Recovery', href: '/data-recovery/iphone-recovery' },
-  { label: 'USB Flash Drive', href: '/data-recovery/usb-recovery' },
-  { label: 'SD Card Recovery', href: '/data-recovery/sd-card-recovery' },
-  { label: 'NAS Recovery', href: '/data-recovery/nas-recovery' },
-  { label: 'CFast Card Recovery', href: '/data-recovery/cfast-recovery' },
+  { label: 'SSD Recovery', href: '/data-recovery/ssd-data-recovery' },
+  { label: 'RAID Recovery', href: '/data-recovery/raid-data-recovery' },
+  { label: 'Laptop Recovery', href: '/data-recovery/laptop-data-recovery' },
+  { label: 'Desktop Recovery', href: '/data-recovery/desktop-data-recovery' },
+  { label: 'External HDD Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+  { label: 'Mac / iMac Recovery', href: '/data-recovery/mac-data-recovery' },
+  { label: 'iPhone Recovery', href: '/data-recovery/iphone-data-recovery' },
+  { label: 'USB Flash Drive', href: '/data-recovery/usb-data-recovery' },
+  { label: 'SD Card Recovery', href: '/data-recovery/sd-card-data-recovery' },
+  { label: 'NAS Recovery', href: '/data-recovery/nas-data-recovery' },
+  { label: 'CFast Card Recovery', href: '/data-recovery/cfast-card-data-recovery' },
 ]
 
 const byBrand = [
-  { label: 'Western Digital', href: '/data-recovery/western-digital-recovery' },
-  { label: 'Seagate', href: '/data-recovery/seagate-recovery' },
-  { label: 'Samsung', href: '/data-recovery/samsung-recovery' },
-  { label: 'LaCie', href: '/data-recovery/lacie-recovery' },
-  { label: 'Toshiba', href: '/data-recovery/toshiba-recovery' },
-  { label: 'Hitachi', href: '/data-recovery/hitachi-recovery' },
+  { label: 'Western Digital', href: '/data-recovery/western-digital-data-recovery' },
+  { label: 'Seagate', href: '/data-recovery/seagate-data-recovery' },
+  { label: 'Samsung', href: '/data-recovery/samsung-data-recovery' },
+  { label: 'LaCie', href: '/data-recovery/lacie-data-recovery' },
+  { label: 'Toshiba', href: '/data-recovery/toshiba-data-recovery' },
+  { label: 'Hitachi', href: '/data-recovery/hitachi-data-recovery' },
 ]
 
 const byProblem = [
@@ -39,7 +39,7 @@ const byProblem = [
 ]
 
 const special = [
-  { label: 'Clean Room Recovery', href: '/data-recovery/clean-room' },
+  { label: 'Clean Room Recovery', href: '/data-recovery/clean-room-data-recovery' },
   { label: 'Video File Repair', href: '/data-recovery/video-file-repair' },
   { label: 'Mail-In Service', href: '/data-recovery/data-recovery-mail-in-service' },
   { label: 'Expedited Service', href: '/expedited-service' },
@@ -147,10 +147,10 @@ watch(() => route.path, closeAll)
           </li>
 
           <li><NuxtLink to="/instant-quote" active-class="active" class="nav-quote-link">Instant Quote</NuxtLink></li>
-          <li><NuxtLink to="/pricing" active-class="active">Pricing</NuxtLink></li>
+          <li><NuxtLink to="/data-recovery-service-pricing" active-class="active">Pricing</NuxtLink></li>
           <li><NuxtLink to="/blog" active-class="active">Blog</NuxtLink></li>
-          <li><NuxtLink to="/about" active-class="active">About</NuxtLink></li>
-          <li><NuxtLink to="/contact" active-class="active">Contact</NuxtLink></li>
+          <li><NuxtLink to="/about-us" active-class="active">About</NuxtLink></li>
+          <li><NuxtLink to="/contact-us" active-class="active">Contact</NuxtLink></li>
         </ul>
 
         <!-- Mobile hamburger -->
@@ -178,10 +178,10 @@ watch(() => route.path, closeAll)
           <NuxtLink v-for="s in special" :key="s.href" :to="s.href" @click="closeAll">{{ s.label }}</NuxtLink>
         </div>
         <NuxtLink to="/instant-quote" @click="closeAll">Instant Quote</NuxtLink>
-        <NuxtLink to="/pricing" @click="closeAll">Pricing</NuxtLink>
+        <NuxtLink to="/data-recovery-service-pricing" @click="closeAll">Pricing</NuxtLink>
         <NuxtLink to="/blog" @click="closeAll">Blog</NuxtLink>
-        <NuxtLink to="/about" @click="closeAll">About Us</NuxtLink>
-        <NuxtLink to="/contact" @click="closeAll">Contact</NuxtLink>
+        <NuxtLink to="/about-us" @click="closeAll">About Us</NuxtLink>
+        <NuxtLink to="/contact-us" @click="closeAll">Contact</NuxtLink>
         <NuxtLink to="/appointments" @click="closeAll" class="mobile-appt-btn">📅 Schedule Appointment</NuxtLink>
         <a href="tel:8182728866" class="mobile-phone">📞 818-272-8866</a>
       </div>
