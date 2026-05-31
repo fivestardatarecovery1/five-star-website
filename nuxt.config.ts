@@ -64,6 +64,24 @@ export default defineNuxtConfig({
     '/data-recovery/usb-data-recovery/':                    { redirect: { to: '/data-recovery/usb-recovery', statusCode: 301 } },
     '/data-recovery/western-digital-data-recovery':         { redirect: { to: '/data-recovery/western-digital-recovery', statusCode: 301 } },
     '/data-recovery/western-digital-data-recovery/':        { redirect: { to: '/data-recovery/western-digital-recovery', statusCode: 301 } },
+
+    // Corrected old-site slugs (cfast-card, external-hard-drive-data-recovery, sd-card)
+    '/data-recovery/cfast-card-data-recovery':              { redirect: { to: '/data-recovery/cfast-recovery', statusCode: 301 } },
+    '/data-recovery/cfast-card-data-recovery/':             { redirect: { to: '/data-recovery/cfast-recovery', statusCode: 301 } },
+    '/data-recovery/external-hard-drive-data-recovery':     { redirect: { to: '/data-recovery/external-hard-drive', statusCode: 301 } },
+    '/data-recovery/external-hard-drive-data-recovery/':    { redirect: { to: '/data-recovery/external-hard-drive', statusCode: 301 } },
+    '/data-recovery/sd-card-data-recovery':                 { redirect: { to: '/data-recovery/sd-card-recovery', statusCode: 301 } },
+    '/data-recovery/sd-card-data-recovery/':                { redirect: { to: '/data-recovery/sd-card-recovery', statusCode: 301 } },
+
+    // Express drop-off form (old slug had -form suffix)
+    '/data-recovery/express-drop-off-form':                 { redirect: { to: '/data-recovery/express-drop-off', statusCode: 301 } },
+    '/data-recovery/express-drop-off-form/':                { redirect: { to: '/data-recovery/express-drop-off', statusCode: 301 } },
+
+    // Blog posts (WordPress had them at root, new site has /blog/ prefix)
+    '/usb-data-recovery-chip-off':                          { redirect: { to: '/blog/usb-data-recovery-chip-off', statusCode: 301 } },
+    '/usb-data-recovery-chip-off/':                         { redirect: { to: '/blog/usb-data-recovery-chip-off', statusCode: 301 } },
+    '/how-to-repair-external-hard-drive-after-it-was-dropped':  { redirect: { to: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped', statusCode: 301 } },
+    '/how-to-repair-external-hard-drive-after-it-was-dropped/': { redirect: { to: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped', statusCode: 301 } },
   },
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
