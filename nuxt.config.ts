@@ -117,6 +117,12 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { name: 'theme-color', content: '#0A0C14' }
       ],
+      script: [
+        {
+          src: 'https://www.googletagmanager.com/gtm.js?id=GTM-P5MDDD7V',
+          async: true
+        }
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

@@ -7,7 +7,7 @@ const COUNTRY_CODES: Record<string, string> = {
 }
 
 async function getFedexToken(clientId: string, clientSecret: string): Promise<string> {
-  const res = await fetch('https://apis-sandbox.fedex.com/oauth/token', {
+  const res = await fetch('https://apis.fedex.com/oauth/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
@@ -59,7 +59,7 @@ async function createFedexLabel(opts: {
     },
   }
 
-  const res = await fetch('https://apis-sandbox.fedex.com/ship/v1/shipments', {
+  const res = await fetch('https://apis.fedex.com/ship/v1/shipments', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${opts.token}`, 'X-locale': 'en_US' },
     body: JSON.stringify(body),
