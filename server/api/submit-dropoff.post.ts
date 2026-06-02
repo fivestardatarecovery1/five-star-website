@@ -3,7 +3,8 @@ import { Resend } from 'resend'
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig()
-  const resend = new Resend(config.resendApiKey)
+  const resendKey = config.resendApiKey || process.env.RESEND_API_KEY || ''
+  const resend = resendKey ? new Resend(resendKey) : null
 
   const {
     firstName, lastName, email, phone,
@@ -15,8 +16,9 @@ export default defineEventHandler(async (event) => {
 
   const fullName = `${firstName} ${lastName}`
 
-  // ── Email to business ──────────────────────────────────────────
-  await resend.emails.send({
+    // Emails (wrapped - fails gracefully if RESEND_API_KEY missing)
+  try {
+  if (resend) await resend.emails.send({
     from: 'Five Star Drop-Off Form <noreply@fivestardatarecovery.com>',
     to: ['info@fivestardatarecovery.com'],
     subject: `New Express Drop-Off: ${fullName} — ${manufacturer || 'Unknown Drive'}`,
@@ -75,7 +77,7 @@ export default defineEventHandler(async (event) => {
   })
 
   // ── Confirmation email to customer ─────────────────────────────
-  await resend.emails.send({
+  if (resend) await resend.emails.send({
     from: 'Five Star Data Recovery <noreply@fivestardatarecovery.com>',
     to: [email],
     subject: `Drop-Off Appointment Confirmed — ${dropOffDate} at ${dropOffTime}`,
@@ -112,17 +114,16 @@ export default defineEventHandler(async (event) => {
     `,
   })
 
-  // Save to Mission Control (fire & forget)
-  // Route through the Nuxt proxy on the local machine (fivestar.ngrok.app → localhost:3456 → localhost:3001)
-  const mcUrl = process.env.MC_API_URL
-  if (mcUrl) {
-    fetch(`${mcUrl}/api/mc-leads/express-submission`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body }),
-      signal: AbortSignal.timeout(4000),
-    }).catch(() => {})
-  }
+  } catch(emailErr) { console.error('[submit-dropoff] Email error:', emailErr?.message) }
+
+  // Save to Mission Control (fire & forget, always)
+  const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
+  fetch(`${mcUrl}/api/fs-leads/express-submission`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ ...body }),
+    signal: AbortSignal.timeout(5000),
+  }).catch((e) => console.error('[submit-dropoff] MC save failed:', e?.message))
 
   return { success: true }
 })
