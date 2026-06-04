@@ -23,8 +23,9 @@ export default defineEventHandler(async (event) => {
   // Running on Vercel: route through fivestar.ngrok.app (stable domain → local Nuxt → localhost:3001)
   // Running locally: call MC directly
   const isVercel = !!process.env.VERCEL
+  // fivestar.ngrok.app tunnels directly to MC backend (port 3001), so use the MC route path
   const url = isVercel
-    ? `https://fivestar.ngrok.app/api/mc-schedule/availability?date=${date}`
+    ? `https://fivestar.ngrok.app/api/fs-schedule/availability?date=${date}`
     : `http://localhost:3001/api/fs-schedule/availability?date=${date}`
 
   try {

@@ -288,7 +288,7 @@ onMounted(() => {
   calYear.value = now.getFullYear()
   calMonth.value = now.getMonth()
   calReady.value = true
-  form.todayDate = new Date().toISOString().split('T')[0] // Auto-set, no user input needed
+  form.todayDate = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' }) // Auto-set, no user input needed
   const raw = localStorage.getItem('fivestar_quote_prefill')
   if (!raw) return
   try {

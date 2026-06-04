@@ -116,14 +116,16 @@ export default defineEventHandler(async (event) => {
 
   } catch(emailErr) { console.error('[submit-dropoff] Email error:', emailErr?.message) }
 
-  // Save to Mission Control (fire & forget, always)
+  // Save to Mission Control (awaited - Vercel kills fire-and-forget before it fires)
   const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
-  fetch(`${mcUrl}/api/fs-leads/express-submission`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ ...body }),
-    signal: AbortSignal.timeout(5000),
-  }).catch((e) => console.error('[submit-dropoff] MC save failed:', e?.message))
+  try {
+    await fetch(`${mcUrl}/api/fs-leads/express-submission`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...body }),
+      signal: AbortSignal.timeout(5000),
+    })
+  } catch(e) { console.error('[submit-dropoff] MC save failed:', (e as any)?.message) }
 
   return { success: true }
 })

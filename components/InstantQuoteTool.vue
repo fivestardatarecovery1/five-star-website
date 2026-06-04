@@ -441,6 +441,18 @@ function pickUrgency(id: string) {
           urgency: quote.value.urgencyLabel,
           price: quote.value.total,
           source_page: sourcePage.value,
+          // Fee breakdown fields
+          base_price: quote.value.base,
+          urgency_fee: quote.value.urgFee || 0,
+          cover_fee: quote.value.coverFee || 0,
+          encrypt_fee: quote.value.encryptFee || 0,
+          aio_fee: quote.value.aioFee || 0,
+          board_repair_fee: quote.value.boardRepairFee || 0,
+          // Boolean flags
+          encrypted: sel.encrypted ?? false,
+          cover_opened: sel.coverOpened ?? false,
+          aio: sel.aio ?? false,
+          board_repair: sel.boardRepair ?? false,
         }),
       }).catch(() => {})
     })

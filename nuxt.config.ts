@@ -88,6 +88,8 @@ export default defineNuxtConfig({
     fedexClientId: process.env.FEDEX_CLIENT_ID || '',
     fedexClientSecret: process.env.FEDEX_CLIENT_SECRET || '',
     fedexAccountNumber: process.env.FEDEX_ACCOUNT_NUMBER || '',
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || '',
+    anthropicApiKey: process.env.ANTHROPIC_API_KEY || '',
   },
   // Site URL for sitemap module
   site: {

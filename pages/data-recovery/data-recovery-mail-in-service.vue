@@ -66,7 +66,7 @@ const trustBadges = [
 ]
 
 // Multi-step form
-const todayStr = new Date().toISOString().split('T')[0]
+const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Los_Angeles' })
 const step = ref(1)
 const totalSteps = 5
 const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Service Options', 'Shipping & Submit']
@@ -104,9 +104,12 @@ const form = reactive({
 })
 
 function scrollToForm() {
-  if (import.meta.client) {
-    const el = document.querySelector('.form-wrap')
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  if (!import.meta.client) return
+  const el = document.querySelector('.form-wrap')
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    // Lock page scroll on mobile after a short delay (let scroll animation finish)
+    setTimeout(() => lockBodyScroll(), 500)
   }
 }
 
@@ -183,6 +186,7 @@ async function submitForm() {
     packingSlipBase64.value = res.packingSlipBase64 || ''
     caseRef.value = res.caseRef || ''
     submitted.value = true
+    unlockBodyScroll()
     onFormSubmitted()
   } catch (e) {
     submitError.value = 'Something went wrong. Please call us at 818-272-8866.'
@@ -213,6 +217,33 @@ const faqs = [
 ]
 
 // Pre-fill from quote tool
+// ── Mobile scroll lock ──────────────────────────────────────────────────
+const formScrollLocked = ref(false)
+let scrollY = 0
+
+function lockBodyScroll() {
+  if (!import.meta.client || formScrollLocked.value) return
+  if (window.innerWidth > 768) return // desktop only needs natural scroll
+  scrollY = window.scrollY
+  document.body.style.position = 'fixed'
+  document.body.style.top = `-${scrollY}px`
+  document.body.style.width = '100%'
+  document.body.style.overflow = 'hidden'
+  formScrollLocked.value = true
+}
+
+function unlockBodyScroll() {
+  if (!import.meta.client || !formScrollLocked.value) return
+  document.body.style.position = ''
+  document.body.style.top = ''
+  document.body.style.width = ''
+  document.body.style.overflow = ''
+  window.scrollTo(0, scrollY)
+  formScrollLocked.value = false
+}
+
+onUnmounted(() => { unlockBodyScroll() })
+
 onMounted(() => {
   if (!import.meta.client) return
   if (!form.date) form.date = todayStr
@@ -232,6 +263,42 @@ onMounted(() => {
 })
 
 const prefillActive = ref(false)
+
+// ── Address Autocomplete ──────────────────────────────────────────────────
+const addrSuggestions = ref<{label:string;street:string;city:string;state:string;zip:string;country:string}[]>([])
+const addrLoading = ref(false)
+const addrFocused = ref(false)
+let addrTimer: ReturnType<typeof setTimeout> | null = null
+
+function onAddressInput(e: Event) {
+  const val = (e.target as HTMLInputElement).value
+  form.streetAddress = val
+  if (addrTimer) clearTimeout(addrTimer)
+  if (val.length < 3) { addrSuggestions.value = []; return }
+  addrTimer = setTimeout(async () => {
+    addrLoading.value = true
+    try {
+      const res = await fetch(`/api/address-autocomplete?q=${encodeURIComponent(val)}`)
+      addrSuggestions.value = await res.json()
+    } catch { addrSuggestions.value = [] }
+    addrLoading.value = false
+  }, 300)
+}
+
+function selectAddress(s: typeof addrSuggestions.value[0]) {
+  form.streetAddress = s.street || form.streetAddress
+  form.city = s.city || form.city
+  form.state = s.state || form.state
+  form.zip = s.zip || form.zip
+  if (s.country) {
+    const map: Record<string,string> = { 'United States': 'United States of America (USA)', 'Canada': 'Canada', 'United Kingdom': 'United Kingdom', 'Australia': 'Australia' }
+    form.country = map[s.country] || form.country
+  }
+  addrSuggestions.value = []
+  addrFocused.value = false
+  // Dismiss keyboard on mobile
+  if (import.meta.client) (document.activeElement as HTMLElement)?.blur()
+}
 
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
@@ -269,32 +336,33 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <h2 class="success-heading">You're all set!</h2>
             <p class="success-text">Your mail-in request is confirmed. Your prepaid <strong>{{ serviceLabel }}</strong> label has been emailed to you and is ready to download below.</p>
 
-            <!-- debug -->
-            <p style="font-size:11px;color:#999;margin:4px 0 16px;">label chars: {{ labelBase64.length }} | error: {{ labelError }}</p>
-            <div v-if="labelBase64" class="label-download-box">
-              <div class="label-icon">📦</div>
-              <div class="label-info">
-                <strong>Your Prepaid Shipping Label</strong>
-                <span>{{ serviceLabel }} · Print and attach to your package</span>
+            <div v-if="labelBase64" class="label-download-box label-download-box--green">
+              <div class="ldb-top">
+                <span class="ldb-emoji">📦</span>
+                <div class="ldb-text">
+                  <strong>Your Prepaid Shipping Label</strong>
+                  <span>{{ serviceLabel }} &middot; Print and attach to the outside of your package</span>
+                </div>
               </div>
               <a
                 :href="'data:application/pdf;base64,' + labelBase64"
                 :download="`${form.firstName} ${form.lastName} - ${caseRef} - Five Star Data Recovery - Prepaid Shipping Label.pdf`"
-                class="btn-download"
+                class="btn-download btn-download--green"
               >⬇ Download Label</a>
             </div>
 
-            <div v-if="packingSlipBase64" class="label-download-box" style="border-color:#6366f1;background:#f5f3ff;">
-              <div class="label-icon">📋</div>
-              <div class="label-info">
-                <strong>Your Packing Slip</strong>
-                <span>Print and place inside your package</span>
+            <div v-if="packingSlipBase64" class="label-download-box label-download-box--purple">
+              <div class="ldb-top">
+                <span class="ldb-emoji">📋</span>
+                <div class="ldb-text">
+                  <strong>Your Packing Slip</strong>
+                  <span>Print and place inside your package</span>
+                </div>
               </div>
               <a
                 :href="'data:text/html;base64,' + packingSlipBase64"
                 :download="`${form.firstName} ${form.lastName} - ${caseRef} - Five Star Data Recovery - Packing Slip.html`"
-                class="btn-download"
-                style="background:#6366f1;"
+                class="btn-download btn-download--purple"
               >⬇ Download Slip</a>
             </div>
 
@@ -473,7 +541,31 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <div v-show="step === 5" class="form-step">
                 <h3 class="step-title">Shipping address &amp; submit</h3>
                 <p class="step-desc">We'll send your free prepaid label to this address. Shipping is on us — both ways.</p>
-                <div class="fg"><label class="fl">Street Address <span class="req">*</span></label><input type="text" class="fi" v-model="form.streetAddress" placeholder="123 Main St" /></div>
+                <div class="fg" style="position:relative;">
+                  <label class="fl">Street Address <span class="req">*</span></label>
+                  <input
+                    type="text"
+                    class="fi"
+                    :value="form.streetAddress"
+                    placeholder="Start typing your address…"
+                    autocomplete="off"
+                    @input="onAddressInput"
+                    @focus="addrFocused = true"
+                    @blur="() => { setTimeout(() => { addrFocused.value = false; addrSuggestions.value = [] }, 180) }"
+                  />
+                  <div v-if="addrLoading" class="addr-spinner">🔍</div>
+                  <ul v-if="addrFocused && addrSuggestions.length" class="addr-dropdown">
+                    <li
+                      v-for="(s, i) in addrSuggestions"
+                      :key="i"
+                      class="addr-item"
+                      @mousedown.prevent="selectAddress(s)"
+                    >
+                      <span class="addr-item-icon">📍</span>
+                      <span class="addr-item-text">{{ s.label }}</span>
+                    </li>
+                  </ul>
+                </div>
                 <div class="form-grid-2">
                   <div class="fg"><label class="fl">City <span class="req">*</span></label><input type="text" class="fi" v-model="form.city" placeholder="Los Angeles" /></div>
                   <div class="fg"><label class="fl">State / Province <span class="req">*</span></label><input type="text" class="fi" v-model="form.state" placeholder="CA" /></div>
@@ -603,7 +695,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .mi-bdg { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.82); padding: 0 20px 0 0; }
 .mi-bsep { width: 1px; height: 16px; background: rgba(255,255,255,0.2); margin-right: 20px; flex-shrink: 0; }
 /* form is now inside .mi-hero */
-.form-wrap { max-width: 100%; width: 100%; margin: 0; background: #fff; border-radius: 16px; box-shadow: 0 20px 64px rgba(0,0,0,0.35); overflow: hidden; max-height: calc(100vh - 96px); display: flex; flex-direction: column; }
+.form-wrap { max-width: 100%; width: 100%; margin: 0; background: #fff; border-radius: 16px; box-shadow: 0 20px 64px rgba(0,0,0,0.35); overflow: hidden; max-height: calc(100dvh - 96px); display: flex; flex-direction: column; }
 .form-wrap.is-submitted { max-height: none; overflow-y: auto; }
 .stepper { position: relative; display: flex; justify-content: space-between; align-items: flex-start; padding: 24px 40px 20px; background: #fff; border-bottom: 1px solid #e8edf4; }
 .stepper-track { position: absolute; top: 54px; left: calc(40px + 20px); right: calc(40px + 20px); height: 3px; background: #e8edf4; border-radius: 2px; z-index: 0; }
@@ -617,7 +709,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .stepper-item.active .stepper-label { color: #1a1a2e; }
 .stepper-item.done .stepper-label { color: #22c55e; }
 .edo-form { padding: 32px 44px 0; display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; overflow: hidden; }
-.form-step { display: flex; flex-direction: column; gap: 20px; flex: 1; min-height: 0; overflow-y: auto; padding-bottom: 20px; scrollbar-width: thin; }
+.form-step { display: flex; flex-direction: column; gap: 20px; flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding-bottom: 20px; scrollbar-width: thin; }
 .step-title { font-size: 1.35rem; font-weight: 900; color: #1a1a2e; margin: 0 0 4px; }
 .step-desc { font-size: 0.93rem; color: #6b7280; margin: 0 0 8px; line-height: 1.6; }
 .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
@@ -684,13 +776,27 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .success-heading { font-size: 1.6rem; font-weight: 900; color: #1a1a2e; margin-bottom: 12px; }
 .success-text { font-size: 1rem; color: #6b7280; max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
 .btn-gold { display: inline-block; background: #F5C842; color: #1a1a1a; padding: 13px 32px; border-radius: 8px; font-weight: 800; text-decoration: none; }
-.label-download-box { display: flex; align-items: center; gap: 16px; background: #f0fdf4; border: 2px solid #22c55e; border-radius: 12px; padding: 18px 20px; margin: 24px 0; text-align: left; }
-.label-icon { font-size: 2rem; flex-shrink: 0; }
-.label-info { flex: 1; display: flex; flex-direction: column; gap: 3px; }
-.label-info strong { font-size: 0.95rem; color: #1a1a2e; }
-.label-info span { font-size: 0.82rem; color: #6b7280; }
-.btn-download { background: #22c55e; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 800; font-size: 0.9rem; text-decoration: none; white-space: nowrap; cursor: pointer; }
-.btn-download:hover { background: #16a34a; }
+.label-download-box { border-radius: 14px; padding: 20px; margin: 16px 0; text-align: left; border: 2px solid transparent; }
+.label-download-box--green { background: #f0fdf4; border-color: #22c55e; }
+.label-download-box--purple { background: #f5f3ff; border-color: #6366f1; }
+.ldb-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.ldb-emoji { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+.ldb-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.ldb-text strong { font-size: 1rem; font-weight: 800; color: #1a1a2e; line-height: 1.3; }
+.ldb-text span { font-size: 0.82rem; color: #6b7280; line-height: 1.4; }
+.btn-download { display: block; width: 100%; text-align: center; color: #fff; border: none; padding: 13px 20px; border-radius: 10px; font-weight: 800; font-size: 1rem; text-decoration: none; cursor: pointer; box-sizing: border-box; }
+.btn-download--green { background: #22c55e; }
+.btn-download--green:hover { background: #16a34a; }
+.btn-download--purple { background: #6366f1; }
+.btn-download--purple:hover { background: #4f46e5; }
+
+/* Address autocomplete */
+.addr-spinner { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 0.85rem; opacity: 0.5; pointer-events: none; }
+.addr-dropdown { position: absolute; top: calc(100% + 2px); left: 0; right: 0; z-index: 999; background: #fff; border: 1.5px solid #d1d5db; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.12); padding: 4px 0; margin: 0; list-style: none; max-height: 240px; overflow-y: auto; }
+.addr-item { display: flex; align-items: flex-start; gap: 8px; padding: 10px 14px; cursor: pointer; transition: background 0.15s; }
+.addr-item:hover { background: #f1f5f9; }
+.addr-item-icon { font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; opacity: 0.6; }
+.addr-item-text { font-size: 0.85rem; color: #1a1a2e; line-height: 1.4; }
 .success-steps { background: #f4f7fc; border-radius: 10px; padding: 18px 24px; margin: 20px 0; text-align: left; }
 .steps-heading { font-size: 0.88rem; font-weight: 700; color: #374151; margin: 0 0 10px; text-transform: uppercase; letter-spacing: 0.05em; }
 .steps-list { margin: 0; padding-left: 20px; font-size: 0.9rem; color: #374151; line-height: 1.8; }
@@ -727,7 +833,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .form-wrap { border-radius: 0; }
+  .form-wrap { border-radius: 0; position: sticky; top: 0; max-height: 100dvh; z-index: 10; }
   .stepper { padding: 24px 20px 20px; }
   .stepper-label { display: none; }
   .stepper-track { left: 30px; right: 30px; top: 44px; }

@@ -3,13 +3,13 @@ const dismissed = ref(false)
 
 onMounted(() => {
   try {
-    if (localStorage.getItem('annBar_edo_v1') === 'dismissed') dismissed.value = true
+    if (sessionStorage.getItem('annBar_edo_v2') === 'dismissed') dismissed.value = true
   } catch {}
 })
 
 function dismiss() {
   dismissed.value = true
-  try { localStorage.setItem('annBar_edo_v1', 'dismissed') } catch {}
+  try { sessionStorage.setItem('annBar_edo_v2', 'dismissed') } catch {}
 }
 </script>
 

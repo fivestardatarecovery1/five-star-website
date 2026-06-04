@@ -7,7 +7,7 @@ const COUNTRY_CODES: Record<string, string> = {
 }
 
 async function getFedexToken(clientId: string, clientSecret: string): Promise<string> {
-  const res = await fetch('https://apis.fedex.com/oauth/token', {
+  const res = await fetch('https://apis-sandbox.fedex.com/oauth/token', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
@@ -59,7 +59,7 @@ async function createFedexLabel(opts: {
     },
   }
 
-  const res = await fetch('https://apis.fedex.com/ship/v1/shipments', {
+  const res = await fetch('https://apis-sandbox.fedex.com/ship/v1/shipments', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${opts.token}`, 'X-locale': 'en_US' },
     body: JSON.stringify(body),
@@ -75,10 +75,11 @@ async function createFedexLabel(opts: {
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
-  const fedexClientId = process.env.FEDEX_CLIENT_ID || ''
-  const fedexClientSecret = process.env.FEDEX_CLIENT_SECRET || ''
-  const fedexAccountNumber = process.env.FEDEX_ACCOUNT_NUMBER || ''
-  const resendApiKey = process.env.RESEND_API_KEY || ''
+  const config = useRuntimeConfig()
+  const fedexClientId = config.fedexClientId || process.env.FEDEX_CLIENT_ID || ''
+  const fedexClientSecret = config.fedexClientSecret || process.env.FEDEX_CLIENT_SECRET || ''
+  const fedexAccountNumber = config.fedexAccountNumber || process.env.FEDEX_ACCOUNT_NUMBER || ''
+  const resendApiKey = config.resendApiKey || process.env.RESEND_API_KEY || ''
 
   const {
     firstName, lastName, email, phone, manufacturer, driveType, driveFormat, driveSize,
@@ -327,17 +328,16 @@ export default defineEventHandler(async (event) => {
 
   const packingSlipBase64 = packingSlipBase64Early // used for browser display
 
-  // Save to Mission Control (fire & forget)
-  // Route through the Nuxt proxy on the local machine (fivestar.ngrok.app → localhost:3456 → localhost:3001)
-  const mcUrl = process.env.MC_API_URL
-  if (mcUrl) {
-    fetch(`${mcUrl}/api/mc-leads/mailin-submission`, {
+  // Save to Mission Control (awaited - Vercel kills fire-and-forget before completion)
+  const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
+  try {
+    await fetch(`${mcUrl}/api/fs-leads/mailin-submission`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ ...body }),
-      signal: AbortSignal.timeout(4000),
-    }).catch(() => {})
-  }
+      signal: AbortSignal.timeout(5000),
+    })
+  } catch(e) { console.error('[submit-mailin] MC save failed:', (e as any)?.message) }
 
   return { success: true, labelBase64, serviceLabel, labelError, packingSlipBase64, caseRef }
 })
