@@ -135,6 +135,10 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         // Preload LCP hero background image
         { rel: 'preload', as: 'image', href: '/data-recovery-clean-room-technician-glendale-ca.jpg', fetchpriority: 'high' },
+        // Preload self-hosted fonts — breaks the HTML → entry.css → woff2 chain
+        // Hash changes only if @fontsource-variable package is updated
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/_nuxt/inter-latin-wght-normal.Dx4kXJAl.woff2', crossorigin: '' },
+        { rel: 'preload', as: 'font', type: 'font/woff2', href: '/_nuxt/montserrat-latin-wght-normal.l_AIctKy.woff2', crossorigin: '' },
         // No external font requests — fonts are self-hosted via @fontsource (see css[])
       ]
     }
