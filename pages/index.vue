@@ -292,7 +292,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
         <div class="services-grid">
           <NuxtLink v-for="s in services" :key="s.title" :to="s.href" class="service-card card">
             <div class="service-img-wrap">
-              <img :src="s.img" :alt="s.title" class="service-img" :class="{ 'service-img-small': s.small }" width="200" height="200" loading="lazy" />
+              <NuxtImg :src="s.img" :alt="s.title" class="service-img" :class="{ 'service-img-small': s.small }" width="200" height="200" loading="lazy" format="webp" />
             </div>
             <h3 class="service-title">{{ s.title }}</h3>
             <p class="service-desc">{{ s.desc }}</p>
@@ -386,13 +386,12 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
         <div class="video-embed">
           <!-- YouTube facade: load iframe only on click to prevent 435KB JS blocking LCP -->
           <div v-if="!videoPlaying" class="yt-facade" @click="videoPlaying = true" role="button" aria-label="Play video: Five Star Data Recovery" tabindex="0" @keydown.enter="videoPlaying = true" @keydown.space.prevent="videoPlaying = true">
-            <img
+            <NuxtImg
               src="https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg"
               alt="Five Star Data Recovery — Play Video"
               width="480" height="360"
               loading="lazy"
-              class="yt-thumb"
-            />
+              class="yt-thumb" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
             <div class="yt-play-btn" aria-hidden="true">
               <svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg>
             </div>

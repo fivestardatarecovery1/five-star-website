@@ -161,7 +161,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Can’t make it out to our lab? No problem. We offer free same-day pickup from most areas across Los Angeles. Whether you’re at your home, office, or school, just contact us before noon, and we’ll come to you. The easiest way to get your recovery started without leaving your space is available. This service is available from Monday to Friday. One more reason data recovery clients trust us to make the process easy.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/los-angeles-data-recovery-lab.webp" alt="Free same-day pickup data recovery Los Angeles" class="section-img" width="1024" height="683" loading="lazy" />
+            <NuxtImg src="/los-angeles-data-recovery-lab.webp" alt="Free same-day pickup data recovery Los Angeles" class="section-img" width="1024" height="683" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
           </div>
         </div>
       </div>
@@ -250,7 +250,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/los-angeles-data-recovery-service.webp" alt="Secure data recovery privacy Los Angeles" class="section-img" width="1024" height="683" loading="lazy" />
+            <NuxtImg src="/los-angeles-data-recovery-service.webp" alt="Secure data recovery privacy Los Angeles" class="section-img" width="1024" height="683" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
           </div>
           <div>
             <h2 class="s-heading">Your Privacy Comes First</h2>

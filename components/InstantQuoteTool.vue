@@ -691,7 +691,7 @@ const progressIndex = computed(() => {
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickImacDriveType('single')">
             <div class="iqt-drive-imgs">
-              <img src="/service-hdd-new-nobg.webp" alt="Hard Drive" class="iqt-drive-img" width="80" height="80" />
+              <NuxtImg src="/service-hdd-new-nobg.webp" alt="Hard Drive" class="iqt-drive-img" width="80" height="80" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Single Drive</span>
@@ -700,9 +700,9 @@ const progressIndex = computed(() => {
           </button>
           <button class="iqt-card iqt-drive-type-card" @click="pickImacDriveType('fusion')">
             <div class="iqt-drive-imgs">
-              <img src="/service-hdd-new-nobg.webp" alt="Hard Drive" class="iqt-drive-img" width="80" height="80" />
+              <NuxtImg src="/service-hdd-new-nobg.webp" alt="Hard Drive" class="iqt-drive-img" width="80" height="80" format="webp" />
               <span class="iqt-drive-plus">+</span>
-              <img src="/service-ssd-new-nobg.webp" alt="NVMe SSD" class="iqt-drive-img" width="80" height="80" />
+              <NuxtImg src="/service-ssd-new-nobg.webp" alt="NVMe SSD" class="iqt-drive-img" width="80" height="80" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Fusion Drive</span>
@@ -828,7 +828,7 @@ const progressIndex = computed(() => {
         <div class="iqt-grid g1">
           <button class="iqt-card iqt-issue-card" @click="pickSsdExtBrand('wd')">
             <div class="iqt-drive-imgs" style="height:48px;">
-              <img src="/sandisk-extreme-pro-external-ssd.webp" alt="WD/SanDisk/G-Drive" width="44" height="44" style="height:44px;width:auto;object-fit:contain;" loading="lazy" />
+              <NuxtImg src="/sandisk-extreme-pro-external-ssd.webp" alt="WD/SanDisk/G-Drive" width="44" height="44" style="height:44px;width:auto;object-fit:contain;" loading="lazy" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">WD / SanDisk / G-Drive</span>
@@ -859,7 +859,7 @@ const progressIndex = computed(() => {
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdLocation('internal')">
             <div class="iqt-drive-imgs">
-              <img src="/service-ssd-new-nobg.webp" alt="Internal SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" />
+              <NuxtImg src="/service-ssd-new-nobg.webp" alt="Internal SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">Internal SSD</span>
@@ -868,7 +868,7 @@ const progressIndex = computed(() => {
           </button>
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdLocation('external')">
             <div class="iqt-drive-imgs">
-              <img src="/sandisk-extreme-pro-external-ssd.webp" alt="SanDisk Extreme Pro External SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" />
+              <NuxtImg src="/sandisk-extreme-pro-external-ssd.webp" alt="SanDisk Extreme Pro External SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">External SSD</span>
@@ -885,7 +885,7 @@ const progressIndex = computed(() => {
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('ssd')">
             <div class="iqt-drive-imgs">
-              <img src="/ssd-25-sata-crucial.webp" alt="2.5 inch SATA SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" />
+              <NuxtImg src="/ssd-25-sata-crucial.webp" alt="2.5 inch SATA SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">2.5" SATA SSD</span>
@@ -894,7 +894,7 @@ const progressIndex = computed(() => {
           </button>
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('nvme')">
             <div class="iqt-drive-imgs">
-              <img src="/ssd-nvme-samsung.webp" alt="NVMe M.2 SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" />
+              <NuxtImg src="/ssd-nvme-samsung.webp" alt="NVMe M.2 SSD" class="iqt-drive-img" width="80" height="80" loading="lazy" format="webp" />
             </div>
             <div class="iqt-issue-text">
               <span class="iqt-clabel">NVMe / M.2 Drive</span>

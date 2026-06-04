@@ -182,7 +182,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </ul>
           </div>
           <div class="section-img-wrap">
-            <img src="/ssd-data-recovery-install.webp" alt="SSD data recovery — solid state drive installation and repair" class="section-img" width="2560" height="765" loading="lazy" />
+            <NuxtImg src="/ssd-data-recovery-install.webp" alt="SSD data recovery — solid state drive installation and repair" class="section-img" width="2560" height="765" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
           </div>
         </div>
       </div>

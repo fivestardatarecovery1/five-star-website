@@ -198,7 +198,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">If you lost data on your iPhone or iOS device, we can help. Our data recovery services can get your data back.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/iphone-component-recovery.webp" alt="iPhone component-level data recovery — disassembled iPhone logic board repair" class="section-img" width="1600" height="1200" loading="lazy" />
+            <NuxtImg src="/iphone-component-recovery.webp" alt="iPhone component-level data recovery — disassembled iPhone logic board repair" class="section-img" width="1600" height="1200" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
           </div>
         </div>
       </div>

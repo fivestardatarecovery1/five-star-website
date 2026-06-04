@@ -182,7 +182,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">If you have any problems with your CFast card, stop using it right away. Please contact us for help. The earlier we get involved, the better your chances for achieving a full recovery.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/cfast-card-recovery-professional.webp" alt="Professional CFast cards for cinema cameras — data recovery" class="section-img" width="960" height="540" loading="lazy" />
+            <NuxtImg src="/cfast-card-recovery-professional.webp" alt="Professional CFast cards for cinema cameras — data recovery" class="section-img" width="960" height="540" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
           </div>
         </div>
       </div>
@@ -311,7 +311,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </div>
           </div>
           <div class="section-img-wrap">
-            <img src="/cfast-recovery-process.webp" alt="CFast card data recovery process" class="section-img" width="900" height="600" loading="lazy" />
+            <NuxtImg src="/cfast-recovery-process.webp" alt="CFast card data recovery process" class="section-img" width="900" height="600" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
           </div>
         </div>
       </div>
