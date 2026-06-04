@@ -129,18 +129,21 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         // Preload LCP hero background image
         { rel: 'preload', as: 'image', href: '/data-recovery-clean-room-technician-glendale-ca.jpg', fetchpriority: 'high' },
-        // Preconnect to Google Fonts domains
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        // Async (non-render-blocking) font load
-        {
-          rel: 'preload',
-          as: 'style',
-          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap',
-          onload: "this.onload=null;this.rel='stylesheet'"
-        }
+        // No external font requests — fonts are self-hosted via @fontsource (see css[])
       ]
     }
   },
-  css: ['~/assets/css/main.css']
+  css: [
+    // Self-hosted fonts — no external round-trip, served from Vercel CDN
+    '@fontsource/inter/300.css',
+    '@fontsource/inter/400.css',
+    '@fontsource/inter/500.css',
+    '@fontsource/inter/600.css',
+    '@fontsource/inter/700.css',
+    '@fontsource/montserrat/600.css',
+    '@fontsource/montserrat/700.css',
+    '@fontsource/montserrat/800.css',
+    '@fontsource/montserrat/900.css',
+    '~/assets/css/main.css',
+  ]
 })
