@@ -5,7 +5,8 @@
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-    <ChatWidget />
+    <!-- Lazy: defer ChatWidget JS until after page hydration — not needed for LCP -->
+    <LazyChatWidget />
   </div>
 </template>
 

@@ -95,7 +95,13 @@ function handleSubmit() {
         <div class="hero-form-card">
           <p class="form-title">Get an Instant Quote</p>
 
-          <InstantQuoteTool :light="true" :compact="true" />
+          <!-- ClientOnly: prevents heavy form from blocking SSR hydration + LCP paint -->
+          <ClientOnly>
+            <LazyInstantQuoteTool :light="true" :compact="true" />
+            <template #fallback>
+              <div class="iqt-skeleton" />
+            </template>
+          </ClientOnly>
         </div>
       </div>
 
@@ -247,6 +253,13 @@ function handleSubmit() {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+/* Skeleton placeholder while InstantQuoteTool JS loads */
+.iqt-skeleton {
+  height: 420px;
+  background: #f8f8f8;
+  border-radius: 8px;
 }
 
 .form-title {
