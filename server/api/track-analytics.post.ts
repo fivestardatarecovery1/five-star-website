@@ -5,10 +5,10 @@
  * and forwards them to the MC backend webhook.
  *
  * Environment variables:
- *   ANALYTICS_WEBHOOK_URL    — MC backend endpoint (required to forward)
- *   FS_ANALYTICS_SECRET      — Optional shared secret for MC backend auth
+ *   MC_API_URL          — MC backend base URL (shared with other server routes)
+ *   FS_ANALYTICS_SECRET — Optional shared secret for MC backend auth
  *
- * If no webhook URL is configured, events are logged to console only.
+ * If MC_API_URL is not configured, events are logged to console only.
  */
 
 import { defineEventHandler, readBody } from 'h3'
@@ -20,20 +20,16 @@ export default defineEventHandler(async (event) => {
     return { ok: false, error: 'Invalid payload' }
   }
 
-  const webhookUrl = process.env.ANALYTICS_WEBHOOK_URL
+  const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
   const secret = process.env.FS_ANALYTICS_SECRET
 
   console.log(`[Analytics] ${body.event_type || 'pageview'} | ${body.page} | ${body.device || '?'} | src: ${body.utm_source || body.referrer || 'direct'}`)
-
-  if (!webhookUrl) {
-    return { ok: true, forwarded: false }
-  }
 
   try {
     const payload = { ...body }
     if (secret) payload.secret = secret
 
-    const res = await fetch(`${webhookUrl}/api/fs-analytics/event`, {
+    const res = await fetch(`${mcUrl}/api/fs-analytics/event`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
