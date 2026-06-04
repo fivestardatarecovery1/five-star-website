@@ -177,7 +177,8 @@ function handleSubmit() {
   font-size: 11px;
   font-weight: 400;
   font-style: italic;
-  opacity: 0.72;
+  /* opacity 0.72 on #c62828 = 3.47:1 fails WCAG AA. 0.95 = ~4.8:1, passes */
+  opacity: 0.95;
   line-height: 1;
 }
 

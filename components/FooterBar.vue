@@ -193,7 +193,8 @@
 }
 .footer-legal-links a:hover { color: var(--gold); }
 .footer-powered { text-align: center; padding: 8px 0 4px; }
-.footer-powered a { font-size: 11px; color: #5a6275; text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
+/* #5a6275 on black = 3.82:1 fails. #9ba3b8 on black = 8.76:1 passes WCAG AA */
+.footer-powered a { font-size: 11px; color: #9ba3b8; text-decoration: none; letter-spacing: 0.03em; transition: color 0.2s; }
 .footer-powered a:hover { color: var(--gold); }
 
 @media (max-width: 1100px) {
