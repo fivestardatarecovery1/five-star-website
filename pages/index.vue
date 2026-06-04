@@ -773,7 +773,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   justify-content: space-between;
   min-height: 260px;
 }
-.review-stars { color: #F5C842; font-size: 22px; letter-spacing: 3px; margin-bottom: 16px; }
+/* #F5C842 gold on white = 1.55:1 fails. #8a6300 dark amber = 4.91:1 passes WCAG AA */
+.review-stars { color: #8a6300; font-size: 22px; letter-spacing: 3px; margin-bottom: 16px; }
 .review-text {
   font-size: 16px;
   color: #2d3a4a;
@@ -827,26 +828,30 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
   margin-top: 24px;
 }
 .carousel-dot {
+  /* 44x44 actual button size for WCAG 2.5.5 touch target */
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+/* Visual dot rendered via ::before */
+.carousel-dot::before {
+  content: '';
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #d0d7e4;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, width 0.2s;
-  position: relative;
-}
-.carousel-dot::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 44px;
-  min-height: 44px;
+  transition: background 0.2s, width 0.2s, border-radius 0.2s;
   display: block;
+  flex-shrink: 0;
 }
-.carousel-dot.active {
+.carousel-dot.active::before {
   background: #F5C842;
   width: 24px;
   border-radius: 4px;

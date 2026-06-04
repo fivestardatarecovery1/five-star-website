@@ -145,7 +145,8 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
   box-shadow: 0 2px 16px rgba(0,0,0,0.05);
 }
 .rsc-stars {
-  color: #F5C842;
+  /* #F5C842 on white = 1.55:1 fails. #8a6300 = 4.91:1 passes WCAG AA */
+  color: #8a6300;
   font-size: 1.2rem;
   letter-spacing: 3px;
   margin-bottom: 16px;
@@ -194,7 +195,8 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
 .rsc-loc {
   display: block;
   font-size: 0.8rem;
-  color: #F5C842;
+  /* #8a6300 on white = 4.91:1 — passes WCAG AA. Gold #F5C842 on white = 1.55:1, fails. */
+  color: #8a6300;
   font-weight: 600;
   margin-top: 2px;
 }
@@ -207,27 +209,29 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
   margin-top: 28px;
 }
 .rsc-dot {
+  /* 44x44 actual button size for WCAG 2.5.5 touch target */
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.rsc-dot::before {
+  content: '';
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #d0d7e4;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, width 0.2s;
-  /* ensure minimum 44px touch target */
-  position: relative;
-}
-.rsc-dot::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 44px;
-  min-height: 44px;
+  transition: background 0.2s, width 0.2s, border-radius 0.2s;
   display: block;
+  flex-shrink: 0;
 }
-.rsc-dot.active {
+.rsc-dot.active::before {
   background: #F5C842;
   width: 24px;
   border-radius: 4px;
