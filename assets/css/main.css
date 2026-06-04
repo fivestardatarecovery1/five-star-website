@@ -15,8 +15,8 @@
   --muted: #A0A8B8;
   --card-bg: #13161F;
   --border: #1E2233;
-  --font-body: 'Inter', sans-serif;
-  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter Variable', 'Inter', sans-serif;
+  --font-heading: 'Montserrat Variable', 'Montserrat', sans-serif;
 }
 
 /* Alternating section backgrounds — clearly distinct */

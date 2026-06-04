@@ -149,16 +149,8 @@ export default defineNuxtConfig({
     }
   },
   css: [
-    // Self-hosted fonts — no external round-trip, served from Vercel CDN
-    '@fontsource/inter/300.css',
-    '@fontsource/inter/400.css',
-    '@fontsource/inter/500.css',
-    '@fontsource/inter/600.css',
-    '@fontsource/inter/700.css',
-    '@fontsource/montserrat/600.css',
-    '@fontsource/montserrat/700.css',
-    '@fontsource/montserrat/800.css',
-    '@fontsource/montserrat/900.css',
+    // 2 variable font files instead of 9 static-weight files — latin subset only
+    '~/assets/css/fonts.css',
     '~/assets/css/main.css',
   ]
 })

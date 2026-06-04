@@ -30,8 +30,6 @@ const props = withDefaults(defineProps<Props>(), {
   ]
 })
 
-const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false
-
 const heroStyle = computed(() => ({
   background: `linear-gradient(to right, rgba(20,22,30,${props.overlayOpacity}) 0%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.15, 0)}) 50%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.35, 0)}) 100%), url('${props.bgImage}') center center / ${props.bgSize} no-repeat`
 }))
