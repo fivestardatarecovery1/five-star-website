@@ -294,8 +294,10 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
             <div class="service-img-wrap">
               <img
                 :src="s.img"
-                :srcset="`${s.img.replace('-400.webp', '-260.webp')} 260w, ${s.img} 400w`"
-                sizes="(max-width: 768px) 260px, 200px"
+                :srcset="s.small
+                  ? `${s.img.replace('-400.webp', '-200.webp')} 200w, ${s.img.replace('-400.webp', '-260.webp')} 260w, ${s.img} 400w`
+                  : `${s.img.replace('-400.webp', '-260.webp')} 260w, ${s.img} 400w`"
+                :sizes="s.small ? '(max-width: 768px) 200px, 150px' : '(max-width: 768px) 260px, 200px'"
                 :alt="s.title"
                 class="service-img"
                 :class="{ 'service-img-small': s.small }"
