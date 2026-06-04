@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useAnalytics } from '~/composables/useAnalytics'
+const { trackConversion, trackEvent } = useAnalytics()
 const props = defineProps<{ light?: boolean, compact?: boolean }>()
 
 // Generate a stable session ID for this quote session (persists across steps)
@@ -76,6 +78,11 @@ async function submitContact() {
   if (!contact.name.trim()) { contactError.value = 'Please enter your name.'; return }
   if (!contact.email.trim() || !contact.email.includes('@')) { contactError.value = 'Please enter a valid email.'; return }
   if (!contact.phone.trim()) { contactError.value = 'Please enter your phone number.'; return }
+  // Track lead capture as conversion event
+  trackConversion('instant-quote-lead', {
+    preferred_contact: contact.preferredContact,
+    source_page: sourcePage.value,
+  })
   // Fire lead capture to MC + email (non-blocking)
   if (import.meta.client) {
     fetch('/api/quote-lead', {
@@ -420,6 +427,17 @@ function pickAio(v: boolean)       { sel.aio = v;         goTo('urgency') }
 function pickUrgency(id: string) {
   sel.urgency = id
   goTo('result')
+  // Track full quote completion as high-value conversion
+  nextTick(() => {
+    if (quote.value) {
+      trackConversion('instant-quote-complete', {
+        device: sel.device,
+        urgency: id,
+        price: quote.value.total,
+        source_page: sourcePage.value,
+      })
+    }
+  })
   // Fire full quote result to MC + email (non-blocking)
   if (import.meta.client) {
     nextTick(() => {

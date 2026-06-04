@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useAnalytics } from '~/composables/useAnalytics'
+const { trackConversion } = useAnalytics()
 useSeoMeta({
   title: 'Get a Free Quote — Five Star Data Recovery | Glendale, CA',
   description: 'Get a free data recovery quote from Five Star Data Recovery. No obligation, no hidden fees. Free diagnostic evaluation. Located in Glendale, CA.'
@@ -41,7 +43,7 @@ const submitted = ref(false)
         </div>
         <div style="background:#fff;border:1px solid #e8ecf2;border-radius:14px;padding:40px;box-shadow:0 4px 32px rgba(0,0,0,0.08);">
           <h3 style="font-size:1.2rem;font-weight:800;color:#1a1a2e;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid #f0f0f0;">Get a Free Quote in Minutes!</h3>
-          <form @submit.prevent="submitted = true" style="display:flex;flex-direction:column;gap:14px;">
+          <form @submit.prevent="submitted = true; trackConversion('free-quote-form')" style="display:flex;flex-direction:column;gap:14px;">
             <div class="mf-row">
               <div class="mf-group">
                 <label>NAME <span class="mf-req">*</span></label>

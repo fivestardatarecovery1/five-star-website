@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useAnalytics } from '~/composables/useAnalytics'
+const { trackConversion } = useAnalytics()
 useHead({
   script: [
     {
@@ -255,6 +257,7 @@ async function submitForm() {
   try {
     await $fetch('/api/submit-dropoff', { method: 'POST', body: form })
     submitted.value = true
+    trackConversion('express-dropoff', { device_type: form.deviceType || '' })
     onFormSubmitted()
   } catch (e) {
     submitError.value = 'Something went wrong. Please call us at 818-272-8866.'

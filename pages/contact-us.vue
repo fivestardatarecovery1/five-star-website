@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useAnalytics } from '~/composables/useAnalytics'
+const { trackConversion } = useAnalytics()
 useSeoMeta({
   title: 'Contact Us - Five Star Data Recovery',
   description: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
@@ -134,7 +136,7 @@ const submitted = ref(false)
         <!-- RIGHT: Form -->
         <div class="contact-form-wrap">
           <h3 class="form-title">Send Us a Message</h3>
-          <form @submit.prevent="submitted = true" class="contact-form">
+          <form @submit.prevent="submitted = true; trackConversion('contact-form')" class="contact-form">
             <div class="mf-row">
               <div class="mf-group">
                 <label>NAME <span class="mf-req">*</span></label>
