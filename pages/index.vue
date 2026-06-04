@@ -169,18 +169,18 @@ useHead({
 })
 
 const services = [
-  { img: '/service-hdd-new-nobg.webp', title: 'Hard Drive Recovery', desc: 'Mechanical failures, clicking drives, read errors, and firmware corruption. We recover from all major HDD brands.', href: '/data-recovery/hard-drive-recovery' },
-  { img: '/service-ssd-new-nobg.webp', title: 'SSD Recovery', desc: 'Flash memory failures, controller issues, and NAND chip recovery. NVMe, SATA and mSATA SSDs.', href: '/data-recovery/ssd-data-recovery' },
-  { img: '/raid-server-data-recovery-glendale-ca-nobg.webp', title: 'RAID / Server Recovery', desc: 'RAID 0, 1, 5, 6, 10, and NAS array reconstruction. Enterprise-grade recovery with minimal downtime.', href: '/data-recovery/raid-data-recovery' },
-  { img: '/laptop-computer-data-recovery-glendale-ca-nobg.webp', title: 'Laptop Recovery', desc: 'Dropped laptops, liquid spills, and dead drives from all brands — Dell, HP, Lenovo, Asus, and more.', href: '/data-recovery/laptop-data-recovery' },
-  { img: '/external-hard-drive-data-recovery-glendale-ca-nobg.webp', title: 'External HDD Recovery', desc: 'WD My Passport, Seagate Backup Plus, LaCie, and other portable drives recovered quickly.', href: '/data-recovery/external-hard-drive-data-recovery' },
-  { img: '/mac-imac-macbook-data-recovery-glendale-ca-nobg.webp', title: 'Mac / iMac Recovery', desc: 'Apple Fusion Drive, T2/M1/M2 chip Macs, and Time Machine failures handled by certified technicians.', href: '/data-recovery/mac-data-recovery' },
-  { img: '/service-iphone-nobg.webp', title: 'iPhone & Mobile', desc: 'iOS and Android data recovery from broken screens, water damage, and failed updates.', href: '/data-recovery/iphone-data-recovery', small: true },
-  { img: '/service-sd-new-nobg.webp', title: 'SD Card Recovery', desc: 'Camera cards, drone footage, and dashcam recovery from all SD card formats.', href: '/data-recovery/sd-card-data-recovery' },
-  { img: '/nas-network-attached-storage-data-recovery-glendale-ca-nobg.webp', title: 'NAS Device Recovery', desc: 'Synology, QNAP, Buffalo, and custom NAS enclosures with failed drives or corrupted volumes.', href: '/data-recovery/nas-data-recovery' },
-  { img: '/deleted-file-recovery-service-glendale-ca-nobg.webp', title: 'Deleted File Recovery', desc: 'Accidentally deleted files, formatted drives, and corrupted partitions recovered safely.', href: '/data-recovery/deleted-files' },
-  { img: '/clean-room-data-recovery-equipment-glendale-ca-nobg.webp', title: 'Clean Room Recovery', desc: 'ISO Class 5 cleanroom for physically damaged drives with platter, head, and motor failures.', href: '/data-recovery/clean-room-data-recovery' },
-  { img: '/cfast-card-data-recovery-service-glendale-ca-nobg.webp', title: 'Video File Repair', desc: 'Corrupted, unplayable, or damaged video footage recovered from cameras, drones, and all formats.', href: '/data-recovery/video-file-repair' },
+  { img: '/service-hdd-new-nobg-400.webp', title: 'Hard Drive Recovery', desc: 'Mechanical failures, clicking drives, read errors, and firmware corruption. We recover from all major HDD brands.', href: '/data-recovery/hard-drive-recovery' },
+  { img: '/service-ssd-new-nobg-400.webp', title: 'SSD Recovery', desc: 'Flash memory failures, controller issues, and NAND chip recovery. NVMe, SATA and mSATA SSDs.', href: '/data-recovery/ssd-data-recovery' },
+  { img: '/raid-server-data-recovery-glendale-ca-nobg-400.webp', title: 'RAID / Server Recovery', desc: 'RAID 0, 1, 5, 6, 10, and NAS array reconstruction. Enterprise-grade recovery with minimal downtime.', href: '/data-recovery/raid-data-recovery' },
+  { img: '/laptop-computer-data-recovery-glendale-ca-nobg-400.webp', title: 'Laptop Recovery', desc: 'Dropped laptops, liquid spills, and dead drives from all brands — Dell, HP, Lenovo, Asus, and more.', href: '/data-recovery/laptop-data-recovery' },
+  { img: '/external-hard-drive-data-recovery-glendale-ca-nobg-400.webp', title: 'External HDD Recovery', desc: 'WD My Passport, Seagate Backup Plus, LaCie, and other portable drives recovered quickly.', href: '/data-recovery/external-hard-drive-data-recovery' },
+  { img: '/mac-imac-macbook-data-recovery-glendale-ca-nobg-400.webp', title: 'Mac / iMac Recovery', desc: 'Apple Fusion Drive, T2/M1/M2 chip Macs, and Time Machine failures handled by certified technicians.', href: '/data-recovery/mac-data-recovery' },
+  { img: '/service-iphone-nobg-400.webp', title: 'iPhone & Mobile', desc: 'iOS and Android data recovery from broken screens, water damage, and failed updates.', href: '/data-recovery/iphone-data-recovery', small: true },
+  { img: '/service-sd-new-nobg-400.webp', title: 'SD Card Recovery', desc: 'Camera cards, drone footage, and dashcam recovery from all SD card formats.', href: '/data-recovery/sd-card-data-recovery' },
+  { img: '/nas-network-attached-storage-data-recovery-glendale-ca-nobg-400.webp', title: 'NAS Device Recovery', desc: 'Synology, QNAP, Buffalo, and custom NAS enclosures with failed drives or corrupted volumes.', href: '/data-recovery/nas-data-recovery' },
+  { img: '/deleted-file-recovery-service-glendale-ca-nobg-400.webp', title: 'Deleted File Recovery', desc: 'Accidentally deleted files, formatted drives, and corrupted partitions recovered safely.', href: '/data-recovery/deleted-files' },
+  { img: '/clean-room-data-recovery-equipment-glendale-ca-nobg-400.webp', title: 'Clean Room Recovery', desc: 'ISO Class 5 cleanroom for physically damaged drives with platter, head, and motor failures.', href: '/data-recovery/clean-room-data-recovery' },
+  { img: '/cfast-card-data-recovery-service-glendale-ca-nobg-400.webp', title: 'Video File Repair', desc: 'Corrupted, unplayable, or damaged video footage recovered from cameras, drones, and all formats.', href: '/data-recovery/video-file-repair' },
 ]
 
 const whyUs = [
