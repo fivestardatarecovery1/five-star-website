@@ -126,10 +126,8 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0A0C14' }
       ],
       script: [
-        {
-          src: 'https://www.googletagmanager.com/gtm.js?id=GTM-P5MDDD7V',
-          async: true
-        }
+        // GTM loaded lazily via plugins/gtm.client.ts after page is interactive
+        // Keeps 87.8 KiB off the critical path (LCP/FCP improvement)
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
