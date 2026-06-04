@@ -178,7 +178,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Despite their design, RAID drives are not immune to failure. Common causes include multiple drive failures, broken RAID controllers, wrong RAID settings, power surges, and failed rebuilds. In some cases, a single failed drive in a degraded array can lead to complete system failure. Knowing your RAID type and setup is essential when seeking professional data recovery services.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/raid-server-room-recovery.webp" alt="RAID server room data recovery" class="section-img" />
+            <img src="/raid-server-room-recovery.webp" alt="RAID server room data recovery" class="section-img" width="1920" height="1080" loading="lazy" />
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/raid-recovery-engineers.webp" alt="RAID recovery engineers cloning drives" class="section-img" />
+            <img src="/raid-recovery-engineers.webp" alt="RAID recovery engineers cloning drives" class="section-img" width="1024" height="700" loading="lazy" />
           </div>
           <div>
             <h2 class="s-heading">Why We Always Clone Drives First</h2>
@@ -288,7 +288,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Even powerful software tools can't undo a corrupted rebuild. That's why we always image all disks before doing anything else — preserving every byte before rebuilding from clones.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/raid-array-recovery.webp" alt="RAID array data recovery process" class="section-img" />
+            <img src="/raid-array-recovery.webp" alt="RAID array data recovery process" class="section-img" width="992" height="661" loading="lazy" />
           </div>
         </div>
       </div>

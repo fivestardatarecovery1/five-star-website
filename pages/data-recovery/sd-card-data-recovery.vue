@@ -251,7 +251,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">However, if the SD card is crackedu2014even slightlyu2014<strong>recovery is impossible</strong>, as the memory chip itself is typically damaged beyond repair. Once the chip is fractured, there is no method to retrieve the data.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/sd-card-physical-damage-recovery.webp" alt="Physically broken SD card — data recovery assessment" class="section-img" />
+            <img src="/sd-card-physical-damage-recovery.webp" alt="Physically broken SD card — data recovery assessment" class="section-img" width="1024" height="576" loading="lazy" />
           </div>
         </div>
       </div>

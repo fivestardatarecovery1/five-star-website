@@ -336,7 +336,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="reasons-body">Our team can recover data quickly and professionally—even from completely dead devices.</p>
         </div>
         <div class="reasons-image">
-          <img src="/common-reasons-data-recovery.jpg" alt="Data recovery technician working on hard drive with blue gloves" class="reasons-img" />
+          <img src="/common-reasons-data-recovery.jpg" alt="Data recovery technician working on hard drive with blue gloves" class="reasons-img" width="800" height="534" loading="lazy" />
         </div>
       </div>
     </section>
@@ -421,7 +421,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
         </div>
         <div class="asym-major">
-          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Data recovery lab Glendale CA" class="rounded-img" />
+          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Data recovery lab Glendale CA" class="rounded-img" width="2560" height="1152" loading="lazy" />
           <div class="img-stat-badge">
             <span class="stat-num">21,000+</span>
             <span class="stat-label">Successful Recoveries</span>

@@ -243,7 +243,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="s-body">Whether you lost personal data from a failed backup or deleted work files by mistake, we can help. We also recover data from systems affected by failed software updates, virus damage, or even factory resets. Whether you need a single presentation back or your entire photo library, we're ready to help.</p>
         </div>
         <div class="file-types-col">
-          <img src="/laptop-file-types.webp" alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img-large" />
+          <img src="/laptop-file-types.webp" alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img-large" width="1200" height="630" loading="lazy" />
         </div>
       </div>
     </section>

@@ -143,7 +143,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </ul>
           </div>
           <div class="section-img-wrap">
-            <img src="/toshiba-canvio-drive-recovery.webp" alt="Toshiba Canvio external hard drive data recovery" class="section-img" />
+            <img src="/toshiba-canvio-drive-recovery.webp" alt="Toshiba Canvio external hard drive data recovery" class="section-img" width="800" height="400" loading="lazy" />
           </div>
         </div>
       </div>

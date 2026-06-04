@@ -353,7 +353,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </ul>
           </div>
           <div class="section-img-wrap">
-            <img src="/video-file-repair-service.webp" alt="Video file repair service — corrupted footage recovery" class="section-img" />
+            <img src="/video-file-repair-service.webp" alt="Video file repair service — corrupted footage recovery" class="section-img" width="1024" height="582" loading="lazy" />
           </div>
         </div>
       </div>

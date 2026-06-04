@@ -172,7 +172,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">No matter if you use a portable USB-C drive or a multi-disk Thunderbolt RAID array, our lab can help. We have the tools and knowledge to recover data from a Lacie device in any setup or condition.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/lacie-rugged-drive-recovery.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" />
+            <img src="/lacie-rugged-drive-recovery.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" width="1200" height="628" loading="lazy" />
           </div>
         </div>
       </div>
@@ -297,7 +297,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/lacie-creative-professional-recovery.webp" alt="Creative professional using LaCie drive on set" class="section-img" />
+            <img src="/lacie-creative-professional-recovery.webp" alt="Creative professional using LaCie drive on set" class="section-img" width="1200" height="578" loading="lazy" />
           </div>
           <div>
             <h2 class="s-heading">How Lacie Drives Differ from Other Storage Devices</h2>
