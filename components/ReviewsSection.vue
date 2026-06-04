@@ -47,7 +47,7 @@ function next() { if (index.value + perPage < total.value) index.value += perPag
             <p class="rsc-text" v-html="'&ldquo;' + r.text + '&rdquo;'"></p>
             <div class="rsc-footer">
               <div class="rsc-avatar">
-          <NuxtImg v-if="r.photo" :src="r.photo" :alt="r.name" class="rsc-avatar-img" width="48" height="48" loading="lazy" format="webp" />
+          <img v-if="r.photo" :src="r.photo" :alt="r.name" class="rsc-avatar-img" width="48" height="48" loading="lazy" />
           <span v-else>{{ r.name.charAt(0) }}</span>
         </div>
               <div class="rsc-meta">

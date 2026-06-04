@@ -88,7 +88,7 @@ const filteredPosts = computed(() =>
         <div class="posts-grid">
           <NuxtLink v-for="post in filteredPosts" :key="post.title" :to="post.href" class="post-card">
             <div v-if="post.image" class="post-img-wrap">
-              <NuxtImg :src="post.image" :alt="post.title" class="post-img" format="webp" />
+              <img :src="post.image" :alt="post.title" class="post-img" />
             </div>
             <div v-else class="post-icon">{{ post.icon }}</div>
             <div class="post-meta">

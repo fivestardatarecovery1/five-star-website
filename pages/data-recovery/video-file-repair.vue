@@ -353,7 +353,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             </ul>
           </div>
           <div class="section-img-wrap">
-            <NuxtImg src="/video-file-repair-service.webp" alt="Video file repair service — corrupted footage recovery" class="section-img" width="1024" height="582" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/video-file-repair-service.webp" alt="Video file repair service — corrupted footage recovery" class="section-img" width="1024" height="582" loading="lazy" />
           </div>
         </div>
       </div>

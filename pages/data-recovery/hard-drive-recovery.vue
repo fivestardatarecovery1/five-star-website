@@ -151,7 +151,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="s-body"><em>Expert service with real results always keeps you informed.</em></p>
         </div>
         <div>
-          <NuxtImg src="/hard-drive-internal-platters.jpg" alt="Open hard drive showing internal platters and read/write heads" class="rounded-img" width="1200" height="798" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+          <img src="/hard-drive-internal-platters.jpg" alt="Open hard drive showing internal platters and read/write heads" class="rounded-img" width="1200" height="798" loading="lazy" />
         </div>
       </div>
     </section>

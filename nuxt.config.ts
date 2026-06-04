@@ -96,22 +96,7 @@ export default defineNuxtConfig({
     url: 'https://www.fivestardatarecovery.com'
   },
 
-  modules: ['@nuxt/content', '@nuxt/image'],
-
-  image: {
-    // IPX runs server-side on Vercel — automatic WebP conversion + resizing
-    provider: 'ipx',
-    quality: 82,
-    format: ['webp'],
-    screens: {
-      xs: 375,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      '2xl': 1536,
-    },
-  },
+  modules: ['@nuxt/content'],
   content: {
     highlight: {
       theme: 'github-dark'

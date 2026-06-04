@@ -178,7 +178,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">If any of these issues sound familiar, don&#39;t worry\u2014you&#39;re not alone. We help customers every day recover deleted files and lost data from corrupted USB drives of all brands and capacities.</p>
           </div>
           <div class="section-img-wrap">
-            <NuxtImg src="/usb-flash-drive-recovery.webp" alt="USB flash drive data recovery service" class="section-img" width="1024" height="683" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/usb-flash-drive-recovery.webp" alt="USB flash drive data recovery service" class="section-img" width="1024" height="683" loading="lazy" />
           </div>
         </div>
       </div>

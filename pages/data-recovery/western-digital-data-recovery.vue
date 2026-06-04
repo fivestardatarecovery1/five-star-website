@@ -208,7 +208,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Even routine use can lead to data loss over time. That's why it's critical to address early signs of failure immediately.</p>
           </div>
           <div class="section-img-wrap">
-            <NuxtImg src="/western-digital-hard-drive-recovery.webp" alt="Western Digital hard drive data recovery" class="section-img" width="1200" height="800" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/western-digital-hard-drive-recovery.webp" alt="Western Digital hard drive data recovery" class="section-img" width="1200" height="800" loading="lazy" />
           </div>
         </div>
       </div>
@@ -260,7 +260,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <NuxtImg src="/western-digital-recovery-lab.webp" alt="Western Digital data recovery lab" class="section-img" width="1280" height="960" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/western-digital-recovery-lab.webp" alt="Western Digital data recovery lab" class="section-img" width="1280" height="960" loading="lazy" />
           </div>
           <div>
             <h2 class="s-heading">Types of WD Drives We Recover</h2>

@@ -136,7 +136,7 @@ const socialPosts = [
       <div class="sp-strip">
         <div class="sp-track-infinite">
           <div v-for="post in [...socialPosts, ...socialPosts, ...socialPosts]" :key="post.handle + post.img" class="sp-card">
-            <NuxtImg :src="post.img" :alt="post.handle + ' review of Five Star Data Recovery'" class="sp-img" loading="lazy" format="webp" />
+            <img :src="post.img" :alt="post.handle + ' review of Five Star Data Recovery'" class="sp-img" loading="lazy" />
             <div class="sp-card-footer">
               <span class="sp-handle">@{{ post.handle }}</span>
             </div>

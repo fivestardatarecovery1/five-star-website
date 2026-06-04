@@ -170,7 +170,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p v-for="t in whoWeAre" :key="t" class="s-body">{{ t }}</p>
         </div>
         <div style="position:relative;">
-          <NuxtImg src="/five-star-data-recovery-lab-technician-glendale-ca.webp" alt="Five Star Data Recovery team" style="width:100%;border-radius:14px;object-fit:cover;max-height:440px;display:block;" width="2560" height="1441" loading="lazy" format="webp" />
+          <img src="/five-star-data-recovery-lab-technician-glendale-ca.webp" alt="Five Star Data Recovery team" style="width:100%;border-radius:14px;object-fit:cover;max-height:440px;display:block;" width="2560" height="1441" loading="lazy" />
           <div style="position:absolute;bottom:-20px;left:24px;background:#C9A84C;color:#fff;border-radius:10px;padding:14px 22px;box-shadow:0 8px 24px rgba(201,168,76,0.4);">
             <span style="display:block;font-size:1.6rem;font-weight:900;line-height:1;">21,000+</span>
             <span style="display:block;font-size:0.75rem;font-weight:600;opacity:0.85;margin-top:3px;">Successful Recoveries</span>
@@ -194,7 +194,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
         <div style="position:relative;">
-          <NuxtImg src="/five-star-lab-engineers.jpg" alt="Five Star Data Recovery lab engineers at work" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" width="800" height="486" loading="lazy" format="webp" />
+          <img src="/five-star-lab-engineers.jpg" alt="Five Star Data Recovery lab engineers at work" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" width="800" height="486" loading="lazy" />
         </div>
         <div>
           <div class="section-label">Innovation</div>

@@ -164,7 +164,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">In these cases, the drive is likely not receiving electricity. This could be from a failed circuit board, damaged cable, or even a shorted power supply.</p>
           </div>
           <div class="section-img-wrap">
-            <NuxtImg src="/drive-no-power-pcb.webp" alt="Hard drive inspection — signs of no power failure" class="section-img" width="1000" height="667" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/drive-no-power-pcb.webp" alt="Hard drive inspection — signs of no power failure" class="section-img" width="1000" height="667" loading="lazy" />
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <NuxtImg src="/drive-no-power-diy.webp" alt="Cleanroom technician — PCB and hard drive repair" class="section-img" width="1280" height="960" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/drive-no-power-diy.webp" alt="Cleanroom technician — PCB and hard drive repair" class="section-img" width="1280" height="960" loading="lazy" />
           </div>
           <div>
             <h2 class="s-heading">Common Reasons Why a Hard Drive Doesn't Power On</h2>
@@ -236,7 +236,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">If your hard drive has no power, we will first determine if the issue is external (cable or enclosure) or internal (board or heads). If needed, we can replace damaged parts using donor drives matched to your specific model.</p>
           </div>
           <div class="section-img-wrap">
-            <NuxtImg src="/drive-no-power-recovery.webp" alt="Hard drive data recovery process — certified engineers" class="section-img" width="1500" height="1001" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/drive-no-power-recovery.webp" alt="Hard drive data recovery process — certified engineers" class="section-img" width="1500" height="1001" loading="lazy" />
           </div>
         </div>
       </div>
@@ -292,7 +292,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <NuxtImg src="/drive-no-power-why.webp" alt="Five Star Data Recovery certified cleanroom lab" class="section-img" width="1280" height="960" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/drive-no-power-why.webp" alt="Five Star Data Recovery certified cleanroom lab" class="section-img" width="1280" height="960" loading="lazy" />
           </div>
           <div>
             <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>

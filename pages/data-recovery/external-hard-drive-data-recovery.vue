@@ -290,7 +290,7 @@ useSeoMeta({
           <p class="s-body">Even if someone reformats, corrupts, or sees your external hard drive as RAW, we can still recover your data. Each case is unique, but we have proven our results to be reliable. We help clients recover <NuxtLink to="/data-recovery/deleted-files" class="inline-link">deleted</NuxtLink> files from external drives, even if they lost the data months ago.</p>
         </div>
         <div class="two-col-image">
-          <NuxtImg src="/external-hard-drive-on-desk.jpg" alt="External hard drive data recovery" class="rounded-img" width="1280" height="382" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+          <img src="/external-hard-drive-on-desk.jpg" alt="External hard drive data recovery" class="rounded-img" width="1280" height="382" loading="lazy" />
         </div>
       </div>
     </section>

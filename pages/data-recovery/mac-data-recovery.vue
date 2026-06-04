@@ -193,7 +193,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">No matter what kind of Apple device you&#39;re using, if there&#39;s data on it—we can help recover it.</p>
           </div>
           <div class="section-img-wrap">
-            <NuxtImg src="/mac-imac-macbook-recovery.webp" alt="iMac and MacBook data recovery — Apple Mac devices" class="section-img" width="1200" height="746" loading="lazy" format="webp" sizes="xs:100vw sm:100vw md:100vw lg:50vw xl:50vw" />
+            <img src="/mac-imac-macbook-recovery.webp" alt="iMac and MacBook data recovery — Apple Mac devices" class="section-img" width="1200" height="746" loading="lazy" />
           </div>
         </div>
       </div>
