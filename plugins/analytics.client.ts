@@ -1,109 +1,110 @@
 /**
- * analytics.client.ts
+ * analytics.client.ts — Five Star custom analytics tracker
  *
- * Five Star Data Recovery — Pageview Analytics Plugin
+ * Tracks every page view with full session path, device info, and UTM params.
+ * Sends events to Mission Control backend via POST /api/fs-analytics/event
  *
- * Fires a pageview event to /api/track-analytics on every route change.
- * Detects device, browser, UTM params, referrer, session_id, and visitor_id.
- *
- * Data stored in:
- *   sessionStorage → session_id (resets per browser session)
- *   localStorage   → visitor_id (persists across sessions)
+ * visitor_id  → persists in localStorage across sessions (returning visitors)
+ * session_id  → persists in sessionStorage (one per browser tab/session)
+ * sequence    → page number within the session (1, 2, 3...)
  */
 
-import { defineNuxtPlugin, useRouter } from '#app'
+const MC_ENDPOINT = (import.meta.env.VITE_MC_ANALYTICS_URL as string) || ''
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function getOrCreate(storage: Storage, key: string): string {
+function getOrCreate(storage: Storage, key: string, factory: () => string): string {
   let val = storage.getItem(key)
-  if (!val) {
-    val = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`
-    storage.setItem(key, val)
-  }
+  if (!val) { val = factory(); storage.setItem(key, val) }
   return val
 }
 
-function detectDevice(ua: string): 'mobile' | 'tablet' | 'desktop' {
-  if (/tablet|ipad|playbook|silk/i.test(ua)) return 'tablet'
-  if (/mobile|android|iphone|ipod|blackberry|opera mini|iemobile/i.test(ua)) return 'mobile'
+function uuid(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
+  })
+}
+
+function getDeviceType(): string {
+  const ua = navigator.userAgent
+  if (/iPad/i.test(ua)) return 'tablet'
+  if (/Mobi|Android|iPhone|iPod/i.test(ua)) return 'mobile'
   return 'desktop'
 }
 
-function detectBrowser(ua: string): string {
-  if (/edg\//i.test(ua)) return 'Edge'
-  if (/opr\//i.test(ua) || /opera/i.test(ua)) return 'Opera'
-  if (/chrome\/\d/i.test(ua) && !/chromium/i.test(ua)) return 'Chrome'
-  if (/safari\//i.test(ua) && !/chrome/i.test(ua)) return 'Safari'
-  if (/firefox\//i.test(ua)) return 'Firefox'
-  if (/msie|trident/i.test(ua)) return 'IE'
+function getBrowser(): string {
+  const ua = navigator.userAgent
+  if (/Edg\//i.test(ua)) return 'Edge'
+  if (/Chrome\//i.test(ua) && !/Chromium/i.test(ua)) return 'Chrome'
+  if (/Firefox\//i.test(ua)) return 'Firefox'
+  if (/Safari\//i.test(ua) && !/Chrome/i.test(ua)) return 'Safari'
   return 'Other'
 }
 
-function getUtm(key: string): string | null {
-  return new URLSearchParams(window.location.search).get(key)
+function getOS(): string {
+  const ua = navigator.userAgent
+  if (/Windows/i.test(ua)) return 'Windows'
+  if (/iPhone|iPad|iPod/i.test(ua)) return 'iOS'
+  if (/Mac OS X/i.test(ua)) return 'macOS'
+  if (/Android/i.test(ua)) return 'Android'
+  if (/Linux/i.test(ua)) return 'Linux'
+  return 'Other'
 }
 
-// ── Send pageview ─────────────────────────────────────────────────────────────
-
-async function sendPageview(page: string, referrer: string) {
-  let session_id = ''
-  let visitor_id = ''
-
+async function sendEvent(payload: Record<string, unknown>) {
+  if (!MC_ENDPOINT) return
   try {
-    session_id = getOrCreate(sessionStorage, 'fs_analytics_sid')
-    visitor_id = getOrCreate(localStorage, 'fs_analytics_vid')
-  } catch {
-    // Storage blocked (private mode) — use one-off IDs
-    session_id = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`
-    visitor_id = session_id
-  }
-
-  const ua = navigator.userAgent
-
-  const payload = {
-    event_type: 'pageview',
-    page,
-    referrer: referrer || null,
-    utm_source: getUtm('utm_source'),
-    utm_medium: getUtm('utm_medium'),
-    utm_campaign: getUtm('utm_campaign'),
-    device: detectDevice(ua),
-    browser: detectBrowser(ua),
-    session_id,
-    visitor_id,
-  }
-
-  try {
-    await fetch('/api/track-analytics', {
+    await fetch(`${MC_ENDPOINT}/api/fs-analytics/event`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      keepalive: true, // sends even if page navigates away immediately
     })
   } catch {
-    // Silently fail — analytics must never break the site
+    // Never break the site for analytics
   }
 }
 
-// ── Plugin ────────────────────────────────────────────────────────────────────
+export default defineNuxtPlugin((nuxtApp) => {
+  const visitorId = getOrCreate(localStorage, 'fs_vid', uuid)
+  const sessionId = getOrCreate(sessionStorage, 'fs_sid', uuid)
 
-export default defineNuxtPlugin(() => {
-  const router = useRouter()
-
-  // Track the previous URL to use as referrer on SPA navigations
-  let previousUrl = ''
-
-  // Fire on initial load
-  if (typeof window !== 'undefined') {
-    sendPageview(window.location.pathname, document.referrer)
-    previousUrl = window.location.href
+  // Track page sequence within session
+  const getNextSeq = (): number => {
+    const n = parseInt(sessionStorage.getItem('fs_seq') || '0') + 1
+    sessionStorage.setItem('fs_seq', String(n))
+    return n
   }
 
-  // Fire on every SPA route change
-  router.afterEach((to) => {
-    const page = to.path
-    const referrer = previousUrl
-    previousUrl = window.location.href
-    sendPageview(page, referrer)
-  })
+  // Capture the original landing referrer once per session
+  const getLandingReferrer = (): string => {
+    const key = 'fs_ref'
+    if (!sessionStorage.getItem(key)) {
+      sessionStorage.setItem(key, document.referrer || '')
+    }
+    return sessionStorage.getItem(key) || ''
+  }
+
+  const sendPageView = () => {
+    const sequence = getNextSeq()
+    const params = new URLSearchParams(window.location.search)
+
+    sendEvent({
+      visitor_id: visitorId,
+      session_id: sessionId,
+      page: window.location.pathname + window.location.search,
+      page_title: document.title,
+      referrer: getLandingReferrer(),
+      sequence,
+      device_type: getDeviceType(),
+      browser: getBrowser(),
+      os: getOS(),
+      screen_width: window.screen.width,
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+    })
+  }
+
+  // Fire on every page navigation (initial load + SPA route changes)
+  nuxtApp.hook('page:finish', sendPageView)
 })
