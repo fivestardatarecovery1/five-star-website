@@ -604,7 +604,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Contact Info -->
       <div v-if="currentStep === 'contact'" class="iqt-contact-step">
-        <h3 class="iqt-q">Let's get you an instant quote</h3>
+        <p class="iqt-q">Let's get you an instant quote</p>
         <p class="iqt-hint" style="margin-bottom:16px;">We'll also use this to follow up with your results.</p>
         <div class="iqt-contact-fields">
           <div class="iqt-field">
@@ -643,7 +643,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Device -->
       <div v-if="currentStep === 'device'">
-        <h3 class="iqt-q">What type of device needs recovery?</h3>
+        <p class="iqt-q">What type of device needs recovery?</p>
         <div class="iqt-grid g3">
           <button
             v-for="d in deviceOptions" :key="d.id"
@@ -662,7 +662,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Laptop or Desktop -->
       <div v-else-if="currentStep === 'laptop-type'">
-        <h3 class="iqt-q">Is it a laptop or desktop computer?</h3>
+        <p class="iqt-q">Is it a laptop or desktop computer?</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-cover-card" @click="pickLaptopType('laptop')">
             <span class="iqt-icon">💻</span>
@@ -686,7 +686,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: iMac Drive Type -->
       <div v-else-if="currentStep === 'imac-drive-type'">
-        <h3 class="iqt-q">Does your iMac have a Fusion Drive or a single drive?</h3>
+        <p class="iqt-q">Does your iMac have a Fusion Drive or a single drive?</p>
         <p class="iqt-hint">A Fusion Drive combines a traditional hard drive (HDD) and a solid-state drive (SSD) into one volume. Most iMacs from 2012–2019 offered this option. If unsure, select Single Drive.</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickImacDriveType('single')">
@@ -715,7 +715,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Fusion Drive HDD Size -->
       <div v-else-if="currentStep === 'fusion-size'">
-        <h3 class="iqt-q">What is the size of the hard drive in your Fusion Drive?</h3>
+        <p class="iqt-q">What is the size of the hard drive in your Fusion Drive?</p>
         <p class="iqt-hint">This refers to the HDD (spinning drive) portion of the Fusion Drive, not the SSD. Common sizes are 1TB–3TB for most iMacs.</p>
         <div class="iqt-grid g3">
           <button v-for="size in ['1tb','2tb','3tb','4tb','5tb']" :key="size"
@@ -732,7 +732,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Desktop OS -->
       <div v-else-if="currentStep === 'desktop-os'">
-        <h3 class="iqt-q">Is it a Windows PC or a Mac desktop?</h3>
+        <p class="iqt-q">Is it a Windows PC or a Mac desktop?</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-cover-card" @click="pickDesktopOS('windows')">
             <span class="iqt-icon">🪟</span>
@@ -754,7 +754,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Laptop OS -->
       <div v-else-if="currentStep === 'laptop-os'">
-        <h3 class="iqt-q">What operating system does your laptop use?</h3>
+        <p class="iqt-q">What operating system does your laptop use?</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-cover-card" @click="pickLaptopOS('apple')">
             <span class="iqt-icon">🍎</span>
@@ -776,7 +776,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Apple Year -->
       <div v-else-if="currentStep === 'apple-year'">
-        <h3 class="iqt-q">What year is your MacBook from?</h3>
+        <p class="iqt-q">What year is your MacBook from?</p>
         <p class="iqt-hint">2015 and earlier MacBooks had a removable hard drive. 2016 and newer models use soldered storage directly on the logic board.</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-cover-card" @click="pickAppleYear('old')">
@@ -799,7 +799,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Board-Level Repair -->
       <div v-else-if="currentStep === 'board-repair'">
-        <h3 class="iqt-q">Has this MacBook been worked on by another repair shop?</h3>
+        <p class="iqt-q">Has this MacBook been worked on by another repair shop?</p>
         <p class="iqt-hint">Specifically, did another shop attempt a board-level repair? This means component-level soldering, chip replacement, or logic board repair — not just a software fix or screen replacement.</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-cover-card" @click="pickBoardRepair(false)">
@@ -824,7 +824,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: External SSD Brand -->
       <div v-else-if="currentStep === 'ssd-ext-brand'">
-        <h3 class="iqt-q">What brand is the external SSD?</h3>
+        <p class="iqt-q">What brand is the external SSD?</p>
         <div class="iqt-grid g1">
           <button class="iqt-card iqt-issue-card" @click="pickSsdExtBrand('wd')">
             <div class="iqt-drive-imgs" style="height:48px;">
@@ -855,7 +855,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: SSD Location -->
       <div v-else-if="currentStep === 'ssd-location'">
-        <h3 class="iqt-q">Is the SSD internal or external?</h3>
+        <p class="iqt-q">Is the SSD internal or external?</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdLocation('internal')">
             <div class="iqt-drive-imgs">
@@ -881,7 +881,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: SSD Type -->
       <div v-else-if="currentStep === 'ssd-type'">
-        <h3 class="iqt-q">What type of internal SSD is it?</h3>
+        <p class="iqt-q">What type of internal SSD is it?</p>
         <div class="iqt-grid g2">
           <button class="iqt-card iqt-drive-type-card" @click="pickSsdType('ssd')">
             <div class="iqt-drive-imgs">
@@ -907,7 +907,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Brand -->
       <div v-else-if="currentStep === 'brand'">
-        <h3 class="iqt-q">What brand is the external drive?</h3>
+        <p class="iqt-q">What brand is the external drive?</p>
         <div class="iqt-grid g1">
           <button
             v-for="b in brandOptions" :key="b.id"
@@ -927,7 +927,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Capacity -->
       <div v-else-if="currentStep === 'capacity'">
-        <h3 class="iqt-q">What is the storage capacity?</h3>
+        <p class="iqt-q">What is the storage capacity?</p>
         <!-- SSD capacity options (3 tiers) -->
         <div v-if="['ssd-25','ssd-nvme','ssd-ext-wd','ssd-ext-other'].includes(sel.device)" class="iqt-grid g3">
           <button
@@ -957,7 +957,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Issue -->
       <div v-else-if="currentStep === 'issue'">
-        <h3 class="iqt-q">What is happening with your drive?</h3>
+        <p class="iqt-q">What is happening with your drive?</p>
         <div class="iqt-grid g1">
           <button
             v-for="i in (sel.device === 'ssd-25' || sel.device === 'ssd-nvme' ? ssdIssueOptions : issueOptions)" :key="i.id"
@@ -978,7 +978,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Encryption -->
       <div v-else-if="currentStep === 'encrypt'">
-        <h3 class="iqt-q">Is your drive encrypted with a password?</h3>
+        <p class="iqt-q">Is your drive encrypted with a password?</p>
         <p class="iqt-hint">For example: BitLocker (Windows), FileVault (Mac), or any third-party encryption app where you must enter a password to access your files.</p>
         <div class="iqt-grid g2">
           <button
@@ -1005,7 +1005,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Cover Opened -->
       <div v-else-if="currentStep === 'cover'">
-        <h3 class="iqt-q">Has the hard drive's metal cover been opened?</h3>
+        <p class="iqt-q">Has the hard drive's metal cover been opened?</p>
         <p class="iqt-hint">This refers to the actual metal enclosure where the platters are stored — <em>not</em> the plastic casing of an external drive.</p>
         <div class="iqt-grid g2">
           <button
@@ -1033,7 +1033,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: All-in-One -->
       <div v-else-if="currentStep === 'aio'">
-        <h3 class="iqt-q">Is this an All-in-One computer?</h3>
+        <p class="iqt-q">Is this an All-in-One computer?</p>
         <p class="iqt-hint">Examples: iMac, Microsoft Surface Studio, HP Envy AIO, or any machine where the screen and computer are one unit and must be fully disassembled to access the drive.</p>
         <div class="iqt-grid g2">
           <button
@@ -1060,7 +1060,7 @@ const progressIndex = computed(() => {
 
       <!-- STEP: Urgency -->
       <div v-else-if="currentStep === 'urgency'">
-        <h3 class="iqt-q">How quickly do you need your data back?</h3>
+        <p class="iqt-q">How quickly do you need your data back?</p>
         <div class="iqt-grid g1">
           <button
             v-for="u in urgencyOptions" :key="u.id"
@@ -1161,7 +1161,7 @@ const progressIndex = computed(() => {
       <!-- STEP: Call for Quote -->
       <div v-else-if="currentStep === 'call'" class="iqt-call">
         <div class="iqt-call-icon">📞</div>
-        <h3 class="iqt-q">Call Us for a Custom Quote</h3>
+        <p class="iqt-q">Call Us for a Custom Quote</p>
         <p class="iqt-call-body">
           Pricing for <strong>{{ deviceOptions.find(d => d.id === sel.device)?.label }}</strong> cases
           is customized based on your specific device and situation.

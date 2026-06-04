@@ -35,11 +35,11 @@ function dismiss() {
           <NuxtLink to="/appointments" class="ann-link">Book Now →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
-        <!-- Set 2 (duplicate for seamless loop) -->
+        <!-- Set 2 (duplicate for seamless loop — aria-hidden + tabindex=-1 to remove from a11y tree) -->
         <span class="ann-item" aria-hidden="true">
           <span class="ann-dot"></span>
           <strong>Starting June 1, 2026:</strong>&nbsp; An Express Drop-Off Form is required for all new cases — and all drop-offs &amp; pickups require a scheduled appointment.&nbsp;&nbsp;
-          <NuxtLink to="/appointments" class="ann-link">Schedule an Appointment →</NuxtLink>
+          <NuxtLink to="/appointments" class="ann-link" tabindex="-1">Schedule an Appointment →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
         <span class="ann-item" aria-hidden="true">
@@ -50,7 +50,7 @@ function dismiss() {
         <span class="ann-item" aria-hidden="true">
           <span class="ann-dot"></span>
           <strong>Same Day Appointments Available</strong>&nbsp;—&nbsp;
-          <NuxtLink to="/appointments" class="ann-link">Book Now →</NuxtLink>
+          <NuxtLink to="/appointments" class="ann-link" tabindex="-1">Book Now →</NuxtLink>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
       </div>
@@ -68,7 +68,7 @@ function dismiss() {
   display: flex;
   align-items: center;
   overflow: hidden;
-  height: 36px;
+  min-height: 44px;
 }
 
 .ann-ticker-wrap {
@@ -119,15 +119,22 @@ function dismiss() {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
-  color: rgba(10,12,20,0.6);
-  padding: 0 12px;
-  height: 100%;
-  transition: color 0.15s;
+  /* Full opacity #0A0C14 on #F5C842 = 14:1 contrast ratio — passes WCAG AAA */
+  color: #0A0C14;
+  padding: 0 14px;
+  /* Min 44px touch target (WCAG 2.5.5) */
+  min-width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s, opacity 0.15s;
   line-height: 1;
+  opacity: 0.7;
 }
-.ann-close:hover { color: #0A0C14; }
+.ann-close:hover { opacity: 1; }
 
 @keyframes ticker-scroll {
   0%   { transform: translateX(0); }
