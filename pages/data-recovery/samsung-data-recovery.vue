@@ -280,7 +280,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">We Serve Clients Nationwide</h2>
-        <p class="s-body">Although we are based in Los Angeles, we work with customers all across the United States. If you're not local, we offer free round-trip shipping for all approved Samsung data recovery cases. Simply start a case on our website, and we'll email you a prepaid label. Once your device arrives, our engineers begin the recovery process immediately.</p>
+        <p class="s-body">Although we are based in Los Angeles, we work with customers all across the United States. If you're not local, we offer free round-trip shipping for all approved Samsung data recovery cases via our <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="inline-link">mail-in service</NuxtLink>. Simply start a case on our website, and we'll email you a prepaid label. Once your device arrives, our engineers begin the recovery process immediately.</p>
       </div>
     </section>
 
@@ -294,13 +294,20 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <ul class="content-list">
           <li>We specialize in Samsung phone data recovery</li>
           <li>Cleanroom-certified lab for hardware-level recovery</li>
-          <li>Flat-rate pricing with no hidden fees</li>
+          <li>Flat-rate <NuxtLink to="/data-recovery-service-pricing" class="inline-link">pricing</NuxtLink> with no hidden fees</li>
           <li>"No data, no charge" policy (except expedited fees)</li>
           <li>Fast turnaround and expert support</li>
         </ul>
         <p class="s-body">We've helped hundreds of clients with data recovery Samsung phone cases involving water damage, dead logic boards, and phones that wouldn't power on — all using safe and proven hardware-level methods.</p>
       </div>
     </section>
+
+    <RelatedLinks :links="[
+      { text: 'iPhone Data Recovery', href: '/data-recovery/iphone-data-recovery' },
+      { text: 'Mac Data Recovery', href: '/data-recovery/mac-data-recovery' },
+      { text: 'SSD Data Recovery', href: '/data-recovery/ssd-data-recovery' },
+      { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+    ]" />
 
     <!-- QUOTE FORM -->
     <QuoteFormSection

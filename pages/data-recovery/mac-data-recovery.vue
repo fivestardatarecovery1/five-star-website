@@ -267,7 +267,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Recovering Data from Mac External Hard Drives</h2>
-        <p class="s-body">Many Mac users rely on external hard drives for extra storage, Time Machine backups, and transferring large media files. External drives can fail, too. This can happen if someone drops them, disconnects them the wrong way, or exposes them to power surges.</p>
+        <p class="s-body">Many Mac users rely on <NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">external hard drives</NuxtLink> for extra storage, Time Machine backups, and transferring large media files. External drives can fail, too. This can happen if someone drops them, disconnects them the wrong way, or exposes them to power surges.</p>
         <p class="s-body">We recover data from all kinds of external storage devices for macOS. This includes USB, Thunderbolt, and FireWire drives. We work with file systems like HFS+, APFS, and exFAT. Common issues we see include:</p>
         <ul class="content-list">
           <li>Drives not mounting or recognized on Mac</li>

@@ -154,8 +154,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Common Causes of Hitachi Drive Failure</h2>
         <p class="s-body">There are many reasons your Hitachi hard drive might fail. Understanding what went wrong can help us recover more data and prevent future issues. Some of the most common causes include:</p>
         <ul class="content-list">
-          <li>Physical damage from drops, impacts, or overheating</li>
-          <li>Bad sectors that prevent the drive from reading or writing data</li>
+          <li><NuxtLink to="/data-recovery/dropped-hard-drive" class="inline-link">Physical damage from drops</NuxtLink>, impacts, or overheating</li>
+          <li><NuxtLink to="/data-recovery/bad-sectors" class="inline-link">Bad sectors</NuxtLink> that prevent the drive from reading or writing data</li>
           <li>Firmware corruption or manufacturing defects</li>
           <li>Accidental deletion or formatting of partitions</li>
           <li>Power surges and electrical issues</li>
@@ -170,8 +170,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Signs of Hitachi Hard Drive Failure</h2>
         <p class="s-body">If you notice any of the following symptoms, it's best to stop using the drive immediately and contact a recovery expert:</p>
         <ul class="content-list">
-          <li>Clicking, beeping, or grinding noises</li>
-          <li>The drive is not detected by your system</li>
+          <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Clicking</NuxtLink>, beeping, or grinding noises</li>
+          <li>The drive is <NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link">not detected by your system</NuxtLink></li>
           <li>Extremely slow file transfers or system freezes</li>
           <li>Sudden appearance of missing files or folders</li>
           <li>Messages asking to format the drive</li>
@@ -188,9 +188,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">Our team provides data recovery services for all types of Hitachi drives, including:</p>
         <ul class="content-list">
           <li>Desktop and laptop internal HDDs</li>
-          <li>Portable external hard drives</li>
+          <li>Portable <NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">external hard drives</NuxtLink></li>
           <li>Enterprise-level Hitachi drives used in servers and data centers</li>
-          <li>RAID arrays containing Hitachi components</li>
+          <li><NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID arrays</NuxtLink> containing Hitachi components</li>
           <li>USB-connected storage devices</li>
         </ul>
         <p class="s-body">No matter the drive type, we can help with Hitachi hard disk data recovery for a wide range of systems and storage capacities.</p>
@@ -248,7 +248,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>
         <p class="s-body">We know that losing important data can be stressful. That's why we've built a process that's fast, secure, and customer-friendly:</p>
         <ul class="content-list">
-          <li>Cleanroom environment for handling physically damaged drives</li>
+          <li><NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">Cleanroom environment</NuxtLink> for handling physically damaged drives</li>
           <li>Transparent pricing and no hidden fees</li>
           <li>"No Data, No Charge" policy for most recoveries</li>
           <li>High recovery rates for lost data from external hard drives</li>
@@ -304,6 +304,16 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">Although our lab is based in Los Angeles, we offer free round-trip shipping for customers across the United States. Simply open a case online, print your shipping label, and send in your device. Once your recovery is complete, we'll ship your recovered data back to you on a new external drive. Your Hitachi hard drive data is handled with care every step of the way, no matter where you're located.</p>
       </div>
     </section>
+
+    <RelatedLinks :links="[
+      { text: 'WD Data Recovery', href: '/data-recovery/western-digital-data-recovery' },
+      { text: 'Seagate Data Recovery', href: '/data-recovery/seagate-data-recovery' },
+      { text: 'Toshiba Data Recovery', href: '/data-recovery/toshiba-data-recovery' },
+      { text: 'Samsung Data Recovery', href: '/data-recovery/samsung-data-recovery' },
+      { text: 'LaCie Data Recovery', href: '/data-recovery/lacie-data-recovery' },
+      { text: 'Hard Drive Recovery', href: '/data-recovery/hard-drive-recovery' },
+      { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+    ]" />
 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />

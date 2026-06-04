@@ -235,7 +235,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">2</div>
             <div>
               <h3 class="step-title">Flat-Rate Quote</h3>
-              <p class="step-body">We provide upfront pricing before any recovery work begins.</p>
+              <p class="step-body">We provide upfront <NuxtLink to="/data-recovery-service-pricing" class="inline-link">pricing</NuxtLink> before any recovery work begins.</p>
             </div>
           </div>
           <div class="process-step">

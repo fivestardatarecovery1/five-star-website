@@ -200,7 +200,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Why you shouldn't try to fix a clicking hard drive yourself</h2>
         <p class="s-body">We understand—you want your data back fast, and DIY videos make it look simple. But opening a drive or running software on a damaged disk often causes more harm than good. Here's why you should avoid DIY recovery on a clicking hard disk drive:</p>
         <ul class="content-list">
-          <li>Opening a drive outside a cleanroom introduces dust and contamination.</li>
+          <li>Opening a drive outside a <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">cleanroom</NuxtLink> introduces dust and contamination.</li>
           <li>Trying to restart or format the drive can overwrite recoverable data.</li>
           <li>Recovery software doesn't fix mechanical issues—it can actually make them worse.</li>
           <li>Failed DIY attempts often increase the cost of professional recovery.</li>

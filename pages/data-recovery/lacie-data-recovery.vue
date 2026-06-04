@@ -169,7 +169,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <li>USB-C and Thunderbolt-connected models</li>
               <li>Formatted or encrypted drives</li>
             </ul>
-            <p class="s-body">No matter if you use a portable USB-C drive or a multi-disk Thunderbolt RAID array, our lab can help. We have the tools and knowledge to recover data from a Lacie device in any setup or condition.</p>
+            <p class="s-body">No matter if you use a portable USB-C drive or a multi-disk Thunderbolt <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID array</NuxtLink>, our lab can help. We have the tools and knowledge to recover data from a Lacie device in any setup or condition.</p>
           </div>
           <div class="section-img-wrap">
             <img src="/lacie-rugged-drive-recovery.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" width="1200" height="628" loading="lazy" />
@@ -190,11 +190,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="issue-card">
             <h3 class="issue-title">File System Corruption</h3>
-            <p class="s-body">Corruption in the file system can occur after improper disconnection, system crashes, or software bugs. A corrupted drive might appear blank, unmounted, or prompt you to format it when you connect your Lacie external hard drive.</p>
+            <p class="s-body">Corruption in the file system can occur after improper disconnection, system crashes, or software bugs. A corrupted drive might appear blank, unmounted, or prompt you to format it when you connect your Lacie <NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">external hard drive</NuxtLink>.</p>
           </div>
           <div class="issue-card">
             <h3 class="issue-title">Physical Damage</h3>
-            <p class="s-body">Although Lacie drives withstand impact like the Rugged series, they're not indestructible. Drops, water exposure, and electrical surges can cause mechanical failure or damage internal components.</p>
+            <p class="s-body">Although Lacie drives withstand impact like the Rugged series, they're not indestructible. <NuxtLink to="/data-recovery/dropped-hard-drive" class="inline-link">Drops</NuxtLink>, water exposure, and electrical surges can cause mechanical failure or damage internal components.</p>
           </div>
           <div class="issue-card">
             <h3 class="issue-title">Disk Utility Errors</h3>
@@ -202,7 +202,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="issue-card">
             <h3 class="issue-title">Connection Problems</h3>
-            <p class="s-body">Sometimes your computer might not recognize the drive. Faulty USB ports, bad cables, or issues with the bridge board inside the drive enclosure can cause this.</p>
+            <p class="s-body">Sometimes your computer might <NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link">not recognize the drive</NuxtLink>. Faulty USB ports, bad cables, or issues with the bridge board inside the drive enclosure can cause this.</p>
           </div>
           <div class="issue-card">
             <h3 class="issue-title">Bad Sectors and Drive Degradation</h3>
@@ -369,7 +369,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>
         <ul class="content-list">
           <li>Specializing in Lacie external hard drives and RAID systems</li>
-          <li>In-house cleanroom for physically damaged drives</li>
+          <li>In-house <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">cleanroom</NuxtLink> for physically damaged drives</li>
           <li>Industry-leading success rates</li>
           <li>Flat-rate pricing and free diagnostics</li>
           <li>"No data, no charge" guarantee (except expedited services)</li>
@@ -402,6 +402,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">If you're ever unsure about what to do next, don't risk it. Reach out to our team for guidance. We'll walk you through the next steps, offer a free diagnostic, and help you get your files back with clarity and confidence.</p>
       </div>
     </section>
+
+    <RelatedLinks :links="[
+      { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+      { text: 'RAID Data Recovery', href: '/data-recovery/raid-data-recovery' },
+      { text: 'Hard Drive Recovery', href: '/data-recovery/hard-drive-recovery' },
+      { text: 'Dropped Hard Drive Recovery', href: '/data-recovery/dropped-hard-drive' },
+      { text: 'Clean Room Data Recovery', href: '/data-recovery/clean-room-data-recovery' },
+    ]" />
 
     <!-- QUOTE FORM -->
     <QuoteFormSection

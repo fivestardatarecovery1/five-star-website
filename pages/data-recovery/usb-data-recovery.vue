@@ -301,7 +301,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Pricing for USB Data Recovery</h2>
-        <p class="s-body">Our USB Data Recovery fees are flat-rate with no hidden charges. The pricing depends on the type of failure:</p>
+        <p class="s-body">Our USB Data Recovery fees are flat-rate with no hidden charges. See our <NuxtLink to="/data-recovery-service-pricing" class="inline-link">pricing page</NuxtLink> for full details \u2014 fees depend on the type of failure:</p>
         <ul class="content-list">
           <li><strong>Logical USB Data Recovery:</strong> $300.00\u2013$500.00</li>
           <li><strong>Chip-Off USB Data Recovery:</strong> $950.00</li>
@@ -315,7 +315,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">How Long Does USB Data Recovery Take?</h2>
-        <p class="s-body">Most USB flash drive data recovery jobs take <strong>2\u20135 business days</strong>, depending on the failure type. We also offer <strong>Expedited and Expedited Plus</strong> services for customers who need their data urgently.</p>
+        <p class="s-body">Most USB flash drive data recovery jobs take <strong>2\u20135 business days</strong>, depending on the failure type. We also offer <strong><NuxtLink to="/expedited-service" class="inline-link">Expedited and Expedited Plus</NuxtLink></strong> services for customers who need their data urgently.</p>
       </div>
     </section>
 
@@ -323,7 +323,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Nationwide Service \u2013 Free Round Trip Shipping Available</h2>
-        <p class="s-body">Not local to Glendale, CA? No problem. We offer free round-trip shipping within the United States for all USB data recovery cases. Simply fill out our Mail-In Recovery Form, and we&#39;ll provide a prepaid shipping label to get your device safely to our lab.</p>
+        <p class="s-body">Not local to Glendale, CA? No problem. We offer free round-trip shipping within the United States for all USB data recovery cases. Simply fill out our <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="inline-link">Mail-In Recovery Form</NuxtLink>, and we'll provide a prepaid shipping label to get your device safely to our lab.</p>
       </div>
     </section>
 

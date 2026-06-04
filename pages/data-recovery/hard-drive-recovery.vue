@@ -323,6 +323,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
+    <RelatedLinks :links="[
+      { text: 'Dropped Hard Drive Recovery', href: '/data-recovery/dropped-hard-drive' },
+      { text: 'Clicking Hard Drive Recovery', href: '/hard-drive-clicking' },
+      { text: 'Hard Drive Not Showing Up', href: '/data-recovery/hard-drive-not-showing-up' },
+      { text: 'Bad Sectors Recovery', href: '/data-recovery/bad-sectors' },
+      { text: 'SSD Data Recovery', href: '/data-recovery/ssd-data-recovery' },
+      { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+    ]" />
+
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />
 

@@ -132,12 +132,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="two-col-layout">
           <div>
             <h2 class="s-heading">Why Toshiba Hard Drives Stop Working</h2>
-            <p class="s-body">Toshiba drives are durable, but they're not immune to problems. Some of the most common reasons a Toshiba external hard drive is not working include:</p>
+            <p class="s-body">Toshiba drives are durable, but they're not immune to problems. Some of the most common reasons a Toshiba <NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">external hard drive</NuxtLink> is not working include:</p>
             <ul class="content-list">
               <li>Power issues related to a faulty USB port or cable</li>
               <li>File system errors or corrupt partitions</li>
               <li>Disk drive not assigned a proper letter in disk management</li>
-              <li>Physically damaged components from drops or overheating</li>
+              <li>Physically damaged components from <NuxtLink to="/data-recovery/dropped-hard-drive" class="inline-link">drops</NuxtLink> or overheating</li>
               <li>Internal wear and tear or mechanical failure</li>
               <li>Errors after being accidentally deleted or formatted</li>
             </ul>
@@ -155,11 +155,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Signs Your Toshiba Drive Needs Recovery</h2>
         <p class="s-body">If you notice any of the following issues, it's time to consider professional help:</p>
         <ul class="content-list">
-          <li>The device powers on, but the drive doesn't show up on your computer</li>
+          <li>The device powers on, but the drive <NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link">doesn't show up on your computer</NuxtLink></li>
           <li>Your system asks to format the drive when connected</li>
           <li>The drive shows up in disk management but without a label</li>
           <li>You're unable to assign a drive letter and paths</li>
-          <li>Clicking or buzzing noises from inside the Toshiba HDD</li>
+          <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Clicking</NuxtLink> or buzzing noises from inside the Toshiba HDD</li>
           <li>Slow response, freezing, or missing folders</li>
           <li>You accidentally deleted files you now need back</li>
         </ul>
@@ -229,13 +229,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Types of Toshiba Drives We Recover</h2>
-        <p class="s-body">We service all major Toshiba HDD and SSD models, including:</p>
+        <p class="s-body">We service all major Toshiba HDD and <NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link">SSD</NuxtLink> models, including:</p>
         <ul class="content-list">
           <li>Canvio Basics and Canvio Advance drives</li>
           <li>Toshiba desktop backup drives</li>
           <li>Toshiba internal SATA hard drives</li>
           <li>USB-powered portable drives</li>
-          <li>External RAID enclosures and encrypted devices</li>
+          <li>External <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID enclosures</NuxtLink> and encrypted devices</li>
         </ul>
         <p class="s-body">The data recovery cost can vary depending on the type of drive and the issue involved. After a full diagnostic, we'll provide a clear, flat-rate quote based on the specific device and recovery scenario.</p>
       </div>
@@ -245,7 +245,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Recovery for Physically Damaged Toshiba Drives</h2>
-        <p class="s-body">If your Toshiba hard disk was dropped or suffered impact, recovery often requires cleanroom work. Our technicians can:</p>
+        <p class="s-body">If your Toshiba hard disk was dropped or suffered impact, recovery often requires <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">cleanroom work</NuxtLink>. Our technicians can:</p>
         <ul class="content-list">
           <li>Replace failed read/write heads</li>
           <li>Repair damaged PCBs and firmware</li>
@@ -325,6 +325,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">Although we're based in Los Angeles, we serve clients across the U.S. We provide free round-trip shipping for Toshiba drive recovery cases. Simply start a case online, print the prepaid shipping label, and send your storage device to our lab. Once your case is complete, your lost data is returned securely.</p>
       </div>
     </section>
+
+    <RelatedLinks :links="[
+      { text: 'Hard Drive Recovery', href: '/data-recovery/hard-drive-recovery' },
+      { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+      { text: 'WD Data Recovery', href: '/data-recovery/western-digital-data-recovery' },
+      { text: 'Seagate Data Recovery', href: '/data-recovery/seagate-data-recovery' },
+      { text: 'Samsung Data Recovery', href: '/data-recovery/samsung-data-recovery' },
+      { text: 'SSD Data Recovery', href: '/data-recovery/ssd-data-recovery' },
+    ]" />
 
     <!-- QUOTE FORM -->
     <QuoteFormSection

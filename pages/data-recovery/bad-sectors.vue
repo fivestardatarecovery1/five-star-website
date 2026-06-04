@@ -311,7 +311,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>
         <ul class="content-list">
           <li>Cleanroom environment and certified engineers</li>
-          <li>Flat-rate pricing and no hidden fees</li>
+          <li>Flat-rate <NuxtLink to="/data-recovery-service-pricing" class="inline-link">pricing</NuxtLink> and no hidden fees</li>
           <li>"No Data, No Charge" policy</li>
           <li>Secure, professional imaging and extraction tools</li>
           <li>Nationwide service with free round-trip shipping</li>

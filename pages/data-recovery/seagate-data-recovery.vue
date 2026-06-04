@@ -166,10 +166,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <h2 class="s-heading">Common Seagate Drive Issues</h2>
             <p class="s-body">We see a wide range of problems with Seagate devices. Whether it's a backup drive, a desktop model, or a portable USB, issues can strike at any time. Some of the most common include:</p>
             <ul class="content-list">
-              <li>Seagate external hard drive not working or not powering on</li>
-              <li>Clicking or grinding noises from the drive</li>
+              <li><NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">Seagate external hard drive</NuxtLink> not working or not powering on</li>
+              <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Clicking</NuxtLink> or grinding noises from the drive</li>
               <li>Seagate hard drive not working after an unexpected shutdown</li>
-              <li>Devices that appear in Disk Management but not in File Explorer</li>
+              <li>Devices that appear in Disk Management but <NuxtLink to="/data-recovery/hard-drive-not-showing-up" class="inline-link">not in File Explorer</NuxtLink></li>
               <li>Corrupted or unreadable file system errors</li>
             </ul>
             <p class="s-body">No matter the issue, our team is skilled at diagnosing and recovering data from any damaged device.</p>
@@ -185,7 +185,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">How We Recover Seagate Data</h2>
-        <p class="s-body">Our lab is equipped with the tools and expertise to work on HDDs, SSDs, or flash devices from Seagate. If you dropped your external drive, exposed it to liquid, or it suddenly stopped working, don't worry. We'll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware.</p>
+        <p class="s-body">Our lab is equipped with the tools and expertise to work on HDDs, SSDs, or flash devices from Seagate. If you <NuxtLink to="/data-recovery/dropped-hard-drive" class="inline-link">dropped your external drive</NuxtLink>, exposed it to liquid, or it suddenly stopped working, don't worry. We'll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware.</p>
         <p class="s-body">Depending on the issue, your drive may need internal repairs in our cleanroom. Once stable, we create a secure image of the device and extract as much recoverable data as possible. We then copy all files stored onto a new drive that you provide or purchase from us.</p>
         <p class="s-body">Our pricing is based on the type of failure and drive model, and we'll always provide a clear data recovery cost quote before starting.</p>
       </div>
@@ -272,6 +272,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">We handle all data in-house under strict security standards to protect your privacy. We never outsource, and we return all drives safely, whether you choose to pick up your files or have us ship them back.</p>
       </div>
     </section>
+
+    <RelatedLinks :links="[
+      { text: 'Hard Drive Recovery', href: '/data-recovery/hard-drive-recovery' },
+      { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
+      { text: 'Dropped Hard Drive Recovery', href: '/data-recovery/dropped-hard-drive' },
+      { text: 'WD Data Recovery', href: '/data-recovery/western-digital-data-recovery' },
+      { text: 'Toshiba Data Recovery', href: '/data-recovery/toshiba-data-recovery' },
+      { text: 'RAID Data Recovery', href: '/data-recovery/raid-data-recovery' },
+    ]" />
 
     <!-- QUOTE FORM -->
     <QuoteFormSection
