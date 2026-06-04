@@ -68,7 +68,7 @@ function dismiss() {
   display: flex;
   align-items: center;
   overflow: hidden;
-  min-height: 44px;
+  height: 44px;
 }
 
 .ann-ticker-wrap {
@@ -119,7 +119,7 @@ function dismiss() {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   /* Full opacity #0A0C14 on #F5C842 = 14:1 contrast ratio — passes WCAG AAA */
   color: #0A0C14;
