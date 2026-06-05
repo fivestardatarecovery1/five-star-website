@@ -203,7 +203,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <h2 class="s-heading">Why We Always Clone Drives First</h2>
             <p class="s-body">At Five Star, we <strong>never work directly on original RAID drives</strong>. Instead, we create a sector-by-sector clone of each disk, producing a perfect 1-to-1 image. This ensures your original data remains untouched and fully preserved.</p>
             <p class="s-body">By working only from cloned drives, we can safely rebuild, test, and analyze your RAID array without risking further damage. This is especially important for unstable or degraded disks, where even one more read could cause permanent data loss.</p>
-            <p class="s-body">If a drive is physically damaged, we stabilize it in a Class 100 Clean Room and then attempt to image it safely. Once all clones are complete, we reconstruct the RAID using specialized tools — without ever touching the originals. Cloning is our first line of defense in protecting your data. It gives us the flexibility to recover files safely, even from complex or high-risk failures, while ensuring your drives remain exactly as they were when the issue occurred.</p>
+            <p class="s-body">If a drive is physically damaged, we stabilize it in a Class 100 <NuxtLink to="/data-recovery/clean-room-data-recovery">clean room</NuxtLink> and then attempt to image it safely. Once all clones are complete, we reconstruct the RAID using specialized tools — without ever touching the originals. Cloning is our first line of defense in protecting your data. It gives us the flexibility to recover files safely, even from complex or high-risk failures, while ensuring your drives remain exactly as they were when the issue occurred.</p>
           </div>
         </div>
       </div>
@@ -329,7 +329,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- SECTION 10 — Emergency & Expedited -->
+    <!-- SECTION 10 — Emergency & <NuxtLink to="/expedited-service">Expedited</NuxtLink> -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Emergency &amp; Expedited RAID Recovery Services</h2>

@@ -167,7 +167,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container two-col-layout">
         <div>
           <h2 class="s-heading">Common Causes of Laptop Data Loss</h2>
-          <p class="s-body">Laptops are prone to various types of damage and data loss. Spills, impacts, overheating, or corrupted software can all lead to file issues. We've handled everything from dropped laptops to failed Windows updates and malware infections. In many cases, you can still recover personal files if you act quickly.</p>
+          <p class="s-body">Laptops are prone to various types of damage and data loss. Spills, impacts, overheating, or corrupted software can all lead to file issues. We've handled everything from <NuxtLink to="/data-recovery/dropped-hard-drive">dropped</NuxtLink> laptops to failed Windows updates and malware infections. In many cases, you can still recover personal files if you act quickly.</p>
           <p class="s-body">We often see common problems like broken hard drives, accidental formatting, damaged partitions, power surges, and failed Windows updates. These events can quickly corrupt the file system, making your data inaccessible—but not gone.</p>
         </div>
         <div>
@@ -225,7 +225,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- WHEN TO REMOVE THE HARD DRIVE -->
+    <!-- WHEN TO REMOVE THE <NuxtLink to="/data-recovery/hard-drive-recovery">hard drive</NuxtLink> -->
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">When Should You Remove the Hard Drive?</h2>
@@ -252,7 +252,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Why Choose Our Data Recovery Service</h2>
-        <p class="s-body">Five Star Data Recovery is known for reliable turnaround, transparent pricing, and a high success rate. We handle both hardware and software-related issues, including failed boots and windows recovery. Our data recovery team is here to help you restore your system or recover specific files. We will assist you at every step.</p>
+        <p class="s-body">Five Star Data Recovery is known for reliable turnaround, transparent <NuxtLink to="/data-recovery-service-pricing">pricing</NuxtLink>, and a high success rate. We handle both hardware and software-related issues, including failed boots and windows recovery. Our data recovery team is here to help you restore your system or recover specific files. We will assist you at every step.</p>
         <p class="s-body">We help home users, business owners, students, and IT professionals. We assist them in recovering data from laptops that stopped working or became inaccessible overnight.</p>
         <div class="why-grid">
           <div class="why-item"><div class="why-icon">🛡</div><div><strong>No Data, No Charge</strong> <em>(most cases)</em><p>You only pay when we recover your data successfully.</p></div></div>

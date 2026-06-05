@@ -229,7 +229,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- REVIEWS -->
+    <!-- <NuxtLink to="/reviews">reviews</NuxtLink> -->
     <ReviewsSection :reviews="reviews" />
 
     <!-- FAQ -->
@@ -253,7 +253,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container" style="text-align:center;max-width:680px;margin:0 auto;">
         <h2 class="s-heading center">Ready to Work With Us?</h2>
-        <p class="s-intro center">Whether you have a clicking drive, a corrupted SSD, or a failed RAID array — we're here to help. Start your recovery today.</p>
+        <p class="s-intro center">Whether you have a clicking drive, a corrupted <NuxtLink to="/data-recovery/ssd-data-recovery">SSD</NuxtLink>, or a failed <NuxtLink to="/data-recovery/raid-data-recovery">RAID</NuxtLink> array — we're here to help. Start your recovery today.</p>
         <NuxtLink to="/start-recovery" class="btn-gold-full">Start Your Recovery</NuxtLink>
       </div>
     </section>

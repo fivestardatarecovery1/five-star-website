@@ -176,7 +176,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <li>Deleted files from formatted SSDs</li>
               <li>Lost partitions and boot sectors</li>
               <li>Data from an SSD affected by a failed OS update</li>
-              <li>Files from SSDs used in RAID arrays or enterprise systems</li>
+              <li>Files from SSDs used in <NuxtLink to="/data-recovery/raid-data-recovery">RAID</NuxtLink> arrays or enterprise systems</li>
               <li>Data affected by ransomware, partition table damage, or accidental OS reinstallation</li>
               <li>Data from SSDs with failing NAND chips, bad sectors, or firmware corruption</li>
             </ul>
@@ -321,7 +321,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <ul class="contact-bullets">
           <li>Call us for a free diagnostic</li>
           <li>Mail your drive to our recovery lab</li>
-          <li>Flat-rate pricing — no hidden fees</li>
+          <li>Flat-rate <NuxtLink to="/data-recovery-service-pricing">pricing</NuxtLink> — no hidden fees</li>
           <li>No Data, No Charge (most cases)</li>
         </ul>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>

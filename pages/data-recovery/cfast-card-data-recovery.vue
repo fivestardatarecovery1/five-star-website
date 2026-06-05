@@ -219,7 +219,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- SECTION 4 — Expedited Services -->
+    <!-- SECTION 4 — <NuxtLink to="/expedited-service">Expedited</NuxtLink> Services -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Expedited Services for Rush Projects</h2>
@@ -238,7 +238,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <h2 class="s-heading">Trusted by the Creative Industry</h2>
         <p class="s-body">We&#39;ve recovered data for video editors, producers, directors, and digital imaging technicians across Hollywood and beyond. Our clients include production studios, ad agencies, wedding videographers, and independent filmmakers. We understand that losing raw footage or production files can delay deadlines and cost thousands.</p>
-        <p class="s-body">That&#39;s why our data recovery services are designed with media professionals in mind \u2014 fast, secure, and confidential. Whether it&#39;s a failed CFast card, damaged SSD, or corrupted external drive, we provide reliable recovery solutions and deep experience with pro camera formats like ARRI, RED, and Blackmagic. When CFast card data is critical and irreplaceable, professionals trust Five Star Data Recovery. With our advanced tools we have the experience to handle sensitive video formats.</p>
+        <p class="s-body">That&#39;s why our data recovery services are designed with media professionals in mind \u2014 fast, secure, and confidential. Whether it&#39;s a failed CFast card, damaged SSD, or corrupted <NuxtLink to="/data-recovery/external-hard-drive-data-recovery">external</NuxtLink> drive, we provide reliable recovery solutions and deep experience with pro camera formats like ARRI, RED, and Blackmagic. When CFast card data is critical and irreplaceable, professionals trust Five Star Data Recovery. With our advanced tools we have the experience to handle sensitive video formats.</p>
       </div>
     </section>
 
@@ -265,7 +265,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Why DIY Data Recovery Tools Often Fail with CFast Cards</h2>
-        <p class="s-body">It may be tempting to use free or cheap data recovery software. However, these tools are usually made for general storage devices. This includes USB flash drives and basic SD cards. They lack the technical sophistication needed to handle professional-grade CFast card data\u2014especially when it involves large video files or non-standard file systems used in high-end cameras.</p>
+        <p class="s-body">It may be tempting to use free or cheap data recovery software. However, these tools are usually made for general storage devices. This includes <NuxtLink to="/data-recovery/usb-data-recovery">USB</NuxtLink> flash drives and basic SD cards. They lack the technical sophistication needed to handle professional-grade CFast card data\u2014especially when it involves large video files or non-standard file systems used in high-end cameras.</p>
         <p class="s-body">Many software programs do not handle fragmented file structures well. They also often misread special video formats. These formats include CinemaDNG, REDCODE RAW, and Canon XF-AVC. As a result, even if the software &ldquo;recovers&rdquo; the files, the output is often incomplete, glitchy, or completely unreadable.</p>
         <p class="s-body">We&#39;ve seen cases where clients used DIY tools that rewrote portions of the card&#39;s file table\u2014making a proper recovery far more difficult. Others created cloned images incorrectly, omitting key metadata needed to rebuild the footage. Sadly, in some cases, this good-intentioned testing has permanently erased important parts of the CFast card data.</p>
         <p class="s-body">This is why we always advise against using general-purpose tools if your project involves professional video content. A single wrong step could mean losing hours\u2014or days\u2014of irreplaceable footage.</p>
@@ -320,7 +320,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- REVIEWS -->
     <ReviewsSection :reviews="reviews" />
 
-    <!-- SECTION 10 — Video File Repair -->
+    <!-- SECTION 10 — <NuxtLink to="/data-recovery/video-file-repair">video file</NuxtLink> Repair -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">We Also Repair Damaged Video Files</h2>

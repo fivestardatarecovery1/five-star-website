@@ -132,7 +132,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="two-col-layout">
           <div>
             <h2 class="s-heading">Why Hard Drives Fail After Being Dropped</h2>
-            <p class="s-body">Most modern hard drives have delicate moving parts inside. When a drive is dropped, even from a low height, the sudden impact can damage key components. One of the most common issues is a misaligned or broken read/write head—the part responsible for reading data from the spinning disks (platters). In some cases, the platters themselves may become scratched. Other times, the damage causes bad sectors that prevent the drive from loading properly. The result can be a drive that clicks, spins up without mounting, or is not recognized by your computer at all.</p>
+            <p class="s-body">Most modern hard drives have delicate moving parts inside. When a drive is dropped, even from a low height, the sudden impact can damage key components. One of the most common issues is a misaligned or broken read/write head—the part responsible for reading data from the spinning disks (platters). In some cases, the platters themselves may become scratched. Other times, the damage causes <NuxtLink to="/data-recovery/bad-sectors">bad sectors</NuxtLink> that prevent the drive from loading properly. The result can be a drive that clicks, spins up without mounting, or is not recognized by your computer at all.</p>
           </div>
           <div class="section-img-wrap">
             <img src="/dropped-hard-drive-section.webp" alt="Inside a dropped hard drive — damaged platters and read/write head" class="section-img" width="1200" height="798" loading="lazy" />
@@ -297,7 +297,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- SECTION 10 — Expedited Options -->
+    <!-- SECTION 10 — <NuxtLink to="/expedited-service">Expedited</NuxtLink> Options -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Expedited Recovery Options for Urgent Cases</h2>

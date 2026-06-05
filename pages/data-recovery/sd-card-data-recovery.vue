@@ -196,7 +196,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>Android smartphones and tablets</li>
           <li>Drone cameras (DJI and others)</li>
           <li>Action cameras and camcorders (GoPro, Insta360)</li>
-          <li>Professional camera media: CFast, CFexpress, REDMAG, and other high-end storage cards</li>
+          <li>Professional camera media: <NuxtLink to="/data-recovery/cfast-card-data-recovery">CFast</NuxtLink>, CFexpress, REDMAG, and other high-end storage cards</li>
           <li>Standard SD, microSD, miniSD, SDHC, and SDXC cards</li>
           <li>Laptops, card readers, and all major operating systems</li>
         </ul>
@@ -234,7 +234,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">4</div>
             <div>
               <h3 class="step-title">File Verification and Return</h3>
-              <p class="step-body">We provide you with a preview of what we can recover. Once approved, we copy your files to a USB or drive you provide—or one you can purchase from us. If we can&#39;t recover your data, you pay nothing.</p>
+              <p class="step-body">We provide you with a preview of what we can recover. Once approved, we copy your files to a <NuxtLink to="/data-recovery/usb-data-recovery">USB</NuxtLink> or drive you provide—or one you can purchase from us. If we can&#39;t recover your data, you pay nothing.</p>
             </div>
           </div>
         </div>
@@ -279,7 +279,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <ul class="content-list">
           <li>In-house lab with certified engineers</li>
           <li>Industry-grade recovery tools for deep-level access</li>
-          <li>Transparent pricing and honest diagnostics</li>
+          <li>Transparent <NuxtLink to="/data-recovery-service-pricing">pricing</NuxtLink> and honest diagnostics</li>
           <li>High recovery success rates—even with severe damage</li>
           <li>Local drop-off or nationwide mail-in data recovery options</li>
           <li>No data, no charge (most cases)</li>

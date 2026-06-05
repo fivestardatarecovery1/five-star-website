@@ -189,7 +189,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <ul class="content-list">
           <li>Traditional hard drives (HDDs) may retain deleted file data in unallocated space until it is overwritten.</li>
           <li>Solid state drives (SSDs) typically have TRIM enabled, which tells the device to erase deleted blocks instantly, reducing recovery chances.</li>
-          <li>SD cards and USB flash drives store data linearly, but when formatted or overwritten, metadata that maps the file system is often erased, complicating recovery.</li>
+          <li>SD cards and USB flash drives store data linearly, but when <NuxtLink to="/data-recovery/hard-drive-recovery">formatted</NuxtLink> or overwritten, metadata that maps the file system is often erased, complicating recovery.</li>
         </ul>
         <p class="s-body">Understanding these technical differences is crucial to developing the right recovery process.</p>
       </div>
@@ -243,7 +243,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- SECTION 4 — Pricing -->
+    <!-- SECTION 4 — <NuxtLink to="/data-recovery-service-pricing">pricing</NuxtLink> -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Pricing: $200 Upfront, Pay the Rest Only If Successful</h2>

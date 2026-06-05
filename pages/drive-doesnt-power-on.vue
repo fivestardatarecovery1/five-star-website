@@ -159,7 +159,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <li>The drive is not spinning or making any noise</li>
               <li>Your computer doesn't detect the drive</li>
               <li>No LED lights turn on (for external drives)</li>
-              <li>You don't hear the usual clicking or humming sounds</li>
+              <li>You don't hear the usual <NuxtLink to="/hard-drive-clicking">clicking</NuxtLink> or humming sounds</li>
             </ul>
             <p class="s-body">In these cases, the drive is likely not receiving electricity. This could be from a failed circuit board, damaged cable, or even a shorted power supply.</p>
           </div>
@@ -225,7 +225,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout">
           <div>
-            <h2 class="s-heading">Our Hard Drive Recovery Process</h2>
+            <h2 class="s-heading">Our <NuxtLink to="/data-recovery/hard-drive-recovery">hard drive recovery</NuxtLink> Process</h2>
             <p class="s-body">At Five Star Data Recovery, we follow a step-by-step method to recover data from drives with no power:</p>
             <ul class="content-list">
               <li><strong>Free Diagnostic</strong> – We inspect the drive's board, connectors, and internal parts</li>
@@ -303,7 +303,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <li>Years of experience with no-power drives</li>
               <li>"No Data, No Charge" policy</li>
               <li>Clear communication and flat-rate pricing</li>
-              <li>Fast turnaround with Expedited and Expedited Plus Service options</li>
+              <li>Fast turnaround with <NuxtLink to="/expedited-service">Expedited</NuxtLink> and Expedited Plus Service options</li>
             </ul>
             <p class="s-body">Our goal is simple: recover your data safely, affordably, and quickly—even when the hard drive doesn't power on.</p>
           </div>

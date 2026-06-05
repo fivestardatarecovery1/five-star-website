@@ -245,9 +245,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Why First Aid and CHKDSK Can Make Things Worse</h2>
         <p class="s-body">When your hard drive doesn't appear, it's tempting to use tools like First Aid on a Mac or CHKDSK on Windows. But they can cause permanent data loss if your drive is damaged.</p>
         <h3 class="s-subheading">First Aid on Mac: Risky for Failing Drives</h3>
-        <p class="s-body">First Aid, found in Disk Utility, is made to fix basic file system issues. But when the drive is unstable or corrupted, First Aid might shift or rewrite data structures. That can cause files to vanish or prevent the drive from mounting at all. We've seen cases where running First Aid made some data completely inaccessible. This is especially true for older or dropped drives.</p>
+        <p class="s-body">First Aid, found in Disk Utility, is made to fix basic file system issues. But when the drive is unstable or corrupted, First Aid might shift or rewrite data structures. That can cause files to vanish or prevent the drive from mounting at all. We've seen cases where running First Aid made some data completely inaccessible. This is especially true for older or <NuxtLink to="/data-recovery/dropped-hard-drive">dropped</NuxtLink> drives.</p>
         <h3 class="s-subheading">CHKDSK on Windows: Can Delete Your Data</h3>
-        <p class="s-body">CHKDSK helps users find and fix errors on Windows computers, but it does not address failing hardware. It often deletes file pointers that it considers broken, which can wipe out your actual files. If your external storage device is failing, CHKDSK may overwrite valuable data while trying to mark bad sectors.</p>
+        <p class="s-body">CHKDSK helps users find and fix errors on Windows computers, but it does not address failing hardware. It often deletes file pointers that it considers broken, which can wipe out your actual files. If your external storage device is failing, CHKDSK may overwrite valuable data while trying to mark <NuxtLink to="/data-recovery/bad-sectors">bad sectors</NuxtLink>.</p>
       </div>
     </section>
 
@@ -258,7 +258,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">When a drive becomes unrecognizable, it means your computer can no longer communicate with it properly. This can happen due to two main types of failures: logical and physical.</p>
         <ul class="content-list">
           <li><strong>A logical failure</strong> occurs when the structure of your data is damaged. This might include corruption in the file system, missing partitions, or a drive that appears unallocated. In these cases, the computer might still "see" the drive, but it can't understand what's on it.</li>
-          <li><strong>A physical failure</strong> means something is wrong with the internal hardware. That might be a damaged read/write head, a failed motor, or an issue with the drive's circuit board. These problems often show up as clicking, grinding, or beeping sounds.</li>
+          <li><strong>A physical failure</strong> means something is wrong with the internal hardware. That might be a damaged read/write head, a failed motor, or an issue with the drive's circuit board. These problems often show up as <NuxtLink to="/hard-drive-clicking">clicking</NuxtLink>, grinding, or beeping sounds.</li>
         </ul>
       </div>
     </section>

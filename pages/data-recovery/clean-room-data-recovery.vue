@@ -169,7 +169,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">When You Need Clean Room Recovery</h2>
         <p class="s-body">Not every data loss situation calls for a clean room, but some issues require it immediately. If your hard drive is:</p>
         <ul class="content-list">
-          <li>Making clicking or grinding sounds</li>
+          <li>Making <NuxtLink to="/hard-drive-clicking">clicking</NuxtLink> or grinding sounds</li>
           <li>Not spinning or not detected at all</li>
           <li>Dropped or crushed</li>
           <li>Exposed to water, smoke, or high heat</li>

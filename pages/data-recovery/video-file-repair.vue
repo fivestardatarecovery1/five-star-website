@@ -346,7 +346,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <ul class="content-list">
               <li>Power failures during recording or file transfer</li>
               <li>Camera or device crashes</li>
-              <li>Improper ejection of external drives or SD cards</li>
+              <li>Improper ejection of <NuxtLink to="/data-recovery/external-hard-drive-data-recovery">external</NuxtLink> drives or SD cards</li>
               <li>File system corruption on the storage device</li>
               <li>Bad sectors or read errors on hard drives, SSDs, and external RAID systems</li>
               <li>Incomplete file saving due to interrupted recording sessions</li>
@@ -417,7 +417,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">1</div>
             <div>
               <h3 class="step-title">Full Drive Imaging and Cloning</h3>
-              <p class="step-body">Before attempting any repair, we require the entire storage device (not just individual files). This is critical for preserving data integrity and preventing further corruption. Our first step is to create a sector-by-sector image (clone) of your drive, SD card, RAID array, or storage media. We never work directly on your original drive—this ensures your source data remains untouched and safe throughout the entire recovery and repair process.</p>
+              <p class="step-body">Before attempting any repair, we require the entire storage device (not just individual files). This is critical for preserving data integrity and preventing further corruption. Our first step is to create a sector-by-sector image (clone) of your drive, <NuxtLink to="/data-recovery/sd-card-data-recovery">SD card</NuxtLink>, RAID array, or storage media. We never work directly on your original drive—this ensures your source data remains untouched and safe throughout the entire recovery and repair process.</p>
             </div>
           </div>
           <div class="process-step">

@@ -178,7 +178,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>Windows PCs (Dell, HP, Lenovo, custom builds)</li>
           <li>macOS desktops (iMac, Mac Pro)</li>
           <li>Linux-based workstations</li>
-          <li>Internal HDD and SSD recovery</li>
+          <li>Internal HDD and <NuxtLink to="/data-recovery/ssd-data-recovery">SSD</NuxtLink> recovery</li>
           <li>External drives used with desktop computers</li>
         </ul>
         <p class="s-body">We also recover data from USB drives, attached desktop hard drives, and file systems in Windows (NTFS, FAT32), macOS (APFS, HFS+), and Linux (ext3/ext4).</p>
