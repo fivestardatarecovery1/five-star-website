@@ -137,7 +137,7 @@ export default defineEventHandler(async (event) => {
 <div class="footer"><p>No Data, No Charge &middot; fivestardatarecovery.com &middot; Mon–Fri 10am–6pm &middot; Sat 10am–2pm</p></div>
 </body></html>`
   const packingSlipBase64Early = Buffer.from(packingSlipHtmlEarly).toString('base64')
-  const slipFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Packing Slip.pdf`
+  const slipFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Packing Slip.html`
 
   const attachments: { filename: string; content: string }[] = []
   if (labelBase64) attachments.push({ filename: labelFilename, content: labelBase64 })
