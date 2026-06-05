@@ -77,9 +77,9 @@ async function createFedexLabel(opts: {
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig()
-  const fedexClientId = config.fedexClientId || process.env.FEDEX_CLIENT_ID || ''
-  const fedexClientSecret = config.fedexClientSecret || process.env.FEDEX_CLIENT_SECRET || ''
-  const fedexAccountNumber = config.fedexAccountNumber || process.env.FEDEX_ACCOUNT_NUMBER || ''
+  const fedexClientId = process.env.FEDEX_CLIENT_ID || config.fedexClientId || ''
+  const fedexClientSecret = process.env.FEDEX_CLIENT_SECRET || config.fedexClientSecret || ''
+  const fedexAccountNumber = process.env.FEDEX_ACCOUNT_NUMBER || config.fedexAccountNumber || ''
   const resendApiKey = config.resendApiKey || process.env.RESEND_API_KEY || ''
 
   const {
