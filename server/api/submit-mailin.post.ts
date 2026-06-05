@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { htmlToPdf } from '../utils/html-to-pdf'
 
 const COUNTRY_CODES: Record<string, string> = {
   'United States of America (USA)': 'US', 'Canada': 'CA', 'United Kingdom': 'GB',
@@ -136,12 +137,22 @@ export default defineEventHandler(async (event) => {
 <div class="section"><div class="section-label">Ship To</div><table><tr><td>Company</td><td style="font-weight:900;">Five Star Data Recovery</td></tr><tr><td>Address</td><td>1731 S Brand Blvd, Glendale, CA 91204</td></tr><tr><td>Phone</td><td>818-272-8866</td></tr></table></div>
 <div class="footer"><p>No Data, No Charge &middot; fivestardatarecovery.com &middot; Mon–Fri 10am–6pm &middot; Sat 10am–2pm</p></div>
 </body></html>`
-  const packingSlipBase64Early = Buffer.from(packingSlipHtmlEarly).toString('base64')
-  const slipFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Packing Slip.html`
+  const slipFilename = `${safeName} - ${caseRef} - Five Star Data Recovery - Packing Slip.pdf`
+
+  // Generate real PDF from HTML
+  let packingSlipPdfBase64 = ''
+  try {
+    const pdfBuffer = await htmlToPdf(packingSlipHtmlEarly)
+    packingSlipPdfBase64 = pdfBuffer.toString('base64')
+  } catch (e: any) {
+    console.error('Packing slip PDF error:', e.message)
+    // Fallback: base64 HTML (won't render as PDF but prevents total failure)
+    packingSlipPdfBase64 = Buffer.from(packingSlipHtmlEarly).toString('base64')
+  }
 
   const attachments: { filename: string; content: string }[] = []
   if (labelBase64) attachments.push({ filename: labelFilename, content: labelBase64 })
-  attachments.push({ filename: slipFilename, content: packingSlipBase64Early })
+  attachments.push({ filename: slipFilename, content: packingSlipPdfBase64 })
 
   // ── Email to business ─────────────────────────────────────────
   await resend.emails.send({
@@ -326,7 +337,7 @@ export default defineEventHandler(async (event) => {
 </body>
 </html>`
 
-  const packingSlipBase64 = packingSlipBase64Early // used for browser display
+  const packingSlipBase64 = packingSlipPdfBase64 // real PDF for browser download
 
   // Save to Mission Control (awaited - Vercel kills fire-and-forget before completion)
   const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'

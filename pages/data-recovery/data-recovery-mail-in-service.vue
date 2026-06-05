@@ -360,8 +360,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 </div>
               </div>
               <a
-                :href="'data:text/html;base64,' + packingSlipBase64"
-                :download="`${form.firstName} ${form.lastName} - ${caseRef} - Five Star Data Recovery - Packing Slip.html`"
+                :href="'data:application/pdf;base64,' + packingSlipBase64"
+                :download="`${form.firstName} ${form.lastName} - ${caseRef} - Five Star Data Recovery - Packing Slip.pdf`"
                 class="btn-download btn-download--purple"
               >⬇ Download Slip</a>
             </div>
