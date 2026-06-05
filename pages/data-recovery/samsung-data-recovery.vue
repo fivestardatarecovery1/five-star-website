@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: 'How long does Samsung phone data recovery take?',
-    a: "Our standard turnaround time for Samsung component-level data recovery is <strong>1 to 2 weeks</strong>, depending on the complexity of the issue and parts availability. If you need your data back faster, we offer two expedited options:<br><br><strong>Expedited Service:</strong> Recovery completed within 3–5 business days.<br><strong>Expedited Plus Service:</strong> Recovery completed within 1–3 days, including weekends and holidays.<br><br>For detailed pricing on these expedited services, please visit our <a href=\"/data-recovery-service-pricing/\">Pricing Page</a>.",
+    a: "Our standard turnaround time for Samsung component-level data recovery is <strong>1 to 2 weeks</strong>, depending on the complexity of the issue and parts availability. If you need your data back faster, we offer two expedited options:<br><br><strong><a href='/expedited-service' class='faq-link'>Expedited Service</a>:</strong> Recovery completed within 3–5 business days.<br><strong><a href='/expedited-service-plus' class='faq-link'>Expedited Plus Service</a>:</strong> Recovery completed within 1–3 days, including weekends and holidays.<br><br>For detailed pricing on these expedited services, please visit our <a href='/data-recovery-service-pricing/' class='faq-link'>Pricing Page</a>.",
   },
   {
     q: 'Is my data safe and confidential during the recovery process?',
@@ -137,7 +137,7 @@ const faqs = [
   },
   {
     q: 'Can I mail in my Samsung phone for data recovery?',
-    a: "<strong>Yes!</strong> We offer <strong>free, fast, and insured round-trip shipping</strong> within the United States for Samsung data recovery clients. If you are not near our Glendale, CA, office, you can use our easy <a href=\"/data-recovery/data-recovery-mail-in-service/\">mail-in data recovery service</a>.",
+    a: "<strong>Yes!</strong> We offer <strong>free, fast, and insured round-trip shipping</strong> within the United States for Samsung data recovery clients. If you are not near our Glendale, CA, office, you can use our easy <a href='/data-recovery/data-recovery-mail-in-service/' class='faq-link'>mail-in data recovery service</a>.",
   },
   {
     q: "Do you charge a fee if the data isn't recoverable?",

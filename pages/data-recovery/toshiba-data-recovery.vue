@@ -237,7 +237,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>USB-powered portable drives</li>
           <li>External <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID enclosures</NuxtLink> and encrypted devices</li>
         </ul>
-        <p class="s-body">The data recovery cost can vary depending on the type of drive and the issue involved. After a full diagnostic, we'll provide a clear, flat-rate quote based on the specific device and recovery scenario.</p>
+        <p class="s-body">The <NuxtLink to="/data-recovery" class="inline-link">data recovery</NuxtLink> cost can vary depending on the type of drive and the issue involved. After a full diagnostic, we'll provide a clear, flat-rate quote based on the specific device and recovery scenario.</p>
       </div>
     </section>
 

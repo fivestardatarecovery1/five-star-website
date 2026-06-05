@@ -15,7 +15,7 @@ const trustBadges = [
 
 const reviews = [
   {
-    text: 'I needed urgent help after my external hard drive suddenly stopped working. I called Five Star and was shocked at how fast they acted — they picked up my drive from my Pasadena office within an hour of creating the ticket. Two days later, I had all my data back. Truly professional and reliable.',
+    text: 'I needed urgent help after my external hard drive suddenly stopped working. I called Five Star and was shocked at how fast they acted - they picked up my drive from my Pasadena office within an hour of creating the ticket. Two days later, I had all my data back. Truly professional and reliable.',
     name: 'Ann M.',
     location: 'Pasadena, CA',
   },
@@ -38,19 +38,19 @@ const faqs = [
   },
   {
     q: 'Do you offer emergency data recovery services near Pasadena?',
-    a: "Yes! We offer both Expedited Service (during business hours) and Expedited Plus (24/7/365) for Pasadena clients. If you need your data recovered urgently, just give us a call and we'll get your case prioritized immediately.",
+    a: "Yes! We offer both <a href='/expedited-service' class='faq-link'>Expedited Service</a> (during business hours) and <a href='/expedited-service-plus' class='faq-link'>Expedited Plus</a> (24/7/365) for Pasadena clients. If you need your data recovered urgently, just give us a call and we'll get your case prioritized immediately.",
   },
   {
     q: 'How quickly can you recover data for Pasadena customers?',
-    a: "Most standard recoveries are completed within 1–3 business days, but we also offer same-day evaluations and rush service. Thanks to our free pickup option near Pasadena, we can begin recovery within hours of your call.",
+    a: "Most standard recoveries are completed within 1-3 business days, but we also offer same-day evaluations and rush service. Thanks to our free pickup option near Pasadena, we can begin recovery within hours of your call.",
   },
   {
     q: 'What types of devices do you recover data from near Pasadena?',
-    a: "We recover data from external hard drives, MacBooks, PC laptops, RAID/NAS systems, USB drives, and SD cards — no matter the failure type or operating system. If you're near Pasadena and not sure if your device qualifies, we offer free diagnostics.",
+    a: "We recover data from <a href='/data-recovery/external-hard-drive-data-recovery' class='faq-link'>external hard drives</a>, <a href='/data-recovery/mac-data-recovery' class='faq-link'>MacBooks</a>, PC laptops, <a href='/data-recovery/raid-data-recovery' class='faq-link'>RAID</a>/NAS systems, <a href='/data-recovery/usb-data-recovery' class='faq-link'>USB drives</a>, and <a href='/data-recovery/sd-card-data-recovery' class='faq-link'>SD cards</a> — no matter the failure type or operating system. If you're near Pasadena and not sure if your device qualifies, we offer free diagnostics.",
   },
   {
     q: 'Is the pickup service really free for Pasadena clients?',
-    a: "Yes — 100% free. There's no fee for pickup or evaluation. You only pay if you approve the recovery. We believe in fair, transparent service for all of Pasadena and surrounding areas.",
+    a: "Yes - 100% free. There's no fee for pickup or evaluation. You only pay if you approve the recovery. We believe in fair, transparent service for all of Pasadena and surrounding areas.",
   },
 ]
 
@@ -65,31 +65,31 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <HeroSection
       title="Data Recovery Pasadena, CA"
       subtitle="Get Your Data Back In No Time."
-      description="If you've experienced data loss—whether it's from a crashed hard drive, a damaged SD card, or a non-responsive USB stick—Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients near Pasadena, CA. While we're located in nearby Glendale, CA, we offer free same-day pickup near Pasadena for added convenience."
+      description="If you've experienced data loss-whether it's from a crashed hard drive, a damaged SD card, or a non-responsive USB stick-Five Star Data Recovery is here to help. We offer professional, affordable, and fast data recovery services tailored to the needs of clients near Pasadena, CA. While we're located in nearby Glendale, CA, we offer free same-day pickup near Pasadena for added convenience."
       bgImage="/data-recovery-pasadena-ca.jpg"
       :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- SECTION 1 — s-white -->
+    <!-- SECTION 1 - s-white -->
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Trusted Data Recovery Services near Pasadena</h2>
-        <p class="s-body">Whether you’re a student, business owner, creative professional, or just someone with important files, we understand how devastating data loss can be. Our team has successfully recovered data from:</p>
+        <p class="s-body">Whether you're a student, business owner, creative professional, or just someone with important files, we understand how devastating data loss can be. Our team has successfully recovered data from:</p>
         <ul class="content-list">
-          <li>Crashed hard drives</li>
-          <li>Clicking or non-spinning drives</li>
-          <li>Failed SSDs and flash drives</li>
+          <li>Crashed <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drives</NuxtLink></li>
+          <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Clicking</NuxtLink> or non-spinning drives</li>
+          <li>Failed <NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link">SSDs</NuxtLink> and flash drives</li>
           <li>Water-damaged or dropped devices</li>
-          <li>Deleted files and formatted media</li>
-          <li>Damaged RAID arrays and servers</li>
+          <li><NuxtLink to="/data-recovery/deleted-files" class="inline-link">Deleted files</NuxtLink> and formatted media</li>
+          <li>Damaged <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID</NuxtLink> arrays and servers</li>
         </ul>
         <p class="s-body">We handle each recovery case with care, precision, and confidentiality. From routine to complex cases, our engineers work to bring your data back safely.</p>
       </div>
     </section>
 
-    <!-- SECTION 2 — s-grey -->
+    <!-- SECTION 2 - s-grey -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Why Choose Us for Data Recovery near Pasadena?</h2>
@@ -108,17 +108,17 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="reason-card">
             <h3 class="reason-title">Component-Level Repairs</h3>
-            <p class="s-body">We specialize in board-level and firmware recovery others can’t handle.</p>
+            <p class="s-body">We specialize in board-level and firmware recovery others can't handle.</p>
           </div>
           <div class="reason-card">
             <h3 class="reason-title">Flat Rate Pricing</h3>
-            <p class="s-body">Transparent pricing — no hidden fees or hourly charges.</p>
+            <p class="s-body">Transparent pricing - no hidden fees or hourly charges.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3 — s-white: Our Recovery Process -->
+    <!-- SECTION 3 - s-white: Our Recovery Process -->
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">Our Recovery Process</h2>
@@ -177,11 +177,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="device-card">
             <h3 class="device-title">iPhones and Mobile Devices</h3>
-            <p class="s-body">We perform component-level recovery from iPhones that won’t power on or are stuck in boot loops.</p>
+            <p class="s-body">We perform component-level recovery from <NuxtLink to="/data-recovery/iphone-data-recovery" class="inline-link">iPhones</NuxtLink> that won't power on or are stuck in boot loops.</p>
           </div>
           <div class="device-card">
             <h3 class="device-title">RAID Arrays and NAS Devices</h3>
-            <p class="s-body">We recover critical business and personal data from failed or degraded RAID/NAS systems.</p>
+            <p class="s-body">We recover critical business and personal data from failed or degraded RAID/<NuxtLink to="/data-recovery/nas-data-recovery" class="inline-link">NAS</NuxtLink> systems.</p>
           </div>
           <div class="device-card">
             <h3 class="device-title">USB Flash Drives</h3>
@@ -200,11 +200,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="contact-banner-card">
           <h2 class="contact-banner-heading">Get Started Today</h2>
         </div>
-        <p class="contact-body-text">Need data recovery near Pasadena, CA? Don’t wait—contact Five Star Data Recovery today for a free diagnostic and same-day support.</p>
+        <p class="contact-body-text">Need data recovery near Pasadena, CA? Don't wait-contact Five Star Data Recovery today for a free diagnostic and same-day support.</p>
         <ul class="contact-bullets">
           <li>Free same-day pickup near Pasadena</li>
-          <li>Free diagnostic — no obligation</li>
-          <li>1–3 business day standard turnaround</li>
+          <li>Free diagnostic - no obligation</li>
+          <li>1-3 business day standard turnaround</li>
           <li>No Data, No Charge (most cases)</li>
         </ul>
         <NuxtLink to="/start-recovery" class="btn-start-recovery">Start Your Recovery</NuxtLink>
@@ -219,7 +219,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '-' : '+' }}</span>
             </button>
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>

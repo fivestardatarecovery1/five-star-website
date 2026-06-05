@@ -234,3 +234,6 @@ section { padding: 80px 0; }
 @media (max-width: 480px) {
   .grid-4 { grid-template-columns: 1fr; }
 }
+
+/* FAQ inline links (v-html rendered) */
+.faq-link { color: #C9A84C; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; }

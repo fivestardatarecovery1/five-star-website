@@ -197,7 +197,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">What is Expedited Service Plus?</h2>
         <p class="s-body">At Five Star Data Recovery we're happy to announce we now offer Expedited Service Plus. Is your recovery <strong>EXTREMELY</strong> time sensitive? Do you need a <strong>GUARANTEE</strong> that your case will be worked on diligently 24/7 to ensure you can meet your deadline? Then this service is for you.</p>
         <p class="s-body">With our Expedited Service Plus, our Data Recovery Engineers will work on your case non-stop. They will start as soon as it arrives at our lab and continue until you get your data back. These cases do run 24/7, including nights, holidays, and weekends.</p>
-        <p class="s-body">We offer flat rate pricing for this service based on how long we believe the case will take. This fee is in addition to any Flat Rate Data Recovery costs. It's hard to know exactly how much this service will cost. However, our Engineers can give you a good estimate after the initial diagnosis. Services start at $500.00 per drive.</p>
+        <p class="s-body">We offer flat rate pricing for this service based on how long we believe the case will take. This fee is in addition to any Flat Rate <NuxtLink to="/data-recovery-service-pricing" class="inline-link">Data Recovery costs</NuxtLink>. It's hard to know exactly how much this service will cost. However, our Engineers can give you a good estimate after the initial diagnosis. Services start at $500.00 per drive.</p>
         <p class="s-body">Simply provide the following information:</p>
         <ul class="content-list">
           <li>Is the drive clicking?</li>

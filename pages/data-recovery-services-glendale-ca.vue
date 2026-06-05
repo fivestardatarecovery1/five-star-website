@@ -113,7 +113,7 @@ const faqs = [
   },
   {
     q: "Can I still use your services if I'm not located in Glendale?",
-    a: 'Absolutely. While our lab is based in Glendale, CA, we offer free round-trip nationwide data recovery services. Once you fill out our mail-in form, we\'ll send you a prepaid shipping label to get started quickly.',
+    a: 'Absolutely. While our lab is based in Glendale, CA, we offer free round-trip <a href="/data-recovery/data-recovery-mail-in-service" class="faq-link">nationwide data recovery services</a>. Once you fill out our mail-in form, we\'ll send you a prepaid shipping label to get started quickly.',
   },
   {
     q: 'Do you offer payment plans at your Glendale location?',
@@ -154,11 +154,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <p class="s-body">Whether you’re a student with term papers, a small business owner safeguarding client data, or a creative professional preserving irreplaceable work, we know how critical your files are. At Five Star Data Recovery, our Glendale lab has rescued data from a wide range of failures, including:</p>
         <ul class="content-list">
           <li>Crashed hard drives that no longer boot</li>
-          <li>Drives that click or refuse to spin</li>
+          <li>Drives that <NuxtLink to="/hard-drive-clicking" class="inline-link">click</NuxtLink> or refuse to spin</li>
           <li>Failed SSDs and corrupted USB flash drives</li>
           <li>Water-soaked or dropped devices</li>
-          <li>Accidentally deleted files and reformatted media</li>
-          <li>Damaged RAID arrays and server volumes</li>
+          <li>Accidentally <NuxtLink to="/data-recovery/deleted-files" class="inline-link">deleted files</NuxtLink> and reformatted media</li>
+          <li>Damaged <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID arrays</NuxtLink> and server volumes</li>
         </ul>
         <p class="s-body">Every case receives meticulous care, precision engineering, and strict confidentiality. From straightforward recoveries to the most complex data loss scenarios, our team works tirelessly to restore your information safely.</p>
       </div>
@@ -292,8 +292,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Emergency and Expedited Service Options</h2>
         <p class="s-body">We understand that some data simply can’t wait. That’s why we offer expedited and emergency services for clients who need fast turnaround.</p>
         <ul class="content-list">
-          <li><strong>Expedited Service:</strong> Your case is placed at the top of the queue and worked on during normal business hours.</li>
-          <li><strong>Expedited Plus:</strong> Our top-tier emergency service ensures 24/7 recovery, including weekends and holidays.</li>
+          <li><strong><NuxtLink to="/expedited-service" class="inline-link">Expedited Service</NuxtLink>:</strong> Your case is placed at the top of the queue and worked on during normal business hours.</li>
+          <li><strong><NuxtLink to="/expedited-service-plus" class="inline-link">Expedited Plus</NuxtLink>:</strong> Our top-tier emergency service ensures 24/7 recovery, including weekends and holidays.</li>
         </ul>
         <p class="s-body">Both options are available for an additional fee and are ideal for businesses facing tight deadlines or time-sensitive projects. If you need urgent help, we’re ready.</p>
       </div>

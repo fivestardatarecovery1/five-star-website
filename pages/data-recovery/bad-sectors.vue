@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     q: 'What is the cost of bad sector data recovery?',
-    a: 'We offer <strong>flat-rate pricing</strong> based on the issue and drive type. For a specific quote, we recommend calling us or visiting our pricing page. <strong>Diagnostics are always free</strong>, and you\'re never charged unless we recover your data.',
+    a: 'We offer <strong>flat-rate pricing</strong> based on the issue and drive type. For a specific quote, we recommend calling us or visiting our <a href="/data-recovery-service-pricing" class="faq-link">pricing page</a>. <strong>Diagnostics are always free</strong>, and you\'re never charged unless we recover your data.',
   },
   {
     q: 'Do you offer bad sector recovery for external hard drives too?',

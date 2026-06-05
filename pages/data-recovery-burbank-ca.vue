@@ -110,7 +110,7 @@ const faqs = [
   },
   {
     q: 'How long does the data recovery process take in Burbank?',
-    a: 'Most data recovery cases are completed in 3–5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data.',
+    a: 'Most data recovery cases are completed in 3-5 business days, depending on the issue. Whether you choose to drop off, mail in, or schedule a free pickup in Burbank, you will always receive a status update the same day your device arrives. Our goal is to keep you informed every step of the way while working efficiently to recover your data.',
   },
   {
     q: 'What types of devices do you recover data from?',
@@ -136,33 +136,33 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
     <HeroSection
       title="Professional Data Recovery Services in Burbank, CA"
-      description="Five Star Data Recovery proudly serves businesses, content creators, and residents throughout Burbank, CA. Whether you've lost precious photos from an external drive or need urgent RAID recovery for your production team, our certified cleanroom lab is just minutes away — and offers free local pickup for Burbank clients. Simply give us a call or create a request on our website, and we'll handle the rest."
+      description="Five Star Data Recovery proudly serves businesses, content creators, and residents throughout Burbank, CA. Whether you've lost precious photos from an external drive or need urgent RAID recovery for your production team, our certified cleanroom lab is just minutes away - and offers free local pickup for Burbank clients. Simply give us a call or create a request on our website, and we'll handle the rest."
       bgImage="/data-recovery-burbank-ca.jpg"
       :trustBadges="trustBadges"
     />
 
     <StatsBar />
 
-    <!-- SECTION 1 — s-white: What Is Data Recovery -->
+    <!-- SECTION 1 - s-white: What Is Data Recovery -->
     <section class="s-white">
       <div class="container">
         <h2 class="s-heading">What Is Data Recovery?</h2>
-        <p class="s-body">Data recovery is the process of retrieving lost, deleted, or inaccessible files from storage devices. These devices might include hard drives, SSDs, USB flash drives, and SD cards. When a device stops working, you might think you have lost your data for good—but that’s rarely the case. Even if your device doesn’t power on, or your computer can no longer recognize it, your data is often still there. Our experienced engineers use specialized tools to locate and recover your lost files, even in the most difficult cases.</p>
+        <p class="s-body">Data recovery is the process of retrieving lost, deleted, or inaccessible files from storage devices. These devices might include <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drives</NuxtLink>, <NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link">SSDs</NuxtLink>, USB flash drives, and SD cards. When a device stops working, you might think you have lost your data for good-but that's rarely the case. Even if your device doesn't power on, or your computer can no longer recognize it, your data is often still there. Our experienced engineers use specialized tools to locate and recover your lost files, even in the most difficult cases.</p>
         <h2 class="s-heading" style="margin-top:40px;">Common Scenarios We Handle near Burbank</h2>
         <ul class="content-list">
-          <li>A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive — 100% recovered.</li>
-          <li>A post‑production company’s RAID 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.</li>
-          <li>A local home user had a dead WD Blue hard drive from an old desktop — all family photos retrieved.</li>
+          <li>A photographer near Magnolia Blvd lost 5 years of Lightroom catalogs from an external Seagate drive - 100% recovered.</li>
+          <li>A post‑production company's <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID</NuxtLink> 5 failed mid‑project. We cloned all drives and rebuilt their file system in under 3 days.</li>
+          <li>A local home user had a dead WD Blue hard drive from an old desktop - all family photos retrieved.</li>
         </ul>
       </div>
     </section>
 
-    <!-- SECTION 2 — s-grey: We Specialize In -->
+    <!-- SECTION 2 - s-grey: We Specialize In -->
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">We Specialize in Recovering Data From:</h2>
         <ul class="content-list">
-          <li>Clicking or non-powering hard drives (HDDs)</li>
+          <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Clicking</NuxtLink> or non-powering hard drives (HDDs)</li>
           <li>Solid State Drives (SSDs) with no response</li>
           <li>Water-damaged or dead iPhones</li>
           <li>Failed RAID 0, 1, 5, 6, or 10 arrays</li>
@@ -172,33 +172,33 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <!-- SECTION 3 — s-white: Physical Damage + 3-Step Process -->
+    <!-- SECTION 3 - s-white: Physical Damage + 3-Step Process -->
     <section class="s-white">
       <div class="container">
         <div class="two-col-img-layout">
           <div>
             <h2 class="s-heading">Physical Damage? We Can Help.</h2>
-            <p class="s-body">Devices with physical damage often require cleanroom recovery. This applies to drives that someone has dropped, bumped, or exposed to liquid. We’re one of the few data recovery labs near Burbank equipped with a certified cleanroom. Our engineers can carefully take apart your drive. They can fix or replace parts and recover your data. This is done without causing more damage. If you’re unsure whether your device can be saved, don’t throw it away. We may be able to recover more than you think.</p>
+            <p class="s-body">Devices with physical damage often require cleanroom recovery. This applies to drives that someone has dropped, bumped, or exposed to liquid. We're one of the few data recovery labs near Burbank equipped with a certified cleanroom. Our engineers can carefully take apart your drive. They can fix or replace parts and recover your data. This is done without causing more damage. If you're unsure whether your device can be saved, don't throw it away. We may be able to recover more than you think.</p>
           </div>
           <div class="section-img-wrap">
             <img src="/burbank-hdd-components.jpg" alt="Hard drive components disassembled" class="section-img" width="1024" height="683" loading="lazy" />
           </div>
         </div>
-        <h2 class="s-heading" style="margin-top:48px;">Our 3‑Step Recovery Process</h2>
-        <p class="s-body">We’ve designed our process to be simple, transparent, and stress-free:</p>
+        <h2 class="s-heading" style="margin-top:48px;">Our 3-Step Recovery Process</h2>
+        <p class="s-body">We've designed our process to be simple, transparent, and stress-free:</p>
         <div class="process-steps">
           <div class="process-step">
             <div class="step-num">1</div>
             <div>
               <h3 class="step-title">Free Diagnostic &amp; Quote</h3>
-              <p class="step-body">We evaluate your drive and give you a flat‑rate price. No surprises.</p>
+              <p class="step-body">We evaluate your drive and give you a flat-rate price. No surprises.</p>
             </div>
           </div>
           <div class="process-step">
             <div class="step-num">2</div>
             <div>
               <h3 class="step-title">Data Recovery in Our Lab</h3>
-              <p class="step-body">Recovery is performed by trained engineers — never outsourced.</p>
+              <p class="step-body">Recovery is performed by trained engineers - never outsourced.</p>
             </div>
           </div>
           <div class="process-step">
@@ -239,7 +239,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <li>Rancho Equestrian &amp; Toluca Woods</li>
           <li>McNeil &amp; Chandler Park</li>
         </ul>
-        <p class="s-body">Or visit our lab directly — we’re just a short drive down the 5 freeway.</p>
+        <p class="s-body">Or visit our lab directly - we're just a short drive down the 5 freeway.</p>
       </div>
     </section>
 
@@ -247,7 +247,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-grey">
       <div class="container">
         <h2 class="s-heading">Your Data Is Safe With Us</h2>
-        <p class="s-body">We treat your data with the highest level of confidentiality and security. From start to finish, we protect your files. Whether you’re a private individual or a business, we handle your information with care. We also offer:</p>
+        <p class="s-body">We treat your data with the highest level of confidentiality and security. From start to finish, we protect your files. Whether you're a private individual or a business, we handle your information with care. We also offer:</p>
         <ul class="content-list">
           <li>Encrypted data storage and transfers</li>
           <li>Non-disclosure agreements for business clients</li>
@@ -263,11 +263,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-contact-band contact-band-bg">
       <div class="container">
         <div class="contact-banner-card">
-          <h2 class="contact-banner-heading">Let’s Recover Your Files</h2>
+          <h2 class="contact-banner-heading">Let's Recover Your Files</h2>
         </div>
-        <p class="contact-body-text">Data loss doesn’t have to be permanent. If your device has failed, your files may still be recoverable—but time matters. The sooner we start the process, the better the outcome.</p>
+        <p class="contact-body-text">Data loss doesn't have to be permanent. If your device has failed, your files may still be recoverable-but time matters. The sooner we start the process, the better the outcome.</p>
         <ul class="contact-bullets">
-          <li>We’re located in Glendale—just minutes from Burbank</li>
+          <li>We're located in Glendale-just minutes from Burbank</li>
           <li>Same-day pickup near Burbank available Monday through Friday</li>
           <li>No Data, No Charge (most cases)</li>
         </ul>
@@ -283,7 +283,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
-              <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
+              <span class="faq-toggle">{{ openFaq === i ? '-' : '+' }}</span>
             </button>
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
           </div>

@@ -180,11 +180,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="issue-card">
             <h3 class="issue-title">WD External Hard Drive Shows Errors</h3>
-            <p class="s-body">Sometimes your WD external hard drive shows errors; it might appear in your system but request formatting or arrive as RAW. These signs typically indicate file system corruption, often caused by improper removal, bad sectors, or interrupted file transfers. Although it might seem like a quick fix, formatting the drive can permanently overwrite your files. Our engineers can extract the data using non-destructive recovery techniques tailored to Western Digital File Recovery.</p>
+            <p class="s-body">Sometimes your WD <NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">external hard drive</NuxtLink> shows errors; it might appear in your system but request formatting or arrive as RAW. These signs typically indicate file system corruption, often caused by improper removal, bad sectors, or interrupted file transfers. Although it might seem like a quick fix, formatting the drive can permanently overwrite your files. Our engineers can extract the data using non-destructive recovery techniques tailored to Western Digital File Recovery.</p>
           </div>
           <div class="issue-card">
             <h3 class="issue-title">Clicking or Beeping Sounds</h3>
-            <p class="s-body">If your drive makes clicking or beeping sounds, you should never ignore this red flag. These noises often come from a problem inside the hard drive — the read/write head is stuck or failing and keeps trying to find data but cannot succeed. This kind of failure usually requires head replacement or advanced cleanroom repair. Shut off the device immediately and contact a Western Digital Data Recovery professional before the situation worsens.</p>
+            <p class="s-body">If your drive makes <NuxtLink to="/hard-drive-clicking" class="inline-link">clicking</NuxtLink> or beeping sounds, you should never ignore this red flag. These noises often come from a problem inside the hard drive — the read/write head is stuck or failing and keeps trying to find data but cannot succeed. This kind of failure usually requires head replacement or advanced cleanroom repair. Shut off the device immediately and contact a Western Digital Data Recovery professional before the situation worsens.</p>
           </div>
         </div>
       </div>
@@ -203,7 +203,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <li>Corrupted firmware or partition tables</li>
               <li>Exposure to heat or water</li>
               <li>Virus or malware affecting the drive's boot or partition info</li>
-              <li>Bad sectors that develop over time because of wear and tear</li>
+              <li><NuxtLink to="/data-recovery/bad-sectors" class="inline-link">Bad sectors</NuxtLink> that develop over time because of wear and tear</li>
             </ul>
             <p class="s-body">Even routine use can lead to data loss over time. That's why it's critical to address early signs of failure immediately.</p>
           </div>
@@ -231,7 +231,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="step-num">2</div>
             <div>
               <h3 class="step-title">Cleanroom Imaging</h3>
-              <p class="step-body">If needed, the drive is opened in our certified cleanroom. Using a matching donor part, we attempt to stabilize the drive and create a sector-by-sector image.</p>
+              <p class="step-body">If needed, the drive is opened in our certified <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">cleanroom</NuxtLink>. Using a matching donor part, we attempt to stabilize the drive and create a sector-by-sector image.</p>
             </div>
           </div>
           <div class="process-step">

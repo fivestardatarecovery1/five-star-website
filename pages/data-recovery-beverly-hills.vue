@@ -145,7 +145,7 @@ const faqs = [
   },
   {
     q: 'How fast can you recover data for Beverly Hills customers?',
-    a: 'Most standard Beverly Hills data recovery cases are completed within 3–5 business days. For urgent needs, we also offer Expedited and Expedited Plus services with 24/7 priority support. Call us for a free phone consultation.',
+    a: 'Most standard Beverly Hills data recovery cases are completed within 3–5 business days. For urgent needs, we also offer <a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus</a> services with 24/7 priority support. Call us for a free phone consultation.',
   },
   {
     q: 'What types of devices can you recover data from in Beverly Hills?',
@@ -207,9 +207,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <ul class="content-list">
           <li><NuxtLink to="/hard-drive-clicking" class="inline-link">Hard drives that are clicking</NuxtLink>, unresponsive, or damaged</li>
           <li>Devices exposed to water or showing signs of physical damage</li>
-          <li>Drives with deleted files or formatted partitions</li>
-          <li>SSDs and flash drives experiencing failures</li>
-          <li>RAID systems suffering from corruption or multiple drive failures</li>
+          <li>Drives with <NuxtLink to="/data-recovery/deleted-files" class="inline-link">deleted files</NuxtLink> or formatted partitions</li>
+          <li><NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link">SSDs</NuxtLink> and flash drives experiencing failures</li>
+          <li><NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID systems</NuxtLink> suffering from corruption or multiple drive failures</li>
         </ul>
         <p class="s-body">Every recovery is performed securely, confidentially, and in-house by our expert engineers.</p>
       </div>

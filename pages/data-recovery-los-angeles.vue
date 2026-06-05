@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: 'Where is your data recovery lab located in Los Angeles?',
-    a: 'Our certified recovery lab is just outside Los Angeles in Glendale, CA, and we proudly serve clients across the entire Los Angeles area. We also offer free same-day pickup for local clients and nationwide mail-in service for out-of-area recoveries.',
+    a: 'Our certified recovery lab is just outside Los Angeles in Glendale, CA, and we proudly serve clients across the entire Los Angeles area. We also offer free same-day pickup for local clients and <a href="/data-recovery/data-recovery-mail-in-service" class="faq-link">nationwide mail-in service</a> for out-of-area recoveries.',
   },
   {
     q: 'Is there a free diagnostic included with your Los Angeles data recovery service?',
@@ -115,7 +115,7 @@ const faqs = [
   },
   {
     q: 'Do you offer emergency or same-day data recovery in Los Angeles?',
-    a: 'Yes, we offer emergency data recovery services for Los Angeles clients. Our Expedited Plus Service is available 24/7 for time-sensitive situations. Your case is prioritized immediately, even outside normal business hours.',
+    a: 'Yes, we offer emergency data recovery services for Los Angeles clients. Our <a href="/expedited-service-plus" class="faq-link">Expedited Plus Service</a> is available 24/7 for time-sensitive situations. Your case is prioritized immediately, even outside normal business hours.',
   },
   {
     q: 'Can you recover data from water-damaged or physically broken devices in Los Angeles?',
@@ -181,14 +181,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">What We Recover</h2>
         <p class="s-body">Our engineers recover files from nearly any storage device, including:</p>
         <ul class="content-list">
-          <li>External and internal hard drives</li>
-          <li>SSDs and hybrid drives</li>
+          <li><NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link">External</NuxtLink> and internal hard drives</li>
+          <li><NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link">SSDs</NuxtLink> and hybrid drives</li>
           <li>Flash drives and SD cards</li>
           <li>Encrypted or password-protected storage</li>
-          <li>RAID arrays, NAS, and servers</li>
+          <li><NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID</NuxtLink> arrays, NAS, and servers</li>
           <li>Windows, macOS, and Linux systems</li>
         </ul>
-        <p class="s-body">We handle cases involving physically damaged devices, accidental deletion, formatting, failed updates, and more. Whether you’re facing data loss after a crash or corruption, we’ll work to recover the data that matters to you.</p>
+        <p class="s-body">We handle cases involving physically damaged devices, <NuxtLink to="/data-recovery/deleted-files" class="inline-link">accidental deletion</NuxtLink>, formatting, failed updates, and more. Whether you’re facing data loss after a crash or corruption, we’ll work to recover the data that matters to you.</p>
       </div>
     </section>
 
@@ -197,7 +197,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <h2 class="s-heading">Hardware and Software Expertise</h2>
         <p class="s-body">Hardware issues cause some data loss, while software failure causes others. Our recovery experts receive training in both hardware and software data recovery. Whether it’s a head crash or a virus, we’ll know how to handle it. We perform all recoveries that involve fixing internal drives in our Class 100 cleanroom. This cleanroom keeps delicate parts safe from dust and damage. Every cleanroom procedure is handled by certified engineers using anti-static protocols to ensure data integrity.</p>
-        <p class="s-body">Our team also uses specialized tools to address firmware corruption, file system damage, and partition-level failures—ensuring we can recover data even from complex or hybrid failure scenarios.</p>
+        <p class="s-body">Our team also uses specialized tools to address firmware corruption, file system damage, and partition-level failures—ensuring we can recover data even from complex or hybrid failure scenarios. All physical recoveries requiring internal drive repair are performed in our <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">cleanroom</NuxtLink>.</p>
       </div>
     </section>
 

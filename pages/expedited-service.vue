@@ -184,8 +184,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div>
             <h2 class="s-heading">Whats the average turnaround time for Expedited Data Recovery Cases?</h2>
             <p class="s-body">This all really depends on the exact issue with your drive, along with the amount of data. With our Expedited Service, we can guarantee that the entire process will move forward without any delays, but it's impossible to give an exact turnaround time.</p>
-            <p class="s-body"><strong>IF</strong> the issue with your drive is logical (bad sectors, firmware corruption, damaged file system, etc), and you have less than 2TB of data, we should be able to get the data back to you within 2-3 days.</p>
-            <p class="s-body"><strong>IF</strong> the issue with your drive is mechanical (clicking, beeping, stuck motor, etc), and you have less than 2TB of data, we should be able to get your data back to you within 3-5 days (the delay is for the time needed to source the donor parts).</p>
+            <p class="s-body"><strong>IF</strong> the issue with your drive is logical (<NuxtLink to="/data-recovery/bad-sectors" class="inline-link">bad sectors</NuxtLink>, firmware corruption, damaged file system, etc), and you have less than 2TB of data, we should be able to get the data back to you within 2-3 days.</p>
+            <p class="s-body"><strong>IF</strong> the issue with your drive is mechanical (<NuxtLink to="/hard-drive-clicking" class="inline-link">clicking</NuxtLink>, beeping, stuck motor, etc), and you have less than 2TB of data, we should be able to get your data back to you within 3-5 days (the delay is for the time needed to source the donor parts).</p>
             <p class="s-body"><strong>IF</strong> you have a lot of data on your drive, we can work with you to get you back the most important files needed first, then continue working on the rest of the recovery.</p>
           </div>
         </div>

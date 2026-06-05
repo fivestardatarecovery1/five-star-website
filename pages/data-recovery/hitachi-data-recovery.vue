@@ -118,7 +118,7 @@ const faqs = [
   },
   {
     q: 'How long does Hitachi data recovery take?',
-    a: 'Typical turnaround time is <strong>3–5 business days</strong>, but it can vary based on the issue. We also offer <strong>Expedited and Expedited Plus</strong> services for urgent Hitachi data recovery cases. Contact us for a quote and timeline tailored to your specific situation.',
+    a: 'Typical turnaround time is <strong>3–5 business days</strong>, but it can vary based on the issue. We also offer <strong><a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus</a></strong> services for urgent Hitachi data recovery cases. Contact us for a quote and timeline tailored to your specific situation.',
   },
   {
     q: 'Can you recover data from Hitachi drives with bad sectors?',

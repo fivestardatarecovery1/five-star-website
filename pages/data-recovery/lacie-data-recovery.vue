@@ -103,7 +103,7 @@ const reviews = [
 const faqs = [
   {
     q: "Can you recover data from a LaCie external drive that's not showing up?",
-    a: "Yes, we specialize in LaCie data recovery from drives that <strong>don't mount, aren't recognized by the system</strong>, or show errors. Whether it's a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files.",
+    a: "Yes, we specialize in LaCie data recovery from drives that <strong>don't mount, <a href='/data-recovery/hard-drive-not-showing-up' class='faq-link'>aren't recognized by the system</a></strong>, or show errors. Whether it's a USB-C, Thunderbolt, or legacy FireWire connection, we can diagnose and recover your files.",
   },
   {
     q: 'Do you recover data from LaCie RAID and Rugged drives?',
@@ -111,7 +111,7 @@ const faqs = [
   },
   {
     q: 'What are common failure symptoms with LaCie drives?',
-    a: "Frequent issues with LaCie drives include <strong>clicking noises</strong>, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.",
+    a: "Frequent issues with LaCie drives include <strong><a href='/hard-drive-clicking' class='faq-link'>clicking noises</a></strong>, overheating, slow access times, file system corruption, or complete failure to mount. These symptoms indicate possible hardware or firmware problems that require professional recovery.",
   },
   {
     q: 'Can you recover files from a LaCie drive that was accidentally formatted?',

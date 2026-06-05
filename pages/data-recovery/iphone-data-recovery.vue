@@ -117,7 +117,7 @@ const faqs = [
   },
   {
     q: 'How much does iPhone data recovery cost?',
-    a: 'Our <strong>Component Level iPhone Data Recovery is offered at a flat rate of $950.00</strong>, with no hidden fees. When your case is brought in, we collect a <strong>$200 refundable deposit</strong> to begin the process. If we&#39;re unable to recover your data, the deposit is <strong>fully refunded</strong> — as long as the device hasn&#39;t been previously tampered with at the component level. If the recovery is successful, the $200 deposit is applied toward the total cost, and the customer simply pays the remaining $750.00 balance. You only pay if we recover your data. For more information, please visit our Pricing Page or contact us for a free consultation.',
+    a: 'Our <strong>Component Level iPhone Data Recovery is offered at a flat rate of $950.00</strong>, with no hidden fees. When your case is brought in, we collect a <strong>$200 refundable deposit</strong> to begin the process. If we&#39;re unable to recover your data, the deposit is <strong>fully refunded</strong> — as long as the device hasn&#39;t been previously tampered with at the component level. If the recovery is successful, the $200 deposit is applied toward the total cost, and the customer simply pays the remaining $750.00 balance. You only pay if we recover your data. For more information, please visit our <a href="/data-recovery-service-pricing" class="faq-link">Pricing Page</a> or contact us for a free consultation.',
   },
   {
     q: 'Can I ship my iPhone in for recovery?',

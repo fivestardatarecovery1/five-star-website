@@ -124,11 +124,11 @@ const faqs = [
   },
   {
     q: 'How long does USB data recovery take?',
-    a: 'Most USB data recovery cases are completed within <strong>3 to 5 business days</strong>. However, cases involving physical damage or complex firmware issues may take longer. <strong>Expedited and Expedited Plus Services</strong> are available for urgent cases.',
+    a: 'Most USB data recovery cases are completed within <strong>3 to 5 business days</strong>. However, cases involving physical damage or complex firmware issues may take longer. <strong><a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus</a> Services</strong> are available for urgent cases.',
   },
   {
     q: 'How much does USB data recovery cost?',
-    a: 'Pricing depends on the type of failure and the condition of the USB drive. <strong>Logical recovery</strong> typically ranges from <strong>$300 to $500</strong>, depending on storage capacity and whether the drive is encrypted. <strong>Chip-off or monolith recovery</strong> for physically damaged or unrecognized USB drives is <strong>$950 flat</strong>.<br><br>We provide free evaluations before starting any recovery, and there is no charge unless we&#39;re successful (excluding deleted file recovery or expedited service, which may require upfront payment). For a full breakdown of recovery options and pricing, please visit our cost page.',
+    a: 'Pricing depends on the type of failure and the condition of the USB drive. <strong>Logical recovery</strong> typically ranges from <strong>$300 to $500</strong>, depending on storage capacity and whether the drive is encrypted. <strong>Chip-off or monolith recovery</strong> for physically damaged or unrecognized USB drives is <strong>$950 flat</strong>.<br><br>We provide free evaluations before starting any recovery, and there is no charge unless we&#39;re successful (excluding deleted file recovery or expedited service, which may require upfront payment). For a full breakdown of recovery options and pricing, please visit our <a href="/data-recovery-service-pricing" class="faq-link">cost page</a>.',
   },
   {
     q: 'Do you offer free evaluations?',

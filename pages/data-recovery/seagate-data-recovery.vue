@@ -112,7 +112,7 @@ const faqs = [
   },
   {
     q: 'Can you recover data from Seagate drives that are no longer detected by the computer?',
-    a: 'Absolutely. If your Seagate hard drive is not showing up, the issue could be with the <strong>firmware, file system, USB controller, or internal damage</strong>. We perform thorough diagnostics to find the cause and recover your files.',
+    a: 'Absolutely. If your Seagate hard drive is <a href="/data-recovery/hard-drive-not-showing-up" class="faq-link">not showing up</a>, the issue could be with the <strong>firmware, file system, USB controller, or internal damage</strong>. We perform thorough diagnostics to find the cause and recover your files.',
   },
   {
     q: 'What causes the "Seagate drive light is on but not working" issue?',
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     q: 'Do you provide Seagate data recovery for RAID arrays?',
-    a: 'We specialize in <strong>Seagate RAID recovery</strong> for all configurations — including RAID 0, RAID 1, RAID 5, and hybrid setups. Whether it\'s a NAS using Seagate IronWolf drives or a server array, we clone the drives and recover the data without using the originals.',
+    a: 'We specialize in <strong>Seagate <a href="/data-recovery/raid-data-recovery" class="faq-link">RAID</a> recovery</strong> for all configurations — including RAID 0, RAID 1, RAID 5, and hybrid setups. Whether it\'s a NAS using Seagate IronWolf drives or a server array, we clone the drives and recover the data without using the originals.',
   },
   {
     q: 'Is it possible to recover data from a Seagate SSD?',
@@ -136,7 +136,7 @@ const faqs = [
   },
   {
     q: 'How long does Seagate Data Recovery take?',
-    a: 'Most Seagate data recovery cases are completed within <strong>3 to 5 business days</strong>. For cleanroom cases with mechanical failures, recovery may take a few extra days due to the time needed to find compatible donor parts. If you need faster service, we offer <strong>Expedited and Expedited Plus</strong> options for priority turnaround.',
+    a: 'Most Seagate data recovery cases are completed within <strong>3 to 5 business days</strong>. For cleanroom cases with mechanical failures, recovery may take a few extra days due to the time needed to find compatible donor parts. If you need faster service, we offer <strong><a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus</a></strong> options for priority turnaround.',
   },
 ]
 

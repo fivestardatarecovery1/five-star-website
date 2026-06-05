@@ -121,7 +121,7 @@ const faqs = [
   },
   {
     q: 'What types of storage devices can you recover data from?',
-    a: 'We recover data from hard drives, SSDs, USB flash drives, SD cards, RAID systems, MacBooks, iPhones, Samsung Phones, external drives, and more. If it stores data, there\'s a good chance we can recover it.',
+    a: 'We recover data from <a href="/data-recovery/hard-drive-recovery" class="faq-link">hard drives</a>, <a href="/data-recovery/ssd-data-recovery" class="faq-link">SSDs</a>, <a href="/data-recovery/usb-data-recovery" class="faq-link">USB flash drives</a>, <a href="/data-recovery/sd-card-data-recovery" class="faq-link">SD cards</a>, <a href="/data-recovery/raid-data-recovery" class="faq-link">RAID systems</a>, <a href="/data-recovery/mac-data-recovery" class="faq-link">MacBooks</a>, <a href="/data-recovery/iphone-data-recovery" class="faq-link">iPhones</a>, <a href="/data-recovery/samsung-data-recovery" class="faq-link">Samsung Phones</a>, <a href="/data-recovery/external-hard-drive-data-recovery" class="faq-link">external drives</a>, and more. If it stores data, there\'s a good chance we can recover it.',
   },
   {
     q: 'If I schedule same day pickup from Hollywood, how do I get my recovered data back?',
@@ -129,7 +129,7 @@ const faqs = [
   },
   {
     q: 'How long does the data recovery process take?',
-    a: 'Standard recoveries take about 3–5 business days, but we also offer Expedited and Expedited Plus services for urgent cases. These services prioritize your recovery based on the level of urgency.',
+    a: 'Standard recoveries take about 3–5 business days, but we also offer <a href="/expedited-service" class="faq-link">Expedited</a> and <a href="/expedited-service-plus" class="faq-link">Expedited Plus</a> services for urgent cases. These services prioritize your recovery based on the level of urgency.',
   },
   {
     q: 'Do you work on drives that have been dropped or physically damaged?',
@@ -161,11 +161,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <h2 class="s-heading">Trusted Data Recovery Services near Hollywood</h2>
         <p class="s-body">We’ve helped thousands of customers recover lost data from:</p>
         <ul class="content-list">
-          <li><strong>Mac Data Recovery</strong> – Specializing in component-level recovery for no-power MacBooks, including M1 and M2 models.</li>
-          <li><strong>Hard Drive Data Recovery</strong> – Expert recovery from drives with mechanical failure or logical corruption.</li>
-          <li><strong>RAID Data Recovery</strong> – Safe and precise recovery from RAID 0, 1, 5, 10, and custom RAID configurations.</li>
-          <li><strong>SSD Data Recovery</strong> – Advanced tools to recover data from physically or electronically failed SSDs.</li>
-          <li><strong>External Hard Drive Data Recovery</strong> – Recovering data from non-detected, clicking, or accidentally dropped external drives.</li>
+          <li><NuxtLink to="/data-recovery/mac-data-recovery" class="inline-link"><strong>Mac Data Recovery</strong></NuxtLink> – Specializing in component-level recovery for no-power MacBooks, including M1 and M2 models.</li>
+          <li><NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link"><strong>Hard Drive Data Recovery</strong></NuxtLink> – Expert recovery from drives with mechanical failure or logical corruption.</li>
+          <li><NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link"><strong>RAID Data Recovery</strong></NuxtLink> – Safe and precise recovery from RAID 0, 1, 5, 10, and custom RAID configurations.</li>
+          <li><NuxtLink to="/data-recovery/ssd-data-recovery" class="inline-link"><strong>SSD Data Recovery</strong></NuxtLink> – Advanced tools to recover data from physically or electronically failed SSDs.</li>
+          <li><NuxtLink to="/data-recovery/external-hard-drive-data-recovery" class="inline-link"><strong>External Hard Drive Data Recovery</strong></NuxtLink> – Recovering data from non-detected, clicking, or accidentally dropped external drives.</li>
         </ul>
         <p class="s-body">Every recovery is handled by experienced engineers using safe and proven methods.</p>
       </div>
