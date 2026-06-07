@@ -77,8 +77,15 @@ watch(() => route.path, closeAll)
     <!-- Top bar -->
     <div class="topbar">
       <div class="container topbar-inner">
-
-
+        <div class="topbar-left">
+          <span class="topbar-item">📍 1731 S Brand Blvd Suite 100, Glendale, CA 91204</span>
+          <span class="topbar-divider">|</span>
+          <span class="topbar-item">Mon–Fri 10am–6pm &bull; Sat 10am–2pm</span>
+        </div>
+        <div class="topbar-right">
+          <a href="tel:8182728866" class="topbar-phone">📞 818-272-8866</a>
+          <NuxtLink to="/data-recovery/free-data-recovery-quote" class="topbar-quote-btn">Get Free Quote</NuxtLink>
+        </div>
       </div>
     </div>
 
@@ -153,6 +160,12 @@ watch(() => route.path, closeAll)
           <li><NuxtLink to="/contact-us" active-class="active">Contact</NuxtLink></li>
         </ul>
 
+        <!-- Phone CTA (desktop) -->
+        <a href="tel:8182728866" class="nav-phone-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.21 2 2 0 012.11.02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+          818-272-8866
+        </a>
+
         <!-- Mobile hamburger -->
         <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
           <span /><span /><span />
@@ -202,6 +215,18 @@ watch(() => route.path, closeAll)
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 .topbar-item {
   font-size: 12px;
@@ -402,6 +427,27 @@ nav {
 .nav-quote-link:hover, .nav-quote-link.active {
   color: #fff !important;
 }
+/* ── Phone CTA in main nav (desktop) ── */
+.nav-phone-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #c0392b;
+  color: #fff;
+  font-weight: 800;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s, transform 0.15s;
+  flex-shrink: 0;
+  margin-left: 12px;
+  letter-spacing: 0.01em;
+}
+.nav-phone-cta:hover { background: #a93226; transform: translateY(-1px); }
+@media (max-width: 1100px) { .nav-phone-cta { display: none; } }
+
 .nav-appt-cta {
   display: inline-flex;
   align-items: center;
