@@ -74,21 +74,6 @@ watch(() => route.path, closeAll)
   <div class="navbar-root">
   <AnnouncementBar />
   <nav class="navbar">
-    <!-- Top bar -->
-    <div class="topbar">
-      <div class="container topbar-inner">
-        <div class="topbar-left">
-          <span class="topbar-item">📍 1731 S Brand Blvd Suite 100, Glendale, CA 91204</span>
-          <span class="topbar-divider">|</span>
-          <span class="topbar-item">Mon–Fri 10am–6pm &bull; Sat 10am–2pm</span>
-        </div>
-        <div class="topbar-right">
-          <a href="tel:8182728866" class="topbar-phone">📞 818-272-8866</a>
-          <NuxtLink to="/data-recovery/free-data-recovery-quote" class="topbar-quote-btn">Get Free Quote</NuxtLink>
-        </div>
-      </div>
-    </div>
-
     <!-- Main nav -->
     <div class="navbar-main">
       <div class="container nav-inner">
