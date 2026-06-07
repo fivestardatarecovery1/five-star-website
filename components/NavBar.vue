@@ -166,10 +166,16 @@ watch(() => route.path, closeAll)
           818-272-8866
         </a>
 
-        <!-- Mobile hamburger -->
-        <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
-          <span /><span /><span />
-        </button>
+        <!-- Mobile: Call Now + Hamburger -->
+        <div class="mobile-header-actions">
+          <a href="tel:8182728866" class="mobile-call-btn" aria-label="Call us at 818-272-8866">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.12 1.21 2 2 0 012.11.02h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+            <span class="mobile-call-label">Call Now</span>
+          </a>
+          <button class="hamburger" :class="{ open: menuOpen }" @click="menuOpen = !menuOpen" aria-label="Toggle menu">
+            <span /><span /><span />
+          </button>
+        </div>
       </div>
     </div>
 
@@ -492,6 +498,31 @@ nav {
   transform: translateY(-1px);
 }
 
+/* ── Mobile header actions (Call Now + Hamburger) ── */
+.mobile-header-actions {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.mobile-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #c0392b;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.18s;
+  letter-spacing: 0.01em;
+}
+.mobile-call-btn:hover { background: #a93226; }
+.mobile-call-label { font-size: 14px; }
+
 /* ── Hamburger ── */
 .hamburger {
   display: none;
@@ -590,11 +621,16 @@ nav {
 .slide-down-enter-to { max-height: 90vh; }
 
 @media (max-width: 1100px) {
-  .nav-links, .nav-cta { display: none; }
+  .nav-links, .nav-cta, .nav-phone-cta { display: none; }
   .hamburger { display: flex; }
+  .mobile-header-actions { display: flex; }
+}
+@media (max-width: 480px) {
+  .mobile-call-label { display: none; } /* icon-only on very small screens */
+  .mobile-call-btn { padding: 9px 12px; }
 }
 @media (max-width: 600px) {
   .topbar-item, .topbar-divider { display: none; }
-  .topbar-phone { margin-left: auto; }
+  .topbar-right { margin-left: auto; }
 }
 </style>
