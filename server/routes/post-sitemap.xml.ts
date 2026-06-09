@@ -25,6 +25,7 @@ export default defineEventHandler(async (event) => {
   setHeader(event, 'Cache-Control', 'max-age=3600, public')
 
   return `<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.join('\n')}
 </urlset>`
