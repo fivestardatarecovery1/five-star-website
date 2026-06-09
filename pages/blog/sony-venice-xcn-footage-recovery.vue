@@ -1,46 +1,4 @@
 <script setup lang="ts">
-const blogMainRef = ref<HTMLElement | null>(null)
-const sidebarWrapRef = ref<HTMLElement | null>(null)
-const sidebarRef = ref<HTMLElement | null>(null)
-
-if (import.meta.client) {
-  onMounted(() => {
-    const NAVBAR = 86
-
-    function updateSidebar() {
-      const article = blogMainRef.value
-      const wrap = sidebarWrapRef.value
-      const sidebar = sidebarRef.value
-      if (!article || !wrap || !sidebar) return
-
-      const ar = article.getBoundingClientRect()
-      const wr = wrap.getBoundingClientRect()
-      const sidebarH = sidebar.offsetHeight
-
-      if (ar.top <= NAVBAR && ar.bottom > sidebarH + NAVBAR) {
-        // Pin sidebar to top of viewport right column
-        sidebar.style.cssText = `position:fixed;top:${NAVBAR}px;left:${wr.left}px;width:${wr.width}px;z-index:10;`
-      } else if (ar.bottom <= sidebarH + NAVBAR) {
-        // End of article — anchor to bottom of wrapper
-        wrap.style.position = 'relative'
-        sidebar.style.cssText = `position:absolute;bottom:0;left:0;width:100%;`
-      } else {
-        // Above the article — normal flow
-        wrap.style.position = ''
-        sidebar.style.cssText = ''
-      }
-    }
-
-    window.addEventListener('scroll', updateSidebar, { passive: true })
-    window.addEventListener('resize', updateSidebar)
-    updateSidebar()
-    onUnmounted(() => {
-      window.removeEventListener('scroll', updateSidebar)
-      window.removeEventListener('resize', updateSidebar)
-    })
-  })
-}
-
 useSeoMeta({
   title: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed | Five Star Data Recovery',
   description: 'How we recovered 35 corrupted Sony Venice X-OCN files — including partially overwritten footage — after three data recovery labs said it couldn\'t be done. A real case study in professional video file repair.',
@@ -88,7 +46,7 @@ useSeoMeta({
     <section class="blog-body">
       <div class="container blog-layout">
         <!-- MAIN ARTICLE -->
-        <article class="blog-main" id="article-start" ref="blogMainRef">
+        <article class="blog-main" id="article-start">
 
         <!-- Lead -->
         <div class="lead-block">
@@ -307,8 +265,7 @@ useSeoMeta({
         </article>
 
         <!-- SIDEBAR -->
-        <aside class="blog-sidebar-wrap" ref="sidebarWrapRef">
-        <div class="blog-sidebar" ref="sidebarRef">
+        <aside class="blog-sidebar">
 
           <!-- More Articles -->
           <div class="sidebar-card">
@@ -361,7 +318,6 @@ useSeoMeta({
             <p class="sidebar-author-bio">Marco leads our video file repair division, specializing in professional camera formats including Sony X-OCN, ARRIRAW, and Blackmagic RAW.</p>
           </div>
 
-        </div>
         </aside>
 
       </div>
@@ -514,13 +470,11 @@ useSeoMeta({
 .blog-main p { margin-bottom: 22px; }
 
 /* ── Sidebar ── */
-.blog-sidebar-wrap {
-  align-self: start;
-}
 .blog-sidebar {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-self: start;
 }
 .sidebar-card {
   background: #fff;
@@ -1011,7 +965,7 @@ useSeoMeta({
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .blog-layout { grid-template-columns: 1fr; }
-  .blog-sidebar-wrap { display: none; }
+  .blog-sidebar { display: none; }
 }
 @media (max-width: 768px) {
   .blog-hero { padding: 70px 0 56px; }
