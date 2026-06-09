@@ -272,14 +272,26 @@ useSeoMeta({
             <h3 class="sidebar-heading">More Articles</h3>
             <div class="sidebar-posts">
               <NuxtLink to="/blog/how-to-repair-external-hard-drive-after-it-was-dropped" class="sidebar-post">
-                <div class="sidebar-post-cat">Data Recovery Guide</div>
-                <div class="sidebar-post-title">How to Repair an External Hard Drive After It Was Dropped</div>
-                <div class="sidebar-post-read">8 min read →</div>
+                <div class="sidebar-post-img-wrap">
+                  <img src="/blog-dropped-hard-drive.jpg" alt="How to repair a dropped external hard drive" class="sidebar-post-img" loading="lazy" />
+                </div>
+                <div class="sidebar-post-body">
+                  <div class="sidebar-post-cat">Data Recovery Guide</div>
+                  <div class="sidebar-post-title">How to Repair an External Hard Drive After It Was Dropped</div>
+                  <p class="sidebar-post-snippet">Stop trying to power it on. Clicking or beeping after a drop means the heads may have crashed — every spin risks permanent platter damage.</p>
+                  <div class="sidebar-post-read">8 min read →</div>
+                </div>
               </NuxtLink>
               <NuxtLink to="/blog/usb-data-recovery-chip-off" class="sidebar-post">
-                <div class="sidebar-post-cat">Case Study</div>
-                <div class="sidebar-post-title">USB Data Recovery Using Chip-Off Technique</div>
-                <div class="sidebar-post-read">6 min read →</div>
+                <div class="sidebar-post-img-wrap">
+                  <img src="/blog-usb-chip-off.jpg" alt="USB chip-off data recovery" class="sidebar-post-img" loading="lazy" />
+                </div>
+                <div class="sidebar-post-body">
+                  <div class="sidebar-post-cat">Case Study</div>
+                  <div class="sidebar-post-title">USB Data Recovery Using the Chip-Off Technique</div>
+                  <p class="sidebar-post-snippet">When a USB drive stops being detected entirely, chip-off recovery reads the NAND flash directly — bypassing the failed controller.</p>
+                  <div class="sidebar-post-read">6 min read →</div>
+                </div>
               </NuxtLink>
             </div>
           </div>
@@ -489,16 +501,30 @@ useSeoMeta({
 .sidebar-post {
   text-decoration: none;
   color: inherit;
-  padding: 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #f0f4f8;
   background: #fafbff;
   display: block;
-  transition: border-color 0.2s, background 0.2s;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
-.sidebar-post:hover { border-color: #C9A84C; background: #fff; }
+.sidebar-post:hover { border-color: #C9A84C; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.sidebar-post-img-wrap {
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+}
+.sidebar-post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.sidebar-post:hover .sidebar-post-img { transform: scale(1.04); }
+.sidebar-post-body { padding: 14px; }
 .sidebar-post-cat {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -506,16 +532,26 @@ useSeoMeta({
   margin-bottom: 6px;
 }
 .sidebar-post-title {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #1a1a2e;
   line-height: 1.4;
   margin-bottom: 8px;
 }
-.sidebar-post-read {
+.sidebar-post-snippet {
   font-size: 0.78rem;
   color: #718096;
-  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.sidebar-post-read {
+  font-size: 0.75rem;
+  color: #C9A84C;
+  font-weight: 700;
 }
 
 /* Sidebar CTA */
