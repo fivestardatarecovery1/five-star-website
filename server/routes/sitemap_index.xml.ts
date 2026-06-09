@@ -3,7 +3,7 @@ import { defineEventHandler, setHeader } from 'h3'
 const BASE = 'https://www.fivestardatarecovery.com'
 
 export default defineEventHandler((event) => {
-  const now = new Date().toISOString().split('T')[0]
+  const now = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')
 
   setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
   setHeader(event, 'Cache-Control', 'max-age=3600, public')
