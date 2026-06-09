@@ -27,6 +27,16 @@ const activeCategory = ref('All')
 
 const posts = [
   {
+    title: 'They Flew the Drives Cross-Country After Three Labs Failed. Here\'s How We Saved the Footage.',
+    date: 'June 9, 2026',
+    category: 'Success Stories & Case Studies',
+    readTime: '10 min read',
+    desc: 'A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn\'t supposed to be possible.',
+    href: '/blog/sony-venice-xcn-footage-recovery',
+    image: '/hollywood-hero.jpg',
+    icon: '🎬'
+  },
+  {
     title: 'How to Repair External Hard Drive after it was Dropped',
     date: 'June 19, 2025',
     category: 'Data Loss Causes & Scenarios',
