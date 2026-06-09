@@ -105,7 +105,40 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/sitemap'],
   sitemap: {
     exclude: [
-      '/sitemap', // exclude the HTML sitemap page
+      '/sitemap',          // HTML sitemap page (not the XML one)
+      '/about',            // redirect alias
+      '/contact',          // redirect alias
+      '/terms',            // redirect alias
+      '/pricing',          // redirect alias
+      '/data-recovery-burbank',
+      '/data-recovery-pasadena',
+      '/data-recovery-hollywood',
+      '/express-drop-off',
+      '/data-recovery/mail-in-service',
+      '/data-recovery/laptop-recovery',
+      '/data-recovery/clean-room',
+      '/data-recovery/iphone-recovery',
+      '/data-recovery/samsung-recovery',
+      '/data-recovery/desktop-recovery',
+      '/data-recovery/western-digital-recovery',
+      '/data-recovery/sd-card-recovery',
+      '/data-recovery/mac-recovery',
+      '/data-recovery/seagate-recovery',
+      '/data-recovery/lacie-recovery',
+      '/data-recovery/toshiba-recovery',
+      '/data-recovery/hitachi-recovery',
+      '/data-recovery/nas-recovery',
+      '/data-recovery/raid-recovery',
+      '/data-recovery/external-hard-drive',
+      '/data-recovery/cfast-recovery',
+      '/data-recovery/ssd-recovery',
+      '/data-recovery/usb-recovery',
+      '/data-recovery/free-quote',
+      '/data-recovery/express-drop-off',
+      '/data-recovery/hard-drive-clicking',
+      '/data-recovery/dropped-hard-drive-recovery',
+      '/usb-data-recovery-chip-off',
+      '/how-to-repair-external-hard-drive-after-it-was-dropped',
     ]
   },
   content: {
