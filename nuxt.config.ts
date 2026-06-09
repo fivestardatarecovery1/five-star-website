@@ -91,11 +91,6 @@ export default defineNuxtConfig({
     googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || '',
     anthropicApiKey: process.env.ANTHROPIC_API_KEY || '',
   },
-  // Site URL for sitemap module
-  site: {
-    url: 'https://www.fivestardatarecovery.com'
-  },
-
   experimental: {
     // Inline per-component CSS into the HTML <head> instead of separate blocking <link> requests
     // Eliminates 6 render-blocking CSS files (~14 KiB) — saves ~450ms on mobile
