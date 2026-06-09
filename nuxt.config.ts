@@ -76,6 +76,8 @@ export default defineNuxtConfig({
     // Express drop-off root redirect
     '/express-drop-off':                                    { redirect: { to: '/data-recovery/express-drop-off-form', statusCode: 301 } },
     '/express-drop-off/':                                   { redirect: { to: '/data-recovery/express-drop-off-form', statusCode: 301 } },
+    '/sitemap':                                             { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
+    '/sitemap/':                                            { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
 
     // Blog posts (WordPress had them at root, new site has /blog/ prefix)
     '/usb-data-recovery-chip-off':                          { redirect: { to: '/blog/usb-data-recovery-chip-off', statusCode: 301 } },

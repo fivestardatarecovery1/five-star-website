@@ -63,7 +63,7 @@ const PAGES = [
 ]
 
 export default defineEventHandler((event) => {
-  const now = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z')
+  const now = new Date().toISOString().split('T')[0]
 
   const urls = PAGES.map(p => `  <url>
     <loc>${BASE}${p.path}</loc>
