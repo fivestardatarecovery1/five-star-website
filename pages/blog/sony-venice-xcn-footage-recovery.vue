@@ -33,15 +33,20 @@ useSeoMeta({
           <div class="author-avatar">M</div>
           <div>
             <div class="author-name">Marco · Video Repair Specialist, Five Star Data Recovery</div>
-  
           </div>
         </div>
+        <a href="#article-start" class="read-cta">
+          <span>Read Case Study</span>
+          <span class="read-cta-arrow">↓</span>
+        </a>
       </div>
     </section>
 
     <!-- ARTICLE BODY -->
     <section class="blog-body">
-      <div class="container blog-container">
+      <div class="container blog-layout">
+        <!-- MAIN ARTICLE -->
+        <article class="blog-main" id="article-start">
 
         <!-- Lead -->
         <div class="lead-block">
@@ -257,6 +262,52 @@ useSeoMeta({
         <!-- Disclaimer -->
         <p class="disclaimer">Case details anonymized to protect client confidentiality. Technical specifications and recovery outcomes are accurate.</p>
 
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
+
+          <!-- More Articles -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">More Articles</h3>
+            <div class="sidebar-posts">
+              <NuxtLink to="/blog/how-to-repair-external-hard-drive-after-it-was-dropped" class="sidebar-post">
+                <div class="sidebar-post-cat">Data Recovery Guide</div>
+                <div class="sidebar-post-title">How to Repair an External Hard Drive After It Was Dropped</div>
+                <div class="sidebar-post-read">8 min read →</div>
+              </NuxtLink>
+              <NuxtLink to="/blog/usb-data-recovery-chip-off" class="sidebar-post">
+                <div class="sidebar-post-cat">Case Study</div>
+                <div class="sidebar-post-title">USB Data Recovery Using Chip-Off Technique</div>
+                <div class="sidebar-post-read">6 min read →</div>
+              </NuxtLink>
+            </div>
+          </div>
+
+          <!-- Emergency CTA -->
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-icon">🎬</div>
+            <h3>Lost Video Footage?</h3>
+            <p>We recover Sony Venice, ARRIRAW, BRAW, RED, and MXF files other labs can't touch.</p>
+            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
+            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
+          </div>
+
+          <!-- About the Author -->
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">About the Author</h3>
+            <div class="sidebar-author">
+              <div class="sidebar-author-avatar">M</div>
+              <div>
+                <div class="sidebar-author-name">Marco</div>
+                <div class="sidebar-author-role">Video Repair Specialist<br>Five Star Data Recovery</div>
+              </div>
+            </div>
+            <p class="sidebar-author-bio">Marco leads our video file repair division, specializing in professional camera formats including Sony X-OCN, ARRIRAW, and Blackmagic RAW.</p>
+          </div>
+
+        </aside>
+
       </div>
     </section>
 
@@ -354,17 +405,201 @@ useSeoMeta({
 .author-name { font-size: 0.85rem; font-weight: 700; color: #fff; text-align: left; }
 .author-sub { font-size: 0.75rem; color: rgba(255,255,255,0.45); text-align: left; }
 
-/* ── Body ── */
-.blog-body { background: #fff; }
-.blog-container {
-  max-width: 820px;
+/* ── Read CTA (hero) ── */
+.read-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 32px;
+  background: #C9A84C;
+  color: #1a1a2e;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 0.02em;
+}
+.read-cta:hover { background: #b8963e; transform: translateY(2px); }
+.read-cta-arrow {
+  display: inline-block;
+  font-size: 1.2rem;
+  animation: bounce 1.6s infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ── Body layout ── */
+.blog-body { background: #f8f9fc; }
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  align-items: start;
+  padding: 56px 20px 80px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 70px 20px 80px;
+}
+
+/* ── Main article ── */
+.blog-main {
+  background: #fff;
+  border-radius: 14px;
+  padding: 52px 48px 60px;
   color: #222;
   font-size: 1.06rem;
   line-height: 1.85;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border: 1px solid #e8edf5;
 }
-.blog-container p { margin-bottom: 22px; }
+.blog-main p { margin-bottom: 22px; }
+
+/* ── Sidebar ── */
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 100px;
+}
+.sidebar-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #e8edf5;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.sidebar-heading {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a0aec0;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #C9A84C;
+  display: inline-block;
+}
+
+/* Sidebar posts */
+.sidebar-posts { display: flex; flex-direction: column; gap: 16px; }
+.sidebar-post {
+  text-decoration: none;
+  color: inherit;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #f0f4f8;
+  background: #fafbff;
+  display: block;
+  transition: border-color 0.2s, background 0.2s;
+}
+.sidebar-post:hover { border-color: #C9A84C; background: #fff; }
+.sidebar-post-cat {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #C9A84C;
+  margin-bottom: 6px;
+}
+.sidebar-post-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.sidebar-post-read {
+  font-size: 0.78rem;
+  color: #718096;
+  font-weight: 600;
+}
+
+/* Sidebar CTA */
+.sidebar-cta {
+  background: linear-gradient(135deg, #0d111f, #1a2035);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  color: #fff;
+  border: 1px solid rgba(201,168,76,0.25);
+}
+.sidebar-cta-icon { font-size: 2rem; margin-bottom: 12px; }
+.sidebar-cta h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.sidebar-cta p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.sidebar-cta-btn {
+  display: block;
+  background: #C9A84C;
+  color: #1a1a2e;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+.sidebar-cta-btn:hover { background: #b8963e; }
+.sidebar-cta-phone {
+  display: block;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.sidebar-cta-phone:hover { color: #C9A84C; }
+
+/* Sidebar author */
+.sidebar-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.sidebar-author-avatar {
+  width: 40px;
+  height: 40px;
+  background: #C9A84C;
+  color: #1a1a2e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.sidebar-author-name {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: #1a1a2e;
+}
+.sidebar-author-role {
+  font-size: 0.75rem;
+  color: #718096;
+  line-height: 1.4;
+}
+.sidebar-author-bio {
+  font-size: 0.82rem;
+  color: #4a5568;
+  line-height: 1.65;
+  margin: 0;
+}
 
 /* Lead */
 .lead-block {
@@ -693,14 +928,20 @@ useSeoMeta({
 .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
 
 /* ── Responsive ── */
+@media (max-width: 1024px) {
+  .blog-layout { grid-template-columns: 1fr; }
+  .blog-sidebar { position: static; top: auto; }
+}
 @media (max-width: 768px) {
   .blog-hero { padding: 70px 0 56px; }
-  .blog-container { padding: 44px 16px 60px; }
+  .blog-layout { padding: 24px 16px 48px; gap: 24px; }
+  .blog-main { padding: 28px 20px 40px; }
   .emergency-block { padding: 28px 20px; }
   .phase-block { padding: 20px 20px; }
   .lesson-block { flex-direction: column; gap: 12px; }
   .results-table th, .results-table td { padding: 12px 14px; }
   .blog-author { flex-direction: column; gap: 8px; text-align: center; }
-  .author-name, .author-sub { text-align: center; }
+  .author-name { text-align: center; }
+  .read-cta { margin-top: 24px; }
 }
 </style>
