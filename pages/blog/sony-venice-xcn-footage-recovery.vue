@@ -123,8 +123,8 @@ useSeoMeta({
 
         <!-- Internal platters image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-post-production.jpg" alt="MacBook with black screen — video files that can't be opened" class="blog-img" />
-          <p class="img-caption">This is what 35 files looked like when the drives arrived: nothing. Black screen where the footage should be.</p>
+          <img src="/blog-sony-venice-post-production.jpg" alt="Filmmaker frustrated after footage is lost and three labs have failed" class="blog-img" />
+          <p class="img-caption">Three labs had already turned them away. By the time the drives reached us, they were out of options.</p>
         </div>
 
         <!-- Section: What We Did -->
