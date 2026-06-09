@@ -473,20 +473,15 @@ useSeoMeta({
 .blog-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   position: sticky;
   top: 88px;
   align-self: start;
-  max-height: calc(100vh - 108px);
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
-.blog-sidebar::-webkit-scrollbar { display: none; }
 .sidebar-card {
   background: #fff;
   border-radius: 12px;
-  padding: 24px;
+  padding: 18px;
   border: 1px solid #e8edf5;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
@@ -517,7 +512,7 @@ useSeoMeta({
 .sidebar-post:hover { border-color: #C9A84C; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
 .sidebar-post-img-wrap {
   width: 100%;
-  height: 140px;
+  height: 110px;
   overflow: hidden;
 }
 .sidebar-post-img {
@@ -564,7 +559,7 @@ useSeoMeta({
 .sidebar-cta {
   background: linear-gradient(135deg, #0d111f, #1a2035);
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px;
   text-align: center;
   color: #fff;
   border: 1px solid rgba(201,168,76,0.25);
