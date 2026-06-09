@@ -18,6 +18,7 @@
     "@fontsource/inter": "^5.2.8",
     "@fontsource/montserrat": "^5.2.8",
     "@nuxt/image": "^2.0.0",
+    "@nuxtjs/sitemap": "^8.1.0",
     "@sparticuz/chromium-min": "^149.0.0",
     "puppeteer-core": "^25.1.0",
     "resend": "^6.12.4"

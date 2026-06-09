@@ -97,7 +97,20 @@ export default defineNuxtConfig({
     inlineSSRStyles: true,
   },
 
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap'],
+
+  site: {
+    url: 'https://www.fivestardatarecovery.com'
+  },
+
+  sitemap: {
+    // Explicitly include any blog posts that use .vue pages only (no .md content file)
+    // Blog posts with a /content/blog/*.md file are auto-discovered
+    urls: [
+      '/blog/sony-venice-xcn-footage-recovery',
+    ],
+    exclude: ['/sitemap'],
+  },
   content: {
     highlight: {
       theme: 'github-dark'
