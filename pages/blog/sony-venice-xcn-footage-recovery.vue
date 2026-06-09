@@ -451,7 +451,7 @@ useSeoMeta({
   grid-template-columns: 1fr 340px;
   gap: 40px;
   align-items: start;
-  padding: 56px 20px 80px;
+  padding: 24px 20px 80px;
   max-width: 1160px;
   margin: 0 auto;
 }
@@ -460,7 +460,7 @@ useSeoMeta({
 .blog-main {
   background: #fff;
   border-radius: 14px;
-  padding: 52px 48px 60px;
+  padding: 48px 48px 60px;
   color: #222;
   font-size: 1.06rem;
   line-height: 1.85;
@@ -475,7 +475,7 @@ useSeoMeta({
   flex-direction: column;
   gap: 20px;
   position: sticky;
-  top: 88px;
+  top: 86px;
   align-self: start;
 }
 .sidebar-card {
