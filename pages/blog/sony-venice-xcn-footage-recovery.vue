@@ -123,8 +123,8 @@ useSeoMeta({
 
         <!-- Internal platters image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-forensic.jpg" alt="Forensic drive imaging equipment — Five Star Data Recovery" class="blog-img" />
-          <p class="img-caption">Phase 1: Before touching anything, we create forensic sector-by-sector images of every drive. The originals are never touched.</p>
+          <img src="/blog-sony-venice-post-production.jpg" alt="MacBook with black screen — video files that can't be opened" class="blog-img" />
+          <p class="img-caption">This is what 35 files looked like when the drives arrived: nothing. Black screen where the footage should be.</p>
         </div>
 
         <!-- Section: What We Did -->
@@ -154,8 +154,8 @@ useSeoMeta({
 
         <!-- Lab engineers image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-post-production.jpg" alt="MacBook with black screen — video files that won't open" class="blog-img" />
-          <p class="img-caption">35 files. Black screen where footage should be. Three labs had already given up before the drives reached us.</p>
+          <img src="/blog-sony-venice-recovery-results.jpg" alt="MacBook at a workstation — recovered footage back in post-production" class="blog-img" />
+          <p class="img-caption">24 files fully recovered. 11 partially recovered. Zero files returned blank.</p>
         </div>
 
         <!-- Section: Results -->
