@@ -33,7 +33,7 @@ const posts = [
     readTime: '10 min read',
     desc: 'A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn\'t supposed to be possible.',
     href: '/blog/sony-venice-xcn-footage-recovery',
-    image: '/hollywood-hero.jpg',
+    image: '/blog-sony-venice-film-set.png',
     icon: '🎬'
   },
   {

@@ -5,7 +5,7 @@ useSeoMeta({
   ogTitle: 'They Flew the Drives Cross-Country After Three Labs Failed. Here\'s How We Saved the Footage.',
   ogDescription: 'A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn\'t supposed to be possible.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/sony-venice-xcn-footage-recovery',
-  ogImage: 'https://www.fivestardatarecovery.com/hollywood-hero.jpg',
+  ogImage: 'https://www.fivestardatarecovery.com/blog-sony-venice-film-set.png',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   twitterCard: 'summary_large_image',
@@ -59,7 +59,7 @@ useSeoMeta({
 
         <!-- Hero image -->
         <div class="blog-image-block">
-          <img src="/hollywood-hero.jpg" alt="Five Star Data Recovery — Los Angeles, California" class="blog-img" />
+          <img src="/blog-sony-venice-film-set.png" alt="Sony Venice cinema camera on a professional film set" class="blog-img" />
           <p class="img-caption">Three labs had already failed. A production company flew their drives from New York to our California lab as a last resort.</p>
         </div>
 
@@ -93,7 +93,7 @@ useSeoMeta({
 
         <!-- Seagate drives image -->
         <div class="blog-image-block">
-          <img src="/seagate-data-recovery-hero.webp" alt="Seagate 24TB drives — data recovery case study" class="blog-img" />
+          <img src="/blog-sony-venice-drives.png" alt="Three 24TB drives on a forensic recovery workbench" class="blog-img" />
           <p class="img-caption">Three 24TB Seagate drives — two of which had new footage written over the missing clips before reaching us.</p>
         </div>
 
@@ -123,7 +123,7 @@ useSeoMeta({
 
         <!-- Internal platters image -->
         <div class="blog-image-block">
-          <img src="/hard-drive-internal-platters.jpg" alt="Hard drive internal platters — forensic imaging" class="blog-img" />
+          <img src="/blog-sony-venice-forensic.png" alt="Forensic drive imaging equipment — Five Star Data Recovery" class="blog-img" />
           <p class="img-caption">Phase 1: Before touching anything, we create forensic sector-by-sector images of every drive. The originals are never touched.</p>
         </div>
 
@@ -154,7 +154,7 @@ useSeoMeta({
 
         <!-- Lab engineers image -->
         <div class="blog-image-block">
-          <img src="/five-star-lab-engineers.jpg" alt="Five Star Data Recovery lab engineers" class="blog-img" />
+          <img src="/blog-sony-venice-post-production.png" alt="Film post-production editing suite — recovered footage" class="blog-img" />
           <p class="img-caption">Our team at work. Every recovery starts with forensic imaging — originals are never touched.</p>
         </div>
 
@@ -280,7 +280,7 @@ useSeoMeta({
 /* ── Hero ── */
 .blog-hero {
   position: relative;
-  background: linear-gradient(to bottom, rgba(10,14,24,0.96) 0%, rgba(10,14,24,0.88) 100%), url('/hollywood-hero.jpg') center / cover no-repeat;
+  background: linear-gradient(to bottom, rgba(10,14,24,0.96) 0%, rgba(10,14,24,0.88) 100%), url('/blog-sony-venice-film-set.png') center / cover no-repeat;
   color: #fff;
   padding: 100px 0 80px;
   text-align: center;
