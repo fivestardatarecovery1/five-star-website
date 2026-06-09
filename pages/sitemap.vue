@@ -143,7 +143,7 @@
               <h2>XML Sitemap</h2>
             </div>
             <ul>
-              <li><a href="/sitemap.xml" target="_blank">sitemap.xml (for Google)</a></li>
+              <li><a href="/sitemap_index.xml" target="_blank">sitemap_index.xml (for Google)</a></li>
             </ul>
           </div>
 
