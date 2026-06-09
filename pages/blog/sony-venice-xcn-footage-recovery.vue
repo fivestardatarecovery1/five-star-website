@@ -475,8 +475,9 @@ useSeoMeta({
   flex-direction: column;
   gap: 20px;
   position: sticky;
-  top: 86px;
+  top: 0;
   align-self: start;
+  padding-top: 94px; /* navbar height (86px) + 8px breathing room */
 }
 .sidebar-card {
   background: #fff;
