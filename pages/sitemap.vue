@@ -136,16 +136,14 @@
             </ul>
           </div>
 
-          <!-- XML Sitemaps -->
+          <!-- XML Sitemap -->
           <div class="sitemap-group">
             <div class="group-header">
               <span class="group-icon">🗂️</span>
-              <h2>XML Sitemaps</h2>
+              <h2>XML Sitemap</h2>
             </div>
             <ul>
-              <li><a href="/sitemap_index.xml" target="_blank">Sitemap Index</a></li>
-              <li><a href="/page-sitemap.xml" target="_blank">Page Sitemap</a></li>
-              <li><a href="/post-sitemap.xml" target="_blank">Post Sitemap</a></li>
+              <li><a href="/sitemap.xml" target="_blank">sitemap.xml (for Google)</a></li>
             </ul>
           </div>
 
