@@ -1,4 +1,25 @@
 <script setup lang="ts">
+// Newsletter signup
+const newsletterEmail = ref('')
+const newsletterState = ref<'idle' | 'loading' | 'success' | 'error'>('idle')
+const newsletterError = ref('')
+
+async function subscribeNewsletter() {
+  if (!newsletterEmail.value || newsletterState.value === 'loading') return
+  newsletterState.value = 'loading'
+  newsletterError.value = ''
+  try {
+    const res = await $fetch('/api/newsletter-subscribe', {
+      method: 'POST',
+      body: { email: newsletterEmail.value },
+    })
+    newsletterState.value = 'success'
+  } catch (e: any) {
+    newsletterState.value = 'error'
+    newsletterError.value = e?.data?.statusMessage || 'Something went wrong. Please try again.'
+  }
+}
+
 useSeoMeta({
   title: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed | Five Star Data Recovery',
   description: 'How we recovered 35 corrupted Sony Venice X-OCN files — including partially overwritten footage — after three data recovery labs said it couldn\'t be done. A real case study in professional video file repair.',
@@ -343,6 +364,36 @@ useSeoMeta({
             </a>
           </div>
 
+          <!-- Newsletter Signup -->
+          <div class="sidebar-card newsletter-card">
+            <h3 class="sidebar-heading">Get New Articles</h3>
+            <p class="newsletter-desc">New case studies and data recovery guides — direct to your inbox. No spam, ever.</p>
+
+            <div v-if="newsletterState === 'success'" class="newsletter-success">
+              ✓ You're subscribed! We'll notify you when new articles are published.
+            </div>
+
+            <form v-else @submit.prevent="subscribeNewsletter" class="newsletter-form">
+              <input
+                v-model="newsletterEmail"
+                type="email"
+                placeholder="your@email.com"
+                class="newsletter-input"
+                required
+                :disabled="newsletterState === 'loading'"
+              />
+              <button
+                type="submit"
+                class="newsletter-btn"
+                :disabled="newsletterState === 'loading'"
+              >
+                <span v-if="newsletterState === 'loading'">Subscribing...</span>
+                <span v-else>Notify Me</span>
+              </button>
+              <p v-if="newsletterState === 'error'" class="newsletter-error">{{ newsletterError }}</p>
+            </form>
+          </div>
+
           <!-- About the Author -->
           <div class="sidebar-card">
             <h3 class="sidebar-heading">About the Author</h3>
@@ -671,6 +722,59 @@ useSeoMeta({
   transition: color 0.15s;
 }
 .rss-link:hover { color: #C9A84C; }
+
+/* Newsletter widget */
+.newsletter-card { background: #fff; }
+.newsletter-desc {
+  font-size: 0.8rem;
+  color: #718096;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.newsletter-form { display: flex; flex-direction: column; gap: 8px; }
+.newsletter-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: #1a1a2e;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.newsletter-input:focus { border-color: #C9A84C; }
+.newsletter-input:disabled { background: #f8f9fc; }
+.newsletter-btn {
+  width: 100%;
+  background: #C9A84C;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 6px;
+  padding: 11px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover:not(:disabled) { background: #b8963e; }
+.newsletter-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.newsletter-success {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.newsletter-error {
+  color: #dc2626;
+  font-size: 0.78rem;
+  margin: 0;
+}
 
 /* Sidebar author */
 .sidebar-author {
