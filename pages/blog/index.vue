@@ -27,7 +27,7 @@ const activeCategory = ref('All')
 
 const posts = [
   {
-    title: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed',
+    title: 'They Flew the Drives Cross-Country After Three Labs Failed. Here\'s How We Saved the Footage.',
     date: 'June 9, 2026',
     category: 'Success Stories & Case Studies',
     readTime: '10 min read',

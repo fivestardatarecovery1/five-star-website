@@ -102,7 +102,12 @@ export default defineNuxtConfig({
     inlineSSRStyles: true,
   },
 
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap'],
+  sitemap: {
+    exclude: [
+      '/sitemap', // exclude the HTML sitemap page
+    ]
+  },
   content: {
     highlight: {
       theme: 'github-dark'

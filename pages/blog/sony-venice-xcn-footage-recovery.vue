@@ -33,7 +33,7 @@ useSeoMeta({
           <div class="author-avatar">M</div>
           <div>
             <div class="author-name">Marco · Video Repair Specialist, Five Star Data Recovery</div>
-            <div class="author-sub">Cinescue · Professional Camera Format Recovery</div>
+  
           </div>
         </div>
       </div>
