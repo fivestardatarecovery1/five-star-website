@@ -1,9 +1,9 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'They Flew the Drives Cross-Country After Three Labs Failed — Five Star Data Recovery',
-  description: 'A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn\'t supposed to be possible.',
-  ogTitle: 'They Flew the Drives Cross-Country After Three Labs Failed. Here\'s How We Saved the Footage.',
-  ogDescription: 'A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn\'t supposed to be possible.',
+  title: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed | Five Star Data Recovery',
+  description: 'How we recovered 35 corrupted Sony Venice X-OCN files — including partially overwritten footage — after three data recovery labs said it couldn\'t be done. A real case study in professional video file repair.',
+  ogTitle: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed',
+  ogDescription: 'How we recovered 35 corrupted Sony Venice X-OCN files after a power loss, macOS First Aid damage, and overwrite — when three other labs had already failed.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/sony-venice-xcn-footage-recovery',
   ogImage: 'https://www.fivestardatarecovery.com/blog-sony-venice-film-set.jpg',
   ogType: 'article',
@@ -154,8 +154,8 @@ useSeoMeta({
 
         <!-- Lab engineers image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-post-production.jpg" alt="Film post-production editing suite — recovered footage" class="blog-img" />
-          <p class="img-caption">Our team at work. Every recovery starts with forensic imaging — originals are never touched.</p>
+          <img src="/blog-sony-venice-post-production.jpg" alt="MacBook with black screen — video files that won't open" class="blog-img" />
+          <p class="img-caption">35 files. Black screen where footage should be. Three labs had already given up before the drives reached us.</p>
         </div>
 
         <!-- Section: Results -->
