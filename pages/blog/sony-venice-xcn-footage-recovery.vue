@@ -475,8 +475,14 @@ useSeoMeta({
   flex-direction: column;
   gap: 24px;
   position: sticky;
-  top: 100px;
+  top: 88px;
+  align-self: start;
+  max-height: calc(100vh - 108px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.blog-sidebar::-webkit-scrollbar { display: none; }
 .sidebar-card {
   background: #fff;
   border-radius: 12px;
