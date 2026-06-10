@@ -118,7 +118,7 @@ useSeoMeta({
           <li>Codec dependencies that require understanding the format at a forensic level — not just finding its magic bytes</li>
         </ul>
 
-        <p>When an X-OCN file has a corrupted container structure, you don't just 'extract' it. You have to reconstruct the frame hierarchy, verify the codec stream against known Venice output characteristics, and rebuild the container metadata from what remains. That's not recovery. That's repair.</p>
+        <p>When an X-OCN file has a corrupted container structure, you don't just 'extract' it. You have to reconstruct the frame hierarchy, verify the codec stream against known Venice output characteristics, and rebuild the container metadata from what remains. That's not recovery. That's <NuxtLink to="/data-recovery/video-file-repair" title="Professional Video File Repair Services — Sony Venice X-OCN, ARRIRAW, BRAW, RED R3D | Five Star Data Recovery" class="inline-link">video file repair</NuxtLink>.</p>
 
         <p>And when segments of that file have been overwritten by new data? You have to identify exactly where the overwrite begins, determine what's still intact before and after the overwrite boundary, and decide whether those segments can be reconstructed into a usable file — or whether the damage is too deep.</p>
 
@@ -215,7 +215,7 @@ useSeoMeta({
         <div class="lesson-block">
           <div class="lesson-number">2</div>
           <div>
-            <h3>First Aid is not a data recovery tool.</h3>
+            <h3>First Aid is not a <NuxtLink to="/data-recovery" title="Professional Data Recovery Services in Glendale, CA — Hard Drive, SSD, RAID &amp; More | Five Star Data Recovery" class="inline-link">data recovery</NuxtLink> tool.</h3>
             <p>It is a filesystem repair utility. It does not know what your files contain. It does not know that the 'inconsistency' it's clearing is actually a Sony X-OCN frame structure with recoverable data beneath a corrupted directory entry. It clears. That's what it does.</p>
           </div>
         </div>
@@ -485,6 +485,8 @@ useSeoMeta({
   border: 1px solid #e8edf5;
 }
 .blog-main p { margin-bottom: 22px; }
+.inline-link { color: #c9a84c; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.15s; }
+.inline-link:hover { color: #b8963e; }
 
 /* ── Sidebar ── */
 .blog-sidebar {
