@@ -27,7 +27,7 @@ const activeCategory = ref('All')
 
 const posts = [
   {
-    title: 'They Flew the Drives Cross-Country After Three Labs Failed. Here\'s How We Saved the Footage.',
+    title: 'Sony Venice X-OCN Data Recovery Case Study',
     date: 'June 9, 2026',
     category: 'Success Stories & Case Studies',
     readTime: '10 min read',

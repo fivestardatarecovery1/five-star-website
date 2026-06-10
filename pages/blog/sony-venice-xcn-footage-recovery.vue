@@ -27,8 +27,8 @@ useSeoMeta({
           <span class="blog-category">Success Stories &amp; Case Studies</span>
           <span class="blog-category video-tag">Video File Repair</span>
         </div>
-        <h1 class="blog-title">They Flew the Drives Cross-Country After Three Labs Failed.<br>Here's How We Saved the Footage.</h1>
-        <p class="blog-excerpt">A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn't supposed to be possible.</p>
+        <h1 class="blog-title">Sony Venice X-OCN Data Recovery Case Study</h1>
+        <p class="blog-excerpt">They flew the drives cross-country after three labs failed. A real case involving a 15-day Sony Venice shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn't supposed to be possible.</p>
         <div class="blog-author">
           <div class="author-avatar">M</div>
           <div>
@@ -313,7 +313,7 @@ useSeoMeta({
           <div class="sidebar-card">
             <BlogShareButtons
               url="https://www.fivestardatarecovery.com/blog/sony-venice-xcn-footage-recovery"
-              title="They Flew the Drives Cross-Country After Three Labs Failed. Here's How We Saved the Footage."
+              title="Sony Venice X-OCN Data Recovery Case Study"
             />
           </div>
 
