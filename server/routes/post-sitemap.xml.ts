@@ -1,25 +1,33 @@
-import { serverQueryContent } from '#content/server'
 import { defineEventHandler, setHeader } from 'h3'
 
 const BASE = 'https://www.fivestardatarecovery.com'
 
-export default defineEventHandler(async (event) => {
+// Blog posts are Vue pages — list canonical URLs and publish dates here.
+// lastmod is always today (dynamic per request) so Google sees fresh content.
+const BLOG_POSTS = [
+  {
+    slug: '/blog/sony-venice-x-ocn-video-file-repair-case-study',
+    published: '2026-06-09',
+  },
+  {
+    slug: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped',
+    published: '2025-06-19',
+  },
+  {
+    slug: '/blog/usb-data-recovery-chip-off',
+    published: '2025-06-19',
+  },
+]
+
+export default defineEventHandler((event) => {
   const today = new Date().toISOString().split('T')[0]
 
-  // Auto-discovers ALL blog posts from /content/blog/*.md
-  const posts = await serverQueryContent(event, '/blog')
-    .where({ _path: { $ne: '/blog' } })
-    .find()
-
-  const urls = posts.map((post) => {
-    const lastmod = post.date ? new Date(post.date).toISOString().split('T')[0] : today
-    return `  <url>
-    <loc>${BASE}${post._path}</loc>
-    <lastmod>${lastmod}</lastmod>
+  const urls = BLOG_POSTS.map(({ slug }) => `  <url>
+    <loc>${BASE}${slug}</loc>
+    <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>`
-  })
+  </url>`).join('\n')
 
   setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
   setHeader(event, 'Cache-Control', 'max-age=3600, public')
@@ -27,6 +35,6 @@ export default defineEventHandler(async (event) => {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.join('\n')}
+${urls}
 </urlset>`
 })
