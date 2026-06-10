@@ -40,7 +40,7 @@ function welcomeEmailHtml(email: string): string {
                 In the meantime, if you're dealing with a data emergency right now, our team is ready to help.
               </p>
               <div style="text-align:center;margin-bottom:32px;">
-                <a href="${SITE_URL}/free-quote" style="display:inline-block;background:#F5C842;color:#0A0C14;font-size:15px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;letter-spacing:0.3px;">
+                <a href="${SITE_URL}/data-recovery/free-data-recovery-quote" style="display:inline-block;background:#F5C842;color:#0A0C14;font-size:15px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;letter-spacing:0.3px;">
                   Get a Free Recovery Quote
                 </a>
               </div>
