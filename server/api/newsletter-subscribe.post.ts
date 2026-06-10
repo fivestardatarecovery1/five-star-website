@@ -41,7 +41,11 @@ function welcomeEmailHtml(email: string): string {
               </p>
               <div style="text-align:center;margin-bottom:32px;">
                 <a href="${SITE_URL}/instant-quote" style="display:inline-block;background:#F5C842;color:#0A0C14;font-size:15px;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;letter-spacing:0.3px;">
-                  Get a Free Recovery Quote
+                  Get an Instant Quote
+                </a>
+              <br/><br/>
+              <a href="${SITE_URL}/blog" style="display:inline-block;background:transparent;color:#F5C842;font-size:14px;font-weight:600;padding:10px 24px;border-radius:8px;text-decoration:none;border:1px solid #F5C842;letter-spacing:0.3px;">
+                  Browse the Blog →
                 </a>
               </div>
               <hr style="border:none;border-top:1px solid #1E2235;margin:0 0 24px;" />
