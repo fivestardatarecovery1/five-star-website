@@ -274,6 +274,9 @@ useSeoMeta({
           <p>We specialize in video file repair for professional camera formats — Sony Venice X-OCN, ARRIRAW, Blackmagic RAW, RED R3D, MXF, and more. We work with production companies, post facilities, forensic investigators, and individual filmmakers. We've recovered footage that three other labs declared unrecoverable.</p>
           <p>We don't promise miracles. We promise expertise, forensic discipline, and a straight answer about what's actually possible — before we touch anything.</p>
 
+          <p class="emergency-company"><strong>Five Star Data Recovery</strong></p>
+          <p class="emergency-tagline"><strong>Contact us before you try anything else. The footage that looks gone may not be.</strong></p>
+
           <div class="emergency-cta">
             <NuxtLink to="/start-recovery" class="btn-emergency">Start Recovery Now</NuxtLink>
             <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
@@ -1053,6 +1056,8 @@ useSeoMeta({
 .emergency-block p { color: rgba(255,255,255,0.75); margin-bottom: 16px; }
 .emergency-block p:last-of-type { margin-bottom: 28px; }
 .emergency-block strong { color: #fff; }
+.emergency-company { color: #C9A84C !important; font-size: 1.05rem !important; margin-bottom: 6px !important; }
+.emergency-tagline { color: #fff !important; font-size: 1.05rem !important; font-style: italic; margin-bottom: 28px !important; }
 .emergency-cta {
   display: flex;
   gap: 16px;
