@@ -3,9 +3,11 @@ export default defineNuxtConfig({
     preset: 'vercel'
   },
   routeRules: {
-    // Blog URL rename — old slug → new canonical slug (301 permanent)
-    '/blog/sony-venice-xcn-footage-recovery':  { redirect: { to: '/blog/sony-venice-x-ocn-file-repair-case-study', statusCode: 301 } },
-    '/blog/sony-venice-xcn-footage-recovery/': { redirect: { to: '/blog/sony-venice-x-ocn-file-repair-case-study', statusCode: 301 } },
+    // Blog URL rename — all old slugs → final canonical slug (301 permanent)
+    '/blog/sony-venice-xcn-footage-recovery':          { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
+    '/blog/sony-venice-xcn-footage-recovery/':         { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
+    '/blog/sony-venice-x-ocn-file-repair-case-study':  { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
+    '/blog/sony-venice-x-ocn-file-repair-case-study/': { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
 
     // Mail-in service redirect (keep)
     '/data-recovery/mail-in-service':                       { redirect: { to: '/data-recovery/data-recovery-mail-in-service', statusCode: 301 } },
