@@ -1,16 +1,16 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed | Five Star Data Recovery',
-  description: 'How we recovered 35 corrupted Sony Venice X-OCN files — including partially overwritten footage — after three data recovery labs said it couldn\'t be done. A real case study in professional video file repair.',
-  ogTitle: 'Sony Venice X-OCN File Recovery: 35 Files Saved After 3 Labs Failed',
-  ogDescription: 'How we recovered 35 corrupted Sony Venice X-OCN files after a power loss, macOS First Aid damage, and overwrite — when three other labs had already failed.',
+  title: 'Sony Venice X-OCN Data Recovery Case Study | Five Star Data Recovery',
+  description: 'See how we achieved 100% video file repair on a 15-day Sony Venice narrative shoot after 3 labs failed. Don\'t run First Aid—call our forensic video specialists.',
+  ogTitle: 'Sony Venice X-OCN Data Recovery Case Study | Five Star Data Recovery',
+  ogDescription: 'See how we achieved 100% video file repair on a 15-day Sony Venice narrative shoot after 3 labs failed. Don\'t run First Aid—call our forensic video specialists.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/sony-venice-xcn-footage-recovery',
   ogImage: 'https://www.fivestardatarecovery.com/blog-sony-venice-film-set.jpg',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   twitterCard: 'summary_large_image',
-  twitterTitle: 'They Flew the Drives Cross-Country After Three Labs Failed',
-  twitterDescription: 'A real Sony Venice X-OCN case study from Five Star Data Recovery.',
+  twitterTitle: 'Sony Venice X-OCN Data Recovery Case Study | Five Star Data Recovery',
+  twitterDescription: '100% video file repair on a 15-day shoot after 3 labs failed. Forensic X-OCN recovery by Five Star Data Recovery.',
 })
 </script>
 
@@ -90,7 +90,7 @@ useSeoMeta({
         </div>
 
         <div class="callout-card danger">
-          <h3>The Part Nobody Told Us At First</h3>
+          <h3>The Critical Missing Piece</h3>
           <p>The DIT had new footage coming in. Days 12, 13, 14, 15 of the shoot still needed backing up. The drives were now mounting. They showed available space. So he used them.</p>
           <p>New footage was written directly onto the drives — occupying sectors that had belonged to the missing clips. This is the part that the other three labs couldn't get past. When data is overwritten, the common industry assumption is that it's gone. Full stop.</p>
           <p>By the time the drives reached us, we were looking at three categories of files: intact files (unaffected), structurally damaged files (container headers corrupted, data present), and partially overwritten files (some segments intact, some replaced by new footage data). Thirty-five files missing. Three labs had already looked and walked away.</p>
@@ -132,8 +132,8 @@ useSeoMeta({
           <p class="img-caption">Three labs had already turned them away. By the time the drives reached us, they were out of options.</p>
         </div>
 
-        <!-- Section: What We Did -->
-        <h2 class="section-heading">What We Did</h2>
+        <!-- Section: Our Recovery Process -->
+        <h2 class="section-heading">Our Recovery Process</h2>
 
         <div class="phase-block">
           <div class="phase-number">Phase 1</div>
@@ -200,7 +200,7 @@ useSeoMeta({
         </div>
 
         <!-- Section: What Every Production Team Needs to Learn -->
-        <h2 class="section-heading">What Every Production Team Needs to Learn From This</h2>
+        <h2 class="section-heading">What Every Production Team Needs to Learn</h2>
 
         <p>We're not telling this story to embarrass anyone. The DIT on this shoot made the decisions most people would make. He ran First Aid because that's what you do. He kept backing up because the shoot had to continue. None of those decisions came from negligence. They came from not knowing.</p>
 
@@ -244,9 +244,9 @@ useSeoMeta({
           </div>
         </div>
 
-        <!-- Section: If You're Reading This Because It's Already Happened -->
+        <!-- Section: Has This Already Happened to You? -->
         <div class="emergency-block">
-          <h2>If You're Reading This Because It's Already Happened</h2>
+          <h2>Has This Already Happened to You?</h2>
           <p class="emergency-lead"><strong>Stop everything. Stop running tools. Stop mounting drives. Stop trying things.</strong></p>
           <p>The single most important move you can make right now is to stop adding variables to the problem. Every tool you run, every mount attempt, every copy operation changes the state of the drive and potentially reduces what's recoverable.</p>
           <p><strong>Then call us.</strong></p>
@@ -256,8 +256,9 @@ useSeoMeta({
           <p class="emergency-company"><strong>Five Star Data Recovery</strong></p>
           <p class="emergency-tagline"><strong>Contact us before you try anything else. The footage that looks gone may not be.</strong></p>
 
+          <p class="emergency-availability">⚡ Available 24/7 for emergency forensic consultations</p>
           <div class="emergency-cta">
-            <NuxtLink to="/start-recovery" class="btn-emergency">Start Recovery Now</NuxtLink>
+            <NuxtLink to="/start-recovery" class="btn-emergency">Request an Immediate Forensic Consultation</NuxtLink>
             <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
           </div>
         </div>
@@ -886,17 +887,17 @@ useSeoMeta({
   padding: 16px 20px;
   vertical-align: middle;
 }
-.row-success { background: #f0fdf4; }
-.row-partial { background: #fffbf0; }
-.row-zero { background: #f0f9ff; }
+.row-success { background: rgba(22,163,74,0.08); }
+.row-partial { background: rgba(217,119,6,0.08); }
+.row-zero { background: rgba(107,114,128,0.06); }
 .result-count {
   font-size: 1.4rem;
   font-weight: 900;
   text-align: center;
 }
-.row-success .result-count { color: #16a34a; }
-.row-partial .result-count { color: #d97706; }
-.row-zero .result-count { color: #0369a1; }
+.row-success .result-count { color: #4ADE80; font-size: 1.2rem; }
+.row-partial .result-count { color: #FCD34D; font-size: 1.2rem; }
+.row-zero .result-count { color: #9CA3AF; font-size: 1.2rem; }
 .result-badge {
   display: inline-block;
   padding: 4px 12px;
@@ -905,9 +906,9 @@ useSeoMeta({
   font-weight: 800;
   white-space: nowrap;
 }
-.result-badge.full { background: #dcfce7; color: #166534; }
-.result-badge.partial { background: #fef3c7; color: #92400e; }
-.result-badge.zero { background: #dbeafe; color: #1e40af; }
+.result-badge.full { background: rgba(22,163,74,0.18); color: #4ADE80; font-weight: 700; }
+.result-badge.partial { background: rgba(245,200,66,0.15); color: #FCD34D; font-weight: 700; }
+.result-badge.zero { background: rgba(107,114,128,0.15); color: #9CA3AF; font-weight: 700; }
 
 /* Results quote */
 .results-quote {
@@ -978,7 +979,7 @@ useSeoMeta({
   margin-bottom: 20px !important;
 }
 .emergency-block p { color: rgba(255,255,255,0.75); margin-bottom: 16px; }
-.emergency-block p:last-of-type { margin-bottom: 28px; }
+.emergency-availability { color: #4ADE80 !important; font-size: 0.9rem !important; font-weight: 600; margin-bottom: 20px !important; }
 .emergency-block strong { color: #fff; }
 .emergency-company { color: #C9A84C !important; font-size: 1.05rem !important; margin-bottom: 6px !important; }
 .emergency-tagline { color: #fff !important; font-size: 1.05rem !important; font-style: italic; margin-bottom: 28px !important; }
@@ -999,6 +1000,8 @@ useSeoMeta({
   transition: background 0.2s;
 }
 .btn-emergency:hover { background: #b91c1c; }
+.btn-emergency { white-space: nowrap; }
+@media (max-width: 600px) { .btn-emergency { white-space: normal; text-align: center; } }
 .btn-call {
   border: 2px solid #C9A84C;
   color: #C9A84C;
