@@ -1,7 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#0A0C14"/>
-  <polygon
-    points="16,4 19.1,12.6 28.2,12.6 21,18 23.8,26.6 16,21.4 8.2,26.6 11,18 3.8,12.6 12.9,12.6"
-    fill="#F5C842"
-  />
+  <rect width="32" height="32" rx="5" fill="#0A0C14"/>
+  <!-- HDD body outline -->
+  <rect x="3" y="5" width="26" height="20" rx="3" fill="#1a1c2e" stroke="#F5C842" stroke-width="2.2"/>
+  <!-- Platter top circle -->
+  <circle cx="14" cy="15" r="6" fill="none" stroke="#F5C842" stroke-width="2"/>
+  <circle cx="14" cy="15" r="2" fill="#F5C842"/>
+  <!-- Read arm -->
+  <line x1="19.5" y1="15" x2="25" y2="9" stroke="#F5C842" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="25" cy="9" r="1.5" fill="#F5C842"/>
 </svg>
