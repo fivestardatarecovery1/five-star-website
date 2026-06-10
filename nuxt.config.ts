@@ -106,7 +106,31 @@ export default defineNuxtConfig({
     inlineSSRStyles: true,
   },
 
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '@nuxtjs/sitemap'],
+
+  sitemap: {
+    // Auto-discovers all routes from the router — no manual list needed
+    autoLastmod: true,
+    // Exclude redirects, API routes, error pages
+    exclude: [
+      '/sitemap_index.xml',
+      '/post-sitemap.xml',
+      '/page-sitemap.xml',
+      '/rss.xml',
+    ],
+    // Higher priority for key pages
+    urls: [
+      { loc: '/', priority: 1.0, changefreq: 'weekly' },
+      { loc: '/data-recovery', priority: 0.9, changefreq: 'weekly' },
+      { loc: '/instant-quote', priority: 0.9, changefreq: 'weekly' },
+      { loc: '/start-recovery', priority: 0.9, changefreq: 'weekly' },
+    ],
+    defaults: {
+      changefreq: 'monthly',
+      priority: 0.7,
+      lastmod: new Date().toISOString(),
+    },
+  },
   content: {
     highlight: {
       theme: 'github-dark'
