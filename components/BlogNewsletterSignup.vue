@@ -62,12 +62,12 @@ async function subscribe() {
 .newsletter-heading {
   font-size: 1rem;
   font-weight: 700;
-  color: #F5F5F5;
+  color: #1a1a2e;
   margin: 0 0 6px;
 }
 .newsletter-desc {
   font-size: 0.85rem;
-  color: #9CA3AF;
+  color: #718096;
   line-height: 1.6;
   margin: 0 0 16px;
 }
@@ -89,18 +89,20 @@ async function subscribe() {
   gap: 8px;
 }
 .newsletter-input {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.12);
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
   border-radius: 8px;
-  color: #fff;
+  color: #1a1a2e;
   font-size: 0.9rem;
   padding: 10px 14px;
   outline: none;
   transition: border-color 0.2s;
+  width: 100%;
+  font-family: inherit;
 }
-.newsletter-input::placeholder { color: #6B7280; }
-.newsletter-input:focus { border-color: #F5C842; }
-.newsletter-input:disabled { opacity: 0.5; cursor: not-allowed; }
+.newsletter-input::placeholder { color: #a0aec0; }
+.newsletter-input:focus { border-color: #c9a84c; }
+.newsletter-input:disabled { opacity: 0.5; cursor: not-allowed; background: #f8f9fc; }
 .newsletter-btn {
   background: #F5C842;
   color: #0A0C14;
