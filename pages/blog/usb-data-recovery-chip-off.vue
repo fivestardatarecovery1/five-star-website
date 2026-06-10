@@ -1,70 +1,191 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'USB Data Recovery (Chip Off) — Five Star Data Recovery',
-  description: 'USB Data Recovery (Chip Off)'
+  description: 'How Five Star Data Recovery recovered data from a failed 64GB USB thumb drive using chip-off technique. Full case study including diagnosis, NAND reading, and rebuild process.',
+  ogTitle: 'USB Data Recovery (Chip Off) — Five Star Data Recovery',
+  ogDescription: 'A real chip-off USB recovery case study: failed 64GB thumb drive, NAND chip reading, controller emulation, and full data rebuild.',
+  ogUrl: 'https://www.fivestardatarecovery.com/blog/usb-data-recovery-chip-off',
+  ogType: 'article',
+  ogSiteName: 'Five Star Data Recovery',
 })
 </script>
 
 <template>
   <div>
     <NavBar />
+
+    <!-- HERO -->
     <section class="blog-hero">
-      <div class="container">
+      <div class="container hero-inner">
         <div class="blog-meta">
           <span class="blog-date">June 19, 2025</span>
           <span class="blog-category">Data Recovery</span>
+          <span class="blog-category">Case Study</span>
         </div>
         <h1 class="blog-title">USB Data Recovery (Chip Off)</h1>
-        <p class="blog-excerpt">USB Data Recovery (Chip Off)</p>
+        <p class="blog-excerpt">How we recovered 100% of data from a 64GB USB drive that wasn't being detected at all — after a local repair shop had already failed.</p>
+        <div class="blog-author">
+          <div class="author-avatar">V</div>
+          <div class="author-name">Vahan Hovsepian · Head Engineer, Five Star Data Recovery</div>
+        </div>
       </div>
     </section>
 
-    <section class="blog-body section-pad">
-      <div class="container blog-container">
-        <p>USB Data Recovery (Chip Off)</p>
-        <p>Get Your Data Back In No Time.</p>
-        <p>Initial Issue with USB Drive: Customer brought in a 64GB USB thumb drive. The thumb drive was not being detected by his computer whatsoever. Before bringing the USB drive to us for data recovery, they took it to a local computer repair shop that tried to repair the connectors. But their attempts were unsuccessful.</p>
-        <p>The drive was being problematic for the customer for quite some time. It started working slower and slower until it eventually stopped being recognized completely. Customer opted into our Expedited Plus Data Recovery Service as they needed the data back urgently.</p>
-        <p>USB drives have become a popular way of storing and transferring data. These devices are compact and portable, making them an essential tool for people who need to move data from one computer to another. However, like any electronic device, USB drives can fail, and the data on them can become inaccessible. One way of recovering data from a failed USB drive is through chip-off data recovery. In this article, we will discuss the possibility of data recovery from a chip-off USB drive, the process of recovering data from a chip-off USB drive, and how to recover data from a chip.</p>
-        <p>What is USB Chip-Off Data Recovery?</p>
-        <p>USB chip-off data recovery is a process of removing the flash memory chip from a USB Data Recovery drive and reading the data directly from the chip. This is done when the USB drive has failed, and the data on it is inaccessible through traditional data recovery methods. The flash memory chip is removed from the USB drive using specialized equipment, and the data is read from the chip using specialized software.</p>
-        <p>Possibility of Data Recovery from Chip-Off USB Drive</p>
-        <p>The possibility of data recovery from a chip-off USB drive depends on several factors, such as the type of failure and the condition of the flash memory chip. In some cases, a chip-off data recovery is the only way to recover data from a failed USB drive. However, it is essential to note that chip-off data recovery is a delicate and complex process that should only be performed by trained professionals.</p>
-        <p>The success of a chip-off data recovery also depends on the condition of the flash memory chip. If the chip is physically damaged or has been exposed to extreme heat or moisture, the data may be irretrievable. Additionally, if the data on the chip has been overwritten or corrupted, the data recovery process may not be successful.</p>
-        <p>Diagnosis Process of Chip-Off USB Drive</p>
-        <p>Before attempting a chip-off data recovery, the USB drive must be diagnosed to determine the extent of the damage and the likelihood of successful data recovery. The diagnosis process typically involves the following steps: Step 1: Visual Inspection – The USB drive is visually inspected for signs of physical damage or corrosion. Step 2: Initial Testing – The USB drive is tested to determine if it is recognized by the computer. Step 3: Data Recovery Software Testing – Data recovery software is used to attempt to recover data from the USB drive. Step 4: Chip-off Diagnosis – If the data recovery software is unable to recover data from the USB drive, a chip-off diagnosis is performed. This involves removing the flash memory chip from the USB drive and testing it to determine if the data is retrievable.</p>
-        <p>How Can I Recover Data from a Chip?</p>
-        <p>Recovering data from a chip requires specialized equipment and software. Here are the steps involved in the chip-off data recovery process: Step 1: Removing the Chip – The first step in the chip-off data recovery process is to remove the flash memory chip from the USB drive. This is done using specialized equipment that heats the chip and removes it from the circuit board. Step 2: Reading the Chip – Once the chip has been removed, it is read using specialized software. The data on the chip is analyzed to determine if it is retrievable. Step 3: Transferring the Data – If the data on the chip is retrievable, it is transferred to a new storage device. The data is carefully extracted and transferred to a new USB drive, external hard drive, or another storage device. Step 4: Verification – The final step in the chip-off data recovery process is to verify that the recovered data is complete and accurate. This is done by checking the data against the original files to ensure that no data has been lost or corrupted.</p>
-        <p>Conclusion</p>
-        <p>USB chip-off data recovery is a delicate and complex process that should only be performed by trained professionals. While there is a possibility of data recovery from a chip-off USB drive, the success of the recovery depends on several factors, including the type of failure and the condition of the flash memory chip. It is essential to choose a reputable company with experience in chip-off data recovery when looking to recover data from a failed USB Drive. With the right equipment, software, and expertise, it is possible to recover data from even the most severely damaged USB drives.</p>
-        <p>Our Initial Diagnosis:</p>
-        <p>We verified with our Data Recovery equipment that the USB drive is not being detected whatsoever. We disassembled the entire USB Drive and soldered off the 2 NAND chips (where data is stored). The problem with these cases is almost always related to a failed controller.</p>
-        <p>In order to recover the data, we would need to read each of the NAND chips individually (this is called reading the “dump”). Once we have both chips completely read by using special tools (in this case PC-3000 Flash by Ace Laboratory), we start the rebuilding of the data process. In this step, we would emulate the controller in our system to rebuild the data.</p>
-        <p>Outcome of Case:</p>
-        <p>We were able to successful rebuild the data and gain access to the data on the USB drive. There was no data loss and the customer got their data back with the original file structure.</p>
-        <p>If you find yourself in a situation where you can’t access the data on your USB drive, please feel free to contact us 24/7 for a free over the phone consultation and quote.</p>
-        <p>Subscribe</p>
-        <p>https://www.youtube.com/watch?v=14ACFHJ24hg</p>
-        <p>Social Media</p>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>X-twitter</p>
-        <p>Youtube</p>
-        <p>Pinterest</p>
-        <p>Linkedin</p>
-        <p>“Awesome Work!”</p>
-        <p>When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!</p>
-        <p>Mikey W.</p>
-        <p>“Truely 5 Stars”</p>
-        <p>Don’t trust your important data anywhere else. These guys are the best. It’s all in the name: 5 star performance and service all the way. You’ll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it’s at. Honestly: don’t go anywhere else. Don’t even think about it. Thank you guys!</p>
-        <p>Arin K.</p>
-        <p>“Thank You!”</p>
-        <p>My son’s laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly.</p>
-        <p>Vance K.</p>
-        <p>Latest Posts</p>
+    <!-- BODY -->
+    <section class="blog-body">
+      <div class="container blog-layout">
+
+        <!-- MAIN ARTICLE -->
+        <article class="blog-main">
+
+          <h2 class="section-heading">The Case</h2>
+
+          <p>A customer brought in a 64GB USB thumb drive that was not being detected by their computer whatsoever. Before bringing the drive to us, they had already taken it to a local computer repair shop that attempted to repair the connectors — unsuccessfully.</p>
+
+          <p>The drive had been problematic for a while. It started working slower and slower until it eventually stopped being recognized completely. The customer opted into our <strong>Expedited Plus Data Recovery Service</strong> as they needed the data back urgently.</p>
+
+          <h2 class="section-heading">What Is USB Chip-Off Data Recovery?</h2>
+
+          <p>USB chip-off data recovery is the process of physically removing the flash memory chip (NAND) from a USB drive and reading the data directly from the chip. This is done when the USB drive has failed and the data is inaccessible through traditional recovery methods.</p>
+
+          <p>The flash memory chip is removed using specialized soldering equipment, then the data is read using forensic-grade tools. This bypasses the failed controller entirely.</p>
+
+          <h2 class="section-heading">Can Data Always Be Recovered?</h2>
+
+          <p>The success of a chip-off recovery depends on several factors:</p>
+
+          <ul class="blog-list">
+            <li><strong>Type of failure</strong> — Controller failure is highly recoverable via chip-off. Physical NAND damage is harder.</li>
+            <li><strong>Condition of the NAND chip</strong> — Exposure to extreme heat, moisture, or physical damage can make data unreadable.</li>
+            <li><strong>Overwrite status</strong> — If data has been overwritten or corrupted at the chip level, recovery may be partial or impossible.</li>
+          </ul>
+
+          <p>Chip-off is a delicate, complex process that should only be performed by trained professionals with the right equipment. The wrong technique can permanently destroy the chip.</p>
+
+          <h2 class="section-heading">Our Diagnosis Process</h2>
+
+          <div class="phase-block">
+            <div class="phase-number">Step 1</div>
+            <h3 class="phase-title">Visual Inspection</h3>
+            <p>The USB drive is visually inspected for signs of physical damage, corrosion, or connector failure. In this case, we could see the previous repair shop had already attempted connector work.</p>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-number">Step 2</div>
+            <h3 class="phase-title">Initial Testing</h3>
+            <p>We verified with our data recovery equipment that the USB drive was indeed not being detected at all — confirming the failure was beyond simple connector repair.</p>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-number">Step 3</div>
+            <h3 class="phase-title">Disassembly & NAND Extraction</h3>
+            <p>We disassembled the entire USB drive and soldered off the 2 NAND chips (where all data is stored). The problem in these cases is almost always a failed controller — the NAND chips themselves are typically intact.</p>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-number">Step 4</div>
+            <h3 class="phase-title">Chip Reading ("Dump")</h3>
+            <p>Each NAND chip was read individually using our PC-3000 Flash by Ace Laboratory. This produces a raw "dump" — a complete binary image of everything stored on the chip, including the data structures the controller used to organize it.</p>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-number">Step 5</div>
+            <h3 class="phase-title">Controller Emulation & Data Rebuild</h3>
+            <p>Once we had both chip dumps, we emulated the controller in our system to rebuild the data. This step reconstructs the file system from the raw NAND data — the same way the original controller would have organized it — and makes the files accessible again.</p>
+          </div>
+
+          <h2 class="section-heading">The Result</h2>
+
+          <div class="results-table-wrap">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Drive</th>
+                  <th>Capacity</th>
+                  <th>Outcome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="row-success">
+                  <td><span class="result-badge full">USB Thumb Drive</span></td>
+                  <td class="result-count">64GB</td>
+                  <td>100% data recovered — original file structure intact</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="results-quote">
+            No data loss. The customer got everything back with the original file structure.
+          </div>
+
+          <h2 class="section-heading">What to Do If Your USB Drive Fails</h2>
+
+          <div class="insight-block">
+            <p>If you can't access the data on your USB drive, <strong>do not attempt to repair it yourself</strong>. Further connector attempts, heat application, or software tools can make chip-off recovery harder or impossible. Call a specialist first.</p>
+          </div>
+
+          <ul class="blog-list">
+            <li>Stop using the drive immediately</li>
+            <li>Don't attempt to bend, heat, or re-solder the connector</li>
+            <li>Don't run disk utility or recovery software if the drive isn't detected</li>
+            <li>Contact a professional who has chip-off capability and forensic NAND reading tools</li>
+          </ul>
+
+          <div class="emergency-block">
+            <h2 class="emergency-title">USB Drive Not Detected?</h2>
+            <p><strong>Stop. Don't touch it.</strong> Every repair attempt without the right tools reduces your chances.</p>
+            <p>We offer free over-the-phone consultations — tell us what's happening and we'll give you a straight answer about your options before you send anything in.</p>
+            <p class="emergency-company"><strong>Five Star Data Recovery</strong></p>
+            <p class="emergency-tagline"><strong>Contact us before you try anything else. The data that looks gone may not be.</strong></p>
+            <div class="emergency-cta">
+              <NuxtLink to="/start-recovery" class="btn-emergency">Start Recovery</NuxtLink>
+              <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
+
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-icon">🔌</div>
+            <h3>USB Drive Not Working?</h3>
+            <p>We recover data from flash drives, SD cards, and USB thumb drives — including chip-off cases. Free evaluation.</p>
+            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
+            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
+          </div>
+
+          <div class="sidebar-card">
+            <BlogShareButtons
+              url="https://www.fivestardatarecovery.com/blog/usb-data-recovery-chip-off"
+              title="USB Data Recovery (Chip Off) — Five Star Data Recovery"
+            />
+          </div>
+
+          <div class="sidebar-card newsletter-card">
+            <BlogNewsletterSignup />
+          </div>
+
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">About the Author</h3>
+            <div class="sidebar-author">
+              <div class="sidebar-author-avatar">V</div>
+              <div>
+                <div class="sidebar-author-name">Vahan Hovsepian</div>
+                <div class="sidebar-author-role">Head Engineer<br>Five Star Data Recovery</div>
+              </div>
+            </div>
+            <p class="sidebar-author-bio">Vahan leads the engineering team at Five Star Data Recovery, specializing in NAND chip-off recovery, firmware-level repairs, and advanced flash memory reconstruction.</p>
+          </div>
+
+        </aside>
+
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta-section">
       <div class="container cta-inner">
         <h2 class="cta-title">Need Professional Data Recovery?</h2>
@@ -81,68 +202,89 @@ useSeoMeta({
 </template>
 
 <style scoped>
+/* ── Hero ── */
 .blog-hero {
-  background: #111;
+  background: linear-gradient(to bottom, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.92) 100%);
+  background-color: #0A0C14;
   color: #fff;
-  padding: 80px 0 60px;
+  padding: 100px 0 70px;
   text-align: center;
 }
-.blog-meta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 0.85rem;
-}
-.blog-date { color: #C9A84C; }
-.blog-category {
-  background: rgba(201,168,76,0.15);
-  color: #C9A84C;
-  padding: 2px 12px;
-  border-radius: 20px;
-}
-.blog-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  max-width: 800px;
-  margin: 0 auto 20px;
-  line-height: 1.2;
-}
-.blog-excerpt {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.7);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-.blog-body {
-  background: #fff;
-}
-.blog-container {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  color: #222;
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-.blog-container p {
-  margin-bottom: 20px;
-}
-.blog-section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #111;
-  margin: 40px 0 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #C9A84C;
-}
-.blog-list {
-  margin: 0 0 20px 20px;
-  padding: 0;
-}
-.blog-list li {
-  margin-bottom: 8px;
-  list-style: disc;
-}
+.hero-inner { position: relative; z-index: 1; }
+.blog-meta { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; font-size: 0.82rem; flex-wrap: wrap; }
+.blog-date { color: #F5C842; }
+.blog-category { background: rgba(245,200,66,0.12); color: #F5C842; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
+.blog-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; max-width: 800px; margin: 0 auto 18px; line-height: 1.2; }
+.blog-excerpt { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 24px; line-height: 1.7; }
+.blog-author { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.author-avatar { width: 36px; height: 36px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+.author-name { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+/* ── Layout ── */
+.blog-body { background: #0D0F1A; padding: 60px 0 80px; }
+.blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
+@media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { order: -1; } }
+
+/* ── Article ── */
+.blog-main { color: #D1D5DB; font-size: 1.02rem; line-height: 1.85; }
+.blog-main p { margin-bottom: 20px; }
+.section-heading { font-size: 1.5rem; font-weight: 700; color: #F5F5F5; margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid #F5C842; }
+.blog-list { margin: 0 0 20px 22px; }
+.blog-list li { margin-bottom: 8px; }
+
+.phase-block { background: #12141F; border: 1px solid #1E2235; border-radius: 10px; padding: 24px; margin-bottom: 16px; }
+.phase-number { display: inline-block; background: #F5C842; color: #0A0C14; font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
+.phase-title { font-size: 1.1rem; font-weight: 700; color: #F5F5F5; margin: 0 0 12px; }
+
+.insight-block { background: rgba(245,200,66,0.06); border-left: 4px solid #F5C842; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 28px 0; }
+.insight-block p { margin: 0; color: #D1D5DB; }
+
+.results-table-wrap { overflow-x: auto; margin: 28px 0; }
+.results-table { width: 100%; border-collapse: collapse; background: #12141F; border-radius: 10px; overflow: hidden; }
+.results-table thead tr { background: #0A0C14; }
+.results-table th { padding: 14px 18px; text-align: left; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #6B7280; }
+.results-table td { padding: 16px 18px; font-size: 0.92rem; color: #D1D5DB; border-top: 1px solid #1E2235; }
+.result-badge { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; }
+.result-badge.full { background: rgba(34,197,94,0.15); color: #4ADE80; }
+.result-count { font-size: 1.1rem; font-weight: 700; color: #F5C842; }
+.results-quote { background: #12141F; border-left: 4px solid #F5C842; padding: 20px 24px; border-radius: 0 10px 10px 0; font-size: 1.1rem; font-style: italic; color: #F5F5F5; margin: 0 0 36px; }
+
+.emergency-block { background: linear-gradient(135deg, #12141F 0%, #0A0C14 100%); border: 1px solid #F5C842; border-radius: 12px; padding: 32px; margin-top: 48px; text-align: center; }
+.emergency-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 16px; }
+.emergency-block p { color: #9CA3AF; margin-bottom: 12px; }
+.emergency-company { color: #F5C842 !important; font-size: 1.05rem !important; margin-bottom: 6px !important; }
+.emergency-tagline { color: #fff !important; font-size: 1.05rem !important; font-style: italic; margin-bottom: 28px !important; }
+.emergency-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-emergency { background: #F5C842; color: #0A0C14; font-weight: 700; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: opacity 0.2s; }
+.btn-emergency:hover { opacity: 0.9; }
+.btn-call { border: 1px solid rgba(245,200,66,0.4); color: #F5C842; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: background 0.2s; }
+.btn-call:hover { background: rgba(245,200,66,0.08); }
+
+/* ── Sidebar ── */
+.blog-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 90px; }
+.sidebar-cta { background: linear-gradient(135deg, #1a1c2e 0%, #12141F 100%); border: 1px solid #F5C842; border-radius: 12px; padding: 24px; text-align: center; }
+.sidebar-cta-icon { font-size: 2rem; margin-bottom: 10px; }
+.sidebar-cta h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 8px; }
+.sidebar-cta p { font-size: 0.85rem; color: #9CA3AF; margin: 0 0 16px; line-height: 1.5; }
+.sidebar-cta-btn { display: block; background: #F5C842; color: #0A0C14; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-bottom: 10px; transition: opacity 0.2s; }
+.sidebar-cta-btn:hover { opacity: 0.9; }
+.sidebar-cta-phone { display: block; font-size: 0.85rem; color: #F5C842; text-decoration: none; }
+.sidebar-card { background: #12141F; border: 1px solid #1E2235; border-radius: 12px; padding: 22px; }
+.newsletter-card { background: #0D0F1A; border-color: rgba(245,200,66,0.2); }
+.sidebar-heading { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin: 0 0 16px; }
+.sidebar-author { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.sidebar-author-avatar { width: 40px; height: 40px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sidebar-author-name { font-size: 0.9rem; font-weight: 700; color: #F5F5F5; }
+.sidebar-author-role { font-size: 0.78rem; color: #6B7280; margin-top: 2px; line-height: 1.4; }
+.sidebar-author-bio { font-size: 0.82rem; color: #6B7280; line-height: 1.6; margin: 0; }
+
+/* ── CTA Section ── */
+.cta-section { background: #12141F; padding: 72px 0; text-align: center; border-top: 1px solid #1E2235; }
+.cta-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin: 0 0 14px; }
+.cta-sub { color: #9CA3AF; font-size: 1rem; margin: 0 0 32px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: #F5C842; color: #0A0C14; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-outline { border: 1px solid rgba(245,200,66,0.4); color: #F5C842; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
+.btn-outline:hover { background: rgba(245,200,66,0.08); }
 </style>

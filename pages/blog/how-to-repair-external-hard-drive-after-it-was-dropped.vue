@@ -1,77 +1,199 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'How to Repair External Hard Drive after it was Dropped — Five Star Data Recovery',
-  description: 'How to Repair External Hard Drive after it was Dropped'
+  title: 'How to Repair External Hard Drive After It Was Dropped — Five Star Data Recovery',
+  description: 'Step-by-step guide on what to do after dropping an external hard drive — from diagnosis to head swaps. Learn when to attempt DIY recovery and when to call a professional.',
+  ogTitle: 'How to Repair External Hard Drive After It Was Dropped',
+  ogDescription: 'Step-by-step guide from Five Star Data Recovery on diagnosing and recovering data from a dropped external hard drive.',
+  ogUrl: 'https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped',
+  ogType: 'article',
+  ogSiteName: 'Five Star Data Recovery',
 })
 </script>
 
 <template>
   <div>
     <NavBar />
+
+    <!-- HERO -->
     <section class="blog-hero">
-      <div class="container">
+      <div class="container hero-inner">
         <div class="blog-meta">
           <span class="blog-date">June 19, 2025</span>
           <span class="blog-category">Data Recovery</span>
         </div>
-        <h1 class="blog-title">How to Repair External Hard Drive after it was Dropped</h1>
-        <p class="blog-excerpt">How to Repair External Hard Drive after it was Dropped</p>
+        <h1 class="blog-title">How to Repair External Hard Drive After It Was Dropped</h1>
+        <p class="blog-excerpt">Get Your Data Back. Before you do anything else — stop powering on the drive. Here's what to do next.</p>
+        <div class="blog-author">
+          <div class="author-avatar">V</div>
+          <div class="author-name">Vahan Hovsepian · Head Engineer, Five Star Data Recovery</div>
+        </div>
       </div>
     </section>
 
-    <section class="blog-body section-pad">
-      <div class="container blog-container">
-        <p>How to Repair External Hard Drive after it was Dropped</p>
-        <p>Get Your Data Back In No Time.</p>
-        <p>Before getting more in depth about how to fix an external hard drive after it was dropped, the first thing to do is STOP trying to power on the drive as this will only cause more damage to the platters making a Professional Data Recovery more challenging if not impossible. If you are not sure how to move forward, please give us a call and our Engineers will be happy to walk you through the process if you want to attempt a DIY (Do it yourself) repair.</p>
-        <p>So before moving forward with our DIY guide, please make sure you safely power down the drive and put it aside. Our guide will walk you through the entire process from diagnosis to repair. Please keep in mind, that you will need special tools and resources to get this done. We always discourage DIY (Do it Yourself) attempts, but we understand that sometimes people prefer to attempt the recovery themselves before seeking a professional. So we’re happy to take away some of the risks and issues you can deal with by providing useful information here.</p>
-        <p>Step 1: Understand the problem with the drive:</p>
-        <p>Before we try to fix the issue with the drive, we want to understand what the exact problem is. Is the hard drive clicking, or beeping or does it not have power whatsoever? Depending on this, we can take the next steps toward repairing the drive in order to get our data back. We will go ahead and break down each issue separately. Please skip to the section that applies to your problem. Clicking: If the hard drive is making clicking sounds after it was dropped, then the issue with your drive is either bad read/write heads OR media damage. IF the issue is the heads, you can attempt a head swap and regain access to the data. IF the issue is media damage (damage to the platters where the data is stored), then the data would most probably be unrecoverable. How to tell IF the issue is read/write heads or media damage? Plus jump to Step #2. Beeping: If your hard drive is making beeping sounds after it was dropped, the issue with your drive is called “Stiction.” This is where the read/write heads have crashed on top of the platters, not allowing the platters to spin, and thus making a beeping like sound. Please do not rush to watch YouTube videos on how to repair this problem. There is more to the process than just the physical part of bringing the heads back. We will explain in detail in this guide. Plus jump to Step #2. Drives spins normally, but does not mount: Its important to put your ear to the drive and listen carefully to understand whats going on with the drive. If you hear the drive spinning up and its not making any unusual sounds, BUT its not mounting on the computer, this is a pretty good sign. Chances are that the issue with your drive is a damaged file system or firmware related (if its firmware related, you may need to seek a professional as you will need a special tool to repair the problem; PC-3000 by Ace Laboratory). We would still recommend you jump to Step 3 just to make sure everything inside the drive cover is okay and there is not physical damage.</p>
-        <p>Step 2: Inspecting the Inside of the Drive:</p>
-        <p>This step of the process is very important. Please do not rush and skip steps. Data Recovery is not about speed, its about precision. You only get one good chance at recovering the data, please don’t rush. One small mistake can make your data unrecoverable forever. If you are not sure about something, just patiently put everything aside, take a break and post a comment below and one of our engineers will be happy to give you advice. We can’t stress this enough.</p>
-        <p>We will break down the inspection process based on the 3 different issues you may experience. Please jump to the section that best applies to your problem.</p>
-        <p>IMPORTANT: In this step, you are going to open the actual drive cover (not the enclosure for the drive, but the actual metal drive cover where the platters are stored. WE DO NOT RECOMMEND YOU DO THIS YOURSELF, but if you are determined to get it done, please follow all of our steps carefully. Before you start to open the drives cover, make sure you have all the tools you need. If you don’t have the exact screwdriver (Usually T5, T6, T8), please order the correct tools and don’t risk stripping any screws. You will also need pliers for when we remove the magnet that is holding the head assembly down. Anytime you get stuck, just take a break and post a comment below and we will respond promptly.</p>
-        <p>Purchase Screwdrivers</p>
-        <p>Purchase Tweezers</p>
-        <p>Clicking: If your issue is clicking, then what we need to do is first take a look at the platters to make sure there are no noticeable scratches or contamination on the top surface. We always use a green light (which can be purchased from Amazon) to make sure the surface is clean. If the surface is clean, that’s great! We now need to check the read/write heads to make sure they are not physically damaged or contaminated. In our lab, we use head tools from HDD Surgery. But for your case, you can either purchase a more affordable head comb from eBay or you can make your own. Please check our other posts where we show you how to make a head comb using a piece of plastic. (Why do we need a head comb to remove the heads? Because if you don’t use the head comb, as soon as you slide the heads off of the ramp, the sliders will touch and get destroyed. The head comb helps keep the sliders separated). Now that you have all the tools you need, grab a cup of coffee before you start and let’s remove the heads: Step 1: Place the head comb on the read/write heads. There is a special hole that the pin would go through, then slowly and gently press the tool onto the heads (please see photos). If you are using the piece of plastic as a head comb, carefully use a tweezer to place the plastic between each one of the heads. Once the tool is secure, your ready for Step 2:</p>
-        <p>Step 2: Remove the two screws that are securing the hard drive cable connector to the drive case. Once that is removed, carefully pull the connector up out of its place (don’t pull to hard as its connected to the read/write head assembly). Just enough to get it out of its place.</p>
-        <p>Step 3: Remove the screw holding the Magnet in place. Using the tweezers, get a good grip on the magnet from the rear, and firmly raise it up off of the head assembly.</p>
-        <p>Step 4: Depending on what model drive you have, there might be a parking brake that will prevent the heads from coming off of the ramps. Please carefully remove this pin using the tweezers. You can carefully move the heads forward to relieve tension from the pin (by holding it from the back of the head assembly), then pull the pin straight up. At this point, we have the head comb in place, screws are removed, magnet is removed, parking brake is off (allowing the heads to come off the ramps).</p>
-        <p>Step 5: Here we will remove the entire headstack assembly from the drive. Some models will have a screw underneath the drive that is holding the headstack in place and other models you will be able to carefully pull the heads straight up and out of the drive. While you remove the heads from the drive, it’s important that you keep you eye on the sliders (tip of the heads). Make sure you are holding the heads all the way back and away from the parking ramps.</p>
-        <p>Step 6: You now have the heads out of the drive. What you need to do now is inspect the sliders (tiny black readers) under a microscope to see if there is any contamination on them. These sliders should be super clean and shiny. Not a spec of contamination. IF they are clean, then your chances of recovering the data is much higher. IF there is contamination, your chances are slimmer, but still could be recoverable. You are now reading for the next step of the process. Please jump down to Step 3.</p>
-        <p>Beeping: If your issue is beeping, the first thing you need to do is observe the situation inside the drive in detail. Don’t touch anything yet. Your looking to make sure there are no scratches or contamination on the top surface. You could use a green light for the best results. If there are no scratches or contamination, you are ready for the next big step. We DO NOT RECOMMEND you do this yourself, but again, if you are determined to get it done, please follow the steps carefully and do no rush. One wrong move and the data could be gone forever. Step 1: In the center of the drive, you have a screw or screws that is holding the platters down. Find the correct size screwdriver (must be exact one) and get it ready. What we’re trying to accomplish here is to bring the heads that are stuck on the platters back onto the parking ramps in one smooth motion. This gets done by spinning the platters (using the screwdriver) and at the same time using tweezers to pull the heads back. DON’T do anything yet.</p>
-        <p>Step 2: So now you understand what has to be done (the concept), you have the right screwdriver and tweezers. With your right hand, you will be turning the screw with the screwdriver and with your left hand using the tweezers to bring the heads straight back and off of the platters. (place the tip of the tweezers in the hole shown in the photos). Practice this motion before doing the process on the actual drive.</p>
-        <p>Step 3: At this point, you have successfully removed the heads from the platters, but your work is still not done. DO NOT just put the drive cover back on and turn on the drive. IF the read/write heads are physically damage OR if there is contamination on the sliders, powering on the drive will destroy the data forever. You will need to remove the heads from the drive and inspect them under the microscope or magnifying glass to make sure they are not damaged. Step 4: Please follow all of the steps from the “Clicking” section above. The process to remove the heads from the drive for inspection is exactly the same. This step is extremely important. We have heard many people successfully recover the data without removing the heads, but we have seen more customers come in with drives that are unrecoverable because they skipped this process. (Image this: IF the read/write heads got mangled in the process of removing them from them platters, IF you don’t check them first and you just power on the drive, the mangled heads are going to scrape the disks and make the data unrecoverable no matter what. Data Recovery doesn’t like being rushed. Once you have the followed the steps to remove the heads from the drive, you can jump to Step 3.</p>
-        <p>Drive Spins but doesn’t mount: If after dropping your drive, your drive spins normally (and you’ve verified this by putting your ear to the drive), but doesn’t mount on your computer, then you have the best chances of recovering the data. Since the chances are high that your issue is not mechanical, we can first troubleshoot with a computer before opening the drive cover.</p>
-        <p>Step 1: Connect your drive to the computer. Although the drive does not mount as it normally should, we want to see if the drive is being recognized by the bios of the computer. If you are using a Mac, please go to “Disk Utility.” If you are using a PC, please go to “Disk Management.” Do you see your drive listed here? Step 2: If you do see your drive listed here, pay attention to how its seen by the computer. Does the computer recognize the correct capacity of the drive? If the size of the drive is recognized correctly, that is an excellent sign! Please continue to Step 3. IF your drive is not listed here whatsoever, please power down the drive and put it aside. The issue with your drive is either firmware related (programming) or mechanical. We would recommend seeking a professional and not continuing with the DIY fix. Why? Because chances are high that your issue is firmware related. IF it is, firmware level recoveries are not expensive at all. If you try to open your drive to fix a mechanical issue, but it turns out that your problem was only firmware related, you will end up paying a Professional Data Recovery company 3x what you would have paid if you would have just sent it to them to begin with. Firmware issues are impossible to repair on your own. You would need a special tool called PC-3000 by Ace Labs to fix these types of problems. Step 3: Applies ONLY if the bios of your computer was able to recognize the drives correct capacity. So your drive spins up normally, the computer detects the correct capacity of the drive. What you can try to do here is you can try to run Data Recovery Software on the drive. We DO NOT recommend you do this as the software could spread media damage if you have light media damage in some areas, but if you are determined, you can try this cautiously. Step 4: Download data recovery software from the internet and start the scan process. Please do NOT leave the computer unattended during the scanning process. It’s important that you monitor the entire scanning process. What your looking for here is to see if the software is able to scan all of the sectors of the drive at a normal speed. If the see the scanning getting stuck at certain points, please stop the process as soon as possible and safely power down the drive. Your chances of recovering the data by a Professional Data Recovery company is very high. It would be a logical recovery that is usually covered under flat rate fees of $300.00 or $400.00. Consumer level software won’t be able to probably scan/image the drive. Step 5: If the scan went through successfully without any errors, you can start saving the recovered data. But even during this process, keep your eye on the process and don’t leave the process unattended. Errors left unattended can cause serious damage to the drive.</p>
-        <p>Step 3: Attempting a Head Swap</p>
-        <p>By this point, you have already inspected the inside of the drive, removed the heads from the drive, and inspected the sliders and now you’re ready to replace the heads with a compatible donor. What is a compatible donor? A compatible donor part is another drive that is a near identical part. So typically what you want to make on the drives label is the following: Drive Model Number (exact) Part Number (exact) Country Manufactured (exact) Data of Manufacturer (within 3 months) DCM (WD Drive)</p>
-        <p>The more you match the drive’s label, the higher the chances that the donor part will work. The process of the “Head Swap” is identical to how you removed the heads from your original bad drive. Simply follow all of the steps one by one to remove the heads from the donor drive, then work backward to reassemble the drive. Key points to pay attention to when reassembling the drive: Use tweezers to hold the headstack assembly as you’re putting it back in the drive. Carefully hold the heads all the way back (away from the parking ramps) as you’re tightening the bottom screw that holds the heads in place. Once you have tightened the bottom screw, carefully allow the heads to go back into their position on the ramp. The heads should slide nicely back into their position. If you feel like it requires force, please stop and realign the head tool. There should be no force required at all. While you gently hold the heads in their place on the parking ramp, put the parking brake pin back in its position and carefully put the magnet back on top of the headstack assembly (be careful for it to not pull down too hard as it’s a strong magnet). When tightening the hard drive cover screws, tighten them in a zig-zag order and in small increments (don’t tighten one screw too much at once).</p>
-        <p>Conclusion</p>
-        <p>We hope this guide was useful in helping you recover the data from your drive. Please don’t hesitate to contact us via the comment section below if you have any questions about our Data Recovery process. This blog post was brought to you by our Head Engineer Vahan Hovsepian.</p>
-        <p>Final Disclaimer: If the data on your drive is irreplaceable (ex: family photos, business documents, production files, etc), please do not attempt to recover the data on your own. If you’re trying to recover data that is easily replaceable and you can’t justify the cost of professional data recovery, then have fun with the process; we’re here to help give you advice and guidance. But don’t try this process on data that is irreplaceable.</p>
-        <p>Subscribe</p>
-        <p>https://www.youtube.com/watch?v=14ACFHJ24hg</p>
-        <p>Social Media</p>
-        <p>Facebook</p>
-        <p>Instagram</p>
-        <p>X-twitter</p>
-        <p>Youtube</p>
-        <p>Pinterest</p>
-        <p>Linkedin</p>
-        <p>“Awesome Work!”</p>
-        <p>When we dropped our photo hard drive and it started making clicking sounds, we thought we had lost everything. All our memories gone in an instant. This place not only recovered all our files, they were completely upfront and honest about the process and explained why certain kinds of damage cost more than others. They were able to get us our precious memories back and for less than the higher end of what they said it could cost. Highly recommended!</p>
-        <p>Mikey W.</p>
-        <p>“Truely 5 Stars”</p>
-        <p>Don’t trust your important data anywhere else. These guys are the best. It’s all in the name: 5 star performance and service all the way. You’ll know from your first call. They came in on a Sunday especially for me specifically to ensure a greater chance of recovery of my data and, sure enough, their tenacity paid off. 100% real review. This place is where it’s at. Honestly: don’t go anywhere else. Don’t even think about it. Thank you guys!</p>
-        <p>Arin K.</p>
-        <p>“Thank You!”</p>
-        <p>My son’s laptop hard drive failed, and I knew how much all the data on there meant to him. So I was over the moon when Five Star was able to get the data back. There were a number of issues with the drive, and I felt like they went over and above to try additional steps when they found each new issue, until the data was recovered. Their communication was thorough and timely, and they explained everything they were doing very thoroughly.</p>
-        <p>Vance K.</p>
-        <p>Latest Posts</p>
+    <!-- BODY -->
+    <section class="blog-body">
+      <div class="container blog-layout">
+
+        <!-- MAIN ARTICLE -->
+        <article class="blog-main">
+
+          <div class="warning-banner">
+            ⚠️ <strong>Stop powering on the drive.</strong> Every spin-up attempt after a drop can cause additional damage to the platters — potentially making professional recovery impossible.
+          </div>
+
+          <p>Before getting more in depth about how to fix an external hard drive after it was dropped, the first thing to do is <strong>STOP trying to power on the drive</strong> as this will only cause more damage to the platters, making a professional data recovery more challenging — if not impossible. If you are not sure how to move forward, please give us a call and our engineers will be happy to walk you through the process.</p>
+
+          <p>So before moving forward with our DIY guide, please make sure you safely power down the drive and put it aside. Our guide will walk you through the entire process from diagnosis to repair. Please keep in mind that you will need special tools and resources to get this done. We always discourage DIY attempts, but we understand that sometimes people prefer to attempt the recovery themselves before seeking a professional.</p>
+
+          <h2 class="section-heading">Step 1: Understand the Problem with the Drive</h2>
+
+          <p>Before we try to fix the issue with the drive, we want to understand what the exact problem is. Is the hard drive clicking, beeping, or does it have no power whatsoever? Depending on this, we can take the next steps toward repairing the drive.</p>
+
+          <div class="callout-card">
+            <h3>Clicking</h3>
+            <p>If the hard drive is making clicking sounds after it was dropped, the issue is either bad read/write heads <em>or</em> media damage. If the issue is the heads, you can attempt a head swap and regain access to the data. If the issue is media damage (damage to the platters where the data is stored), the data would most probably be unrecoverable.</p>
+          </div>
+
+          <div class="callout-card warning">
+            <h3>Beeping</h3>
+            <p>If your hard drive is making beeping sounds after it was dropped, the issue is called <strong>"Stiction"</strong> — the read/write heads have crashed on top of the platters, preventing them from spinning. Please do not rush to watch YouTube videos on how to repair this problem. There is more to the process than just the physical part.</p>
+          </div>
+
+          <div class="callout-card">
+            <h3>Spins Normally But Doesn't Mount</h3>
+            <p>Put your ear to the drive and listen carefully. If you hear the drive spinning up normally without unusual sounds but it's not mounting, this is actually a pretty good sign. Chances are the issue is a damaged file system or firmware. We'd still recommend jumping to Step 2 to verify there's no physical damage inside.</p>
+          </div>
+
+          <h2 class="section-heading">Step 2: Inspecting the Inside of the Drive</h2>
+
+          <div class="insight-block">
+            <p><strong>This step is critical. Do not rush.</strong> Data recovery is not about speed — it's about precision. You only get one good chance at recovering the data. One small mistake can make your data unrecoverable forever.</p>
+          </div>
+
+          <p><strong>IMPORTANT:</strong> In this step, you are going to open the actual drive cover — not the enclosure, but the actual metal cover where the platters are stored. <strong>We do not recommend you do this yourself</strong>, but if you are determined, please follow all steps carefully. Make sure you have the correct screwdriver (usually T5, T6, or T8). You'll also need tweezers for removing the magnet holding the head assembly.</p>
+
+          <div class="phase-block">
+            <div class="phase-number">Clicking Drives</div>
+            <h3 class="phase-title">Head Inspection</h3>
+            <p>First, take a look at the platters to make sure there are no noticeable scratches or contamination on the top surface. Use a green light (available on Amazon) for best visibility. If the surface is clean, check the read/write heads for physical damage or contamination. You'll need a <strong>head comb</strong> to safely remove the heads — without one, the sliders will touch and get destroyed the moment you slide the heads off the ramp.</p>
+            <p><strong>Steps to remove heads:</strong></p>
+            <ol class="blog-list">
+              <li>Place the head comb on the read/write heads through the special hole, then gently press it onto the heads.</li>
+              <li>Remove the two screws securing the hard drive cable connector. Carefully pull the connector up — it's connected to the head assembly so don't pull too hard.</li>
+              <li>Remove the screw holding the magnet. Use tweezers to grip the magnet from the rear and firmly raise it up off the head assembly.</li>
+              <li>Remove the parking brake pin carefully using tweezers. Gently move the heads forward to relieve tension, then pull the pin straight up.</li>
+              <li>Remove the entire headstack assembly. Some models have a bottom screw; others allow you to carefully pull the heads straight up. Keep your eye on the sliders throughout.</li>
+              <li>Inspect the sliders under a microscope. They should be super clean and shiny. Any contamination reduces — but doesn't eliminate — your chances.</li>
+            </ol>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-number phase-hard">Beeping Drives</div>
+            <h3 class="phase-title">Stiction Repair</h3>
+            <p>Observe inside the drive first without touching anything. Look for scratches or contamination on the top surface using a green light. If the surface is clean:</p>
+            <ol class="blog-list">
+              <li>Locate the platter center screw. Find the exact-size screwdriver (must be exact). The goal is to spin the platters while simultaneously pulling the stuck heads back onto the parking ramps in one smooth motion.</li>
+              <li>With your right hand, turn the screw with the screwdriver. With your left hand, use tweezers to bring the heads straight back off the platters. Practice this motion before doing it on the actual drive.</li>
+              <li><strong>Do NOT just put the drive cover back on and power up.</strong> If the read/write heads are physically damaged or contaminated, powering on will destroy the data forever. Remove and inspect the heads (follow the clicking section steps above).</li>
+            </ol>
+          </div>
+
+          <div class="phase-block">
+            <div class="phase-number">Non-Mounting Drives</div>
+            <h3 class="phase-title">Software Diagnosis First</h3>
+            <ol class="blog-list">
+              <li>Connect the drive to your computer. Check if it appears in Disk Utility (Mac) or Disk Management (PC).</li>
+              <li>If the drive is listed and shows the correct capacity — great sign. Proceed to data recovery software.</li>
+              <li>If the drive is NOT listed at all, stop. The issue is likely firmware or mechanical and requires a professional with a PC-3000 tool by Ace Laboratory. DIY attempts here will make it worse.</li>
+              <li>If listed correctly, you can cautiously try data recovery software. <em>Do not leave the scan unattended.</em> If the scan gets stuck or slows down significantly at certain sectors, stop immediately — media damage is present and further scanning will make it worse.</li>
+              <li>If the scan completes without errors, start saving the recovered data. Monitor the entire process — errors left unattended can cause serious damage.</li>
+            </ol>
+          </div>
+
+          <h2 class="section-heading">Step 3: Attempting a Head Swap</h2>
+
+          <p>By this point, you've inspected the inside of the drive, removed the heads, and inspected the sliders. If the heads are damaged, you'll need a compatible donor drive. Look for a match on these label fields:</p>
+
+          <ul class="blog-list">
+            <li>Drive Model Number (exact)</li>
+            <li>Part Number (exact)</li>
+            <li>Country of Manufacture (exact)</li>
+            <li>Date of Manufacture (within 3 months)</li>
+            <li>DCM (for WD drives)</li>
+          </ul>
+
+          <p>The more the label matches, the higher the chances the donor part will work. The head swap process is the reverse of the removal process. Key points:</p>
+
+          <ul class="blog-list">
+            <li>Use tweezers to hold the headstack as you're placing it back in the drive.</li>
+            <li>Hold heads all the way back (away from the ramps) as you tighten the bottom screw.</li>
+            <li>Once the screw is tightened, let the heads slide back gently onto the ramp — no force required.</li>
+            <li>Replace the parking brake pin, then carefully set the magnet back on top of the assembly.</li>
+            <li>Tighten the drive cover screws in a zig-zag pattern, in small increments.</li>
+          </ul>
+
+          <h2 class="section-heading">Conclusion</h2>
+
+          <p>We hope this guide was useful in helping you recover data from your dropped drive. If you have questions at any step, please don't hesitate to reach out — our engineers are here to help.</p>
+
+          <div class="insight-block">
+            <p><strong>Final Disclaimer:</strong> If the data on your drive is irreplaceable — family photos, business documents, production files — please do not attempt recovery yourself. If the data is easily replaceable and you can't justify the cost of professional recovery, have fun with the process. But don't take risks with data that can't be recreated.</p>
+          </div>
+
+          <div class="emergency-block">
+            <h2 class="emergency-title">⚠️ Don't Risk It</h2>
+            <p><strong>Stop everything. Stop running tools. Stop mounting the drive. Stop trying things.</strong></p>
+            <p>The single most important move you can make right now is to stop adding variables to the problem. Then call us.</p>
+            <p class="emergency-company"><strong>Five Star Data Recovery</strong></p>
+            <p class="emergency-tagline"><strong>Call us before you try anything else. The data that looks gone may not be.</strong></p>
+            <div class="emergency-cta">
+              <NuxtLink to="/start-recovery" class="btn-emergency">Start Recovery</NuxtLink>
+              <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="blog-sidebar">
+
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-icon">💾</div>
+            <h3>Dropped Your Drive?</h3>
+            <p>Our engineers recover data from clicking, beeping, and non-mounting drives every day. Free evaluation.</p>
+            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
+            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
+          </div>
+
+          <div class="sidebar-card">
+            <BlogShareButtons
+              url="https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped"
+              title="How to Repair External Hard Drive After It Was Dropped"
+            />
+          </div>
+
+          <div class="sidebar-card newsletter-card">
+            <BlogNewsletterSignup />
+          </div>
+
+          <div class="sidebar-card">
+            <h3 class="sidebar-heading">About the Author</h3>
+            <div class="sidebar-author">
+              <div class="sidebar-author-avatar">V</div>
+              <div>
+                <div class="sidebar-author-name">Vahan Hovsepian</div>
+                <div class="sidebar-author-role">Head Engineer<br>Five Star Data Recovery</div>
+              </div>
+            </div>
+            <p class="sidebar-author-bio">Vahan leads the engineering team at Five Star Data Recovery, specializing in mechanical hard drive failures, head swaps, and firmware-level recovery.</p>
+          </div>
+
+        </aside>
+
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta-section">
       <div class="container cta-inner">
         <h2 class="cta-title">Need Professional Data Recovery?</h2>
@@ -88,68 +210,89 @@ useSeoMeta({
 </template>
 
 <style scoped>
+/* ── Hero ── */
 .blog-hero {
-  background: #111;
+  background: linear-gradient(to bottom, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.92) 100%), url('/hard-drive-lab-bg.jpg') center / cover no-repeat;
+  background-color: #0A0C14;
   color: #fff;
-  padding: 80px 0 60px;
+  padding: 100px 0 70px;
   text-align: center;
 }
-.blog-meta {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-bottom: 20px;
-  font-size: 0.85rem;
-}
-.blog-date { color: #C9A84C; }
-.blog-category {
-  background: rgba(201,168,76,0.15);
-  color: #C9A84C;
-  padding: 2px 12px;
-  border-radius: 20px;
-}
-.blog-title {
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  font-weight: 700;
-  max-width: 800px;
-  margin: 0 auto 20px;
-  line-height: 1.2;
-}
-.blog-excerpt {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.7);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-.blog-body {
-  background: #fff;
-}
-.blog-container {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  color: #222;
-  font-size: 1.05rem;
-  line-height: 1.8;
-}
-.blog-container p {
-  margin-bottom: 20px;
-}
-.blog-section-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #111;
-  margin: 40px 0 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #C9A84C;
-}
-.blog-list {
-  margin: 0 0 20px 20px;
-  padding: 0;
-}
-.blog-list li {
-  margin-bottom: 8px;
-  list-style: disc;
-}
+.hero-inner { position: relative; z-index: 1; }
+.blog-meta { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; font-size: 0.82rem; flex-wrap: wrap; }
+.blog-date { color: #F5C842; }
+.blog-category { background: rgba(245,200,66,0.12); color: #F5C842; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
+.blog-title { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; max-width: 800px; margin: 0 auto 18px; line-height: 1.2; }
+.blog-excerpt { font-size: 1.1rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 24px; line-height: 1.7; }
+.blog-author { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.author-avatar { width: 36px; height: 36px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+.author-name { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+
+/* ── Layout ── */
+.blog-body { background: #0D0F1A; padding: 60px 0 80px; }
+.blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
+@media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { order: -1; } }
+
+/* ── Article ── */
+.blog-main { color: #D1D5DB; font-size: 1.02rem; line-height: 1.85; }
+.blog-main p { margin-bottom: 20px; }
+.section-heading { font-size: 1.5rem; font-weight: 700; color: #F5F5F5; margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid #F5C842; }
+.blog-list { margin: 0 0 20px 22px; }
+.blog-list li { margin-bottom: 8px; }
+
+.warning-banner { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); border-left: 4px solid #EF4444; color: #FCA5A5; padding: 14px 18px; border-radius: 8px; margin-bottom: 28px; font-size: 0.95rem; line-height: 1.6; }
+
+.callout-card { background: #12141F; border: 1px solid #1E2235; border-radius: 10px; padding: 20px 22px; margin-bottom: 16px; }
+.callout-card.warning { border-left: 4px solid #F59E0B; }
+.callout-card.danger { border-left: 4px solid #EF4444; }
+.callout-card h3 { font-size: 1rem; font-weight: 700; color: #F5C842; margin: 0 0 10px; }
+.callout-card p { margin: 0; color: #9CA3AF; font-size: 0.95rem; }
+.callout-card p + p { margin-top: 10px; }
+
+.phase-block { background: #12141F; border: 1px solid #1E2235; border-radius: 10px; padding: 24px; margin-bottom: 20px; }
+.phase-number { display: inline-block; background: #F5C842; color: #0A0C14; font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 4px; margin-bottom: 10px; }
+.phase-number.phase-hard { background: #F87171; color: #fff; }
+.phase-title { font-size: 1.1rem; font-weight: 700; color: #F5F5F5; margin: 0 0 12px; }
+
+.insight-block { background: rgba(245,200,66,0.06); border-left: 4px solid #F5C842; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 28px 0; }
+.insight-block p { margin: 0; color: #D1D5DB; }
+
+.emergency-block { background: linear-gradient(135deg, #12141F 0%, #0A0C14 100%); border: 1px solid #F5C842; border-radius: 12px; padding: 32px; margin-top: 48px; text-align: center; }
+.emergency-title { font-size: 1.4rem; font-weight: 800; color: #fff; margin: 0 0 16px; }
+.emergency-block p { color: #9CA3AF; margin-bottom: 12px; }
+.emergency-company { color: #F5C842 !important; font-size: 1.05rem !important; margin-bottom: 6px !important; }
+.emergency-tagline { color: #fff !important; font-size: 1.05rem !important; font-style: italic; margin-bottom: 28px !important; }
+.emergency-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-emergency { background: #F5C842; color: #0A0C14; font-weight: 700; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: opacity 0.2s; }
+.btn-emergency:hover { opacity: 0.9; }
+.btn-call { border: 1px solid rgba(245,200,66,0.4); color: #F5C842; padding: 13px 28px; border-radius: 8px; text-decoration: none; font-size: 0.95rem; transition: background 0.2s; }
+.btn-call:hover { background: rgba(245,200,66,0.08); }
+
+/* ── Sidebar ── */
+.blog-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 90px; }
+.sidebar-cta { background: linear-gradient(135deg, #1a1c2e 0%, #12141F 100%); border: 1px solid #F5C842; border-radius: 12px; padding: 24px; text-align: center; }
+.sidebar-cta-icon { font-size: 2rem; margin-bottom: 10px; }
+.sidebar-cta h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 8px; }
+.sidebar-cta p { font-size: 0.85rem; color: #9CA3AF; margin: 0 0 16px; line-height: 1.5; }
+.sidebar-cta-btn { display: block; background: #F5C842; color: #0A0C14; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-bottom: 10px; transition: opacity 0.2s; }
+.sidebar-cta-btn:hover { opacity: 0.9; }
+.sidebar-cta-phone { display: block; font-size: 0.85rem; color: #F5C842; text-decoration: none; }
+.sidebar-card { background: #12141F; border: 1px solid #1E2235; border-radius: 12px; padding: 22px; }
+.newsletter-card { background: #0D0F1A; border-color: rgba(245,200,66,0.2); }
+.sidebar-heading { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin: 0 0 16px; }
+.sidebar-author { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+.sidebar-author-avatar { width: 40px; height: 40px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.sidebar-author-name { font-size: 0.9rem; font-weight: 700; color: #F5F5F5; }
+.sidebar-author-role { font-size: 0.78rem; color: #6B7280; margin-top: 2px; line-height: 1.4; }
+.sidebar-author-bio { font-size: 0.82rem; color: #6B7280; line-height: 1.6; margin: 0; }
+
+/* ── CTA Section ── */
+.cta-section { background: #12141F; padding: 72px 0; text-align: center; border-top: 1px solid #1E2235; }
+.cta-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin: 0 0 14px; }
+.cta-sub { color: #9CA3AF; font-size: 1rem; margin: 0 0 32px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: #F5C842; color: #0A0C14; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: opacity 0.2s; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-outline { border: 1px solid rgba(245,200,66,0.4); color: #F5C842; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
+.btn-outline:hover { background: rgba(245,200,66,0.08); }
 </style>
