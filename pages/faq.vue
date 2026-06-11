@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'Frequently Asked Questions - Five Star Data Recovery',
   description: 'Not sure how data recovery services work? Check out Five Star Data Recovery\'s FAQs page to learn more about data recovery solutions.',
-  ogTitle: 'Frequently Asked Questions - Five Star Data Recovery's',
+  ogTitle: 'Frequently Asked Questions - Five Star Data Recovery',
   ogDescription: 'Not sure how data recovery services work? Check out Five Star Data Recovery\'s FAQs page to learn more about data recovery solutions.',
   ogUrl: 'https://www.fivestardatarecovery.com/faq/',
   ogType: 'article',
