@@ -1,0 +1,330 @@
+{
+  "/": {
+    "seoTitle": "Data Recovery Experts – Five Star Data Recovery",
+    "seoDescription": "Recover lost files from hard drives, iPhones, SSDs, and more. Based in Los Angeles, Five Star Data Recovery provides data recovery services.",
+    "ogTitle": "Five Star Data Recovery",
+    "ogDescription": "Expert data recovery for hard drives, SSDs, RAID systems, and mobile devices. Glendale, CA. No data = no charge.",
+    "keywords": "",
+    "label": "Homepage"
+  },
+  "/about-us": {
+    "seoTitle": "About Five Star Data Recovery | Trusted Data Recovery Experts",
+    "seoDescription": "Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.",
+    "ogTitle": "About us",
+    "ogDescription": "Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.",
+    "keywords": "",
+    "label": "About Us"
+  },
+  "/contact-us": {
+    "seoTitle": "Contact Us - Five Star Data Recovery",
+    "seoDescription": "Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.",
+    "ogTitle": "Contact us",
+    "ogDescription": "Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.",
+    "keywords": "",
+    "label": "Contact Us"
+  },
+  "/data-recovery-beverly-hills": {
+    "seoTitle": "Data Recovery in Beverly Hills CA - Five Star Data Recovery",
+    "seoDescription": "Need Data Recovery Services near the Beverly Hills, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "ogTitle": "Data Recovery Beverly Hills",
+    "ogDescription": "Need Data Recovery Services near the Beverly Hills, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "keywords": "",
+    "label": "Beverly Hills Location"
+  },
+  "/data-recovery-burbank-ca": {
+    "seoTitle": "Data Recovery Services in Burbank CA - Five Star Data Recovery",
+    "seoDescription": "Need Data Recovery Services near the Burbank, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "ogTitle": "Data Recovery Burbank",
+    "ogDescription": "Need Data Recovery Services near the Burbank, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "keywords": "",
+    "label": "Burbank Location"
+  },
+  "/data-recovery-hollywood-ca": {
+    "seoTitle": "Data Recovery in Hollywood CA - Five Star Data Recovery",
+    "seoDescription": "Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "ogTitle": "Data Recovery Hollywood",
+    "ogDescription": "Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "keywords": "",
+    "label": "Hollywood Location"
+  },
+  "/data-recovery-los-angeles": {
+    "seoTitle": "Data Recovery in Los Angeles CA - Five Star Data Recovery",
+    "seoDescription": "Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "ogTitle": "Data Recovery Los Angeles",
+    "ogDescription": "Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "keywords": "",
+    "label": "Los Angeles Location"
+  },
+  "/data-recovery-pasadena-ca": {
+    "seoTitle": "Data Recovery Services near Pasadena CA - Five Star Data Recovery",
+    "seoDescription": "Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "ogTitle": "Data Recovery Pasadena",
+    "ogDescription": "Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "keywords": "",
+    "label": "Pasadena Location"
+  },
+  "/data-recovery-service-pricing": {
+    "seoTitle": "Data Recovery Service Pricing - Five Star Data Recovery",
+    "seoDescription": "Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.",
+    "ogTitle": "Five Star Data Recovery",
+    "ogDescription": "Expert data recovery for hard drives, SSDs, RAID systems, and mobile devices. Glendale, CA. No data = no charge.",
+    "keywords": "",
+    "label": "Pricing"
+  },
+  "/data-recovery-services-glendale-ca": {
+    "seoTitle": "Data Recovery in Glendale CA - Five Star Data Recovery",
+    "seoDescription": "Need Data Recovery Services near the Glendale, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "ogTitle": "Data Recovery Glendale",
+    "ogDescription": "Need Data Recovery Services near the Glendale, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
+    "keywords": "",
+    "label": "Glendale Location"
+  },
+  "/data-recovery/bad-sectors": {
+    "seoTitle": "Bad Sectors Data Recovery - Five Star Data Recovery",
+    "seoDescription": "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
+    "ogTitle": "Bad Sectors Data Recovery - Five Star Data Recovery",
+    "ogDescription": "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
+    "keywords": "",
+    "label": "Bad Sectors"
+  },
+  "/data-recovery/cfast-card-data-recovery": {
+    "seoTitle": "CFast Card Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Five Star Data Recovery is the leading CFast Data Recovery Company. We offer fast and secure services to get back your valuable data.",
+    "ogTitle": "CFast Card Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Five Star Data Recovery is the leading CFast Data Recovery Company. We offer fast and secure services to get back your valuable data.",
+    "keywords": "",
+    "label": "CFast Card Recovery"
+  },
+  "/data-recovery/clean-room-data-recovery": {
+    "seoTitle": "Clean Room Data Recovery Services You Can Trust",
+    "seoDescription": "Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!",
+    "ogTitle": "Clean Room Data Recovery Services You Can Trust",
+    "ogDescription": "Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!",
+    "keywords": "",
+    "label": "Clean Room Recovery"
+  },
+  "/data-recovery/data-recovery-mail-in-service": {
+    "seoTitle": "Data Recovery Mail-in Services - Five Star Data Recovery",
+    "seoDescription": "Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.",
+    "ogTitle": "Data Recovery Mail-in Services - Five Star Data Recovery",
+    "ogDescription": "Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.",
+    "keywords": "",
+    "label": "Mail-In Service"
+  },
+  "/data-recovery/deleted-files": {
+    "seoTitle": "Deleted File Recovery - Five Star Data Recovery",
+    "seoDescription": "Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.",
+    "ogTitle": "Deleted File Recovery - Five Star Data Recovery",
+    "ogDescription": "Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.",
+    "keywords": "",
+    "label": "Deleted File Recovery"
+  },
+  "/data-recovery/desktop-data-recovery": {
+    "seoTitle": "Desktop Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.",
+    "ogTitle": "Desktop Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.",
+    "keywords": "",
+    "label": "Desktop Recovery"
+  },
+  "/data-recovery/dropped-hard-drive": {
+    "seoTitle": "Dropped Hard Drive Recovery Services - Five Star Data Recovery",
+    "seoDescription": "Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.",
+    "ogTitle": "Dropped Hard Drive Recovery Services - Five Star Data Recovery",
+    "ogDescription": "Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.",
+    "keywords": "",
+    "label": "Dropped Hard Drive"
+  },
+  "/data-recovery/external-hard-drive-data-recovery": {
+    "seoTitle": "External Hard Drive Not Showing Up - Five Star Data Recovery",
+    "seoDescription": "Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.",
+    "ogTitle": "External Hard Drive Data Recovery",
+    "ogDescription": "Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.",
+    "keywords": "",
+    "label": "External HDD Recovery"
+  },
+  "/data-recovery/hard-drive-not-showing-up": {
+    "seoTitle": "Hard Drive Not Showing Up - Five Star Data Recovery",
+    "seoDescription": "Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.",
+    "ogTitle": "Hard Drive Not Showing Up - Five Star Data Recovery",
+    "ogDescription": "Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.",
+    "keywords": "",
+    "label": "Hard Drive Not Showing Up"
+  },
+  "/data-recovery/hard-drive-recovery": {
+    "seoTitle": "Hard Drive Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.",
+    "ogTitle": "Hard Drive Data Recovery Services",
+    "ogDescription": "Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.",
+    "keywords": "",
+    "label": "Hard Drive Recovery"
+  },
+  "/data-recovery/hitachi-data-recovery": {
+    "seoTitle": "Hitachi Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.",
+    "ogTitle": "Hitachi Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.",
+    "keywords": "",
+    "label": "Hitachi Recovery"
+  },
+  "/data-recovery/iphone-data-recovery": {
+    "seoTitle": "iPhone Data Recovery Services Experts - Five Star Data Recovery",
+    "seoDescription": "Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.",
+    "ogTitle": "iPhone Data Recovery Services Experts - Five Star Data Recovery",
+    "ogDescription": "Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.",
+    "keywords": "",
+    "label": "iPhone Recovery"
+  },
+  "/data-recovery/lacie-data-recovery": {
+    "seoTitle": "Lacie Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.",
+    "ogTitle": "Lacie Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.",
+    "keywords": "",
+    "label": "LaCie Recovery"
+  },
+  "/data-recovery/laptop-data-recovery": {
+    "seoTitle": "Laptop Data Recovery - Get Your Data Recovered In No Time!",
+    "seoDescription": "Experiencing laptop troubles? Our Laptop Data Recovery experts can help you retrieve lost data quickly and safely.",
+    "ogTitle": "Laptop Data Recovery",
+    "ogDescription": "Experiencing laptop troubles? Our Laptop Data Recovery experts can help you retrieve lost data quickly and safely.",
+    "keywords": "",
+    "label": "Laptop Recovery"
+  },
+  "/data-recovery/mac-data-recovery": {
+    "seoTitle": "Mac Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.",
+    "ogTitle": "Mac Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.",
+    "keywords": "",
+    "label": "Mac Recovery"
+  },
+  "/data-recovery/nas-data-recovery": {
+    "seoTitle": "NAS Data Recovery - Five Star Data Recovery",
+    "seoDescription": "We specialize in NAS Server Data Recovery. Our engineers offer a fast and reliable turn around for all NAS units. Give us a call today.",
+    "ogTitle": "NAS Data Recovery - Five Star Data Recovery",
+    "ogDescription": "We specialize in NAS Server Data Recovery. Our engineers offer a fast and reliable turn around for all NAS units. Give us a call today.",
+    "keywords": "",
+    "label": "NAS Recovery"
+  },
+  "/data-recovery/raid-data-recovery": {
+    "seoTitle": "Data Recovery RAID Services - Five Star Data Recovery",
+    "seoDescription": "Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.",
+    "ogTitle": "Data Recovery RAID Services - Five Star Data Recovery",
+    "ogDescription": "Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.",
+    "keywords": "",
+    "label": "RAID Recovery"
+  },
+  "/data-recovery/samsung-data-recovery": {
+    "seoTitle": "Samsung Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.",
+    "ogTitle": "Samsung Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.",
+    "keywords": "",
+    "label": "Samsung Recovery"
+  },
+  "/data-recovery/sd-card-data-recovery": {
+    "seoTitle": "SD Card Recovery - Five Star Data Recovery",
+    "seoDescription": "Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.",
+    "ogTitle": "SD Card Recovery - Five Star Data Recovery",
+    "ogDescription": "Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.",
+    "keywords": "",
+    "label": "SD Card Recovery"
+  },
+  "/data-recovery/seagate-data-recovery": {
+    "seoTitle": "Seagate Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.",
+    "ogTitle": "Seagate Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.",
+    "keywords": "",
+    "label": "Seagate Recovery"
+  },
+  "/data-recovery/ssd-data-recovery": {
+    "seoTitle": "SSD Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.",
+    "ogTitle": "SSD Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.",
+    "keywords": "",
+    "label": "SSD Recovery"
+  },
+  "/data-recovery/toshiba-data-recovery": {
+    "seoTitle": "Toshiba Data Recovery - Five Star Data Recovery",
+    "seoDescription": "Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.",
+    "ogTitle": "Toshiba Data Recovery - Five Star Data Recovery",
+    "ogDescription": "Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.",
+    "keywords": "",
+    "label": "Toshiba Recovery"
+  },
+  "/data-recovery/video-file-repair": {
+    "seoTitle": "Video File Repair Service - Corrupted & Damaged Video Repair",
+    "seoDescription": "Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.",
+    "ogTitle": "Video File Repair Service - Corrupted & Damaged Video Repair",
+    "ogDescription": "Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.",
+    "keywords": "",
+    "label": "Video File Repair"
+  },
+  "/drive-doesnt-power-on": {
+    "seoTitle": "Drive Doesn't Power On - Five Star Data Recovery",
+    "seoDescription": "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
+    "ogTitle": "Drive Doesn't Power On - Five Star Data Recovery",
+    "ogDescription": "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
+    "keywords": "",
+    "label": "Drive Doesn't Power On"
+  },
+  "/expedited-service": {
+    "seoTitle": "Expedited Data Recovery Service - Five Star Data Recovery",
+    "seoDescription": "Five Star Data Recovery offers an expedited data recovery service for our customers. Please feel free to contact us to get this started!",
+    "ogTitle": "Data Recovery Expedited Service",
+    "ogDescription": "Five Star Data Recovery offers an expedited data recovery service for our customers. Please feel free to contact us to get this started!",
+    "keywords": "",
+    "label": "Expedited Service"
+  },
+  "/expedited-service-plus": {
+    "seoTitle": "Expedited Service Plus - Five Star Data Recovery",
+    "seoDescription": "Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.",
+    "ogTitle": "Expedited Service Plus",
+    "ogDescription": "Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.",
+    "keywords": "",
+    "label": "Expedited Service Plus"
+  },
+  "/faq": {
+    "seoTitle": "Frequently Asked Questions - Five Star Data Recovery",
+    "seoDescription": "Not sure how data recovery services work? Check out Five Star Data Recovery's FAQs page to learn more about data recovery solutions.",
+    "ogTitle": "FAQ's",
+    "ogDescription": "Not sure how data recovery services work? Check out Five Star Data Recovery's FAQs page to learn more about data recovery solutions.",
+    "keywords": "",
+    "label": "FAQ"
+  },
+  "/hard-drive-clicking": {
+    "seoTitle": "Hard Drive Clicking - Five Star Data Recovery",
+    "seoDescription": "Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.",
+    "ogTitle": "Hard Drive Clicking - Five Star Data Recovery",
+    "ogDescription": "Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.",
+    "keywords": "",
+    "label": "Hard Drive Clicking"
+  },
+  "/payment-plan": {
+    "seoTitle": "Data Recovery Payment Plan - Five Star Data Recovery",
+    "seoDescription": "Five Star Data Recovery offers flexible payment plan options for Data Recovery Services. Contact us today for more details.",
+    "ogTitle": "Payment Plan",
+    "ogDescription": "Five Star Data Recovery offers flexible payment plan options for Data Recovery Services. Contact us today for more details.",
+    "keywords": "",
+    "label": "Payment Plan"
+  },
+  "/reviews": {
+    "seoTitle": "Reviews - Five Star Data Recovery",
+    "seoDescription": "Don't take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.",
+    "ogTitle": "Reviews",
+    "ogDescription": "Don't take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.",
+    "keywords": "",
+    "label": "Reviews"
+  },
+  "/start-recovery": {
+    "seoTitle": "Start Recovery of Data - Five Star Data Recovery",
+    "seoDescription": "Lost important files? Start Recovery of Data now! Drop-off or mail-in your device to get a free diagnosis from our certified engineers.",
+    "ogTitle": "Five Star Data Recovery",
+    "ogDescription": "Expert data recovery for hard drives, SSDs, RAID systems, and mobile devices. Glendale, CA. No data = no charge.",
+    "keywords": "",
+    "label": "Start Recovery"
+  }
+}
