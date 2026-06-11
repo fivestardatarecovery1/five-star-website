@@ -2,36 +2,22 @@ import { defineEventHandler, setHeader } from 'h3'
 
 const BASE = 'https://www.fivestardatarecovery.com'
 
-export default defineEventHandler(async (event) => {
-  const today = new Date().toISOString()
-
-  // Read the routes manifest generated at build time
-  const storage = useStorage('assets:server')
-  const manifest = await storage.getItem<Array<{
-    route: string
-    priority: string
-    changefreq: string
-  }>>('sitemap-routes.json')
-
-  if (!manifest || !manifest.length) {
-    setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
-    return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>`
-  }
-
-  const urls = manifest.map(({ route, priority, changefreq }) => `  <url>
-    <loc>${BASE}${route}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>${changefreq}</changefreq>
-    <priority>${priority}</priority>
-  </url>`).join('\n')
+export default defineEventHandler((event) => {
+  const now = new Date().toISOString().split('T')[0]
 
   setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
   setHeader(event, 'Cache-Control', 'max-age=3600, public')
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
-</urlset>`
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${BASE}/page-sitemap.xml</loc>
+    <lastmod>${now}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${BASE}/post-sitemap.xml</loc>
+    <lastmod>${now}</lastmod>
+  </sitemap>
+</sitemapindex>`
 })
