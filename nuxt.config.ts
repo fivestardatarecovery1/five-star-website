@@ -85,8 +85,7 @@ export default defineNuxtConfig({
     '/sitemap':                                             { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
     '/sitemap/':                                            { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
     '/sitemap.xml':                                         { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
-    '/post-sitemap.xml':                                    { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
-    '/page-sitemap.xml':                                    { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
+
 
     // Blog posts (WordPress had them at root, new site has /blog/ prefix)
     '/usb-data-recovery-chip-off':                          { redirect: { to: '/blog/usb-data-recovery-chip-off', statusCode: 301 } },
