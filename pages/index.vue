@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Data Recovery Experts – Five Star Data Recovery | Five Star Data Recovery',
+  title: 'Data Recovery Experts – Five Star Data Recovery',
   description: 'Recover lost files from hard drives, iPhones, SSDs, and more. Based in Los Angeles, Five Star Data Recovery provides data recovery services.'
 })
 
