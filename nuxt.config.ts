@@ -117,7 +117,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
-      titleTemplate: '%s | Five Star Data Recovery',
+      titleTemplate: '%s',
       title: 'Expert Data Recovery Services in Glendale, CA',
       meta: [
         { charset: 'utf-8' },
