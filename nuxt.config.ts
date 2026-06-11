@@ -110,29 +110,7 @@ export default defineNuxtConfig({
     inlineSSRStyles: true,
   },
 
-  modules: ['@nuxt/content', '@nuxtjs/sitemap'],
-
-  sitemap: {
-    // Preserve original URL that Google has indexed — never change this
-    sitemapName: 'sitemap_index.xml',
-    autoLastmod: true,
-    exclude: [
-      '/post-sitemap.xml',
-      '/page-sitemap.xml',
-      '/rss.xml',
-    ],
-    urls: [
-      { loc: '/', priority: 1.0, changefreq: 'weekly' },
-      { loc: '/data-recovery', priority: 0.9, changefreq: 'weekly' },
-      { loc: '/instant-quote', priority: 0.9, changefreq: 'weekly' },
-      { loc: '/start-recovery', priority: 0.9, changefreq: 'weekly' },
-    ],
-    defaults: {
-      changefreq: 'monthly',
-      priority: 0.7,
-      lastmod: new Date().toISOString(),
-    },
-  },
+  modules: ['@nuxt/content'],
   content: {
     highlight: {
       theme: 'github-dark'
