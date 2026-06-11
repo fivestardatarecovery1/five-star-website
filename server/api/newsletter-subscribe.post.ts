@@ -50,7 +50,7 @@ function welcomeEmailHtml(email: string): string {
               </div>
               <hr style="border:none;border-top:1px solid #1E2235;margin:0 0 24px;" />
               <p style="margin:0;font-size:13px;color:#6B7280;line-height:1.6;">
-                📍 1731 S Brand Blvd Suite 100, Glendale, CA 91204<br />
+                📍 1731 S Brand Blvd., Glendale, CA 91204<br />
                 📞 <a href="tel:8182728866" style="color:#F5C842;text-decoration:none;">818-272-8866</a><br />
                 🌐 <a href="${SITE_URL}" style="color:#F5C842;text-decoration:none;">fivestardatarecovery.com</a>
               </p>

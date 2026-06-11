@@ -7,7 +7,7 @@
         <h3 class="footer-heading">Contact Us</h3>
         <div class="footer-contact-item">
           <span class="contact-emoji">📍</span>
-          <span>1731 S Brand Blvd Suite 100<br>Glendale, CA 91204</span>
+          <span>1731 S Brand Blvd.<br>Glendale, CA 91204</span>
         </div>
         <div class="footer-contact-item">
           <span class="contact-emoji">📞</span>

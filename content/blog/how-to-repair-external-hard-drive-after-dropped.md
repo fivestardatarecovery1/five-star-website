@@ -81,4 +81,4 @@ We hope this guide was useful in helping you recover the data from your drive. T
 
 **Final Disclaimer:** If the data on your drive is irreplaceable (family photos, business documents, production files, etc.), please do not attempt to recover the data on your own. If you're trying to recover easily replaceable data and can't justify the cost of professional data recovery, then have fun with the process — we're here to help give you advice and guidance. But don't try this on data that is irreplaceable.
 
-If you need professional help, contact Five Star Data Recovery at **323-672-3000** or visit us at **1731 S Brand Blvd Suite 100, Glendale, CA 91204**. We offer free evaluations and our "No Data, No Charge" guarantee.
+If you need professional help, contact Five Star Data Recovery at **323-672-3000** or visit us at **1731 S Brand Blvd., Glendale, CA 91204**. We offer free evaluations and our "No Data, No Charge" guarantee.

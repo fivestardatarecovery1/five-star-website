@@ -49,4 +49,4 @@ USB chip-off data recovery is a delicate and complex process that should only be
 
 It is essential to choose a reputable company with experience in chip-off data recovery when looking to recover data from a failed USB drive. With the right equipment, software, and expertise, it is possible to recover data from even the most severely damaged USB drives.
 
-If you have a failed USB drive that needs data recovery, contact Five Star Data Recovery today. Our engineers have the tools and expertise to handle even the most complex chip-off recovery cases. Call us at 323-672-3000 or visit us at 1731 S Brand Blvd Suite 100, Glendale, CA 91204.
+If you have a failed USB drive that needs data recovery, contact Five Star Data Recovery today. Our engineers have the tools and expertise to handle even the most complex chip-off recovery cases. Call us at 323-672-3000 or visit us at 1731 S Brand Blvd., Glendale, CA 91204.
