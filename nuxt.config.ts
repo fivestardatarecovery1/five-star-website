@@ -109,7 +109,11 @@ export default defineNuxtConfig({
     inlineSSRStyles: true,
   },
 
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', '~/modules/generate-sitemap-routes'],
+
+  nitro: {
+    serverAssets: [{ baseName: 'server', dir: './server/assets' }],
+  },
   content: {
     highlight: {
       theme: 'github-dark'
