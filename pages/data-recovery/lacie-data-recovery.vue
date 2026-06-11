@@ -68,11 +68,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Lacie Data Recovery - Five Star Data Recovery',
-  ogTitle: 'Lacie Data Recovery - Five Star Data Recovery',
-  description: 'Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.',
-  ogDescription: 'Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.',
+await usePageSeo({
+  path: "/data-recovery/lacie-data-recovery",
+  defaults: {
+    title: "Lacie Data Recovery - Five Star Data Recovery",
+    description: "Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.",
+    ogTitle: "Lacie Data Recovery - Five Star Data Recovery",
+    ogDescription: "Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times."
+  }
 })
 
 const trustBadges = [

@@ -70,11 +70,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Samsung Data Recovery - Five Star Data Recovery',
-  ogTitle: 'Samsung Data Recovery - Five Star Data Recovery',
-  description: 'Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.',
-  ogDescription: 'Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.',
+await usePageSeo({
+  path: "/data-recovery/samsung-data-recovery",
+  defaults: {
+    title: "Samsung Data Recovery - Five Star Data Recovery",
+    description: "Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.",
+    ogTitle: "Samsung Data Recovery - Five Star Data Recovery",
+    ogDescription: "Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices."
+  }
 })
 
 const trustBadges = [

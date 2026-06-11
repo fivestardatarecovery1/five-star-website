@@ -1,14 +1,12 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Frequently Asked Questions - Five Star Data Recovery',
-  description: 'Not sure how data recovery services work? Check out Five Star Data Recovery\'s FAQs page to learn more about data recovery solutions.',
-  ogTitle: 'FAQ\'s',
-  ogDescription: 'Not sure how data recovery services work? Check out Five Star Data Recovery\'s FAQs page to learn more about data recovery solutions.',
-  ogUrl: 'https://www.fivestardatarecovery.com/faq/',
-  ogType: 'article',
-  ogSiteName: 'Five Star Data Recovery',
-  twitterCard: 'summary_large_image',
-  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+await usePageSeo({
+  path: "/faq",
+  defaults: {
+    title: "Frequently Asked Questions - Five Star Data Recovery",
+    description: "Not sure how data recovery services work? Check out Five Star Data Recovery's FAQs page to learn more about data recovery solutions.",
+    ogTitle: "FAQ's",
+    ogDescription: "Not sure how data recovery services work? Check out Five Star Data Recovery's FAQs page to learn more about data recovery solutions."
+  }
 })
 
 useHead({

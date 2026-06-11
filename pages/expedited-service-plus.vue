@@ -101,11 +101,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Expedited Service Plus - Five Star Data Recovery',
-  ogTitle: 'Expedited Service Plus',
-  description: 'Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.',
-  ogDescription: 'Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.',
+await usePageSeo({
+  path: "/expedited-service-plus",
+  defaults: {
+    title: "Expedited Service Plus - Five Star Data Recovery",
+    description: "Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.",
+    ogTitle: "Expedited Service Plus",
+    ogDescription: "Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus."
+  }
 })
 
 const trustBadges = [

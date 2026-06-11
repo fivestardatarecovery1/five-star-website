@@ -1,7 +1,10 @@
 <script setup lang="ts">
-useSeoMeta({
-  title: 'Data Recovery Service Pricing - Five Star Data Recovery',
-  description: 'Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.'
+await usePageSeo({
+  path: "/data-recovery-service-pricing",
+  defaults: {
+    title: "Data Recovery Service Pricing - Five Star Data Recovery",
+    description: "Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide."
+  }
 })
 
 useHead({

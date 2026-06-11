@@ -227,11 +227,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Video File Repair Service - Corrupted & Damaged Video Repair',
-  ogTitle: 'Video File Repair Service - Corrupted & Damaged Video Repair',
-  description: 'Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.',
-  ogDescription: 'Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.',
+await usePageSeo({
+  path: "/data-recovery/video-file-repair",
+  defaults: {
+    title: "Video File Repair Service - Corrupted & Damaged Video Repair",
+    description: "Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.",
+    ogTitle: "Video File Repair Service - Corrupted & Damaged Video Repair",
+    ogDescription: "Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device."
+  }
 })
 
 const trustBadges = [

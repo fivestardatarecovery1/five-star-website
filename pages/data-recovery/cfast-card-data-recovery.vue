@@ -70,11 +70,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'CFast Card Data Recovery - Five Star Data Recovery',
-  ogTitle: 'CFast Card Data Recovery - Five Star Data Recovery',
-  description: 'Five Star Data Recovery is the leading CFast Data Recovery Company. We offer fast and secure services to get back your valuable data.',
-  ogDescription: 'Five Star Data Recovery is the leading CFast Data Recovery Company. We offer fast and secure services to get back your valuable data.',
+await usePageSeo({
+  path: "/data-recovery/cfast-card-data-recovery",
+  defaults: {
+    title: "CFast Card Data Recovery - Five Star Data Recovery",
+    description: "Five Star Data Recovery is the leading CFast Data Recovery Company. We offer fast and secure services to get back your valuable data.",
+    ogTitle: "CFast Card Data Recovery - Five Star Data Recovery",
+    ogDescription: "Five Star Data Recovery is the leading CFast Data Recovery Company. We offer fast and secure services to get back your valuable data."
+  }
 })
 
 const trustBadges = [

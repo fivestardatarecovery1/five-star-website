@@ -1,17 +1,15 @@
 <script setup lang="ts">
 import { useAnalytics } from '~/composables/useAnalytics'
 const { trackConversion } = useAnalytics()
-useSeoMeta({
-  title: 'Contact Us - Five Star Data Recovery',
-  description: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
-  ogTitle: 'Contact us',
-  ogDescription: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
-  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/an-02.png',
-  ogUrl: 'https://www.fivestardatarecovery.com/contact-us/',
-  ogType: 'article',
-  ogLocale: 'en_US',
-  twitterCard: 'summary_large_image',
-  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+await usePageSeo({
+  path: "/contact-us",
+  defaults: {
+    title: "Contact Us - Five Star Data Recovery",
+    description: "Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.",
+    ogTitle: "Contact us",
+    ogDescription: "Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.",
+    ogImage: "https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/an-02.png"
+  }
 })
 
 useHead({

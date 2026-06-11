@@ -174,12 +174,15 @@ const reviews = [
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 
-useSeoMeta({
-  title: 'External Hard Drive Not Showing Up - Five Star Data Recovery',
-  ogTitle: 'External Hard Drive Data Recovery',
-  description: 'Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.',
-  ogDescription: 'Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.',
-  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png',
+await usePageSeo({
+  path: "/data-recovery/external-hard-drive-data-recovery",
+  defaults: {
+    title: "External Hard Drive Not Showing Up - Five Star Data Recovery",
+    description: "Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.",
+    ogTitle: "External Hard Drive Data Recovery",
+    ogDescription: "Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.",
+    ogImage: "https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png"
+  }
 })
 </script>
 

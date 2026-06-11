@@ -71,11 +71,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Data Recovery RAID Services - Five Star Data Recovery',
-  ogTitle: 'Data Recovery RAID Services - Five Star Data Recovery',
-  description: 'Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.',
-  ogDescription: 'Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.',
+await usePageSeo({
+  path: "/data-recovery/raid-data-recovery",
+  defaults: {
+    title: "Data Recovery RAID Services - Five Star Data Recovery",
+    description: "Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.",
+    ogTitle: "Data Recovery RAID Services - Five Star Data Recovery",
+    ogDescription: "Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information."
+  }
 })
 
 const trustBadges = [

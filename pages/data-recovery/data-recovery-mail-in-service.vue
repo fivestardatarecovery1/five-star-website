@@ -51,11 +51,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Data Recovery Mail-in Services - Five Star Data Recovery',
-  ogTitle: 'Data Recovery Mail-in Services - Five Star Data Recovery',
-  description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
-  ogDescription: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
+await usePageSeo({
+  path: "/data-recovery/data-recovery-mail-in-service",
+  defaults: {
+    title: "Data Recovery Mail-in Services - Five Star Data Recovery",
+    description: "Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.",
+    ogTitle: "Data Recovery Mail-in Services - Five Star Data Recovery",
+    ogDescription: "Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time."
+  }
 })
 
 const trustBadges = [

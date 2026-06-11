@@ -70,11 +70,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'iPhone Data Recovery Services Experts - Five Star Data Recovery',
-  ogTitle: 'iPhone Data Recovery Services Experts - Five Star Data Recovery',
-  description: 'Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.',
-  ogDescription: 'Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.',
+await usePageSeo({
+  path: "/data-recovery/iphone-data-recovery",
+  defaults: {
+    title: "iPhone Data Recovery Services Experts - Five Star Data Recovery",
+    description: "Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.",
+    ogTitle: "iPhone Data Recovery Services Experts - Five Star Data Recovery",
+    ogDescription: "Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones."
+  }
 })
 
 const trustBadges = [

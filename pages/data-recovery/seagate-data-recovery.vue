@@ -69,11 +69,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Seagate Data Recovery - Five Star Data Recovery',
-  ogTitle: 'Seagate Data Recovery - Five Star Data Recovery',
-  description: 'Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.',
-  ogDescription: 'Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.',
+await usePageSeo({
+  path: "/data-recovery/seagate-data-recovery",
+  defaults: {
+    title: "Seagate Data Recovery - Five Star Data Recovery",
+    description: "Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.",
+    ogTitle: "Seagate Data Recovery - Five Star Data Recovery",
+    ogDescription: "Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data."
+  }
 })
 
 const trustBadges = [

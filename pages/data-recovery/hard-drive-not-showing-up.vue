@@ -60,11 +60,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Hard Drive Not Showing Up - Five Star Data Recovery',
-  ogTitle: 'Hard Drive Not Showing Up - Five Star Data Recovery',
-  description: 'Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.',
-  ogDescription: 'Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.',
+await usePageSeo({
+  path: "/data-recovery/hard-drive-not-showing-up",
+  defaults: {
+    title: "Hard Drive Not Showing Up - Five Star Data Recovery",
+    description: "Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.",
+    ogTitle: "Hard Drive Not Showing Up - Five Star Data Recovery",
+    ogDescription: "Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times."
+  }
 })
 
 const trustBadges = [

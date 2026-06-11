@@ -71,11 +71,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'SD Card Recovery - Five Star Data Recovery',
-  ogTitle: 'SD Card Recovery - Five Star Data Recovery',
-  description: 'Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.',
-  ogDescription: 'Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.',
+await usePageSeo({
+  path: "/data-recovery/sd-card-data-recovery",
+  defaults: {
+    title: "SD Card Recovery - Five Star Data Recovery",
+    description: "Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.",
+    ogTitle: "SD Card Recovery - Five Star Data Recovery",
+    ogDescription: "Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data."
+  }
 })
 
 const trustBadges = [

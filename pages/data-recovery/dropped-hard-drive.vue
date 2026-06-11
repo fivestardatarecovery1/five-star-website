@@ -45,11 +45,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Dropped Hard Drive Recovery Services - Five Star Data Recovery',
-  ogTitle: 'Dropped Hard Drive Recovery Services - Five Star Data Recovery',
-  description: 'Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.',
-  ogDescription: 'Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.',
+await usePageSeo({
+  path: "/data-recovery/dropped-hard-drive",
+  defaults: {
+    title: "Dropped Hard Drive Recovery Services - Five Star Data Recovery",
+    description: "Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.",
+    ogTitle: "Dropped Hard Drive Recovery Services - Five Star Data Recovery",
+    ogDescription: "Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop."
+  }
 })
 
 const trustBadges = [

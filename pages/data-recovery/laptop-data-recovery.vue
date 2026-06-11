@@ -69,12 +69,15 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Laptop Data Recovery - Get Your Data Recovered In No Time!',
-  ogTitle: 'Laptop Data Recovery',
-  description: 'Experiencing laptop troubles? Our Laptop Data Recovery experts can help you retrieve lost data quickly and safely.',
-  ogDescription: 'Experiencing laptop troubles? Our Laptop Data Recovery experts can help you retrieve lost data quickly and safely.',
-  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png',
+await usePageSeo({
+  path: "/data-recovery/laptop-data-recovery",
+  defaults: {
+    title: "Laptop Data Recovery - Get Your Data Recovered In No Time!",
+    description: "Experiencing laptop troubles? Our Laptop Data Recovery experts can help you retrieve lost data quickly and safely.",
+    ogTitle: "Laptop Data Recovery",
+    ogDescription: "Experiencing laptop troubles? Our Laptop Data Recovery experts can help you retrieve lost data quickly and safely.",
+    ogImage: "https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png"
+  }
 })
 
 const reviews = [

@@ -71,11 +71,14 @@ useHead({
   ]
 })
 
-useSeoMeta({
-  title: 'Bad Sectors Data Recovery - Five Star Data Recovery',
-  ogTitle: 'Bad Sectors Data Recovery - Five Star Data Recovery',
-  description: "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
-  ogDescription: "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
+await usePageSeo({
+  path: "/data-recovery/bad-sectors",
+  defaults: {
+    title: "Bad Sectors Data Recovery - Five Star Data Recovery",
+    description: "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
+    ogTitle: "Bad Sectors Data Recovery - Five Star Data Recovery",
+    ogDescription: "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote."
+  }
 })
 
 const trustBadges = [
