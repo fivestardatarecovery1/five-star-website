@@ -1,12 +1,9 @@
 <script setup lang="ts">
-await usePageSeo({
-  path: "/data-recovery-pasadena-ca",
-  defaults: {
-    title: "Data Recovery Services near Pasadena CA - Five Star Data Recovery",
-    description: "Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
-    ogTitle: "Data Recovery Pasadena",
-    ogDescription: "Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!"
-  }
+useSeoMeta({
+  title: 'Data Recovery Services near Pasadena CA - Five Star Data Recovery',
+  ogTitle: 'Data Recovery Pasadena',
+  description: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogDescription: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
 })
 
 const trustBadges = [

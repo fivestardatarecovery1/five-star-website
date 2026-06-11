@@ -106,14 +106,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery-beverly-hills",
-  defaults: {
-    title: "Data Recovery in Beverly Hills CA - Five Star Data Recovery",
-    description: "Need Data Recovery Services near the Beverly Hills, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
-    ogTitle: "Data Recovery Beverly Hills",
-    ogDescription: "Need Data Recovery Services near the Beverly Hills, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!"
-  }
+useSeoMeta({
+  title: 'Data Recovery in Beverly Hills CA - Five Star Data Recovery',
+  ogTitle: 'Data Recovery Beverly Hills',
+  description: 'Need Data Recovery Services near the Beverly Hills, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogDescription: 'Need Data Recovery Services near the Beverly Hills, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
 })
 
 const trustBadges = [

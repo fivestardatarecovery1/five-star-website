@@ -65,14 +65,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/toshiba-data-recovery",
-  defaults: {
-    title: "Toshiba Data Recovery - Five Star Data Recovery",
-    description: "Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.",
-    ogTitle: "Toshiba Data Recovery - Five Star Data Recovery",
-    ogDescription: "Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs."
-  }
+useSeoMeta({
+  title: 'Toshiba Data Recovery - Five Star Data Recovery',
+  ogTitle: 'Toshiba Data Recovery - Five Star Data Recovery',
+  description: 'Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
+  ogDescription: 'Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
 })
 
 const trustBadges = [

@@ -82,14 +82,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery-hollywood-ca",
-  defaults: {
-    title: "Data Recovery in Hollywood CA - Five Star Data Recovery",
-    description: "Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
-    ogTitle: "Data Recovery Hollywood",
-    ogDescription: "Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!"
-  }
+useSeoMeta({
+  title: 'Data Recovery in Hollywood CA - Five Star Data Recovery',
+  ogTitle: 'Data Recovery Hollywood',
+  description: 'Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogDescription: 'Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
 })
 
 const trustBadges = [

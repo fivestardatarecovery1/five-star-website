@@ -67,14 +67,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/hitachi-data-recovery",
-  defaults: {
-    title: "Hitachi Data Recovery - Five Star Data Recovery",
-    description: "Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.",
-    ogTitle: "Hitachi Data Recovery - Five Star Data Recovery",
-    ogDescription: "Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs."
-  }
+useSeoMeta({
+  title: 'Hitachi Data Recovery - Five Star Data Recovery',
+  ogTitle: 'Hitachi Data Recovery - Five Star Data Recovery',
+  description: 'Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
+  ogDescription: 'Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
 })
 
 const trustBadges = [

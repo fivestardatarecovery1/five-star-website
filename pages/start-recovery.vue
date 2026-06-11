@@ -1,10 +1,7 @@
 <script setup lang="ts">
-await usePageSeo({
-  path: "/start-recovery",
-  defaults: {
-    title: "Start Recovery of Data - Five Star Data Recovery",
-    description: "Lost important files? Start Recovery of Data now! Drop-off or mail-in your device to get a free diagnosis from our certified engineers."
-  }
+useSeoMeta({
+  title: 'Start Recovery of Data - Five Star Data Recovery',
+  description: 'Lost important files? Start Recovery of Data now! Drop-off or mail-in your device to get a free diagnosis from our certified engineers.',
 })
 
 const steps = [

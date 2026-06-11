@@ -57,15 +57,12 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/hard-drive-recovery",
-  defaults: {
-    title: "Hard Drive Data Recovery - Five Star Data Recovery",
-    description: "Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.",
-    ogTitle: "Hard Drive Data Recovery Services",
-    ogDescription: "Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.",
-    ogImage: "https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png"
-  }
+useSeoMeta({
+  title: 'Hard Drive Data Recovery - Five Star Data Recovery',
+  ogTitle: 'Hard Drive Data Recovery Services',
+  description: 'Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.',
+  ogDescription: 'Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png',
 })
 
 const reviews = [

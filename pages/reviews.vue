@@ -69,15 +69,13 @@ useHead({
 })
 
 useHead({ titleTemplate: '%s' })
-await usePageSeo({
-  path: "/reviews",
-  defaults: {
-    title: "Reviews - Five Star Data Recovery",
-    description: "Don't take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.",
-    ogTitle: "Reviews",
-    ogDescription: "Don't take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.",
-    ogImage: "https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/pl-01-150x150.png"
-  }
+useSeoMeta({
+  title: 'Reviews - Five Star Data Recovery',
+  description: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
+  ogTitle: 'Reviews',
+  ogDescription: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
+  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/pl-01-150x150.png',
+  robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 })
 
 const reviews = [

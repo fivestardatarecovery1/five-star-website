@@ -69,14 +69,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/clean-room-data-recovery",
-  defaults: {
-    title: "Clean Room Data Recovery Services You Can Trust",
-    description: "Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!",
-    ogTitle: "Clean Room Data Recovery Services You Can Trust",
-    ogDescription: "Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!"
-  }
+useSeoMeta({
+  title: 'Clean Room Data Recovery Services You Can Trust',
+  ogTitle: 'Clean Room Data Recovery Services You Can Trust',
+  description: 'Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!',
+  ogDescription: 'Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!',
 })
 
 const trustBadges = [

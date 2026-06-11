@@ -60,14 +60,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery-los-angeles",
-  defaults: {
-    title: "Data Recovery in Los Angeles CA - Five Star Data Recovery",
-    description: "Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!",
-    ogTitle: "Data Recovery Los Angeles",
-    ogDescription: "Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!"
-  }
+useSeoMeta({
+  title: 'Data Recovery in Los Angeles CA - Five Star Data Recovery',
+  ogTitle: 'Data Recovery Los Angeles',
+  description: 'Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogDescription: 'Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
 })
 
 const trustBadges = [

@@ -67,14 +67,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/drive-doesnt-power-on",
-  defaults: {
-    title: "Drive Doesn't Power On - Five Star Data Recovery",
-    description: "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
-    ogTitle: "Drive Doesn't Power On - Five Star Data Recovery",
-    ogDescription: "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices."
-  }
+useSeoMeta({
+  title: "Drive Doesn't Power On - Five Star Data Recovery",
+  ogTitle: "Drive Doesn't Power On - Five Star Data Recovery",
+  description: "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
+  ogDescription: "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
 })
 
 const trustBadges = [

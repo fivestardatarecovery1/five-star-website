@@ -70,14 +70,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/deleted-files",
-  defaults: {
-    title: "Deleted File Recovery - Five Star Data Recovery",
-    description: "Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.",
-    ogTitle: "Deleted File Recovery - Five Star Data Recovery",
-    ogDescription: "Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping."
-  }
+useSeoMeta({
+  title: 'Deleted File Recovery - Five Star Data Recovery',
+  ogTitle: 'Deleted File Recovery - Five Star Data Recovery',
+  description: 'Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.',
+  ogDescription: 'Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.',
 })
 
 const trustBadges = [

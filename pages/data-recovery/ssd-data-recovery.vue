@@ -70,14 +70,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/ssd-data-recovery",
-  defaults: {
-    title: "SSD Data Recovery - Five Star Data Recovery",
-    description: "Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.",
-    ogTitle: "SSD Data Recovery - Five Star Data Recovery",
-    ogDescription: "Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us."
-  }
+useSeoMeta({
+  title: 'SSD Data Recovery - Five Star Data Recovery',
+  ogTitle: 'SSD Data Recovery - Five Star Data Recovery',
+  description: 'Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.',
+  ogDescription: 'Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.',
 })
 
 const trustBadges = [

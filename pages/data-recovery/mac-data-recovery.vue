@@ -72,14 +72,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/mac-data-recovery",
-  defaults: {
-    title: "Mac Data Recovery - Five Star Data Recovery",
-    description: "Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.",
-    ogTitle: "Mac Data Recovery - Five Star Data Recovery",
-    ogDescription: "Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files."
-  }
+useSeoMeta({
+  title: 'Mac Data Recovery - Five Star Data Recovery',
+  ogTitle: 'Mac Data Recovery - Five Star Data Recovery',
+  description: 'Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.',
+  ogDescription: 'Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.',
 })
 
 const trustBadges = [

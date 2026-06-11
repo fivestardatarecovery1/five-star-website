@@ -70,14 +70,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/hard-drive-clicking",
-  defaults: {
-    title: "Hard Drive Clicking - Five Star Data Recovery",
-    description: "Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.",
-    ogTitle: "Hard Drive Clicking - Five Star Data Recovery",
-    ogDescription: "Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis."
-  }
+useSeoMeta({
+  title: 'Hard Drive Clicking - Five Star Data Recovery',
+  ogTitle: 'Hard Drive Clicking - Five Star Data Recovery',
+  description: 'Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.',
+  ogDescription: 'Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.',
 })
 
 const trustBadges = [

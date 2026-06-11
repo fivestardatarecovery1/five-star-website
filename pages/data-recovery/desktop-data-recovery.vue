@@ -68,14 +68,11 @@ useHead({
   ]
 })
 
-await usePageSeo({
-  path: "/data-recovery/desktop-data-recovery",
-  defaults: {
-    title: "Desktop Data Recovery - Five Star Data Recovery",
-    description: "Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.",
-    ogTitle: "Desktop Data Recovery - Five Star Data Recovery",
-    ogDescription: "Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now."
-  }
+useSeoMeta({
+  title: 'Desktop Data Recovery - Five Star Data Recovery',
+  ogTitle: 'Desktop Data Recovery - Five Star Data Recovery',
+  description: 'Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.',
+  ogDescription: 'Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.',
 })
 
 const trustBadges = [
