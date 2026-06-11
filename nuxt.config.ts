@@ -113,16 +113,14 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/sitemap'],
 
   sitemap: {
-    // Auto-discovers all routes from the router — no manual list needed
+    // Preserve original URL that Google has indexed — never change this
+    sitemapName: 'sitemap_index.xml',
     autoLastmod: true,
-    // Exclude redirects, API routes, error pages
     exclude: [
-      '/sitemap_index.xml',
       '/post-sitemap.xml',
       '/page-sitemap.xml',
       '/rss.xml',
     ],
-    // Higher priority for key pages
     urls: [
       { loc: '/', priority: 1.0, changefreq: 'weekly' },
       { loc: '/data-recovery', priority: 0.9, changefreq: 'weekly' },
