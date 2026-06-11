@@ -73,7 +73,7 @@ useHead({
 
 useSeoMeta({
   title: 'Data Recovery Services in Burbank CA - Five Star Data Recovery',
-  ogTitle: 'Data Recovery Burbank',
+  ogTitle: 'Data Recovery Services in Burbank CA - Five Star Data Recovery',
   description: 'Need Data Recovery Services near the Burbank, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
   ogDescription: 'Need Data Recovery Services near the Burbank, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
 })

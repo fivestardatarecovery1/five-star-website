@@ -67,7 +67,7 @@ useHead({
 
 useSeoMeta({
   title: 'Data Recovery Payment Plan - Five Star Data Recovery',
-  ogTitle: 'Payment Plan',
+  ogTitle: 'Data Recovery Payment Plan - Five Star Data Recovery',
   description: 'Five Star Data Recovery offers flexible payment plan options for Data Recovery Services. Contact us today for more details.',
   ogDescription: 'Five Star Data Recovery offers flexible payment plan options for Data Recovery Services. Contact us today for more details.',
   ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/05/Logo-01-1024x1024.png',

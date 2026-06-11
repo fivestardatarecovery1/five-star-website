@@ -85,7 +85,7 @@ useHead({
 
 useSeoMeta({
   title: 'Expedited Data Recovery Service - Five Star Data Recovery',
-  ogTitle: 'Data Recovery Expedited Service',
+  ogTitle: 'Expedited Data Recovery Service - Five Star Data Recovery',
   description: 'Five Star Data Recovery offers an expedited data recovery service for our customers. Please feel free to contact us to get this started!',
   ogDescription: 'Five Star Data Recovery offers an expedited data recovery service for our customers. Please feel free to contact us to get this started!',
 })

@@ -112,7 +112,7 @@ useHead({
 useSeoMeta({
   title: 'About Five Star Data Recovery | Trusted Data Recovery Experts',
   description: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.',
-  ogTitle: 'About us',
+  ogTitle: 'About Five Star Data Recovery | Trusted Data Recovery Experts',
   ogDescription: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.',
   ogUrl: 'https://www.fivestardatarecovery.com/about-us/',
   ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/an-02.png',

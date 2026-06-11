@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'Sony Venice X-OCN Data Recovery Case Study',
   description: 'See how we achieved 100% video file repair on a 15-day Sony Venice narrative shoot after 3 labs failed. Don\'t run First Aid—call our forensic video specialists.',
-  ogTitle: 'Sony Venice X-OCN Data Recovery Case Study | Five Star Data Recovery',
+  ogTitle: 'Sony Venice X-OCN Data Recovery Case Study',
   ogDescription: 'See how we achieved 100% video file repair on a 15-day Sony Venice narrative shoot after 3 labs failed. Don\'t run First Aid—call our forensic video specialists.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/sony-venice-x-ocn-video-file-repair-case-study',
   ogImage: 'https://www.fivestardatarecovery.com/blog-sony-venice-film-set.jpg',

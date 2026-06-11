@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'Blog Posts - Five Star Data Recovery',
   description: 'Five Star Data Recovery offers expert advice and tips to help you with your data recovery needs. Read our latest blog posts here!',
-  ogTitle: 'Blog',
+  ogTitle: 'Blog Posts - Five Star Data Recovery',
   ogDescription: 'Five Star Data Recovery offers expert advice and tips to help you with your data recovery needs. Read our latest blog posts here!',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/',
   ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/Lexar-USB-Data-Recovery-scaled.jpg',

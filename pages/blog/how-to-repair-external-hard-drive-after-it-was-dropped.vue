@@ -2,7 +2,7 @@
 useSeoMeta({
   title: 'How to Repair External Hard Drive After It Was Dropped — Five Star Data Recovery',
   description: 'Step-by-step guide on what to do after dropping an external hard drive — from diagnosis to head swaps. Learn when to attempt DIY recovery and when to call a professional.',
-  ogTitle: 'How to Repair External Hard Drive After It Was Dropped',
+  ogTitle: 'How to Repair External Hard Drive After It Was Dropped — Five Star Data Recovery',
   ogDescription: 'Step-by-step guide from Five Star Data Recovery on diagnosing and recovering data from a dropped external hard drive.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped',
   ogType: 'article',
