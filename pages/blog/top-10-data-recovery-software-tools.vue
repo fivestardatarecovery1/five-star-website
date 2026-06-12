@@ -31,7 +31,7 @@ useSeoMeta({
           <p class="blog-excerpt">The honest guide from a professional recovery lab — including when to use these tools, when to stop, and what to do when software isn't enough.</p>
           <div class="blog-author">
             <div class="author-avatar">R</div>
-            <div class="author-name">Rebecca · Five Star Data Recovery</div>
+            <div class="author-name">Aleksandr O. · Five Star Data Recovery</div>
           </div>
         </div>
       </div>
@@ -485,7 +485,7 @@ useSeoMeta({
 .blog-date { color: #F5C842; }
 .blog-category { background: rgba(245,200,66,0.12); color: #F5C842; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
 .blog-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin: 0 0 12px; line-height: 1.2; }
-.title-sub { font-size: 0.72em; font-weight: 400; color: rgba(255,255,255,0.5); display: block; margin-top: 6px; }
+.title-sub { font-size: 0.6em; font-weight: 400; font-style: italic; color: rgba(255,255,255,0.5); display: block; margin-top: 6px; }
 .blog-excerpt { font-size: 1rem; color: rgba(255,255,255,0.65); margin: 0 0 24px; line-height: 1.7; }
 .blog-author { display: flex; align-items: center; gap: 10px; }
 .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
