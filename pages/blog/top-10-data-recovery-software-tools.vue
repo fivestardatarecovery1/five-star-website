@@ -498,7 +498,7 @@ useSeoMeta({
 /* ── Layout ── */
 .blog-body { background: #f8f9fb; padding: 60px 0 80px; }
 .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
-@media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr; } .blog-sidebar { order: -1; } }
+@media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr;  }
 
 /* ── Article ── */
 .blog-main { color: #374151; font-size: 1.02rem; line-height: 1.85; }

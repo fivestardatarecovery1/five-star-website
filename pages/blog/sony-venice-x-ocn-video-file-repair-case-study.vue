@@ -1087,7 +1087,7 @@ useSeoMeta({
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .blog-layout { grid-template-columns: 1fr; }
-  .blog-sidebar { display: none; }
+  .blog-sidebar { display: flex; }
 }
 @media (max-width: 768px) {
   .blog-hero { padding: 70px 0 56px; }
