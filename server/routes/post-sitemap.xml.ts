@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
   </url>`).join('\n')
 
   setHeader(event, 'Content-Type', 'application/xml; charset=utf-8')
-  setHeader(event, 'Cache-Control', 'max-age=3600, public')
+  setHeader(event, 'Cache-Control', 'max-age=600, public')
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/__sitemap__/style.xsl"?>

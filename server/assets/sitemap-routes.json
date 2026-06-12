@@ -2,311 +2,373 @@
   {
     "route": "/",
     "priority": "1.0",
-    "changefreq": "weekly"
+    "changefreq": "weekly",
+    "lastmod": "2026-06-11T12:08:05-07:00"
   },
   {
     "route": "/about-us",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/appointments",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-31T08:35:38-07:00"
   },
   {
     "route": "/appointments/transfer-pickup-review",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-30T00:34:55-07:00"
   },
   {
     "route": "/blog/how-to-repair-external-hard-drive-after-it-was-dropped",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-12T11:49:47-07:00"
   },
   {
     "route": "/blog/sony-venice-x-ocn-video-file-repair-case-study",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-12T11:49:11-07:00"
   },
   {
     "route": "/blog/top-10-data-recovery-software-tools",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-12T12:59:57-07:00"
   },
   {
     "route": "/blog/usb-data-recovery-chip-off",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-12T11:49:47-07:00"
   },
   {
     "route": "/contact-us",
     "priority": "0.8",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery-beverly-hills",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery-burbank-ca",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery-hollywood-ca",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery-los-angeles",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery-pasadena-ca",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery-service-pricing",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery-services-glendale-ca",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery/bad-sectors",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/cfast-card-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/clean-room-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/data-recovery-mail-in-service",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/deleted-files",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/desktop-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/dropped-hard-drive",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/express-drop-off-form",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-04T15:48:28-07:00"
   },
   {
     "route": "/data-recovery/external-hard-drive-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery/free-data-recovery-quote",
     "priority": "0.9",
-    "changefreq": "weekly"
+    "changefreq": "weekly",
+    "lastmod": "2026-06-04T15:48:28-07:00"
   },
   {
     "route": "/data-recovery/hard-drive-not-showing-up",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/hard-drive-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery/hitachi-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/iphone-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/lacie-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/laptop-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/data-recovery/mac-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/nas-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/raid-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/samsung-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/sd-card-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/seagate-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/ssd-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/toshiba-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/usb-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-04T17:04:45-07:00"
   },
   {
     "route": "/data-recovery/video-file-repair",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/data-recovery/western-digital-data-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-04T17:04:45-07:00"
   },
   {
     "route": "/drive-doesnt-power-on",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/expedited-service",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/expedited-service-plus",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/faq",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:57:55-07:00"
   },
   {
     "route": "/hard-drive-clicking",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/instant-quote",
     "priority": "0.9",
-    "changefreq": "weekly"
+    "changefreq": "weekly",
+    "lastmod": "2026-05-27T09:11:08-07:00"
   },
   {
     "route": "/payment-plan",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/privacy-policy",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-18T15:30:14-07:00"
   },
   {
     "route": "/reviews",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-06-11T11:55:22-07:00"
   },
   {
     "route": "/services/external-hdd-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-03T21:07:47-07:00"
   },
   {
     "route": "/services/hard-drive-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-02T13:23:10-07:00"
   },
   {
     "route": "/services/laptop-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-02T13:23:10-07:00"
   },
   {
     "route": "/services/mac-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-02T13:23:10-07:00"
   },
   {
     "route": "/services/mobile-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-03T21:07:47-07:00"
   },
   {
     "route": "/services/raid-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-03T21:07:47-07:00"
   },
   {
     "route": "/services/ssd-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-02T13:23:10-07:00"
   },
   {
     "route": "/services/usb-recovery",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-03T21:07:47-07:00"
   },
   {
     "route": "/start-recovery",
     "priority": "0.9",
-    "changefreq": "weekly"
+    "changefreq": "weekly",
+    "lastmod": "2026-06-11T11:51:42-07:00"
   },
   {
     "route": "/terms-and-conditions",
     "priority": "0.7",
-    "changefreq": "monthly"
+    "changefreq": "monthly",
+    "lastmod": "2026-05-31T08:35:38-07:00"
   }
 ]
