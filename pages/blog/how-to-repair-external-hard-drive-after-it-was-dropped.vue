@@ -157,14 +157,47 @@ useSeoMeta({
         <!-- SIDEBAR -->
         <aside class="blog-sidebar">
 
-          <div class="sidebar-cta">
-            <div class="sidebar-cta-icon">💾</div>
-            <h3>Dropped Your Drive?</h3>
-            <p>Our engineers recover data from clicking, beeping, and non-mounting drives every day. Free evaluation.</p>
-            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
-            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
+          <!-- 1. More Articles -->
+          <div class="sidebar-more">
+            <h3 class="sidebar-heading">More Articles</h3>
+            <div class="sidebar-posts">
+              <NuxtLink to="/blog/top-10-data-recovery-software-tools" class="sidebar-post-card">
+                <div class="sidebar-post-img-wrap">
+                  <img src="/data-recovery-software-hero.jpg" alt="Top 10 Data Recovery Software Tools" class="sidebar-post-img" loading="lazy" />
+                </div>
+                <div class="sidebar-post-body">
+                  <div class="sidebar-post-cat">DIY Data Recovery</div>
+                  <div class="sidebar-post-title">Top 10 Data Recovery Software Tools — Honest Reviews & Warnings</div>
+                  <div class="sidebar-post-snippet">The honest guide from a professional lab — when to use these tools, when to stop, and what to do when software fails.</div>
+                  <div class="sidebar-post-read">12 min read →</div>
+                </div>
+              </NuxtLink>
+              <NuxtLink to="/blog/sony-venice-x-ocn-video-file-repair-case-study" class="sidebar-post-card">
+                <div class="sidebar-post-img-wrap">
+                  <img src="/blog-sony-venice-film-set.jpg" alt="Sony Venice X-OCN Data Recovery" class="sidebar-post-img" loading="lazy" />
+                </div>
+                <div class="sidebar-post-body">
+                  <div class="sidebar-post-cat">Case Study</div>
+                  <div class="sidebar-post-title">Sony Venice X-OCN Data Recovery Case Study</div>
+                  <div class="sidebar-post-snippet">A 15-day shoot, X-OCN file corruption, catastrophic overwrite damage — and the recovery that wasn't supposed to be possible.</div>
+                  <div class="sidebar-post-read">10 min read →</div>
+                </div>
+              </NuxtLink>
+              <NuxtLink to="/blog/usb-data-recovery-chip-off" class="sidebar-post-card">
+                <div class="sidebar-post-img-wrap">
+                  <img src="/blog-usb-chip-off.jpg" alt="USB Chip Off Data Recovery" class="sidebar-post-img" loading="lazy" />
+                </div>
+                <div class="sidebar-post-body">
+                  <div class="sidebar-post-cat">Case Study</div>
+                  <div class="sidebar-post-title">USB Data Recovery Using the Chip-Off Technique</div>
+                  <div class="sidebar-post-snippet">When a USB drive stops being detected entirely, chip-off recovery reads the NAND flash directly — bypassing the failed controller.</div>
+                  <div class="sidebar-post-read">6 min read →</div>
+                </div>
+              </NuxtLink>
+            </div>
           </div>
 
+          <!-- 2. Share -->
           <div class="sidebar-card">
             <BlogShareButtons
               url="https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped"
@@ -172,20 +205,31 @@ useSeoMeta({
             />
           </div>
 
+          <!-- 3. Newsletter -->
           <div class="sidebar-card newsletter-card">
             <BlogNewsletterSignup />
           </div>
 
+          <!-- 4. About the Author -->
           <div class="sidebar-card">
             <h3 class="sidebar-heading">About the Author</h3>
             <div class="sidebar-author">
-              <div class="sidebar-author-avatar">V</div>
+              <div class="sidebar-author-avatar">A</div>
               <div>
-                <div class="sidebar-author-name">Vahan Hovsepian</div>
-                <div class="sidebar-author-role">Head Engineer<br>Five Star Data Recovery</div>
+                <div class="sidebar-author-name">Aleksandr O.</div>
+                <div class="sidebar-author-role">Lab Engineer<br>Five Star Data Recovery</div>
               </div>
             </div>
-            <p class="sidebar-author-bio">Vahan leads the engineering team at Five Star Data Recovery, specializing in mechanical hard drive failures, head swaps, and firmware-level recovery.</p>
+            <p class="sidebar-author-bio">Aleksandr leads hands-on recovery work at Five Star's lab, specializing in hard drive repair, firmware-level diagnostics, and advanced data extraction.</p>
+          </div>
+
+          <!-- 5. CTA -->
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-icon">💾</div>
+            <h3>Dropped Your Drive?</h3>
+            <p>Our engineers recover data from clicking, beeping, and non-mounting drives every day. Free evaluation.</p>
+            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
+            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
           </div>
 
         </aside>
@@ -269,7 +313,7 @@ useSeoMeta({
 .btn-call:hover { background: rgba(245,200,66,0.08); }
 
 /* ── Sidebar ── */
-.blog-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 90px; }
+.blog-sidebar { display: flex; flex-direction: column; gap: 20px; }
 .sidebar-cta { background: linear-gradient(135deg, #1a1c2e 0%, #12141F 100%); border: 1px solid #F5C842; border-radius: 12px; padding: 24px; text-align: center; }
 .sidebar-cta-icon { font-size: 2rem; margin-bottom: 10px; }
 .sidebar-cta h3 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 8px; }
@@ -277,12 +321,25 @@ useSeoMeta({
 .sidebar-cta-btn { display: block; background: #F5C842; color: #0A0C14; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-bottom: 10px; transition: opacity 0.2s; }
 .sidebar-cta-btn:hover { opacity: 0.9; }
 .sidebar-cta-phone { display: block; font-size: 0.85rem; color: #F5C842; text-decoration: none; }
-.sidebar-card { background: #12141F; border: 1px solid #1E2235; border-radius: 12px; padding: 22px; }
-.newsletter-card { background: #0D0F1A; border-color: rgba(245,200,66,0.2); }
-.sidebar-heading { font-size: 0.78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin: 0 0 16px; }
+.sidebar-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 22px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.newsletter-card { background: #fff; border-color: #e5e7eb; }
+.sidebar-heading { font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #6B7280; margin: 0 0 14px; }
+.sidebar-more { display: flex; flex-direction: column; }
+.sidebar-more .sidebar-heading { margin-bottom: 14px; }
+.sidebar-posts { display: flex; flex-direction: column; gap: 16px; }
+.sidebar-post-card { display: block; text-decoration: none; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); transition: box-shadow 0.2s, border-color 0.2s; }
+.sidebar-post-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); border-color: #F5C842; }
+.sidebar-post-img-wrap { width: 100%; height: 160px; overflow: hidden; }
+.sidebar-post-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.sidebar-post-card:hover .sidebar-post-img { transform: scale(1.04); }
+.sidebar-post-body { padding: 14px 16px 16px; }
+.sidebar-post-cat { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #b45309; margin-bottom: 6px; }
+.sidebar-post-title { font-size: 0.88rem; font-weight: 700; color: #111827; line-height: 1.4; margin-bottom: 6px; }
+.sidebar-post-snippet { font-size: 0.78rem; color: #6B7280; line-height: 1.55; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.sidebar-post-read { font-size: 0.78rem; font-weight: 700; color: #b45309; }
 .sidebar-author { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
 .sidebar-author-avatar { width: 40px; height: 40px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 1rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.sidebar-author-name { font-size: 0.9rem; font-weight: 700; color: #F5F5F5; }
+.sidebar-author-name { font-size: 0.9rem; font-weight: 700; color: #111827; }
 .sidebar-author-role { font-size: 0.78rem; color: #6B7280; margin-top: 2px; line-height: 1.4; }
 .sidebar-author-bio { font-size: 0.82rem; color: #6B7280; line-height: 1.6; margin: 0; }
 

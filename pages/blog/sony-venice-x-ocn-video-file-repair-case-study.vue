@@ -271,10 +271,21 @@ useSeoMeta({
         <!-- SIDEBAR -->
         <aside class="blog-sidebar">
 
-          <!-- More Articles -->
-          <div class="sidebar-card">
+          <!-- 1. More Articles -->
+          <div class="sidebar-more">
             <h3 class="sidebar-heading">More Articles</h3>
             <div class="sidebar-posts">
+              <NuxtLink to="/blog/top-10-data-recovery-software-tools" class="sidebar-post">
+                <div class="sidebar-post-img-wrap">
+                  <img src="/data-recovery-software-hero.jpg" alt="Top 10 Data Recovery Software Tools" class="sidebar-post-img" loading="lazy" />
+                </div>
+                <div class="sidebar-post-body">
+                  <div class="sidebar-post-cat">DIY Data Recovery</div>
+                  <div class="sidebar-post-title">Top 10 Data Recovery Software Tools — Honest Reviews & Warnings</div>
+                  <p class="sidebar-post-snippet">The honest guide from a professional lab — when to use these tools, when to stop, and what to do when software fails.</p>
+                  <div class="sidebar-post-read">12 min read →</div>
+                </div>
+              </NuxtLink>
               <NuxtLink to="/blog/how-to-repair-external-hard-drive-after-it-was-dropped" class="sidebar-post">
                 <div class="sidebar-post-img-wrap">
                   <img src="/blog-dropped-hard-drive.jpg" alt="How to repair a dropped external hard drive" class="sidebar-post-img" loading="lazy" />
@@ -300,16 +311,7 @@ useSeoMeta({
             </div>
           </div>
 
-          <!-- Emergency CTA -->
-          <div class="sidebar-cta">
-            <div class="sidebar-cta-icon">🎬</div>
-            <h3>Lost Video Footage?</h3>
-            <p>We recover Sony Venice, ARRIRAW, BRAW, RED, and MXF files other labs can't touch.</p>
-            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
-            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
-          </div>
-
-          <!-- Share + Follow -->
+          <!-- 2. Share -->
           <div class="sidebar-card">
             <BlogShareButtons
               url="https://www.fivestardatarecovery.com/blog/sony-venice-x-ocn-video-file-repair-case-study"
@@ -317,22 +319,31 @@ useSeoMeta({
             />
           </div>
 
-          <!-- Newsletter Signup -->
+          <!-- 3. Newsletter -->
           <div class="sidebar-card newsletter-card">
             <BlogNewsletterSignup />
           </div>
 
-          <!-- About the Author -->
+          <!-- 4. About the Author -->
           <div class="sidebar-card">
             <h3 class="sidebar-heading">About the Author</h3>
             <div class="sidebar-author">
-              <div class="sidebar-author-avatar">M</div>
+              <div class="sidebar-author-avatar">A</div>
               <div>
-                <div class="sidebar-author-name">Marco</div>
-                <div class="sidebar-author-role">Video Repair Specialist<br>Five Star Data Recovery</div>
+                <div class="sidebar-author-name">Aleksandr O.</div>
+                <div class="sidebar-author-role">Lab Engineer<br>Five Star Data Recovery</div>
               </div>
             </div>
-            <p class="sidebar-author-bio">Marco leads our video file repair division, specializing in professional camera formats including Sony X-OCN, ARRIRAW, and Blackmagic RAW.</p>
+            <p class="sidebar-author-bio">Aleksandr leads hands-on recovery work at Five Star's lab, specializing in hard drive repair, firmware-level diagnostics, and advanced data extraction.</p>
+          </div>
+
+          <!-- 5. CTA -->
+          <div class="sidebar-cta">
+            <div class="sidebar-cta-icon">🎬</div>
+            <h3>Lost Video Footage?</h3>
+            <p>We recover Sony Venice, ARRIRAW, BRAW, RED, and MXF files other labs can't touch.</p>
+            <NuxtLink to="/start-recovery" class="sidebar-cta-btn">Start Recovery</NuxtLink>
+            <a href="tel:8182728866" class="sidebar-cta-phone">📞 818-272-8866</a>
           </div>
 
         </aside>
