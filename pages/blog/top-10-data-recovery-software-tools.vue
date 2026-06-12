@@ -67,9 +67,9 @@ useSeoMeta({
             <div class="warning-label">⛔ HARD STOP</div>
             <h3 class="warning-title">NEVER Attempt DIY Recovery on SSDs, NVMe Drives, or Any Flash-Based Storage</h3>
             <p>This is not a preference. This is a technical reality.</p>
-            <p>SSDs, NVMe drives, USB flash drives, SD cards, and the internal storage on most modern phones and tablets all use a feature called <strong>TRIM</strong>. When you delete a file on one of these devices, TRIM immediately signals the drive to wipe those storage blocks clean — not when you empty the trash, not when you restart, but <em>right now</em>, in the background, automatically.</p>
+            <p>SSDs, NVMe drives, USB flash drives, SD cards, and the internal storage on most modern phones and tablets all use a feature called <strong>TRIM</strong>. (<a href="/data-recovery/ssd-data-recovery" class="inline-link">Learn about professional SSD data recovery →</a>) When you delete a file on one of these devices, TRIM immediately signals the drive to wipe those storage blocks clean — not when you empty the trash, not when you restart, but <em>right now</em>, in the background, automatically.</p>
             <p>By the time you've opened a browser and searched for recovery software, the data may already be gone at the hardware level. No software can recover data that has been physically zeroed out by TRIM.</p>
-            <p><strong>If you've lost data on any flash-based device, the only move is to stop completely and contact a professional data recovery lab.</strong> Time and additional read/write activity are your enemies.</p>
+            <p><strong>If you've lost data on any flash-based device, the only move is to stop completely and <a href="/data-recovery/free-data-recovery-quote" class="inline-link">contact a professional data recovery lab</a>.</strong> Time and additional read/write activity are your enemies.</p>
           </div>
 
           <p>This applies to:</p>
@@ -85,7 +85,7 @@ useSeoMeta({
           <!-- WHEN DIY MIGHT WORK -->
           <h2 class="section-heading">When DIY Software <em>Might</em> Be Appropriate</h2>
 
-          <p>If you're working with a <strong>traditional spinning hard drive (HDD)</strong> and the situation fits one of these scenarios, consumer recovery software may have a reasonable chance:</p>
+          <p>If you're working with a <strong><a href="/data-recovery/hard-drive-recovery" class="inline-link">traditional spinning hard drive (HDD)</a></strong> and the situation fits one of these scenarios, consumer recovery software may have a reasonable chance:</p>
 
           <ul class="blog-list">
             <li><strong>You accidentally deleted files</strong> and the drive is still healthy</li>
@@ -148,13 +148,13 @@ useSeoMeta({
           <div class="tool-card tool-card--clone">
             <div class="tool-name">ddrescue <span class="tool-platform">Linux / macOS — industry standard</span></div>
             <p>The gold standard for forensic imaging. It's designed specifically for failing drives — it skips bad sectors on the first pass and returns to them later, maximizing data capture. Command-line only, so it's best for technically comfortable users.</p>
-            <a href="https://www.gnu.org/software/ddrescue/" target="_blank" rel="noopener" class="tool-link">→ gnu.org/software/ddrescue</a>
+            <a href="https://www.gnu.org/software/ddrescue/" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ gnu.org/software/ddrescue</a>
           </div>
 
           <div class="tool-card tool-card--clone">
             <div class="tool-name">FTK Imager <span class="tool-platform">Windows — free, forensic-grade</span></div>
             <p>Used by law enforcement and professional forensic analysts. Creates verified forensic images and is straightforward enough for advanced home users. Free to download from Exterro.</p>
-            <a href="https://www.exterro.com/ftk-imager" target="_blank" rel="noopener" class="tool-link">→ exterro.com/ftk-imager</a>
+            <a href="https://www.exterro.com/ftk-imager" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ exterro.com/ftk-imager</a>
           </div>
 
           <p>Only after you have a verified clone should you run any of the tools below — and run them against the image file, not the original drive.</p>
@@ -176,7 +176,7 @@ useSeoMeta({
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> If Recuva doesn't find your files on the first scan, don't keep running it. That's the drive telling you something.</div>
             </div>
             <p class="tool-note"><em>Note: The standalone Pro version has been discontinued. Recuva is now primarily a free tool.</em></p>
-            <a href="https://www.ccleaner.com/recuva" target="_blank" rel="noopener" class="tool-link">→ ccleaner.com/recuva</a>
+            <a href="https://www.ccleaner.com/recuva" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ ccleaner.com/recuva</a>
           </div>
 
           <!-- Tool 2 -->
@@ -190,7 +190,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Free version limits recovery to 500MB; can be aggressive about upselling</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> The Mac version is genuinely useful. That's a short list.</div>
             </div>
-            <a href="https://www.cleverfiles.com" target="_blank" rel="noopener" class="tool-link">→ cleverfiles.com</a>
+            <a href="https://www.cleverfiles.com" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ cleverfiles.com</a>
           </div>
 
           <!-- Tool 3 -->
@@ -204,7 +204,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> The free version is limited; full scans can be very slow; interface has a lot of noise</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> Works as advertised in straightforward cases. Don't expect miracles on a troubled drive.</div>
             </div>
-            <a href="https://www.easeus.com" target="_blank" rel="noopener" class="tool-link">→ easeus.com</a>
+            <a href="https://www.easeus.com" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ easeus.com</a>
           </div>
 
           <!-- Tool 4 -->
@@ -218,7 +218,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Pricier than most; can be overkill for simple deletions</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> One of the better tools in this list if you're going to spend money. Still can't recover from physical damage.</div>
             </div>
-            <a href="https://www.stellarinfo.com" target="_blank" rel="noopener" class="tool-link">→ stellarinfo.com</a>
+            <a href="https://www.stellarinfo.com" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ stellarinfo.com</a>
           </div>
 
           <!-- Tool 5 -->
@@ -232,7 +232,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Command-line only; no file preview; recovered filenames are not preserved; steep learning curve</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> Genuinely powerful if you know what you're doing. If you don't, you might make things worse.</div>
             </div>
-            <a href="https://www.cgsecurity.org/wiki/TestDisk" target="_blank" rel="noopener" class="tool-link">→ cgsecurity.org/wiki/TestDisk</a>
+            <a href="https://www.cgsecurity.org/wiki/TestDisk" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ cgsecurity.org/wiki/TestDisk</a>
           </div>
 
           <!-- Tool 6 -->
@@ -246,7 +246,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Not beginner-friendly; the interface assumes you know what you're doing</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> If you're technical enough to use this effectively, you probably already know when to stop and call a lab.</div>
             </div>
-            <a href="https://www.r-studio.com" target="_blank" rel="noopener" class="tool-link">→ r-studio.com</a>
+            <a href="https://www.r-studio.com" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ r-studio.com</a>
           </div>
 
           <!-- Tool 7 -->
@@ -260,7 +260,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Video recovery focus means it's not the best all-arounder; the free version barely lets you preview</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> If your camera card failed and TRIM isn't a factor (older SD cards in cameras), this is worth trying.</div>
             </div>
-            <a href="https://recoverit.wondershare.com" target="_blank" rel="noopener" class="tool-link">→ recoverit.wondershare.com</a>
+            <a href="https://recoverit.wondershare.com" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ recoverit.wondershare.com</a>
           </div>
 
           <!-- Tool 8 -->
@@ -274,7 +274,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Windows only; limited free tier; not ideal for serious corruption</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> A good first tool to try before escalating to something heavier.</div>
             </div>
-            <a href="https://www.minitool.com/data-recovery-software" target="_blank" rel="noopener" class="tool-link">→ minitool.com/data-recovery-software</a>
+            <a href="https://www.minitool.com/data-recovery-software" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ minitool.com/data-recovery-software</a>
           </div>
 
           <!-- Tool 9 -->
@@ -288,7 +288,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> Windows only for running the software (can recover Mac/Linux drives); older-style interface</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> One of the more trustworthy tools on this list. Doesn't oversell itself, ships with free lifetime updates, and handles more filesystems than most consumer tools.</div>
             </div>
-            <a href="https://www.runtime.org" target="_blank" rel="noopener" class="tool-link">→ runtime.org</a>
+            <a href="https://www.runtime.org" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ runtime.org</a>
           </div>
 
           <!-- Tool 10 -->
@@ -303,7 +303,7 @@ useSeoMeta({
               <div class="tool-row"><span class="tool-label">Limitations:</span> The Windows version is less polished than the Mac counterpart; the free version lets you scan and preview but requires purchase to actually recover files</div>
               <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> One of the most trusted names specifically in Mac data recovery. If you're on a Mac and software recovery is appropriate for your situation, this is where we'd point you.</div>
             </div>
-            <a href="https://www.prosofteng.com/mac-data-recovery" target="_blank" rel="noopener" class="tool-link">→ prosofteng.com/mac-data-recovery</a>
+            <a href="https://www.prosofteng.com/mac-data-recovery" target="_blank" rel="nofollow sponsored noopener" class="tool-link">→ prosofteng.com/mac-data-recovery</a>
           </div>
 
           <!-- WHAT NONE CAN DO -->
@@ -510,6 +510,8 @@ useSeoMeta({
 .sub-heading { font-size: 1.1rem; font-weight: 700; color: #111827; margin: 28px 0 14px; }
 .blog-list { margin: 0 0 20px 22px; }
 .blog-list li { margin-bottom: 8px; }
+.inline-link { color: #b45309; font-weight: 600; text-decoration: underline; text-decoration-color: rgba(180,83,9,0.3); text-underline-offset: 2px; transition: color 0.15s; }
+.inline-link:hover { color: #92400e; }
 
 /* ── Warning Block ── */
 .warning-block { background: #fff5f5; border: 1px solid #fca5a5; border-radius: 12px; padding: 28px; margin: 28px 0; }
