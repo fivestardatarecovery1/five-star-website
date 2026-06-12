@@ -18,16 +18,21 @@ useSeoMeta({
     <!-- HERO -->
     <section class="blog-hero">
       <div class="container hero-inner">
-        <div class="blog-meta">
-          <span class="blog-date">June 12, 2026</span>
-          <span class="blog-category">DIY Data Recovery</span>
-          <span class="blog-category">Software Reviews</span>
+        <div class="hero-left">
+          <div class="blog-meta">
+            <span class="blog-date">June 12, 2026</span>
+            <span class="blog-category">DIY Data Recovery</span>
+            <span class="blog-category">Software Reviews</span>
+          </div>
+          <h1 class="blog-title">Top 10 Data Recovery Software Tools<br><span class="title-sub">(And Why We Hope You Never Need Them)</span></h1>
+          <p class="blog-excerpt">The honest guide from a professional recovery lab — including when to use these tools, when to stop, and what to do when software isn't enough.</p>
+          <div class="blog-author">
+            <div class="author-avatar">R</div>
+            <div class="author-name">Rebecca · Five Star Data Recovery</div>
+          </div>
         </div>
-        <h1 class="blog-title">Top 10 Data Recovery Software Tools<br><span class="title-sub">(And Why We Hope You Never Need Them)</span></h1>
-        <p class="blog-excerpt">The honest guide from a professional recovery lab — including when to use these tools, when to stop, and what to do when software isn't enough.</p>
-        <div class="blog-author">
-          <div class="author-avatar">R</div>
-          <div class="author-name">Rebecca · Five Star Data Recovery</div>
+        <div class="hero-right">
+          <img src="/data-recovery-software-hero.jpg" alt="Data recovery software scanning a hard drive" class="hero-img" />
         </div>
       </div>
     </section>
@@ -38,8 +43,6 @@ useSeoMeta({
 
         <!-- MAIN ARTICLE -->
         <article class="blog-main">
-
-          <img src="/data-recovery-software-hero.jpg" alt="Data recovery software interface on laptop" class="article-hero-img" />
 
           <p class="pricing-note"><em>(Pricing verified June 2026. Prices are subject to change — always check the vendor's website for current pricing before purchasing.)</em></p>
 
@@ -425,22 +428,43 @@ useSeoMeta({
 <style scoped>
 /* ── Hero ── */
 .blog-hero {
-  background: linear-gradient(to bottom, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.92) 100%);
   background-color: #0A0C14;
   color: #fff;
-  padding: 100px 0 70px;
-  text-align: center;
+  padding: 70px 0;
+  overflow: hidden;
 }
-.hero-inner { position: relative; z-index: 1; }
-.blog-meta { display: flex; gap: 12px; justify-content: center; margin-bottom: 20px; font-size: 0.82rem; flex-wrap: wrap; }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-left { padding-right: 8px; }
+.hero-right {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+}
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+.blog-meta { display: flex; gap: 10px; margin-bottom: 18px; font-size: 0.82rem; flex-wrap: wrap; }
 .blog-date { color: #F5C842; }
 .blog-category { background: rgba(245,200,66,0.12); color: #F5C842; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
-.blog-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; max-width: 800px; margin: 0 auto 10px; line-height: 1.2; }
-.title-sub { font-size: 0.75em; font-weight: 400; color: rgba(255,255,255,0.55); display: block; margin-top: 6px; }
-.blog-excerpt { font-size: 1.05rem; color: rgba(255,255,255,0.65); max-width: 640px; margin: 0 auto 24px; line-height: 1.7; }
-.blog-author { display: flex; align-items: center; justify-content: center; gap: 10px; }
-.author-avatar { width: 36px; height: 36px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; }
+.blog-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin: 0 0 10px; line-height: 1.2; }
+.title-sub { font-size: 0.72em; font-weight: 400; color: rgba(255,255,255,0.5); display: block; margin-top: 6px; }
+.blog-excerpt { font-size: 1rem; color: rgba(255,255,255,0.65); margin: 0 0 24px; line-height: 1.7; }
+.blog-author { display: flex; align-items: center; gap: 10px; }
+.author-avatar { width: 36px; height: 36px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .author-name { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { order: -1; }
+}
 
 /* ── Layout ── */
 .blog-body { background: #f8f9fb; padding: 60px 0 80px; }
