@@ -67,9 +67,9 @@ useSeoMeta({
             <div class="warning-label">⛔ HARD STOP</div>
             <h3 class="warning-title">NEVER Attempt DIY Recovery on SSDs, NVMe Drives, or Any Flash-Based Storage</h3>
             <p>This is not a preference. This is a technical reality.</p>
-            <p>SSDs, NVMe drives, USB flash drives, SD cards, and the internal storage on most modern phones and tablets all use a feature called <strong>TRIM</strong>. (<a href="/data-recovery/ssd-data-recovery" class="inline-link">Learn about professional SSD data recovery →</a>) When you delete a file on one of these devices, TRIM immediately signals the drive to wipe those storage blocks clean — not when you empty the trash, not when you restart, but <em>right now</em>, in the background, automatically.</p>
+            <p>SSDs, NVMe drives, USB flash drives, SD cards, and the internal storage on most modern phones and tablets all use a feature called <strong>TRIM</strong>. (<a href="/data-recovery/ssd-data-recovery" class="inline-link">SSD data recovery</a>) When you delete a file on one of these devices, TRIM immediately signals the drive to wipe those storage blocks clean — not when you empty the trash, not when you restart, but <em>right now</em>, in the background, automatically.</p>
             <p>By the time you've opened a browser and searched for recovery software, the data may already be gone at the hardware level. No software can recover data that has been physically zeroed out by TRIM.</p>
-            <p><strong>If you've lost data on any flash-based device, the only move is to stop completely and <a href="/data-recovery/free-data-recovery-quote" class="inline-link">contact a professional data recovery lab</a>.</strong> Time and additional read/write activity are your enemies.</p>
+            <p><strong>If you've lost data on any flash-based device, the only move is to stop completely and get a <a href="/instant-quote" class="inline-link">data recovery quote</a> from a professional lab.</strong> Time and additional read/write activity are your enemies.</p>
           </div>
 
           <p>This applies to:</p>
