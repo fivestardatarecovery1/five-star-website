@@ -122,7 +122,7 @@ function handleSubmit() {
   display: grid;
   grid-template-columns: 1fr 480px;
   gap: 60px;
-  align-items: center;
+  align-items: start;
 }
 
 /* ── Left copy ── */
@@ -244,7 +244,7 @@ function handleSubmit() {
 .trust-item svg { flex-shrink: 0; }
 
 /* ── Form card ── */
-.hero-form-wrap { position: relative; z-index: 2; }
+.hero-form-wrap { position: relative; z-index: 2; padding-top: 10px; }
 
 .hero-form-card {
   background: #ffffff;
