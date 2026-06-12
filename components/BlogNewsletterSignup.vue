@@ -22,6 +22,7 @@ async function subscribe() {
 
 <template>
   <div class="blog-newsletter">
+    <div class="newsletter-label">Subscribe</div>
     <div class="newsletter-icon">✉️</div>
     <h3 class="newsletter-heading">Get New Articles</h3>
     <p class="newsletter-desc">Case studies and data recovery guides — direct to your inbox. No spam, ever.</p>
@@ -62,22 +63,33 @@ async function subscribe() {
 .newsletter-heading {
   font-size: 1rem;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #111827;
   margin: 0 0 6px;
 }
 .newsletter-desc {
   font-size: 0.85rem;
-  color: #718096;
+  color: #4B5563;
   line-height: 1.6;
   margin: 0 0 16px;
 }
+.newsletter-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6B7280;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #F5C842;
+  display: inline-block;
+}
 .newsletter-success {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
-  background: rgba(34,197,94,0.1);
-  border: 1px solid rgba(34,197,94,0.25);
-  color: #86EFAC;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
   padding: 12px 14px;
   border-radius: 8px;
   font-size: 0.85rem;
