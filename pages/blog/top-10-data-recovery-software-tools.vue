@@ -17,6 +17,9 @@ useSeoMeta({
 
     <!-- HERO -->
     <section class="blog-hero">
+      <div class="hero-img-fill">
+        <img src="/data-recovery-software-hero.jpg" alt="Data recovery software scanning a hard drive" class="hero-img" />
+      </div>
       <div class="container hero-inner">
         <div class="hero-left">
           <div class="blog-meta">
@@ -30,9 +33,6 @@ useSeoMeta({
             <div class="author-avatar">R</div>
             <div class="author-name">Rebecca · Five Star Data Recovery</div>
           </div>
-        </div>
-        <div class="hero-right">
-          <img src="/data-recovery-software-hero.jpg" alt="Data recovery software scanning a hard drive" class="hero-img" />
         </div>
       </div>
     </section>
@@ -445,40 +445,54 @@ useSeoMeta({
 .blog-hero {
   background-color: #0A0C14;
   color: #fff;
-  padding: 70px 0;
+  padding: 80px 0;
+  position: relative;
   overflow: hidden;
-}
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  min-height: 420px;
+  display: flex;
   align-items: center;
 }
-.hero-left { padding-right: 8px; }
-.hero-right {
-  position: relative;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+/* Image fills the right 50% of the viewport, bleeds to edge */
+.hero-img-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 0;
 }
 .hero-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-radius: 14px;
 }
+/* Dark gradient fades the image into the dark bg on the left */
+.hero-img-fill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #0A0C14 0%, rgba(10,12,20,0.6) 40%, rgba(10,12,20,0.1) 100%);
+  z-index: 1;
+}
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+.hero-left { max-width: 54%; }
 .blog-meta { display: flex; gap: 10px; margin-bottom: 18px; font-size: 0.82rem; flex-wrap: wrap; }
 .blog-date { color: #F5C842; }
 .blog-category { background: rgba(245,200,66,0.12); color: #F5C842; padding: 3px 12px; border-radius: 20px; font-weight: 600; }
-.blog-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin: 0 0 10px; line-height: 1.2; }
+.blog-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin: 0 0 12px; line-height: 1.2; }
 .title-sub { font-size: 0.72em; font-weight: 400; color: rgba(255,255,255,0.5); display: block; margin-top: 6px; }
 .blog-excerpt { font-size: 1rem; color: rgba(255,255,255,0.65); margin: 0 0 24px; line-height: 1.7; }
 .blog-author { display: flex; align-items: center; gap: 10px; }
 .author-avatar { width: 36px; height: 36px; border-radius: 50%; background: #F5C842; color: #0A0C14; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .author-name { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
 @media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-right { order: -1; }
+  .hero-img-fill { width: 100%; opacity: 0.25; }
+  .hero-left { max-width: 100%; }
 }
 
 /* ── Layout ── */
