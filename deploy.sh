@@ -1,22 +1,26 @@
 #!/bin/bash
 # Five Star — fast deploy script
-# Builds locally (warm cache, ~30s) then uploads prebuilt output to Vercel.
-# Much faster than git push → Vercel build queue (~2-3 min).
+# Builds locally on your Mac (warm cache, ~30s) then uploads prebuilt
+# output directly to Vercel — skipping their build queue entirely.
+# Total time: ~45s vs 2-3 min via git push.
 #
-# Setup (one time): add to ~/.zshrc or ~/.bash_profile:
-#   export VERCEL_TOKEN="your_token_here"
+# One-time setup — add to ~/.zshrc:
+#   export FS_VERCEL_TOKEN="your_five_star_vercel_token"
 
 set -e
 
-if [ -z "$VERCEL_TOKEN" ]; then
-  echo "❌ VERCEL_TOKEN not set. Add to ~/.zshrc: export VERCEL_TOKEN=your_token"
+TOKEN="${FS_VERCEL_TOKEN}"
+
+if [ -z "$TOKEN" ]; then
+  echo "❌ FS_VERCEL_TOKEN not set."
+  echo "   Add to ~/.zshrc: export FS_VERCEL_TOKEN=your_token"
   exit 1
 fi
 
 echo "🔨 Building locally..."
 npm run build
 
-echo "🚀 Deploying prebuilt output to Vercel..."
-npx vercel deploy --prebuilt --prod --token "$VERCEL_TOKEN"
+echo "🚀 Uploading prebuilt output to Vercel..."
+npx vercel deploy --prebuilt --prod --token "$TOKEN"
 
 echo "✅ Done!"
