@@ -291,6 +291,21 @@ useSeoMeta({
             <a href="https://www.runtime.org" target="_blank" rel="noopener" class="tool-link">→ runtime.org</a>
           </div>
 
+          <!-- Tool 10 -->
+          <div class="tool-card">
+            <div class="tool-number">10</div>
+            <div class="tool-name">Prosoft Data Rescue <span class="tool-badge">Best Dedicated Option for Mac Users</span></div>
+            <div class="tool-meta"><strong>Platform:</strong> Mac + Windows &nbsp;|&nbsp; <strong>Price:</strong> Free (scan & preview) / ~$99 one-time (Personal License)</div>
+            <p>Data Rescue has been around since 2002 and has earned a loyal following — particularly among Mac users — for good reason. While most recovery tools feel like Windows software that got ported to Mac as an afterthought, Data Rescue was built with macOS in mind from the start. It handles everything from accidentally deleted files to non-mounting drives and corrupted volumes, with a clean step-by-step interface that doesn't require any technical knowledge to use.</p>
+            <p>It's especially popular with photographers, videographers, and creative professionals who rely on Macs and can't afford to lose project files or media assets.</p>
+            <div class="tool-details">
+              <div class="tool-row"><span class="tool-label">Best for:</span> Mac users, creative professionals, photo and video file recovery, non-technical users who want a guided experience</div>
+              <div class="tool-row"><span class="tool-label">Limitations:</span> The Windows version is less polished than the Mac counterpart; the free version lets you scan and preview but requires purchase to actually recover files</div>
+              <div class="tool-row tool-honest"><span class="tool-label">Honest note:</span> One of the most trusted names specifically in Mac data recovery. If you're on a Mac and software recovery is appropriate for your situation, this is where we'd point you.</div>
+            </div>
+            <a href="https://www.prosofteng.com/mac-data-recovery" target="_blank" rel="noopener" class="tool-link">→ prosofteng.com/mac-data-recovery</a>
+          </div>
+
           <!-- WHAT NONE CAN DO -->
           <h2 class="section-heading">What None of These Tools Can Do</h2>
 
