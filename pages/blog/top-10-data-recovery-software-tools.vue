@@ -85,7 +85,7 @@ useSeoMeta({
           <!-- WHEN DIY MIGHT WORK -->
           <h2 class="section-heading">When DIY Software <em>Might</em> Be Appropriate</h2>
 
-          <p>If you're working with a <strong><a href="/data-recovery/hard-drive-recovery" class="inline-link">traditional spinning hard drive (HDD)</a></strong> and the situation fits one of these scenarios, consumer recovery software may have a reasonable chance:</p>
+          <p>If you're working with a traditional spinning hard drive (HDD) and the situation fits one of these scenarios, consumer recovery software may have a reasonable chance:</p>
 
           <ul class="blog-list">
             <li><strong>You accidentally deleted files</strong> and the drive is still healthy</li>
@@ -94,7 +94,7 @@ useSeoMeta({
             <li><strong>The data is not critical</strong> — you can live without it if recovery fails</li>
           </ul>
 
-          <p>If none of those apply — if the drive is making clicking, grinding, or buzzing noises, if it's not being recognized, if it has physical damage, or if you've already run one recovery attempt that failed — <strong>stop here and call us.</strong> Every additional action reduces your recovery odds.</p>
+          <p>If none of those apply — if the drive is making clicking, grinding, or buzzing noises, if it's not being recognized, if it has physical damage, or if you've already run one recovery attempt that failed — <strong>stop here and contact our <a href="/data-recovery/hard-drive-recovery" class="inline-link">hard drive data recovery</a> team.</strong> Every additional action reduces your recovery odds.</p>
 
           <!-- WHEN TO STOP -->
           <h2 class="section-heading">When to Put the Software Down Immediately</h2>
