@@ -27,6 +27,16 @@ const activeCategory = ref('All')
 
 const posts = [
   {
+    title: 'Top 10 Data Recovery Software Tools — Honest Reviews & Warnings',
+    date: 'June 12, 2026',
+    category: 'DIY Data Recovery',
+    readTime: '12 min read',
+    desc: 'The honest guide from a professional recovery lab — including when to use DIY tools, when to stop, and what to do when software isn't enough.',
+    href: '/blog/top-10-data-recovery-software-tools',
+    image: '/data-recovery-software-hero.jpg',
+    icon: '💾'
+  },
+  {
     title: 'Sony Venice X-OCN Data Recovery Case Study',
     date: 'June 9, 2026',
     category: 'Success Stories & Case Studies',

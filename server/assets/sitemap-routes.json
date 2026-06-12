@@ -30,6 +30,11 @@
     "changefreq": "monthly"
   },
   {
+    "route": "/blog/top-10-data-recovery-software-tools",
+    "priority": "0.7",
+    "changefreq": "monthly"
+  },
+  {
     "route": "/blog/usb-data-recovery-chip-off",
     "priority": "0.7",
     "changefreq": "monthly"
