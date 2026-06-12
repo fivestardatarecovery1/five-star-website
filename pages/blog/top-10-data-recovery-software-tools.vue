@@ -418,18 +418,6 @@ useSeoMeta({
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-      <div class="container cta-inner">
-        <h2 class="cta-title">Need Professional Data Recovery?</h2>
-        <p class="cta-sub">Free evaluation. Flat-rate pricing. No charge if we can't recover.</p>
-        <div class="cta-buttons">
-          <NuxtLink to="/start-recovery" class="btn-primary">Start Recovery</NuxtLink>
-          <NuxtLink to="/data-recovery/free-data-recovery-quote" class="btn-outline">Get a Free Quote</NuxtLink>
-        </div>
-      </div>
-    </section>
-
     <FooterBar />
   </div>
 </template>
@@ -552,13 +540,5 @@ useSeoMeta({
 .sidebar-post-snippet { font-size: 0.78rem; color: #6B7280; line-height: 1.55; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .sidebar-post-read { font-size: 0.78rem; font-weight: 700; color: #b45309; }
 
-/* ── CTA Section ── */
-.cta-section { background: linear-gradient(135deg, #0d111f, #1a2035); padding: 72px 0; text-align: center; border-top: 2px solid rgba(245,200,66,0.15); }
-.cta-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin: 0 0 14px; }
-.cta-sub { color: #9CA3AF; font-size: 1rem; margin: 0 0 32px; line-height: 1.7; }
-.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn-primary { background: #F5C842; color: #0A0C14; font-weight: 700; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: opacity 0.2s; }
-.btn-primary:hover { opacity: 0.9; }
-.btn-outline { border: 1px solid rgba(245,200,66,0.4); color: #F5C842; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
-.btn-outline:hover { background: rgba(245,200,66,0.08); }
+
 </style>

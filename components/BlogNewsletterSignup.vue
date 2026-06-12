@@ -23,8 +23,10 @@ async function subscribe() {
 <template>
   <div class="blog-newsletter">
     <div class="newsletter-label">Subscribe</div>
-    <div class="newsletter-icon">✉️</div>
-    <h3 class="newsletter-heading">Get New Articles</h3>
+    <div class="newsletter-icon-row">
+      <span class="newsletter-icon">✉️</span>
+      <h3 class="newsletter-heading">Subscribe to our Blog</h3>
+    </div>
     <p class="newsletter-desc">Case studies and data recovery guides — direct to your inbox. No spam, ever.</p>
 
     <div v-if="state === 'success'" class="newsletter-success">
@@ -56,15 +58,22 @@ async function subscribe() {
 .blog-newsletter {
   width: 100%;
 }
+.newsletter-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
 .newsletter-icon {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
 }
 .newsletter-heading {
   font-size: 1rem;
   font-weight: 700;
   color: #111827;
-  margin: 0 0 6px;
+  margin: 0;
 }
 .newsletter-desc {
   font-size: 0.85rem;
