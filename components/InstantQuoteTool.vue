@@ -7,14 +7,16 @@ const props = defineProps<{ light?: boolean, compact?: boolean }>()
 const sessionId = ref('')
 const sourcePage = ref('')
 if (import.meta.client) {
-  sessionId.value = crypto.randomUUID()
-  sourcePage.value = window.location.pathname
-  // Track page view
-  fetch('/api/quote-lead', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ type: 'view', source_page: window.location.pathname }),
-  }).catch(() => {})
+  try {
+    sessionId.value = (crypto?.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2))
+    sourcePage.value = window.location.pathname
+    // Track page view (fire and forget — never block rendering)
+    fetch('/api/quote-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'view', source_page: window.location.pathname }),
+    }).catch(() => {})
+  } catch {}
 }
 
 type Step = 'contact' | 'device' | 'laptop-type' | 'desktop-os' | 'imac-drive-type' | 'fusion-size' | 'brand' | 'laptop-os' | 'apple-year' | 'board-repair' | 'ssd-location' | 'ssd-type' | 'ssd-ext-brand' | 'capacity' | 'issue' | 'encrypt' | 'cover' | 'aio' | 'urgency' | 'result' | 'call'
@@ -1407,7 +1409,7 @@ const progressIndex = computed(() => {
 
 /* ── Light theme ──────────────────────────────── */
 /* Contact Step */
-.iqt-contact-step { display: flex; flex-direction: column; gap: 0; min-height: 100%; }
+.iqt-contact-step { display: flex; flex-direction: column; gap: 0; }
 .iqt-contact-step .iqt-q { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 4px; }
 .iqt-contact-step .iqt-hint { font-size: 0.82rem; color: #6b7280; margin-bottom: 18px; }
 .iqt-contact-fields { display: flex; flex-direction: column; gap: 14px; width: 100%; flex: 1; }
@@ -1480,7 +1482,7 @@ const progressIndex = computed(() => {
 
 .iqt-compact {
   padding: 0;
-  height: 540px;
+  min-height: 480px;
   display: flex;
   flex-direction: column;
   background: #fff;
@@ -1494,7 +1496,6 @@ const progressIndex = computed(() => {
 .iqt-compact .iqt-body {
   flex: 1;
   overflow-y: auto;
-  min-height: 0;
   padding: 20px;
   scrollbar-width: thin;
   scrollbar-color: #e2e8f0 transparent;
@@ -1514,7 +1515,6 @@ const progressIndex = computed(() => {
 .iqt-compact .iqt-body > div {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
 }
 
 /* Grid fills remaining space and rows stretch */

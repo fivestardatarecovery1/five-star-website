@@ -97,7 +97,7 @@ function handleSubmit() {
 
           <!-- ClientOnly: prevents heavy form from blocking SSR hydration + LCP paint -->
           <ClientOnly>
-            <LazyInstantQuoteTool :light="true" :compact="true" />
+            <InstantQuoteTool :light="true" :compact="true" />
             <template #fallback>
               <div class="iqt-skeleton" />
             </template>
@@ -254,6 +254,7 @@ function handleSubmit() {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 520px;
 }
 
 /* Skeleton placeholder while InstantQuoteTool JS loads */
