@@ -12,24 +12,22 @@ const PRIORITY: Record<string, string> = {
 }
 
 export default defineEventHandler(async (event) => {
-  const today = new Date().toISOString()
-
-  // Read routes manifest generated at build time (excludes /blog/* routes)
   const storage = useStorage('assets:server')
   const manifest = await storage.getItem<Array<{
     route: string
     priority: string
     changefreq: string
+    lastmod: string
   }>>('sitemap-routes.json')
 
   const pages = (manifest || []).filter(({ route }) => !route.startsWith('/blog/'))
 
-  const urls = pages.map(({ route }) => {
+  const urls = pages.map(({ route, lastmod }) => {
     const priority = PRIORITY[route] || '0.7'
     const changefreq = (priority === '1.0' || priority === '0.9') ? 'weekly' : 'monthly'
     return `  <url>
     <loc>${BASE}${route}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`

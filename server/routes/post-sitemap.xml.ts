@@ -3,23 +3,21 @@ import { defineEventHandler, setHeader } from 'h3'
 const BASE = 'https://www.fivestardatarecovery.com'
 
 export default defineEventHandler(async (event) => {
-  const today = new Date().toISOString()
-
-  // Read routes manifest generated at build time — only /blog/* routes
   const storage = useStorage('assets:server')
   const manifest = await storage.getItem<Array<{
     route: string
     priority: string
     changefreq: string
+    lastmod: string
   }>>('sitemap-routes.json')
 
   const posts = (manifest || []).filter(({ route }) =>
     route.startsWith('/blog/') && route !== '/blog'
   )
 
-  const urls = posts.map(({ route }) => `  <url>
+  const urls = posts.map(({ route, lastmod }) => `  <url>
     <loc>${BASE}${route}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>`).join('\n')
