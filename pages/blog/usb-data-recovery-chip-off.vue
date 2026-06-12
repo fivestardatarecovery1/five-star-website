@@ -267,7 +267,7 @@ useSeoMeta({
 /* ── Layout ── */
 .blog-body { background: #0D0F1A; padding: 60px 0 80px; }
 .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: start; }
-@media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr;  }
+@media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr; } }
 
 /* ── Article ── */
 .blog-main { color: #D1D5DB; font-size: 1.02rem; line-height: 1.85; }
