@@ -1407,7 +1407,7 @@ const progressIndex = computed(() => {
 
 /* ── Light theme ──────────────────────────────── */
 /* Contact Step */
-.iqt-contact-step { display: flex; flex-direction: column; gap: 0; height: 100%; }
+.iqt-contact-step { display: flex; flex-direction: column; gap: 0; min-height: 100%; }
 .iqt-contact-step .iqt-q { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin-bottom: 4px; }
 .iqt-contact-step .iqt-hint { font-size: 0.82rem; color: #6b7280; margin-bottom: 18px; }
 .iqt-contact-fields { display: flex; flex-direction: column; gap: 14px; width: 100%; flex: 1; }
@@ -1514,7 +1514,7 @@ const progressIndex = computed(() => {
 .iqt-compact .iqt-body > div {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
 }
 
 /* Grid fills remaining space and rows stretch */
