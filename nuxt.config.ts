@@ -1,4 +1,7 @@
 export default defineNuxtConfig({
+  devServer: {
+    port: 3002  // mc-backend owns 3001 — never conflict
+  },
   nitro: {
     preset: 'vercel'
   },
