@@ -1,5 +1,6 @@
 <script setup lang="ts">
 useHead({
+  link: [{ rel: 'canonical', href: 'https://www.fivestardatarecovery.com/data-recovery/western-digital-data-recovery/' }],
   script: [
     {
       type: 'application/ld+json',
@@ -71,10 +72,10 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Western Digital Hard Drive Data Recovery Services',
-  ogTitle: 'Western Digital Hard Drive Data Recovery Services',
-  description: 'Experiencing issues with your Western Digital drive? At Five Star Data Recovery, we specialize in Western Digital Data Recovery.',
-  ogDescription: 'Experiencing issues with your Western Digital drive? At Five Star Data Recovery, we specialize in Western Digital Data Recovery.',
+  title: 'Western Digital Data Recovery | Five Star Data Recovery',
+  ogTitle: 'Western Digital Data Recovery | Five Star Data Recovery',
+  description: 'Western Digital drive not showing up or clicking? Five Star Data Recovery recovers WD My Passport, My Book & Elements. Free diagnostic. No Data = No Charge. Get a free quote.',
+  ogDescription: 'Western Digital drive not showing up or clicking? Five Star Data Recovery recovers WD My Passport, My Book & Elements. Free diagnostic. No Data = No Charge. Get a free quote.',
 })
 
 const trustBadges = [
