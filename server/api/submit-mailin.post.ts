@@ -90,8 +90,10 @@ export default defineEventHandler(async (event) => {
 
   const fullName = `${firstName} ${lastName}`
   const countryCode = COUNTRY_CODES[country] || 'US'
-  const serviceType = expeditedService?.includes('Expedited') ? 'PRIORITY_OVERNIGHT' : 'FEDEX_2_DAY'
-  const serviceLabel = expeditedService?.includes('Expedited') ? 'FedEx Priority Overnight' : 'FedEx 2Day'
+  // CA customers get Ground — same/faster transit than 2-Day at lower cost
+  const isCA = (state || '').toUpperCase() === 'CA'
+  const serviceType = expeditedService?.includes('Expedited') ? 'PRIORITY_OVERNIGHT' : (isCA ? 'FEDEX_GROUND' : 'FEDEX_2_DAY')
+  const serviceLabel = expeditedService?.includes('Expedited') ? 'FedEx Priority Overnight' : (isCA ? 'FedEx Ground' : 'FedEx 2Day')
 
   // ── Generate FedEx label ──────────────────────────────────────
   let labelBase64 = ''
