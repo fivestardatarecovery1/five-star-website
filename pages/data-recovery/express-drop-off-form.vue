@@ -791,10 +791,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
                 </div>
 
-              <!-- STEP 5 PAYMENT GATE -->
+            </div><!-- /form-step step 5 -->
+
+              <!-- Step error -->
+              <p v-if="stepError" class="step-error">⚠ {{ stepError }}</p>
+
+              <!-- PAYMENT GATE — outside scrollable step area, always visible -->
               <div v-if="step === 5 && hasUpfrontFees" class="payment-gate">
 
-                <!-- Fee Breakdown -->
                 <div class="pgate-header">
                   <span class="pgate-icon">💳</span>
                   <div>
@@ -825,7 +829,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   ℹ️ <strong>Drive Cover</strong> refers to the metal housing (HDA cover) that seals the drive platters — not the plastic external enclosure or case.
                 </div>
 
-                <!-- Payment form (hidden once paid) -->
                 <template v-if="!form.paymentCompleted">
                   <div class="sq-card-wrap">
                     <p class="sq-label">Enter Card Details</p>
@@ -848,17 +851,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                   <p class="sq-secure-note">🔒 Payments are processed securely via Square. We never store your card details.</p>
                 </template>
 
-                <!-- Payment confirmed -->
                 <div v-if="form.paymentCompleted" class="pgate-paid">
                   ✅ Payment of <strong>${{ totalUpfront.toFixed(2) }}</strong> confirmed! You're all set — click Submit below.
                 </div>
 
               </div>
-
-            </div><!-- /form-step step 5 -->
-
-              <!-- Step error -->
-              <p v-if="stepError" class="step-error">⚠ {{ stepError }}</p>
 
               <!-- Navigation -->
               <!-- Final step: agreement buttons; other steps: normal nav -->
