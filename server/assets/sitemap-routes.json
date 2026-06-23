@@ -141,7 +141,13 @@
     "route": "/data-recovery/express-drop-off-form",
     "priority": "0.7",
     "changefreq": "monthly",
-    "lastmod": "2026-06-23T10:39:46-07:00"
+    "lastmod": "2026-06-23T11:09:51-07:00"
+  },
+  {
+    "route": "/data-recovery/express-drop-off-v2",
+    "priority": "0.7",
+    "changefreq": "monthly",
+    "lastmod": "2026-06-23T00:00:00+00:00"
   },
   {
     "route": "/data-recovery/external-hard-drive-data-recovery",

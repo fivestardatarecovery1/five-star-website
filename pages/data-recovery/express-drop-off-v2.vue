@@ -3,6 +3,7 @@ import { useAnalytics } from '~/composables/useAnalytics'
 const { trackConversion } = useAnalytics()
 useHead({
   script: [
+    { src: 'https://web.squarecdn.com/v1/square.js', async: true, key: 'square-sdk' },
     {
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
@@ -43,10 +44,11 @@ useHead({
 })
 
 useSeoMeta({
-  title: 'Data Recovery Express Drop Off Form - Five Star Data Recovery',
-  ogTitle: 'Data Recovery Express Drop Off Form - Five Star Data Recovery',
-  description: 'Need Data Recovery and would like to expedite the drop off process? Fill out our express drop off form to get your recovery started.',
-  ogDescription: 'Need Data Recovery and would like to expedite the drop off process? Fill out our express drop off form to get your recovery started.',
+  title: '[DEV] Express Drop Off v2 - Five Star Data Recovery',
+  ogTitle: '[DEV] Express Drop Off v2 - Five Star Data Recovery',
+  description: 'Development build — not for public use.',
+  ogDescription: 'Development build — not for public use.',
+  robots: 'noindex, nofollow',
 })
 
 const trustBadges = [
@@ -86,7 +88,103 @@ const form = reactive({
   issue: '', dataTypes: [] as string[], recoveryAttempted: '', additionalInfo: '',
   conditionalRates: [] as string[], expeditedService: '', transferDrive: '',
   dropOffDate: '', dropOffTime: '', todayDate: '',
+  driveCoverOpened: false,
+  deletedFilesFormatted: false,
+  paymentCompleted: false,
+  paymentId: '',
   termsAgreed: false,
+})
+
+// ── Square Payment ──────────────────────────────────────────────────────────
+const squareCard = ref<any>(null)
+const squareReady = ref(false)
+const squareInitError = ref('')
+const paymentProcessing = ref(false)
+
+const upfrontFees = computed(() => {
+  const fees: { label: string; amount: number }[] = []
+  if (form.expeditedService === 'Expedited Service') fees.push({ label: 'Expedited Service', amount: 200 })
+  if (form.driveCoverOpened) fees.push({ label: 'Drive Cover Opened (Metal Housing / HDA)', amount: 200 })
+  if (form.deletedFilesFormatted) fees.push({ label: 'Deleted Files / Formatted Drive', amount: 200 })
+  return fees
+})
+const totalUpfront = computed(() => upfrontFees.value.reduce((sum, f) => sum + f.amount, 0))
+const hasUpfrontFees = computed(() => totalUpfront.value > 0)
+
+// Auto-detect drive cover opened from Step 3 radio
+watch(() => form.recoveryAttempted, (val) => {
+  form.driveCoverOpened = val.includes('drive cover has been opened')
+})
+
+// Reset payment if fees change (user went back and changed selections)
+watch(upfrontFees, (newFees, oldFees) => {
+  if (JSON.stringify(newFees) !== JSON.stringify(oldFees)) {
+    form.paymentCompleted = false
+    form.paymentId = ''
+    squareReady.value = false
+    squareCard.value = null
+  }
+})
+
+async function initSquare() {
+  if (!import.meta.client) return
+  if (!hasUpfrontFees.value) return
+  squareReady.value = false
+  squareInitError.value = ''
+  let attempts = 0
+  while (!(window as any).Square && attempts < 30) {
+    await new Promise(r => setTimeout(r, 200))
+    attempts++
+  }
+  if (!(window as any).Square) {
+    squareInitError.value = 'Payment system unavailable. Please refresh or call 818-272-8866.'
+    return
+  }
+  try {
+    const payments = (window as any).Square.payments('sq0idp-Vk8QvhmuUkuuFtLm_OAppA', 'DNWSXVRTKAHZ9')
+    squareCard.value = await payments.card()
+    await squareCard.value.attach('#square-card-container')
+    squareReady.value = true
+  } catch (e) {
+    squareInitError.value = 'Failed to load payment form. Please refresh or call 818-272-8866.'
+    console.error('[Square] init error:', e)
+  }
+}
+
+async function processSquarePayment() {
+  if (!squareCard.value || paymentProcessing.value) return
+  paymentProcessing.value = true
+  stepError.value = ''
+  try {
+    const result = await squareCard.value.tokenize()
+    if (result.status === 'OK') {
+      const res = await $fetch<any>('/api/square-payment', {
+        method: 'POST',
+        body: {
+          sourceId: result.token,
+          amountCents: totalUpfront.value * 100,
+          note: `Five Star Data Recovery — Express Drop-Off | ${form.firstName} ${form.lastName} | ${form.dropOffDate} ${form.dropOffTime}`,
+        },
+      })
+      form.paymentCompleted = true
+      form.paymentId = res.payment?.id || ''
+    } else {
+      const errMsg = result.errors?.[0]?.message || 'Card declined. Please try a different card.'
+      stepError.value = `Payment failed: ${errMsg}`
+    }
+  } catch (e: any) {
+    stepError.value = e?.data?.statusMessage || e?.message || 'Payment failed. Please try again or call 818-272-8866.'
+  } finally {
+    paymentProcessing.value = false
+  }
+}
+
+// Initialize Square when user reaches Step 5 with upfront fees
+watch(step, async (newStep) => {
+  if (newStep === 5 && hasUpfrontFees.value) {
+    await nextTick()
+    if (!squareReady.value && !form.paymentCompleted) await initSquare()
+  }
 })
 
 // ── Schedule availability ──────────────────────────────────────────────────
@@ -216,6 +314,7 @@ function validateStep(): boolean {
     if (!form.dropOffDate) return err('Please select a preferred drop-off date.')
     if (dateBlocked.value) return err('That date is not available. Please choose another date.')
     if (!form.dropOffTime) return err('Please select a drop-off time.')
+    if (hasUpfrontFees.value && !form.paymentCompleted) return err('Please complete the upfront payment before submitting.')
     // todayDate auto-set on submit — no user input needed
   }
   return true
@@ -614,7 +713,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                     <label class="ci"><input type="checkbox" /> My hard drive is larger than 2TB ($200.00 additional fee if recovery is successful).</label>
                     <label class="ci"><input type="checkbox" /> My hard drive is larger than 8TB ($200.00 additional fee if recovery is successful).</label>
                     <label class="ci"><input type="checkbox" /> My hard drive has the USB 3.0 or USB-C Port ($200.00 additional fee if recovery is successful).</label>
-                    <label class="ci"><input type="checkbox" /> The data on my hard drive was deleted ($200.00 Paid upfront and non refundable).</label>
+                    <label class="ci"><input type="checkbox" v-model="form.deletedFilesFormatted" /> The data on my hard drive was deleted or the drive was formatted ($200.00 paid upfront — nonrefundable).</label>
                   </div>
                 </div>
               </div>
@@ -693,19 +792,82 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
                 </div>
 
-              </div>
+            </div><!-- /form-step step 5 -->
 
               <!-- Step error -->
               <p v-if="stepError" class="step-error">⚠ {{ stepError }}</p>
+
+              <!-- PAYMENT GATE — outside scrollable step area, always visible -->
+              <div v-if="step === 5 && hasUpfrontFees" class="payment-gate">
+
+                <div class="pgate-header">
+                  <span class="pgate-icon">💳</span>
+                  <div>
+                    <h4 class="pgate-title">Upfront Payment Required</h4>
+                    <p class="pgate-desc">The following fees apply to your selected services and must be paid before confirming your drop-off. <strong>All upfront fees are nonrefundable regardless of recovery outcome.</strong></p>
+                  </div>
+                </div>
+
+                <div class="pgate-breakdown">
+                  <div class="pgate-breakdown-header">
+                    <span>Service / Fee</span><span>Amount</span>
+                  </div>
+                  <div v-for="fee in upfrontFees" :key="fee.label" class="pgate-row">
+                    <span>{{ fee.label }}</span>
+                    <span class="pgate-amt">${{ fee.amount.toFixed(2) }}</span>
+                  </div>
+                  <div class="pgate-row pgate-total">
+                    <span>Total Due Now</span>
+                    <span class="pgate-amt-total">${{ totalUpfront.toFixed(2) }}</span>
+                  </div>
+                  <div class="pgate-row pgate-later">
+                    <span>Balance Due at Recovery</span>
+                    <span class="pgate-amt-later">Quoted after diagnosis</span>
+                  </div>
+                </div>
+
+                <div v-if="form.driveCoverOpened" class="pgate-note">
+                  ℹ️ <strong>Drive Cover</strong> refers to the metal housing (HDA cover) that seals the drive platters — not the plastic external enclosure or case.
+                </div>
+
+                <template v-if="!form.paymentCompleted">
+                  <div class="sq-card-wrap">
+                    <p class="sq-label">Enter Card Details</p>
+                    <div v-if="!squareReady && !squareInitError" class="sq-loading">
+                      <span class="sq-spin">⟳</span> Loading secure payment form…
+                    </div>
+                    <div v-if="squareInitError" class="sq-init-error">⚠ {{ squareInitError }}</div>
+                    <div id="square-card-container" class="sq-card-container"></div>
+                  </div>
+                  <button
+                    v-if="squareReady"
+                    type="button"
+                    class="btn-pay-now"
+                    :disabled="paymentProcessing"
+                    @click="processSquarePayment"
+                  >
+                    <span v-if="paymentProcessing">⟳ Processing…</span>
+                    <span v-else>🔒 Pay ${{ totalUpfront.toFixed(2) }} Now</span>
+                  </button>
+                  <p class="sq-secure-note">🔒 Payments are processed securely via Square. We never store your card details.</p>
+                </template>
+
+                <div v-if="form.paymentCompleted" class="pgate-paid">
+                  ✅ Payment of <strong>${{ totalUpfront.toFixed(2) }}</strong> confirmed! You're all set — click Submit below.
+                </div>
+
+              </div>
 
               <!-- Navigation -->
               <!-- Final step: agreement buttons; other steps: normal nav -->
               <div v-if="step === totalSteps" class="form-nav-final">
                 <p class="terms-notice">By submitting, you agree to our <a href="https://www.fivestardatarecovery.com/terms-and-conditions/" target="_blank" class="terms-link">terms and conditions.</a></p>
                 <div class="final-btns">
-                  <button type="button" class="btn-cancel" @click="prevStep">← Go Back</button>
-                  <button type="submit" class="btn-submit-agree" :disabled="submitting">{{ submitting ? 'Submitting...' : '✓ Submit &amp; Agree to Terms' }}</button>
+                  <button type="button" class="btn-cancel" @click="prevStep" :disabled="form.paymentCompleted">← Go Back</button>
+                  <button type="submit" class="btn-submit-agree" :disabled="submitting || (hasUpfrontFees && !form.paymentCompleted)">{{ submitting ? 'Submitting...' : '✓ Submit &amp; Agree to Terms' }}</button>
                 </div>
+                <p v-if="hasUpfrontFees && !form.paymentCompleted" class="submit-locked-note">⚠ Complete payment above to enable submission.</p>
+                <p v-if="form.paymentCompleted" class="submit-unlocked-note">💳 Payment confirmed — you're ready to submit!</p>
               </div>
               <div v-else class="form-nav">
                 <button v-if="step > 1" type="button" class="btn-back" @click="prevStep">← Back</button>
@@ -1083,6 +1245,114 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   font-weight: 600;
   margin-bottom: 4px;
 }
+
+/* ── PAYMENT GATE ── */
+.payment-gate {
+  margin-top: 28px;
+  border: 2px solid #F5C842;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fffbeb;
+}
+.pgate-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #0f1623;
+  padding: 18px 22px;
+}
+.pgate-icon { font-size: 26px; flex-shrink: 0; margin-top: 2px; }
+.pgate-title { font-size: 1rem; font-weight: 800; color: #F5C842; margin: 0 0 6px; }
+.pgate-desc { font-size: 0.82rem; color: #8a9bb8; line-height: 1.6; margin: 0; }
+.pgate-breakdown { padding: 0 22px; margin: 16px 0; }
+.pgate-breakdown-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 4px;
+}
+.pgate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.9rem;
+  color: #1a2030;
+}
+.pgate-row:last-child { border-bottom: none; }
+.pgate-amt { font-weight: 700; color: #1a2030; }
+.pgate-total {
+  border-top: 2px solid #F5C842;
+  margin-top: 4px;
+  padding-top: 12px;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #0f1623;
+}
+.pgate-amt-total { font-weight: 900; font-size: 1.05rem; color: #0f1623; }
+.pgate-later { color: #64748b; font-size: 0.85rem; }
+.pgate-amt-later { color: #94a3b8; font-size: 0.82rem; font-style: italic; }
+.pgate-note {
+  margin: 0 22px 14px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #1e40af;
+  line-height: 1.6;
+}
+.sq-card-wrap { padding: 0 22px 16px; }
+.sq-label { font-size: 0.82rem; font-weight: 700; color: #475569; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+.sq-loading { font-size: 0.88rem; color: #94a3b8; padding: 18px 0; }
+.sq-spin { display: inline-block; animation: sq-spin 1s linear infinite; }
+@keyframes sq-spin { to { transform: rotate(360deg); } }
+.sq-init-error { font-size: 0.85rem; color: #dc2626; padding: 10px 0; }
+.sq-card-container {
+  background: #fff;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  min-height: 54px;
+}
+.btn-pay-now {
+  width: 100%;
+  background: #0f1623;
+  color: #F5C842;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+  letter-spacing: 0.2px;
+}
+.btn-pay-now:hover:not(:disabled) { background: #1a2a40; }
+.btn-pay-now:disabled { opacity: 0.6; cursor: not-allowed; }
+.sq-secure-note { font-size: 0.75rem; color: #94a3b8; text-align: center; margin-top: 8px; }
+.pgate-paid {
+  margin: 0 22px 20px;
+  background: #f0fdf4;
+  border: 1.5px solid #22c55e;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 0.92rem;
+  color: #15803d;
+  font-weight: 600;
+}
+.submit-locked-note { font-size: 0.8rem; color: #dc2626; text-align: center; margin-top: 8px; }
+.submit-unlocked-note { font-size: 0.82rem; color: #16a34a; text-align: center; margin-top: 8px; font-weight: 600; }
+.btn-cancel:disabled { opacity: 0.5; cursor: not-allowed; }
 
 /* STEP ERROR */
 .step-error {
