@@ -12,7 +12,16 @@ export default defineEventHandler(async (event) => {
     issue, dataTypes, recoveryAttempted, additionalInfo,
     conditionalRates, expeditedService, transferDrive,
     dropOffDate, dropOffTime, todayDate,
+    driveCoverOpened, deletedFilesFormatted,
+    paymentCompleted, paymentId,
   } = body
+
+  // Build upfront fees summary for email
+  const upfrontFees: { label: string; amount: number }[] = []
+  if (expeditedService === 'Expedited Service') upfrontFees.push({ label: 'Expedited Service', amount: 200 })
+  if (driveCoverOpened) upfrontFees.push({ label: 'Drive Cover Opened (Metal Housing / HDA)', amount: 200 })
+  if (deletedFilesFormatted) upfrontFees.push({ label: 'Deleted Files / Formatted Drive', amount: 200 })
+  const totalUpfront = upfrontFees.reduce((s, f) => s + f.amount, 0)
 
   const fullName = `${firstName} ${lastName}`
 
@@ -67,6 +76,14 @@ export default defineEventHandler(async (event) => {
           <ul style="margin:0;padding:0 0 0 18px;font-size:14px;color:#374151;">
             ${(Array.isArray(conditionalRates) ? conditionalRates : [conditionalRates]).map((r: string) => `<li style="padding:4px 0;">${r}</li>`).join('')}
           </ul>` : ''}
+
+          ${upfrontFees.length > 0 ? `
+          <h2 style="font-size:15px;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin:24px 0 12px;border-top:1px solid #e8edf4;padding-top:20px;">Upfront Payment</h2>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:8px;">
+            ${upfrontFees.map(f => `<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;width:60%;">${f.label}</td><td style="padding:6px 0;font-weight:700;font-size:14px;">$${f.amount.toFixed(2)}</td></tr>`).join('')}
+            <tr style="border-top:2px solid #F5C842;"><td style="padding:8px 0;color:#1a1a2e;font-size:15px;font-weight:800;">Total Charged</td><td style="padding:8px 0;font-weight:900;font-size:15px;color:#F5C842;">$${totalUpfront.toFixed(2)}</td></tr>
+          </table>
+          <p style="font-size:12px;color:#6b7280;margin:0;">Payment ${paymentCompleted ? '✅ Confirmed' : '⚠ Not recorded'} ${paymentId ? '&middot; Square ID: ' + paymentId : ''}</p>` : ''}
 
         </div>
         <div style="background:#f4f7fc;padding:16px 32px;border-radius:0 0 12px 12px;border:1px solid #e8edf4;border-top:none;text-align:center;">
