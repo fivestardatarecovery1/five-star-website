@@ -658,7 +658,7 @@ const progressIndex = computed(() => {
         <div class="iqt-nav" style="justify-content:flex-end;margin-top:16px;">
           <button class="iqt-btn-next" @click="submitContact">Get My Quote →</button>
         </div>
-        <p class="iqt-powered"><a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a></p>
+
       </div>
 
       <!-- STEP: Device -->

@@ -106,7 +106,7 @@ const submitted = ref(false)
               ✓ Thank you! We'll reach out with a quote shortly.
             </div>
             <button type="submit" class="mf-submit">Request a Consultation</button>
-            <p class="form-powered"><a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a></p>
+
           </form>
         </div>
       </div>

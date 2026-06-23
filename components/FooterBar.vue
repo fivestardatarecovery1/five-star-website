@@ -83,9 +83,7 @@
           <NuxtLink to="/terms-and-conditions">Terms of Service</NuxtLink>
         </div>
       </div>
-      <div class="footer-powered">
-        <a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a>
-      </div>
+
     </div>
   </footer>
 </template>

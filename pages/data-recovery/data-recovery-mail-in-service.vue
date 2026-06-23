@@ -614,7 +614,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <button type="submit" class="btn-next">Continue →</button>
               </div>
               <p v-if="submitError" class="step-error">{{ submitError }}</p>
-              <p class="form-powered"><a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a></p>
+
 
             </form>
           </template>

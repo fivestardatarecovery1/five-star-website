@@ -713,7 +713,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                 <span class="step-count">Step {{ step }} of {{ totalSteps }}</span>
                 <button type="submit" class="btn-next">Continue →</button>
               </div>
-              <p class="form-powered"><a href="https://opulex.ai" target="_blank" rel="noopener">Powered by Opulex.ai</a></p>
+
 
             </form>
           </template>
