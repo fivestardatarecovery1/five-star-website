@@ -53,6 +53,10 @@ async function createFedexLabel(opts: {
         imageType: 'PDF',
         labelStockType: 'PAPER_85X11_TOP_HALF_LABEL',
       },
+      specialServicesRequested: {
+        specialServiceTypes: ['SIGNATURE_OPTION'],
+        signatureOptionDetail: { optionType: 'NO_SIGNATURE_REQUIRED' },
+      },
       requestedPackageLineItems: [{
         weight: { units: 'LB', value: 2 },
         dimensions: { length: 12, width: 10, height: 6, units: 'IN' },
