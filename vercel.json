@@ -1,4 +1,13 @@
 {
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "fivestardatarecovery.com" }],
+      "destination": "https://www.fivestardatarecovery.com/$1",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/((?!_nuxt|favicon|.*\\.(?:js|css|png|jpg|jpeg|webp|svg|ico|woff2?|ttf|gif|mp4|json)).*)",
