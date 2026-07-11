@@ -28,7 +28,7 @@ useHead({
           "url": "https://www.fivestardatarecovery.com/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png"
+            "url": "https://www.fivestardatarecovery.com/logo.png"
           },
           "image": "https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/team-01.png",
           "description": "Five Star Data Recovery is a professional data recovery lab in Glendale, CA specializing in hard drives, SSDs, RAID systems, iPhones, and USB flash drives. Flat-rate pricing, Class 100 cleanroom, and a no data no charge guarantee.",
@@ -94,7 +94,7 @@ useHead({
           "description": "Data recovery lab founded in 2012, previously known as Platinum Plus Services. Specializing in professional data recovery for individuals and businesses across the United States.",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://www.fivestardatarecovery.com/wp-content/uploads/logo.png"
+            "url": "https://www.fivestardatarecovery.com/logo.png"
           },
           "contactPoint": {
             "@type": "ContactPoint",
