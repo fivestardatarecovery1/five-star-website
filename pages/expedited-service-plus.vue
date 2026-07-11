@@ -10,7 +10,7 @@ useHead({
             "@type": "LocalBusiness",
             "@id": "https://www.fivestardatarecovery.com#localbusiness",
             "name": "Five Star Data Recovery",
-            "image": "https://www.fivestardatarecovery.com/logo.png",
+            "image": "https://www.fivestardatarecovery.com/logo.webp",
             "url": "https://www.fivestardatarecovery.com",
             "telephone": "+1-818-272-8866",
             "priceRange": "$$",

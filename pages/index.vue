@@ -16,7 +16,7 @@ useHead({
           {
             "@type": "LocalBusiness",
             "name": "Five Star Data Recovery",
-            "image": "https://www.fivestardatarecovery.com/logo.png",
+            "image": "https://www.fivestardatarecovery.com/logo.webp",
             "telephone": "+1-818-272-8866",
             "priceRange": "$300 - $950",
             "address": {
@@ -74,7 +74,7 @@ useHead({
             "url": "https://www.fivestardatarecovery.com/",
             "telephone": "+1-818-272-8866",
             "priceRange": "$300 - $950",
-            "image": "https://www.fivestardatarecovery.com/logo.png",
+            "image": "https://www.fivestardatarecovery.com/logo.webp",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "1731 S Brand Blvd.",

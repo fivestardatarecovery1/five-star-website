@@ -12,7 +12,7 @@ useHead({
             "name": "Five Star Data Recovery",
             "url": "https://www.fivestardatarecovery.com/",
             "telephone": "(818) 272-8866",
-            "image": "https://www.fivestardatarecovery.com/logo.png",
+            "image": "https://www.fivestardatarecovery.com/logo.webp",
             "priceRange": "$300-$950",
             "address": {
               "@type": "PostalAddress",
