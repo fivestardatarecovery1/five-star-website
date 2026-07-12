@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Data Recovery Terms and Conditions - Five Star Data Recover',
-  description: 'Terms and Conditions at Five Star Data Recovery. Contact us at (818) 272-8866 to ask our certified engineers regarding our reserves.'
+  description: 'Terms and Conditions at Five Star Data Recovery. Contact us at (818) 272-8866 to ask our certified engineers regarding our reserves.',
   ogImage: 'https://www.fivestardatarecovery.com/terms-and-conditions-hero.jpg',
 })
 

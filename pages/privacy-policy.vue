@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Privacy Policy - Five Star Data Recovery Services',
-  description: 'Is protective your data important? At Five Star Data Recovery, we take your data seriously. Here is our company\'s privacy policy.'
+  description: 'Is protective your data important? At Five Star Data Recovery, we take your data seriously. Here is our company\'s privacy policy.',
   ogImage: 'https://www.fivestardatarecovery.com/privacy-policy-hero.webp',
 })
 
