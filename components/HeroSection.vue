@@ -30,6 +30,12 @@ const props = withDefaults(defineProps<Props>(), {
   ]
 })
 
+// Auto-generate srcset from bgImage prop — assumes -800.webp and -1400.webp variants exist
+const bgImageSrcset = computed(() => {
+  const base = props.bgImage.replace(/\.[^.]+$/, '')
+  return `${base}-800.webp 800w, ${base}-1400.webp 1400w`
+})
+
 const overlayStyle = computed(() => ({
   background: `linear-gradient(to right, rgba(20,22,30,${props.overlayOpacity}) 0%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.15, 0)}) 50%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.35, 0)}) 100%)`
 }))
@@ -56,10 +62,12 @@ function handleSubmit() {
     <img
       class="hero-bg-img"
       :src="bgImage"
+      :srcset="bgImageSrcset"
+      sizes="(max-width: 768px) 100vw, 100vw"
       :alt="title"
       fetchpriority="high"
-      width="1920"
-      height="900"
+      width="1400"
+      height="650"
       aria-hidden="true"
     />
     <!-- Gradient overlay -->
