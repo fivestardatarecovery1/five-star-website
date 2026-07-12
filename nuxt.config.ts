@@ -159,6 +159,8 @@ export default defineNuxtConfig({
         { src: 'https://statcounter.com/counter/counter.js', async: true, type: 'text/javascript', tagPosition: 'bodyClose' },
       ],
       link: [
+        // Sitemap discovery link — helps crawlers find sitemap without relying solely on robots.txt
+        { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml', title: 'Sitemap' },
         // Preconnect to third-party origins — eliminates DNS + TCP + TLS handshake from critical path
         { rel: 'preconnect', href: 'https://www.googletagmanager.com', crossorigin: '' },
         { rel: 'preconnect', href: 'https://www.google-analytics.com', crossorigin: '' },
