@@ -79,7 +79,14 @@ watch(() => route.path, closeAll)
       <div class="container nav-inner">
         <!-- Logo -->
         <NuxtLink to="/" class="nav-logo" @click="closeAll">
-          <img src="/logo.webp" alt="Five Star Data Recovery" width="335" height="98" fetchpriority="high" />
+          <img
+            src="/logo-212.webp"
+            srcset="/logo-212.webp 1x, /logo-424.webp 2x"
+            alt="Five Star Data Recovery"
+            width="212"
+            height="62"
+            fetchpriority="high"
+          />
         </NuxtLink>
 
         <!-- Desktop nav links -->
