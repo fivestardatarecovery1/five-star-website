@@ -53,9 +53,9 @@ const handleSubmit = () => { submitted.value = true }
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label>SELECT YOUR DEVICE TYPE</label>
+                <label for="qs-device-type">SELECT YOUR DEVICE TYPE</label>
                 <div class="select-wrap">
-                  <select v-model="form.deviceType" class="form-input">
+                  <select id="qs-device-type" v-model="form.deviceType" class="form-input" aria-label="Select your device type">
                     <option value="">Device Type</option>
                     <option>Hard Drive</option>
                     <option>SSD</option>
@@ -77,9 +77,9 @@ const handleSubmit = () => { submitted.value = true }
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label>SELECT ISSUE WITH DEVICE</label>
+                <label for="qs-issue">SELECT ISSUE WITH DEVICE</label>
                 <div class="select-wrap">
-                  <select v-model="form.issue" class="form-input">
+                  <select id="qs-issue" v-model="form.issue" class="form-input" aria-label="Select issue with device">
                     <option value="">Select Issue with Device</option>
                     <option>No Power Issue</option>
                     <option>Clicking / Beeping (Mechanical Issue)</option>
@@ -103,9 +103,9 @@ const handleSubmit = () => { submitted.value = true }
             </div>
             <div class="form-row">
               <div class="form-group full">
-                <label>PREFERRED RESPONSE TIME</label>
+                <label for="qs-response-time">PREFERRED RESPONSE TIME</label>
                 <div class="select-wrap">
-                  <select v-model="form.responseTime" class="form-input">
+                  <select id="qs-response-time" v-model="form.responseTime" class="form-input" aria-label="Select preferred response time">
                     <option value="">Select Preferred Time</option>
                     <option>As Soon as Possible</option>
                     <option>Morning (9am – 12pm)</option>
