@@ -74,6 +74,24 @@ export default defineNuxtConfig({
     '/data-recovery-hollywood':                             { redirect: { to: '/data-recovery-hollywood-ca', statusCode: 301 } },
     '/data-recovery-hollywood/':                            { redirect: { to: '/data-recovery-hollywood-ca', statusCode: 301 } },
 
+    // /services/ pages (invented — no WP equivalent) → canonical /data-recovery/ pages
+    '/services/hard-drive-recovery':                        { redirect: { to: '/data-recovery/hard-drive-recovery', statusCode: 301 } },
+    '/services/hard-drive-recovery/':                       { redirect: { to: '/data-recovery/hard-drive-recovery', statusCode: 301 } },
+    '/services/external-hdd-recovery':                      { redirect: { to: '/data-recovery/external-hard-drive-data-recovery', statusCode: 301 } },
+    '/services/external-hdd-recovery/':                     { redirect: { to: '/data-recovery/external-hard-drive-data-recovery', statusCode: 301 } },
+    '/services/laptop-recovery':                            { redirect: { to: '/data-recovery/laptop-data-recovery', statusCode: 301 } },
+    '/services/laptop-recovery/':                           { redirect: { to: '/data-recovery/laptop-data-recovery', statusCode: 301 } },
+    '/services/mac-recovery':                               { redirect: { to: '/data-recovery/mac-data-recovery', statusCode: 301 } },
+    '/services/mac-recovery/':                              { redirect: { to: '/data-recovery/mac-data-recovery', statusCode: 301 } },
+    '/services/mobile-recovery':                            { redirect: { to: '/data-recovery/iphone-data-recovery', statusCode: 301 } },
+    '/services/mobile-recovery/':                           { redirect: { to: '/data-recovery/iphone-data-recovery', statusCode: 301 } },
+    '/services/raid-recovery':                              { redirect: { to: '/data-recovery/raid-data-recovery', statusCode: 301 } },
+    '/services/raid-recovery/':                             { redirect: { to: '/data-recovery/raid-data-recovery', statusCode: 301 } },
+    '/services/ssd-recovery':                               { redirect: { to: '/data-recovery/ssd-data-recovery', statusCode: 301 } },
+    '/services/ssd-recovery/':                              { redirect: { to: '/data-recovery/ssd-data-recovery', statusCode: 301 } },
+    '/services/usb-recovery':                               { redirect: { to: '/data-recovery/usb-data-recovery', statusCode: 301 } },
+    '/services/usb-recovery/':                              { redirect: { to: '/data-recovery/usb-data-recovery', statusCode: 301 } },
+
     // Old WP dropped-hard-drive-recovery slug
     '/data-recovery/dropped-hard-drive-recovery':           { redirect: { to: '/data-recovery/dropped-hard-drive', statusCode: 301 } },
     '/data-recovery/dropped-hard-drive-recovery/':          { redirect: { to: '/data-recovery/dropped-hard-drive', statusCode: 301 } },
