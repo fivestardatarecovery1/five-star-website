@@ -5,8 +5,33 @@ useSeoMeta({
   ogTitle: 'USB Data Recovery (Chip Off) — Five Star Data Recovery',
   ogDescription: 'A real chip-off USB recovery case study: failed 64GB thumb drive, NAND chip reading, controller emulation, and full data rebuild.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/usb-data-recovery-chip-off',
+  ogImage: 'https://www.fivestardatarecovery.com/blog-usb-chip-off.jpg',
+  ogImageAlt: 'USB chip-off data recovery case study — Five Star Data Recovery',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': 'USB Data Recovery (Chip Off)',
+      'description': 'How Five Star Data Recovery recovered data from a failed 64GB USB thumb drive using chip-off technique. Full case study including diagnosis, NAND reading, and rebuild process.',
+      'image': 'https://www.fivestardatarecovery.com/blog-usb-chip-off.jpg',
+      'datePublished': '2025-06-19',
+      'dateModified': '2025-06-19',
+      'author': { '@type': 'Organization', 'name': 'Five Star Data Recovery', 'url': 'https://www.fivestardatarecovery.com' },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Five Star Data Recovery',
+        'logo': { '@type': 'ImageObject', 'url': 'https://www.fivestardatarecovery.com/logo.webp' }
+      },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': 'https://www.fivestardatarecovery.com/blog/usb-data-recovery-chip-off' },
+      'url': 'https://www.fivestardatarecovery.com/blog/usb-data-recovery-chip-off'
+    })
+  }]
 })
 </script>
 

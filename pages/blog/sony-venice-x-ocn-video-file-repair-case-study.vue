@@ -6,11 +6,35 @@ useSeoMeta({
   ogDescription: 'See how we achieved 100% video file repair on a 15-day Sony Venice narrative shoot after 3 labs failed. Don\'t run First Aid—call our forensic video specialists.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/sony-venice-x-ocn-video-file-repair-case-study',
   ogImage: 'https://www.fivestardatarecovery.com/blog-sony-venice-film-set.jpg',
+  ogImageAlt: 'Sony Venice X-OCN video file repair case study — Five Star Data Recovery',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Sony Venice X-OCN Data Recovery Case Study | Five Star Data Recovery',
   twitterDescription: '100% video file repair on a 15-day shoot after 3 labs failed. Forensic X-OCN recovery by Five Star Data Recovery.',
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': 'Sony Venice X-OCN Data Recovery Case Study',
+      'description': 'See how we achieved 100% video file repair on a 15-day Sony Venice narrative shoot after 3 labs failed.',
+      'image': 'https://www.fivestardatarecovery.com/blog-sony-venice-film-set.jpg',
+      'datePublished': '2026-06-09',
+      'dateModified': '2026-06-09',
+      'author': { '@type': 'Organization', 'name': 'Five Star Data Recovery', 'url': 'https://www.fivestardatarecovery.com' },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Five Star Data Recovery',
+        'logo': { '@type': 'ImageObject', 'url': 'https://www.fivestardatarecovery.com/logo.webp' }
+      },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': 'https://www.fivestardatarecovery.com/blog/sony-venice-x-ocn-video-file-repair-case-study' },
+      'url': 'https://www.fivestardatarecovery.com/blog/sony-venice-x-ocn-video-file-repair-case-study'
+    })
+  }]
 })
 </script>
 

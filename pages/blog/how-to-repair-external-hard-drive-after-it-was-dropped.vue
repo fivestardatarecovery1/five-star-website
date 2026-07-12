@@ -5,8 +5,33 @@ useSeoMeta({
   ogTitle: 'How to Repair External Hard Drive After It Was Dropped — Five Star Data Recovery',
   ogDescription: 'Step-by-step guide from Five Star Data Recovery on diagnosing and recovering data from a dropped external hard drive.',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped',
+  ogImage: 'https://www.fivestardatarecovery.com/blog-dropped-hard-drive.jpg',
+  ogImageAlt: 'Dropped external hard drive recovery guide — Five Star Data Recovery',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': 'How to Repair External Hard Drive After It Was Dropped',
+      'description': 'Step-by-step guide on what to do after dropping an external hard drive — from diagnosis to head swaps. Learn when to attempt DIY recovery and when to call a professional.',
+      'image': 'https://www.fivestardatarecovery.com/blog-dropped-hard-drive.jpg',
+      'datePublished': '2025-06-19',
+      'dateModified': '2025-06-19',
+      'author': { '@type': 'Organization', 'name': 'Five Star Data Recovery', 'url': 'https://www.fivestardatarecovery.com' },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Five Star Data Recovery',
+        'logo': { '@type': 'ImageObject', 'url': 'https://www.fivestardatarecovery.com/logo.webp' }
+      },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': 'https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped' },
+      'url': 'https://www.fivestardatarecovery.com/blog/how-to-repair-external-hard-drive-after-it-was-dropped'
+    })
+  }]
 })
 </script>
 

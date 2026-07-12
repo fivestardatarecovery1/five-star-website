@@ -8,6 +8,30 @@ useSeoMeta({
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   ogImage: 'https://www.fivestardatarecovery.com/data-recovery-software-hero.jpg',
+  ogImageAlt: 'Top 10 data recovery software tools — Five Star Data Recovery',
+})
+
+useHead({
+  script: [{
+    type: 'application/ld+json',
+    innerHTML: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      'headline': 'Top 10 Data Recovery Software Tools — Honest Reviews & Warnings',
+      'description': 'Looking for the best data recovery software? We cover the top 10 tools, the right way to use them, and when to stop and call a professional.',
+      'image': 'https://www.fivestardatarecovery.com/data-recovery-software-hero.jpg',
+      'datePublished': '2026-06-12',
+      'dateModified': '2026-06-12',
+      'author': { '@type': 'Organization', 'name': 'Five Star Data Recovery', 'url': 'https://www.fivestardatarecovery.com' },
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'Five Star Data Recovery',
+        'logo': { '@type': 'ImageObject', 'url': 'https://www.fivestardatarecovery.com/logo.webp' }
+      },
+      'mainEntityOfPage': { '@type': 'WebPage', '@id': 'https://www.fivestardatarecovery.com/blog/top-10-data-recovery-software-tools' },
+      'url': 'https://www.fivestardatarecovery.com/blog/top-10-data-recovery-software-tools'
+    })
+  }]
 })
 </script>
 
