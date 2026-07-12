@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.fivestardatarecovery.com/sitemap.xml
+Sitemap: https://www.fivestardatarecovery.com/sitemap_index.xml
