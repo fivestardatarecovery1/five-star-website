@@ -182,7 +182,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Devices with physical damage often require cleanroom recovery. This applies to drives that someone has dropped, bumped, or exposed to liquid. We're one of the few data recovery labs near Burbank equipped with a certified cleanroom. Our engineers can carefully take apart your drive. They can fix or replace parts and recover your data. This is done without causing more damage. If you're unsure whether your device can be saved, don't throw it away. We may be able to recover more than you think.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/burbank-hdd-components.jpg" alt="Hard drive components disassembled" class="section-img" width="1024" height="683" loading="lazy" />
+            <img src="/burbank-hdd-components-640.webp" alt="Hard drive components disassembled" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/burbank-hdd-components-640.webp 640w, /burbank-hdd-components-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
         <h2 class="s-heading" style="margin-top:48px;">Our 3-Step Recovery Process</h2>

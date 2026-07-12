@@ -173,7 +173,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">No matter if you use a portable USB-C drive or a multi-disk Thunderbolt <NuxtLink to="/data-recovery/raid-data-recovery" class="inline-link">RAID array</NuxtLink>, our lab can help. We have the tools and knowledge to recover data from a Lacie device in any setup or condition.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/lacie-rugged-drive-recovery.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" width="1200" height="628" loading="lazy" />
+            <img src="/lacie-rugged-drive-recovery-640.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/lacie-rugged-drive-recovery-640.webp 640w, /lacie-rugged-drive-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>
@@ -298,7 +300,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/lacie-creative-professional-recovery.webp" alt="Creative professional using LaCie drive on set" class="section-img" width="1200" height="578" loading="lazy" />
+            <img src="/lacie-creative-professional-recovery-640.webp" alt="Creative professional using LaCie drive on set" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/lacie-creative-professional-recovery-640.webp 640w, /lacie-creative-professional-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 class="s-heading">How Lacie Drives Differ from Other Storage Devices</h2>

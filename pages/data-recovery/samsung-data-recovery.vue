@@ -180,7 +180,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Our lab focuses on recovering data from Samsung phones. We help with hardware failures, damaged logic boards, and broken devices. If your phone has physical damage and contains important data, we're here to help.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/samsung-water-damage-recovery.webp" alt="Samsung water damage data recovery" class="section-img" width="1536" height="864" loading="lazy" />
+            <img src="/samsung-water-damage-recovery-640.webp" alt="Samsung water damage data recovery" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/samsung-water-damage-recovery-640.webp 640w, /samsung-water-damage-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>

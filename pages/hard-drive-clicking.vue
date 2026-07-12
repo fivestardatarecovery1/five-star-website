@@ -173,7 +173,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">When you hear a clicking hard disk drive, you're likely hearing the read/write head trying to find data, but failing. Instead of reading the correct track, it keeps resetting and trying again, causing a rhythmic "click-click-click" sound. People commonly refer to this issue as the <strong>click of death</strong>, and it represents one of the most serious symptoms a drive can show. In most cases, it's a mechanical failure—something inside the drive is either broken or misaligned.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/clicking-hard-drive-internal.webp" alt="Open hard drive internal components — platters and read/write heads" class="section-img" width="1500" height="1001" loading="lazy" />
+            <img src="/clicking-hard-drive-internal-640.webp" alt="Open hard drive internal components — platters and read/write heads" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/clicking-hard-drive-internal-640.webp 640w, /clicking-hard-drive-internal-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>

@@ -210,7 +210,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Even routine use can lead to data loss over time. That's why it's critical to address early signs of failure immediately.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/western-digital-hard-drive-recovery.webp" alt="Western Digital hard drive data recovery" class="section-img" width="1200" height="800" loading="lazy" />
+            <img src="/western-digital-hard-drive-recovery-640.webp" alt="Western Digital hard drive data recovery" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/western-digital-hard-drive-recovery-640.webp 640w, /western-digital-hard-drive-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>
@@ -262,7 +264,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/western-digital-recovery-lab.webp" alt="Western Digital data recovery lab" class="section-img" width="1280" height="960" loading="lazy" />
+            <img src="/western-digital-recovery-lab-640.webp" alt="Western Digital data recovery lab" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/western-digital-recovery-lab-640.webp 640w, /western-digital-recovery-lab-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 class="s-heading">Types of WD Drives We Recover</h2>

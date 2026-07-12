@@ -169,7 +169,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would put your case at the top of the que. With our Expedited Service, our Engineers will start working on your data recovery case within an hour of drop off, and the case will be handled as a priority within business hours. With this service, you are guaranteed a diagnosis within 3 hours of the time you drop off your drive. Your case will be worked on non-stop during normal business hours.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/expedited-service-technician.jpg" alt="Data recovery technician working on hard drive" class="section-img" width="768" height="512" loading="lazy" />
+            <img src="/expedited-service-technician-640.webp" alt="Data recovery technician working on hard drive" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/expedited-service-technician-640.webp 640w, /expedited-service-technician-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>
@@ -180,7 +182,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/expedited-service-shipping.jpg" alt="Expedited data recovery mail-in shipping service" class="section-img" width="768" height="512" loading="lazy" />
+            <img src="/expedited-service-shipping-640.webp" alt="Expedited data recovery mail-in shipping service" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/expedited-service-shipping-640.webp 640w, /expedited-service-shipping-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 class="s-heading">Whats the average turnaround time for Expedited Data Recovery Cases?</h2>

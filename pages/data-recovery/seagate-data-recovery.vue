@@ -176,7 +176,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">No matter the issue, our team is skilled at diagnosing and recovering data from any damaged device.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/seagate-expansion-drive-recovery.webp" alt="Seagate Expansion drive connected to iMac — data recovery" class="section-img" width="1312" height="738" loading="lazy" />
+            <img src="/seagate-expansion-drive-recovery-640.webp" alt="Seagate Expansion drive connected to iMac — data recovery" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/seagate-expansion-drive-recovery-640.webp 640w, /seagate-expansion-drive-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>

@@ -136,7 +136,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Most modern hard drives have delicate moving parts inside. When a drive is dropped, even from a low height, the sudden impact can damage key components. One of the most common issues is a misaligned or broken read/write head—the part responsible for reading data from the spinning disks (platters). In some cases, the platters themselves may become scratched. Other times, the damage causes <NuxtLink to="/data-recovery/bad-sectors">bad sectors</NuxtLink> that prevent the drive from loading properly. The result can be a drive that clicks, spins up without mounting, or is not recognized by your computer at all.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/dropped-hard-drive-section.webp" alt="Inside a dropped hard drive — damaged platters and read/write head" class="section-img" width="1200" height="798" loading="lazy" />
+            <img src="/dropped-hard-drive-section-640.webp" alt="Inside a dropped hard drive — damaged platters and read/write head" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/dropped-hard-drive-section-640.webp 640w, /dropped-hard-drive-section-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>

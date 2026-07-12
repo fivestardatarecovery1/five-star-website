@@ -179,7 +179,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">If any of these issues sound familiar, don&#39;t worry\u2014you&#39;re not alone. We help customers every day recover deleted files and lost data from corrupted USB drives of all brands and capacities.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/usb-flash-drive-recovery.webp" alt="USB flash drive data recovery service" class="section-img" width="1024" height="683" loading="lazy" />
+            <img src="/usb-flash-drive-recovery-640.webp" alt="USB flash drive data recovery service" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/usb-flash-drive-recovery-640.webp 640w, /usb-flash-drive-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>

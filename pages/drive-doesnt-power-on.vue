@@ -165,7 +165,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">In these cases, the drive is likely not receiving electricity. This could be from a failed circuit board, damaged cable, or even a shorted power supply.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/drive-no-power-pcb.webp" alt="Hard drive inspection — signs of no power failure" class="section-img" width="1000" height="667" loading="lazy" />
+            <img src="/drive-no-power-pcb-640.webp" alt="Hard drive inspection — signs of no power failure" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/drive-no-power-pcb-640.webp 640w, /drive-no-power-pcb-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>
@@ -176,7 +178,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/drive-no-power-diy.webp" alt="Cleanroom technician — PCB and hard drive repair" class="section-img" width="1280" height="960" loading="lazy" />
+            <img src="/drive-no-power-diy-640.webp" alt="Cleanroom technician — PCB and hard drive repair" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/drive-no-power-diy-640.webp 640w, /drive-no-power-diy-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 class="s-heading">Common Reasons Why a Hard Drive Doesn't Power On</h2>
@@ -237,7 +241,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">If your hard drive has no power, we will first determine if the issue is external (cable or enclosure) or internal (board or heads). If needed, we can replace damaged parts using donor drives matched to your specific model.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/drive-no-power-recovery.webp" alt="Hard drive data recovery process — certified engineers" class="section-img" width="1500" height="1001" loading="lazy" />
+            <img src="/drive-no-power-recovery-640.webp" alt="Hard drive data recovery process — certified engineers" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/drive-no-power-recovery-640.webp 640w, /drive-no-power-recovery-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>
@@ -293,7 +299,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
-            <img src="/drive-no-power-why.webp" alt="Five Star Data Recovery certified cleanroom lab" class="section-img" width="1280" height="960" loading="lazy" />
+            <img src="/drive-no-power-why-640.webp" alt="Five Star Data Recovery certified cleanroom lab" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/drive-no-power-why-640.webp 640w, /drive-no-power-why-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
           <div>
             <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>

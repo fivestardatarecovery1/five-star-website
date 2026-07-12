@@ -183,7 +183,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body"><strong>Please Note:</strong> We do not offer deleted file recovery services for smartphones (iPhones or Androids). Smartphones use encrypted NAND flash storage with TRIM enabled. This means that deleted data is usually unrecoverable right away.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/deleted-file-recovery-devices.webp" alt="Storage devices for deleted file recovery — HDD, SSD, external drive" class="section-img" width="1600" height="900" loading="lazy" />
+            <img src="/deleted-file-recovery-devices-640.webp" alt="Storage devices for deleted file recovery — HDD, SSD, external drive" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/deleted-file-recovery-devices-640.webp 640w, /deleted-file-recovery-devices-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
         <p class="s-body" style="margin-top:32px;">Each type of device stores data differently. For example:</p>

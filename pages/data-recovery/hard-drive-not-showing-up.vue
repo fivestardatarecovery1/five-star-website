@@ -172,7 +172,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="s-body">Whether it's a desktop drive, portable external disk, or flash drive, the symptoms are similar. It powers on—or maybe it doesn't—but your system can't detect it.</p>
           </div>
           <div class="section-img-wrap">
-            <img src="/hard-drive-not-showing-up-section.webp" alt="Hard drive not showing up error on computer screen" class="section-img" width="1500" height="1018" loading="lazy" />
+            <img src="/hard-drive-not-showing-up-section-640.webp" alt="Hard drive not showing up error on computer screen" class="section-img" width="640" height="427" loading="lazy"
+               srcset="/hard-drive-not-showing-up-section-640.webp 640w, /hard-drive-not-showing-up-section-1280.webp 1280w"
+               sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
       </div>
