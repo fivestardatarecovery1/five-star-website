@@ -72,7 +72,6 @@ watch(() => route.path, closeAll)
 
 <template>
   <div class="navbar-root">
-  <AnnouncementBar />
   <nav class="navbar">
     <!-- Main nav -->
     <div class="navbar-main">
