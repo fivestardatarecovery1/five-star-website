@@ -256,8 +256,8 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
 
     <!-- Hero -->
     <HeroSection
-      title="Recovering What Can't Be Replaced"
-      subtitle="Get Your Data Back In No Time."
+      title="Professional Data Recovery Services in Los Angeles"
+      subtitle="Recovering What Can't Be Replaced."
       description="At Five Star Data Recovery, we offer clear, flat-rate pricing for all of our professional data recovery services. You'll never have to guess how much it will cost to recover your important files. Whether you're dealing with a failed hard drive, damaged SSD, or a non-responsive flash drive, our team is here to help with transparent pricing and no hidden fees. Simply visit our pricing page or contact us for a free consultation to get started."
     >
       <template #badges>
