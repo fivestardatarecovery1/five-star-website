@@ -74,6 +74,7 @@ useSeoMeta({
   ogTitle: 'Clean Room Data Recovery Services You Can Trust',
   description: 'Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!',
   ogDescription: 'Looking for an Affordable Clean Room Data Recovery Company? Five Star Data Recovery offers flat rate pricing and free same day diagnosis!',
+  ogImage: 'https://www.fivestardatarecovery.com/clean-room-data-recovery-hero.webp',
 })
 
 const trustBadges = [

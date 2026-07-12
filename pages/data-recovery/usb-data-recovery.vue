@@ -74,6 +74,7 @@ useSeoMeta({
   ogTitle: 'USB Data Recovery Services \u2013 Five Star Data Recovery',
   description: 'Lost data on your USB flash drive? We recover files from broken, corrupted, or unrecognized USB drives. No Data = No Charge Policy.',
   ogDescription: 'Lost data on your USB flash drive? We recover files from broken, corrupted, or unrecognized USB drives. No Data = No Charge Policy.',
+  ogImage: 'https://www.fivestardatarecovery.com/usb-data-recovery-hero.webp',
 })
 
 const trustBadges = [

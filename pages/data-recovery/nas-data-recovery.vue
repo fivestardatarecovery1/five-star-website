@@ -77,6 +77,7 @@ useSeoMeta({
   ogTitle: 'NAS Data Recovery - Five Star Data Recovery',
   description: 'We specialize in NAS Server Data Recovery. Our engineers offer a fast and reliable turn around for all NAS units. Give us a call today.',
   ogDescription: 'We specialize in NAS Server Data Recovery. Our engineers offer a fast and reliable turn around for all NAS units. Give us a call today.',
+  ogImage: 'https://www.fivestardatarecovery.com/nas-data-recovery-hero.webp',
 })
 
 const trustBadges = [

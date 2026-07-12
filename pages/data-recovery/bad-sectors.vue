@@ -76,6 +76,7 @@ useSeoMeta({
   ogTitle: 'Bad Sectors Data Recovery - Five Star Data Recovery',
   description: "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
   ogDescription: "If your hard drive has bad sectors then it's time to bring it in to Five Star Data Recovery to receive a free diagnosis and price quote.",
+  ogImage: 'https://www.fivestardatarecovery.com/bad-sectors-hard-drive-recovery.webp',
 })
 
 const trustBadges = [

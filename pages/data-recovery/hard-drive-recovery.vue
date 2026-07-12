@@ -62,7 +62,7 @@ useSeoMeta({
   ogTitle: 'Hard Drive Data Recovery - Five Star Data Recovery',
   description: 'Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.',
   ogDescription: 'Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.',
-  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
+  ogImage: 'https://www.fivestardatarecovery.com/hard-drive-recovery-hero.jpg',
 })
 
 const reviews = [

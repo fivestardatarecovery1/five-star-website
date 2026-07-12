@@ -6,7 +6,7 @@ useSeoMeta({
   description: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
   ogTitle: 'Contact Us - Five Star Data Recovery',
   ogDescription: 'Has your data been lost or corrupted? Contact us today for a free diagnosis and cost estimate for your data recovery needs.',
-  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
+  ogImage: 'https://www.fivestardatarecovery.com/contact-hero-bg.jpg',
   ogUrl: 'https://www.fivestardatarecovery.com/contact-us/',
   ogType: 'article',
   ogLocale: 'en_US',

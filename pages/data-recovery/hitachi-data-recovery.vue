@@ -72,6 +72,7 @@ useSeoMeta({
   ogTitle: 'Hitachi Data Recovery - Five Star Data Recovery',
   description: 'Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
   ogDescription: 'Our engineers specialize in Hitachi Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
+  ogImage: 'https://www.fivestardatarecovery.com/hitachi-data-recovery-hero.webp',
 })
 
 const trustBadges = [

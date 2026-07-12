@@ -73,6 +73,7 @@ useSeoMeta({
   ogTitle: 'Lacie Data Recovery - Five Star Data Recovery',
   description: 'Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.',
   ogDescription: 'Need help recovering data from your Lacie hard drive? Our team offers expert Lacie Data Recovery Services with quick turnaround times.',
+  ogImage: 'https://www.fivestardatarecovery.com/lacie-data-recovery-hero.webp',
 })
 
 const trustBadges = [

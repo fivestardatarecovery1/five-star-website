@@ -75,6 +75,7 @@ useSeoMeta({
   ogTitle: 'Deleted File Recovery - Five Star Data Recovery',
   description: 'Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.',
   ogDescription: 'Accidentally deleted important files? Five Star Data Recovery recovers deleted files from hard drives, SSDs, USB drives, and SD cards. $200 flat rate. Free nationwide shipping.',
+  ogImage: 'https://www.fivestardatarecovery.com/deleted-file-recovery-hero.webp',
 })
 
 const trustBadges = [

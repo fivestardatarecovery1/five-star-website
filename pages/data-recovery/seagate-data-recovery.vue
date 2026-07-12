@@ -74,6 +74,7 @@ useSeoMeta({
   ogTitle: 'Seagate Data Recovery - Five Star Data Recovery',
   description: 'Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.',
   ogDescription: 'Struggling with a Seagate external hard drive not working? We offer expert and reliable recovery services to help you retrieve your data.',
+  ogImage: 'https://www.fivestardatarecovery.com/seagate-data-recovery-hero.webp',
 })
 
 const trustBadges = [

@@ -73,6 +73,7 @@ useSeoMeta({
   ogTitle: 'Desktop Data Recovery - Five Star Data Recovery',
   description: 'Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.',
   ogDescription: 'Is your desktop computer no longer recognizing your drive? If yes, Give us a call so we can give you a FREE quote now.',
+  ogImage: 'https://www.fivestardatarecovery.com/desktop-data-recovery-hero.webp',
 })
 
 const trustBadges = [

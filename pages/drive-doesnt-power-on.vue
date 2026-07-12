@@ -72,6 +72,7 @@ useSeoMeta({
   ogTitle: "Drive Doesn't Power On - Five Star Data Recovery",
   description: "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
   ogDescription: "Get professional services for when your Drive Doesn't Power On. Our certified engineers provide data recovery services at the best prices.",
+  ogImage: 'https://www.fivestardatarecovery.com/drive-no-power-hero.webp',
 })
 
 const trustBadges = [

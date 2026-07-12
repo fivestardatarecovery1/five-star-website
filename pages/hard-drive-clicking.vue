@@ -75,6 +75,7 @@ useSeoMeta({
   ogTitle: 'Hard Drive Clicking - Five Star Data Recovery',
   description: 'Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.',
   ogDescription: 'Trust our certified engineers for Hard Drive Clicking Sound Fixing Services. Get fast data recovery with a free consultation and diagnosis.',
+  ogImage: 'https://www.fivestardatarecovery.com/hard-drive-clicking-sound-data-recovery.webp',
 })
 
 const trustBadges = [

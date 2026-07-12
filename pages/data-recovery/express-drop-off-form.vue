@@ -47,6 +47,7 @@ useSeoMeta({
   ogTitle: 'Data Recovery Express Drop Off Form - Five Star Data Recovery',
   description: 'Need Data Recovery and would like to expedite the drop off process? Fill out our express drop off form to get your recovery started.',
   ogDescription: 'Need Data Recovery and would like to expedite the drop off process? Fill out our express drop off form to get your recovery started.',
+  ogImage: 'https://www.fivestardatarecovery.com/express-drop-off-data-recovery-glendale-ca.jpg',
 })
 
 const trustBadges = [

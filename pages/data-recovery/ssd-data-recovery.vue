@@ -75,6 +75,7 @@ useSeoMeta({
   ogTitle: 'SSD Data Recovery - Five Star Data Recovery',
   description: 'Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.',
   ogDescription: 'Need help Recovering Data from your SSD? We offers affordable SSD Hard Drive Data Recovery Services. Get your data back with us.',
+  ogImage: 'https://www.fivestardatarecovery.com/ssd-data-recovery-hero.webp',
 })
 
 const trustBadges = [

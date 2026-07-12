@@ -77,6 +77,7 @@ useSeoMeta({
   ogTitle: 'Mac Data Recovery - Five Star Data Recovery',
   description: 'Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.',
   ogDescription: 'Five Star Data Recovery is the premier Mac Data Recovery Company. Our team offers reliable services for Mac to help recover lost files.',
+  ogImage: 'https://www.fivestardatarecovery.com/mac-data-recovery-hero.webp',
 })
 
 const trustBadges = [

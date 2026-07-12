@@ -179,7 +179,7 @@ useSeoMeta({
   ogTitle: 'External Hard Drive Not Showing Up - Five Star Data Recovery',
   description: 'Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.',
   ogDescription: 'Is your External Hard Drive Not Showing Up? Our professional team can help with all data recovery services. Give us a call today.',
-  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
+  ogImage: 'https://www.fivestardatarecovery.com/external-hard-drive-data-recovery-glendale-ca.jpg',
 })
 </script>
 

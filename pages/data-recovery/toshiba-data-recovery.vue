@@ -70,6 +70,7 @@ useSeoMeta({
   ogTitle: 'Toshiba Data Recovery - Five Star Data Recovery',
   description: 'Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
   ogDescription: 'Our engineers specialize in Toshiba Data Recovery. Get fast, reliable, secure, and cost-effective solutions for all your data recovery needs.',
+  ogImage: 'https://www.fivestardatarecovery.com/toshiba-data-recovery-hero.webp',
 })
 
 const trustBadges = [

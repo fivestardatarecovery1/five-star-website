@@ -4,6 +4,7 @@ const { trackConversion } = useAnalytics()
 useSeoMeta({
   title: 'Get a Free Quote — Five Star Data Recovery | Glendale, CA',
   description: 'Get a free data recovery quote from Five Star Data Recovery. No obligation, no hidden fees. Free diagnostic evaluation. Located in Glendale, CA.'
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
 })
 const submitted = ref(false)
 </script>

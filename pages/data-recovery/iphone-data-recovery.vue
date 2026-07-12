@@ -75,6 +75,7 @@ useSeoMeta({
   ogTitle: 'iPhone Data Recovery Services Experts - Five Star Data Recovery',
   description: 'Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.',
   ogDescription: 'Is your iPhone stuck or not powering on? Our data recovery engineers specialize in component level recoveries on iPhones.',
+  ogImage: 'https://www.fivestardatarecovery.com/iphone-data-recovery-hero.webp',
 })
 
 const trustBadges = [

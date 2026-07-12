@@ -74,7 +74,7 @@ useSeoMeta({
   description: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
   ogTitle: 'Reviews - Five Star Data Recovery',
   ogDescription: 'Don\'t take our word for it - read the Five Star Data Recovery reviews from our happy customers! Our team takes pride with every customers.',
-  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
+  ogImage: 'https://www.fivestardatarecovery.com/reviews-hero-bg.jpg',
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 })
 

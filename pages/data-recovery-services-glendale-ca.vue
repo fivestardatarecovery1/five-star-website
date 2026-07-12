@@ -71,6 +71,7 @@ useSeoMeta({
   ogTitle: 'Data Recovery in Glendale CA - Five Star Data Recovery',
   description: 'Need Data Recovery Services near the Glendale, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
   ogDescription: 'Need Data Recovery Services near the Glendale, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-glendale-ca.webp',
 })
 
 const trustBadges = [

@@ -232,6 +232,7 @@ useSeoMeta({
   ogTitle: 'Video File Repair Service - Corrupted & Damaged Video Repair',
   description: 'Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.',
   ogDescription: 'Struggling with broken or unplayable video files? Our expert Video File Repair service restores corrupted footage from any device.',
+  ogImage: 'https://www.fivestardatarecovery.com/video-file-repair-hero.webp',
 })
 
 const trustBadges = [

@@ -4,6 +4,7 @@ useSeoMeta({
   ogTitle: 'Data Recovery Services near Pasadena CA - Five Star Data Recovery',
   description: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
   ogDescription: 'Need Data Recovery Services near the Pasadena, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-pasadena-ca.jpg',
 })
 
 const trustBadges = [

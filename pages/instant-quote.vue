@@ -55,6 +55,7 @@ useSeoMeta({
   ogTitle: 'Instant Data Recovery Quote — Five Star Data Recovery',
   description: 'Get an instant data recovery cost estimate in 3 quick steps. No obligation. Free evaluation. No Data, No Charge guarantee.',
   ogDescription: 'Get an instant data recovery cost estimate in 3 quick steps. No obligation. Free evaluation. No Data, No Charge guarantee.',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
 })
 </script>
 

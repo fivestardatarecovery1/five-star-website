@@ -76,6 +76,7 @@ useSeoMeta({
   ogTitle: 'Western Digital Data Recovery | Five Star Data Recovery',
   description: 'Western Digital drive not showing up or clicking? Five Star Data Recovery recovers WD My Passport, My Book & Elements. Free diagnostic. No Data = No Charge. Get a free quote.',
   ogDescription: 'Western Digital drive not showing up or clicking? Five Star Data Recovery recovers WD My Passport, My Book & Elements. Free diagnostic. No Data = No Charge. Get a free quote.',
+  ogImage: 'https://www.fivestardatarecovery.com/western-digital-data-recovery-hero.webp',
 })
 
 const trustBadges = [

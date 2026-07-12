@@ -65,6 +65,7 @@ useSeoMeta({
   ogTitle: 'Hard Drive Not Showing Up - Five Star Data Recovery',
   description: 'Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.',
   ogDescription: 'Need help recovering data from a hard drive not showing up? Our team offers expert Data Recovery Services with quick turnaround times.',
+  ogImage: 'https://www.fivestardatarecovery.com/hard-drive-not-showing-up-hero.webp',
 })
 
 const trustBadges = [

@@ -7,6 +7,7 @@ useSeoMeta({
   ogUrl: 'https://www.fivestardatarecovery.com/faq/',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
   twitterCard: 'summary_large_image',
   robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
 })

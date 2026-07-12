@@ -75,6 +75,7 @@ useSeoMeta({
   ogTitle: 'Samsung Data Recovery - Five Star Data Recovery',
   description: 'Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.',
   ogDescription: 'Our Team specializes in Samsung Data Recovery Services. We offer reliable solutions to recover lost data from your External devices.',
+  ogImage: 'https://www.fivestardatarecovery.com/samsung-data-recovery-hero.webp',
 })
 
 const trustBadges = [

@@ -76,6 +76,7 @@ useSeoMeta({
   ogTitle: 'SD Card Recovery - Five Star Data Recovery',
   description: 'Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.',
   ogDescription: 'Looking for a reliable SD Card Recovery Company? We got you covered! Our Professional Recovery Services offer a fast turnaround of your data.',
+  ogImage: 'https://www.fivestardatarecovery.com/sd-card-data-recovery-hero.webp',
 })
 
 const trustBadges = [

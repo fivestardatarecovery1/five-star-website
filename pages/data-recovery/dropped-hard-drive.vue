@@ -50,6 +50,7 @@ useSeoMeta({
   ogTitle: 'Dropped Hard Drive Recovery Services - Five Star Data Recovery',
   description: 'Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.',
   ogDescription: 'Accidentally dropped your hard drive? Our data recovery engineers specialize in recovering data from drives with physical damage from a drop.',
+  ogImage: 'https://www.fivestardatarecovery.com/dropped-hard-drive-hero.webp',
 })
 
 const trustBadges = [

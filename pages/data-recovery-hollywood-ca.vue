@@ -87,6 +87,7 @@ useSeoMeta({
   ogTitle: 'Data Recovery in Hollywood CA - Five Star Data Recovery',
   description: 'Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
   ogDescription: 'Need Data Recovery Services near the Hollywood, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogImage: 'https://www.fivestardatarecovery.com/hollywood-hero.jpg',
 })
 
 const trustBadges = [

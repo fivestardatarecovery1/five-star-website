@@ -76,6 +76,7 @@ useSeoMeta({
   ogTitle: 'Data Recovery RAID Services - Five Star Data Recovery',
   description: 'Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.',
   ogDescription: 'Lost Data and need Data Recovery RAID services? Our engineers provide RAID Data Recovery that can restore your valuable information.',
+  ogImage: 'https://www.fivestardatarecovery.com/raid-data-recovery-hero.webp',
 })
 
 const trustBadges = [

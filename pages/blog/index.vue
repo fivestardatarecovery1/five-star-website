@@ -5,7 +5,7 @@ useSeoMeta({
   ogTitle: 'Blog Posts - Five Star Data Recovery',
   ogDescription: 'Five Star Data Recovery offers expert advice and tips to help you with your data recovery needs. Read our latest blog posts here!',
   ogUrl: 'https://www.fivestardatarecovery.com/blog/',
-  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
+  ogImage: 'https://www.fivestardatarecovery.com/blog-hero.jpg',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   twitterCard: 'summary_large_image',

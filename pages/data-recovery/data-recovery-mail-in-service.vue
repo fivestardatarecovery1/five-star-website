@@ -56,6 +56,7 @@ useSeoMeta({
   ogTitle: 'Data Recovery Mail-in Services - Five Star Data Recovery',
   description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
   ogDescription: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-mail-in-service-los-angeles.jpg',
 })
 
 const trustBadges = [

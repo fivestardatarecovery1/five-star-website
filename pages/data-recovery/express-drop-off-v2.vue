@@ -48,6 +48,7 @@ useSeoMeta({
   ogTitle: '[DEV] Express Drop Off v2 - Five Star Data Recovery',
   description: 'Development build — not for public use.',
   ogDescription: 'Development build — not for public use.',
+  ogImage: 'https://www.fivestardatarecovery.com/express-drop-off-data-recovery-glendale-ca.jpg',
   robots: 'noindex, nofollow',
 })
 

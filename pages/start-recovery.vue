@@ -2,6 +2,7 @@
 useSeoMeta({
   title: 'Start Recovery of Data - Five Star Data Recovery',
   description: 'Lost important files? Start Recovery of Data now! Drop-off or mail-in your device to get a free diagnosis from our certified engineers.',
+  ogImage: 'https://www.fivestardatarecovery.com/start-recovery-hero.webp',
 })
 
 const steps = [

@@ -106,6 +106,7 @@ useSeoMeta({
   ogTitle: 'Expedited Service Plus - Five Star Data Recovery',
   description: 'Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.',
   ogDescription: 'Five Star Data Recovery offers customers the opportunity to expedite their case at the fastest level called Expedited Service Plus.',
+  ogImage: 'https://www.fivestardatarecovery.com/expedited-service-plus-hero.jpg',
 })
 
 const trustBadges = [
