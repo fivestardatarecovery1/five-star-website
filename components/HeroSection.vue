@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
   showButtons: true,
   bgSize: 'cover',
   overlayOpacity: 0.95,
-  bgImage: '/data-recovery-clean-room-technician-glendale-ca.jpg',
+  bgImage: '/data-recovery-clean-room-technician-glendale-ca.webp',
   trustBadges: () => [
     { icon: 'clock', text: 'Available 24/7/365' },
     { icon: 'shield', text: 'Clean Room On-Site' },
