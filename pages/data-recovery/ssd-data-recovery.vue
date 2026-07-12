@@ -184,8 +184,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="section-img-wrap">
             <img src="/ssd-data-recovery-install-640.webp" alt="SSD data recovery — solid state drive installation and repair" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/ssd-data-recovery-install-640.webp 640w, /ssd-data-recovery-install-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/ssd-data-recovery-install-640.webp 640w, /ssd-data-recovery-install-800.webp 800w, /ssd-data-recovery-install-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
         </div>
       </div>

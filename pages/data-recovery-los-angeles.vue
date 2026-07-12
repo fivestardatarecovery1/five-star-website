@@ -166,8 +166,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="section-img-wrap">
             <img src="/los-angeles-data-recovery-lab-640.webp" alt="Free same-day pickup data recovery Los Angeles" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/los-angeles-data-recovery-lab-640.webp 640w, /los-angeles-data-recovery-lab-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/los-angeles-data-recovery-lab-640.webp 640w, /los-angeles-data-recovery-lab-800.webp 800w, /los-angeles-data-recovery-lab-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
         </div>
       </div>
@@ -257,8 +257,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
             <img src="/los-angeles-data-recovery-service-640.webp" alt="Secure data recovery privacy Los Angeles" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/los-angeles-data-recovery-service-640.webp 640w, /los-angeles-data-recovery-service-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/los-angeles-data-recovery-service-640.webp 640w, /los-angeles-data-recovery-service-800.webp 800w, /los-angeles-data-recovery-service-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
           <div>
             <h2 class="s-heading">Your Privacy Comes First</h2>

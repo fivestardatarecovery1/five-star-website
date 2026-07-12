@@ -184,8 +184,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="section-img-wrap">
             <img src="/deleted-file-recovery-devices-640.webp" alt="Storage devices for deleted file recovery — HDD, SSD, external drive" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/deleted-file-recovery-devices-640.webp 640w, /deleted-file-recovery-devices-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/deleted-file-recovery-devices-640.webp 640w, /deleted-file-recovery-devices-800.webp 800w, /deleted-file-recovery-devices-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
         </div>
         <p class="s-body" style="margin-top:32px;">Each type of device stores data differently. For example:</p>

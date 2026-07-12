@@ -177,8 +177,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="section-img-wrap">
             <img src="/seagate-expansion-drive-recovery-640.webp" alt="Seagate Expansion drive connected to iMac — data recovery" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/seagate-expansion-drive-recovery-640.webp 640w, /seagate-expansion-drive-recovery-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/seagate-expansion-drive-recovery-640.webp 640w, /seagate-expansion-drive-recovery-800.webp 800w, /seagate-expansion-drive-recovery-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
         </div>
       </div>

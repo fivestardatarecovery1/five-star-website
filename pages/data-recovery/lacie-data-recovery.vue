@@ -174,8 +174,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
           <div class="section-img-wrap">
             <img src="/lacie-rugged-drive-recovery-640.webp" alt="LaCie Rugged Thunderbolt USB-C drive data recovery" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/lacie-rugged-drive-recovery-640.webp 640w, /lacie-rugged-drive-recovery-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/lacie-rugged-drive-recovery-640.webp 640w, /lacie-rugged-drive-recovery-800.webp 800w, /lacie-rugged-drive-recovery-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
         </div>
       </div>
@@ -301,8 +301,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="two-col-layout reverse">
           <div class="section-img-wrap">
             <img src="/lacie-creative-professional-recovery-640.webp" alt="Creative professional using LaCie drive on set" class="section-img" width="640" height="427" loading="lazy"
-               srcset="/lacie-creative-professional-recovery-640.webp 640w, /lacie-creative-professional-recovery-1280.webp 1280w"
-               sizes="(max-width: 768px) 100vw, 50vw" />
+               srcset="/lacie-creative-professional-recovery-640.webp 640w, /lacie-creative-professional-recovery-800.webp 800w, /lacie-creative-professional-recovery-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
           </div>
           <div>
             <h2 class="s-heading">How Lacie Drives Differ from Other Storage Devices</h2>
