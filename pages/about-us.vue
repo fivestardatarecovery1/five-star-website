@@ -30,7 +30,7 @@ useHead({
             "@type": "ImageObject",
             "url": "https://www.fivestardatarecovery.com/logo.webp"
           },
-          "image": "https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/team-01.png",
+          "image": "https://www.fivestardatarecovery.com/logo.webp",
           "description": "Five Star Data Recovery is a professional data recovery lab in Glendale, CA specializing in hard drives, SSDs, RAID systems, iPhones, and USB flash drives. Flat-rate pricing, Class 100 cleanroom, and a no data no charge guarantee.",
           "telephone": "+1-818-272-8866",
           "email": "info@fivestardatarecovery.com",
@@ -115,7 +115,7 @@ useSeoMeta({
   ogTitle: 'About Five Star Data Recovery | Trusted Data Recovery Experts',
   ogDescription: 'Learn about Five Star Data Recovery, a trusted leader in professional data recovery services in Glendale, CA. Offering flat-rate pricing, no data no charge policy, and nationwide mail-in service. Call today for a free consultation.',
   ogUrl: 'https://www.fivestardatarecovery.com/about-us/',
-  ogImage: 'https://www.fivestardatarecovery.com/wp-content/uploads/2025/06/an-02.png',
+  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   twitterCard: 'summary_large_image',
