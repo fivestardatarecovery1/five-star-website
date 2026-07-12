@@ -159,7 +159,7 @@
     "route": "/data-recovery/free-data-recovery-quote",
     "priority": "0.9",
     "changefreq": "weekly",
-    "lastmod": "2026-07-12T10:05:18-07:00"
+    "lastmod": "2026-07-12T10:07:51-07:00"
   },
   {
     "route": "/data-recovery/hard-drive-not-showing-up",
@@ -309,7 +309,7 @@
     "route": "/privacy-policy",
     "priority": "0.7",
     "changefreq": "monthly",
-    "lastmod": "2026-07-12T10:05:18-07:00"
+    "lastmod": "2026-07-12T10:07:51-07:00"
   },
   {
     "route": "/reviews",
@@ -327,6 +327,6 @@
     "route": "/terms-and-conditions",
     "priority": "0.7",
     "changefreq": "monthly",
-    "lastmod": "2026-07-12T10:05:18-07:00"
+    "lastmod": "2026-07-12T10:07:51-07:00"
   }
 ]

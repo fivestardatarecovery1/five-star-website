@@ -30,8 +30,8 @@ const props = withDefaults(defineProps<Props>(), {
   ]
 })
 
-const heroStyle = computed(() => ({
-  background: `linear-gradient(to right, rgba(20,22,30,${props.overlayOpacity}) 0%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.15, 0)}) 50%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.35, 0)}) 100%), url('${props.bgImage}') center center / ${props.bgSize} no-repeat`
+const overlayStyle = computed(() => ({
+  background: `linear-gradient(to right, rgba(20,22,30,${props.overlayOpacity}) 0%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.15, 0)}) 50%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.35, 0)}) 100%)`
 }))
 
 const submitted = ref(false)
@@ -51,7 +51,19 @@ function handleSubmit() {
 </script>
 
 <template>
-  <section class="hero" :style="heroStyle">
+  <section class="hero">
+    <!-- LCP background image — real <img> so browser paints without waiting for JS hydration -->
+    <img
+      class="hero-bg-img"
+      :src="bgImage"
+      :alt="title"
+      fetchpriority="high"
+      width="1920"
+      height="900"
+      aria-hidden="true"
+    />
+    <!-- Gradient overlay -->
+    <div class="hero-overlay" :style="overlayStyle"></div>
     <div class="container hero-inner">
 
       <!-- LEFT: Copy -->
@@ -111,11 +123,28 @@ function handleSubmit() {
 
 <style scoped>
 .hero {
-  /* background set via :style binding */
   padding: 60px 0 60px;
   position: relative;
   overflow: hidden;
   border-bottom: 2px solid rgba(245,200,66,0.2);
+  background: #14161e; /* fallback while image loads */
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .hero-inner {
@@ -123,6 +152,8 @@ function handleSubmit() {
   grid-template-columns: 1fr 480px;
   gap: 60px;
   align-items: start;
+  position: relative;
+  z-index: 2;
 }
 
 /* ── Left copy ── */
