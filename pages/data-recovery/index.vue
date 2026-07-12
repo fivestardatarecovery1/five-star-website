@@ -80,7 +80,10 @@ useSeoMeta({
   ogTitle: 'Data Recovery Services - Five Star Data Recovery',
   description: 'Need help recovering data from a hard drive not being recognized? Our team offers expert Data Recovery Services with fast turnaround times.',
   ogDescription: 'Need help recovering data from a hard drive not being recognized? Our team offers expert Data Recovery Services with fast turnaround times.',
-  ogImage: 'https://www.fivestardatarecovery.com/logo.webp',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  ogImageAlt: 'Data Recovery Services - Five Star Data Recovery',
 })
 
 const services = [

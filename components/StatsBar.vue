@@ -9,7 +9,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   stats: () => [
     { num: '14+', label: 'Years in Business' },
-    { num: '5.0 ⭐', label: 'Average Rating' },
+    { num: '4.9 ⭐', label: 'Average Rating' },
     { num: '26,000+', label: 'Drives Recovered' },
     { num: '100%', label: 'Confidential' },
   ]

@@ -3,7 +3,11 @@ useSeoMeta({
   title: 'Data Recovery Experts – Five Star Data Recovery',
   description: 'Recover lost files from hard drives, iPhones, SSDs, and more. Based in Los Angeles, Five Star Data Recovery provides data recovery services.',
   ogTitle: 'Data Recovery Experts – Five Star Data Recovery',
-  ogDescription: 'Recover lost files from hard drives, iPhones, SSDs, and more. Based in Los Angeles, Five Star Data Recovery provides data recovery services.'
+  ogDescription: 'Recover lost files from hard drives, iPhones, SSDs, and more. Based in Los Angeles, Five Star Data Recovery provides data recovery services.',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  ogImageAlt: 'Five Star Data Recovery — Clean Room Lab in Glendale, CA'
 })
 
 useHead({
@@ -67,22 +71,6 @@ useHead({
                 }
               }
             ]
-          },
-          {
-            "@type": "LocalBusiness",
-            "name": "Five Star Data Recovery",
-            "url": "https://www.fivestardatarecovery.com/",
-            "telephone": "+1-818-272-8866",
-            "priceRange": "$300 - $950",
-            "image": "https://www.fivestardatarecovery.com/logo.webp",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "1731 S Brand Blvd.",
-              "addressLocality": "Glendale",
-              "addressRegion": "CA",
-              "postalCode": "91204",
-              "addressCountry": "US"
-            }
           },
           {
             "@type": "FAQPage",

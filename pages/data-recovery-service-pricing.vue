@@ -1,7 +1,13 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Data Recovery Service Pricing - Five Star Data Recovery',
-  description: 'Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.'
+  description: 'Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.',
+  ogTitle: 'Data Recovery Service Pricing - Five Star Data Recovery',
+  ogDescription: 'Transparent flat-rate data recovery pricing for hard drives, SSDs, USB drives, and RAID systems. No hidden fees. Free diagnostics and shipping nationwide.',
+  ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  ogImageAlt: 'Five Star Data Recovery — Pricing'
 })
 
 useHead({

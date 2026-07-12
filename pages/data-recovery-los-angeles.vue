@@ -65,6 +65,10 @@ useSeoMeta({
   ogTitle: 'Data Recovery in Los Angeles CA - Five Star Data Recovery',
   description: 'Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
   ogDescription: 'Need Data Recovery Services near the Los Angeles, CA area? Our team can help you recover your lost data. Contact us for a free diagnosis!',
+  ogImage: 'https://www.fivestardatarecovery.com/los-angeles-data-recovery-lab.webp',
+  ogImageWidth: '1200',
+  ogImageHeight: '630',
+  ogImageAlt: 'Data Recovery in Los Angeles CA - Five Star Data Recovery'
 })
 
 const trustBadges = [

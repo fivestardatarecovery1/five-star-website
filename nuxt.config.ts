@@ -156,9 +156,9 @@ export default defineNuxtConfig({
         // GTM loaded lazily via plugins/gtm.client.ts after page is interactive
         // Keeps 87.8 KiB off the critical path (LCP/FCP improvement)
 
-        // StatCounter — inline config vars so crawler can detect installation
-        { innerHTML: 'var sc_project=10032646; var sc_invisible=0; var sc_security="e7ed9c62";', type: 'text/javascript' },
-        { src: 'https://statcounter.com/counter/counter.js', async: true, type: 'text/javascript' },
+        // StatCounter — moved to bodyClose to prevent <span> injection inside <head> (invalid HTML)
+        { innerHTML: 'var sc_project=10032646; var sc_invisible=1; var sc_security="e7ed9c62";', type: 'text/javascript', tagPosition: 'bodyClose' },
+        { src: 'https://statcounter.com/counter/counter.js', async: true, type: 'text/javascript', tagPosition: 'bodyClose' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
