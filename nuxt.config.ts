@@ -154,9 +154,6 @@ export default defineNuxtConfig({
         // GTM loaded lazily via plugins/gtm.client.ts after page is interactive
         // Keeps 87.8 KiB off the critical path (LCP/FCP improvement)
 
-        // StatCounter — moved to bodyClose to prevent <span> injection inside <head> (invalid HTML)
-        { innerHTML: 'var sc_project=10032646; var sc_invisible=1; var sc_security="e7ed9c62";', type: 'text/javascript', tagPosition: 'bodyClose' },
-        { src: 'https://statcounter.com/counter/counter.js', async: true, type: 'text/javascript', tagPosition: 'bodyClose' },
       ],
       link: [
         // Sitemap discovery link — helps crawlers find sitemap without relying solely on robots.txt
@@ -164,11 +161,9 @@ export default defineNuxtConfig({
         // Preconnect to third-party origins — eliminates DNS + TCP + TLS handshake from critical path
         { rel: 'preconnect', href: 'https://www.googletagmanager.com', crossorigin: '' },
         { rel: 'preconnect', href: 'https://www.google-analytics.com', crossorigin: '' },
-        { rel: 'preconnect', href: 'https://statcounter.com' },
         // dns-prefetch as fallback for browsers that don't support preconnect
         { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
         { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
-        { rel: 'dns-prefetch', href: 'https://statcounter.com' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
