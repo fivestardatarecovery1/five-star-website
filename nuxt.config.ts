@@ -159,6 +159,14 @@ export default defineNuxtConfig({
         { src: 'https://statcounter.com/counter/counter.js', async: true, type: 'text/javascript', tagPosition: 'bodyClose' },
       ],
       link: [
+        // Preconnect to third-party origins — eliminates DNS + TCP + TLS handshake from critical path
+        { rel: 'preconnect', href: 'https://www.googletagmanager.com', crossorigin: '' },
+        { rel: 'preconnect', href: 'https://www.google-analytics.com', crossorigin: '' },
+        { rel: 'preconnect', href: 'https://statcounter.com' },
+        // dns-prefetch as fallback for browsers that don't support preconnect
+        { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
+        { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
+        { rel: 'dns-prefetch', href: 'https://statcounter.com' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
