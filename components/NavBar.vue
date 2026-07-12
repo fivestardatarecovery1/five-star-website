@@ -419,11 +419,16 @@ nav {
 
 /* ── Instant Quote nav highlight ── */
 .nav-quote-link {
-  color: var(--color-gold, #F5C842) !important;
+  color: #1a1a1a !important;
+  background: #F5C842 !important;
   font-weight: 700 !important;
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  transition: background 0.2s, color 0.2s !important;
 }
 .nav-quote-link:hover, .nav-quote-link.active {
-  color: #fff !important;
+  background: #e0b030 !important;
+  color: #1a1a1a !important;
 }
 /* ── Phone CTA in main nav (desktop) ── */
 .nav-phone-cta {
