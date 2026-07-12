@@ -12,8 +12,10 @@
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('render:html', (html) => {
     html.head = html.head.map((chunk) => {
+      // Match any <link> tag that has BOTH rel="stylesheet" AND href="/_nuxt/*.css"
+      // Uses lookaheads so attribute order doesn't matter
       return chunk.replace(
-        /<link rel="stylesheet" href="\/_nuxt\/[^"]*" crossorigin>/g,
+        /<link(?=[^>]*\brel="stylesheet")(?=[^>]*\bhref="(\/_nuxt\/[^"]+\.css)")[^>]*>/g,
         (match) => {
           const href = match.match(/href="([^"]+)"/)?.[1]
           if (!href) return match
