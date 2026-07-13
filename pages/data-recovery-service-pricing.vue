@@ -574,7 +574,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 }
 .card-includes-label-dark {
   font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em;
-  text-transform: uppercase; color: #9ca3af;
+  text-transform: uppercase; color: #6b7280;
   padding: 0 24px; margin-bottom: 10px;
 }
 .card-items-dark {
