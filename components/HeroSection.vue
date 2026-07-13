@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Auto-generate srcset from bgImage prop — assumes -800.webp and -1400.webp variants exist
 const bgImageSrcset = computed(() => {
   const base = props.bgImage.replace(/\.[^.]+$/, '')
-  return `${base}-800.webp 800w, ${base}-1400.webp 1400w`
+  return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1400.webp 1400w`
 })
 
 const overlayStyle = computed(() => ({
