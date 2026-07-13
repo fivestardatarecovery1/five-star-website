@@ -449,7 +449,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- PAGE HEADER STRIP — minimal, just branding -->
     <!-- HERO — headline + badges + form, all inside the dark section -->
     <section class="edo-hero">
-      <div class="edo-hero-bg" style="background-image: url('/express-drop-off-data-recovery-glendale-ca.jpg')"></div>
+      <img
+        src="/express-drop-off-hero-800.webp"
+        srcset="/express-drop-off-hero-480.webp 480w, /express-drop-off-hero-800.webp 800w, /express-drop-off-hero-1400.webp 1400w"
+        sizes="(max-width: 768px) 100vw, 100vw"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        class="edo-hero-bg"
+      />
       <div class="edo-hero-overlay"></div>
       <div class="container edo-hero-inner">
 
@@ -951,7 +959,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* ── Page header strip — super compact ── */
 /* ═══ HERO — V3 style ═══ */
 .edo-hero { position: relative; overflow: hidden; }
-.edo-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.edo-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; display: block; }
 .edo-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.93) 55%, rgba(10,12,20,0.80) 100%); pointer-events: none; }
 .edo-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; padding-bottom: 32px; }
 /* Stars + rating */
