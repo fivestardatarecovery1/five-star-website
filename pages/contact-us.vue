@@ -124,8 +124,8 @@ const contactVideoActive = ref(false)
               <div>
                 <strong class="cc-title">Call Us</strong>
                 <p class="cc-text">
-                  <a href="tel:8182728866" style="color:#C9A84C;font-weight:700;">818-272-8866</a><br>
-                  <a href="tel:8885059991" style="color:#C9A84C;font-weight:700;">888-505-9991</a> <span style="font-size:0.8em;color:#718096;">Toll Free</span><br>
+                  <a href="tel:8182728866" style="color:#7A5500;font-weight:700;">818-272-8866</a><br>
+                  <a href="tel:8885059991" style="color:#7A5500;font-weight:700;">888-505-9991</a> <span style="font-size:0.8em;color:#718096;">Toll Free</span><br>
                   Available 24/7
                 </p>
               </div>

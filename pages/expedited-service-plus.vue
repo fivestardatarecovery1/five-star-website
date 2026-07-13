@@ -410,7 +410,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .compare-table thead th { padding: 18px 20px; text-align: left; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.03em; }
 .col-feature { color: rgba(255,255,255,0.6); width: 28%; }
 .col-expedited { color: #fff; width: 32%; }
-.col-plus { color: #C9A84C; width: 40%; }
+.col-plus { color: #7A5500; width: 40%; }
 .compare-table tbody tr { border-bottom: 1px solid #e2e6ee; }
 .compare-table tbody tr.alt { background: #f9fafc; }
 .compare-table tbody td { padding: 16px 20px; color: #4a5568; vertical-align: middle; line-height: 1.5; }

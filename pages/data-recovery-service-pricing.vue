@@ -460,7 +460,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   text-transform: uppercase; color: #7a5900; margin-bottom: 10px;
 }
 .section-label.center { text-align: center; }
-.gold-label { color: #C9A84C; }
+.gold-label { color: #7A5500; }
+.add-card .card-price-dark { color: #7A5500; }
+.add-card .item-check-gold { color: #7A5500; }
 .s-heading {
   font-size: clamp(1.5rem, 2.8vw, 2.2rem); font-weight: 900;
   color: #1a1a2e; line-height: 1.25; margin-bottom: 40px;

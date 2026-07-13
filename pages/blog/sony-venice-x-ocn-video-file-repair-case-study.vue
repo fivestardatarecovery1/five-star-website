@@ -595,7 +595,7 @@ useHead({
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #C9A84C;
+  color: #7A5500;
   margin-bottom: 6px;
 }
 .sidebar-post-title {
@@ -617,7 +617,7 @@ useHead({
 }
 .sidebar-post-read {
   font-size: 0.75rem;
-  color: #C9A84C;
+  color: #7A5500;
   font-weight: 700;
 }
 

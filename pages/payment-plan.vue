@@ -324,7 +324,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* Quote features */
 .quote-features { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 8px; }
 .qf { font-size: 0.95rem; font-weight: 600; color: #1a1a2e; display: flex; align-items: center; gap: 8px; }
-.qf-check { color: #C9A84C; font-weight: 900; font-size: 1.1rem; }
+.qf-check { color: #7A5500; font-weight: 900; font-size: 1.1rem; }
 
 /* CTA button */
 .btn-cta { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 0.95rem; padding: 14px 32px; border-radius: 6px; text-decoration: none; margin-top: 20px; transition: background 0.2s; }
