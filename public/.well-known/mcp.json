@@ -18,7 +18,14 @@
     {
       "name": "check_dropoff_availability",
       "description": "Check available express drop-off time slots for a specific date at the Glendale lab. Returns available hours for same-day or future drop-offs.",
-      "parameters": {
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/api/express-availability",
+        "method": "GET",
+        "query_params": {
+          "date": "{{date}}"
+        }
+      },
+      "inputSchema": {
         "type": "object",
         "properties": {
           "date": {
@@ -27,83 +34,175 @@
             "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
           }
         },
-        "required": ["date"]
-      },
-      "endpoint": {
-        "url": "https://www.fivestardatarecovery.com/api/express-availability",
-        "method": "GET",
-        "query_params": {
-          "date": "{{date}}"
-        }
+        "required": [
+          "date"
+        ]
       }
     },
     {
       "name": "get_instant_quote",
       "description": "Generate an instant flat-rate price quote for a data recovery case. Accepts device type, issue description, drive capacity, and service urgency. Returns estimated price.",
-      "parameters": {
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/instant-quote",
+        "method": "GET",
+        "description": "Direct user to the Instant Quote Tool page for an interactive guided quote"
+      },
+      "inputSchema": {
         "type": "object",
         "properties": {
           "device_type": {
             "type": "string",
             "description": "Type of device needing recovery",
-            "enum": ["hdd", "ssd", "external_hdd", "raid", "nas", "mac", "laptop", "iphone", "android", "usb", "sd_card", "video_camera"]
+            "enum": [
+              "hdd",
+              "ssd",
+              "external_hdd",
+              "raid",
+              "nas",
+              "mac",
+              "laptop",
+              "iphone",
+              "android",
+              "usb",
+              "sd_card",
+              "video_camera"
+            ]
           },
           "issue": {
             "type": "string",
             "description": "Primary issue with the device",
-            "enum": ["not_detected", "clicking_beeping", "liquid_damage", "deleted_files", "formatted", "not_spinning", "firmware_corruption", "physical_damage", "slow_degraded"]
+            "enum": [
+              "not_detected",
+              "clicking_beeping",
+              "liquid_damage",
+              "deleted_files",
+              "formatted",
+              "not_spinning",
+              "firmware_corruption",
+              "physical_damage",
+              "slow_degraded"
+            ]
           },
           "capacity": {
             "type": "string",
             "description": "Storage capacity of the device (e.g. '1TB', '500GB', '2TB')",
-            "examples": ["500GB", "1TB", "2TB", "4TB", "8TB"]
+            "examples": [
+              "500GB",
+              "1TB",
+              "2TB",
+              "4TB",
+              "8TB"
+            ]
           },
           "urgency": {
             "type": "string",
             "description": "Service speed required",
-            "enum": ["standard", "expedited", "expedited_plus"],
+            "enum": [
+              "standard",
+              "expedited",
+              "expedited_plus"
+            ],
             "default": "standard"
           }
         },
-        "required": ["device_type", "issue"]
-      },
-      "endpoint": {
-        "url": "https://www.fivestardatarecovery.com/instant-quote",
-        "method": "GET",
-        "description": "Direct user to the Instant Quote Tool page for an interactive guided quote"
+        "required": [
+          "device_type",
+          "issue"
+        ]
       }
     },
     {
       "name": "get_pricing",
       "description": "Get flat-rate pricing information for all data recovery service types.",
-      "parameters": {
-        "type": "object",
-        "properties": {}
-      },
       "endpoint": {
         "url": "https://www.fivestardatarecovery.com/data-recovery-service-pricing",
         "method": "GET",
         "description": "Full pricing page with all service rates"
+      },
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
       }
     },
     {
       "name": "start_recovery",
-      "description": "Guide a user to start a data recovery case — choose between local drop-off, mail-in, or express drop-off.",
-      "parameters": {
+      "description": "Guide a user to start a data recovery case \u2014 choose between local drop-off, mail-in, or express drop-off.",
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/start-recovery",
+        "method": "GET",
+        "description": "Recovery start page with all intake options"
+      },
+      "inputSchema": {
         "type": "object",
         "properties": {
           "method": {
             "type": "string",
             "description": "How the user wants to submit their device",
-            "enum": ["drop_off", "mail_in", "express_drop_off"]
+            "enum": [
+              "drop_off",
+              "mail_in",
+              "express_drop_off"
+            ]
           }
         }
-      },
-      "endpoint": {
-        "url": "https://www.fivestardatarecovery.com/start-recovery",
-        "method": "GET",
-        "description": "Recovery start page with all intake options"
       }
     }
-  ]
+  ],
+  "form_coverage": {
+    "instant_quote_form": {
+      "url": "https://www.fivestardatarecovery.com/instant-quote",
+      "description": "Multi-step instant price quote tool. Guides user through device type, capacity, issue, and urgency to produce an exact flat-rate price.",
+      "fields": [
+        "device_type",
+        "capacity",
+        "issue",
+        "urgency",
+        "encrypted",
+        "cover_opened"
+      ],
+      "output": "exact_price_quote"
+    },
+    "express_dropoff_form": {
+      "url": "https://www.fivestardatarecovery.com/express-drop-off",
+      "description": "Express drop-off scheduling form. User selects a date and available time slot for in-person device drop-off at the Glendale lab.",
+      "fields": [
+        "name",
+        "email",
+        "phone",
+        "device_type",
+        "issue",
+        "drop_off_date",
+        "drop_off_time"
+      ],
+      "output": "confirmed_appointment"
+    },
+    "mail_in_form": {
+      "url": "https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service",
+      "description": "Mail-in recovery form. Generates a free prepaid FedEx shipping label instantly upon submission.",
+      "fields": [
+        "name",
+        "email",
+        "phone",
+        "device_type",
+        "issue",
+        "address"
+      ],
+      "output": "prepaid_fedex_shipping_label"
+    },
+    "contact_form": {
+      "url": "https://www.fivestardatarecovery.com/contact-us",
+      "description": "General contact and free diagnosis request form.",
+      "fields": [
+        "name",
+        "email",
+        "phone",
+        "device_type",
+        "issue",
+        "message"
+      ],
+      "output": "callback_or_email_response"
+    }
+  },
+  "tools_registered": true,
+  "mcp_compliant": true
 }
