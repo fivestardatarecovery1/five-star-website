@@ -741,9 +741,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .asym-layout { display: grid; grid-template-columns: 3fr 2fr; gap: 64px; align-items: center; }
 .asym-major { position: relative; }
 .rounded-img { width: 100%; border-radius: 14px; display: block; object-fit: cover; max-height: 460px; }
-.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #fff; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
-.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; }
-.stat-label { display: block; font-size: 0.75rem; font-weight: 600; opacity: 0.85; margin-top: 3px; }
+.img-stat-badge { position: absolute; bottom: -20px; left: 24px; background: #C9A84C; color: #111111; border-radius: 10px; padding: 14px 22px; box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+.stat-num { display: block; font-size: 1.6rem; font-weight: 900; line-height: 1; color: #111111; }
+.stat-label { display: block; font-size: 0.75rem; font-weight: 700; color: #333333; margin-top: 3px; }
 .why-list { display: flex; flex-direction: column; gap: 24px; margin-top: 28px; }
 .why-item { display: flex; gap: 18px; align-items: flex-start; }
 .why-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
