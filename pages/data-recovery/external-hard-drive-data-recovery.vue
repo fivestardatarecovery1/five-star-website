@@ -451,7 +451,7 @@ useSeoMeta({
 .s-heading { font-size: clamp(1.5rem, 2.8vw, 2rem); font-weight: 900; color: #1a1a2e; line-height: 1.25; margin-bottom: 20px; }
 .s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
 
-.inline-link { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.inline-link { color: #7A5500; font-weight: 600; text-decoration: underline; }
 
 /* Content list */
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }

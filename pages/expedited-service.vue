@@ -305,7 +305,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-heading.center { text-align: center; }
 .s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
 .s-intro { font-size: 1rem; color: #4a5568; line-height: 1.75; margin-bottom: 20px; }
-.inline-link { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.inline-link { color: #7A5500; font-weight: 600; text-decoration: underline; }
 .two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .two-col-layout.reverse { direction: rtl; }
 .two-col-layout.reverse > * { direction: ltr; }

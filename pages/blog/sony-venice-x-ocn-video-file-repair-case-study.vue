@@ -520,8 +520,8 @@ useHead({
   border: 1px solid #e8edf5;
 }
 .blog-main p { margin-bottom: 22px; }
-.inline-link { color: #c9a84c; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.15s; }
-.inline-link:hover { color: #b8963e; }
+.inline-link { color: #7A5500; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; transition: color 0.15s; }
+.inline-link:hover { color: #5C3D00; }
 
 /* ── Sidebar ── */
 .blog-sidebar {
