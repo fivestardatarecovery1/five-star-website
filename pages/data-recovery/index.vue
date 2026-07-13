@@ -718,7 +718,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .svc-icon { font-size: 1.8rem; margin-bottom: 12px; line-height: 1; }
 .svc-title { font-size: 0.97rem; font-weight: 800; color: #1a1a2e; margin-bottom: 10px; line-height: 1.3; }
 .svc-body { font-size: 0.85rem; color: #4a5568; line-height: 1.7; flex: 1; }
-.svc-link { margin-top: 16px; font-size: 0.82rem; font-weight: 700; color: #C9A84C; letter-spacing: 0.03em; }
+.svc-link { margin-top: 16px; font-size: 0.82rem; font-weight: 700; color: #111111; letter-spacing: 0.03em; text-decoration: underline; }
 
 /* ── Three-col reference section ── */
 .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
