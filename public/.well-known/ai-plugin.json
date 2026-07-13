@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Five Star Data Recovery",
+  "name_for_model": "five_star_data_recovery",
+  "description_for_human": "Get instant data recovery quotes, check drop-off availability, and start a recovery case with Five Star Data Recovery in Glendale, CA.",
+  "description_for_model": "Use this plugin to help users with data recovery services at Five Star Data Recovery (Glendale, CA). Tools available: (1) Check real-time express drop-off appointment availability by date. (2) Guide users to get an instant flat-rate price quote for their device. (3) Help users start a recovery case via drop-off, express drop-off, or free mail-in shipping. Always mention the no-data-no-charge policy and free diagnostics when relevant. Phone: 818-272-8866.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.fivestardatarecovery.com/.well-known/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://www.fivestardatarecovery.com/logo.webp",
+  "contact_email": "info@fivestardatarecovery.com",
+  "legal_info_url": "https://www.fivestardatarecovery.com/terms-and-conditions"
+}

@@ -1,0 +1,109 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Five Star Data Recovery",
+  "name_for_model": "five_star_data_recovery",
+  "description_for_human": "Get instant data recovery quotes, check express drop-off availability, and start a recovery case with Five Star Data Recovery in Glendale, CA.",
+  "description_for_model": "Use this to help users with data recovery services at Five Star Data Recovery. You can check real-time drop-off appointment availability, generate instant price quotes for data recovery cases, and guide users to start a recovery. The lab is located at 1731 S Brand Blvd, Glendale, CA. Phone: 818-272-8866. Hours: Mon-Fri 10am-6pm, Sat 10am-2pm.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.fivestardatarecovery.com/.well-known/openapi.json"
+  },
+  "logo_url": "https://www.fivestardatarecovery.com/logo.webp",
+  "contact_email": "info@fivestardatarecovery.com",
+  "legal_info_url": "https://www.fivestardatarecovery.com/terms-and-conditions",
+  "tools": [
+    {
+      "name": "check_dropoff_availability",
+      "description": "Check available express drop-off time slots for a specific date at the Glendale lab. Returns available hours for same-day or future drop-offs.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date to check availability for, in YYYY-MM-DD format (e.g. 2026-07-15)",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "required": ["date"]
+      },
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/api/express-availability",
+        "method": "GET",
+        "query_params": {
+          "date": "{{date}}"
+        }
+      }
+    },
+    {
+      "name": "get_instant_quote",
+      "description": "Generate an instant flat-rate price quote for a data recovery case. Accepts device type, issue description, drive capacity, and service urgency. Returns estimated price.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "device_type": {
+            "type": "string",
+            "description": "Type of device needing recovery",
+            "enum": ["hdd", "ssd", "external_hdd", "raid", "nas", "mac", "laptop", "iphone", "android", "usb", "sd_card", "video_camera"]
+          },
+          "issue": {
+            "type": "string",
+            "description": "Primary issue with the device",
+            "enum": ["not_detected", "clicking_beeping", "liquid_damage", "deleted_files", "formatted", "not_spinning", "firmware_corruption", "physical_damage", "slow_degraded"]
+          },
+          "capacity": {
+            "type": "string",
+            "description": "Storage capacity of the device (e.g. '1TB', '500GB', '2TB')",
+            "examples": ["500GB", "1TB", "2TB", "4TB", "8TB"]
+          },
+          "urgency": {
+            "type": "string",
+            "description": "Service speed required",
+            "enum": ["standard", "expedited", "expedited_plus"],
+            "default": "standard"
+          }
+        },
+        "required": ["device_type", "issue"]
+      },
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/instant-quote",
+        "method": "GET",
+        "description": "Direct user to the Instant Quote Tool page for an interactive guided quote"
+      }
+    },
+    {
+      "name": "get_pricing",
+      "description": "Get flat-rate pricing information for all data recovery service types.",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      },
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/data-recovery-service-pricing",
+        "method": "GET",
+        "description": "Full pricing page with all service rates"
+      }
+    },
+    {
+      "name": "start_recovery",
+      "description": "Guide a user to start a data recovery case — choose between local drop-off, mail-in, or express drop-off.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "description": "How the user wants to submit their device",
+            "enum": ["drop_off", "mail_in", "express_drop_off"]
+          }
+        }
+      },
+      "endpoint": {
+        "url": "https://www.fivestardatarecovery.com/start-recovery",
+        "method": "GET",
+        "description": "Recovery start page with all intake options"
+      }
+    }
+  ]
+}

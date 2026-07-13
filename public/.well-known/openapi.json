@@ -1,0 +1,85 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Five Star Data Recovery API",
+    "description": "Public API for Five Star Data Recovery — check appointment availability and access service information.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Five Star Data Recovery",
+      "url": "https://www.fivestardatarecovery.com/contact-us",
+      "email": "info@fivestardatarecovery.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.fivestardatarecovery.com",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/api/express-availability": {
+      "get": {
+        "operationId": "checkExpressDropOffAvailability",
+        "summary": "Check Express Drop-Off Availability",
+        "description": "Returns available time slots for express drop-off appointments at the Glendale lab on a given date. Use this to help users find a convenient drop-off time before they visit.",
+        "parameters": [
+          {
+            "name": "date",
+            "in": "query",
+            "required": true,
+            "description": "Date to check in YYYY-MM-DD format",
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+              "example": "2026-07-15"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Availability for the requested date",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ok": { "type": "boolean" },
+                    "date": { "type": "string" },
+                    "available": { "type": "boolean", "description": "Whether drop-offs are accepted on this date" },
+                    "availableHours": {
+                      "type": "array",
+                      "items": { "type": "string" },
+                      "description": "List of available time slots (e.g. '10:00 AM')"
+                    },
+                    "blockedHours": {
+                      "type": "array",
+                      "items": { "type": "string" },
+                      "description": "Time slots that are blocked/unavailable"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-suggestions": {
+          "follow_up": "After showing availability, ask the user if they'd like to proceed to the express drop-off form at https://www.fivestardatarecovery.com/express-drop-off"
+        }
+      }
+    }
+  },
+  "x-ai-instructions": {
+    "business_context": "Five Star Data Recovery is a professional data recovery lab in Glendale, CA. They recover data from failed hard drives, SSDs, RAIDs, iPhones, USB drives, SD cards, and more. Flat-rate pricing with free diagnostics. No data = no charge policy for most cases.",
+    "location": "1731 S Brand Blvd, Glendale, CA 91204",
+    "phone": "818-272-8866",
+    "hours": "Monday-Friday 10am-6pm, Saturday 10am-2pm PST",
+    "key_pages": {
+      "instant_quote": "https://www.fivestardatarecovery.com/instant-quote",
+      "pricing": "https://www.fivestardatarecovery.com/data-recovery-service-pricing",
+      "start_recovery": "https://www.fivestardatarecovery.com/start-recovery",
+      "express_drop_off": "https://www.fivestardatarecovery.com/express-drop-off",
+      "mail_in": "https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service",
+      "contact": "https://www.fivestardatarecovery.com/contact-us"
+    }
+  }
+}
