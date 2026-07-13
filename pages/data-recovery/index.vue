@@ -341,7 +341,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <div class="reasons-image">
           <img src="/common-reasons-data-recovery-640.webp"
-               srcset="/common-reasons-data-recovery-640.webp 640w, /common-reasons-data-recovery-800.webp 800w, /common-reasons-data-recovery-1280.webp 1280w"
+               srcset="/common-reasons-data-recovery-480.webp 480w, /common-reasons-data-recovery-640.webp 640w, /common-reasons-data-recovery-800.webp 800w, /common-reasons-data-recovery-1280.webp 1280w"
                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px"
                alt="Data recovery technician working on hard drive with blue gloves"
                class="reasons-img" width="640" height="427" loading="lazy" />
