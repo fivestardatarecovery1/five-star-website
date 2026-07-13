@@ -569,7 +569,7 @@ onMounted(() => {
 .stepper-item { display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 1; flex: 1; }
 .stepper-circle {
   width: 40px; height: 40px; border-radius: 50%;
-  background: #e8edf4; color: #8a9bb8;
+  background: #e8edf4; color: #4a5e7a;
   font-size: 0.95rem; font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   transition: background 0.3s, color 0.3s;
@@ -578,9 +578,9 @@ onMounted(() => {
 .stepper-item.active .stepper-circle { background: #F5C842; color: #1a1a2e; box-shadow: 0 0 0 2px #F5C842; }
 .stepper-item.done .stepper-circle { background: #22c55e; color: #fff; box-shadow: 0 0 0 2px #22c55e; }
 .check-mark { font-size: 1rem; }
-.stepper-label { font-size: 0.7rem; font-weight: 700; color: #8a9bb8; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; white-space: nowrap; }
+.stepper-label { font-size: 0.7rem; font-weight: 700; color: #4a5e7a; text-transform: uppercase; letter-spacing: 0.04em; text-align: center; white-space: nowrap; }
 .stepper-item.active .stepper-label { color: #1a1a2e; }
-.stepper-item.done .stepper-label { color: #22c55e; }
+.stepper-item.done .stepper-label { color: #15803d; }
 
 /* ═══ FORM BODY ═══ */
 .edo-form { padding: 32px 44px 0; display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; overflow: hidden; }
