@@ -59,6 +59,7 @@ const trustBadges = [
 
 // Multi-step form
 const step = ref(1)
+const dropoffVideoActive = ref(false)
 const totalSteps = 5
 const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Service Options', 'Schedule & Submit']
 
@@ -746,8 +747,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="video-heading">See Why Thousands Trust Us<br>With Their Important Data</h2>
           <p class="video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
-        <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+        <div class="video-embed" @click="dropoffVideoActive = true" style="cursor:pointer;background:#000;">
+          <template v-if="!dropoffVideoActive">
+            <img src="https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg" alt="Five Star Data Recovery — Video" class="yt-thumb" width="480" height="360" loading="lazy" />
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button>
+          </template>
+          <iframe v-else src="https://www.youtube-nocookie.com/embed/14ACFHJ24hg?start=60&autoplay=1" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
         </div>
       </div>
     </section>
@@ -1148,7 +1153,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 16px; }
 .video-desc { font-size: 0.95rem; color: #8a9bb8; line-height: 1.8; }
 .video-embed { border-radius: 12px; overflow: hidden; }
-.video-embed iframe { width: 100%; aspect-ratio: 16/9; display: block; }
+.video-embed { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; background: #000; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.yt-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none; cursor: pointer; padding: 0; opacity: 0.9; }
+.yt-play:hover { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 
 /* FAQ */
 .faq-section { background: #f4f7fc; padding: 80px 0; }

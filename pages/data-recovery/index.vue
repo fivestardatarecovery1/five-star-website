@@ -972,7 +972,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   margin-top: 8px;
 }
 .faq-answer :deep(.faq-link) {
-  color: #C9A84C;
+  color: #7A5500;
   font-weight: 600;
   text-decoration: underline;
 }

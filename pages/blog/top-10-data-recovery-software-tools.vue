@@ -42,7 +42,9 @@ useHead({
     <!-- HERO -->
     <section class="blog-hero">
       <div class="hero-img-fill">
-        <img src="/data-recovery-software-hero.jpg" alt="Data recovery software scanning a hard drive" class="hero-img" />
+        <img src="/data-recovery-software-hero-640.webp" alt="Data recovery software scanning a hard drive" class="hero-img" 
+               srcset="/data-recovery-software-hero-640.webp 640w, /data-recovery-software-hero-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
       </div>
       <div class="container hero-inner">
         <div class="hero-left">
@@ -85,7 +87,9 @@ useHead({
           <!-- HARD STOP -->
           <h2 class="section-heading">First: The Hard Stop List</h2>
 
-          <img src="/ssd-diy-warning.jpg" alt="Warning: Never attempt DIY recovery on SSDs, NVMe drives, or flash storage" class="article-img" />
+          <img src="/ssd-diy-warning-640.webp" alt="Warning: Never attempt DIY recovery on SSDs, NVMe drives, or flash storage" class="article-img" 
+               srcset="/ssd-diy-warning-640.webp 640w, /ssd-diy-warning-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
 
           <div class="warning-block">
             <div class="warning-label">⛔ HARD STOP</div>
@@ -155,7 +159,9 @@ useHead({
           <!-- CLONE FIRST -->
           <h2 class="section-heading">The Right Way to Use Recovery Software: Clone First, Always</h2>
 
-          <img src="/hard-drive-platters-clone.jpg" alt="Hard drive internals — always clone before running recovery software" class="article-img" />
+          <img src="/hard-drive-platters-clone-640.webp" alt="Hard drive internals — always clone before running recovery software" class="article-img" 
+               srcset="/hard-drive-platters-clone-640.webp 640w, /hard-drive-platters-clone-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
 
           <p>If you've decided to proceed with DIY recovery on a healthy HDD, there is one non-negotiable step before you run any software:</p>
 
@@ -386,7 +392,9 @@ useHead({
             <div class="sidebar-posts">
               <NuxtLink to="/blog/sony-venice-x-ocn-video-file-repair-case-study" class="sidebar-post-card">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/blog-sony-venice-film-set.jpg" alt="Sony Venice X-OCN Data Recovery" class="sidebar-post-img" />
+                  <img src="/blog-sony-venice-film-set-640.webp" alt="Sony Venice X-OCN Data Recovery" class="sidebar-post-img" 
+               srcset="/blog-sony-venice-film-set-640.webp 640w, /blog-sony-venice-film-set-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">Case Study</div>

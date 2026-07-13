@@ -290,7 +290,10 @@ useSeoMeta({
           <p class="s-body">Even if someone reformats, corrupts, or sees your external hard drive as RAW, we can still recover your data. Each case is unique, but we have proven our results to be reliable. We help clients recover <NuxtLink to="/data-recovery/deleted-files" class="inline-link">deleted</NuxtLink> files from external drives, even if they lost the data months ago.</p>
         </div>
         <div class="two-col-image">
-          <img src="/external-hard-drive-on-desk.jpg" alt="External hard drive data recovery" class="rounded-img" width="1280" height="382" loading="lazy" />
+          <img src="/external-hard-drive-on-desk-800.webp"
+               srcset="/external-hard-drive-on-desk-640.webp 640w, /external-hard-drive-on-desk-800.webp 800w, /external-hard-drive-on-desk-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1280px"
+               alt="External hard drive data recovery" class="rounded-img" width="1280" height="382" loading="lazy" />
         </div>
       </div>
     </section>
@@ -497,7 +500,7 @@ useSeoMeta({
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.faq-answer :deep(.faq-link) { color: #7A5500; font-weight: 600; text-decoration: underline; }
 .faq-answer :deep(.faq-table) { width: 100%; border-collapse: collapse; margin: 14px 0 10px; font-size: 0.87rem; }
 .faq-answer :deep(.faq-table th) { background: #1a1a2e; color: #C9A84C; text-align: left; padding: 10px 14px; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .faq-answer :deep(.faq-table td) { padding: 9px 14px; border-bottom: 1px solid #eee; color: #333; }

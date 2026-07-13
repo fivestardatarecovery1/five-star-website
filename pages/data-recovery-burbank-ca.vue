@@ -334,7 +334,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.faq-answer :deep(.faq-link) { color: #7A5500; font-weight: 600; text-decoration: underline; }
 .two-col-img-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .section-img-wrap { border-radius: 12px; overflow: hidden; }
 .section-img { width: 100%; height: auto; display: block; border-radius: 12px; object-fit: cover; }

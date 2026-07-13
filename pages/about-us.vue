@@ -194,7 +194,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="s-white">
       <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
         <div style="position:relative;">
-          <img src="/five-star-lab-engineers.jpg" alt="Five Star Data Recovery lab engineers at work" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" width="800" height="486" loading="lazy" />
+          <img src="/five-star-lab-engineers-800.webp"
+               srcset="/five-star-lab-engineers-640.webp 640w, /five-star-lab-engineers-800.webp 800w, /five-star-lab-engineers-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
+               alt="Five Star Data Recovery lab engineers at work" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" width="800" height="486" loading="lazy" />
         </div>
         <div>
           <div class="section-label">Innovation</div>
@@ -284,7 +287,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
 .faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.faq-answer :deep(.faq-link) { color: #7A5500; font-weight: 600; text-decoration: underline; }
 .btn-gold { display: inline-block; background: #C9A84C; color: #1a1a1a; padding: 16px 36px; border-radius: 8px; font-weight: 800; font-size: 1rem; text-decoration: none; transition: background 0.2s; }
 .btn-gold:hover { background: #b8923e; }
 .btn-gold-full { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }

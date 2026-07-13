@@ -21,6 +21,7 @@ const faqs = [
   { q: "Can I submit the form if I'm mailing my device?", a: "Yes! In fact, submitting the form is highly recommended for mail-in clients. It helps us match your incoming shipment to your case file, reducing delays." },
 ]
 
+const startVideoActive = ref(false)
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
@@ -138,8 +139,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <div class="v3-vstat"><span class="v3-vstat-num">100%</span><span class="v3-vstat-label">Confidential</span></div>
           </div>
         </div>
-        <div class="v3-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+        <div class="v3-video-embed" @click="startVideoActive = true" style="cursor:pointer;background:#000;">
+          <template v-if="!startVideoActive">
+            <img src="https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg" alt="Five Star Data Recovery — Video" class="yt-thumb" width="480" height="360" loading="lazy" />
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button>
+          </template>
+          <iframe v-else src="https://www.youtube-nocookie.com/embed/14ACFHJ24hg?start=60&autoplay=1" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
         </div>
       </div>
     </section>
@@ -385,7 +390,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .v3-vstat-num { font-size: 24px; font-weight: 800; color: #F5C842; font-family: 'Montserrat', sans-serif; }
 .v3-vstat-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
 .v3-video-embed { border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; background: #000; }
-.v3-video-embed iframe { width: 100%; height: 100%; display: block; }
+.v3-video-embed { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; background: #000; }
+.v3-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.yt-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none; cursor: pointer; padding: 0; opacity: 0.9; }
+.yt-play:hover { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 
 /* ════════════════════════════════════════
    FAQ

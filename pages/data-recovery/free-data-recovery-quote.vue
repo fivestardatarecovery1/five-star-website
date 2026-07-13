@@ -7,6 +7,7 @@ useSeoMeta({
   ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
 })
 const submitted = ref(false)
+const quoteVideoActive = ref(false)
 </script>
 
 <template>
@@ -146,8 +147,12 @@ const submitted = ref(false)
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
           <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision.</p>
         </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+        <div class="page-video-embed" @click="quoteVideoActive = true" style="cursor:pointer;background:#000;">
+          <template v-if="!quoteVideoActive">
+            <img src="https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg" alt="Five Star Data Recovery — Video" class="yt-thumb" width="480" height="360" loading="lazy" />
+            <button class="yt-play" aria-label="Play video"><svg viewBox="0 0 68 48" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></button>
+          </template>
+          <iframe v-else src="https://www.youtube-nocookie.com/embed/14ACFHJ24hg?start=60&autoplay=1" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
         </div>
       </div>
     </section>
@@ -175,7 +180,7 @@ const submitted = ref(false)
 .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
 .faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
-.faq-answer :deep(.faq-link) { color: #C9A84C; font-weight: 600; text-decoration: underline; }
+.faq-answer :deep(.faq-link) { color: #7A5500; font-weight: 600; text-decoration: underline; }
 .faq-answer :deep(.faq-link:hover) { color: #b8923e; }
 .mf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .mf-group { display: flex; flex-direction: column; gap: 5px; }
@@ -202,6 +207,9 @@ const submitted = ref(false)
 .page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; margin-top: 16px; }
 .page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
 .page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.yt-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none; cursor: pointer; padding: 0; opacity: 0.9; }
+.yt-play:hover { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 @media (max-width: 768px) {
   .reviews-grid, .page-video-inner, .mf-row { grid-template-columns: 1fr; }
   .mf-full { grid-column: 1; }

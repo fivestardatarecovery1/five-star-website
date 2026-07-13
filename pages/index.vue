@@ -399,7 +399,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
           </div>
           <iframe
             v-else
-            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60&autoplay=1"
+            src="https://www.youtube-nocookie.com/embed/14ACFHJ24hg?start=60&autoplay=1"
             title="Five Star Data Recovery"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

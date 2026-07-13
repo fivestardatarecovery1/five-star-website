@@ -188,7 +188,9 @@ useHead({
             <div class="sidebar-posts">
               <NuxtLink to="/blog/top-10-data-recovery-software-tools" class="sidebar-post-card">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/data-recovery-software-hero.jpg" alt="Top 10 Data Recovery Software Tools" class="sidebar-post-img" loading="lazy" />
+                  <img src="/data-recovery-software-hero-640.webp" alt="Top 10 Data Recovery Software Tools" class="sidebar-post-img" loading="lazy" 
+               srcset="/data-recovery-software-hero-640.webp 640w, /data-recovery-software-hero-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">DIY Data Recovery</div>
@@ -199,7 +201,9 @@ useHead({
               </NuxtLink>
               <NuxtLink to="/blog/sony-venice-x-ocn-video-file-repair-case-study" class="sidebar-post-card">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/blog-sony-venice-film-set.jpg" alt="Sony Venice X-OCN Data Recovery" class="sidebar-post-img" loading="lazy" />
+                  <img src="/blog-sony-venice-film-set-640.webp" alt="Sony Venice X-OCN Data Recovery" class="sidebar-post-img" loading="lazy" 
+               srcset="/blog-sony-venice-film-set-640.webp 640w, /blog-sony-venice-film-set-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">Case Study</div>

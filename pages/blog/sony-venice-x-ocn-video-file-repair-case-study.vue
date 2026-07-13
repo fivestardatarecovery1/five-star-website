@@ -88,7 +88,9 @@ useHead({
 
         <!-- Hero image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-film-set.jpg" alt="Sony Venice cinema camera on a professional film set" class="blog-img" />
+          <img src="/blog-sony-venice-film-set-640.webp" alt="Sony Venice cinema camera on a professional film set" class="blog-img" 
+               srcset="/blog-sony-venice-film-set-640.webp 640w, /blog-sony-venice-film-set-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
           <p class="img-caption">Three labs had already failed. A production company flew their drives from New York to our California lab as a last resort.</p>
         </div>
 
@@ -122,7 +124,9 @@ useHead({
 
         <!-- Seagate drives image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-drives.jpg" alt="Three 24TB drives on a forensic recovery workbench" class="blog-img" />
+          <img src="/blog-sony-venice-drives-640.webp" alt="Three 24TB drives on a forensic recovery workbench" class="blog-img" 
+               srcset="/blog-sony-venice-drives-640.webp 640w, /blog-sony-venice-drives-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
           <p class="img-caption">Three 24TB Seagate drives — two of which had new footage written over the missing clips before reaching us.</p>
         </div>
 
@@ -152,7 +156,9 @@ useHead({
 
         <!-- Internal platters image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-post-production.jpg" alt="Filmmaker frustrated after footage is lost and three labs have failed" class="blog-img" />
+          <img src="/blog-sony-venice-post-production-640.webp" alt="Filmmaker frustrated after footage is lost and three labs have failed" class="blog-img" 
+               srcset="/blog-sony-venice-post-production-640.webp 640w, /blog-sony-venice-post-production-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
           <p class="img-caption">Three labs had already turned them away. By the time the drives reached us, they were out of options.</p>
         </div>
 
@@ -183,7 +189,9 @@ useHead({
 
         <!-- Lab engineers image -->
         <div class="blog-image-block">
-          <img src="/blog-sony-venice-recovery-results.jpg" alt="MacBook at a workstation — recovered footage back in post-production" class="blog-img" />
+          <img src="/blog-sony-venice-recovery-results-640.webp" alt="MacBook at a workstation — recovered footage back in post-production" class="blog-img" 
+               srcset="/blog-sony-venice-recovery-results-640.webp 640w, /blog-sony-venice-recovery-results-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
           <p class="img-caption">24 files fully recovered. 11 partially recovered. Zero files returned blank.</p>
         </div>
 
@@ -301,7 +309,9 @@ useHead({
             <div class="sidebar-posts">
               <NuxtLink to="/blog/top-10-data-recovery-software-tools" class="sidebar-post">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/data-recovery-software-hero.jpg" alt="Top 10 Data Recovery Software Tools" class="sidebar-post-img" loading="lazy" />
+                  <img src="/data-recovery-software-hero-640.webp" alt="Top 10 Data Recovery Software Tools" class="sidebar-post-img" loading="lazy" 
+               srcset="/data-recovery-software-hero-640.webp 640w, /data-recovery-software-hero-800.webp 800w"
+               sizes="(max-width: 640px) 100vw, 800px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">DIY Data Recovery</div>
