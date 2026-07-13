@@ -464,7 +464,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
               <!-- STEP 1: Contact Info -->
               <div v-show="step === 1" class="form-step">
-                <h3 class="step-title">Your Contact Info</h3>
+                <h2 class="step-title">Your Contact Info</h3>
                 <div class="form-grid-2">
                   <div class="fg">
                     <label class="fl">First Name <span class="req">*</span></label>
@@ -489,7 +489,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
               <!-- STEP 2: Drive Details -->
               <div v-show="step === 2" class="form-step">
-                <h3 class="step-title">Tell us about your drive</h3>
+                <h2 class="step-title">Tell us about your drive</h3>
                 <p class="step-desc">This helps our engineers prepare before you arrive.</p>
                 <div class="form-grid-2">
                   <div class="fg">
@@ -551,7 +551,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
               <!-- STEP 3: Recovery Details -->
               <div v-show="step === 3" class="form-step">
-                <h3 class="step-title">What happened to your data?</h3>
+                <h2 class="step-title">What happened to your data?</h3>
                 <p class="step-desc">The more detail you share, the faster we can diagnose your device.</p>
                 <div class="fg">
                   <label class="fl">Describe the Issue <span class="req">*</span></label>
@@ -583,7 +583,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
               <!-- STEP 4: Service Options -->
               <div v-show="step === 4" class="form-step">
-                <h3 class="step-title">Service &amp; pricing options</h3>
+                <h2 class="step-title">Service &amp; pricing options</h3>
                 <p class="step-desc">These fees are rare — we'll always confirm before charging anything.</p>
 
                 <div class="fg">
@@ -631,7 +631,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
               <!-- STEP 5: Schedule — Visual Calendar + Time Slots -->
               <div v-show="step === 5" class="form-step">
-                <h3 class="step-title">Schedule your drop-off</h3>
+                <h2 class="step-title">Schedule your drop-off</h3>
                 <p class="step-desc">Select an available date and 30-minute arrival window. Mon–Fri, 9am–5:30pm.</p>
 
                 <!-- CALENDAR + TIME SLOTS SIDE BY SIDE -->
