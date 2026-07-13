@@ -78,8 +78,8 @@ useHead({
 useSeoMeta({
   title: 'Data Recovery Services - Five Star Data Recovery',
   ogTitle: 'Data Recovery Services - Five Star Data Recovery',
-  description: 'Need help recovering data from a hard drive not being recognized? Our team offers expert Data Recovery Services with fast turnaround times.',
-  ogDescription: 'Need help recovering data from a hard drive not being recognized? Our team offers expert Data Recovery Services with fast turnaround times.',
+  description: 'Expert data recovery services for hard drives, SSDs, RAID arrays, phones, and more. Flat-rate pricing, free nationwide shipping, and fast turnaround.',
+  ogDescription: 'Expert data recovery services for hard drives, SSDs, RAID arrays, phones, and more. Flat-rate pricing, free nationwide shipping, and fast turnaround.',
   ogImage: 'https://www.fivestardatarecovery.com/data-recovery-clean-room-technician-glendale-ca.jpg',
   ogImageWidth: '1200',
   ogImageHeight: '630',
