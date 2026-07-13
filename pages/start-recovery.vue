@@ -75,7 +75,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <span class="v3-card-emoji">🏪</span>
               <div>
                 <p class="v3-card-tag">LOCAL — GLENDALE, CA</p>
-                <h3 class="v3-card-title">Express Drop-Off</h3>
+                <h2 class="v3-card-title">Express Drop-Off</h2>
               </div>
             </div>
             <p class="v3-card-desc">Fill out our quick form ahead of time, drop off your device, and go. We handle everything from there — same-day diagnostic report included.</p>
@@ -95,7 +95,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               <span class="v3-card-emoji">📦</span>
               <div>
                 <p class="v3-card-tag">ANYWHERE IN THE US</p>
-                <h3 class="v3-card-title">Mail-In Service</h3>
+                <h2 class="v3-card-title">Mail-In Service</h2>
               </div>
             </div>
             <p class="v3-card-desc">We send you a free prepaid shipping label — your device arrives at our lab in 1–2 days and we get straight to work.</p>
@@ -124,7 +124,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div class="v3-steps-row">
           <div v-for="(s, i) in steps" :key="i" class="v3-step">
             <div class="v3-step-num">{{ s.num }}</div>
-            <h4 class="v3-step-title">{{ s.title }}</h4>
+            <h3 class="v3-step-title">{{ s.title }}</h3>
             <p class="v3-step-text">{{ s.text }}</p>
             <div v-if="i < steps.length - 1" class="v3-step-arrow">›</div>
           </div>
@@ -416,7 +416,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .v3-faq-list { max-width: 760px; margin: 0 auto; }
 .v3-faq-item { border-bottom: 1px solid #e5e7eb; padding: 22px 0; cursor: pointer; }
 .v3-faq-q { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 15px; font-weight: 600; color: #0d1520; }
-.v3-faq-icon { font-size: 22px; font-weight: 300; color: #F5C842; flex-shrink: 0; }
+.v3-faq-icon { font-size: 22px; font-weight: 300; color: #7A5500; flex-shrink: 0; }
 .v3-faq-a { margin-top: 14px; font-size: 14px; color: #4a5568; line-height: 1.7; }
 
 /* ════════════════════════════════════════

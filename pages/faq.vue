@@ -317,7 +317,7 @@ const reviews = [
 }
 .faq-toggle { color: #7A5500; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer {
-  padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568;
+  padding: 4px 24px 20px; font-size: 0.9rem; color: #374151;
   line-height: 1.8; border-top: 1px solid #f0f2f7;
 }
 
@@ -347,7 +347,7 @@ const reviews = [
   flex-shrink: 0;
 }
 .review-name { font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
-.review-loc { font-size: 0.78rem; color: #718096; }
+.review-loc { font-size: 0.78rem; color: #5c6675; }
 
 .btn-gold-full {
   display: block; width: 100%; text-align: center;

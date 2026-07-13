@@ -165,7 +165,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <div class="two-col-layout">
           <div>
-            <h4 class="s-heading">Do you offer a Priority Data Recovery Service?</h4>
+            <h2 class="s-heading">Do you offer a Priority Data Recovery Service?</h2>
             <p class="s-body">Yes, of course. We understand that some recoveries are time sensitive and need to be completed as soon as possible. We offer an Expedited Service which would put your case at the top of the que. With our Expedited Service, our Engineers will start working on your data recovery case within an hour of drop off, and the case will be handled as a priority within business hours. With this service, you are guaranteed a diagnosis within 3 hours of the time you drop off your drive. Your case will be worked on non-stop during normal business hours.</p>
           </div>
           <div class="section-img-wrap">
