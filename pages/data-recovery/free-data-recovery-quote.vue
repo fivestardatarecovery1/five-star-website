@@ -178,7 +178,7 @@ const quoteVideoActive = ref(false)
 .faq-row { border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; background: #fff; }
 .faq-row.active { border-color: #C9A84C; }
 .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: none; border: none; color: #1a1a2e; font-size: 1rem; font-weight: 700; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
+.faq-toggle { color: #7A5500; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer { padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568; line-height: 1.8; border-top: 1px solid #f0f2f7; }
 .faq-answer :deep(.faq-link) { color: #7A5500; font-weight: 600; text-decoration: underline; }
 .faq-answer :deep(.faq-link:hover) { color: #b8923e; }
@@ -198,7 +198,7 @@ const quoteVideoActive = ref(false)
 .mf-submit:hover { background: #b8923e; }
 .form-powered { text-align: right; font-size: 10px; color: #64748b; margin: 8px 0 0; }
 .form-powered a { color: #64748b; text-decoration: none; transition: color 0.2s; }
-.form-powered a:hover { color: #C9A84C; }
+.form-powered a:hover { color: #7A5500; }
 .btn-gold-full { display: block; width: 100%; text-align: center; background: #C9A84C; color: #1a1a1a; padding: 18px; border-radius: 8px; font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: 0.04em; transition: background 0.2s; }
 .btn-gold-full:hover { background: #b8923e; }
 .page-video-section { background: #2a2d38; padding: 70px 0; }

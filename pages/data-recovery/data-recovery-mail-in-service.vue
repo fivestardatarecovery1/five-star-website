@@ -313,7 +313,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <!-- COMPACT FORM HERO -->
     <!-- HERO — same design as Express Drop-Off -->
     <section class="mi-hero">
-      <div class="mi-hero-bg" style="background-image: url('/data-recovery-mail-in-service-los-angeles.jpg')"></div>
+      <img
+        src="/mail-in-hero-800.webp"
+        srcset="/mail-in-hero-480.webp 480w, /mail-in-hero-800.webp 800w, /mail-in-hero-1400.webp 1400w"
+        sizes="(max-width: 768px) 100vw, 100vw"
+        alt="" aria-hidden="true" fetchpriority="high" class="mi-hero-bg"
+      />
       <div class="mi-hero-overlay"></div>
       <div class="container mi-hero-inner">
 
@@ -688,7 +693,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* FORM */
 /* ═══ HERO — same design as Express Drop-Off ═══ */
 .mi-hero { position: relative; overflow: hidden; }
-.mi-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; pointer-events: none; }
+.mi-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; pointer-events: none; display: block; }
 .mi-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(10,12,20,0.97) 0%, rgba(10,12,20,0.93) 55%, rgba(10,12,20,0.80) 100%); pointer-events: none; }
 .mi-hero { min-height: 100vh; }
 .mi-hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 16px; padding-top: 24px; padding-bottom: 60px; }

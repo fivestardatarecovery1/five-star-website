@@ -315,7 +315,7 @@ const reviews = [
   font-size: 0.95rem; font-weight: 700; cursor: pointer; text-align: left;
   gap: 16px; font-family: inherit;
 }
-.faq-toggle { color: #C9A84C; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
+.faq-toggle { color: #7A5500; font-size: 1.4rem; font-weight: 300; flex-shrink: 0; line-height: 1; }
 .faq-answer {
   padding: 4px 24px 20px; font-size: 0.9rem; color: #4a5568;
   line-height: 1.8; border-top: 1px solid #f0f2f7;

@@ -322,7 +322,9 @@ useHead({
               </NuxtLink>
               <NuxtLink to="/blog/how-to-repair-external-hard-drive-after-it-was-dropped" class="sidebar-post">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/blog-dropped-hard-drive.jpg" alt="How to repair a dropped external hard drive" class="sidebar-post-img" loading="lazy" />
+                  <img src="/blog-dropped-hard-drive-160.webp" alt="How to repair a dropped external hard drive" class="sidebar-post-img" loading="lazy" 
+                   srcset="/blog-dropped-hard-drive-160.webp 160w, /blog-dropped-hard-drive-320.webp 320w"
+                   sizes="160px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">Data Recovery Guide</div>
@@ -333,7 +335,9 @@ useHead({
               </NuxtLink>
               <NuxtLink to="/blog/usb-data-recovery-chip-off" class="sidebar-post">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/blog-usb-chip-off.jpg" alt="USB chip-off data recovery" class="sidebar-post-img" loading="lazy" />
+                  <img src="/blog-usb-chip-off-160.webp" alt="USB chip-off data recovery" class="sidebar-post-img" loading="lazy" 
+                   srcset="/blog-usb-chip-off-160.webp 160w, /blog-usb-chip-off-320.webp 320w"
+                   sizes="160px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">Case Study</div>
@@ -426,7 +430,7 @@ useHead({
   margin-bottom: 24px;
   font-size: 0.8rem;
 }
-.blog-date { color: #C9A84C; font-weight: 600; }
+.blog-date { color: #7A5500; font-weight: 600; }
 .blog-category {
   background: rgba(201,168,76,0.15);
   color: #C9A84C;
@@ -661,7 +665,7 @@ useHead({
   text-decoration: none;
   transition: color 0.2s;
 }
-.sidebar-cta-phone:hover { color: #C9A84C; }
+.sidebar-cta-phone:hover { color: #7A5500; }
 
 /* Share buttons */
 .share-buttons {
@@ -696,7 +700,7 @@ useHead({
   padding: 6px 0;
   transition: color 0.15s;
 }
-.rss-link:hover { color: #C9A84C; }
+.rss-link:hover { color: #7A5500; }
 
 /* Newsletter widget */
 .newsletter-card { background: #fff; }
@@ -873,7 +877,7 @@ useHead({
   line-height: 1.75;
 }
 .insight-block p { margin-bottom: 0; }
-.insight-block strong { color: #C9A84C; }
+.insight-block strong { color: #7A5500; }
 
 /* Phase blocks */
 .phase-block {
@@ -1028,7 +1032,7 @@ useHead({
 .emergency-block p { color: rgba(255,255,255,0.75); margin-bottom: 16px; }
 .emergency-availability { color: #4ADE80 !important; font-size: 0.9rem !important; font-weight: 600; margin-bottom: 20px !important; }
 .emergency-block strong { color: #fff; }
-.emergency-company { color: #C9A84C !important; font-size: 1.05rem !important; margin-bottom: 6px !important; }
+.emergency-company { color: #7A5500 !important; font-size: 1.05rem !important; margin-bottom: 6px !important; }
 .emergency-tagline { color: #fff !important; font-size: 1.05rem !important; font-style: italic; margin-bottom: 28px !important; }
 .emergency-cta {
   display: flex;

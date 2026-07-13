@@ -660,7 +660,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   font-family: inherit;
 }
 .faq-toggle {
-  color: #C9A84C; font-size: 1.4rem; font-weight: 300;
+  color: #7A5500; font-size: 1.4rem; font-weight: 300;
   flex-shrink: 0; line-height: 1;
 }
 .faq-answer {

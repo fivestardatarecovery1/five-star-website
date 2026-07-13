@@ -214,7 +214,9 @@ useHead({
               </NuxtLink>
               <NuxtLink to="/blog/usb-data-recovery-chip-off" class="sidebar-post-card">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/blog-usb-chip-off.jpg" alt="USB Chip Off Data Recovery" class="sidebar-post-img" loading="lazy" />
+                  <img src="/blog-usb-chip-off-160.webp" alt="USB Chip Off Data Recovery" class="sidebar-post-img" loading="lazy" 
+                   srcset="/blog-usb-chip-off-160.webp 160w, /blog-usb-chip-off-320.webp 320w"
+                   sizes="160px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">Case Study</div>

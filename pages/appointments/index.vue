@@ -10,7 +10,12 @@ useSeoMeta({
     <NavBar />
 
     <section class="appt-hero">
-      <div class="appt-bg" style="background-image: url('/start-recovery-hero.webp')"></div>
+      <img
+        src="/start-recovery-hero-800.webp"
+        srcset="/start-recovery-hero-480.webp 480w, /start-recovery-hero-800.webp 800w, /start-recovery-hero-1400.webp 1400w"
+        sizes="(max-width: 768px) 100vw, 100vw"
+        alt="" aria-hidden="true" fetchpriority="high" class="appt-bg"
+      />
       <div class="appt-overlay"></div>
 
       <div class="container appt-inner">
@@ -121,8 +126,12 @@ useSeoMeta({
 .appt-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center 30%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  pointer-events: none;
+  display: block;
   pointer-events: none;
 }
 .appt-overlay {

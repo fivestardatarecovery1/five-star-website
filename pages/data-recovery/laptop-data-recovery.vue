@@ -243,7 +243,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="s-body">Whether you lost personal data from a failed backup or deleted work files by mistake, we can help. We also recover data from systems affected by failed software updates, virus damage, or even factory resets. Whether you need a single presentation back or your entire photo library, we're ready to help.</p>
         </div>
         <div class="file-types-col">
-          <img src="/laptop-file-types.webp" alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img-large" width="1200" height="630" loading="lazy" />
+          <img src="/laptop-file-types-800.webp"
+               srcset="/laptop-file-types-640.webp 640w, /laptop-file-types-800.webp 800w, /laptop-file-types-1280.webp 1280w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
+               alt="File types we recover including SVG, AI, PDF, EPS, WMF, DXF, CDR" class="file-types-img-large" width="800" height="420" loading="lazy" />
         </div>
       </div>
     </section>
@@ -362,7 +365,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-row:last-child { border-bottom: none; }
 .faq-trigger { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: #fff; border: none; cursor: pointer; text-align: left; gap: 16px; font-family: inherit; }
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
-.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #C9A84C; flex-shrink: 0; }
+.faq-toggle { font-size: 1.4rem; font-weight: 300; color: #7A5500; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 
 /* Contact band — dark navy instead of full black */

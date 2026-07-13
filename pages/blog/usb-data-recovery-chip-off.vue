@@ -206,7 +206,9 @@ useHead({
               </NuxtLink>
               <NuxtLink to="/blog/how-to-repair-external-hard-drive-after-it-was-dropped" class="sidebar-post-card">
                 <div class="sidebar-post-img-wrap">
-                  <img src="/blog-dropped-hard-drive.jpg" alt="How to Repair External Hard Drive After Dropped" class="sidebar-post-img" />
+                  <img src="/blog-dropped-hard-drive-160.webp" alt="How to Repair External Hard Drive After Dropped" class="sidebar-post-img"  loading="lazy"
+                   srcset="/blog-dropped-hard-drive-160.webp 160w, /blog-dropped-hard-drive-320.webp 320w"
+                   sizes="160px"/>
                 </div>
                 <div class="sidebar-post-body">
                   <div class="sidebar-post-cat">Data Recovery Guide</div>

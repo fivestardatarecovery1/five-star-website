@@ -112,14 +112,17 @@ function scrollToForm() {
   const el = document.querySelector('.form-wrap')
   const nav = document.querySelector('nav')
   if (!el) return
+  // Batch all reads before rAF write to avoid forced reflow
   const navH = nav ? (nav as HTMLElement).offsetHeight : 86
   const viewportH = window.innerHeight
   const formH = (el as HTMLElement).offsetHeight
-  const available = viewportH - navH
-  const topInViewport = navH + Math.max(0, (available - formH) / 2)
   const formPageTop = el.getBoundingClientRect().top + window.scrollY
-  const scrollTo = formPageTop - topInViewport
-  window.scrollTo({ top: Math.max(0, scrollTo), behavior: 'smooth' })
+  requestAnimationFrame(() => {
+    const available = viewportH - navH
+    const topInViewport = navH + Math.max(0, (available - formH) / 2)
+    const scrollTo = formPageTop - topInViewport
+    window.scrollTo({ top: Math.max(0, scrollTo), behavior: 'smooth' })
+  })
 }
 
 function err(msg: string): false {

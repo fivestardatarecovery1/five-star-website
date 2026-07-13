@@ -36,7 +36,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
          Bottom: Label + two large CTA cards side by side
     ════════════════════════════════════════════════ -->
     <section class="v3-hero">
-      <div class="v3-hero-bg" style="background-image: url('/start-recovery-hero.webp')"></div>
+      <img
+        src="/start-recovery-hero-800.webp"
+        srcset="/start-recovery-hero-480.webp 480w, /start-recovery-hero-800.webp 800w, /start-recovery-hero-1400.webp 1400w"
+        sizes="(max-width: 768px) 100vw, 100vw"
+        alt="" aria-hidden="true" fetchpriority="high" class="v3-hero-bg"
+      />
       <div class="v3-hero-overlay"></div>
 
       <div class="container v3-hero-inner">
@@ -194,9 +199,12 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .v3-hero-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   pointer-events: none;
+  display: block;
 }
 .v3-hero-overlay {
   position: absolute;
