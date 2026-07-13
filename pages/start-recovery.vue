@@ -396,7 +396,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .v3-video-stats { display: flex; gap: 32px; }
 .v3-vstat { display: flex; flex-direction: column; gap: 3px; }
 .v3-vstat-num { font-size: 24px; font-weight: 800; color: #F5C842; font-family: 'Montserrat', sans-serif; }
-.v3-vstat-label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; }
+.v3-vstat-label { font-size: 11px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 1px; }
 .v3-video-embed { border-radius: 16px; overflow: hidden; aspect-ratio: 16/9; background: #000; }
 .v3-video-embed { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; background: #000; }
 .v3-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
@@ -425,7 +425,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .v3-bottom-cta { background: #F5C842; padding: 48px 0; }
 .v3-bottom-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
 .v3-bottom-title { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: #0a0c14; margin-bottom: 4px; }
-.v3-bottom-sub { font-size: 14px; color: rgba(10,12,20,0.6); }
+.v3-bottom-sub { font-size: 14px; color: #0a0c14; }
 .v3-bottom-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 .v3-btn-dark { background: #0a0c14; color: #F5C842; }
 .v3-btn-dark:hover { background: #1a2030; }
