@@ -298,6 +298,7 @@ const reviews = [
 ]
 
 const openFaq = ref<number | null>(null)
+const videoClicked = ref(false)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
 </script>
 
@@ -613,8 +614,31 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
           <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
-        <div class="page-video-embed">
-          <iframe src="https://www.youtube.com/embed/14ACFHJ24hg?start=60" title="Five Star Data Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+        <!-- YouTube facade: loads thumbnail only, full player loads on click (saves ~900 KiB) -->
+        <div class="page-video-embed" @click="videoClicked = true">
+          <template v-if="!videoClicked">
+            <img
+              src="https://i.ytimg.com/vi/14ACFHJ24hg/hqdefault.jpg"
+              alt="Five Star Data Recovery — Video"
+              class="video-thumb"
+              width="480" height="360"
+              loading="lazy"
+            />
+            <button class="play-btn" aria-label="Play video">
+              <svg viewBox="0 0 68 48" width="68" height="48">
+                <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/>
+                <path d="M45 24 27 14v20" fill="#fff"/>
+              </svg>
+            </button>
+          </template>
+          <iframe
+            v-else
+            src="https://www.youtube.com/embed/14ACFHJ24hg?start=60&autoplay=1"
+            title="Five Star Data Recovery"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
         </div>
       </div>
     </section>
@@ -792,8 +816,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .page-video-copy { display: flex; flex-direction: column; gap: 20px; }
 .page-video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.25; }
 .page-video-desc { font-size: 0.95rem; color: #9ba3b8; line-height: 1.8; }
-.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); }
+.page-video-embed { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 16/9; box-shadow: 0 12px 48px rgba(0,0,0,0.4); cursor: pointer; background: #000; }
 .page-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.video-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: none; border: none; cursor: pointer; padding: 0; opacity: 0.9; transition: opacity 0.2s, transform 0.2s; }
+.play-btn:hover { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
 
 /* ── Contact Band ── */
 .s-contact-band { background: #fff; padding: 64px 0; }
