@@ -189,15 +189,21 @@ function onViewportResize() {
   if (!panelEl.value || !import.meta.client) return
   const vv = (window as any).visualViewport
   if (!vv) return
+  // Read layout values first, then batch all writes in rAF to avoid forced reflow
   const isMobile = window.innerWidth <= 600
-  if (isMobile) {
-    panelEl.value.style.height = vv.height + 'px'
-    panelEl.value.style.top = vv.offsetTop + 'px'
-    scrollToBottom()
-  } else {
-    panelEl.value.style.height = ''
-    panelEl.value.style.top = ''
-  }
+  const height = vv.height
+  const top = vv.offsetTop
+  requestAnimationFrame(() => {
+    if (!panelEl.value) return
+    if (isMobile) {
+      panelEl.value.style.height = height + 'px'
+      panelEl.value.style.top = top + 'px'
+      scrollToBottom()
+    } else {
+      panelEl.value.style.height = ''
+      panelEl.value.style.top = ''
+    }
+  })
 }
 
 onMounted(() => {
@@ -293,8 +299,12 @@ function formatMsg(text: string): string {
 
 function autoResize(e: Event) {
   const el = e.target as HTMLTextAreaElement
-  el.style.height = 'auto'
-  el.style.height = Math.min(el.scrollHeight, 120) + 'px'
+  // Read scrollHeight before any write to avoid forced reflow
+  requestAnimationFrame(() => {
+    el.style.height = 'auto'
+    const next = Math.min(el.scrollHeight, 120)
+    el.style.height = next + 'px'
+  })
 }
 
 function scrollToBottom() {
