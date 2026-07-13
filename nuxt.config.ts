@@ -5,115 +5,7 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'vercel'
   },
-  routeRules: {
-    // Blog URL rename — all old slugs → final canonical slug (301 permanent)
-    '/blog/sony-venice-xcn-footage-recovery':          { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
-    '/blog/sony-venice-xcn-footage-recovery/':         { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
-    '/blog/sony-venice-x-ocn-file-repair-case-study':  { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
-    '/blog/sony-venice-x-ocn-file-repair-case-study/': { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
 
-    // Mail-in service redirect (keep)
-    '/data-recovery/mail-in-service':                       { redirect: { to: '/data-recovery/data-recovery-mail-in-service', statusCode: 301 } },
-    '/data-recovery/mail-in-service/':                      { redirect: { to: '/data-recovery/data-recovery-mail-in-service', statusCode: 301 } },
-
-    // Short testing URLs → canonical WordPress URLs (301 permanent redirects)
-    '/data-recovery/laptop-recovery':                       { redirect: { to: '/data-recovery/laptop-data-recovery', statusCode: 301 } },
-    '/data-recovery/laptop-recovery/':                      { redirect: { to: '/data-recovery/laptop-data-recovery', statusCode: 301 } },
-    '/data-recovery/clean-room':                            { redirect: { to: '/data-recovery/clean-room-data-recovery', statusCode: 301 } },
-    '/data-recovery/clean-room/':                           { redirect: { to: '/data-recovery/clean-room-data-recovery', statusCode: 301 } },
-    '/data-recovery/iphone-recovery':                       { redirect: { to: '/data-recovery/iphone-data-recovery', statusCode: 301 } },
-    '/data-recovery/iphone-recovery/':                      { redirect: { to: '/data-recovery/iphone-data-recovery', statusCode: 301 } },
-    '/data-recovery/samsung-recovery':                      { redirect: { to: '/data-recovery/samsung-data-recovery', statusCode: 301 } },
-    '/data-recovery/samsung-recovery/':                     { redirect: { to: '/data-recovery/samsung-data-recovery', statusCode: 301 } },
-    '/data-recovery/desktop-recovery':                      { redirect: { to: '/data-recovery/desktop-data-recovery', statusCode: 301 } },
-    '/data-recovery/desktop-recovery/':                     { redirect: { to: '/data-recovery/desktop-data-recovery', statusCode: 301 } },
-    '/data-recovery/western-digital-recovery':              { redirect: { to: '/data-recovery/western-digital-data-recovery', statusCode: 301 } },
-    '/data-recovery/western-digital-recovery/':             { redirect: { to: '/data-recovery/western-digital-data-recovery', statusCode: 301 } },
-    '/data-recovery/sd-card-recovery':                      { redirect: { to: '/data-recovery/sd-card-data-recovery', statusCode: 301 } },
-    '/data-recovery/sd-card-recovery/':                     { redirect: { to: '/data-recovery/sd-card-data-recovery', statusCode: 301 } },
-    '/data-recovery/mac-recovery':                          { redirect: { to: '/data-recovery/mac-data-recovery', statusCode: 301 } },
-    '/data-recovery/mac-recovery/':                         { redirect: { to: '/data-recovery/mac-data-recovery', statusCode: 301 } },
-    '/data-recovery/seagate-recovery':                      { redirect: { to: '/data-recovery/seagate-data-recovery', statusCode: 301 } },
-    '/data-recovery/seagate-recovery/':                     { redirect: { to: '/data-recovery/seagate-data-recovery', statusCode: 301 } },
-    '/data-recovery/lacie-recovery':                        { redirect: { to: '/data-recovery/lacie-data-recovery', statusCode: 301 } },
-    '/data-recovery/lacie-recovery/':                       { redirect: { to: '/data-recovery/lacie-data-recovery', statusCode: 301 } },
-    '/data-recovery/toshiba-recovery':                      { redirect: { to: '/data-recovery/toshiba-data-recovery', statusCode: 301 } },
-    '/data-recovery/toshiba-recovery/':                     { redirect: { to: '/data-recovery/toshiba-data-recovery', statusCode: 301 } },
-    '/data-recovery/hitachi-recovery':                      { redirect: { to: '/data-recovery/hitachi-data-recovery', statusCode: 301 } },
-    '/data-recovery/hitachi-recovery/':                     { redirect: { to: '/data-recovery/hitachi-data-recovery', statusCode: 301 } },
-    '/data-recovery/nas-recovery':                          { redirect: { to: '/data-recovery/nas-data-recovery', statusCode: 301 } },
-    '/data-recovery/nas-recovery/':                         { redirect: { to: '/data-recovery/nas-data-recovery', statusCode: 301 } },
-    '/data-recovery/raid-recovery':                         { redirect: { to: '/data-recovery/raid-data-recovery', statusCode: 301 } },
-    '/data-recovery/raid-recovery/':                        { redirect: { to: '/data-recovery/raid-data-recovery', statusCode: 301 } },
-    '/data-recovery/external-hard-drive':                   { redirect: { to: '/data-recovery/external-hard-drive-data-recovery', statusCode: 301 } },
-    '/data-recovery/external-hard-drive/':                  { redirect: { to: '/data-recovery/external-hard-drive-data-recovery', statusCode: 301 } },
-    '/data-recovery/cfast-recovery':                        { redirect: { to: '/data-recovery/cfast-card-data-recovery', statusCode: 301 } },
-    '/data-recovery/cfast-recovery/':                       { redirect: { to: '/data-recovery/cfast-card-data-recovery', statusCode: 301 } },
-    '/data-recovery/ssd-recovery':                          { redirect: { to: '/data-recovery/ssd-data-recovery', statusCode: 301 } },
-    '/data-recovery/ssd-recovery/':                         { redirect: { to: '/data-recovery/ssd-data-recovery', statusCode: 301 } },
-    '/data-recovery/usb-recovery':                          { redirect: { to: '/data-recovery/usb-data-recovery', statusCode: 301 } },
-    '/data-recovery/usb-recovery/':                         { redirect: { to: '/data-recovery/usb-data-recovery', statusCode: 301 } },
-    '/data-recovery/free-quote':                            { redirect: { to: '/data-recovery/free-data-recovery-quote', statusCode: 301 } },
-    '/data-recovery/free-quote/':                           { redirect: { to: '/data-recovery/free-data-recovery-quote', statusCode: 301 } },
-    '/data-recovery/express-drop-off':                      { redirect: { to: '/data-recovery/express-drop-off-form', statusCode: 301 } },
-    '/data-recovery/express-drop-off/':                     { redirect: { to: '/data-recovery/express-drop-off-form', statusCode: 301 } },
-
-    // Root short pages → canonical WordPress URLs
-    '/about':                                               { redirect: { to: '/about-us', statusCode: 301 } },
-    '/about/':                                              { redirect: { to: '/about-us', statusCode: 301 } },
-    '/contact':                                             { redirect: { to: '/contact-us', statusCode: 301 } },
-    '/contact/':                                            { redirect: { to: '/contact-us', statusCode: 301 } },
-    '/terms':                                               { redirect: { to: '/terms-and-conditions', statusCode: 301 } },
-    '/terms/':                                              { redirect: { to: '/terms-and-conditions', statusCode: 301 } },
-    '/pricing':                                             { redirect: { to: '/data-recovery-service-pricing', statusCode: 301 } },
-    '/pricing/':                                            { redirect: { to: '/data-recovery-service-pricing', statusCode: 301 } },
-    '/data-recovery-burbank':                               { redirect: { to: '/data-recovery-burbank-ca', statusCode: 301 } },
-    '/data-recovery-burbank/':                              { redirect: { to: '/data-recovery-burbank-ca', statusCode: 301 } },
-    '/data-recovery-pasadena':                              { redirect: { to: '/data-recovery-pasadena-ca', statusCode: 301 } },
-    '/data-recovery-pasadena/':                             { redirect: { to: '/data-recovery-pasadena-ca', statusCode: 301 } },
-    '/data-recovery-hollywood':                             { redirect: { to: '/data-recovery-hollywood-ca', statusCode: 301 } },
-    '/data-recovery-hollywood/':                            { redirect: { to: '/data-recovery-hollywood-ca', statusCode: 301 } },
-
-    // /services/ pages (invented — no WP equivalent) → canonical /data-recovery/ pages
-    '/services/hard-drive-recovery':                        { redirect: { to: '/data-recovery/hard-drive-recovery', statusCode: 301 } },
-    '/services/hard-drive-recovery/':                       { redirect: { to: '/data-recovery/hard-drive-recovery', statusCode: 301 } },
-    '/services/external-hdd-recovery':                      { redirect: { to: '/data-recovery/external-hard-drive-data-recovery', statusCode: 301 } },
-    '/services/external-hdd-recovery/':                     { redirect: { to: '/data-recovery/external-hard-drive-data-recovery', statusCode: 301 } },
-    '/services/laptop-recovery':                            { redirect: { to: '/data-recovery/laptop-data-recovery', statusCode: 301 } },
-    '/services/laptop-recovery/':                           { redirect: { to: '/data-recovery/laptop-data-recovery', statusCode: 301 } },
-    '/services/mac-recovery':                               { redirect: { to: '/data-recovery/mac-data-recovery', statusCode: 301 } },
-    '/services/mac-recovery/':                              { redirect: { to: '/data-recovery/mac-data-recovery', statusCode: 301 } },
-    '/services/mobile-recovery':                            { redirect: { to: '/data-recovery/iphone-data-recovery', statusCode: 301 } },
-    '/services/mobile-recovery/':                           { redirect: { to: '/data-recovery/iphone-data-recovery', statusCode: 301 } },
-    '/services/raid-recovery':                              { redirect: { to: '/data-recovery/raid-data-recovery', statusCode: 301 } },
-    '/services/raid-recovery/':                             { redirect: { to: '/data-recovery/raid-data-recovery', statusCode: 301 } },
-    '/services/ssd-recovery':                               { redirect: { to: '/data-recovery/ssd-data-recovery', statusCode: 301 } },
-    '/services/ssd-recovery/':                              { redirect: { to: '/data-recovery/ssd-data-recovery', statusCode: 301 } },
-    '/services/usb-recovery':                               { redirect: { to: '/data-recovery/usb-data-recovery', statusCode: 301 } },
-    '/services/usb-recovery/':                              { redirect: { to: '/data-recovery/usb-data-recovery', statusCode: 301 } },
-
-    // Old WP dropped-hard-drive-recovery slug
-    '/data-recovery/dropped-hard-drive-recovery':           { redirect: { to: '/data-recovery/dropped-hard-drive', statusCode: 301 } },
-    '/data-recovery/dropped-hard-drive-recovery/':          { redirect: { to: '/data-recovery/dropped-hard-drive', statusCode: 301 } },
-
-    // hard-drive-clicking was under data-recovery on WP
-    '/data-recovery/hard-drive-clicking':                   { redirect: { to: '/hard-drive-clicking', statusCode: 301 } },
-    '/data-recovery/hard-drive-clicking/':                  { redirect: { to: '/hard-drive-clicking', statusCode: 301 } },
-
-    // Express drop-off root redirect
-    '/express-drop-off':                                    { redirect: { to: '/data-recovery/express-drop-off-form', statusCode: 301 } },
-    '/express-drop-off/':                                   { redirect: { to: '/data-recovery/express-drop-off-form', statusCode: 301 } },
-    '/sitemap':                                             { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
-    '/sitemap/':                                            { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
-    '/sitemap.xml':                                         { redirect: { to: '/sitemap_index.xml', statusCode: 301 } },
-
-
-    // Blog posts (WordPress had them at root, new site has /blog/ prefix)
-    '/usb-data-recovery-chip-off':                          { redirect: { to: '/blog/usb-data-recovery-chip-off', statusCode: 301 } },
-    '/usb-data-recovery-chip-off/':                         { redirect: { to: '/blog/usb-data-recovery-chip-off', statusCode: 301 } },
-    '/how-to-repair-external-hard-drive-after-it-was-dropped':  { redirect: { to: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped', statusCode: 301 } },
-    '/how-to-repair-external-hard-drive-after-it-was-dropped/': { redirect: { to: '/blog/how-to-repair-external-hard-drive-after-it-was-dropped', statusCode: 301 } },
-  },
   runtimeConfig: {
     resendApiKey: process.env.RESEND_API_KEY || '',
     resendAudienceId: process.env.RESEND_AUDIENCE_ID || '',
@@ -151,17 +43,13 @@ export default defineNuxtConfig({
         { name: 'theme-color', content: '#0A0C14' }
       ],
       script: [
-        // GTM loaded lazily via plugins/gtm.client.ts after page is interactive
         // Keeps 87.8 KiB off the critical path (LCP/FCP improvement)
 
       ],
       link: [
-        // Sitemap discovery link — helps crawlers find sitemap without relying solely on robots.txt
         { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml', title: 'Sitemap' },
-        // Preconnect to third-party origins — eliminates DNS + TCP + TLS handshake from critical path
         { rel: 'preconnect', href: 'https://www.googletagmanager.com', crossorigin: '' },
         { rel: 'preconnect', href: 'https://www.google-analytics.com', crossorigin: '' },
-        // dns-prefetch as fallback for browsers that don't support preconnect
         { rel: 'dns-prefetch', href: 'https://www.googletagmanager.com' },
         { rel: 'dns-prefetch', href: 'https://www.google-analytics.com' },
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -169,18 +57,14 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32.png' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16.png' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon-180.png' },
-        // Preload LCP hero background image
         { rel: 'preload', as: 'image', href: '/data-recovery-clean-room-technician-glendale-ca.webp', fetchpriority: 'high' },
-        // Preload self-hosted fonts — breaks the HTML → entry.css → woff2 chain
         // Hash changes only if @fontsource-variable package is updated
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/_nuxt/inter-latin-wght-normal.Dx4kXJAl.woff2', crossorigin: '' },
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/_nuxt/montserrat-latin-wght-normal.l_AIctKy.woff2', crossorigin: '' },
-        // No external font requests — fonts are self-hosted via @fontsource (see css[])
       ]
     }
   },
   css: [
-    // 2 variable font files instead of 9 static-weight files — latin subset only
     '~/assets/css/fonts.css',
     '~/assets/css/main.css',
   ]
