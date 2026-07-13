@@ -8,7 +8,10 @@
  * 3 seconds — whichever comes first. This captures virtually all real user
  * sessions while removing GTM from the initial page load entirely.
  */
-export default defineNuxtPlugin(() => {
+// TEMP DISABLED — testing PageSpeed without GTM
+export default defineNuxtPlugin(() => { return
+// eslint-disable-next-line no-unreachable
+if (false) {
   if (typeof window === 'undefined') return
 
   // Initialize dataLayer so any pre-load pushes queue correctly
