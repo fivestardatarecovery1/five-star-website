@@ -614,7 +614,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     <section class="page-video-section">
       <div class="container page-video-inner">
         <div class="page-video-copy">
-          <h2 class="page-video-heading">See Why Thousands Trust Us With Their Important Data</h2>
+          <h2 class="page-video-heading">Watch Our Data Recovery Process in Action</h2>
           <p class="page-video-desc">Data loss is stressful — but working with us doesn't have to be. Watch how our team handles each recovery with care, professionalism, and precision. From diagnostics to delivery, we offer flat-rate pricing, honest communication, and proven results — all from our secure Glendale lab.</p>
         </div>
         <!-- YouTube facade: loads thumbnail only, full player loads on click (saves ~900 KiB) -->
