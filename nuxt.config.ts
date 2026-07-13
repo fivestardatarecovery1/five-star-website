@@ -158,6 +158,7 @@ export default defineNuxtConfig({
       link: [
         // AI agent discovery — WebMCP + ChatGPT plugin manifest
         { rel: 'mcp-manifest', href: '/.well-known/mcp.json' },
+        { rel: 'mcp', href: '/.well-known/mcp.json', type: 'application/json' },
         // Sitemap discovery link — helps crawlers find sitemap without relying solely on robots.txt
         { rel: 'sitemap', type: 'application/xml', href: '/sitemap_index.xml', title: 'Sitemap' },
         // Preconnect to third-party origins — eliminates DNS + TCP + TLS handshake from critical path
