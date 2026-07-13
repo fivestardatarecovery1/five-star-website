@@ -429,7 +429,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           </div>
         </div>
         <div class="asym-major">
-          <img src="/hard-drive-recovery-service-los-angeles.webp" alt="Data recovery lab Glendale CA" class="rounded-img" width="2560" height="1152" loading="lazy" />
+          <img src="/hard-drive-recovery-service-los-angeles-1080.webp"
+               srcset="/hard-drive-recovery-service-los-angeles-480.webp 480w, /hard-drive-recovery-service-los-angeles-640.webp 640w, /hard-drive-recovery-service-los-angeles-800.webp 800w, /hard-drive-recovery-service-los-angeles-1080.webp 1080w, /hard-drive-recovery-service-los-angeles-1400.webp 1400w"
+               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1080px"
+               alt="Data recovery lab Glendale CA" class="rounded-img" width="1080" height="486" loading="lazy" />
           <div class="img-stat-badge">
             <span class="stat-num">21,000+</span>
             <span class="stat-label">Successful Recoveries</span>
