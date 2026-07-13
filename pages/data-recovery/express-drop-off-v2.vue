@@ -275,17 +275,20 @@ function scrollToForm() {
     return
   }
   // Steps 2+: vertically center the form card in the viewport
+  // Batch all layout reads before any writes to avoid forced reflow
   const el = document.querySelector('.form-wrap')
   const nav = document.querySelector('nav')
   if (!el) return
-  const navH = nav ? nav.offsetHeight : 86
+  const navH = nav ? (nav as HTMLElement).offsetHeight : 86
   const viewportH = window.innerHeight
-  const formH = el.offsetHeight
-  const available = viewportH - navH
-  const topInViewport = navH + Math.max(0, (available - formH) / 2)
+  const formH = (el as HTMLElement).offsetHeight
   const formPageTop = el.getBoundingClientRect().top + window.scrollY
-  const scrollTo = formPageTop - topInViewport
-  window.scrollTo({ top: Math.max(0, scrollTo), behavior: 'smooth' })
+  requestAnimationFrame(() => {
+    const available = viewportH - navH
+    const topInViewport = navH + Math.max(0, (available - formH) / 2)
+    const scrollTo = formPageTop - topInViewport
+    window.scrollTo({ top: Math.max(0, scrollTo), behavior: 'smooth' })
+  })
 }
 
 function validateStep(): boolean {
