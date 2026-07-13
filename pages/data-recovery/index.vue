@@ -395,7 +395,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container asym-layout">
         <div class="asym-minor">
           <div class="section-label">Why Choose Us</div>
-          <h2 class="s-heading">Trusted by Thousands Across the Greater Los Angeles Area</h2>
+          <h2 class="s-heading">Trusted by Thousands of Customers Nationwide</h2>
           <p class="s-body">At Five Star Data Recovery, we offer flat-rate pricing for all of our data recovery services. No need to wonder how much it's going to cost. Simply visit our pricing page for details — never any bait-and-switch gimmicks.</p>
           <div class="why-list">
             <div class="why-item">
