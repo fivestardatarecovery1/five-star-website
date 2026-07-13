@@ -81,7 +81,7 @@ useSeoMeta({
     <!-- Tool -->
     <section class="iq-tool-section">
       <div class="container iq-tool-container">
-        <InstantQuoteTool :light="true" />
+        <LazyInstantQuoteTool :light="true" />
         <p class="iq-disclaimer">
           * Estimates are based on typical recovery scenarios and are not a binding quote. Final pricing is determined after a free diagnostic evaluation at our Glendale, CA lab. Prices may vary based on device condition, data volume, and recovery complexity.
         </p>

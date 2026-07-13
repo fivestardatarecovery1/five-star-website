@@ -115,9 +115,10 @@ function handleSubmit() {
         <div class="hero-form-card">
           <p class="form-title">Get an Instant Quote</p>
 
-          <!-- ClientOnly: prevents heavy form from blocking SSR hydration + LCP paint -->
+          <!-- ClientOnly + Lazy: splits InstantQuoteTool into its own async chunk,
+               only downloaded after LCP paint completes -->
           <ClientOnly>
-            <InstantQuoteTool :light="true" :compact="true" />
+            <LazyInstantQuoteTool :light="true" :compact="true" />
             <template #fallback>
               <div class="iqt-skeleton" />
             </template>
