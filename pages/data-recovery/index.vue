@@ -763,7 +763,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .guarantee-strip { background: #1a1a2e; border-radius: 10px; padding: 18px 28px; display: flex; align-items: center; gap: 16px; }
 .guarantee-icon { font-size: 1.5rem; flex-shrink: 0; }
 .guarantee-strip p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.5; }
-.guarantee-strip strong { color: #7A5500; }
+.guarantee-strip strong { color: #C9A84C; }
 
 /* ── Banner ── */
 .fullwidth-banner { position: relative; background: #0d111f; padding: 72px 0; overflow: hidden; }

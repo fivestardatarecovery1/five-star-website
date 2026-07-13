@@ -174,9 +174,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
                srcset="/five-star-data-recovery-lab-technician-glendale-ca-640.webp 640w, /five-star-data-recovery-lab-technician-glendale-ca-800.webp 800w, /five-star-data-recovery-lab-technician-glendale-ca-1280.webp 1280w"
                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
                alt="Five Star Data Recovery team" style="width:100%;border-radius:14px;object-fit:cover;max-height:440px;display:block;" width="800" height="450" loading="lazy" />
-          <div style="position:absolute;bottom:-20px;left:24px;background:#C9A84C;color:#fff;border-radius:10px;padding:14px 22px;box-shadow:0 8px 24px rgba(201,168,76,0.4);">
-            <span style="display:block;font-size:1.6rem;font-weight:900;line-height:1;">21,000+</span>
-            <span style="display:block;font-size:0.75rem;font-weight:600;opacity:0.85;margin-top:3px;">Successful Recoveries</span>
+          <div style="position:absolute;bottom:-20px;left:24px;background:#C9A84C;color:#111111;border-radius:10px;padding:14px 22px;box-shadow:0 8px 24px rgba(201,168,76,0.4);">
+            <span style="display:block;font-size:1.6rem;font-weight:900;line-height:1;color:#111111;">21,000+</span>
+            <span style="display:block;font-size:0.75rem;font-weight:700;color:#333333;margin-top:3px;">Successful Recoveries</span>
           </div>
         </div>
       </div>

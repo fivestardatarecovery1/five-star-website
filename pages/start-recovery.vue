@@ -363,7 +363,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   font-size: 30px; font-weight: 800; color: #fff;
   text-align: center; margin-bottom: 10px;
 }
-.v3-steps-sub { text-align: center; color: rgba(255,255,255,0.45); font-size: 15px; margin-bottom: 56px; }
+.v3-steps-sub { text-align: center; color: rgba(255,255,255,0.65); font-size: 15px; margin-bottom: 56px; }
 .v3-steps-row {
   display: grid; grid-template-columns: repeat(5, 1fr);
   gap: 0; position: relative;
@@ -377,7 +377,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
   margin: 0 auto 16px;
 }
 .v3-step-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 10px; line-height: 1.3; }
-.v3-step-text { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
+.v3-step-text { font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.6; }
 .v3-step-arrow {
   position: absolute; top: 13px; right: -10px;
   font-size: 26px; color: #F5C842; font-weight: 300; line-height: 1;

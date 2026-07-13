@@ -438,7 +438,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .contact-bullets { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-direction: column; gap: 8px; }
 .contact-bullets li { font-size: 0.93rem; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 10px; }
 .contact-bullets li::before { content: '✓'; color: #C9A84C; font-weight: 700; }
-.contact-link { color: #7A5500; text-decoration: underline; }
+.contact-link { color: #C9A84C; text-decoration: underline; }
 .btn-start-recovery { display: inline-block; background: #C9A84C; color: #1a1a1a; font-weight: 800; font-size: 1rem; padding: 16px 36px; border-radius: 6px; text-decoration: none; transition: background 0.2s; }
 .btn-start-recovery:hover { background: #b8923e; }
 
