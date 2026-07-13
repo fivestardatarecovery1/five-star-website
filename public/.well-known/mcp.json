@@ -204,5 +204,11 @@
     }
   },
   "tools_registered": true,
-  "mcp_compliant": true
+  "mcp_compliant": true,
+  "server": {
+    "url": "https://www.fivestardatarecovery.com/api/mcp",
+    "transport": "http",
+    "protocol": "mcp",
+    "protocol_version": "2024-11-05"
+  }
 }
