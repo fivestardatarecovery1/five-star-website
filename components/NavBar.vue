@@ -80,7 +80,8 @@ watch(() => route.path, closeAll)
         <NuxtLink to="/" class="nav-logo" @click="closeAll">
           <img
             src="/logo-212.webp"
-            srcset="/logo-212.webp 1x, /logo-424.webp 2x"
+            srcset="/logo-212.webp 212w, /logo.webp 335w"
+            sizes="212px"
             alt="Five Star Data Recovery"
             width="212"
             height="62"
