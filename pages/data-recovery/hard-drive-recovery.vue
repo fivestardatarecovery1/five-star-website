@@ -60,8 +60,8 @@ useHead({
 useSeoMeta({
   title: 'Hard Drive Data Recovery - Five Star Data Recovery',
   ogTitle: 'Hard Drive Data Recovery - Five Star Data Recovery',
-  description: 'Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.',
-  ogDescription: 'Lost Data? We can help with professional data recovery services. We specialize in HDD Data Recovery and Internal Hard Drive Data Recovery.',
+  description: 'Lost your data? Our engineers recover files from failed hard drives nationwide. Flat-rate pricing, no hidden fees, and free shipping to our lab.',
+  ogDescription: 'Lost your data? Our engineers recover files from failed hard drives nationwide. Flat-rate pricing, no hidden fees, and free shipping to our lab.',
   ogImage: 'https://www.fivestardatarecovery.com/hard-drive-recovery-hero.jpg',
 })
 
