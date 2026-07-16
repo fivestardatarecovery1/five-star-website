@@ -36,25 +36,18 @@ const bgImageSrcset = computed(() => {
   return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1400.webp 1400w`
 })
 
-// Preload the correct LCP image for this specific page
-// All sized variants are .webp regardless of the base image extension
-// Mobile gets the 480w variant, desktop gets 800w
+// Preload the correct LCP image for this specific page.
+// Use imagesrcset + imagesizes so the browser picks the right variant
+// matching exactly what the <img srcset> element picks — no wasted preloads.
 const bgBase = computed(() => props.bgImage.replace(/\.[^.]+$/, ''))
 useHead({
   link: [
     {
       rel: 'preload',
       as: 'image',
-      href: computed(() => `${bgBase.value}-480.webp`),
       fetchpriority: 'high',
-      media: '(max-width: 479px)',
-    },
-    {
-      rel: 'preload',
-      as: 'image',
-      href: computed(() => `${bgBase.value}-800.webp`),
-      fetchpriority: 'high',
-      media: '(min-width: 480px)',
+      imagesrcset: computed(() => `${bgBase.value}-480.webp 480w, ${bgBase.value}-800.webp 800w, ${bgBase.value}-1400.webp 1400w`),
+      imagesizes: '(max-width: 768px) 100vw, 100vw',
     },
   ]
 })
