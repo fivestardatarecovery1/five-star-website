@@ -288,7 +288,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 8 — Why Choose -->
     <section class="s-grey">
@@ -313,7 +313,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Samsung Galaxy phones store everything that matters — photos, messages, app data, contacts. When a motherboard failure or water damage locks you out, our component-level engineers repair just enough to safely extract your data."
       bullet1="$950 flat rate — board repair + data extraction"
       bullet2="Fully refundable $200 deposit if data unrecoverable"

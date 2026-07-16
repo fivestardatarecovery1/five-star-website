@@ -236,7 +236,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- <NuxtLink to="/reviews">reviews</NuxtLink> -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- FAQ -->
     <section class="s-grey">

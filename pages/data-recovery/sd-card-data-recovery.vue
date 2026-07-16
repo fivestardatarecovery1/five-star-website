@@ -292,7 +292,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 7 — What We Can Recover -->
     <section class="s-white">
@@ -312,7 +312,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From a corrupted wedding shoot to drone footage that won&#39;t mount — we&#39;ve recovered data from every type of SD card failure. Our engineers go sector-by-sector to find files that generic tools miss, with flat-rate pricing and zero surprises."
       bullet1="SD, microSD, SDHC, SDXC, CFast, CFexpress"
       bullet2="Cameras, drones, GoPros, phones, dash cams"

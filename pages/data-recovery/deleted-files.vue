@@ -321,7 +321,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 9 — How to Improve Chances -->
     <section class="s-white">
@@ -338,7 +338,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="When deleted files seem gone forever, our forensic engineers dig deeper. We perform sector-level scans to locate and reconstruct files before they're permanently overwritten."
       bullet1="Flat $200 rate — paid upfront, no surprises"
       bullet2="File list review before final delivery"

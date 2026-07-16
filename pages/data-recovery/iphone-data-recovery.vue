@@ -282,7 +282,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 6 — Why Clients Choose -->
     <section class="s-grey">
@@ -299,7 +299,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="When Apple says it&#39;s gone and no one else can help, our engineers work at the logic board level to revive just enough of your iPhone to extract every photo, message, and file you need."
       bullet1="All iPhone models — 6 through 15 Pro Max"
       bullet2="Water damage, dead phones, boot loops, burned boards"

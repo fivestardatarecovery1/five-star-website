@@ -313,7 +313,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 10 — What to Expect -->
     <section class="s-grey">
@@ -326,7 +326,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Whether your drive shows as RAW, unallocated, or completely invisible — our engineers diagnose the exact cause and recover your data without risky repair tools that can make things worse."
       bullet1="Free diagnostic — logical and physical assessment"
       bullet2="Safe cloning before any recovery attempt"

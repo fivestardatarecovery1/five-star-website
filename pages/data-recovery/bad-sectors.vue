@@ -354,10 +354,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Bad sectors don't have to mean permanent data loss. Our PC-3000 imaging hardware bypasses unstable sectors and clones your drive safely — so we work from a copy, never the original."
       bullet1="Sector-by-sector imaging — your original drive is never touched"
       bullet2="Logical and physical bad sector recovery"

@@ -371,7 +371,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 13 — Why Choose -->
     <section class="s-white">
@@ -389,7 +389,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From a 2-drive RAID 1 at a small office to a 72TB enterprise RAID 60 array — we&#39;ve recovered them all. Our process always starts with 1-to-1 cloning before any reconstruction begins, so your originals are never touched."
       bullet1="All RAID levels — 0, 1, 5, 6, 10, 50, 60 + custom"
       bullet2="Synology, QNAP, Drobo, Dell PERC, LSI, Adaptec"

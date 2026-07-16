@@ -331,7 +331,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 10 — Your Data Stays Secure -->
     <section class="s-grey">
@@ -350,7 +350,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From broken connectors to failed controller chips, we&#39;ve recovered data from every type of USB failure. Our chip-off and monolith recovery techniques reach data that standard tools can&#39;t touch \u2014 with flat-rate pricing and no surprises."
       bullet1="Logical, chip-off, and monolith recovery available"
       bullet2="BitLocker and encrypted USB drives supported"

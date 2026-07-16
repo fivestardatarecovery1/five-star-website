@@ -438,7 +438,7 @@ useSeoMeta({
       </div>
     </section>
 
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <FooterBar />
   </div>

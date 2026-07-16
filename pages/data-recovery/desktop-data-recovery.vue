@@ -333,7 +333,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 10 — Nationwide -->
     <section class="s-grey">
@@ -344,7 +344,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Whether your Windows PC crashed after a power surge or your iMac won&#39;t boot, our engineers recover data from every type of desktop computer — HDD, SSD, RAID, internal or external — with flat-rate pricing and no surprises."
       bullet1="Windows PCs, iMac, Mac Pro, Linux workstations"
       bullet2="HDD, SSD, RAID, internal and external drives"

@@ -322,10 +322,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Physical impact is one of the most common causes of drive failure — and one of our specialties. Our cleanroom team handles head crashes, actuator arm damage, and platter scratches every day."
       bullet1="Free diagnostic — full internal assessment"
       bullet2="Cleanroom head swap and imaging"

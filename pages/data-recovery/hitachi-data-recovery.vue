@@ -317,10 +317,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From clicking Deskstars to failed enterprise Ultrastar arrays, we've recovered data from every generation of Hitachi drive. Our certified engineers use sector-by-sector cloning and cleanroom procedures to give you the best chance of a full recovery."
       bullet1="Internal, external, enterprise, and RAID arrays"
       bullet2="BitLocker and encrypted drive recovery"

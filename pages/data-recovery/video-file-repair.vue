@@ -491,7 +491,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 6 — Secure & Confidential -->
     <section class="s-grey">
@@ -509,7 +509,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From wedding footage on a corrupted SD card to 72TB RED RAW RAID arrays — we've repaired it all. Our engineers work at the binary level to reconstruct headers, frame indexes, and codec metadata so your footage plays back exactly as it was captured."
       bullet1="MP4, MOV, MXF, R3D, BRAW, ProRes, ARRI, RED, and more"
       bullet2="Sector-level clone first — your originals are never touched"

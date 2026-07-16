@@ -285,7 +285,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 5 — Nationwide -->
     <section class="s-white">
@@ -296,7 +296,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From a 2-bay home Synology to a 24-drive enterprise QNAP RAID — our engineers clone every drive first, then virtually reconstruct the NAS array without ever touching your originals. We recover data that other labs give up on."
       bullet1="Synology, QNAP, Drobo, Buffalo, WD My Cloud, and more"
       bullet2="Physical damage, bad sectors, failed rebuilds, firmware failures"

@@ -323,7 +323,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 10 — <NuxtLink to="/data-recovery/video-file-repair">video file</NuxtLink> Repair -->
     <section class="s-grey">
@@ -343,7 +343,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Cinema cameras run on CFast cards\u2014and when they fail, your entire production is at risk. Our engineers have recovered ProRes, R3D, BRAW, and MXF footage from every major brand of CFast card, and can repair corrupted files that DIY tools make worse."
       bullet1="ARRI, RED, Blackmagic, Canon cinema camera media"
       bullet2="Video file repair included \u2014 ProRes, R3D, BRAW, MXF"

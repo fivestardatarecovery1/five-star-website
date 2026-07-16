@@ -354,10 +354,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From WD My Passport to enterprise-grade WD drives, we've recovered data from every Western Digital model. Blinking lights, clicking sounds, RAW partitions — our certified engineers diagnose the exact issue and recover your files with flat-rate pricing and no surprises."
       bullet1="All WD models — My Passport, Elements, My Book, Black, Blue"
       bullet2="Cleanroom head swap and PCB repair available"

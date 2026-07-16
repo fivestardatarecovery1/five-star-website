@@ -286,7 +286,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 7 — Why Choose -->
     <section class="s-white">
@@ -305,7 +305,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="SSDs fail differently than hard drives — TRIM, controller failures, and NAND chip damage require specialized tools that most shops don&#39;t have. Our engineers recover data from every SSD make, model, and failure type, including MacBook integrated storage."
       bullet1="All SSD types — SATA, NVMe, M.2, PCIe, MacBook integrated"
       bullet2="Firmware repair, chip-off, and NAND-level access"

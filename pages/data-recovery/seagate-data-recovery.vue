@@ -265,7 +265,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 6 — Fast & Secure -->
     <section class="s-grey">
@@ -286,7 +286,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="From Barracuda to IronWolf RAID arrays, we recover data from every Seagate model. Clicking drives, RAW partitions, drives not showing up — our certified engineers handle it all with flat-rate pricing and no hidden fees."
       bullet1="Seagate Barracuda, IronWolf, Expansion, Backup Plus"
       bullet2="Cleanroom recovery for clicking & mechanical failures"

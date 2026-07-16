@@ -253,10 +253,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="Our ISO-certified Class 100 cleanroom is the safest environment on earth for your hard drive. Head swaps, platter removal, spindle repairs — we perform the most complex recoveries in-house with flat-rate pricing and zero hidden fees."
       bullet1="ISO-certified Class 100 cleanroom — fewer than 100 particles/ft³"
       bullet2="Head swaps, PCB repair, platter-level access"

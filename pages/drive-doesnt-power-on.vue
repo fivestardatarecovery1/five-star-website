@@ -321,10 +321,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="A drive with no power doesn't mean your data is gone. PCB failures, power surge damage, and internal shorts are all recoverable with the right tools — and we have them."
       bullet1="Free diagnostic — PCB, firmware, and internal inspection"
       bullet2="Donor parts sourced at no extra charge"

@@ -329,7 +329,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 8 — File Systems -->
     <section class="s-white">
@@ -417,7 +417,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="LaCie drives are built for creative professionals — and we know exactly how to recover them. From Rugged SSDs to 6big RAID arrays and Thunderbolt-encrypted models, we handle every LaCie configuration."
       bullet1="Specialists in LaCie Rugged, d2, and RAID systems"
       bullet2="Encrypted and Thunderbolt drive recovery"

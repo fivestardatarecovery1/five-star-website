@@ -305,7 +305,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <ReviewsSection :reviews="reviews" />
+    <LazyReviewsSection :reviews="reviews" />
 
     <!-- SECTION 8 — Why Choose Five Star -->
     <section class="s-grey">
@@ -323,7 +323,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
-    <QuoteFormSection
+    <LazyQuoteFormSection
       description="A clicking hard drive is a medical emergency for your data. Our ISO 5 cleanroom engineers use donor parts and precision head-swap procedures to stabilize and image your drive before the platters sustain further damage."
       bullet1="ISO 5 Certified Cleanroom"
       bullet2="$950 flat rate — all parts included"
