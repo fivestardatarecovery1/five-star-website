@@ -129,7 +129,7 @@ export default defineNuxtConfig({
   delayHydration: {
     // Defer hydration until user interaction or idle — frees main thread for LCP paint
     mode: 'mount',
-    replayClick: true,
+    replayClick: false, // true causes e.target.click() after hydration = forced reflow
   },
   content: {
     highlight: {
