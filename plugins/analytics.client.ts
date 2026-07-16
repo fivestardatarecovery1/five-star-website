@@ -10,7 +10,9 @@
  * sequence    → page number within session (1, 2, 3...)
  */
 
-const MC_ENDPOINT = (import.meta.env.VITE_MC_ANALYTICS_URL as string) || ''
+// Analytics events are routed through our own server-side proxy (/api/track-analytics)
+// to avoid CORS issues with direct browser → ngrok calls.
+const MC_ENDPOINT = ''
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 
@@ -78,9 +80,9 @@ function throttle<T extends (...args: any[]) => void>(fn: T, ms: number): T {
 }
 
 async function sendEvent(payload: Record<string, unknown>) {
-  if (!MC_ENDPOINT) return
   try {
-    await fetch(`${MC_ENDPOINT}/api/fs-analytics/event`, {
+    // Route through server-side proxy to avoid CORS — browser never touches ngrok directly
+    await fetch('/api/track-analytics', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
