@@ -1,4 +1,10 @@
 export default defineNuxtConfig({
+  experimental: {
+    // Inline component CSS directly into SSR HTML — eliminates async CSS loading chain
+    // that was causing 1,900ms+ LCP element render delays on mobile.
+    // HeroSection, NavBar, and all .vue component styles are inlined into <head>.
+    inlineStyles: true,
+  },
   devServer: {
     port: 3002  // mc-backend owns 3001 — never conflict
   },
