@@ -73,10 +73,13 @@ function handleSubmit() {
 </script>
 
 <template>
-  <section class="hero">
+  <section class="hero" style="position:relative;overflow:hidden;">
     <!-- LCP background image — real <img> so browser paints without waiting for JS hydration -->
+    <!-- Critical inline styles applied directly so LCP image is positioned correctly -->
+    <!-- BEFORE async CSS loads — eliminates the element render delay caused by CSS dependency -->
     <img
       class="hero-bg-img"
+      style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;"
       :src="bgImage"
       :srcset="bgImageSrcset"
       sizes="(max-width: 768px) 100vw, 100vw"
