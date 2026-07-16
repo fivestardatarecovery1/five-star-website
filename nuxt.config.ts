@@ -124,7 +124,13 @@ export default defineNuxtConfig({
     anthropicApiKey: process.env.ANTHROPIC_API_KEY || '',
   },
 
-  modules: ['@nuxt/content', '~/modules/generate-sitemap-routes'],
+  modules: ['@nuxt/content', '~/modules/generate-sitemap-routes', 'nuxt-delay-hydration'],
+
+  delayHydration: {
+    // Defer hydration until user interaction or idle — frees main thread for LCP paint
+    mode: 'mount',
+    replayClick: true,
+  },
   content: {
     highlight: {
       theme: 'github-dark'
