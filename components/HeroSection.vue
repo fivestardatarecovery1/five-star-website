@@ -36,6 +36,27 @@ const bgImageSrcset = computed(() => {
   return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1400.webp 1400w`
 })
 
+// Preload the correct LCP image for this specific page
+// Mobile gets the 480w variant, desktop gets 800w
+useHead({
+  link: [
+    {
+      rel: 'preload',
+      as: 'image',
+      href: props.bgImage.replace(/\.([^.]+)$/, '-480.$1'),
+      fetchpriority: 'high',
+      media: '(max-width: 479px)',
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: props.bgImage.replace(/\.([^.]+)$/, '-800.$1'),
+      fetchpriority: 'high',
+      media: '(min-width: 480px)',
+    },
+  ]
+})
+
 const overlayStyle = computed(() => ({
   background: `linear-gradient(to right, rgba(20,22,30,${props.overlayOpacity}) 0%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.15, 0)}) 50%, rgba(20,22,30,${Math.max(props.overlayOpacity - 0.35, 0)}) 100%)`
 }))

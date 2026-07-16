@@ -179,7 +179,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16.png' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon-180.png' },
         // Preload LCP hero background image
-        { rel: 'preload', as: 'image', href: '/data-recovery-clean-room-technician-glendale-ca.webp', fetchpriority: 'high' },
+        // Hero image preloads are handled per-page in HeroSection.vue via useHead()
         // Preload self-hosted fonts — breaks the HTML → entry.css → woff2 chain
         // Hash changes only if @fontsource-variable package is updated
         { rel: 'preload', as: 'font', type: 'font/woff2', href: '/_nuxt/inter-latin-wght-normal.Dx4kXJAl.woff2', crossorigin: '' },
