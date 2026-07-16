@@ -113,7 +113,7 @@ const socialPosts = [
 
 <template>
   <div class="page-content">
-    <NavBar />
+
     <HeroSection
       title="Reviews"
       subtitle="Hear What Our Customers Are Saying"
@@ -163,7 +163,7 @@ const socialPosts = [
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

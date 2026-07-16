@@ -308,7 +308,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <!-- COMPACT FORM HERO -->
     <!-- HERO — same design as Express Drop-Off -->
@@ -679,7 +679,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

@@ -193,7 +193,7 @@ const reviews = [
 
 <template>
   <div class="page-content">
-    <NavBar />
+
     <HeroSection
       title="Frequently Asked Questions"
       subtitle="We Have Answers."
@@ -270,7 +270,7 @@ const reviews = [
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

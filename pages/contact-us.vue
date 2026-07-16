@@ -94,7 +94,7 @@ const contactVideoActive = ref(false)
 
 <template>
   <div class="page-content">
-    <NavBar />
+
     <HeroSection
       title="We're Here to Help"
       bgImage="/contact-hero-bg.jpg"
@@ -224,7 +224,7 @@ const contactVideoActive = ref(false)
       />
     </div>
 
-    <FooterBar />
+
   </div>
 </template>
 

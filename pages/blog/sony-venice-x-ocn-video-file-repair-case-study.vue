@@ -40,7 +40,7 @@ useHead({
 
 <template>
   <div>
-    <NavBar />
+
 
     <!-- HERO -->
     <section class="blog-hero">
@@ -401,7 +401,7 @@ useHead({
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

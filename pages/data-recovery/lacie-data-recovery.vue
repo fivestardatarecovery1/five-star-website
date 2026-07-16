@@ -142,7 +142,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <HeroSection
       title="Lacie Data Recovery Services You Can Trust"
@@ -459,7 +459,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

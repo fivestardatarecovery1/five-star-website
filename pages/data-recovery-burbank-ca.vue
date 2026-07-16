@@ -133,7 +133,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <HeroSection
       title="Professional Data Recovery Services in Burbank, CA"
@@ -294,7 +294,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

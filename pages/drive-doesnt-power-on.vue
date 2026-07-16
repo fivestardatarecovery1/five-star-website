@@ -137,7 +137,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <HeroSection
       title="Drive Doesn't Power On"
@@ -366,7 +366,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

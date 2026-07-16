@@ -7,7 +7,7 @@ useSeoMeta({
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <section class="appt-hero">
       <img
@@ -110,7 +110,7 @@ useSeoMeta({
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

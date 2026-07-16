@@ -214,7 +214,7 @@ onMounted(() => {
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <!-- HERO -->
     <section class="edo-hero">
@@ -512,7 +512,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

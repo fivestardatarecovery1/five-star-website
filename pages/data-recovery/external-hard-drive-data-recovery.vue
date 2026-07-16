@@ -185,7 +185,7 @@ useSeoMeta({
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <HeroSection
       title="External Hard Drive Data Recovery Services"
@@ -440,7 +440,7 @@ useSeoMeta({
 
     <LazyReviewsSection :reviews="reviews" />
 
-    <FooterBar />
+
   </div>
 </template>
 

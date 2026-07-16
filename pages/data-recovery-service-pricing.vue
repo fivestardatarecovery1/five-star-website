@@ -279,7 +279,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <!-- 1. HERO -->
     <HeroSection
@@ -439,7 +439,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

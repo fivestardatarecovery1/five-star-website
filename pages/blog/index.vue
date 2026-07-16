@@ -77,7 +77,7 @@ const filteredPosts = computed(() =>
 
 <template>
   <div class="blog-page">
-    <NavBar />
+
 
     <!-- HERO -->
     <section class="blog-hero">
@@ -154,7 +154,7 @@ const filteredPosts = computed(() =>
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

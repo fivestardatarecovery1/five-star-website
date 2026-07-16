@@ -349,7 +349,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <!-- PAGE HEADER STRIP — minimal, just branding -->
     <!-- HERO — headline + badges + form, all inside the dark section -->
@@ -785,7 +785,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

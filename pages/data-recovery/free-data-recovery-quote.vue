@@ -12,7 +12,7 @@ const quoteVideoActive = ref(false)
 
 <template>
   <div class="page-content">
-    <NavBar />
+
     <HeroSection
       title="Get a Free Data Recovery Quote"
       subtitle="No Obligation. No Hidden Fees."
@@ -157,7 +157,7 @@ const quoteVideoActive = ref(false)
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

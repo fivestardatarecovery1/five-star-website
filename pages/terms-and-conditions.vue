@@ -58,7 +58,7 @@ useHead({
 
 <template>
   <div class="page-content">
-    <NavBar />
+
     <HeroSection
       title="Terms and Conditions"
       subtitle="Clear, Transparent, and Fair."
@@ -151,7 +151,7 @@ useHead({
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

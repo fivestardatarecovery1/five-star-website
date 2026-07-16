@@ -252,7 +252,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
 
 <template>
   <div>
-    <NavBar />
+
 
     <!-- Hero -->
     <HeroSection
@@ -507,7 +507,7 @@ const partners = ['Western Digital', 'Seagate', 'Samsung', 'Toshiba', 'HGST', 'L
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

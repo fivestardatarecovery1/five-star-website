@@ -56,7 +56,7 @@ useHead({
 
 <template>
   <div class="page-content">
-    <NavBar />
+
     <HeroSection
       title="Privacy Policy"
       subtitle="Your Privacy Matters to Us."
@@ -224,7 +224,7 @@ useHead({
       </div>
     </section>
 
-    <FooterBar />
+
   </div>
 </template>
 

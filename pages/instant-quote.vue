@@ -61,7 +61,7 @@ useSeoMeta({
 
 <template>
   <div class="page-content">
-    <NavBar />
+
 
     <!-- Hero -->
     <section class="iq-hero">
