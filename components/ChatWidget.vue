@@ -306,19 +306,25 @@ function formatMsg(text: string): string {
 
 function autoResize(e: Event) {
   const el = e.target as HTMLTextAreaElement
-  // Read scrollHeight before any write to avoid forced reflow
+  // Two-frame approach: reset height in frame 1, read + set in frame 2
+  // This avoids forced reflow (write then read in same frame)
   requestAnimationFrame(() => {
     el.style.height = 'auto'
-    const next = Math.min(el.scrollHeight, 120)
-    el.style.height = next + 'px'
+    requestAnimationFrame(() => {
+      const next = Math.min(el.scrollHeight, 120)
+      el.style.height = next + 'px'
+    })
   })
 }
 
 function scrollToBottom() {
   nextTick(() => {
-    if (messagesEl.value) {
-      messagesEl.value.scrollTop = messagesEl.value.scrollHeight
-    }
+    if (!messagesEl.value) return
+    // Read scrollHeight, then write scrollTop in next rAF to avoid forced reflow
+    const el = messagesEl.value
+    requestAnimationFrame(() => {
+      el.scrollTop = el.scrollHeight
+    })
   })
 }
 
