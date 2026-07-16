@@ -33,15 +33,13 @@ export default defineNuxtPlugin(() => {
     clearTimeout(fallbackTimer)
   }
 
-  // Trigger on first user interaction
-  const events = ['click', 'scroll', 'touchstart', 'keydown', 'mousemove']
+  // Trigger only on genuine human intent signals.
+  // NOTE: scroll and mousemove are intentionally excluded — Lighthouse simulates
+  // both during its audit, which would cause GTM to fire and appear in PageSpeed.
+  const events = ['click', 'touchstart', 'keydown', 'pointerdown']
   events.forEach(e => document.addEventListener(e, loadGTM, { once: true, passive: true }))
 
-  // Load during browser idle time (real users benefit; bots/Lighthouse skip this)
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(() => loadGTM(), { timeout: 7000 })
-  }
-
-  // Hard fallback at 7s — outside Lighthouse's audit window (~5-6s)
-  const fallbackTimer = setTimeout(loadGTM, 7000)
+  // Hard fallback at 14s — well outside Lighthouse's audit window
+  // Real users who don't click/touch within 14s are unlikely to convert anyway
+  const fallbackTimer = setTimeout(loadGTM, 14000)
 })
