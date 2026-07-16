@@ -152,6 +152,8 @@ import { ref, nextTick, onMounted, onUnmounted } from 'vue'
 
 interface Message { role: 'user' | 'assistant' | 'support'; content: string }
 
+const props = defineProps<{ autoOpen?: boolean }>()
+
 const open = ref(false)
 const draft = ref('')
 const loading = ref(false)
@@ -210,6 +212,11 @@ onMounted(() => {
   if (!import.meta.client) return
   const vv = (window as any).visualViewport
   if (vv) vv.addEventListener('resize', onViewportResize)
+  // Auto-open if user clicked the stub bubble before the widget loaded
+  if (props.autoOpen) {
+    open.value = true
+    nextTick(() => { inputEl.value?.focus(); onViewportResize() })
+  }
 })
 
 onUnmounted(() => {
