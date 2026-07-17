@@ -113,9 +113,17 @@ export default defineNuxtPlugin((nuxtApp) => {
   let pageStartTime = Date.now()
   let currentPage = ''
   let maxScrollDepth = 0
-  // Scroll depth removed — any scrollHeight/offsetHeight read forces layout reflow.
-  // pageview + time_on_page are the meaningful metrics; scroll depth is not tracked.
-  const updateScrollDepth = () => {} // no-op
+  // Cache page height once — avoids reading scrollHeight on every scroll event.
+  // Reading scrollHeight during scroll forces layout recalculation of all
+  // content-visibility:auto sections, causing forced reflow on every scroll.
+  let cachedPageHeight = 0
+
+  const updateScrollDepth = throttle(() => {
+    if (!cachedPageHeight) return // height not cached yet, skip
+    const scrolled = window.scrollY + window.innerHeight
+    const depth = Math.min(100, Math.round((scrolled / cachedPageHeight) * 100))
+    if (depth > maxScrollDepth) maxScrollDepth = depth
+  }, 300)
 
   const sendPageExit = () => {
     if (!currentPage) return
