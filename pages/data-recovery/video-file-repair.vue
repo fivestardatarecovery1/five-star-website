@@ -321,6 +321,8 @@ const faqs = [
 
 const openFaq = ref<number | null>(null)
 const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : i }
+const showAllFaqs = ref(false)
+const visibleFaqs = computed(() => showAllFaqs.value ? faqs : faqs.slice(0, 7))
 </script>
 
 <template>
@@ -540,12 +542,15 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <h2 class="s-heading" style="text-align:center; margin-bottom:36px;">Frequently Asked Questions</h2>
         <div class="faq-wrap">
-          <div v-for="(faq, i) in faqs" :key="i" class="faq-row">
+          <div v-for="(faq, i) in visibleFaqs" :key="i" class="faq-row">
             <button class="faq-trigger" @click="toggleFaq(i)">
               <span>{{ faq.q }}</span>
               <span class="faq-toggle">{{ openFaq === i ? '−' : '+' }}</span>
             </button>
             <div v-if="openFaq === i" class="faq-answer" v-html="faq.a" />
+          </div>
+          <div v-if="!showAllFaqs" class="faq-show-more">
+            <button class="faq-more-btn" @click="showAllFaqs = true">Show {{ faqs.length - 7 }} more questions ↓</button>
           </div>
         </div>
       </div>
@@ -593,5 +598,8 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #7A5500; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+.faq-show-more { text-align: center; padding: 16px 0 4px; }
+.faq-more-btn { background: none; border: 1px solid #d1d5db; border-radius: 6px; color: #7A5500; cursor: pointer; font-size: 0.9rem; font-weight: 600; padding: 10px 24px; transition: border-color 0.2s, background 0.2s; }
+.faq-more-btn:hover { background: #faf7f0; border-color: #7A5500; }
 @media (max-width: 900px) { .formats-grid { grid-template-columns: 1fr; } .two-col-layout { grid-template-columns: 1fr; } }
 </style>
