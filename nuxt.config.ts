@@ -12,6 +12,16 @@ export default defineNuxtConfig({
     preset: 'vercel'
   },
   routeRules: {
+    // Pre-render static service/brand pages as static HTML at build time.
+    // Served from Vercel CDN edge — near-zero TTFB, eliminates SSR overhead,
+    // image preload fires immediately, LCP paint is instant.
+    '/data-recovery/**': { prerender: true },
+    '/services/**':      { prerender: true },
+    '/':                 { prerender: true },
+    '/pricing':          { prerender: true },
+    '/reviews':          { prerender: true },
+    '/about':            { prerender: true },
+
     // Blog URL rename — all old slugs → final canonical slug (301 permanent)
     '/blog/sony-venice-xcn-footage-recovery':          { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
     '/blog/sony-venice-xcn-footage-recovery/':         { redirect: { to: '/blog/sony-venice-x-ocn-video-file-repair-case-study', statusCode: 301 } },
