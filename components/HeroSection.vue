@@ -47,7 +47,7 @@ useHead({
       as: 'image',
       fetchpriority: 'high',
       imagesrcset: computed(() => `${bgBase.value}-480.webp 480w, ${bgBase.value}-800.webp 800w, ${bgBase.value}-1400.webp 1400w`),
-      imagesizes: '(max-width: 768px) 100vw, 100vw',
+      imagesizes: '(max-width: 768px) 274px, 100vw',
     },
   ]
 })
@@ -82,7 +82,7 @@ function handleSubmit() {
       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;"
       :src="bgImage"
       :srcset="bgImageSrcset"
-      sizes="(max-width: 768px) 480px, 100vw"
+      sizes="(max-width: 768px) 274px, 100vw"
       :alt="title"
       fetchpriority="high"
       width="1400"
