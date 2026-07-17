@@ -167,7 +167,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/drive-no-power-pcb-640.webp" alt="Hard drive inspection — signs of no power failure" class="section-img" width="640" height="427" loading="lazy"
                srcset="/drive-no-power-pcb-640.webp 640w, /drive-no-power-pcb-800.webp 800w, /drive-no-power-pcb-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
       </div>
@@ -180,7 +180,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/drive-no-power-diy-640.webp" alt="Cleanroom technician — PCB and hard drive repair" class="section-img" width="640" height="427" loading="lazy"
                srcset="/drive-no-power-diy-640.webp 640w, /drive-no-power-diy-800.webp 800w, /drive-no-power-diy-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
           <div>
             <h2 class="s-heading">Common Reasons Why a Hard Drive Doesn't Power On</h2>
@@ -243,7 +243,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/drive-no-power-recovery-640.webp" alt="Hard drive data recovery process — certified engineers" class="section-img" width="640" height="427" loading="lazy"
                srcset="/drive-no-power-recovery-640.webp 640w, /drive-no-power-recovery-800.webp 800w, /drive-no-power-recovery-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
       </div>
@@ -301,7 +301,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/drive-no-power-why-640.webp" alt="Five Star Data Recovery certified cleanroom lab" class="section-img" width="640" height="427" loading="lazy"
                srcset="/drive-no-power-why-640.webp 640w, /drive-no-power-why-800.webp 800w, /drive-no-power-why-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
           <div>
             <h2 class="s-heading">Why Choose Five Star Data Recovery?</h2>
