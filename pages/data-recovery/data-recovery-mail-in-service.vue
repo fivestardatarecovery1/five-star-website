@@ -51,6 +51,17 @@ useHead({
   ]
 })
 
+// Preload the LCP hero image so it starts fetching immediately
+useHead({
+  link: [{
+    rel: 'preload',
+    as: 'image',
+    fetchpriority: 'high',
+    imagesrcset: '/mail-in-hero-480.webp 480w, /mail-in-hero-800.webp 800w, /mail-in-hero-1400.webp 1400w',
+    imagesizes: '(max-width: 768px) 100vw, 100vw',
+  }]
+})
+
 useSeoMeta({
   title: 'Data Recovery Mail-in Services - Five Star Data Recovery',
   ogTitle: 'Data Recovery Mail-in Services - Five Star Data Recovery',
@@ -318,6 +329,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         srcset="/mail-in-hero-480.webp 480w, /mail-in-hero-800.webp 800w, /mail-in-hero-1400.webp 1400w"
         sizes="(max-width: 768px) 100vw, 100vw"
         alt="" aria-hidden="true" fetchpriority="high" class="mi-hero-bg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;z-index:0;"
       />
       <div class="mi-hero-overlay"></div>
       <div class="container mi-hero-inner">
