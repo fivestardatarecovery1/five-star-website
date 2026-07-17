@@ -151,11 +151,6 @@ img { max-width: 100%; display: block; }
 
 /* Section spacing */
 section { padding: 80px 0; }
-/* Skip rendering off-screen sections until browser is ready — reduces paint cost on pages with many sections */
-section.s-white, section.s-grey, section.s-dark, section.section-bg-1, section.section-bg-2, section.section-dark-1, section.section-dark-2 {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
-}
 
 .section-title {
   font-family: var(--font-heading);
