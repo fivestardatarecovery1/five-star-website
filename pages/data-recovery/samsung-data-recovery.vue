@@ -288,8 +288,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 8 — Why Choose -->
     <section class="s-grey">
       <div class="container">
@@ -313,6 +314,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Samsung Galaxy phones store everything that matters — photos, messages, app data, contacts. When a motherboard failure or water damage locks you out, our component-level engineers repair just enough to safely extract your data."
       bullet1="$950 flat rate — board repair + data extraction"
@@ -321,6 +323,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't let another repair shop make things worse. Component-level recovery requires certified engineers. Fill out the form and we'll evaluate your Samsung case for free."
       bgImage="/samsung-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

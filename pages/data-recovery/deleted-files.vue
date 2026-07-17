@@ -321,8 +321,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 9 — How to Improve Chances -->
     <section class="s-white">
       <div class="container">
@@ -338,6 +339,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="When deleted files seem gone forever, our forensic engineers dig deeper. We perform sector-level scans to locate and reconstruct files before they're permanently overwritten."
       bullet1="Flat $200 rate — paid upfront, no surprises"
@@ -346,6 +348,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't install new software or save files to the affected drive. Every second counts. Fill out the form and let us evaluate your case for free."
       bgImage="/deleted-file-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

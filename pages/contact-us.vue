@@ -191,8 +191,9 @@ const contactVideoActive = ref(false)
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- VIDEO -->
     <section class="page-video-section">
       <div class="container page-video-inner">

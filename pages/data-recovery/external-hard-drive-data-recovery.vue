@@ -438,10 +438,10 @@ useSeoMeta({
       </div>
     </section>
 
-    <LazyReviewsSection :reviews="reviews" />
-
-
-  </div>
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
+    </div>
 </template>
 
 <style scoped>

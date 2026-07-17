@@ -282,8 +282,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 6 — Why Clients Choose -->
     <section class="s-grey">
       <div class="container">
@@ -299,6 +300,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="When Apple says it&#39;s gone and no one else can help, our engineers work at the logic board level to revive just enough of your iPhone to extract every photo, message, and file you need."
       bullet1="All iPhone models — 6 through 15 Pro Max"
@@ -307,6 +309,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don&#39;t power it on again — every boot attempt risks more damage. Fill out the form and let our iPhone specialists evaluate your device for free."
       bgImage="/iphone-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

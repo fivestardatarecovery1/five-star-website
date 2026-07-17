@@ -292,8 +292,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 7 — What We Can Recover -->
     <section class="s-white">
       <div class="container">
@@ -312,6 +313,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From a corrupted wedding shoot to drone footage that won&#39;t mount — we&#39;ve recovered data from every type of SD card failure. Our engineers go sector-by-sector to find files that generic tools miss, with flat-rate pricing and zero surprises."
       bullet1="SD, microSD, SDHC, SDXC, CFast, CFexpress"
@@ -320,6 +322,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop using the card immediately — don&#39;t format or run recovery software. Fill out the form and let our SD card specialists take it from here."
       bgImage="/sd-card-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

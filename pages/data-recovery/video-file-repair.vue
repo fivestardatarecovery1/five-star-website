@@ -493,8 +493,9 @@ const visibleFaqs = computed(() => showAllFaqs.value ? faqs : faqs.slice(0, 7))
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 6 — Secure & Confidential -->
     <section class="s-grey">
       <div class="container">
@@ -511,6 +512,7 @@ const visibleFaqs = computed(() => showAllFaqs.value ? faqs : faqs.slice(0, 7))
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From wedding footage on a corrupted SD card to 72TB RED RAW RAID arrays — we've repaired it all. Our engineers work at the binary level to reconstruct headers, frame indexes, and codec metadata so your footage plays back exactly as it was captured."
       bullet1="MP4, MOV, MXF, R3D, BRAW, ProRes, ARRI, RED, and more"
@@ -519,6 +521,7 @@ const visibleFaqs = computed(() => showAllFaqs.value ? faqs : faqs.slice(0, 7))
       closing="Don't attempt DIY repairs on corrupted footage — one wrong move can destroy the file permanently. Fill out the form for a free evaluation."
       bgImage="/video-file-repair-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

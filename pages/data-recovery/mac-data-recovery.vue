@@ -305,8 +305,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 8 — Nationwide -->
     <section class="s-grey">
       <div class="container">
@@ -317,6 +318,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From a liquid-damaged MacBook Air to a failed Fusion Drive iMac — our engineers work at the chip and logic board level to recover data that other labs can&#39;t reach. We support every Mac model including M1, M2, T2-chip models, and everything in between."
       bullet1="All Mac models — MacBook, iMac, Mac Pro, Mac Mini"
@@ -325,6 +327,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don&#39;t power it on or run Disk Utility. Fill out the form and let our Mac recovery specialists evaluate your device for free."
       bgImage="/mac-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

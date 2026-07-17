@@ -329,8 +329,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 8 — File Systems -->
     <section class="s-white">
       <div class="container">
@@ -417,6 +418,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="LaCie drives are built for creative professionals — and we know exactly how to recover them. From Rugged SSDs to 6big RAID arrays and Thunderbolt-encrypted models, we handle every LaCie configuration."
       bullet1="Specialists in LaCie Rugged, d2, and RAID systems"
@@ -425,6 +427,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't reformat or run Disk Utility. Fill out the form and we'll get back to you with a free assessment and quote."
       bgImage="/lacie-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

@@ -124,8 +124,9 @@ const socialPosts = [
     <StatsBar />
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" bg-class="section-bg-1" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" bg-class="section-bg-1" />
+    </ClientOnly>
     <!-- SOCIAL PROOF CAROUSEL -->
     <section class="social-proof-section">
       <div class="sp-header container">

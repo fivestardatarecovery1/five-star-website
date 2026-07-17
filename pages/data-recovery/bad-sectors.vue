@@ -354,9 +354,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Bad sectors don't have to mean permanent data loss. Our PC-3000 imaging hardware bypasses unstable sectors and clones your drive safely — so we work from a copy, never the original."
       bullet1="Sector-by-sector imaging — your original drive is never touched"
@@ -365,6 +367,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop using the drive immediately. Every read attempt on a degrading drive increases the risk. Fill out the form for a free evaluation."
       bgImage="/bad-sectors-hard-drive-recovery.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

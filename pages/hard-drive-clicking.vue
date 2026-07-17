@@ -305,8 +305,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 8 — Why Choose Five Star -->
     <section class="s-grey">
       <div class="container">
@@ -323,6 +324,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="A clicking hard drive is a medical emergency for your data. Our ISO 5 cleanroom engineers use donor parts and precision head-swap procedures to stabilize and image your drive before the platters sustain further damage."
       bullet1="ISO 5 Certified Cleanroom"
@@ -331,6 +333,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Power off your drive now and do not plug it back in. Fill out the form and we'll reach out with a free evaluation."
       bgImage="/hard-drive-clicking-sound-data-recovery.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

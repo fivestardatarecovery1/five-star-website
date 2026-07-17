@@ -331,8 +331,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 10 — Your Data Stays Secure -->
     <section class="s-grey">
       <div class="container">
@@ -350,6 +351,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From broken connectors to failed controller chips, we&#39;ve recovered data from every type of USB failure. Our chip-off and monolith recovery techniques reach data that standard tools can&#39;t touch \u2014 with flat-rate pricing and no surprises."
       bullet1="Logical, chip-off, and monolith recovery available"
@@ -358,6 +360,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop using the drive immediately \u2014 every write increases overwrite risk. Fill out the form and let our USB specialists evaluate your case for free."
       bgImage="/usb-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

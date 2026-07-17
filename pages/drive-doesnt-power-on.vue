@@ -321,9 +321,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="A drive with no power doesn't mean your data is gone. PCB failures, power surge damage, and internal shorts are all recoverable with the right tools — and we have them."
       bullet1="Free diagnostic — PCB, firmware, and internal inspection"
@@ -332,6 +334,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't keep plugging it in. Each attempt risks further damage. Fill out the form and let our engineers take it from here."
       bgImage="/drive-no-power-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

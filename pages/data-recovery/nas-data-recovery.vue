@@ -285,8 +285,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 5 — Nationwide -->
     <section class="s-white">
       <div class="container">
@@ -296,6 +297,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From a 2-bay home Synology to a 24-drive enterprise QNAP RAID — our engineers clone every drive first, then virtually reconstruct the NAS array without ever touching your originals. We recover data that other labs give up on."
       bullet1="Synology, QNAP, Drobo, Buffalo, WD My Cloud, and more"
@@ -304,6 +306,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Power down your NAS now and don&#39;t attempt a rebuild. Fill out the form and our NAS engineers will evaluate your case for free."
       bgImage="/nas-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

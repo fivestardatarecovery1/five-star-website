@@ -286,8 +286,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 7 — Why Choose -->
     <section class="s-white">
       <div class="container">
@@ -305,6 +306,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="SSDs fail differently than hard drives — TRIM, controller failures, and NAND chip damage require specialized tools that most shops don&#39;t have. Our engineers recover data from every SSD make, model, and failure type, including MacBook integrated storage."
       bullet1="All SSD types — SATA, NVMe, M.2, PCIe, MacBook integrated"
@@ -313,6 +315,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop using the SSD immediately — every write can trigger TRIM and erase recoverable data. Fill out the form for a free evaluation."
       bgImage="/ssd-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

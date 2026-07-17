@@ -322,9 +322,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Physical impact is one of the most common causes of drive failure — and one of our specialties. Our cleanroom team handles head crashes, actuator arm damage, and platter scratches every day."
       bullet1="Free diagnostic — full internal assessment"
@@ -333,6 +335,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop powering on the drive. The more spin cycles after a drop, the harder recovery becomes. Fill out the form now."
       bgImage="/dropped-hard-drive-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

@@ -313,8 +313,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 10 — What to Expect -->
     <section class="s-grey">
       <div class="container">
@@ -326,6 +327,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Whether your drive shows as RAW, unallocated, or completely invisible — our engineers diagnose the exact cause and recover your data without risky repair tools that can make things worse."
       bullet1="Free diagnostic — logical and physical assessment"
@@ -334,6 +336,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Do not run CHKDSK, First Aid, or format the drive. Fill out the form and let us evaluate it safely."
       bgImage="/hard-drive-not-showing-up-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

@@ -316,10 +316,13 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       { text: 'External Hard Drive Recovery', href: '/data-recovery/external-hard-drive-data-recovery' },
     ]" />
 
-    <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
+    <!-- REVIEWS: ClientOnly defers JS off critical path —— below fold, no SSR needed -->
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From clicking Deskstars to failed enterprise Ultrastar arrays, we've recovered data from every generation of Hitachi drive. Our certified engineers use sector-by-sector cloning and cleanroom procedures to give you the best chance of a full recovery."
       bullet1="Internal, external, enterprise, and RAID arrays"
@@ -328,6 +331,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop using the drive immediately — every spin cycle risks more damage. Fill out the form and let our Hitachi specialists evaluate your case for free."
       bgImage="/hitachi-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

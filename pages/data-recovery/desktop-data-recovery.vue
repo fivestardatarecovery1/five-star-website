@@ -333,8 +333,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 10 — Nationwide -->
     <section class="s-grey">
       <div class="container">
@@ -344,6 +345,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Whether your Windows PC crashed after a power surge or your iMac won&#39;t boot, our engineers recover data from every type of desktop computer — HDD, SSD, RAID, internal or external — with flat-rate pricing and no surprises."
       bullet1="Windows PCs, iMac, Mac Pro, Linux workstations"
@@ -352,6 +354,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don&#39;t keep powering on the drive — each attempt increases the risk. Fill out the form and let our desktop recovery specialists take it from here."
       bgImage="/desktop-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

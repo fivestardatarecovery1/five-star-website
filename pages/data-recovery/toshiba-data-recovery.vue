@@ -319,7 +319,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
 
     <!-- SECTION 11 — Nationwide -->
     <section class="s-white">
@@ -339,6 +341,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Canvio, Backup Plus, or internal SATA — we recover data from every Toshiba model. Whether your drive stopped spinning, won't mount, or was accidentally formatted, our certified engineers diagnose and recover your data with flat-rate pricing and no surprises."
       bullet1="Free diagnostic — logical, physical, and firmware assessment"
@@ -347,6 +350,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't keep powering on a failing drive. Fill out the form and we'll evaluate your Toshiba case for free — then get to work."
       bgImage="/toshiba-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

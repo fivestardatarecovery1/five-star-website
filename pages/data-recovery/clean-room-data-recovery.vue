@@ -253,9 +253,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="Our ISO-certified Class 100 cleanroom is the safest environment on earth for your hard drive. Head swaps, platter removal, spindle repairs — we perform the most complex recoveries in-house with flat-rate pricing and zero hidden fees."
       bullet1="ISO-certified Class 100 cleanroom — fewer than 100 particles/ft³"
@@ -264,6 +266,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't power on a physically damaged drive — every spin risks more platter damage. Fill out the form for a free evaluation."
       bgImage="/clean-room-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

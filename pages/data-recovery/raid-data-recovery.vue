@@ -371,8 +371,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 13 — Why Choose -->
     <section class="s-white">
       <div class="container">
@@ -389,6 +390,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From a 2-drive RAID 1 at a small office to a 72TB enterprise RAID 60 array — we&#39;ve recovered them all. Our process always starts with 1-to-1 cloning before any reconstruction begins, so your originals are never touched."
       bullet1="All RAID levels — 0, 1, 5, 6, 10, 50, 60 + custom"
@@ -397,6 +399,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don&#39;t attempt a rebuild — one wrong move can permanently overwrite your data. Fill out the form and let our RAID engineers take it from here."
       bgImage="/raid-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

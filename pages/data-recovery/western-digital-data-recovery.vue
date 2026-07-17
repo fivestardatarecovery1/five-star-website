@@ -354,9 +354,11 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From WD My Passport to enterprise-grade WD drives, we've recovered data from every Western Digital model. Blinking lights, clicking sounds, RAW partitions — our certified engineers diagnose the exact issue and recover your files with flat-rate pricing and no surprises."
       bullet1="All WD models — My Passport, Elements, My Book, Black, Blue"
@@ -365,6 +367,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Stop plugging the drive in and out — each attempt increases the risk. Fill out the form and let our WD specialists evaluate your case for free."
       bgImage="/western-digital-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">

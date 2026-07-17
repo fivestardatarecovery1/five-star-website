@@ -265,8 +265,9 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     </section>
 
     <!-- REVIEWS -->
-    <LazyReviewsSection :reviews="reviews" />
-
+    <ClientOnly>
+      <LazyReviewsSection :reviews="reviews" />
+    </ClientOnly>
     <!-- SECTION 6 — Fast & Secure -->
     <section class="s-grey">
       <div class="container">
@@ -286,6 +287,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
     ]" />
 
     <!-- QUOTE FORM -->
+    <ClientOnly>
     <LazyQuoteFormSection
       description="From Barracuda to IronWolf RAID arrays, we recover data from every Seagate model. Clicking drives, RAW partitions, drives not showing up — our certified engineers handle it all with flat-rate pricing and no hidden fees."
       bullet1="Seagate Barracuda, IronWolf, Expansion, Backup Plus"
@@ -294,6 +296,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       closing="Don't power on the drive repeatedly — every spin risks more damage. Fill out the form and let us evaluate your Seagate case for free."
       bgImage="/seagate-data-recovery-hero.webp"
     />
+    </ClientOnly>
 
     <!-- CONTACT BAND -->
     <section class="s-contact-band contact-band-bg">
