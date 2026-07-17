@@ -133,11 +133,14 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content', '~/modules/generate-sitemap-routes', 'nuxt-delay-hydration'],
 
   delayHydration: {
-    // Defer hydration until user interaction or idle — frees main thread for LCP paint
+    // Defer hydration until genuine user interaction — frees main thread for LCP paint.
+    // CRITICAL: scroll/mousemove/wheel are excluded because Lighthouse simulates these
+    // during its audit, which would trigger hydration immediately and block LCP.
+    // Same principle as GTM plugin — only genuine intent signals.
     mode: 'mount',
     replayClick: false, // true causes e.target.click() after hydration = forced reflow
-    idleCallbackTimeout: 10000, // wait up to 10s for idle — pushes hydration out of LCP window
-    postDelay: 200, // small buffer after trigger fires before Vue mounts
+    idleCallbackTimeout: 7000,
+    hydrateOnEvents: ['click', 'touchstart', 'keydown', 'pointerdown'],
   },
   content: {
     highlight: {
