@@ -82,7 +82,7 @@ function handleSubmit() {
       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;display:block;"
       :src="bgImage"
       :srcset="bgImageSrcset"
-      sizes="(max-width: 768px) 100vw, 100vw"
+      sizes="(max-width: 768px) 480px, 100vw"
       :alt="title"
       fetchpriority="high"
       width="1400"
