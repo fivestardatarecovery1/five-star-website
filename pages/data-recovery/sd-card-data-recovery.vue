@@ -254,7 +254,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/sd-card-physical-damage-recovery-640.webp" alt="Physically broken SD card — data recovery assessment" class="section-img" width="640" height="427" loading="lazy"
                srcset="/sd-card-physical-damage-recovery-640.webp 640w, /sd-card-physical-damage-recovery-800.webp 800w, /sd-card-physical-damage-recovery-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
       </div>

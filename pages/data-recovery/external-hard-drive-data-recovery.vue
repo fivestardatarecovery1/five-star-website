@@ -292,7 +292,7 @@ useSeoMeta({
         <div class="two-col-image">
           <img src="/external-hard-drive-on-desk-800.webp"
                srcset="/external-hard-drive-on-desk-640.webp 640w, /external-hard-drive-on-desk-800.webp 800w, /external-hard-drive-on-desk-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 640px, 640px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px"
                alt="External hard drive data recovery" class="rounded-img" width="1280" height="382" loading="lazy" />
         </div>
       </div>

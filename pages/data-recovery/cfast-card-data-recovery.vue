@@ -185,7 +185,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/cfast-card-recovery-professional-640.webp" alt="Professional CFast cards for cinema cameras — data recovery" class="section-img" width="640" height="427" loading="lazy"
                srcset="/cfast-card-recovery-professional-640.webp 640w, /cfast-card-recovery-professional-800.webp 800w, /cfast-card-recovery-professional-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
       </div>
@@ -316,7 +316,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/cfast-recovery-process-640.webp" alt="CFast card data recovery process" class="section-img" width="640" height="427" loading="lazy"
                srcset="/cfast-recovery-process-640.webp 640w, /cfast-recovery-process-800.webp 800w, /cfast-recovery-process-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
       </div>

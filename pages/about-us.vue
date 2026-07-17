@@ -172,7 +172,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div style="position:relative;">
           <img src="/five-star-data-recovery-lab-technician-glendale-ca-800.webp"
                srcset="/five-star-data-recovery-lab-technician-glendale-ca-640.webp 640w, /five-star-data-recovery-lab-technician-glendale-ca-800.webp 800w, /five-star-data-recovery-lab-technician-glendale-ca-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 800px"
                alt="Five Star Data Recovery team" style="width:100%;border-radius:14px;object-fit:cover;max-height:440px;display:block;" width="800" height="450" loading="lazy" />
           <div style="position:absolute;bottom:-20px;left:24px;background:#C9A84C;color:#111111;border-radius:10px;padding:14px 22px;box-shadow:0 8px 24px rgba(201,168,76,0.4);">
             <span style="display:block;font-size:1.6rem;font-weight:900;line-height:1;color:#111111;">21,000+</span>
@@ -199,7 +199,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div style="position:relative;">
           <img src="/five-star-lab-engineers-800.webp"
                srcset="/five-star-lab-engineers-640.webp 640w, /five-star-lab-engineers-800.webp 800w, /five-star-lab-engineers-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 800px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 800px"
                alt="Five Star Data Recovery lab engineers at work" style="width:100%;border-radius:14px;object-fit:cover;max-height:400px;display:block;" width="800" height="486" loading="lazy" />
         </div>
         <div>

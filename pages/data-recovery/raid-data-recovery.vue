@@ -181,7 +181,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/raid-server-room-recovery-640.webp"
                srcset="/raid-server-room-recovery-640.webp 640w, /raid-server-room-recovery-800.webp 800w, /raid-server-room-recovery-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px"
                alt="RAID server room data recovery" class="section-img" width="640" height="360" loading="lazy" />
           </div>
         </div>
@@ -203,7 +203,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/raid-recovery-engineers-640.webp"
                srcset="/raid-recovery-engineers-640.webp 640w, /raid-recovery-engineers-800.webp 800w, /raid-recovery-engineers-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px"
                alt="RAID recovery engineers cloning drives" class="section-img" width="640" height="437" loading="lazy" />
           </div>
           <div>
@@ -297,7 +297,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/raid-array-recovery-640.webp"
                srcset="/raid-array-recovery-640.webp 640w, /raid-array-recovery-800.webp 800w, /raid-array-recovery-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px"
                alt="RAID array data recovery process" class="section-img" width="640" height="427" loading="lazy" />
           </div>
         </div>

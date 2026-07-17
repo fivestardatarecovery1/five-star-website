@@ -184,7 +184,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/burbank-hdd-components-640.webp" alt="Hard drive components disassembled" class="section-img" width="640" height="427" loading="lazy"
                srcset="/burbank-hdd-components-640.webp 640w, /burbank-hdd-components-800.webp 800w, /burbank-hdd-components-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
         <h2 class="s-heading" style="margin-top:48px;">Our 3-Step Recovery Process</h2>

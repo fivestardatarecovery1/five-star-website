@@ -153,7 +153,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         <div>
           <img src="/hard-drive-internal-platters-640.webp"
                srcset="/hard-drive-internal-platters-640.webp 640w, /hard-drive-internal-platters-800.webp 800w, /hard-drive-internal-platters-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px"
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px"
                alt="Open hard drive showing internal platters and read/write heads"
                class="rounded-img" width="640" height="426" loading="lazy" />
         </div>

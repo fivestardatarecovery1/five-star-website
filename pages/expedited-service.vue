@@ -171,7 +171,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/expedited-service-technician-640.webp" alt="Data recovery technician working on hard drive" class="section-img" width="640" height="427" loading="lazy"
                srcset="/expedited-service-technician-640.webp 640w, /expedited-service-technician-800.webp 800w, /expedited-service-technician-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
         </div>
       </div>
@@ -184,7 +184,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <div class="section-img-wrap">
             <img src="/expedited-service-shipping-640.webp" alt="Expedited data recovery mail-in shipping service" class="section-img" width="640" height="427" loading="lazy"
                srcset="/expedited-service-shipping-640.webp 640w, /expedited-service-shipping-800.webp 800w, /expedited-service-shipping-1280.webp 1280w"
-               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 640px" />
+               sizes="(max-width: 640px) calc(100vw - 48px), (max-width: 1024px) 50vw, 640px" />
           </div>
           <div>
             <h2 class="s-heading">Whats the average turnaround time for Expedited Data Recovery Cases?</h2>
