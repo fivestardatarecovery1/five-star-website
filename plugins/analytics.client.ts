@@ -180,8 +180,14 @@ export default defineNuxtPlugin((nuxtApp) => {
   })
 
   nuxtApp.hook('page:finish', () => {
-    sendPageView()
-    window.addEventListener('scroll', updateScrollDepth, { passive: true })
+    // Defer analytics off the main thread so it doesn't block LCP/hydration paint
+    const schedule = (typeof requestIdleCallback !== 'undefined')
+      ? (fn: () => void) => requestIdleCallback(fn, { timeout: 3000 })
+      : (fn: () => void) => setTimeout(fn, 0)
+    schedule(() => {
+      sendPageView()
+      window.addEventListener('scroll', updateScrollDepth, { passive: true })
+    })
   })
 
   // Capture exit when tab closes / user navigates away
