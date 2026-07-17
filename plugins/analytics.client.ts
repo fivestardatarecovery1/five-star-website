@@ -113,17 +113,16 @@ export default defineNuxtPlugin((nuxtApp) => {
   let pageStartTime = Date.now()
   let currentPage = ''
   let maxScrollDepth = 0
+  // Cache page height once — avoids reading scrollHeight on every scroll event.
+  // Reading scrollHeight during scroll forces layout recalculation of all
+  // content-visibility:auto sections, causing forced reflow on every scroll.
+  let cachedPageHeight = 0
 
   const updateScrollDepth = throttle(() => {
-    // Use rAF so layout reads happen after any pending style mutations — prevents forced reflow
-    requestAnimationFrame(() => {
-      const scrolled = window.scrollY + window.innerHeight
-      const total = document.documentElement.scrollHeight
-      if (total > 0) {
-        const depth = Math.min(100, Math.round((scrolled / total) * 100))
-        if (depth > maxScrollDepth) maxScrollDepth = depth
-      }
-    })
+    if (!cachedPageHeight) return // height not cached yet, skip
+    const scrolled = window.scrollY + window.innerHeight
+    const depth = Math.min(100, Math.round((scrolled / cachedPageHeight) * 100))
+    if (depth > maxScrollDepth) maxScrollDepth = depth
   }, 300)
 
   const sendPageExit = () => {
@@ -189,6 +188,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       : (fn: () => void) => setTimeout(fn, 0)
     schedule(() => {
       sendPageView()
+      // Cache page height ONCE in rAF — never read scrollHeight during scroll events
+      requestAnimationFrame(() => { cachedPageHeight = document.documentElement.scrollHeight })
       window.addEventListener('scroll', updateScrollDepth, { passive: true })
     })
   })
