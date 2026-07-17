@@ -115,12 +115,15 @@ export default defineNuxtPlugin((nuxtApp) => {
   let maxScrollDepth = 0
 
   const updateScrollDepth = throttle(() => {
-    const scrolled = window.scrollY + window.innerHeight
-    const total = document.documentElement.scrollHeight
-    if (total > 0) {
-      const depth = Math.min(100, Math.round((scrolled / total) * 100))
-      if (depth > maxScrollDepth) maxScrollDepth = depth
-    }
+    // Use rAF so layout reads happen after any pending style mutations — prevents forced reflow
+    requestAnimationFrame(() => {
+      const scrolled = window.scrollY + window.innerHeight
+      const total = document.documentElement.scrollHeight
+      if (total > 0) {
+        const depth = Math.min(100, Math.round((scrolled / total) * 100))
+        if (depth > maxScrollDepth) maxScrollDepth = depth
+      }
+    })
   }, 300)
 
   const sendPageExit = () => {
