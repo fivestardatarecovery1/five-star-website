@@ -136,6 +136,8 @@ export default defineNuxtConfig({
     // Defer hydration until user interaction or idle — frees main thread for LCP paint
     mode: 'mount',
     replayClick: false, // true causes e.target.click() after hydration = forced reflow
+    idleCallbackTimeout: 10000, // wait up to 10s for idle — pushes hydration out of LCP window
+    postDelay: 200, // small buffer after trigger fires before Vue mounts
   },
   content: {
     highlight: {
