@@ -418,6 +418,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
               ✅ We've pre-filled your info from your instant quote. Just review and submit!
             </div>
 
+            <h2 class="sr-only">Mail-In Recovery Request Form</h2>
             <form class="edo-form" @submit.prevent="handleFormSubmit" novalidate>
 
               <!-- STEP 1: Contact Info -->
@@ -829,6 +830,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* PROCESS */
 .process-section { background: #0f1623; padding: 80px 0 90px; }
 .process-heading { text-align: center; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
+.sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
 .process-intro { text-align: center; font-size: 1rem; color: #a0b0c8; max-width: 760px; margin: 0 auto 56px; line-height: 1.7; }
 .process-timeline { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .process-line { position: absolute; top: 27px; left: calc(10% + 27px); right: calc(10% + 27px); height: 3px; background: linear-gradient(to right, #F5C842, #e0b43a); border-radius: 2px; }
