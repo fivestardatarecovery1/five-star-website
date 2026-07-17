@@ -829,19 +829,19 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 /* PROCESS */
 .process-section { background: #0f1623; padding: 80px 0 90px; }
 .process-heading { text-align: center; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: #fff; margin-bottom: 16px; }
-.process-intro { text-align: center; font-size: 1rem; color: #4a5e7a; max-width: 760px; margin: 0 auto 56px; line-height: 1.7; }
+.process-intro { text-align: center; font-size: 1rem; color: #a0b0c8; max-width: 760px; margin: 0 auto 56px; line-height: 1.7; }
 .process-timeline { position: relative; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .process-line { position: absolute; top: 27px; left: calc(10% + 27px); right: calc(10% + 27px); height: 3px; background: linear-gradient(to right, #F5C842, #e0b43a); border-radius: 2px; }
 .process-step { flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
 .process-num { width: 54px; height: 54px; border-radius: 50%; background: #F5C842; color: #1a1a2e; font-size: 1.3rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 0 0 4px #0f1623, 0 0 0 7px rgba(245,200,66,0.25); flex-shrink: 0; }
 .process-title { font-size: 0.88rem; font-weight: 800; color: #fff; margin: 0 0 10px; line-height: 1.35; }
-.process-body { font-size: 0.78rem; color: #4a5e7a; line-height: 1.6; margin: 0; }
+.process-body { font-size: 0.78rem; color: #a0b0c8; line-height: 1.6; margin: 0; }
 
 /* VIDEO */
 .video-section { background: #1a2035; padding: 72px 0; }
 .video-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .video-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800; color: #fff; line-height: 1.3; margin-bottom: 16px; }
-.video-desc { font-size: 0.95rem; color: #4a5e7a; line-height: 1.8; }
+.video-desc { font-size: 0.95rem; color: #a0b0c8; line-height: 1.8; }
 .video-embed { border-radius: 12px; overflow: hidden; }
 .video-embed { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; background: #000; }
 .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
