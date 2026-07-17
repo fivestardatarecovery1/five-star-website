@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Auto-generate srcset from bgImage prop — assumes -800.webp and -1400.webp variants exist
 const bgImageSrcset = computed(() => {
   const base = props.bgImage.replace(/\.[^.]+$/, '')
-  return `${base}-480.webp 480w, ${base}-800.webp 800w, ${base}-1400.webp 1400w`
+  return `${base}-480.webp 480w, ${base}-720.webp 720w, ${base}-800.webp 800w, ${base}-1400.webp 1400w`
 })
 
 // Preload the correct LCP image for this specific page.
@@ -46,7 +46,7 @@ useHead({
       rel: 'preload',
       as: 'image',
       fetchpriority: 'high',
-      imagesrcset: computed(() => `${bgBase.value}-480.webp 480w, ${bgBase.value}-800.webp 800w, ${bgBase.value}-1400.webp 1400w`),
+      imagesrcset: computed(() => `${bgBase.value}-480.webp 480w, ${bgBase.value}-720.webp 720w, ${bgBase.value}-800.webp 800w, ${bgBase.value}-1400.webp 1400w`),
       imagesizes: '(max-width: 768px) 100vw, 100vw',
     },
   ]
