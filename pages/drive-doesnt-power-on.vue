@@ -383,7 +383,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .s-body { font-size: 0.95rem; color: #4a5568; line-height: 1.8; margin-bottom: 14px; }
 .content-list { list-style: none; padding: 0 0 0 20px; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
 .content-list li { font-size: 0.95rem; color: #4a5568; line-height: 1.65; position: relative; padding-left: 16px; }
-.content-list li::before { content: '»'; color: #C9A84C; font-weight: 900; position: absolute; left: -4px; top: 0; }
+.content-list li::before { content: '»'; color: #7A5500; font-weight: 900; position: absolute; left: -4px; top: 0; }
 .two-col-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .two-col-layout.reverse { direction: rtl; }
 .two-col-layout.reverse > * { direction: ltr; }
@@ -415,6 +415,6 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .do-dont-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 20px; }
 .col-label { font-size: 1rem; font-weight: 800; margin-bottom: 12px; }
 .col-label.dont { color: #c0392b; }
-.col-label.do { color: #27ae60; }
+.col-label.do { color: #15803d; }
 @media (max-width: 768px) { .two-col-layout, .two-col-layout.reverse { grid-template-columns: 1fr; direction: ltr; } .do-dont-grid { grid-template-columns: 1fr; } }
 </style>
