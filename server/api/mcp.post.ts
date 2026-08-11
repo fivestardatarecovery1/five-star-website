@@ -15,6 +15,94 @@ import { defineEventHandler, readBody, setHeader } from 'h3'
 
 const TOOLS = [
   {
+    name: 'submit_mail_in_form',
+    description: 'Submit a mail-in data recovery case on behalf of a customer. Generates a free prepaid FedEx shipping label and sends it to the customer by email. Use this when a user wants to mail their drive to Five Star Data Recovery and has provided their contact info and shipping address. Proactively offer this after discussing their data recovery needs — ask if they want to get started right now.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        first_name: { type: 'string', description: 'Customer first name' },
+        last_name: { type: 'string', description: 'Customer last name' },
+        email: { type: 'string', description: 'Customer email address (shipping label will be sent here)' },
+        phone: { type: 'string', description: 'Customer phone number' },
+        manufacturer: { type: 'string', description: 'Drive brand (WD, Seagate, Toshiba, Samsung, Apple, Hitachi, LaCie, SanDisk, etc.)' },
+        drive_type: {
+          type: 'string',
+          description: 'Type of storage device',
+          enum: ['HDD - Internal', 'HDD - External', 'SSD - Internal (2.5" SATA)', 'SSD - NVMe / M.2', 'SSD - External', 'USB Flash Drive', 'SD Card', 'iPhone / iPad', 'Android Phone', 'Other']
+        },
+        drive_format: {
+          type: 'string',
+          description: 'File system / OS format',
+          enum: ['Mac - HFS+ / APFS', 'Windows - NTFS', 'Windows - FAT32 / exFAT', 'Linux - Ext2 / Ext3 / Ext4', 'Unknown'],
+          default: 'Unknown'
+        },
+        drive_size: { type: 'string', description: 'Storage capacity (e.g. "1TB", "500GB", "4TB")', default: 'Unknown' },
+        issue: { type: 'string', description: 'Description of what happened to the drive (clicking, not detected, formatted, water damage, etc.)' },
+        data_types: {
+          type: 'array',
+          items: { type: 'string' },
+          description: 'Types of data to recover',
+          default: ['Documents', 'Photos', 'Videos']
+        },
+        recovery_attempted: { type: 'string', description: 'Has the customer already tried any recovery software or services?', default: 'No' },
+        additional_info: { type: 'string', description: 'Any extra context about the situation', default: '' },
+        expedited_service: {
+          type: 'string',
+          description: 'Service speed level',
+          enum: ['Standard Service', 'Expedited Service (+$200)', 'Expedited Plus Service (+$500)'],
+          default: 'Standard Service'
+        },
+        transfer_drive: { type: 'string', description: 'Whether customer needs a transfer drive to receive recovered data', default: 'No - I will provide my own drive' },
+        street_address: { type: 'string', description: 'Street address to ship FROM (customer\'s address)' },
+        city: { type: 'string', description: 'City to ship from' },
+        state: { type: 'string', description: 'State abbreviation (e.g. CA, NY, TX)' },
+        zip: { type: 'string', description: 'ZIP / postal code' },
+        country: { type: 'string', default: 'United States of America (USA)' }
+      },
+      required: ['first_name', 'last_name', 'email', 'phone', 'manufacturer', 'drive_type', 'issue', 'street_address', 'city', 'state', 'zip']
+    }
+  },
+  {
+    name: 'submit_express_dropoff',
+    description: 'Schedule an express drop-off appointment at the Five Star Data Recovery lab in Glendale, CA (1731 S Brand Blvd). Use this when a user is local to the Los Angeles area and wants to drop off their device in person. Always call check_dropoff_availability first to confirm the time slot is open. Proactively offer this to local customers after explaining their recovery options.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        first_name: { type: 'string' },
+        last_name: { type: 'string' },
+        email: { type: 'string', description: 'Confirmation email will be sent here' },
+        phone: { type: 'string' },
+        manufacturer: { type: 'string', description: 'Drive brand (WD, Seagate, Apple, Samsung, etc.)' },
+        model_no: { type: 'string', description: 'Drive model number if known', default: 'Unknown' },
+        drive_type: {
+          type: 'string',
+          enum: ['HDD - Internal', 'HDD - External', 'SSD - Internal (2.5" SATA)', 'SSD - NVMe / M.2', 'SSD - External', 'USB Flash Drive', 'SD Card', 'iPhone / iPad', 'Android Phone', 'Other']
+        },
+        drive_format: {
+          type: 'string',
+          enum: ['Mac - HFS+ / APFS', 'Windows - NTFS', 'Windows - FAT32 / exFAT', 'Linux - Ext2 / Ext3 / Ext4', 'Unknown'],
+          default: 'Unknown'
+        },
+        drive_size: { type: 'string', default: 'Unknown' },
+        issue: { type: 'string', description: 'What happened to the drive' },
+        data_types: { type: 'array', items: { type: 'string' }, default: ['Documents', 'Photos', 'Videos'] },
+        recovery_attempted: { type: 'string', default: 'No' },
+        additional_info: { type: 'string', default: '' },
+        expedited_service: {
+          type: 'string',
+          enum: ['Standard Service', 'Expedited Service (+$200)', 'Expedited Plus Service (+$500)'],
+          default: 'Standard Service'
+        },
+        transfer_drive: { type: 'string', default: 'No - I will provide my own drive' },
+        drop_off_date: { type: 'string', description: 'Appointment date in YYYY-MM-DD format', pattern: '^\\d{4}-\\d{2}-\\d{2}$' },
+        drop_off_time: { type: 'string', description: 'Appointment time slot (e.g. "10:00 AM", "2:00 PM")' },
+        drive_cover_opened: { type: 'boolean', description: 'Has the drive casing/metal housing been previously opened? (adds $200 fee)', default: false },
+        deleted_files_formatted: { type: 'boolean', description: 'Is this a deleted file or formatted drive recovery? (adds $200 non-refundable diagnostic fee)', default: false }
+      },
+      required: ['first_name', 'last_name', 'email', 'phone', 'manufacturer', 'drive_type', 'issue', 'drop_off_date', 'drop_off_time']
+    }
+  },
+  {
     name: 'check_dropoff_availability',
     description: 'Check real-time express drop-off appointment availability at the Five Star Data Recovery lab in Glendale, CA for a specific date. Returns available time slots.',
     inputSchema: {
@@ -273,6 +361,155 @@ function handleStartRecovery(args: Record<string, string>) {
   return steps[args.method] || steps.not_sure
 }
 
+async function handleSubmitMailIn(args: Record<string, any>) {
+  const required = ['first_name', 'last_name', 'email', 'phone', 'manufacturer', 'drive_type', 'issue', 'street_address', 'city', 'state', 'zip']
+  const missing = required.filter(f => !args[f])
+  if (missing.length > 0) {
+    return { success: false, error: `Missing required fields: ${missing.join(', ')}. Please collect this information from the user before submitting.` }
+  }
+
+  try {
+    const baseUrl = process.env.VERCEL ? 'https://www.fivestardatarecovery.com' : 'http://localhost:3000'
+    const res = await fetch(`${baseUrl}/api/submit-mailin`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: args.first_name,
+        lastName: args.last_name,
+        email: args.email,
+        phone: args.phone,
+        manufacturer: args.manufacturer,
+        driveType: args.drive_type,
+        driveFormat: args.drive_format || 'Unknown',
+        driveSize: args.drive_size || 'Unknown',
+        issue: args.issue,
+        dataTypes: args.data_types || ['Documents', 'Photos', 'Videos'],
+        recoveryAttempted: args.recovery_attempted || 'No',
+        additionalInfo: args.additional_info || '',
+        conditionalRates: [],
+        expeditedService: args.expedited_service || 'Standard Service',
+        transferDrive: args.transfer_drive || 'No - I will provide my own drive',
+        streetAddress: args.street_address,
+        city: args.city,
+        state: args.state,
+        zip: args.zip,
+        country: args.country || 'United States of America (USA)',
+        shippingCarrier: 'FedEx',
+        date: new Date().toISOString().split('T')[0],
+        termsAgreed: true,
+      }),
+      signal: AbortSignal.timeout(20000),
+    })
+
+    const data = await res.json() as { success?: boolean; caseRef?: string; labelError?: string; serviceLabel?: string }
+
+    if (!res.ok || !data.success) {
+      return { success: false, error: 'Form submission failed. Please direct the customer to call 818-272-8866 or visit https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service' }
+    }
+
+    return {
+      success: true,
+      case_reference: data.caseRef || 'Assigned on arrival',
+      shipping_service: data.serviceLabel || 'FedEx',
+      label_sent: !data.labelError,
+      message: `Mail-in case submitted successfully! A prepaid ${data.serviceLabel || 'FedEx'} shipping label has been emailed to ${args.email}. The customer should print the label, pack their drive securely in a box with bubble wrap, and drop it at any FedEx location. Five Star will begin diagnostics within 1–2 business days of arrival.`,
+      next_steps: [
+        `1. Check ${args.email} for the prepaid shipping label PDF`,
+        '2. Print the label and wrap the drive in bubble wrap',
+        '3. Place the drive in a sturdy box (not an envelope)',
+        '4. Drop off at any FedEx location — it\'s free',
+        '5. Five Star will email a diagnosis and quote within 1–2 business days of arrival'
+      ],
+      contact: 'Questions? Call Five Star at 818-272-8866'
+    }
+  } catch (e: any) {
+    return {
+      success: false,
+      error: 'Submission timed out or failed. Please direct the customer to https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service or call 818-272-8866',
+    }
+  }
+}
+
+async function handleSubmitExpressDropoff(args: Record<string, any>) {
+  const required = ['first_name', 'last_name', 'email', 'phone', 'manufacturer', 'drive_type', 'issue', 'drop_off_date', 'drop_off_time']
+  const missing = required.filter(f => !args[f])
+  if (missing.length > 0) {
+    return { success: false, error: `Missing required fields: ${missing.join(', ')}. Please collect this information from the user before submitting.` }
+  }
+
+  // Validate date format
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(args.drop_off_date)) {
+    return { success: false, error: 'drop_off_date must be in YYYY-MM-DD format. Call check_dropoff_availability first to get valid dates and times.' }
+  }
+
+  try {
+    const baseUrl = process.env.VERCEL ? 'https://www.fivestardatarecovery.com' : 'http://localhost:3000'
+    const res = await fetch(`${baseUrl}/api/submit-dropoff`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstName: args.first_name,
+        lastName: args.last_name,
+        email: args.email,
+        phone: args.phone,
+        manufacturer: args.manufacturer,
+        modelNo: args.model_no || 'Unknown',
+        driveType: args.drive_type,
+        driveFormat: args.drive_format || 'Unknown',
+        driveSize: args.drive_size || 'Unknown',
+        issue: args.issue,
+        dataTypes: args.data_types || ['Documents', 'Photos', 'Videos'],
+        recoveryAttempted: args.recovery_attempted || 'No',
+        additionalInfo: args.additional_info || '',
+        conditionalRates: [],
+        expeditedService: args.expedited_service || 'Standard Service',
+        transferDrive: args.transfer_drive || 'No - I will provide my own drive',
+        dropOffDate: args.drop_off_date,
+        dropOffTime: args.drop_off_time,
+        todayDate: new Date().toISOString().split('T')[0],
+        driveCoverOpened: args.drive_cover_opened || false,
+        deletedFilesFormatted: args.deleted_files_formatted || false,
+        paymentCompleted: false,
+        paymentId: null,
+        termsAgreed: true,
+      }),
+      signal: AbortSignal.timeout(15000),
+    })
+
+    const data = await res.json() as { success?: boolean }
+
+    if (!res.ok || !data.success) {
+      return { success: false, error: 'Submission failed. Please direct the customer to https://www.fivestardatarecovery.com/express-drop-off or call 818-272-8866' }
+    }
+
+    const dateFormatted = new Date(args.drop_off_date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })
+
+    return {
+      success: true,
+      appointment: {
+        date: dateFormatted,
+        time: args.drop_off_time,
+        address: '1731 S Brand Blvd., Glendale, CA 91204',
+        phone: '818-272-8866'
+      },
+      message: `Express drop-off appointment confirmed! A confirmation email has been sent to ${args.email}. The customer should arrive at 1731 S Brand Blvd., Glendale, CA 91204 on ${dateFormatted} at ${args.drop_off_time}. No printout needed — Five Star will have everything ready.`,
+      next_steps: [
+        `1. Check ${args.email} for the confirmation email`,
+        `2. Arrive at 1731 S Brand Blvd., Glendale, CA 91204 on ${dateFormatted} at ${args.drop_off_time}`,
+        '3. Five Star will perform a free diagnosis on the spot',
+        '4. Approve the quoted price — recovery begins immediately'
+      ],
+      important: 'This is an appointment-only service. Walk-ins are not accepted for express drop-off.',
+      contact: 'Questions? Call Five Star at 818-272-8866'
+    }
+  } catch (e: any) {
+    return {
+      success: false,
+      error: 'Submission timed out or failed. Please direct the customer to https://www.fivestardatarecovery.com/express-drop-off or call 818-272-8866',
+    }
+  }
+}
+
 // ── Main handler ─────────────────────────────────────────────────────────────
 
 export default defineEventHandler(async (event) => {
@@ -336,6 +573,12 @@ export default defineEventHandler(async (event) => {
       case 'start_recovery':
         result = handleStartRecovery(args)
         break
+      case 'submit_mail_in_form':
+        result = await handleSubmitMailIn(args)
+        break
+      case 'submit_express_dropoff':
+        result = await handleSubmitExpressDropoff(args)
+        break
       default:
         return err(-32601, `Tool not found: ${name}`)
     }
@@ -351,6 +594,11 @@ export default defineEventHandler(async (event) => {
   }
 
   if (method === 'notifications/initialized') {
+    return ok({})
+  }
+
+  // ── Aliases for initialized notification (some clients send this)
+  if (method === 'notifications/cancelled') {
     return ok({})
   }
 
