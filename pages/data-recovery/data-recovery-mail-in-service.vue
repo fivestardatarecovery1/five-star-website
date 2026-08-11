@@ -28,17 +28,17 @@ useHead({
             "url": "https://www.fivestardatarecovery.com/data-recovery/data-recovery-mail-in-service/",
             "provider": { "@id": "https://www.fivestardatarecovery.com/#fivestardatarecovery" },
             "areaServed": { "@type": "Country", "name": "United States" },
-            "description": "Five Star Data Recovery offers free nationwide mail-in data recovery service with prepaid round-trip shipping. No upfront cost for most cases."
+            "description": "Five Star Data Recovery offers free nationwide mail-in data recovery. Submit the form and your prepaid FedEx shipping label is generated instantly — no waiting, no phone call required."
           },
           {
             "@type": "FAQPage",
             "mainEntity": [
               { "@type": "Question", "name": "What is the Mail-In Data Recovery Form?", "acceptedAnswer": { "@type": "Answer", "text": "The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival." } },
-              { "@type": "Question", "name": "How do I send in my device for mail-in data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Simply complete the Mail-In Recovery Form, and we'll send you a prepaid shipping label for your convenience. Once you receive it, securely package your device, include the completed form inside the box, and drop it off at your nearest shipping location. Our preferred carriers are FedEx and USPS." } },
+              { "@type": "Question", "name": "How do I send in my device for mail-in data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "Complete the Mail-In Recovery Form online. The moment you submit, a prepaid FedEx shipping label is generated automatically and emailed to you instantly — no waiting, no phone call needed. Print the label, securely package your device, and drop it off at any FedEx location." } },
               { "@type": "Question", "name": "What devices can I send in for data recovery?", "acceptedAnswer": { "@type": "Answer", "text": "We accept hard drives, SSDs, iPhones, USB flash drives, RAID arrays, SD cards, and other common storage media. If you're unsure whether we can recover your specific device, feel free to contact us first for a free consultation." } },
               { "@type": "Question", "name": "Do I need to pay anything upfront when mailing in a device?", "acceptedAnswer": { "@type": "Answer", "text": "Most standard data recovery cases require no upfront payment. However, certain services like iPhone component-level recovery or deleted file recovery may require a refundable deposit. Details will be provided during your initial phone consultation." } },
               { "@type": "Question", "name": "How long does the mail-in recovery process take?", "acceptedAnswer": { "@type": "Answer", "text": "Once we receive your device, you'll get a same-day diagnostic report (by midnight). Standard recoveries take 3–5 business days, depending on the issue. For urgent cases, we offer Expedited and Expedited Plus Services with top priority handling." } },
-              { "@type": "Question", "name": "Is shipping covered by your company?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We cover all shipping costs for our mail-in data recovery service. Once you complete the Mail-In Recovery Form, we'll provide a prepaid shipping label so you can securely send your device to us at no charge. We also cover the return shipping of your recovered data." } },
+              { "@type": "Question", "name": "Is shipping covered by your company?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Shipping is completely free both ways. The moment you submit the Mail-In Recovery Form, a prepaid FedEx label is generated instantly and emailed to you automatically. No waiting for staff to respond — print it and ship immediately. We also cover return shipping of your recovered data." } },
               { "@type": "Question", "name": "Is my data safe during the mail-in process?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We use strict protocols to secure and track every device we receive. Once the recovery is complete, your data is transferred to a secure return drive and shipped back safely. We never access, share, or store your data beyond the recovery process." } },
               { "@type": "Question", "name": "How do I know when you've received my package?", "acceptedAnswer": { "@type": "Answer", "text": "We'll notify you by phone or email as soon as your device arrives and is logged into our system. Diagnostics begin right away, and you'll receive your evaluation report the same day before midnight." } },
               { "@type": "Question", "name": "Can I track the progress of my recovery case?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Once your device is in our system, our team provides regular updates through our ticketing system. You can also reach out to us for a status update." } },
@@ -65,8 +65,8 @@ useHead({
 useSeoMeta({
   title: 'Data Recovery Mail-in Services - Five Star Data Recovery',
   ogTitle: 'Data Recovery Mail-in Services - Five Star Data Recovery',
-  description: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
-  ogDescription: 'Not local and need Data Recovery? Simply fill out our mail-in form, ship your storage device to us, and get your data back in no time.',
+  description: 'Free mail-in data recovery nationwide. Submit the form and get an instant prepaid FedEx label — no phone call, no waiting. Free diagnosis, no data no charge.',
+  ogDescription: 'Free mail-in data recovery nationwide. Submit the form and get an instant prepaid FedEx label — no phone call, no waiting. Free diagnosis, no data no charge.',
   ogImage: 'https://www.fivestardatarecovery.com/data-recovery-mail-in-service-los-angeles.jpg',
 })
 
@@ -217,11 +217,11 @@ const processSteps = [
 
 const faqs = [
   { q: 'What is the Mail-In Data Recovery Form?', a: "The Mail-In Data Recovery Form allows customers to start their data recovery case remotely by shipping their device directly to us. Filling out this form ensures your device is properly logged into our system and processed without delays upon arrival." },
-  { q: 'How do I send in my device for mail-in data recovery?', a: "Simply complete the Mail-In Recovery Form, and we'll send you a prepaid shipping label for your convenience. Once you receive it, securely package your device, include the completed form inside the box, and drop it off at your nearest shipping location. Our preferred carriers are FedEx and USPS." },
+  { q: 'How do I send in my device for mail-in data recovery?', a: "Complete the Mail-In Recovery Form online. The moment you submit, a prepaid FedEx label is generated automatically and emailed to you instantly — no waiting, no phone call needed. Print the label, securely package your device, and drop it off at any FedEx location." },
   { q: 'What devices can I send in for data recovery?', a: "We accept hard drives, SSDs, iPhones, USB flash drives, RAID arrays, SD cards, and other common storage media. If you're unsure whether we can recover your specific device, feel free to contact us first for a free consultation." },
   { q: 'Do I need to pay anything upfront when mailing in a device?', a: "Most standard data recovery cases require no upfront payment. However, certain services like iPhone component-level recovery or deleted file recovery may require a refundable deposit. Details will be provided during your initial phone consultation." },
   { q: 'How long does the mail-in recovery process take?', a: "Once we receive your device, you'll get a same-day diagnostic report (by midnight). Standard recoveries take 3–5 business days, depending on the issue. For urgent cases, we offer Expedited and Expedited Plus Services with top priority handling." },
-  { q: 'Is shipping covered by your company?', a: "Yes! We cover all shipping costs for our mail-in data recovery service. Once you complete the Mail-In Recovery Form, we'll provide a prepaid shipping label so you can securely send your device to us at no charge. We also cover the return shipping of your recovered data." },
+  { q: 'Is shipping covered by your company?', a: "Yes — 100% free both ways. The moment you submit the form, a prepaid FedEx label is generated instantly and emailed to you automatically. No waiting for staff to respond — print it and ship right away. We also cover return shipping of your recovered data." },
   { q: 'Is my data safe during the mail-in process?', a: "Yes. We use strict protocols to secure and track every device we receive. Once the recovery is complete, your data is transferred to a secure return drive and shipped back safely. We never access, share, or store your data beyond the recovery process." },
   { q: "How do I know when you've received my package?", a: "We'll notify you by phone or email as soon as your device arrives and is logged into our system. Diagnostics begin right away, and you'll receive your evaluation report the same day before midnight." },
   { q: 'Can I track the progress of my recovery case?', a: "Absolutely. Once your device is in our system, our team provides regular updates through our ticketing system. You can also reach out to us for a status update." },
@@ -340,7 +340,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
         </div>
         <h1 class="mi-title">Mail-In Data <span class="mi-gold">Recovery</span></h1>
         <div class="mi-badges-row">
-          <span class="mi-bdg">📦 Mail In Your Device — Free Prepaid Label Provided</span>
+          <span class="mi-bdg">📦 Instant Prepaid FedEx Label — Generated the Moment You Submit</span>
           <span class="mi-bsep"></span>
           <span class="mi-bdg">🔬 Free Diagnosis — Same Day by Midnight</span>
           <span class="mi-bsep"></span>

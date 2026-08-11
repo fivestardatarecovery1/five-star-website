@@ -6,7 +6,7 @@ useSeoMeta({
 })
 
 const steps = [
-  { num: '1', title: 'Drop Off or Ship Your Drive', text: 'Bring your device to our Glendale lab or ship it free with our prepaid label — no appointment needed.' },
+  { num: '1', title: 'Drop Off or Ship Your Drive', text: 'Bring your device to our Glendale lab, or use our mail-in service — submit the form online and get a prepaid FedEx label instantly, automatically emailed to you. No appointment needed for standard drop-off.' },
   { num: '2', title: 'Free Diagnosis', text: 'Our certified engineers evaluate your device at no charge and identify the exact cause of data loss.' },
   { num: '3', title: 'Recovery in Progress', text: 'Engineers work in a certified ISO Class 5 cleanroom using advanced tools to safely recover your files.' },
   { num: '4', title: 'Review & Approve', text: 'We send you a full file listing before completing recovery. You only pay when you approve the results.' },
@@ -18,7 +18,7 @@ const faqs = [
   { q: 'Do I need to schedule an appointment before dropping off my device?', a: "No appointment is necessary. You're welcome to walk in during our business hours. However, submitting the form in advance helps us prepare for your device and minimize your wait time." },
   { q: 'What happens after I submit the Start Recovery Form?', a: "After you submit the form, we'll review your case details and reach out to you by phone or email to confirm receipt. From there, you can proceed with either dropping off your device in person or shipping it to our lab." },
   { q: 'Is there a fee just for submitting the form?', a: "No, there's no fee to submit the form. Any applicable fees will only be discussed and charged after diagnostics and your approval." },
-  { q: "Can I submit the form if I'm mailing my device?", a: "Yes! In fact, submitting the form is highly recommended for mail-in clients. It helps us match your incoming shipment to your case file, reducing delays." },
+  { q: "Can I submit the form if I'm mailing my device?", a: "Yes — and for mail-in clients, submitting the form IS how you get your shipping label. The moment you complete the mail-in form, a prepaid FedEx label is generated automatically and emailed to you instantly. No waiting, no phone call required. Just print and ship." },
 ]
 
 const startVideoActive = ref(false)
@@ -101,7 +101,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
             <p class="v3-card-desc">We send you a free prepaid shipping label — your device arrives at our lab in 1–2 days and we get straight to work.</p>
             <div class="v3-card-perks">
               <span>🚚 Free round-trip shipping — all 50 states</span>
-              <span>📋 Prepaid label provided immediately</span>
+              <span>📋 Prepaid FedEx label generated instantly on submission</span>
               <span>⚡ Expedited service available upon request</span>
             </div>
             <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="v3-btn v3-btn-outline">
