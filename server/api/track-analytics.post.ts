@@ -11,7 +11,7 @@
  * If MC_API_URL is not configured, events are logged to console only.
  */
 
-import { defineEventHandler, readBody } from 'h3'
+import { defineEventHandler, readBody, getRequestHeader } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
@@ -25,9 +25,18 @@ export default defineEventHandler(async (event) => {
 
   console.log(`[Analytics] ${body.event_type || 'pageview'} | ${body.page} | ${body.device || '?'} | src: ${body.utm_source || body.referrer || 'direct'}`)
 
+  // Extract real visitor IP from incoming request headers
+  const clientIp =
+    getRequestHeader(event, 'cf-connecting-ip') ||
+    getRequestHeader(event, 'x-forwarded-for')?.split(',')[0]?.trim() ||
+    getRequestHeader(event, 'x-real-ip') ||
+    null
+
   try {
     const payload = { ...body }
     if (secret) payload.secret = secret
+    // Pass real client IP so MC backend can do proper geo lookup
+    if (clientIp) payload.client_ip = clientIp
 
     const res = await fetch(`${mcUrl}/api/fs-analytics/event`, {
       method: 'POST',

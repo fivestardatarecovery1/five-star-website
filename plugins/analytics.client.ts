@@ -212,4 +212,94 @@ export default defineNuxtPlugin((nuxtApp) => {
       })
     }
   }
+
+  // ── Click tracking ───────────────────────────────────────────────────────────────
+  function getElementLocation(el: HTMLElement): string {
+    if (el.closest('header')) return 'header'
+    if (el.closest('footer')) return 'footer'
+    if (el.closest('[class*="hero"]') || el.closest('#hero')) return 'hero'
+    if (el.closest('nav')) return 'nav'
+    if (el.closest('form')) return 'form'
+    return 'body'
+  }
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement
+    const closest = (sel: string) => target.closest(sel) as HTMLElement | null
+
+    const phoneLink = closest('a[href^="tel:"]')
+    if (phoneLink) {
+      sendEvent({
+        event_type: 'action',
+        action_type: 'phone_click',
+        element_label: phoneLink.textContent?.trim() || 'Phone',
+        element_location: getElementLocation(phoneLink),
+        session_id: sessionId,
+        visitor_id: visitorId,
+        page: window.location.pathname,
+      })
+      return
+    }
+
+    const btn = closest('button, a[href], [role="button"]')
+    if (btn && !closest('nav') && btn.textContent?.trim()) {
+      const label = btn.textContent!.trim().slice(0, 80)
+      if (label.length > 2) {
+        sendEvent({
+          event_type: 'action',
+          action_type: 'cta_click',
+          element_label: label,
+          element_location: getElementLocation(btn),
+          session_id: sessionId,
+          visitor_id: visitorId,
+          page: window.location.pathname,
+        })
+      }
+    }
+  }, { capture: true, passive: true })
+
+  // ── Scroll milestones ───────────────────────────────────────────────────────────────
+  const milestonesFired = new Set<number>()
+  const checkMilestones = throttle(() => {
+    if (!cachedPageHeight) return
+    const pct = Math.min(100, Math.round(((window.scrollY + window.innerHeight) / cachedPageHeight) * 100))
+    for (const m of [25, 50, 75, 100]) {
+      if (pct >= m && !milestonesFired.has(m)) {
+        milestonesFired.add(m)
+        sendEvent({
+          event_type: 'action',
+          action_type: 'scroll_milestone',
+          element_label: `${m}%`,
+          session_id: sessionId,
+          visitor_id: visitorId,
+          page: window.location.pathname,
+        })
+      }
+    }
+  }, 500)
+  window.addEventListener('scroll', checkMilestones, { passive: true })
+  nuxtApp.hook('page:start', () => milestonesFired.clear())
+
+  // ── Heartbeat (active tab, every 30s) ────────────────────────────────────────────────
+  let hbInterval: ReturnType<typeof setInterval> | null = null
+  const startHb = () => {
+    if (hbInterval) return
+    hbInterval = setInterval(() => {
+      if (document.visibilityState === 'visible')
+        sendEvent({
+          event_type: 'heartbeat',
+          session_id: sessionId,
+          visitor_id: visitorId,
+          page: window.location.pathname,
+          time_on_page: Math.round((Date.now() - pageStartTime) / 1000),
+        })
+    }, 30000)
+  }
+  document.addEventListener('visibilitychange', () =>
+    document.visibilityState === 'visible'
+      ? startHb()
+      : (hbInterval && (clearInterval(hbInterval), hbInterval = null))
+  )
+  startHb()
+
 })
