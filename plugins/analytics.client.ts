@@ -113,6 +113,8 @@ export default defineNuxtPlugin((nuxtApp) => {
   let pageStartTime = Date.now()
   let currentPage = ''
   let maxScrollDepth = 0
+  let lastPageViewPath = ''
+  let lastPageViewAt = 0
   // Cache page height once — avoids reading scrollHeight on every scroll event.
   // Reading scrollHeight during scroll forces layout recalculation of all
   // content-visibility:auto sections, causing forced reflow on every scroll.
@@ -140,9 +142,17 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // ── Page view ──────────────────────────────────────────────────────────────
   const sendPageView = () => {
-    const sequence = getNextSeq()
     const params = new URLSearchParams(window.location.search)
     const page = window.location.pathname + window.location.search
+
+    // Deduplicate: Nuxt can fire page:finish multiple times per navigation.
+    // Skip if same path was already sent within 2 seconds.
+    const now = Date.now()
+    if (window.location.pathname === lastPageViewPath && now - lastPageViewAt < 2000) return
+    lastPageViewPath = window.location.pathname
+    lastPageViewAt = now
+
+    const sequence = getNextSeq()
 
     sendEvent({
       event_type: 'pageview',
