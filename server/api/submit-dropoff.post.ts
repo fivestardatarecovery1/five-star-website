@@ -3,6 +3,8 @@ import { Resend } from 'resend'
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig()
+  const xForwardedFor = getRequestHeader(event, 'x-forwarded-for')
+  const visitorIp = xForwardedFor ? xForwardedFor.split(',')[0].trim() : (getRequestHeader(event, 'x-real-ip') || 'unknown')
   const resendKey = config.resendApiKey || process.env.RESEND_API_KEY || ''
   const resend = resendKey ? new Resend(resendKey) : null
 
@@ -44,6 +46,7 @@ export default defineEventHandler(async (event) => {
             <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;width:40%;">Name</td><td style="padding:8px 0;font-weight:700;font-size:14px;">${fullName}</td></tr>
             <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Email</td><td style="padding:8px 0;font-size:14px;"><a href="mailto:${email}" style="color:#F5C842;">${email}</a></td></tr>
             <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Phone</td><td style="padding:8px 0;font-size:14px;"><a href="tel:${phone}" style="color:#F5C842;">${phone}</a></td></tr>
+            <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Visitor IP</td><td style="padding:8px 0;font-size:14px;font-family:monospace;">${visitorIp}</td></tr>
           </table>
 
           <h2 style="font-size:15px;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin:0 0 16px;border-top:1px solid #e8edf4;padding-top:20px;">Drive Details</h2>
@@ -139,7 +142,7 @@ export default defineEventHandler(async (event) => {
     await fetch(`${mcUrl}/api/fs-leads/express-submission`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body }),
+      body: JSON.stringify({ ...body, visitor_ip: visitorIp }),
       signal: AbortSignal.timeout(5000),
     })
   } catch(e) { console.error('[submit-dropoff] MC save failed:', (e as any)?.message) }

@@ -3,12 +3,14 @@ import { useAnalytics } from '~/composables/useAnalytics'
 const { trackConversion, trackEvent } = useAnalytics()
 const props = defineProps<{ light?: boolean, compact?: boolean }>()
 
-// Generate a stable session ID for this quote session (persists across steps)
+// Use the analytics session ID (fs_sid) so quote leads link to browsing sessions
 const sessionId = ref('')
 const sourcePage = ref('')
 if (import.meta.client) {
   try {
-    sessionId.value = (crypto?.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2))
+    // Prefer the analytics session ID so leads can be linked to their full browsing session
+    sessionId.value = sessionStorage.getItem('fs_sid') ||
+      (crypto?.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2))
     sourcePage.value = window.location.pathname
     // Track page view (fire and forget — never block rendering)
     fetch('/api/quote-lead', {

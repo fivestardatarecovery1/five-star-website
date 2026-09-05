@@ -81,6 +81,8 @@ async function createFedexLabel(opts: {
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const config = useRuntimeConfig()
+  const xForwardedFor = getRequestHeader(event, 'x-forwarded-for')
+  const visitorIp = xForwardedFor ? xForwardedFor.split(',')[0].trim() : (getRequestHeader(event, 'x-real-ip') || 'unknown')
   const fedexClientId = process.env.FEDEX_CLIENT_ID || config.fedexClientId || ''
   const fedexClientSecret = process.env.FEDEX_CLIENT_SECRET || config.fedexClientSecret || ''
   const fedexAccountNumber = process.env.FEDEX_ACCOUNT_NUMBER || config.fedexAccountNumber || ''
@@ -182,6 +184,7 @@ export default defineEventHandler(async (event) => {
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Ship From</td><td style="padding:6px 0;font-size:14px;">${streetAddress}, ${city}, ${state} ${zip}, ${country}</td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Transfer Drive</td><td style="padding:6px 0;font-size:14px;">${transferDrive}</td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Prior Attempts</td><td style="padding:6px 0;font-size:14px;">${recoveryAttempted}</td></tr>
+            <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Visitor IP</td><td style="padding:6px 0;font-size:14px;font-family:monospace;">${visitorIp}</td></tr>
           </table>
           ${labelError ? `<p style="color:#dc2626;font-size:13px;">⚠ FedEx label generation failed: ${labelError}</p>` : '<p style="color:#22c55e;font-size:13px;">✓ Prepaid label generated and sent to customer</p>'}
         </div>
@@ -351,7 +354,7 @@ export default defineEventHandler(async (event) => {
     await fetch(`${mcUrl}/api/fs-leads/mailin-submission`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body }),
+      body: JSON.stringify({ ...body, visitor_ip: visitorIp }),
       signal: AbortSignal.timeout(5000),
     })
   } catch(e) { console.error('[submit-mailin] MC save failed:', (e as any)?.message) }

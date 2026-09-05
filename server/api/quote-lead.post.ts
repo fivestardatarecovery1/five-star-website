@@ -18,6 +18,8 @@ async function postToMC(path: string, data: Record<string, unknown>) {
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
   const resend = new Resend(process.env.RESEND_API_KEY || '')
+  const xForwardedFor = getRequestHeader(event, 'x-forwarded-for')
+  const visitorIp = xForwardedFor ? xForwardedFor.split(',')[0].trim() : (getRequestHeader(event, 'x-real-ip') || 'unknown')
 
   const {
     session_id, name, email, phone, preferredContact, type,
@@ -39,6 +41,7 @@ export default defineEventHandler(async (event) => {
       name, email, phone,
       preferred_contact: preferredContact,
       source_page: source_page || null,
+      visitor_ip: visitorIp,
     })
     // Don't send email for lead-start — only send email on completion
     return { success: true }
@@ -69,6 +72,7 @@ export default defineEventHandler(async (event) => {
       cover_opened: cover_opened ?? null,
       aio: aio ?? null,
       board_repair: board_repair ?? null,
+      visitor_ip: visitorIp,
     })
   }
 
@@ -182,6 +186,7 @@ export default defineEventHandler(async (event) => {
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Email</td><td style="padding:6px 0;font-size:14px;"><a href="mailto:${email}" style="color:#F5C842;">${email || '—'}</a></td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Phone</td><td style="padding:6px 0;font-size:14px;"><a href="tel:${phone}" style="color:#F5C842;">${phone || '—'}</a></td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Preferred Contact</td><td style="padding:6px 0;font-size:14px;text-transform:capitalize;">${preferredContact || '—'}</td></tr>
+            <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Visitor IP</td><td style="padding:6px 0;font-size:14px;font-family:monospace;">${visitorIp}</td></tr>
             <tr><td colspan="2" style="padding:12px 0 4px;border-top:1px solid #e8edf4;"></td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Device</td><td style="padding:6px 0;font-weight:700;font-size:14px;">${device_label || device || '—'}</td></tr>
             ${capacity ? `<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Capacity</td><td style="padding:6px 0;font-size:14px;">${capacity}</td></tr>` : ''}
