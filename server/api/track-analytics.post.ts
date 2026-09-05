@@ -46,6 +46,14 @@ export default defineEventHandler(async (event) => {
   const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
   const secret = process.env.FS_ANALYTICS_SECRET
 
+  // ── Real client IP — Vercel sets x-forwarded-for at the edge before Lambda runs ──
+  const rawHeaders = event.node.req.headers
+  const clientIp =
+    (rawHeaders['x-forwarded-for'] as string | undefined)?.split(',')[0]?.trim() ||
+    getRequestHeader(event, 'x-forwarded-for')?.split(',')[0]?.trim() ||
+    getRequestHeader(event, 'x-real-ip') ||
+    null
+
   // ── Geo from Vercel edge headers (resolved from real visitor IP at the edge) ──
   // These are injected by Vercel automatically — no IP lookup needed, no CDN confusion.
   const rawCountry = getRequestHeader(event, 'x-vercel-ip-country') || ''
@@ -61,6 +69,9 @@ export default defineEventHandler(async (event) => {
   try {
     const payload: Record<string, unknown> = { ...body }
     if (secret) payload.secret = secret
+
+    // Pass real visitor IP so MC backend stores it correctly
+    if (clientIp) payload.client_ip = clientIp
 
     // Attach Vercel-resolved geo so MC backend skips IP lookup entirely
     if (geoCountry) {
