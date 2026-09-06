@@ -323,22 +323,22 @@ export default defineNuxtPlugin((nuxtApp) => {
     const msgs = chatMessages.map(m => {
       const isAgent = m.sender === 'agent'
       return `<div style="display:flex;flex-direction:column;align-items:${isAgent ? 'flex-start' : 'flex-end'};margin-bottom:8px">
-        <div style="background:${isAgent ? '#1e3a5f' : '#374151'};color:${isAgent ? '#93c5fd' : '#e5e7eb'};border-radius:${isAgent ? '12px 12px 12px 2px' : '12px 12px 2px 12px'};padding:10px 14px;max-width:85%;font-size:14px;line-height:1.5">${m.message}</div>
-        <span style="font-size:10px;color:#6b7280;margin-top:3px">${isAgent ? 'Support' : 'You'}</span>
+        <div style="background:${isAgent ? '#2a2a2a' : '#1a1a1a'};color:${isAgent ? '#D4AF37' : '#ffffff'};border-radius:${isAgent ? '12px 12px 12px 2px' : '12px 12px 2px 12px'};padding:10px 14px;max-width:85%;font-size:14px;line-height:1.5">${m.message}</div>
+        <span style="font-size:10px;color:#9ca3af;margin-top:3px">${isAgent ? 'Support' : 'You'}</span>
       </div>`
     }).join('')
 
     chatWidget.innerHTML = `
-      <div style="background:#0f172a;border:1px solid #3b82f6;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.6);width:340px;font-family:Inter,system-ui,sans-serif;overflow:hidden">
-        <div style="background:#1e3a5f;padding:14px 16px;display:flex;align-items:center;gap:10px">
+      <div style="background:#111111;border:1px solid #D4AF37;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.6);width:340px;font-family:Inter,system-ui,sans-serif;overflow:hidden">
+        <div style="background:#1a1a1a;padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:2px solid #D4AF37">
           <span style="width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;flex-shrink:0"></span>
-          <span style="font-size:14px;font-weight:700;color:#f9fafb;flex:1">Five Star Data Recovery</span>
-          <button id="fschat-close" style="background:transparent;border:none;color:#6b7280;cursor:pointer;font-size:18px;padding:0;line-height:1">&times;</button>
+          <span style="font-size:14px;font-weight:700;color:#ffffff;flex:1">Five Star Data Recovery</span>
+          <button id="fschat-close" style="background:transparent;border:none;color:#9ca3af;cursor:pointer;font-size:18px;padding:0;line-height:1">&times;</button>
         </div>
-        <div id="fschat-msgs" style="padding:14px;max-height:260px;overflow-y:auto;display:flex;flex-direction:column">${msgs}</div>
-        <div style="padding:12px 14px;border-top:1px solid #1f2937;display:flex;gap:8px">
-          <input id="fschat-input" placeholder="Type your reply..." style="flex:1;background:#111827;border:1px solid #374151;border-radius:8px;color:#e5e7eb;padding:8px 12px;font-size:13px;outline:none;font-family:inherit" />
-          <button id="fschat-send" style="background:#2563eb;border:none;border-radius:8px;color:#fff;padding:8px 14px;font-size:13px;cursor:pointer;font-weight:700">Send</button>
+        <div id="fschat-msgs" style="padding:14px;max-height:260px;overflow-y:auto;display:flex;flex-direction:column;background:#111111">${msgs}</div>
+        <div style="padding:12px 14px;border-top:1px solid #2a2a2a;display:flex;gap:8px;background:#111111">
+          <input id="fschat-input" placeholder="Type your reply..." style="flex:1;background:#1a1a1a;border:1px solid #D4AF37;border-radius:8px;color:#e5e7eb;padding:8px 12px;font-size:13px;outline:none;font-family:inherit" />
+          <button id="fschat-send" style="background:#D4AF37;border:none;border-radius:8px;color:#1a1a1a;padding:8px 14px;font-size:13px;cursor:pointer;font-weight:700">Send</button>
         </div>
       </div>
     `
