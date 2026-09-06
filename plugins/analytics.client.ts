@@ -318,6 +318,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   let chatMessages: Array<{sender: string, message: string, created_at: string}> = []
   let chatCheckInterval: ReturnType<typeof setInterval> | null = null
   let chatMinimized = false
+  let userClosed = false
 
   function renderMinimizedBar() {
     if (!chatWidget) return
@@ -368,7 +369,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     const input    = chatWidget.querySelector('#fschat-input') as HTMLInputElement
 
     minimizeBtn?.addEventListener('click', () => { chatMinimized = true; renderMinimizedBar() })
-    closeBtn?.addEventListener('click', () => { chatWidget!.style.display = 'none' })
+    closeBtn?.addEventListener('click', () => { userClosed = true; chatWidget!.style.display = 'none' })
     sendBtn?.addEventListener('click', sendReply)
     input?.addEventListener('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') sendReply() })
   }
@@ -414,8 +415,10 @@ export default defineNuxtPlugin((nuxtApp) => {
       liveChatId = data.chat_id
       chatMessages = data.messages || []
       mountChatWidget()
-      chatWidget!.style.display = 'block'
-      renderWidget()
+      if (!userClosed) {
+        chatWidget!.style.display = 'block'
+        renderWidget()
+      }
     } catch {}
   }
 
@@ -435,8 +438,10 @@ export default defineNuxtPlugin((nuxtApp) => {
           liveChatId = data.chat_id
           chatMessages = data.messages || []
           mountChatWidget()
-          chatWidget!.style.display = 'block'
-          renderWidget()
+          if (!userClosed) {
+            chatWidget!.style.display = 'block'
+            renderWidget()
+          }
         }
       } catch {}
     }
