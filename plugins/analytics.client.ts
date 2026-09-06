@@ -337,8 +337,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         </div>
         <div id="fschat-msgs" style="padding:14px;max-height:260px;overflow-y:auto;display:flex;flex-direction:column;background:#111111">${msgs}</div>
         <div style="padding:12px 14px;border-top:1px solid #2a2a2a;display:flex;gap:8px;background:#111111">
-          <input id="fschat-input" placeholder="Type your reply..." style="flex:1;background:#1a1a1a;border:1px solid #D4AF37;border-radius:8px;color:#e5e7eb;padding:8px 12px;font-size:13px;outline:none;font-family:inherit" />
-          <button id="fschat-send" style="background:#D4AF37;border:none;border-radius:8px;color:#1a1a1a;padding:8px 14px;font-size:13px;cursor:pointer;font-weight:700">Send</button>
+          <input id="fschat-input" placeholder="Type your reply..." style="flex:1;background:#1a1a1a;border:1px solid #D4AF37;border-radius:8px;color:#e5e7eb;padding:8px 12px;font-size:16px;outline:none;font-family:inherit" />
+          <button id="fschat-send" style="background:#D4AF37;border:none;border-radius:8px;color:#1a1a1a;padding:8px 14px;font-size:15px;cursor:pointer;font-weight:700;touch-action:manipulation">Send</button>
         </div>
       </div>
     `
@@ -371,6 +371,22 @@ export default defineNuxtPlugin((nuxtApp) => {
     } catch {}
   }
 
+  function mountChatWidget() {
+    if (chatWidget) return
+    chatWidget = document.createElement('div')
+    chatWidget.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999;max-width:calc(100vw - 32px)'
+    document.body.appendChild(chatWidget)
+    // Keep widget above keyboard on iOS (visualViewport tracks the visible area)
+    const vv = (window as any).visualViewport
+    if (vv) {
+      vv.addEventListener('resize', () => {
+        if (!chatWidget) return
+        const keyboardOffset = window.innerHeight - vv.offsetTop - vv.height
+        chatWidget.style.bottom = Math.max(24, keyboardOffset + 12) + 'px'
+      })
+    }
+  }
+
   async function checkForChat() {
     try {
       const MC_BASE = 'https://mc.hovsepianholdings.com'
@@ -379,12 +395,8 @@ export default defineNuxtPlugin((nuxtApp) => {
       if (!data.active) { liveChatId = null; return }
       liveChatId = data.chat_id
       chatMessages = data.messages || []
-      if (!chatWidget) {
-        chatWidget = document.createElement('div')
-        chatWidget.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999'
-        document.body.appendChild(chatWidget)
-      }
-      chatWidget.style.display = 'block'
+      mountChatWidget()
+      chatWidget!.style.display = 'block'
       renderWidget()
     } catch {}
   }
@@ -404,12 +416,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         if (data.type === 'init' || data.type === 'chat' || data.type === 'message') {
           liveChatId = data.chat_id
           chatMessages = data.messages || []
-          if (!chatWidget) {
-            chatWidget = document.createElement('div')
-            chatWidget.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999'
-            document.body.appendChild(chatWidget)
-          }
-          chatWidget.style.display = 'block'
+          mountChatWidget()
+          chatWidget!.style.display = 'block'
           renderWidget()
         }
       } catch {}
