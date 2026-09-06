@@ -317,9 +317,24 @@ export default defineNuxtPlugin((nuxtApp) => {
   let chatWidget: HTMLElement | null = null
   let chatMessages: Array<{sender: string, message: string, created_at: string}> = []
   let chatCheckInterval: ReturnType<typeof setInterval> | null = null
+  let chatMinimized = false
+
+  function renderMinimizedBar() {
+    if (!chatWidget) return
+    chatWidget.innerHTML = `
+      <div id="fschat-bar" style="display:flex;align-items:center;gap:10px;background:#1a1a1a;border:1px solid #D4AF37;border-top:2px solid #D4AF37;border-radius:14px;padding:10px 16px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.4);min-width:220px;font-family:Inter,system-ui,sans-serif;user-select:none">
+        <div style="width:28px;height:28px;border-radius:50%;background:#D4AF37;color:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0">A</div>
+        <span style="font-weight:700;font-size:14px;color:#ffffff;flex:1">Five Star Data Recovery</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </div>
+    `
+    const bar = chatWidget.querySelector('#fschat-bar')
+    bar?.addEventListener('click', () => { chatMinimized = false; renderWidget() })
+  }
 
   function renderWidget() {
     if (!chatWidget) return
+    if (chatMinimized) { renderMinimizedBar(); return }
     const msgs = chatMessages.map(m => {
       const isAgent = m.sender === 'agent'
       return `<div style="display:flex;flex-direction:column;align-items:${isAgent ? 'flex-start' : 'flex-end'};margin-bottom:8px">
@@ -333,7 +348,8 @@ export default defineNuxtPlugin((nuxtApp) => {
         <div style="background:#1a1a1a;padding:14px 16px;display:flex;align-items:center;gap:10px;border-bottom:2px solid #D4AF37">
           <span style="width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;flex-shrink:0"></span>
           <span style="font-size:14px;font-weight:700;color:#ffffff;flex:1">Five Star Data Recovery</span>
-          <button id="fschat-close" style="background:transparent;border:none;color:#9ca3af;cursor:pointer;font-size:18px;padding:0;line-height:1">&times;</button>
+          <button id="fschat-minimize" style="background:transparent;border:none;color:#9ca3af;cursor:pointer;padding:4px 6px;line-height:1;font-size:20px;touch-action:manipulation" title="Minimize">&#8722;</button>
+          <button id="fschat-close" style="background:transparent;border:none;color:#9ca3af;cursor:pointer;font-size:18px;padding:4px;line-height:1;touch-action:manipulation">&times;</button>
         </div>
         <div id="fschat-msgs" style="padding:14px;max-height:260px;overflow-y:auto;display:flex;flex-direction:column;background:#111111">${msgs}</div>
         <div style="padding:12px 14px;border-top:1px solid #2a2a2a;display:flex;gap:8px;background:#111111">
@@ -346,10 +362,12 @@ export default defineNuxtPlugin((nuxtApp) => {
     const msgsEl = chatWidget.querySelector('#fschat-msgs') as HTMLElement
     if (msgsEl) msgsEl.scrollTop = msgsEl.scrollHeight
 
+    const minimizeBtn = chatWidget.querySelector('#fschat-minimize')
     const closeBtn = chatWidget.querySelector('#fschat-close')
     const sendBtn  = chatWidget.querySelector('#fschat-send')
     const input    = chatWidget.querySelector('#fschat-input') as HTMLInputElement
 
+    minimizeBtn?.addEventListener('click', () => { chatMinimized = true; renderMinimizedBar() })
     closeBtn?.addEventListener('click', () => { chatWidget!.style.display = 'none' })
     sendBtn?.addEventListener('click', sendReply)
     input?.addEventListener('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') sendReply() })
