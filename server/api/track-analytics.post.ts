@@ -39,6 +39,19 @@ const US_STATE_NAMES: Record<string, string> = {
 export default defineEventHandler(async (event) => {
   const body = await readBody(event)
 
+  // Live chat reply passthrough
+  if (body?._livechat_reply) {
+    const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
+    try {
+      await fetch(`${mcUrl}/api/fs-analytics/live-chat/reply`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: body.chat_id, session_id: body.session_id, message: body.message }),
+      })
+    } catch {}
+    return { ok: true }
+  }
+
   if (!body?.page) {
     return { ok: false, error: 'Invalid payload' }
   }

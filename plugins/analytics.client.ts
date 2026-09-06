@@ -312,4 +312,86 @@ export default defineNuxtPlugin((nuxtApp) => {
   )
   startHb()
 
+  // ── Live Chat Widget ──────────────────────────────────────────────────────
+  let liveChatId: number | null = null
+  let chatWidget: HTMLElement | null = null
+  let chatMessages: Array<{sender: string, message: string, created_at: string}> = []
+  let chatCheckInterval: ReturnType<typeof setInterval> | null = null
+
+  function renderWidget() {
+    if (!chatWidget) return
+    const msgs = chatMessages.map(m => {
+      const isAgent = m.sender === 'agent'
+      return `<div style="display:flex;flex-direction:column;align-items:${isAgent ? 'flex-start' : 'flex-end'};margin-bottom:8px">
+        <div style="background:${isAgent ? '#1e3a5f' : '#374151'};color:${isAgent ? '#93c5fd' : '#e5e7eb'};border-radius:${isAgent ? '12px 12px 12px 2px' : '12px 12px 2px 12px'};padding:10px 14px;max-width:85%;font-size:14px;line-height:1.5">${m.message}</div>
+        <span style="font-size:10px;color:#6b7280;margin-top:3px">${isAgent ? 'Support' : 'You'}</span>
+      </div>`
+    }).join('')
+
+    chatWidget.innerHTML = `
+      <div style="background:#0f172a;border:1px solid #3b82f6;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,0.6);width:340px;font-family:Inter,system-ui,sans-serif;overflow:hidden">
+        <div style="background:#1e3a5f;padding:14px 16px;display:flex;align-items:center;gap:10px">
+          <span style="width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 6px #22c55e;flex-shrink:0"></span>
+          <span style="font-size:14px;font-weight:700;color:#f9fafb;flex:1">Five Star Data Recovery</span>
+          <button id="fschat-close" style="background:transparent;border:none;color:#6b7280;cursor:pointer;font-size:18px;padding:0;line-height:1">&times;</button>
+        </div>
+        <div id="fschat-msgs" style="padding:14px;max-height:260px;overflow-y:auto;display:flex;flex-direction:column">${msgs}</div>
+        <div style="padding:12px 14px;border-top:1px solid #1f2937;display:flex;gap:8px">
+          <input id="fschat-input" placeholder="Type your reply..." style="flex:1;background:#111827;border:1px solid #374151;border-radius:8px;color:#e5e7eb;padding:8px 12px;font-size:13px;outline:none;font-family:inherit" />
+          <button id="fschat-send" style="background:#2563eb;border:none;border-radius:8px;color:#fff;padding:8px 14px;font-size:13px;cursor:pointer;font-weight:700">Send</button>
+        </div>
+      </div>
+    `
+    // Scroll to bottom
+    const msgsEl = chatWidget.querySelector('#fschat-msgs') as HTMLElement
+    if (msgsEl) msgsEl.scrollTop = msgsEl.scrollHeight
+
+    const closeBtn = chatWidget.querySelector('#fschat-close')
+    const sendBtn  = chatWidget.querySelector('#fschat-send')
+    const input    = chatWidget.querySelector('#fschat-input') as HTMLInputElement
+
+    closeBtn?.addEventListener('click', () => { chatWidget!.style.display = 'none' })
+    sendBtn?.addEventListener('click', sendReply)
+    input?.addEventListener('keydown', (e: KeyboardEvent) => { if (e.key === 'Enter') sendReply() })
+  }
+
+  async function sendReply() {
+    const input = chatWidget?.querySelector('#fschat-input') as HTMLInputElement
+    const msg = input?.value?.trim()
+    if (!msg || !liveChatId) return
+    input.value = ''
+    try {
+      await fetch('/api/track-analytics', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ _livechat_reply: true, chat_id: liveChatId, session_id: sessionId, message: msg })
+      })
+      chatMessages.push({ sender: 'visitor', message: msg, created_at: new Date().toISOString() })
+      renderWidget()
+    } catch {}
+  }
+
+  async function checkForChat() {
+    try {
+      const MC_BASE = 'https://mc.hovsepianholdings.com'
+      const res = await fetch(`${MC_BASE}/api/fs-analytics/live-chat/check/${sessionId}`)
+      const data = await res.json()
+      if (!data.active) { liveChatId = null; return }
+      liveChatId = data.chat_id
+      chatMessages = data.messages || []
+      if (!chatWidget) {
+        chatWidget = document.createElement('div')
+        chatWidget.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999'
+        document.body.appendChild(chatWidget)
+      }
+      chatWidget.style.display = 'block'
+      renderWidget()
+    } catch {}
+  }
+
+  // Check every 15s for incoming chat invitations
+  chatCheckInterval = setInterval(checkForChat, 15000)
+  // Also check immediately after a short delay
+  setTimeout(checkForChat, 3000)
+
 })
