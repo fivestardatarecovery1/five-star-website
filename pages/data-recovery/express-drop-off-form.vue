@@ -261,7 +261,9 @@ async function submitForm() {
   submitting.value = true
   submitError.value = ''
   try {
-    await $fetch('/api/submit-dropoff', { method: 'POST', body: form })
+    const session_id = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('fs_sid') || '' : ''
+    const visitor_id = typeof localStorage !== 'undefined' ? localStorage.getItem('fs_vid') || '' : ''
+    await $fetch('/api/submit-dropoff', { method: 'POST', body: { ...form, session_id, visitor_id } })
     submitted.value = true
     trackConversion('express-dropoff', { device_type: form.deviceType || '' })
     onFormSubmitted()

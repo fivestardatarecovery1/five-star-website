@@ -92,6 +92,7 @@ export default defineEventHandler(async (event) => {
     firstName, lastName, email, phone, manufacturer, driveType, driveFormat, driveSize,
     issue, dataTypes, recoveryAttempted, additionalInfo, conditionalRates, expeditedService,
     transferDrive, streetAddress, city, state, zip, country, shippingCarrier, date,
+    session_id, visitor_id,
   } = body
 
   const fullName = `${firstName} ${lastName}`
@@ -354,7 +355,7 @@ export default defineEventHandler(async (event) => {
     await fetch(`${mcUrl}/api/fs-leads/mailin-submission`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body, visitor_ip: visitorIp }),
+      body: JSON.stringify({ ...body, visitor_ip: visitorIp, session_id: session_id || '', visitor_id: visitor_id || '' }),
       signal: AbortSignal.timeout(5000),
     })
   } catch(e) { console.error('[submit-mailin] MC save failed:', (e as any)?.message) }

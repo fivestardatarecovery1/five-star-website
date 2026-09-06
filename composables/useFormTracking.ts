@@ -50,6 +50,12 @@ function generateSessionId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 9)}`
 }
 
+// Get the analytics session ID (set by analytics.client.ts plugin)
+function getAnalyticsSessionId(): string {
+  if (!import.meta.client) return generateSessionId()
+  return sessionStorage.getItem('fs_sid') || generateSessionId()
+}
+
 export function useFormTracking(formName: 'mail-in' | 'express-drop-off', stepTitles: string[]) {
   const sessionId = ref<string>('')
   const started = ref(false)
@@ -152,6 +158,10 @@ export function useFormTracking(formName: 'mail-in' | 'express-drop-off', stepTi
   function onFormSubmitted() {
     submitted.value = true
     sendEvent('form_submitted')
+    // Fire analytics conversion event so this session shows as converted in Mission Control
+    if (import.meta.client && (window as any).$analytics?.track) {
+      (window as any).$analytics.track('conversion', { form: formName })
+    }
   }
 
   // ── Abandonment detection ──────────────────────────────────────────────────
@@ -166,8 +176,8 @@ export function useFormTracking(formName: 'mail-in' | 'express-drop-off', stepTi
   onMounted(() => {
     // Wrap in try/catch — tracking must NEVER break the form
     try {
-      const stored = sessionStorage.getItem(`fivestar_tracking_${formName}`)
-      sessionId.value = stored || generateSessionId()
+      // Use analytics session ID (fs_sid) so form submissions link to browsing sessions
+      sessionId.value = getAnalyticsSessionId()
       sessionStorage.setItem(`fivestar_tracking_${formName}`, sessionId.value)
     } catch {
       sessionId.value = generateSessionId() // fallback if sessionStorage blocked

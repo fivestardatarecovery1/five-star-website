@@ -185,10 +185,12 @@ async function submitForm() {
   submitting.value = true
   submitError.value = ''
   try {
+    const sessionId = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('fs_sid') || '' : ''
+    const visitorId = typeof localStorage !== 'undefined' ? localStorage.getItem('fs_vid') || '' : ''
     const rawRes = await fetch('/api/submit-mailin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form }),
+      body: JSON.stringify({ ...form, session_id: sessionId, visitor_id: visitorId }),
     })
     const res = await rawRes.json()
     console.log('label length:', res.labelBase64?.length, 'error:', res.labelError)

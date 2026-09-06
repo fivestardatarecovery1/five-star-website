@@ -16,6 +16,7 @@ export default defineEventHandler(async (event) => {
     dropOffDate, dropOffTime, todayDate,
     driveCoverOpened, deletedFilesFormatted,
     paymentCompleted, paymentId,
+    session_id, visitor_id,
   } = body
 
   // Build upfront fees summary for email
@@ -142,7 +143,7 @@ export default defineEventHandler(async (event) => {
     await fetch(`${mcUrl}/api/fs-leads/express-submission`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body, visitor_ip: visitorIp }),
+      body: JSON.stringify({ ...body, visitor_ip: visitorIp, session_id: session_id || '', visitor_id: visitor_id || '' }),
       signal: AbortSignal.timeout(5000),
     })
   } catch(e) { console.error('[submit-dropoff] MC save failed:', (e as any)?.message) }
