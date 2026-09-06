@@ -1,7 +1,8 @@
 <template>
   <ClientOnly>
-    <!-- Bubble -->
+    <!-- Bubble (hidden when minimized bar is shown) -->
     <button
+      v-if="!minimized"
       class="chat-bubble"
       :class="{ 'chat-bubble--open': open }"
       @click="toggleChat"
@@ -20,6 +21,18 @@
       <span v-if="!open && unread > 0" class="chat-unread">{{ unread }}</span>
     </button>
 
+    <!-- Minimized bar -->
+    <Transition name="chat-minimized">
+      <div v-if="minimized && !open" class="chat-minimized-bar" @click="restoreChat">
+        <div class="chat-minimized-avatar">A</div>
+        <span class="chat-minimized-label">Five Star Data Recovery</span>
+        <span v-if="unread > 0" class="chat-unread chat-unread--bar">{{ unread }}</span>
+        <svg class="chat-minimized-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="18 15 12 9 6 15"/>
+        </svg>
+      </div>
+    </Transition>
+
     <!-- Panel -->
     <Transition name="chat-panel">
       <div v-if="open" ref="panelEl" class="chat-panel">
@@ -32,7 +45,14 @@
               <span class="chat-status-dot"></span> Five Star Data Recovery
             </span>
           </div>
-          <button class="chat-close" @click="open = false">
+          <!-- Minimize button -->
+          <button class="chat-minimize" @click="minimizeChat" aria-label="Minimize chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+          </button>
+          <!-- Close button -->
+          <button class="chat-close" @click="closeChat" aria-label="Close chat">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
               <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
             </svg>
@@ -155,6 +175,7 @@ interface Message { role: 'user' | 'assistant' | 'support'; content: string }
 const props = defineProps<{ autoOpen?: boolean }>()
 
 const open = ref(false)
+const minimized = ref(false)
 const draft = ref('')
 const loading = ref(false)
 const streamingText = ref('')
@@ -284,6 +305,10 @@ async function pollChatStatus() {
 }
 
 function toggleChat() {
+  if (minimized.value) {
+    restoreChat()
+    return
+  }
   open.value = !open.value
   unread.value = 0
   if (open.value) {
@@ -292,6 +317,26 @@ function toggleChat() {
       onViewportResize()
     })
   }
+}
+
+function minimizeChat() {
+  open.value = false
+  minimized.value = true
+}
+
+function restoreChat() {
+  minimized.value = false
+  open.value = true
+  unread.value = 0
+  nextTick(() => {
+    inputEl.value?.focus()
+    onViewportResize()
+  })
+}
+
+function closeChat() {
+  open.value = false
+  minimized.value = false
 }
 
 function formatMsg(text: string): string {
@@ -597,8 +642,44 @@ async function submitCase() {
 .chat-header-name { display: block; font-weight: 800; font-size: 0.95rem; }
 .chat-header-status { font-size: 0.75rem; opacity: 0.85; display: flex; align-items: center; gap: 5px; }
 .chat-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; display: inline-block; }
+.chat-minimize { background: none; border: none; color: rgba(255,255,255,0.8); cursor: pointer; padding: 4px; display: flex; align-items: center; margin-right: 2px; }
+.chat-minimize:hover { color: #D4AF37; }
 .chat-close { background: none; border: none; color: rgba(255,255,255,0.8); cursor: pointer; padding: 4px; display: flex; align-items: center; }
 .chat-close:hover { color: #fff; }
+
+/* Minimized bar */
+.chat-minimized-bar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #1a1a1a;
+  color: #fff;
+  border-top: 2px solid #D4AF37;
+  border-radius: 14px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-width: 220px;
+  user-select: none;
+}
+.chat-minimized-bar:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.55); transform: translateY(-2px); }
+.chat-minimized-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: #D4AF37; color: #1a1a1a;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 800; flex-shrink: 0;
+}
+.chat-minimized-label { font-weight: 700; font-size: 0.875rem; flex: 1; }
+.chat-minimized-chevron { color: #D4AF37; flex-shrink: 0; }
+.chat-unread--bar { position: static; transform: none; margin-left: 0; }
+/* Minimized bar transition */
+.chat-minimized-enter-active, .chat-minimized-leave-active { transition: opacity 0.2s, transform 0.2s; }
+.chat-minimized-enter-from, .chat-minimized-leave-to { opacity: 0; transform: translateY(10px); }
 
 /* ── Messages ── */
 .chat-messages {
