@@ -389,9 +389,44 @@ export default defineNuxtPlugin((nuxtApp) => {
     } catch {}
   }
 
-  // Check every 15s for incoming chat invitations
-  chatCheckInterval = setInterval(checkForChat, 15000)
-  // Also check immediately after a short delay
-  setTimeout(checkForChat, 3000)
+  // ── SSE connection — instant push from MC, no polling delay ──────────────────
+  const MC_BASE = 'https://mc.hovsepianholdings.com'
+  let sseSource: EventSource | null = null
+
+  function connectSSE() {
+    if (sseSource) { sseSource.close(); sseSource = null; }
+    sseSource = new EventSource(`${MC_BASE}/api/fs-analytics/live-chat/stream/${sessionId}`)
+
+    sseSource.onmessage = (e: MessageEvent) => {
+      try {
+        const data = JSON.parse(e.data)
+        if (data.type === 'connected') return // just connected, no active chat
+        if (data.type === 'init' || data.type === 'chat' || data.type === 'message') {
+          liveChatId = data.chat_id
+          chatMessages = data.messages || []
+          if (!chatWidget) {
+            chatWidget = document.createElement('div')
+            chatWidget.style.cssText = 'position:fixed;bottom:24px;right:24px;z-index:99999'
+            document.body.appendChild(chatWidget)
+          }
+          chatWidget.style.display = 'block'
+          renderWidget()
+        }
+      } catch {}
+    }
+
+    sseSource.onerror = () => {
+      // Reconnect after 5s on error
+      sseSource?.close()
+      sseSource = null
+      setTimeout(connectSSE, 5000)
+    }
+  }
+
+  // Connect immediately
+  connectSSE()
+
+  // Fallback poll every 30s in case SSE is blocked (corporate firewalls, etc.)
+  chatCheckInterval = setInterval(checkForChat, 30000)
 
 })
