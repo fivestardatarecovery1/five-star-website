@@ -93,7 +93,7 @@
             </div>
           </div>
           <div v-if="callbackDone" class="chat-submit-success chat-submit-success--callback">
-            <div class="chat-submit-success-icon" style="background:#c62828;">📞</div>
+            <div class="chat-submit-success-icon" style="background:#1a1a1a;">📞</div>
             <strong>Callback requested!</strong>
             <p>Our team will call you back at {{ callbackDone }} as soon as possible.</p>
           </div>
@@ -119,7 +119,7 @@
             <div class="chat-submit-success-icon">✓</div>
             <strong>Case submitted!</strong>
             <p>Check your email for your prepaid shipping label and case details.</p>
-            <p style="font-size:0.8rem;color:#6b7280;margin-top:6px;">Questions? Call <a href="tel:8182728866" style="color:#c62828;font-weight:700;">818-272-8866</a></p>
+            <p style="font-size:0.8rem;color:#6b7280;margin-top:6px;">Questions? Call <a href="tel:8182728866" style="color:#D4AF37;font-weight:700;">818-272-8866</a></p>
           </div>
         </div>
 
@@ -525,18 +525,18 @@ async function submitCase() {
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #c62828;
-  color: #fff;
+  background: #1a1a1a;
+  color: #D4AF37;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(198,40,40,0.45);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.chat-bubble:hover { transform: scale(1.07); box-shadow: 0 6px 24px rgba(198,40,40,0.55); }
-.chat-bubble--open { background: #374151; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
+.chat-bubble:hover { transform: scale(1.07); box-shadow: 0 6px 24px rgba(0,0,0,0.65); }
+.chat-bubble--open { background: #2d2d2d; box-shadow: 0 4px 16px rgba(0,0,0,0.35); }
 .chat-bubble-icon { display: flex; align-items: center; justify-content: center; }
 .chat-unread {
   position: absolute;
@@ -576,18 +576,20 @@ async function submitCase() {
 
 /* ── Header ── */
 .chat-header {
-  background: #c62828;
+  background: #1a1a1a;
   color: #fff;
   padding: 14px 16px;
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  border-bottom: 2px solid #D4AF37;
 }
 .chat-header-avatar {
   width: 38px; height: 38px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.2);
+  background: #D4AF37;
+  color: #1a1a1a;
   display: flex; align-items: center; justify-content: center;
   font-weight: 800; font-size: 1rem; flex-shrink: 0;
 }
@@ -614,7 +616,7 @@ async function submitCase() {
 .chat-msg-wrap--user { flex-direction: row-reverse; padding-left: 36px; }
 .chat-msg-avatar {
   width: 28px; height: 28px; border-radius: 50%;
-  background: #c62828; color: #fff;
+  background: #D4AF37; color: #1a1a1a;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.72rem; font-weight: 800; flex-shrink: 0;
 }
@@ -635,7 +637,7 @@ async function submitCase() {
   box-shadow: 0 1px 3px rgba(0,0,0,0.07);
 }
 .chat-msg--user {
-  background: #c62828;
+  background: #1a1a1a;
   color: #fff;
   border-bottom-right-radius: 4px;
 }
@@ -706,23 +708,23 @@ async function submitCase() {
 /* ── Submit card ── */
 .chat-submit-card {
   background: #fff;
-  border: 2px solid #c62828;
+  border: 2px solid #D4AF37;
   border-radius: 14px;
   padding: 14px 16px;
   margin: 4px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
-.chat-submit-card--callback { border-color: #c62828; }
+.chat-submit-card--callback { border-color: #D4AF37; }
 .chat-submit-card-title { font-weight: 800; font-size: 0.9rem; color: #1a1a2e; margin-bottom: 10px; }
 .chat-submit-card-details { font-size: 0.8rem; color: #374151; line-height: 1.8; margin-bottom: 12px; }
 .chat-submit-card-details div { border-bottom: 1px solid #f1f5f9; padding-bottom: 3px; }
 .chat-submit-card-actions { display: flex; gap: 8px; }
 .chat-submit-btn {
-  flex: 1; background: #c62828; color: #fff; border: none;
+  flex: 1; background: #1a1a1a; color: #D4AF37; border: none;
   padding: 10px 16px; border-radius: 8px; font-weight: 800; font-size: 0.875rem;
   cursor: pointer; transition: background 0.15s;
 }
-.chat-submit-btn:hover:not(:disabled) { background: #b91c1c; }
+.chat-submit-btn:hover:not(:disabled) { background: #333; }
 .chat-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 .chat-submit-edit {
   background: none; border: 1.5px solid #d1d5db; color: #6b7280;
@@ -767,15 +769,15 @@ async function submitCase() {
   max-height: 120px;
   overflow-y: auto;
 }
-.chat-input:focus { outline: none; border-color: #c62828; background: #fff; }
+.chat-input:focus { outline: none; border-color: #D4AF37; background: #fff; }
 .chat-input:disabled { opacity: 0.6; }
 .chat-send {
   width: 38px; height: 38px; border-radius: 50%;
-  background: #c62828; color: #fff; border: none;
+  background: #D4AF37; color: #1a1a1a; border: none;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; flex-shrink: 0; transition: background 0.15s, transform 0.1s;
 }
-.chat-send:hover:not(:disabled) { background: #b91c1c; transform: scale(1.05); }
+.chat-send:hover:not(:disabled) { background: #C09A2A; transform: scale(1.05); }
 .chat-send:disabled { background: #d1d5db; cursor: not-allowed; }
 .chat-footer {
   text-align: center;
