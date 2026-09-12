@@ -85,6 +85,7 @@ const stepTitles = ['Contact Info', 'Drive Details', 'Recovery Details', 'Servic
 
 // Form abandonment & funnel tracking
 const { onFieldFocus, onFieldBlur, onStepComplete, onStepBack, onFormSubmitted } = useFormTracking('mail-in', stepTitles)
+const attribution = import.meta.client ? useAttribution() : null
 
 function formatPhone(e: Event) {
   const input = e.target as HTMLInputElement
@@ -190,7 +191,7 @@ async function submitForm() {
     const rawRes = await fetch('/api/submit-mailin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...form, session_id: sessionId, visitor_id: visitorId }),
+      body: JSON.stringify({ ...form, session_id: sessionId, visitor_id: visitorId, attribution }),
     })
     const res = await rawRes.json()
     console.log('label length:', res.labelBase64?.length, 'error:', res.labelError)

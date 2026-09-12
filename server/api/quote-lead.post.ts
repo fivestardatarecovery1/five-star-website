@@ -27,7 +27,24 @@ export default defineEventHandler(async (event) => {
     // Fee breakdown
     base_price, urgency_fee, cover_fee, encrypt_fee, aio_fee, board_repair_fee,
     encrypted, cover_opened, aio, board_repair,
+    // Attribution
+    attribution,
   } = body
+
+  // Build attribution rows for staff email
+  function buildAttributionRows(attr: Record<string, string> | null | undefined): string {
+    if (!attr?.source) return '<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Traffic Source</td><td style="padding:6px 0;font-size:14px;">—</td></tr>'
+    const rows: string[] = []
+    rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;width:40%;">Traffic Source</td><td style="padding:6px 0;font-weight:700;font-size:14px;color:#0369a1;">${attr.source}</td></tr>`)
+    if (attr.utm_campaign) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Campaign</td><td style="padding:6px 0;font-size:14px;">${attr.utm_campaign}</td></tr>`)
+    if (attr.utm_term) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Keyword</td><td style="padding:6px 0;font-size:14px;font-style:italic;">${attr.utm_term}</td></tr>`)
+    if (attr.utm_medium && attr.utm_medium !== 'organic') rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Medium</td><td style="padding:6px 0;font-size:14px;">${attr.utm_medium}</td></tr>`)
+    if (attr.utm_content) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Ad Content</td><td style="padding:6px 0;font-size:14px;">${attr.utm_content}</td></tr>`)
+    if (attr.gclid) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">GCLID</td><td style="padding:6px 0;font-size:12px;font-family:monospace;color:#666;">${attr.gclid.slice(0, 20)}…</td></tr>`)
+    if (attr.referrer) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Referrer</td><td style="padding:6px 0;font-size:13px;color:#666;">${attr.referrer}</td></tr>`)
+    if (attr.landing_page) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Landing Page</td><td style="padding:6px 0;font-size:13px;color:#666;">${attr.landing_page}</td></tr>`)
+    return rows.join('')
+  }
 
   // ── Post to MC (non-blocking, fire and forget) ──────────────────────────
   if (type === 'view') {
@@ -187,6 +204,9 @@ export default defineEventHandler(async (event) => {
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Phone</td><td style="padding:6px 0;font-size:14px;"><a href="tel:${phone}" style="color:#F5C842;">${phone || '—'}</a></td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Preferred Contact</td><td style="padding:6px 0;font-size:14px;text-transform:capitalize;">${preferredContact || '—'}</td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Visitor IP</td><td style="padding:6px 0;font-size:14px;font-family:monospace;">${visitorIp}</td></tr>
+            <tr><td colspan="2" style="padding:8px 0 4px;border-top:1px solid #e8edf4;"></td></tr>
+            <tr><td colspan="2" style="padding:4px 0 8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;">Traffic Source</td></tr>
+            ${buildAttributionRows(attribution)}
             <tr><td colspan="2" style="padding:12px 0 4px;border-top:1px solid #e8edf4;"></td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Device</td><td style="padding:6px 0;font-weight:700;font-size:14px;">${device_label || device || '—'}</td></tr>
             ${capacity ? `<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Capacity</td><td style="padding:6px 0;font-size:14px;">${capacity}</td></tr>` : ''}

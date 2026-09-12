@@ -93,7 +93,22 @@ export default defineEventHandler(async (event) => {
     issue, dataTypes, recoveryAttempted, additionalInfo, conditionalRates, expeditedService,
     transferDrive, streetAddress, city, state, zip, country, shippingCarrier, date,
     session_id, visitor_id,
+    attribution,
   } = body
+
+  function buildAttributionRows(attr: Record<string, string> | null | undefined): string {
+    if (!attr?.source) return '<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Traffic Source</td><td style="padding:6px 0;font-size:14px;">—</td></tr>'
+    const rows: string[] = []
+    rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;width:40%;">Traffic Source</td><td style="padding:6px 0;font-weight:700;font-size:14px;color:#0369a1;">${attr.source}</td></tr>`)
+    if (attr.utm_campaign) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Campaign</td><td style="padding:6px 0;font-size:14px;">${attr.utm_campaign}</td></tr>`)
+    if (attr.utm_term) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Keyword</td><td style="padding:6px 0;font-size:14px;font-style:italic;">${attr.utm_term}</td></tr>`)
+    if (attr.utm_medium && attr.utm_medium !== 'organic') rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Medium</td><td style="padding:6px 0;font-size:14px;">${attr.utm_medium}</td></tr>`)
+    if (attr.utm_content) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Ad Content</td><td style="padding:6px 0;font-size:14px;">${attr.utm_content}</td></tr>`)
+    if (attr.gclid) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">GCLID</td><td style="padding:6px 0;font-size:12px;font-family:monospace;color:#666;">${attr.gclid.slice(0, 20)}…</td></tr>`)
+    if (attr.referrer) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Referrer</td><td style="padding:6px 0;font-size:13px;color:#666;">${attr.referrer}</td></tr>`)
+    if (attr.landing_page) rows.push(`<tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Landing Page</td><td style="padding:6px 0;font-size:13px;color:#666;">${attr.landing_page}</td></tr>`)
+    return rows.join('')
+  }
 
   const fullName = `${firstName} ${lastName}`
   const countryCode = COUNTRY_CODES[country] || 'US'
@@ -186,6 +201,9 @@ export default defineEventHandler(async (event) => {
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Transfer Drive</td><td style="padding:6px 0;font-size:14px;">${transferDrive}</td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Prior Attempts</td><td style="padding:6px 0;font-size:14px;">${recoveryAttempted}</td></tr>
             <tr><td style="padding:6px 0;color:#6b7280;font-size:14px;">Visitor IP</td><td style="padding:6px 0;font-size:14px;font-family:monospace;">${visitorIp}</td></tr>
+            <tr><td colspan="2" style="padding:8px 0 4px;border-top:1px solid #e8edf4;"></td></tr>
+            <tr><td colspan="2" style="padding:4px 0 6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9ca3af;">Traffic Source</td></tr>
+            ${buildAttributionRows(attribution)}
           </table>
           ${labelError ? `<p style="color:#dc2626;font-size:13px;">⚠ FedEx label generation failed: ${labelError}</p>` : '<p style="color:#22c55e;font-size:13px;">✓ Prepaid label generated and sent to customer</p>'}
         </div>

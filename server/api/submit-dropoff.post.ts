@@ -17,7 +17,22 @@ export default defineEventHandler(async (event) => {
     driveCoverOpened, deletedFilesFormatted,
     paymentCompleted, paymentId,
     session_id, visitor_id,
+    attribution,
   } = body
+
+  function buildAttributionRows(attr: Record<string, string> | null | undefined): string {
+    if (!attr?.source) return '<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Traffic Source</td><td style="padding:8px 0;font-size:14px;">—</td></tr>'
+    const rows: string[] = []
+    rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;width:40%;">Traffic Source</td><td style="padding:8px 0;font-weight:700;font-size:14px;color:#0369a1;">${attr.source}</td></tr>`)
+    if (attr.utm_campaign) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Campaign</td><td style="padding:8px 0;font-size:14px;">${attr.utm_campaign}</td></tr>`)
+    if (attr.utm_term) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Keyword</td><td style="padding:8px 0;font-size:14px;font-style:italic;">${attr.utm_term}</td></tr>`)
+    if (attr.utm_medium && attr.utm_medium !== 'organic') rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Medium</td><td style="padding:8px 0;font-size:14px;">${attr.utm_medium}</td></tr>`)
+    if (attr.utm_content) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Ad Content</td><td style="padding:8px 0;font-size:14px;">${attr.utm_content}</td></tr>`)
+    if (attr.gclid) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">GCLID</td><td style="padding:8px 0;font-size:12px;font-family:monospace;color:#666;">${attr.gclid.slice(0, 20)}…</td></tr>`)
+    if (attr.referrer) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Referrer</td><td style="padding:8px 0;font-size:13px;color:#666;">${attr.referrer}</td></tr>`)
+    if (attr.landing_page) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Landing Page</td><td style="padding:8px 0;font-size:13px;color:#666;">${attr.landing_page}</td></tr>`)
+    return rows.join('')
+  }
 
   // Build upfront fees summary for email
   const upfrontFees: { label: string; amount: number }[] = []
@@ -48,6 +63,11 @@ export default defineEventHandler(async (event) => {
             <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Email</td><td style="padding:8px 0;font-size:14px;"><a href="mailto:${email}" style="color:#F5C842;">${email}</a></td></tr>
             <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Phone</td><td style="padding:8px 0;font-size:14px;"><a href="tel:${phone}" style="color:#F5C842;">${phone}</a></td></tr>
             <tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Visitor IP</td><td style="padding:8px 0;font-size:14px;font-family:monospace;">${visitorIp}</td></tr>
+          </table>
+
+          <h2 style="font-size:15px;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px;border-top:1px solid #e8edf4;padding-top:20px;">Traffic Source</h2>
+          <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
+            ${buildAttributionRows(attribution)}
           </table>
 
           <h2 style="font-size:15px;color:#6b7280;text-transform:uppercase;letter-spacing:.08em;margin:0 0 16px;border-top:1px solid #e8edf4;padding-top:20px;">Drive Details</h2>

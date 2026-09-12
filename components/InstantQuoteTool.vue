@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useAnalytics } from '~/composables/useAnalytics'
+import { useAttribution } from '~/composables/useAttribution'
 const { trackConversion, trackEvent } = useAnalytics()
 const props = defineProps<{ light?: boolean, compact?: boolean }>()
+const attribution = import.meta.client ? useAttribution() : null
 
 // Use the analytics session ID (fs_sid) so quote leads link to browsing sessions
 const sessionId = ref('')
@@ -92,7 +94,7 @@ async function submitContact() {
     fetch('/api/quote-lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ type: 'lead', session_id: sessionId.value, source_page: sourcePage.value, ...contact }),
+      body: JSON.stringify({ type: 'lead', session_id: sessionId.value, source_page: sourcePage.value, ...contact, attribution }),
     }).catch(() => {})
   }
   goTo('device')
@@ -352,6 +354,7 @@ function pickDevice(id: string) {
           device_label: callLabel,
           call_required: true,
           source_page: sourcePage.value,
+          attribution,
         }),
       }).catch(() => {})
     }
@@ -475,6 +478,7 @@ function pickUrgency(id: string) {
           cover_opened: sel.coverOpened ?? false,
           aio: sel.aio ?? false,
           board_repair: sel.boardRepair ?? false,
+          attribution,
         }),
       }).catch(() => {})
     })

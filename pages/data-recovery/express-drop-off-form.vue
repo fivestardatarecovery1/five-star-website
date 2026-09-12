@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { useAnalytics } from '~/composables/useAnalytics'
+import { useAttribution } from '~/composables/useAttribution'
 const { trackConversion } = useAnalytics()
+const attribution = import.meta.client ? useAttribution() : null
 useHead({
   script: [
     {
@@ -263,7 +265,7 @@ async function submitForm() {
   try {
     const session_id = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('fs_sid') || '' : ''
     const visitor_id = typeof localStorage !== 'undefined' ? localStorage.getItem('fs_vid') || '' : ''
-    await $fetch('/api/submit-dropoff', { method: 'POST', body: { ...form, session_id, visitor_id } })
+    await $fetch('/api/submit-dropoff', { method: 'POST', body: { ...form, session_id, visitor_id, attribution } })
     submitted.value = true
     trackConversion('express-dropoff', { device_type: form.deviceType || '' })
     onFormSubmitted()
