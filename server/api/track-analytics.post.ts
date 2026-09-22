@@ -41,7 +41,7 @@ export default defineEventHandler(async (event) => {
 
   // Live chat reply passthrough
   if (body?._livechat_reply) {
-    const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
+    const mcUrl = process.env.MC_API_URL || 'https://mc.hovsepianholdings.com'
     try {
       await fetch(`${mcUrl}/api/fs-analytics/live-chat/reply`, {
         method: 'POST',
@@ -56,7 +56,7 @@ export default defineEventHandler(async (event) => {
     return { ok: false, error: 'Invalid payload' }
   }
 
-  const mcUrl = process.env.MC_API_URL || 'http://localhost:3001'
+  const mcUrl = process.env.MC_API_URL || 'https://mc.hovsepianholdings.com'
   const secret = process.env.FS_ANALYTICS_SECRET
 
   // ── Real client IP — Vercel sets x-forwarded-for at the edge before Lambda runs ──
