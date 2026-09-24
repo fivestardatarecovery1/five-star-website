@@ -30,7 +30,7 @@ export default defineEventHandler(async (event) => {
     if (attr.utm_content) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Ad Content</td><td style="padding:8px 0;font-size:14px;">${attr.utm_content}</td></tr>`)
     if (attr.gclid) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">GCLID</td><td style="padding:8px 0;font-size:12px;font-family:monospace;color:#666;">${attr.gclid.slice(0, 20)}…</td></tr>`)
     if (attr.referrer) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Referrer</td><td style="padding:8px 0;font-size:13px;color:#666;">${attr.referrer}</td></tr>`)
-    if (attr.landing_page) rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;">Landing Page</td><td style="padding:8px 0;font-size:13px;color:#666;">${attr.landing_page}</td></tr>`)
+    if (attr.landing_page) { const lpPath = attr.landing_page.split('?')[0]; rows.push(`<tr><td style="padding:8px 0;color:#6b7280;font-size:14px;white-space:nowrap;">Landing Page</td><td style="padding:8px 0;font-size:13px;color:#666;word-break:break-all;overflow-wrap:break-word;max-width:220px;">${lpPath}</td></tr>`) }
     return rows.join('')
   }
 

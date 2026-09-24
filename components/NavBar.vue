@@ -411,6 +411,9 @@ nav {
 .dropdown-leave-active {
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
+.dropdown-leave-active {
+  pointer-events: none;
+}
 .dropdown-enter-from,
 .dropdown-leave-to {
   opacity: 0;
