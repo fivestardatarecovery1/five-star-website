@@ -90,6 +90,42 @@ const reviews = [
 
 const submitted = ref(false)
 const contactVideoActive = ref(false)
+const submitting = ref(false)
+
+const form = reactive({
+  name: '',
+  email: '',
+  phone: '',
+  reason: '',
+  message: '',
+  preferred_contact: 'call',
+})
+
+async function handleContactSubmit() {
+  if (submitting.value) return
+  submitting.value = true
+  try {
+    const sessionId = typeof sessionStorage !== 'undefined' ? sessionStorage.getItem('fs_sid') || null : null
+    await $fetch('/api/submit-contact', {
+      method: 'POST',
+      body: {
+        session_id: sessionId,
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        reason: form.reason,
+        message: form.message,
+        preferred_contact: form.preferred_contact,
+      },
+    })
+  } catch (e) {
+    console.error('[contact-form] submit error', e)
+  } finally {
+    submitting.value = false
+    trackConversion('contact-form')
+    submitted.value = true
+  }
+}
 </script>
 
 <template>
@@ -137,26 +173,26 @@ const contactVideoActive = ref(false)
         <!-- RIGHT: Form -->
         <div class="contact-form-wrap">
           <h3 class="form-title">Send Us a Message</h3>
-          <form @submit.prevent="submitted = true; trackConversion('contact-form')" class="contact-form">
+          <form @submit.prevent="handleContactSubmit" class="contact-form">
             <div class="mf-row">
               <div class="mf-group">
                 <label>NAME <span class="mf-req">*</span></label>
-                <input type="text" placeholder="Your Name" class="mf-input" required />
+                <input type="text" v-model="form.name" placeholder="Your Name" class="mf-input" required />
               </div>
               <div class="mf-group">
                 <label>EMAIL <span class="mf-req">*</span></label>
-                <input type="email" placeholder="Your Email" class="mf-input" required />
+                <input type="email" v-model="form.email" placeholder="Your Email" class="mf-input" required />
               </div>
             </div>
             <div class="mf-row">
               <div class="mf-group">
                 <label>PHONE</label>
-                <input type="tel" placeholder="Phone Number" class="mf-input" />
+                <input type="tel" v-model="form.phone" placeholder="Phone Number" class="mf-input" />
               </div>
               <div class="mf-group">
                 <label for="contact-reason">REASON FOR CONTACT</label>
                 <div class="mf-select-wrap">
-                  <select id="contact-reason" class="mf-input">
+                  <select id="contact-reason" v-model="form.reason" class="mf-input">
                     <option value="">Select Message Reason</option>
                     <option>Billing Inquiry</option>
                     <option>Case Support</option>
@@ -171,14 +207,14 @@ const contactVideoActive = ref(false)
             </div>
             <div class="mf-group mf-full">
               <label>MESSAGE</label>
-              <textarea placeholder="Describe your issue..." class="mf-input" style="height:120px;padding:12px 16px;resize:vertical;" />
+              <textarea v-model="form.message" placeholder="Describe your issue..." class="mf-input" style="height:120px;padding:12px 16px;resize:vertical;" />
             </div>
             <div class="mf-group mf-full">
               <label>Preferred Contact Method</label>
               <div class="mf-radio-group">
-                <label class="mf-radio"><input type="radio" name="contactpref" value="call" checked /> CALL</label>
-                <label class="mf-radio"><input type="radio" name="contactpref" value="email" /> EMAIL</label>
-                <label class="mf-radio"><input type="radio" name="contactpref" value="text" /> TEXT</label>
+                <label class="mf-radio"><input type="radio" v-model="form.preferred_contact" name="contactpref" value="call" /> CALL</label>
+                <label class="mf-radio"><input type="radio" v-model="form.preferred_contact" name="contactpref" value="email" /> EMAIL</label>
+                <label class="mf-radio"><input type="radio" v-model="form.preferred_contact" name="contactpref" value="text" /> TEXT</label>
               </div>
             </div>
             <div v-if="submitted" style="background:#d4edda;border:1px solid #c3e6cb;border-radius:8px;padding:16px;color:#155724;font-weight:600;margin-bottom:12px;">
