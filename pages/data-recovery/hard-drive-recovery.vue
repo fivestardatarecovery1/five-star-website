@@ -293,7 +293,7 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
           <p class="s-body">We know you want to try software tools or YouTube tricks. However, this can make things worse. This is especially true for failed hard drives or sensitive parts.</p>
           <ul class="content-list">
             <li>Running recovery software on a failing drive can cause permanent platter damage</li>
-            <li>Opening a drive outside a cleanroom can introduce dust and contamination</li>
+            <li>Opening a drive outside a cleanroom can introduce dust and contamination — <NuxtLink to="/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study" class="inline-link">see a real case where this caused 1,071 platter soft hits</NuxtLink></li>
             <li>DIY recovery often overwrites the critical data you're trying to recover</li>
           </ul>
           <p class="s-body">Once overwritten, even the best data drive hard recovery techniques can't help. Let our trained professionals protect your data from further loss.</p>

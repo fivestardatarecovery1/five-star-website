@@ -189,6 +189,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <h2 class="s-heading">How We Recover Seagate Data</h2>
         <p class="s-body">Our lab is equipped with the tools and expertise to work on HDDs, SSDs, or flash devices from Seagate. If you <NuxtLink to="/data-recovery/dropped-hard-drive" class="inline-link">dropped your external drive</NuxtLink>, exposed it to liquid, or it suddenly stopped working, don't worry. We'll safely open the device, learn what went wrong, and start salvaging data from corrupted hardware.</p>
+        <div class="case-study-callout">
+          <div class="cs-icon">📋</div>
+          <div class="cs-content">
+            <div class="cs-label">Real Case Study</div>
+            <p class="cs-text">A music producer's Seagate Barracuda ST2000DM001 was opened at home and powered on while contaminated — resulting in 1,071 platter soft hits and firmware failure. Our engineers performed platter burnishing, firmware repair, and two head replacements to recover 1.2TB of unreleased music.</p>
+            <NuxtLink to="/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study" class="cs-link">Read the full case study →</NuxtLink>
+          </div>
+        </div>
         <p class="s-body">Depending on the issue, your drive may need internal repairs in our cleanroom. Once stable, we create a secure image of the device and extract as much recoverable data as possible. We then copy all files stored onto a new drive that you provide or purchase from us.</p>
         <p class="s-body">Our pricing is based on the type of failure and drive model, and we'll always provide a clear data recovery cost quote before starting.</p>
       </div>
@@ -373,4 +381,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #7A5500; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
 @media (max-width: 768px) { .two-col-layout { grid-template-columns: 1fr; } }
+.case-study-callout { display: flex; gap: 16px; align-items: flex-start; background: #fffbf0; border: 1px solid rgba(201,168,76,0.35); border-left: 4px solid #C9A84C; border-radius: 8px; padding: 20px 24px; margin-top: 20px; }
+.cs-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.cs-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #7A5500; margin-bottom: 6px; }
+.cs-text { font-size: 0.88rem; color: #4a5568; line-height: 1.65; margin: 0 0 10px; }
+.cs-link { font-size: 0.85rem; font-weight: 700; color: #7A5500; text-decoration: underline; }
+.cs-link:hover { color: #C9A84C; }
 </style>

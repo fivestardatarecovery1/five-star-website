@@ -160,6 +160,14 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
       <div class="container">
         <h2 class="s-heading">What Is a Data Recovery Clean Room?</h2>
         <p class="s-body">A data recovery clean room maintains a highly controlled environment that filters out dust, static, and airborne particles. This sterile setup is essential for safely working on the internal components of a hard disk drive (HDD). Even the smallest contaminant can scratch a platter or interfere with a head replacement.</p>
+        <div class="case-study-callout">
+          <div class="cs-icon">📋</div>
+          <div class="cs-content">
+            <div class="cs-label">See What Happens When a Drive Is Opened Outside a Clean Room</div>
+            <p class="cs-text">Ticket #11791: A Seagate Barracuda was opened at home, exposing the platters to airborne contamination. When powered on, 1,071 soft hits were recorded across the bottom platter surface. Our clean room team recovered 1.2TB of unreleased music.</p>
+            <NuxtLink to="/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study" class="cs-link">Read the case study →</NuxtLink>
+          </div>
+        </div>
         <p class="s-body">Our facility includes an <strong>ISO-certified Class 100 cleanroom environment</strong>, which means there are fewer than 100 particles per cubic foot of air. Inside, our engineers perform precision repairs like head swaps, spindle adjustments, and platter removal. These procedures are the core of lab data recovery, where success often depends on minimizing risk to fragile components.</p>
       </div>
     </section>
@@ -339,4 +347,10 @@ const toggleFaq = (i: number) => { openFaq.value = openFaq.value === i ? null : 
 .faq-trigger span:first-child { font-size: 0.95rem; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
 .faq-toggle { font-size: 1.4rem; font-weight: 300; color: #7A5500; flex-shrink: 0; }
 .faq-answer { padding: 0 24px 22px; font-size: 0.92rem; color: #4a5568; line-height: 1.75; }
+.case-study-callout { display: flex; gap: 16px; align-items: flex-start; background: #fffbf0; border: 1px solid rgba(201,168,76,0.35); border-left: 4px solid #C9A84C; border-radius: 8px; padding: 20px 24px; margin-top: 20px; }
+.cs-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
+.cs-label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #7A5500; margin-bottom: 6px; }
+.cs-text { font-size: 0.88rem; color: #4a5568; line-height: 1.65; margin: 0 0 10px; }
+.cs-link { font-size: 0.85rem; font-weight: 700; color: #7A5500; text-decoration: underline; }
+.cs-link:hover { color: #C9A84C; }
 </style>
