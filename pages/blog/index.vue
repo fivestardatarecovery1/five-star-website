@@ -27,6 +27,16 @@ const activeCategory = ref('All')
 
 const posts = [
   {
+    title: 'Seagate Barracuda Data Recovery: 1.2TB Recovered After Drive Was Opened at Home',
+    date: 'October 20, 2026',
+    category: 'Success Stories & Case Studies',
+    readTime: '8 min read',
+    desc: '1,071 soft hits, firmware corruption, platter contamination — a music producer opened his Seagate Barracuda at home and powered it on. Here\'s how we got 1.2TB of unreleased music back.',
+    href: '/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study',
+    image: '/blog-seagate-barracuda-drive-label.jpg',
+    icon: '💽'
+  },
+  {
     title: 'Top 10 Data Recovery Software Tools — Honest Reviews & Warnings',
     date: 'June 12, 2026',
     category: 'DIY Data Recovery',
