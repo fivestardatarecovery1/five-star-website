@@ -83,7 +83,7 @@ useHead({
           <!-- Section 1 -->
           <h2 class="section-heading">What Arrived at Our Lab</h2>
 
-          <p>When the <NuxtLink to="/data-recovery/seagate-data-recovery" class="inline-link">Seagate Barracuda ST2000DM001</NuxtLink> arrived at our Glendale facility, our technicians noticed immediately that something was wrong — before they even opened the shipping box. The drive had already been opened. The cover screws were missing.</p>
+          <p>As soon as we unpacked the <NuxtLink to="/data-recovery/seagate-data-recovery" class="inline-link">Seagate Barracuda ST2000DM001</NuxtLink>, our technicians noticed the drive had already been opened. The cover screws were missing.</p>
 
           <!-- Drive label photo -->
           <div class="blog-image-block">
@@ -95,11 +95,9 @@ useHead({
             <p class="img-caption">The drive as received: Seagate Barracuda 2TB (ST2000DM001, FW: CC26) — cover screws missing, previously opened outside a clean room.</p>
           </div>
 
-          <p>The customer had watched several YouTube videos on hard drive repair and decided to open the drive himself at home. His intentions were good. The outcome was serious.</p>
+          <p>The customer had attempted a DIY repair at home after watching YouTube tutorials. Hard drives are precision instruments manufactured in ISO Class 5 clean rooms — environments with fewer than 3,520 particles per cubic meter of air. Uncontrolled environments contain significantly more airborne particles, which can settle on internal components once a drive is opened.</p>
 
-          <p>Hard drives are precision instruments manufactured in ISO Class 5 clean rooms — environments with fewer than 3,520 particles per cubic meter of air. Your home, your kitchen table, your garage — even a seemingly "clean" room — contains millions of airborne particles at any given moment. The moment that cover came off, the damage began.</p>
-
-          <p>The drive had also been powered on after being opened. That decision would cost us significantly more recovery time.</p>
+          <p>The drive had also been powered on after being opened. Our technicians noted this, as it is a factor that typically increases the complexity of recovery work.</p>
 
           <!-- Open drive photo -->
           <div class="blog-image-block">
@@ -144,7 +142,7 @@ useHead({
               alt="Burnishing machine scan results — Bottom H/S/s: 007/1071/000 — before platter cleaning"
               class="blog-img"
             />
-            <p class="img-caption">Initial scan results: Bottom H/S/s: 007/1071/000. The bottom platter surface showed 7 hard hits and 1,071 soft hits — direct result of contamination being dragged across the surface while the drive was powered on. Top surface: Passed.</p>
+            <p class="img-caption">Initial scan results for both platter surfaces on this drive. Top surface: Passed (0/0/0). Bottom surface: 7 hard hits, 1,071 soft hits detected. Hard hits and soft hits are the burnishing machine's classifications for surface anomalies flagged during the scan pass.</p>
           </div>
 
           <div class="stats-band">
@@ -162,11 +160,11 @@ useHead({
             </div>
           </div>
 
-          <p>Soft hits represent areas where the magnetic coating has been weakened or disturbed. Hard hits are physical damage to the platter surface. Both categories mean data is at risk. Over 1,000 soft hits on a single platter surface is severe — and entirely the result of the drive being powered on after contamination entered.</p>
+          <p>The burnishing machine classifies surface anomalies into two categories: <strong>soft hits</strong> (lower-severity detections flagged during the scan) and <strong>hard hits</strong> (higher-severity detections). Both indicate areas the machine flagged as irregular. Over 1,000 soft hits on a single platter surface is a significant finding. Our technicians observed contamination throughout the drive interior consistent with the drive having been opened in an uncontrolled environment and subsequently powered on.</p>
 
           <div class="callout-card danger">
-            <h3>This is why we tell every customer the same thing:</h3>
-            <p><strong>If your drive fails, do not power it on again.</strong> Every spin in a contaminated state is another pass of destruction across your data.</p>
+            <h3>Our standard guidance for any drive failure:</h3>
+            <p><strong>If your drive stops responding, power it off and avoid restarting it.</strong> Further operation of a compromised drive can complicate recovery. The sooner you contact a professional lab, the more options remain available.</p>
           </div>
 
           <!-- Section 4 -->
@@ -210,17 +208,17 @@ useHead({
                 alt="Burnishing machine scan after platter cleaning — Top and Bottom H/S/s: 000/000/000 — both surfaces passed"
                 class="blog-img"
               />
-              <p class="img-caption">After our burnishing process: both platter surfaces completely clean. Top H/S/s: 000/000/000 · Bottom H/S/s: 000/000/000. Both surfaces passed.</p>
+              <p class="img-caption">Post-cleaning scan: Top H/S/s: 000/000/000 · Bottom H/S/s: 000/000/000. Both surfaces returned zero detections. A zero reading means the machine detected no anomalies on that pass — it reflects cleared scan detections, not a statement about the underlying magnetic material.</p>
             </div>
 
-            <p>That "000/000/000" result on both surfaces is what we need to see before we reassemble the drive. Anything less and we keep cleaning. We ran multiple passes until we hit clean.</p>
+            <p>A 000/000/000 result on both surfaces is the threshold our engineers look for before proceeding to reassembly. Additional cleaning passes are performed as needed, based on our engineers' assessment of each result.</p>
           </div>
 
           <div class="phase-block">
             <div class="phase-number">Step 3</div>
             <h3 class="phase-title">Head Replacement and Firmware Repair</h3>
             <p>With the platters cleaned, we installed a new set of matched <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">read/write heads</NuxtLink> and reassembled the drive. We were able to get the drive to power on — but it immediately presented another problem: firmware corruption.</p>
-            <p>When a drive is improperly opened and powered on, the stress can corrupt the drive's internal firmware — the operating code that tells the drive how to function. This is a separate issue from physical contamination, and it requires its own specialized repair process. Learn more about <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drive recovery</NuxtLink> and the types of failures we handle.</p>
+            <p>Upon powering on, the drive presented firmware-level errors — our technicians observed the drive was not functioning normally at the firmware layer, independent of the physical contamination. Firmware issues of this type require a separate repair process. Learn more about <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drive recovery</NuxtLink> and the types of failures we handle.</p>
             <p>Our engineers performed a full firmware repair at the module level, gaining access to the drive at the sector level — the raw data storage layer beneath the file system.</p>
           </div>
 
@@ -235,13 +233,13 @@ useHead({
           <!-- Section 5: Results -->
           <h2 class="section-heading">The Result: 1.2TB of Audio Recovered</h2>
 
-          <p>From that 95% image, we were able to recover approximately <strong>1.2TB of data</strong> — including audio recordings and full project files.</p>
+          <p>From that image, our engineers were able to extract approximately <strong>1.2TB of data</strong>, including audio recordings and project files. The 95% imaging figure refers to the percentage of drive sectors we were able to successfully read — the 1.2TB represents the recoverable file data extracted from those sectors.</p>
 
           <div class="results-quote">
-            The album that had been on the verge of being lost permanently was intact.
+            The customer confirmed the critical recordings and project files were present in the recovered data.
           </div>
 
-          <p>The music engineer's reaction when we delivered the data said everything. Months of studio work, original recordings, production sessions — recovered. The referring computer repair shop had done the right thing. When they saw the drive had been opened and the situation was complex, they sent the customer to us with a clear message: this is beyond general repair. You need a specialist.</p>
+          <p>The music engineer reviewed the recovered files and confirmed the key recordings were there. The referring computer repair shop had made the right call — when they assessed the situation, they recognized this required specialist equipment and sent the customer to us directly.</p>
 
           <div class="results-table-wrap">
             <table class="results-table">
@@ -265,7 +263,7 @@ useHead({
                   <td><span class="result-badge full">✅ Complete</span></td>
                 </tr>
                 <tr class="row-success">
-                  <td>Drive image (95% of 2TB)</td>
+                  <td>95% of drive sectors successfully imaged</td>
                   <td><span class="result-badge full">✅ Complete</span></td>
                 </tr>
                 <tr class="row-success">
@@ -282,48 +280,48 @@ useHead({
           <div class="lesson-block">
             <div class="lesson-number">1</div>
             <div>
-              <h3>Never open a hard drive outside a clean room.</h3>
-              <p>YouTube makes it look straightforward. But those videos don't show you the invisible particle storm in the air around you — or what happens when those particles get trapped inside a drive spinning at 7,200 RPM. The moment that cover came off in a home environment, the clock started.</p>
+              <h3>Hard drives require a clean room environment for internal work.</h3>
+              <p>Hard drive manufacturers build these devices in ISO-certified clean rooms for good reason — internal components operate at extremely tight tolerances. If your drive needs to be opened, that work should be done in a controlled environment with proper equipment. If your drive has already been opened elsewhere, that's okay — we handle those cases regularly and will give you an honest assessment of where things stand.</p>
             </div>
           </div>
 
           <div class="lesson-block lesson-critical">
             <div class="lesson-number">2</div>
             <div>
-              <h3>Do not power on a drive you suspect is damaged.</h3>
-              <p>Every time a contaminated drive spins, contamination is dragged across the platters at high speed. What could have been a relatively clean <NuxtLink to="/hard-drive-clicking" class="inline-link">head swap</NuxtLink> turned into platter burnishing, firmware repair, two head replacements, and days of careful slow-speed imaging — because the drive was powered on.</p>
+              <h3>If your drive stops working, power it off and leave it off.</h3>
+              <p>Continued operation of a failing drive — particularly one that may have been exposed to contaminants — can complicate recovery. If you're unsure whether your drive has a physical or logical issue, the safest step is to stop using it and have it evaluated. A <NuxtLink to="/hard-drive-clicking" class="inline-link">clicking or grinding drive</NuxtLink> especially should not be powered on again without professional guidance.</p>
             </div>
           </div>
 
           <div class="lesson-block">
             <div class="lesson-number">3</div>
             <div>
-              <h3>Do not run recovery software on a drive with suspected hardware failure.</h3>
-              <p>Recovery software is designed for logical failures — deleted files, corrupted file systems. On a physically damaged drive, it can spread damage and permanently destroy data. Stop the software. Power down the drive. Call a professional lab.</p>
+              <h3>Recovery software is not appropriate for all failure types.</h3>
+              <p>Software-based recovery tools work well for logical failures — accidental deletion, corrupted file systems. If your drive has a hardware failure, running software on it may complicate the recovery. When in doubt, get a professional evaluation first — it's typically free and takes minutes.</p>
             </div>
           </div>
 
           <div class="lesson-block">
             <div class="lesson-number">4</div>
             <div>
-              <h3>If your drive has failed, here's the protocol:</h3>
+              <h3>What to do if your drive has failed:</h3>
               <ul class="blog-list">
-                <li><strong>Power it off immediately.</strong> Do not try again.</li>
-                <li><strong>Do not open it</strong> under any circumstances.</li>
-                <li><strong>Do not run recovery software</strong> if you suspect hardware failure.</li>
-                <li><strong>Contact a professional lab</strong> — the sooner, the better.</li>
+                <li><strong>Power it off</strong> and set it aside.</li>
+                <li><strong>Don't attempt further diagnosis</strong> if you hear clicking, grinding, or the drive isn't recognized.</li>
+                <li><strong>Contact a professional lab</strong> for a free evaluation — the earlier, the more options are available.</li>
+                <li><strong>If the drive has already been opened or worked on</strong>, let the lab know — it's important context, and we handle those cases too.</li>
               </ul>
             </div>
           </div>
 
           <!-- Emergency CTA -->
           <div class="emergency-block">
-            <h2>Has Your Drive Been Opened or Powered On After Failure?</h2>
-            <p class="emergency-lead"><strong>Stop everything. Stop running tools. Stop mounting the drive. Stop trying things.</strong></p>
-            <p>Every additional step you take risks the data further. The single most important move right now is to stop adding variables to the problem — then call us.</p>
-            <p>We specialize in contaminated drive recovery, platter burnishing, firmware-level repair, and advanced head transplants. We're one of a small number of facilities in the country with this equipment and expertise. It's not common capability. That's exactly why cases like this end up with us.</p>
-            <p>We don't promise miracles. We promise expertise, forensic discipline, and a straight answer about what's actually possible — before we touch anything.</p>
-            <p class="emergency-availability">⚡ Available 24/7 · <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="emergency-inline-link">Free nationwide shipping</NuxtLink> · No recovery, no charge</p>
+            <h2>Has Your Drive Been Opened or Worked On?</h2>
+            <p class="emergency-lead">We work on drives in all conditions — including those previously opened or worked on elsewhere.</p>
+            <p>If your drive has been opened, powered on after a failure, or returned from another lab unrecovered, we can evaluate it. Our engineers will assess the current state and give you an honest picture of what recovery looks like from here — before any work begins.</p>
+            <p>We have the equipment for platter burnishing, firmware-level repair, and advanced head transplants. Cases like this are within our normal scope of work.</p>
+            <p>We don't make promises before evaluating a drive. We do promise a thorough assessment, transparent communication, and no charge if recovery isn't possible.</p>
+            <p class="emergency-availability">⚡ Evaluations available 24/7 by phone · <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="emergency-inline-link">Nationwide mail-in service available</NuxtLink> · No recovery, no charge</p>
             <div class="emergency-cta">
               <NuxtLink to="/contact" class="btn-emergency">Start Your Recovery</NuxtLink>
               <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
