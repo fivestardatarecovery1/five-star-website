@@ -5,8 +5,8 @@ useSeoMeta({
   ogTitle: 'Seagate Barracuda Data Recovery: 1.2TB Recovered After Drive Was Opened at Home',
   ogDescription: "A music producer's hard drive was opened at home — 1,071 platter soft hits, firmware failure, contamination. See how Five Star Data Recovery recovered 1.2TB of unreleased music.",
   ogUrl: 'https://www.fivestardatarecovery.com/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study',
-  ogImage: 'https://www.fivestardatarecovery.com/blog-seagate-barracuda-drive-label.jpg',
-  ogImageAlt: 'Seagate Barracuda ST2000DM001 hard drive recovered by Five Star Data Recovery after home contamination',
+  ogImage: 'https://www.fivestardatarecovery.com/blog-seagate-platters-burnishing-1.jpg',
+  ogImageAlt: 'Hard drive platters mounted on burnishing machine during contamination recovery — Five Star Data Recovery',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
   twitterCard: 'summary_large_image',
@@ -22,7 +22,7 @@ useHead({
       '@type': 'BlogPosting',
       'headline': 'Seagate Barracuda Data Recovery: 1.2TB Recovered After Drive Was Opened at Home',
       'description': "A music producer's hard drive was opened at home — 1,071 platter soft hits, firmware failure, contamination. See how Five Star Data Recovery recovered 1.2TB of unreleased music.",
-      'image': 'https://www.fivestardatarecovery.com/blog-seagate-barracuda-drive-label.jpg',
+      'image': 'https://www.fivestardatarecovery.com/blog-seagate-platters-burnishing-1.jpg',
       'datePublished': '2026-10-20',
       'dateModified': '2026-10-20',
       'author': { '@type': 'Organization', 'name': 'Five Star Data Recovery', 'url': 'https://www.fivestardatarecovery.com' },
@@ -436,7 +436,7 @@ useHead({
 /* ── Hero ── */
 .blog-hero {
   position: relative;
-  background: linear-gradient(to bottom, rgba(10,14,24,0.97) 0%, rgba(10,14,24,0.90) 100%), url('/blog-seagate-barracuda-drive-label.jpg') center / cover no-repeat;
+  background: linear-gradient(to bottom, rgba(10,14,24,0.97) 0%, rgba(10,14,24,0.90) 100%), url('/blog-seagate-platters-burnishing-1.jpg') center / cover no-repeat;
   color: #fff;
   padding: 100px 0 80px;
   text-align: center;
