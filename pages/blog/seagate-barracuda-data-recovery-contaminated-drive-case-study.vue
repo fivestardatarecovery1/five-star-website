@@ -77,7 +77,7 @@ useHead({
           <div class="lead-block">
             <p>A music engineer reached out to Five Star Data Recovery in a state of panic. He had been working on a project for a well-known recording artist — original recordings, layered audio sessions, production files representing months of irreplaceable work. It was all stored on a single Seagate Barracuda 2TB hard drive.</p>
             <p>When the drive stopped responding, he did what a lot of people do: he searched YouTube.</p>
-            <p>What followed was the kind of mistake that turns a recoverable situation into a near-catastrophe.</p>
+            <p>Unfortunately, opening the drive introduced contamination and made recovery more complex.</p>
           </div>
 
           <!-- Section 1 -->
@@ -140,7 +140,7 @@ useHead({
               alt="Burnishing machine scan results — Bottom H/S/s: 007/1071/000 — before platter cleaning"
               class="blog-img"
             />
-            <p class="img-caption">Initial scan results for both platter surfaces on this drive. Top surface: Passed (0/0/0). Bottom surface: 7 hard hits, 1,071 soft hits detected. Hard hits and soft hits are the burnishing machine's classifications for surface anomalies flagged during the scan pass.</p>
+            <p class="img-caption">The top and bottom surfaces shown in this scan. Top surface: Passed (0/0/0). Bottom surface: 7 hard hits, 1,071 soft hits detected. Hard hits and soft hits are the burnishing machine's classifications for surface anomalies flagged during the scan pass.</p>
           </div>
 
           <div class="stats-band">
@@ -215,8 +215,7 @@ useHead({
           <div class="phase-block">
             <div class="phase-number">Step 3</div>
             <h3 class="phase-title">Head Replacement and Firmware Repair</h3>
-            <p>With the platters cleaned, we installed a new set of matched <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">read/write heads</NuxtLink> and reassembled the drive. We were able to get the drive to power on — but it immediately presented another problem: firmware corruption.</p>
-            <p>Upon powering on, the drive presented firmware-level errors — our technicians observed the drive was not functioning normally at the firmware layer, independent of the physical contamination. Firmware issues of this type require a separate repair process. Learn more about <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drive recovery</NuxtLink> and the types of failures we handle.</p>
+            <p>With the platters cleaned, we installed a new set of matched <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">read/write heads</NuxtLink> and reassembled the drive. When powered on, our technicians observed firmware-level errors — the drive was not functioning normally at the firmware layer, independent of the physical contamination. Firmware issues of this type require a separate repair process. Learn more about <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drive recovery</NuxtLink> and the types of failures we handle.</p>
             <p>Our engineers performed a full firmware repair at the module level, gaining access to the drive at the sector level — the raw data storage layer beneath the file system.</p>
           </div>
 
@@ -257,7 +256,7 @@ useHead({
                   <td><span class="result-badge full">✅ Complete</span></td>
                 </tr>
                 <tr class="row-success">
-                  <td>95% of drive sectors successfully imaged</td>
+                  <td>Drive imaging</td>
                   <td><span class="result-badge full">95% successfully imaged</span></td>
                 </tr>
                 <tr class="row-success">
