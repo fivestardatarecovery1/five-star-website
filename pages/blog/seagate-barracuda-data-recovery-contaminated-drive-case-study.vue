@@ -5,7 +5,7 @@ useSeoMeta({
   ogTitle: 'Seagate Barracuda Data Recovery: 1.2TB Recovered After Drive Was Opened at Home',
   ogDescription: "A music producer's hard drive was opened at home — 1,071 platter soft hits, firmware failure, contamination. See how Five Star Data Recovery recovered 1.2TB of unreleased music.",
   ogUrl: 'https://www.fivestardatarecovery.com/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study',
-  ogImage: 'https://www.fivestardatarecovery.com/blog-seagate-platters-burnishing-1.jpg',
+  ogImage: 'https://www.fivestardatarecovery.com/blog-seagate-platters-mounted-burnishing-machine-data-recovery.jpg',
   ogImageAlt: 'Hard drive platters mounted on burnishing machine during contamination recovery — Five Star Data Recovery',
   ogType: 'article',
   ogSiteName: 'Five Star Data Recovery',
@@ -22,7 +22,7 @@ useHead({
       '@type': 'BlogPosting',
       'headline': 'Seagate Barracuda Data Recovery: 1.2TB Recovered After Drive Was Opened at Home',
       'description': "A music producer's hard drive was opened at home — 1,071 platter soft hits, firmware failure, contamination. See how Five Star Data Recovery recovered 1.2TB of unreleased music.",
-      'image': 'https://www.fivestardatarecovery.com/blog-seagate-platters-burnishing-1.jpg',
+      'image': 'https://www.fivestardatarecovery.com/blog-seagate-platters-mounted-burnishing-machine-data-recovery.jpg',
       'datePublished': '2026-10-20',
       'dateModified': '2026-10-20',
       'author': { '@type': 'Organization', 'name': 'Five Star Data Recovery', 'url': 'https://www.fivestardatarecovery.com' },
@@ -136,8 +136,8 @@ useHead({
           <!-- Burnishing BEFORE -->
           <div class="blog-image-block">
             <img
-              src="/blog-seagate-burnishing-before.jpg"
-              alt="Burnishing machine scan results — Bottom H/S/s: 007/1071/000 — before platter cleaning"
+              src="/blog-seagate-platter-burnishing-scan-before-cleaning.jpg"
+              alt="Platter burnishing machine scan before cleaning — 1,071 soft hits detected on bottom surface — hard drive contamination recovery"
               class="blog-img"
             />
             <p class="img-caption">The top and bottom surfaces shown in this scan. Top surface: Passed (0/0/0). Bottom surface: 7 hard hits, 1,071 soft hits detected. Hard hits and soft hits are the burnishing machine's classifications for surface anomalies flagged during the scan pass.</p>
@@ -177,8 +177,8 @@ useHead({
             <!-- Platters angle 1 -->
             <div class="blog-image-block">
               <img
-                src="/blog-seagate-platters-burnishing-1.jpg"
-                alt="Hard drive platters mounted on burnishing machine spindle for cleaning — Five Star Data Recovery"
+                src="/blog-seagate-platters-mounted-burnishing-machine-data-recovery.jpg"
+                alt="Hard drive platters mounted on burnishing machine spindle for contamination cleaning — Five Star Data Recovery Glendale CA"
                 class="blog-img"
               />
               <p class="img-caption">Platters removed and mounted on our burnishing machine. This equipment is used by hard drive manufacturers — it's not something you'll find at a typical repair shop.</p>
@@ -187,8 +187,8 @@ useHead({
             <!-- Platters angle 2 -->
             <div class="blog-image-block">
               <img
-                src="/blog-seagate-platters-burnishing-2.jpg"
-                alt="Second angle — platters on burnishing machine during hard drive contamination recovery"
+                src="/blog-seagate-hard-drive-platter-cleaning-clean-room.jpg"
+                alt="Hard drive platter cleaning on burnishing machine inside clean room — Seagate data recovery Five Star Data Recovery"
                 class="blog-img"
               />
               <p class="img-caption">A wider angle showing the burnishing machine setup. We ran multiple cleaning passes until both platter surfaces cleared completely.</p>
@@ -202,8 +202,8 @@ useHead({
             <!-- Burnishing AFTER -->
             <div class="blog-image-block">
               <img
-                src="/blog-seagate-burnishing-after.jpg"
-                alt="Burnishing machine scan after platter cleaning — Top and Bottom H/S/s: 000/000/000 — both surfaces passed"
+                src="/blog-seagate-platter-burnishing-scan-after-cleaning.jpg"
+                alt="Platter burnishing machine scan after cleaning — 000/000/000 both surfaces passed — hard drive contamination recovery"
                 class="blog-img"
               />
               <p class="img-caption">Post-cleaning scan: Top H/S/s: 000/000/000 · Bottom H/S/s: 000/000/000. Both surfaces returned zero detections. A zero reading means the machine detected no anomalies on that pass — it reflects cleared scan detections, not a statement about the underlying magnetic material.</p>
@@ -427,7 +427,7 @@ useHead({
 /* ── Hero ── */
 .blog-hero {
   position: relative;
-  background: linear-gradient(to bottom, rgba(10,14,24,0.97) 0%, rgba(10,14,24,0.90) 100%), url('/blog-seagate-platters-burnishing-1.jpg') center / cover no-repeat;
+  background: linear-gradient(to bottom, rgba(10,14,24,0.97) 0%, rgba(10,14,24,0.90) 100%), url('/blog-seagate-platters-mounted-burnishing-machine-data-recovery.jpg') center / cover no-repeat;
   color: #fff;
   padding: 100px 0 80px;
   text-align: center;

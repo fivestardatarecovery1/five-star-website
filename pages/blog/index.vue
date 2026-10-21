@@ -33,7 +33,7 @@ const posts = [
     readTime: '8 min read',
     desc: '1,071 soft hits, firmware corruption, platter contamination — a music producer opened his Seagate Barracuda at home and powered it on. Here\'s how we got 1.2TB of unreleased music back.',
     href: '/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study',
-    image: '/blog-seagate-platters-burnishing-1.jpg',
+    image: '/blog-seagate-platters-mounted-burnishing-machine-data-recovery.jpg',
     icon: '💽'
   },
   {
