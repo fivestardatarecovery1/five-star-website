@@ -126,9 +126,7 @@ useHead({
 
           <p>What we saw was significant contamination throughout the drive interior — dust on the top surface, inside the casing, and most critically, visible contamination on the drive's sliders (the tiny components at the tip of each <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">read/write head</NuxtLink> that "fly" nanometers above the platter surface).</p>
 
-          <p>When a hard drive is powered on in a contaminated state, the heads — which fly at a distance of roughly 3–5 nanometers above the platters — begin dragging those particles across the magnetic surface at 7,200 RPM. Every revolution grinds the contamination deeper into the media.</p>
-
-          <p>That's exactly what happened here.</p>
+          <p>When a hard drive is powered on in a contaminated state, the heads — which fly at a distance of roughly 3–5 nanometers above the platters — can drag particles across the platter surface during operation. This can cause further surface damage and increase the complexity of recovery.</p>
 
           <!-- Section 3 -->
           <h2 class="section-heading">The Scan: 1,071 Soft Hits</h2>
@@ -226,7 +224,7 @@ useHead({
             <div class="phase-number phase-hard">Step 4</div>
             <h3 class="phase-title">Imaging — 3 of 4 Heads Reading, One Struggling</h3>
             <p>With firmware repaired and the drive accessible, we began imaging — reading every sector and copying it to a recovery storage device. Three of the four read/write heads performed well. The fourth was struggling — likely due to residual damage from the contaminated state when the drive was first powered on.</p>
-            <p>Areas that had sustained soft hits required slower, more methodical reads to extract data without losing it entirely. After imaging approximately 75% of the drive, we performed a second head replacement to give us the best possible read on the remaining sectors.</p>
+            <p>Some areas required slower, more methodical reads. After imaging approximately 75% of the drive, we performed a second head replacement to give us the best possible read on the remaining sectors.</p>
             <p><strong>Result: a 95% complete image of the entire 2TB drive.</strong></p>
           </div>
 
@@ -234,10 +232,6 @@ useHead({
           <h2 class="section-heading">The Result: 1.2TB of Audio Recovered</h2>
 
           <p>From that image, our engineers were able to extract approximately <strong>1.2TB of data</strong>, including audio recordings and project files. The 95% imaging figure refers to the percentage of drive sectors we were able to successfully read — the 1.2TB represents the recoverable file data extracted from those sectors.</p>
-
-          <div class="results-quote">
-            The customer confirmed the critical recordings and project files were present in the recovered data.
-          </div>
 
           <p>The music engineer reviewed the recovered files and confirmed the key recordings were there. The referring computer repair shop had made the right call — when they assessed the situation, they recognized this required specialist equipment and sent the customer to us directly.</p>
 
@@ -264,7 +258,7 @@ useHead({
                 </tr>
                 <tr class="row-success">
                   <td>95% of drive sectors successfully imaged</td>
-                  <td><span class="result-badge full">✅ Complete</span></td>
+                  <td><span class="result-badge full">95% successfully imaged</span></td>
                 </tr>
                 <tr class="row-success">
                   <td>Data recovered</td>
@@ -297,7 +291,7 @@ useHead({
             <div class="lesson-number">3</div>
             <div>
               <h3>Recovery software is not appropriate for all failure types.</h3>
-              <p>Software-based recovery tools work well for logical failures — accidental deletion, corrupted file systems. If your drive has a hardware failure, running software on it may complicate the recovery. When in doubt, get a professional evaluation first — it's typically free and takes minutes.</p>
+              <p>Software-based recovery tools work well for logical failures — accidental deletion, corrupted file systems. If your drive has a hardware failure, running software on it may complicate the recovery. When in doubt, start with an initial consultation — we can help you understand what type of failure you may be dealing with before any work begins.</p>
             </div>
           </div>
 
@@ -321,7 +315,7 @@ useHead({
             <p>If your drive has been opened, powered on after a failure, or returned from another lab unrecovered, we can evaluate it. Our engineers will assess the current state and give you an honest picture of what recovery looks like from here — before any work begins.</p>
             <p>We have the equipment for platter burnishing, firmware-level repair, and advanced head transplants. Cases like this are within our normal scope of work.</p>
             <p>We don't make promises before evaluating a drive. We do promise a thorough assessment, transparent communication, and no charge if recovery isn't possible.</p>
-            <p class="emergency-availability">⚡ Evaluations available 24/7 by phone · <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="emergency-inline-link">Nationwide mail-in service available</NuxtLink> · No recovery, no charge</p>
+            <p class="emergency-availability">⚡ Initial consultations available 24/7 by phone · <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="emergency-inline-link">Nationwide mail-in service available</NuxtLink> · No recovery, no charge</p>
             <div class="emergency-cta">
               <NuxtLink to="/contact" class="btn-emergency">Start Your Recovery</NuxtLink>
               <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
