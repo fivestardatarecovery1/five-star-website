@@ -83,7 +83,7 @@ useHead({
           <!-- Section 1 -->
           <h2 class="section-heading">What Arrived at Our Lab</h2>
 
-          <p>When the Seagate Barracuda ST2000DM001 arrived at our Glendale facility, our technicians noticed immediately that something was wrong — before they even opened the shipping box. The drive had already been opened. The cover screws were missing.</p>
+          <p>When the <NuxtLink to="/data-recovery/seagate-data-recovery" class="inline-link">Seagate Barracuda ST2000DM001</NuxtLink> arrived at our Glendale facility, our technicians noticed immediately that something was wrong — before they even opened the shipping box. The drive had already been opened. The cover screws were missing.</p>
 
           <!-- Drive label photo -->
           <div class="blog-image-block">
@@ -114,7 +114,7 @@ useHead({
           <!-- Section 2 -->
           <h2 class="section-heading">The Damage: What We Found Inside</h2>
 
-          <p>Our technicians performed a full disassembly in our certified clean room: magnet removed, read/write heads carefully extracted, separator plate, ramp, and platters all taken apart piece by piece.</p>
+          <p>Our technicians performed a full disassembly in our <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">certified clean room</NuxtLink>: magnet removed, read/write heads carefully extracted, separator plate, ramp, and platters all taken apart piece by piece.</p>
 
           <!-- Head slider photo -->
           <div class="blog-image-block">
@@ -126,7 +126,7 @@ useHead({
             <p class="img-caption">Under magnification, the contamination on the drive's read/write head slider was clearly visible. Dust particles at this scale — nanometers from the platter surface — can cause catastrophic head crashes.</p>
           </div>
 
-          <p>What we saw was significant contamination throughout the drive interior — dust on the top surface, inside the casing, and most critically, visible contamination on the drive's sliders (the tiny components at the tip of each read/write head that "fly" nanometers above the platter surface).</p>
+          <p>What we saw was significant contamination throughout the drive interior — dust on the top surface, inside the casing, and most critically, visible contamination on the drive's sliders (the tiny components at the tip of each <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">read/write head</NuxtLink> that "fly" nanometers above the platter surface).</p>
 
           <p>When a hard drive is powered on in a contaminated state, the heads — which fly at a distance of roughly 3–5 nanometers above the platters — begin dragging those particles across the magnetic surface at 7,200 RPM. Every revolution grinds the contamination deeper into the media.</p>
 
@@ -135,7 +135,7 @@ useHead({
           <!-- Section 3 -->
           <h2 class="section-heading">The Scan: 1,071 Soft Hits</h2>
 
-          <p>Before any cleaning or recovery attempt, we mount the platters onto our platter burnishing machine — specialized equipment that scans every millimeter of the platter surface and maps contamination and damage in real time.</p>
+          <p>Before any cleaning or recovery attempt, we mount the platters onto our platter burnishing machine — specialized equipment used inside our <NuxtLink to="/data-recovery/clean-room-data-recovery" class="inline-link">clean room</NuxtLink> that scans every millimeter of the platter surface and maps contamination and damage in real time.</p>
 
           <!-- Burnishing BEFORE -->
           <div class="blog-image-block">
@@ -219,8 +219,8 @@ useHead({
           <div class="phase-block">
             <div class="phase-number">Step 3</div>
             <h3 class="phase-title">Head Replacement and Firmware Repair</h3>
-            <p>With the platters cleaned, we installed a new set of matched read/write heads and reassembled the drive. We were able to get the drive to power on — but it immediately presented another problem: firmware corruption.</p>
-            <p>When a drive is improperly opened and powered on, the stress can corrupt the drive's internal firmware — the operating code that tells the drive how to function. This is a separate issue from physical contamination, and it requires its own specialized repair process.</p>
+            <p>With the platters cleaned, we installed a new set of matched <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">read/write heads</NuxtLink> and reassembled the drive. We were able to get the drive to power on — but it immediately presented another problem: firmware corruption.</p>
+            <p>When a drive is improperly opened and powered on, the stress can corrupt the drive's internal firmware — the operating code that tells the drive how to function. This is a separate issue from physical contamination, and it requires its own specialized repair process. Learn more about <NuxtLink to="/data-recovery/hard-drive-recovery" class="inline-link">hard drive recovery</NuxtLink> and the types of failures we handle.</p>
             <p>Our engineers performed a full firmware repair at the module level, gaining access to the drive at the sector level — the raw data storage layer beneath the file system.</p>
           </div>
 
@@ -291,7 +291,7 @@ useHead({
             <div class="lesson-number">2</div>
             <div>
               <h3>Do not power on a drive you suspect is damaged.</h3>
-              <p>Every time a contaminated drive spins, contamination is dragged across the platters at high speed. What could have been a relatively clean head swap turned into platter burnishing, firmware repair, two head replacements, and days of careful slow-speed imaging — because the drive was powered on.</p>
+              <p>Every time a contaminated drive spins, contamination is dragged across the platters at high speed. What could have been a relatively clean <NuxtLink to="/hard-drive-clicking" class="inline-link">head swap</NuxtLink> turned into platter burnishing, firmware repair, two head replacements, and days of careful slow-speed imaging — because the drive was powered on.</p>
             </div>
           </div>
 
@@ -323,7 +323,7 @@ useHead({
             <p>Every additional step you take risks the data further. The single most important move right now is to stop adding variables to the problem — then call us.</p>
             <p>We specialize in contaminated drive recovery, platter burnishing, firmware-level repair, and advanced head transplants. We're one of a small number of facilities in the country with this equipment and expertise. It's not common capability. That's exactly why cases like this end up with us.</p>
             <p>We don't promise miracles. We promise expertise, forensic discipline, and a straight answer about what's actually possible — before we touch anything.</p>
-            <p class="emergency-availability">⚡ Available 24/7 · Free nationwide shipping · No recovery, no charge</p>
+            <p class="emergency-availability">⚡ Available 24/7 · <NuxtLink to="/data-recovery/data-recovery-mail-in-service" class="emergency-inline-link">Free nationwide shipping</NuxtLink> · No recovery, no charge</p>
             <div class="emergency-cta">
               <NuxtLink to="/contact" class="btn-emergency">Start Your Recovery</NuxtLink>
               <a href="tel:8182728866" class="btn-call">📞 818-272-8866</a>
@@ -758,6 +758,10 @@ useHead({
 .btn-call:hover { background: #C9A84C; color: #1a1a2e; }
 
 /* Disclaimer */
+.inline-link { color: #7A5500; font-weight: 600; text-decoration: underline; }
+.inline-link:hover { color: #C9A84C; }
+.emergency-inline-link { color: #93c5fd; font-weight: 600; text-decoration: underline; }
+.emergency-inline-link:hover { color: #fff; }
 .disclaimer {
   font-size: 0.78rem;
   color: #a0aec0;
