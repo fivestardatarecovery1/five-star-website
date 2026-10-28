@@ -1,6 +1,20 @@
 import { Resend } from 'resend'
 import { htmlToPdf } from '../utils/html-to-pdf'
 
+const STATE_CODES: Record<string, string> = {
+  'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA',
+  'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA',
+  'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA',
+  'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD',
+  'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO',
+  'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ',
+  'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH',
+  'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC',
+  'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT',
+  'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY',
+  'District of Columbia': 'DC', 'Puerto Rico': 'PR',
+}
+
 const COUNTRY_CODES: Record<string, string> = {
   'United States of America (USA)': 'US', 'Canada': 'CA', 'United Kingdom': 'GB',
   'Australia': 'AU', 'Germany': 'DE', 'France': 'FR', 'Spain': 'ES',
@@ -112,8 +126,10 @@ export default defineEventHandler(async (event) => {
 
   const fullName = `${firstName} ${lastName}`
   const countryCode = COUNTRY_CODES[country] || 'US'
+  // Normalize state to 2-letter code (handles Nominatim returning full names like "New York")
+  const stateCode = STATE_CODES[state] || (state?.length === 2 ? state.toUpperCase() : state)
   // CA customers get Ground — same/faster transit than 2-Day at lower cost
-  const isCA = (state || '').toUpperCase() === 'CA'
+  const isCA = (stateCode || '').toUpperCase() === 'CA'
   const serviceType = expeditedService?.includes('Expedited') ? 'PRIORITY_OVERNIGHT' : (isCA ? 'FEDEX_GROUND' : 'FEDEX_2_DAY')
   const serviceLabel = expeditedService?.includes('Expedited') ? 'FedEx Priority Overnight' : (isCA ? 'FedEx Ground' : 'FedEx 2Day')
 
@@ -125,7 +141,7 @@ export default defineEventHandler(async (event) => {
     labelBase64 = await createFedexLabel({
       token, accountNumber: fedexAccountNumber,
       recipientName: fullName, recipientPhone: phone,
-      street: streetAddress, city, state, zip, countryCode, serviceType,
+      street: streetAddress, city, state: stateCode, zip, countryCode, serviceType,
     })
   } catch (e: any) {
     console.error('FedEx label error:', e.message)

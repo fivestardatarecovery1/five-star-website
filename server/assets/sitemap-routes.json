@@ -30,6 +30,12 @@
     "lastmod": "2026-07-16T21:41:07-07:00"
   },
   {
+    "route": "/blog/seagate-barracuda-data-recovery-contaminated-drive-case-study",
+    "priority": "0.7",
+    "changefreq": "monthly",
+    "lastmod": "2026-10-20T18:28:08-07:00"
+  },
+  {
     "route": "/blog/sony-venice-x-ocn-video-file-repair-case-study",
     "priority": "0.7",
     "changefreq": "monthly",
@@ -51,7 +57,7 @@
     "route": "/contact-us",
     "priority": "0.8",
     "changefreq": "monthly",
-    "lastmod": "2026-07-16T20:03:43-07:00"
+    "lastmod": "2026-09-25T03:00:13-07:00"
   },
   {
     "route": "/data-recovery-beverly-hills",
@@ -111,7 +117,7 @@
     "route": "/data-recovery/clean-room-data-recovery",
     "priority": "0.7",
     "changefreq": "monthly",
-    "lastmod": "2026-07-16T20:03:43-07:00"
+    "lastmod": "2026-10-20T16:56:00-07:00"
   },
   {
     "route": "/data-recovery/data-recovery-mail-in-service",
@@ -171,7 +177,7 @@
     "route": "/data-recovery/hard-drive-recovery",
     "priority": "0.7",
     "changefreq": "monthly",
-    "lastmod": "2026-07-16T21:41:07-07:00"
+    "lastmod": "2026-10-20T16:56:00-07:00"
   },
   {
     "route": "/data-recovery/hitachi-data-recovery",
@@ -231,7 +237,7 @@
     "route": "/data-recovery/seagate-data-recovery",
     "priority": "0.7",
     "changefreq": "monthly",
-    "lastmod": "2026-07-16T21:41:07-07:00"
+    "lastmod": "2026-10-20T16:56:00-07:00"
   },
   {
     "route": "/data-recovery/ssd-data-recovery",
